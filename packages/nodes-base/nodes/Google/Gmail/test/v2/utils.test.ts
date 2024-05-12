@@ -1,4 +1,4 @@
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'flowease-workflow';
 import { DateTime } from 'luxon';
 import { prepareTimestamp } from '../../GenericFunctions';
 

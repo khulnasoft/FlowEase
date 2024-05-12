@@ -6,7 +6,7 @@
 			:class="[$style.nodesList, $style[connectionGroup]]"
 		>
 			<template v-for="{ node, nodeType } in connectedNodes[connectionGroup]">
-				<n8n-tooltip
+				<flowease-tooltip
 					v-if="node && nodeType"
 					:key="node.name"
 					:placement="tooltipPositionMapper[connectionGroup]"
@@ -30,7 +30,7 @@
 							circle
 						/>
 					</li>
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</template>
 		</ul>
 	</aside>
@@ -42,7 +42,7 @@ import { useNodeTypesStore } from '@/stores/nodeTypes.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { computed, onMounted, onBeforeUnmount } from 'vue';
 import NodeIcon from '@/components/NodeIcon.vue';
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
 
 interface Props {
 	rootNode: INodeUi;

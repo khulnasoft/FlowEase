@@ -3,21 +3,21 @@
 		<transition name="fade" mode="out-in">
 			<div v-if="hasIssues || hideContent" key="empty"></div>
 			<div v-else-if="isListeningForEvents" key="listening">
-				<n8n-pulse>
+				<flowease-pulse>
 					<NodeIcon :node-type="nodeType" :size="40"></NodeIcon>
-				</n8n-pulse>
+				</flowease-pulse>
 				<div v-if="isWebhookNode">
-					<n8n-text tag="div" size="large" color="text-dark" class="mb-2xs" bold>{{
+					<flowease-text tag="div" size="large" color="text-dark" class="mb-2xs" bold>{{
 						$locale.baseText('ndv.trigger.webhookNode.listening')
-					}}</n8n-text>
+					}}</flowease-text>
 					<div :class="[$style.shake, 'mb-xs']">
-						<n8n-text>
+						<flowease-text>
 							{{
 								$locale.baseText('ndv.trigger.webhookNode.requestHint', {
 									interpolate: { type: webhookHttpMethod },
 								})
 							}}
-						</n8n-text>
+						</flowease-text>
 					</div>
 					<CopyInput
 						:value="webhookTestUrl"
@@ -37,18 +37,18 @@
 					/>
 				</div>
 				<div v-else>
-					<n8n-text tag="div" size="large" color="text-dark" class="mb-2xs" bold>{{
+					<flowease-text tag="div" size="large" color="text-dark" class="mb-2xs" bold>{{
 						listeningTitle
-					}}</n8n-text>
+					}}</flowease-text>
 					<div :class="[$style.shake, 'mb-xs']">
-						<n8n-text tag="div">
+						<flowease-text tag="div">
 							{{ listeningHint }}
-						</n8n-text>
+						</flowease-text>
 					</div>
 					<div v-if="displayChatButton">
-						<n8n-button class="mb-xl" @click="openWebhookUrl()">
+						<flowease-button class="mb-xl" @click="openWebhookUrl()">
 							{{ $locale.baseText('ndv.trigger.chatTrigger.openChat') }}
-						</n8n-button>
+						</flowease-button>
 					</div>
 
 					<NodeExecuteButton
@@ -62,17 +62,17 @@
 			</div>
 			<div v-else key="default">
 				<div v-if="isActivelyPolling" class="mb-xl">
-					<n8n-spinner type="ring" />
+					<flowease-spinner type="ring" />
 				</div>
 
 				<div :class="$style.action">
 					<div :class="$style.header">
-						<n8n-heading v-if="header" tag="h1" bold>
+						<flowease-heading v-if="header" tag="h1" bold>
 							{{ header }}
-						</n8n-heading>
-						<n8n-text v-if="subheader">
+						</flowease-heading>
+						<flowease-text v-if="subheader">
 							<span v-text="subheader" />
-						</n8n-text>
+						</flowease-text>
 					</div>
 
 					<NodeExecuteButton
@@ -84,16 +84,16 @@
 					/>
 				</div>
 
-				<n8n-text v-if="activationHint" size="small" @click="onLinkClick">
+				<flowease-text v-if="activationHint" size="small" @click="onLinkClick">
 					<span v-html="activationHint"></span>&nbsp;
-				</n8n-text>
-				<n8n-link
+				</flowease-text>
+				<flowease-link
 					v-if="activationHint && executionsHelp"
 					size="small"
 					@click="expandExecutionHelp"
-					>{{ $locale.baseText('ndv.trigger.moreInfo') }}</n8n-link
+					>{{ $locale.baseText('ndv.trigger.moreInfo') }}</flowease-link
 				>
-				<n8n-info-accordion
+				<flowease-info-accordion
 					v-if="executionsHelp"
 					ref="help"
 					:class="$style.accordion"
@@ -101,7 +101,7 @@
 					:description="executionsHelp"
 					:event-bus="executionsHelpEventBus"
 					@click:body="onLinkClick"
-				></n8n-info-accordion>
+				></flowease-info-accordion>
 			</div>
 		</transition>
 	</div>
@@ -118,7 +118,7 @@ import {
 	FORM_TRIGGER_NODE_TYPE,
 } from '@/constants';
 import type { INodeUi } from '@/Interface';
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
 import { getTriggerNodeServiceName } from '@/utils/nodeTypesUtils';
 import NodeExecuteButton from '@/components/NodeExecuteButton.vue';
 import CopyInput from '@/components/CopyInput.vue';

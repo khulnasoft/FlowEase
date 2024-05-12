@@ -4,8 +4,8 @@ import syslog from 'syslog-client';
 import type {
 	MessageEventBusDestinationOptions,
 	MessageEventBusDestinationSyslogOptions,
-} from 'n8n-workflow';
-import { MessageEventBusDestinationTypeNames } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { MessageEventBusDestinationTypeNames } from 'flowease-workflow';
 import { MessageEventBusDestination } from './MessageEventBusDestination.ee';
 import { isLogStreamingEnabled } from '../MessageEventBus/MessageEventBusHelper';
 import { eventMessageGenericDestinationTestEvent } from '../EventMessageClasses/EventMessageGeneric';
@@ -49,7 +49,7 @@ export class MessageEventBusDestinationSyslog
 		this.port = options.port ?? 514;
 		this.protocol = options.protocol ?? 'udp';
 		this.facility = options.facility ?? syslog.Facility.Local0;
-		this.app_name = options.app_name ?? 'n8n';
+		this.app_name = options.app_name ?? 'flowease';
 		this.eol = options.eol ?? '\n';
 		this.expectedStatusCode = options.expectedStatusCode ?? 200;
 

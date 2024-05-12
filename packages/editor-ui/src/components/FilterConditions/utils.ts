@@ -10,7 +10,7 @@ import {
 	type FilterOptionsValue,
 	type NodeParameterValue,
 	type INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { OPERATORS_BY_ID, type FilterOperatorId } from './constants';
 import type { ConditionResult, FilterOperator } from './types';
 

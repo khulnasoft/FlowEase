@@ -1,10 +1,10 @@
 <template>
 	<div :class="$style.container">
 		<div v-if="loading" :class="$style.loader">
-			<n8n-text v-if="loading" size="small">
-				<n8n-icon icon="sync-alt" size="xsmall" :spin="true" />
+			<flowease-text v-if="loading" size="small">
+				<flowease-icon icon="sync-alt" size="xsmall" :spin="true" />
 				{{ loadingMessage }}
-			</n8n-text>
+			</flowease-text>
 		</div>
 		<div v-else :class="$style.controlsContainer">
 			<div
@@ -12,7 +12,7 @@
 					[$style.noExpressionSelector]: !shouldShowExpressionSelector,
 				}"
 			>
-				<n8n-action-toggle
+				<flowease-action-toggle
 					v-if="shouldShowOptions"
 					placement="bottom-end"
 					size="small"
@@ -24,7 +24,7 @@
 					@visible-change="onMenuToggle"
 				/>
 			</div>
-			<n8n-radio-buttons
+			<flowease-radio-buttons
 				v-if="shouldShowExpressionSelector"
 				size="small"
 				:model-value="selectedView"
@@ -40,7 +40,7 @@
 </template>
 
 <script lang="ts">
-import type { NodeParameterValueType } from 'n8n-workflow';
+import type { NodeParameterValueType } from 'flowease-workflow';
 import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 import { isResourceLocatorValue } from '@/utils/typeGuards';

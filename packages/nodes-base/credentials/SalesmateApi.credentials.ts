@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'flowease-workflow';
 
 export class SalesmateApi implements ICredentialType {
 	name = 'salesmateApi';
@@ -20,7 +20,7 @@ export class SalesmateApi implements ICredentialType {
 			name: 'url',
 			type: 'string',
 			default: '',
-			placeholder: 'n8n.salesmate.io',
+			placeholder: 'flowease.salesmate.io',
 		},
 	];
 }

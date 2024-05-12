@@ -11,8 +11,8 @@ import type {
 	IPollFunctions,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError, NodeOperationError } from 'flowease-workflow';
 
 import { DateTime } from 'luxon';
 
@@ -443,7 +443,7 @@ export function prepareEmailBody(
 
 	if (appendAttribution) {
 		const attributionText = 'This email was sent automatically with ';
-		const link = `https://flowease.khulnasoft.com/?utm_source=n8n-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
+		const link = `https://flowease.khulnasoft.com/?utm_source=flowease-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
 			'flowease-nodes-base.gmail',
 		)}${instanceId ? '_' + instanceId : ''}`;
 		if (emailType === 'html') {
@@ -453,10 +453,10 @@ export function prepareEmailBody(
 			<br>
 			---
 			<br>
-			<em>${attributionText}<a href="${link}" target="_blank">n8n</a></em>
+			<em>${attributionText}<a href="${link}" target="_blank">flowease</a></em>
 			`;
 		} else {
-			message = `${message}\n\n---\n${attributionText}n8n\n${'https://flowease.khulnasoft.com'}`;
+			message = `${message}\n\n---\n${attributionText}flowease\n${'https://flowease.khulnasoft.com'}`;
 		}
 	}
 

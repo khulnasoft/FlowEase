@@ -9,7 +9,7 @@ import { useMessage } from '@/composables/useMessage';
 import { useI18n } from '@/composables/useI18n';
 import { useTelemetry } from '@/composables/useTelemetry';
 import type { ExecutionFilterType, IWorkflowDb } from '@/Interface';
-import type { ExecutionSummary } from 'n8n-workflow';
+import type { ExecutionSummary } from 'flowease-workflow';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { useExecutionsStore } from '@/stores/executions.store';
 
@@ -279,11 +279,11 @@ async function onAutoRefreshToggle(value: boolean) {
 	<div :class="$style.execListWrapper">
 		<div :class="$style.execList">
 			<div :class="$style.execListHeader">
-				<N8nHeading tag="h1" size="2xlarge">
+				<FloweaseHeading tag="h1" size="2xlarge">
 					{{ i18n.baseText('executionsList.workflowExecutions') }}
-				</N8nHeading>
+				</FloweaseHeading>
 				<div :class="$style.execListHeaderControls">
-					<N8nLoading v-if="!isMounted" :class="$style.filterLoader" variant="custom" />
+					<FloweaseLoading v-if="!isMounted" :class="$style.filterLoader" variant="custom" />
 					<ElCheckbox
 						v-else
 						v-model="executionsStore.autoRefresh"
@@ -316,9 +316,9 @@ async function onAutoRefreshToggle(value: boolean) {
 			/>
 
 			<div v-if="!isMounted">
-				<N8nLoading :class="$style.tableLoader" variant="custom" />
-				<N8nLoading :class="$style.tableLoader" variant="custom" />
-				<N8nLoading :class="$style.tableLoader" variant="custom" />
+				<FloweaseLoading :class="$style.tableLoader" variant="custom" />
+				<FloweaseLoading :class="$style.tableLoader" variant="custom" />
+				<FloweaseLoading :class="$style.tableLoader" variant="custom" />
 			</div>
 			<table v-else :class="$style.execTable">
 				<thead>
@@ -366,7 +366,7 @@ async function onAutoRefreshToggle(value: boolean) {
 				{{ i18n.baseText('executionsList.empty') }}
 			</div>
 			<div v-else-if="total > executions.length || estimated" :class="$style.loadMore">
-				<N8nButton
+				<FloweaseButton
 					icon="sync"
 					:title="i18n.baseText('executionsList.loadMore')"
 					:label="i18n.baseText('executionsList.loadMore')"
@@ -396,13 +396,13 @@ async function onAutoRefreshToggle(value: boolean) {
 					})
 				}}
 			</span>
-			<N8nButton
+			<FloweaseButton
 				:label="i18n.baseText('generic.delete')"
 				type="tertiary"
 				data-test-id="delete-selected-button"
 				@click="handleDeleteSelected"
 			/>
-			<N8nButton
+			<FloweaseButton
 				:label="i18n.baseText('executionsList.clearSelection')"
 				type="tertiary"
 				data-test-id="clear-selection-button"

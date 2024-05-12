@@ -6,7 +6,7 @@ import type {
 	INodeTypeDescription,
 	IWebhookFunctions,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { venafiApiRequest } from './GenericFunctions';
 
@@ -125,7 +125,7 @@ export class VenafiTlsProtectCloudTrigger implements INodeType {
 				const webhookUrl = this.getNodeWebhookUrl('default');
 				const resource = this.getNodeParameter('resource') as string;
 				const body = {
-					name: `n8n-webhook (${webhookUrl})`,
+					name: `flowease-webhook (${webhookUrl})`,
 					properties: {
 						connectorKind: 'WEBHOOK',
 						target: {

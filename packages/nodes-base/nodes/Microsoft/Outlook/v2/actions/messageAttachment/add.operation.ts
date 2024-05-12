@@ -5,8 +5,8 @@ import type {
 	INodeExecutionData,
 	INodeProperties,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError, NodeOperationError } from 'flowease-workflow';
 import { microsoftApiRequest } from '../../transport';
 import { messageRLC } from '../../descriptions';
 import { updateDisplayOptions } from '@utils/utilities';

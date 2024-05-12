@@ -1,7 +1,7 @@
 import { Container } from 'typedi';
 import { Flags } from '@oclif/core';
-import type { IWorkflowBase } from 'n8n-workflow';
-import { ApplicationError, ExecutionBaseError } from 'n8n-workflow';
+import type { IWorkflowBase } from 'flowease-workflow';
+import { ApplicationError, ExecutionBaseError } from 'flowease-workflow';
 
 import { ActiveExecutions } from '@/ActiveExecutions';
 import { WorkflowRunner } from '@/WorkflowRunner';
@@ -15,7 +15,7 @@ import { OwnershipService } from '@/services/ownership.service';
 export class Execute extends BaseCommand {
 	static description = '\nExecutes a given workflow';
 
-	static examples = ['$ n8n execute --id=5'];
+	static examples = ['$ flowease execute --id=5'];
 
 	static flags = {
 		help: Flags.help({ char: 'h' }),

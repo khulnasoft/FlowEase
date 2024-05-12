@@ -5,7 +5,7 @@
 		:style="containerCssVars"
 		data-test-id="canvas-add-button"
 	>
-		<n8n-tooltip
+		<flowease-tooltip
 			placement="top"
 			:visible="showTooltip"
 			:disabled="nodeCreatorStore.showScrim"
@@ -18,7 +18,7 @@
 			<template #content>
 				{{ $locale.baseText('nodeView.canvasAddButton.addATriggerNodeBeforeExecuting') }}
 			</template>
-		</n8n-tooltip>
+		</flowease-tooltip>
 		<p :class="$style.label" v-text="$locale.baseText('nodeView.canvasAddButton.addFirstStep')" />
 	</div>
 </template>

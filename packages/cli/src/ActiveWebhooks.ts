@@ -1,7 +1,7 @@
 import { Service } from 'typedi';
 import type { Response } from 'express';
-import { Workflow, NodeHelpers } from 'n8n-workflow';
-import type { INode, IWebhookData, IHttpRequestMethods } from 'n8n-workflow';
+import { Workflow, NodeHelpers } from 'flowease-workflow';
+import type { INode, IWebhookData, IHttpRequestMethods } from 'flowease-workflow';
 
 import { WorkflowRepository } from '@db/repositories/workflow.repository';
 import type {

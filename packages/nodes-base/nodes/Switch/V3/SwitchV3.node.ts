@@ -8,8 +8,8 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
 import set from 'lodash/set';
 import { capitalize } from '@utils/utilities';
 

@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { MultiQueryRetriever } from 'langchain/retrievers/multi_query';
 import type { BaseLanguageModel } from '@langchain/core/language_models/base';
@@ -33,7 +33,7 @@ export class RetrieverMultiQuery implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.retrievermultiquery/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.retrievermultiquery/',
 					},
 				],
 			},

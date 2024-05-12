@@ -1,7 +1,7 @@
 import { Service } from 'typedi';
 import config from '@/config';
-import type { N8nAIProviderType } from 'n8n-workflow';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import type { FloweaseAIProviderType } from 'flowease-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 import type { BaseMessageLike } from '@langchain/core/messages';
 import { AIProviderOpenAI } from '@/services/ai/providers/openai';
 import type { BaseChatModelCallOptions } from '@langchain/core/language_models/chat_models';
@@ -22,13 +22,13 @@ interface APIKnowledgebaseService {
 	description?: string;
 }
 
-function isN8nAIProviderType(value: string): value is N8nAIProviderType {
+function isFloweaseAIProviderType(value: string): value is FloweaseAIProviderType {
 	return ['openai'].includes(value);
 }
 
 @Service()
 export class AIService {
-	private providerType: N8nAIProviderType = 'unknown';
+	private providerType: FloweaseAIProviderType = 'unknown';
 
 	public provider: AIProviderOpenAI;
 
@@ -39,7 +39,7 @@ export class AIService {
 	constructor() {
 		const providerName = config.getEnv('ai.provider');
 
-		if (isN8nAIProviderType(providerName)) {
+		if (isFloweaseAIProviderType(providerName)) {
 			this.providerType = providerName;
 		}
 

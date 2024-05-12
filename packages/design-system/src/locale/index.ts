@@ -1,6 +1,6 @@
 import defaultLang from '../locale/lang/en';
 import createFormatTemplate from './format';
-import type { N8nLocale, N8nLocaleTranslateFn } from '@/types';
+import type { FloweaseLocale, FloweaseLocaleTranslateFn } from '@/types';
 
 // import { ElementLocale } from 'element-plus';
 // import ElementLang from 'element-plus/lib/locale/lang/en';
@@ -10,7 +10,7 @@ import type { N8nLocale, N8nLocaleTranslateFn } from '@/types';
 const format = createFormatTemplate();
 let lang = defaultLang;
 
-let i18nHandler: N8nLocaleTranslateFn;
+let i18nHandler: FloweaseLocaleTranslateFn;
 
 export const t = function (
 	path: Parameters<typeof i18nHandler>[0],
@@ -34,7 +34,7 @@ export const t = function (
 
 export async function use(l: string) {
 	try {
-		const ndsLang = (await import(`./lang/${l}.ts`)) as { default: N8nLocale };
+		const ndsLang = (await import(`./lang/${l}.ts`)) as { default: FloweaseLocale };
 
 		lang = ndsLang.default;
 
@@ -44,7 +44,7 @@ export async function use(l: string) {
 	} catch (e) {}
 }
 
-export const i18n = function (fn: N8nLocaleTranslateFn) {
+export const i18n = function (fn: FloweaseLocaleTranslateFn) {
 	i18nHandler = fn || i18nHandler;
 };
 

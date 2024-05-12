@@ -161,7 +161,7 @@ watch(
 					/>
 				</div>
 			</div>
-			<n8n-loading v-else :loading="true" :rows="1" variant="p" :class="$style.itemSkeleton" />
+			<flowease-loading v-else :loading="true" :rows="1" variant="p" :class="$style.itemSkeleton" />
 		</div>
 	</div>
 	<div v-else :class="$style.empty">

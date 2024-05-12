@@ -15,8 +15,8 @@ import type {
 	INodeCredentials,
 	INodeParameters,
 	INodeTypeNameVersion,
-} from 'n8n-workflow';
-import { Workflow, RoutingNode, ApplicationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { Workflow, RoutingNode, ApplicationError } from 'flowease-workflow';
 import { NodeExecuteFunctions } from 'flowease-core';
 import { NodeTypes } from '@/NodeTypes';
 

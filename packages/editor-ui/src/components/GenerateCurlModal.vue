@@ -8,7 +8,7 @@
 	>
 		<template #content>
 			<div :class="$style.container">
-				<N8nFormInputs
+				<FloweaseFormInputs
 					:inputs="formInputs"
 					:event-bus="formBus"
 					column-view
@@ -19,12 +19,12 @@
 		</template>
 		<template #footer>
 			<div :class="$style.modalFooter">
-				<N8nNotice
+				<FloweaseNotice
 					:class="$style.notice"
 					:content="i18n.baseText('generateCurlModal.notice.content')"
 				/>
 				<div>
-					<N8nButton
+					<FloweaseButton
 						float="right"
 						:loading="loading"
 						:label="i18n.baseText('generateCurlModal.button.label')"

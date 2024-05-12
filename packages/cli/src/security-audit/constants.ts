@@ -109,11 +109,13 @@ export const INSTANCE_REPORT = {
  * URLs
  */
 
-export const ENV_VARS_DOCS_URL = 'https://docs.flowease.khulnasoft.com/reference/environment-variables.html';
+export const ENV_VARS_DOCS_URL =
+	'https://docs.flowease.khulnasoft.com/reference/environment-variables.html';
 
 export const DB_QUERY_PARAMS_DOCS_URL =
 	'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.postgres#use-query-parameters';
 
-export const COMMUNITY_NODES_RISKS_URL = 'https://docs.flowease.khulnasoft.com/integrations/community-nodes/risks';
+export const COMMUNITY_NODES_RISKS_URL =
+	'https://docs.flowease.khulnasoft.com/integrations/community-nodes/risks';
 
 export const NPM_PACKAGE_URL = 'https://www.npmjs.com/package';

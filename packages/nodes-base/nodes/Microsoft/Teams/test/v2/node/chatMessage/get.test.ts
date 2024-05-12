@@ -1,4 +1,4 @@
-import type { INodeTypes } from 'n8n-workflow';
+import type { INodeTypes } from 'flowease-workflow';
 import nock from 'nock';
 import * as transport from '../../../../v2/transport';
 import { getResultNodeData, setup, workflowToTests } from '@test/nodes/Helpers';
@@ -43,7 +43,7 @@ microsoftApiRequestSpy.mockImplementation(async (method: string) => {
 			body: {
 				contentType: 'html',
 				content:
-					'Hello!<br>\n<br>\n<em> Powered by <a href="http://localhost:5678/workflow/i3NYGF0LXV4qDFV9?utm_source=n8n-internal&amp;utm_medium=powered_by&amp;utm_campaign=flowease-nodes-base.microsoftTeams_b888bd11cd1ddbb95450babf3e199556799d999b896f650de768b8370ee50363">this n8n workflow</a> </em>',
+					'Hello!<br>\n<br>\n<em> Powered by <a href="http://localhost:5678/workflow/i3NYGF0LXV4qDFV9?utm_source=flowease-internal&amp;utm_medium=powered_by&amp;utm_campaign=flowease-nodes-base.microsoftTeams_b888bd11cd1ddbb95450babf3e199556799d999b896f650de768b8370ee50363">this flowease workflow</a> </em>',
 			},
 			attachments: [],
 			mentions: [],

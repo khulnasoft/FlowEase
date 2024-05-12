@@ -1,6 +1,6 @@
 import dateformat from 'dateformat';
-import type { IDataObject } from 'n8n-workflow';
-import { jsonParse } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
+import { jsonParse } from 'flowease-workflow';
 import { isObject } from '@/utils/objectUtils';
 
 /*

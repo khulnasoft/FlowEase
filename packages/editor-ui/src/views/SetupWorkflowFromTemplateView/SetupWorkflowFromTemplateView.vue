@@ -2,8 +2,8 @@
 import { computed, onBeforeMount, onMounted, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useSetupTemplateStore } from './setupTemplate.store';
-import N8nHeading from 'flowease-design-system/components/N8nHeading';
-import N8nLink from 'flowease-design-system/components/N8nLink';
+import FloweaseHeading from 'flowease-design-system/components/FloweaseHeading';
+import FloweaseLink from 'flowease-design-system/components/FloweaseLink';
 import AppsRequiringCredsNotice from './AppsRequiringCredsNotice.vue';
 import SetupTemplateFormStep from './SetupTemplateFormStep.vue';
 import TemplatesView from '../TemplatesView.vue';
@@ -99,10 +99,10 @@ onMounted(async () => {
 <template>
 	<TemplatesView :go-back-enabled="true">
 		<template #header>
-			<N8nHeading v-if="isReady" tag="h1" size="2xlarge"
+			<FloweaseHeading v-if="isReady" tag="h1" size="2xlarge"
 				>{{ i18n.baseText('templateSetup.title', { interpolate: { name: title } }) }}
-			</N8nHeading>
-			<n8n-loading v-else variant="h1" />
+			</FloweaseHeading>
+			<flowease-loading v-else variant="h1" />
 		</template>
 
 		<template #content>
@@ -112,7 +112,7 @@ onMounted(async () => {
 						v-if="isReady"
 						:app-credentials="setupTemplateStore.appCredentials"
 					/>
-					<n8n-loading v-else variant="p" />
+					<flowease-loading v-else variant="p" />
 				</div>
 
 				<div>
@@ -138,22 +138,22 @@ onMounted(async () => {
 						/>
 					</ol>
 					<div v-else :class="$style.appCredentialsContainer">
-						<n8n-loading :class="$style.appCredential" variant="p" :rows="3" />
-						<n8n-loading :class="$style.appCredential" variant="p" :rows="3" />
+						<flowease-loading :class="$style.appCredential" variant="p" :rows="3" />
+						<flowease-loading :class="$style.appCredential" variant="p" :rows="3" />
 					</div>
 				</div>
 
 				<div :class="$style.actions">
-					<N8nLink :href="skipSetupUrl" :new-window="false" @click="onSkipSetup($event)">{{
+					<FloweaseLink :href="skipSetupUrl" :new-window="false" @click="onSkipSetup($event)">{{
 						i18n.baseText('templateSetup.skip')
-					}}</N8nLink>
+					}}</FloweaseLink>
 
-					<n8n-tooltip
+					<flowease-tooltip
 						v-if="isReady"
 						:content="i18n.baseText('templateSetup.continue.button.fillRemaining')"
 						:disabled="setupTemplateStore.numFilledCredentials > 0"
 					>
-						<n8n-button
+						<flowease-button
 							size="large"
 							:label="i18n.baseText('templateSetup.continue.button')"
 							:disabled="
@@ -162,9 +162,9 @@ onMounted(async () => {
 							data-test-id="continue-button"
 							@click="setupTemplateStore.createWorkflow({ router })"
 						/>
-					</n8n-tooltip>
+					</flowease-tooltip>
 					<div v-else>
-						<n8n-loading variant="button" />
+						<flowease-loading variant="button" />
 					</div>
 				</div>
 			</div>

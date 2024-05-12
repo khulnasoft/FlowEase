@@ -24,7 +24,7 @@ import type {
 	INodeTypes,
 	ICredentialTestFunctions,
 	IDataObject,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	VersionedNodeType,
 	NodeHelpers,
@@ -32,7 +32,7 @@ import {
 	Workflow,
 	ErrorReporterProxy as ErrorReporter,
 	ApplicationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import * as WorkflowExecuteAdditionalData from '@/WorkflowExecuteAdditionalData';
 import type { User } from '@db/entities/User';

@@ -6,20 +6,20 @@
 	>
 		<template #content>
 			<div>
-				<n8n-text>{{ triggerContent }}</n8n-text>
+				<flowease-text>{{ triggerContent }}</flowease-text>
 			</div>
 			<div :class="$style.spaced">
-				<n8n-text>
-					<n8n-text :bold="true">
+				<flowease-text>
+					<flowease-text :bold="true">
 						{{ $locale.baseText('activationModal.theseExecutionsWillNotShowUp') }}
-					</n8n-text>
+					</flowease-text>
 					{{ $locale.baseText('activationModal.butYouCanSeeThem') }}
 					<a @click="showExecutionsList">
 						{{ $locale.baseText('activationModal.executionList') }}
 					</a>
 					{{ $locale.baseText('activationModal.ifYouChooseTo') }}
 					<a @click="showSettings">{{ $locale.baseText('activationModal.saveExecutions') }}</a>
-				</n8n-text>
+				</flowease-text>
 			</div>
 		</template>
 
@@ -28,7 +28,7 @@
 				<el-checkbox :model-value="checked" @update:model-value="handleCheckboxChange">{{
 					$locale.baseText('generic.dontShowAgain')
 				}}</el-checkbox>
-				<n8n-button :label="$locale.baseText('activationModal.gotIt')" @click="close" />
+				<flowease-button :label="$locale.baseText('activationModal.gotIt')" @click="close" />
 			</div>
 		</template>
 	</Modal>

@@ -7,10 +7,10 @@ import type {
 	IRequestOptions,
 	IWebhookFunctions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
-// Interface in n8n
+// Interface in flowease
 export interface IMarkupKeyboard {
 	rows?: IMarkupKeyboardRow[];
 }
@@ -78,7 +78,7 @@ export function addAdditionalFields(
 
 	if (operation === 'sendMessage') {
 		const attributionText = 'This message was sent automatically with ';
-		const link = `https://flowease.khulnasoft.com/?utm_source=n8n-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
+		const link = `https://flowease.khulnasoft.com/?utm_source=flowease-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
 			'flowease-nodes-base.telegram',
 		)}${instanceId ? '_' + instanceId : ''}`;
 
@@ -99,9 +99,9 @@ export function addAdditionalFields(
 
 		if (additionalFields.appendAttribution) {
 			if (additionalFields.parse_mode === 'Markdown') {
-				body.text = `${body.text}\n\n_${attributionText}_[n8n](${link})`;
+				body.text = `${body.text}\n\n_${attributionText}_[flowease](${link})`;
 			} else if (additionalFields.parse_mode === 'HTML') {
-				body.text = `${body.text}\n\n<em>${attributionText}</em><a href="${link}" target="_blank">n8n</a>`;
+				body.text = `${body.text}\n\n<em>${attributionText}</em><a href="${link}" target="_blank">flowease</a>`;
 			}
 		}
 

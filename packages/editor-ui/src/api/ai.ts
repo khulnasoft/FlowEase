@@ -1,6 +1,6 @@
 import type { IRestApiContext, Schema } from '@/Interface';
 import { makeRestApiRequest } from '@/utils/apiUtils';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 
 export interface GenerateCurlPayload {
 	service: string;
@@ -18,7 +18,7 @@ export async function generateCodeForPrompt(
 		question,
 		context,
 		model,
-		n8nVersion,
+		floweaseVersion,
 	}: {
 		question: string;
 		context: {
@@ -28,14 +28,14 @@ export async function generateCodeForPrompt(
 			ndvPushRef: string;
 		};
 		model: string;
-		n8nVersion: string;
+		floweaseVersion: string;
 	},
 ): Promise<{ code: string }> {
 	return await makeRestApiRequest(ctx, 'POST', '/ask-ai', {
 		question,
 		context,
 		model,
-		n8nVersion,
+		floweaseVersion,
 	} as IDataObject);
 }
 

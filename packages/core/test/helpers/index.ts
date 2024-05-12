@@ -22,9 +22,14 @@ import type {
 	NodeLoadingDetails,
 	WorkflowTestData,
 	INodeTypeData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
-import { ApplicationError, ICredentialsHelper, NodeHelpers, WorkflowHooks } from 'n8n-workflow';
+import {
+	ApplicationError,
+	ICredentialsHelper,
+	NodeHelpers,
+	WorkflowHooks,
+} from 'flowease-workflow';
 import { Credentials } from '@/Credentials';
 
 import { predefinedNodesTypes } from './constants';

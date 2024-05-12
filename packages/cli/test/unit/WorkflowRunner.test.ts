@@ -1,5 +1,5 @@
 import Container from 'typedi';
-import { WorkflowHooks, type ExecutionError, type IWorkflowExecuteHooks } from 'n8n-workflow';
+import { WorkflowHooks, type ExecutionError, type IWorkflowExecuteHooks } from 'flowease-workflow';
 import type { User } from '@db/entities/User';
 import { WorkflowRunner } from '@/WorkflowRunner';
 import config from '@/config';

@@ -5,8 +5,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import isEmpty from 'lodash/isEmpty';
 import partialRight from 'lodash/partialRight';
@@ -336,7 +336,7 @@ export class Bitwarden implements INodeType {
 						);
 					}
 
-					// set defaults for `name` and `accessAll`, required by Bitwarden but optional in n8n
+					// set defaults for `name` and `accessAll`, required by Bitwarden but optional in flowease
 
 					let { name, accessAll } = updateFields;
 

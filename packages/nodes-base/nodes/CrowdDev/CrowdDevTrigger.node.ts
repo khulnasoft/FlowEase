@@ -5,7 +5,7 @@ import type {
 	INodeTypeDescription,
 	IWebhookResponseData,
 	IHttpRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 interface ICrowdDevCreds {
 	url: string;

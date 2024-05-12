@@ -1,4 +1,4 @@
-import { NodeConnectionType, type INodeProperties } from 'n8n-workflow';
+import { NodeConnectionType, type INodeProperties } from 'flowease-workflow';
 
 export const metadataFilterField: INodeProperties = {
 	displayName: 'Metadata Filter',

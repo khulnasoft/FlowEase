@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 
 export const webhookModalDescription = [
 	{
@@ -460,8 +460,8 @@ export const syslogModalDescription = [
 		displayName: 'App Name',
 		name: 'app_name',
 		type: 'string',
-		default: 'n8n',
-		placeholder: 'n8n',
+		default: 'flowease',
+		placeholder: 'flowease',
 		noDataExpression: true,
 		description: 'Syslog app name parameter',
 	},

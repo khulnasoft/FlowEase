@@ -43,9 +43,9 @@ body:
     validations:
       required: true
   - type: input
-    id: n8n-version
+    id: flowease-version
     attributes:
-      label: n8n Version
+      label: flowease Version
       placeholder: ex. 1.25.0
     validations:
       required: true

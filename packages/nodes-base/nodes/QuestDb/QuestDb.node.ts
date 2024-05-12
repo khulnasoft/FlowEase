@@ -3,8 +3,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import pgPromise from 'pg-promise';
 
@@ -75,7 +75,7 @@ export class QuestDb implements INodeType {
 				placeholder: 'SELECT id, name FROM product WHERE quantity > $1 AND price <= $2',
 				required: true,
 				description:
-					'The SQL query to execute. You can use n8n expressions or $1 and $2 in conjunction with query parameters.',
+					'The SQL query to execute. You can use flowease expressions or $1 and $2 in conjunction with query parameters.',
 			},
 
 			// ----------------------------------
@@ -245,7 +245,7 @@ export class QuestDb implements INodeType {
 			const returnFields = this.getNodeParameter('returnFields', 0) as string;
 			const table = this.getNodeParameter('table', 0) as string;
 
-			// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+			// eslint-disable-next-line flowease-local-rules/no-interpolation-in-regular-string
 			const insertData = await db.any('SELECT ${columns:name} from ${table:name}', {
 				columns: returnFields
 					.split(',')

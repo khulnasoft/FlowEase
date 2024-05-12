@@ -22,7 +22,7 @@ import type {
 	IExecuteData,
 	IExecuteResponsePromiseData,
 	IHttpRequestMethods,
-	IN8nHttpFullResponse,
+	IFloweaseHttpFullResponse,
 	INode,
 	IPinData,
 	IRunExecutionData,
@@ -33,14 +33,14 @@ import type {
 	WebhookResponseMode,
 	Workflow,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	ApplicationError,
 	BINARY_ENCODING,
 	createDeferredPromise,
 	ErrorReporterProxy as ErrorReporter,
 	NodeHelpers,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type {
 	IExecutionDb,
@@ -199,7 +199,7 @@ export function encodeWebhookResponse(
 	if (typeof response === 'object' && Buffer.isBuffer(response.body)) {
 		response.body = {
 			// eslint-disable-next-line @typescript-eslint/naming-convention
-			'__@N8nEncodedBuffer@__': response.body.toString(BINARY_ENCODING),
+			'__@FloweaseEncodedBuffer@__': response.body.toString(BINARY_ENCODING),
 		};
 	}
 
@@ -549,12 +549,12 @@ export async function executeWebhook(
 			userId: user.id,
 		};
 
-		let responsePromise: IDeferredPromise<IN8nHttpFullResponse> | undefined;
+		let responsePromise: IDeferredPromise<IFloweaseHttpFullResponse> | undefined;
 		if (responseMode === 'responseNode') {
-			responsePromise = await createDeferredPromise<IN8nHttpFullResponse>();
+			responsePromise = await createDeferredPromise<IFloweaseHttpFullResponse>();
 			responsePromise
 				.promise()
-				.then(async (response: IN8nHttpFullResponse) => {
+				.then(async (response: IFloweaseHttpFullResponse) => {
 					if (didSendResponse) {
 						return;
 					}

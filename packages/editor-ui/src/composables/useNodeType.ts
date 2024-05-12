@@ -1,9 +1,9 @@
 import type { MaybeRef } from 'vue';
 import { computed, unref } from 'vue';
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
 import type { INodeUi, SimplifiedNodeType } from '@/Interface';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
-import { NodeConnectionType, NodeHelpers } from 'n8n-workflow';
+import { NodeConnectionType, NodeHelpers } from 'flowease-workflow';
 
 export function useNodeType(
 	options: {

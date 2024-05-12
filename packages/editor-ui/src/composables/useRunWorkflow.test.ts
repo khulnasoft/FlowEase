@@ -1,4 +1,4 @@
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useRunWorkflow } from '@/composables/useRunWorkflow';
 import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
@@ -7,9 +7,9 @@ import { useWorkflowsStore } from '@/stores/workflows.store';
 import { useUIStore } from '@/stores/ui.store';
 import { useWorkflowHelpers } from '@/composables/useWorkflowHelpers';
 import { useRouter } from 'vue-router';
-import { ExpressionError, type IPinData, type IRunData, type Workflow } from 'n8n-workflow';
+import { ExpressionError, type IPinData, type IRunData, type Workflow } from 'flowease-workflow';
 
-vi.mock('@/stores/n8nRoot.store', () => ({
+vi.mock('@/stores/floweaseRoot.store', () => ({
 	useRootStore: vi.fn().mockReturnValue({ pushConnectionActive: true }),
 }));
 

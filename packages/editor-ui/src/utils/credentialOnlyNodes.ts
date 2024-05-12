@@ -1,4 +1,4 @@
-import { deepCopy, type ICredentialType, type INodeTypeDescription } from 'n8n-workflow';
+import { deepCopy, type ICredentialType, type INodeTypeDescription } from 'flowease-workflow';
 import { CREDENTIAL_ONLY_NODE_PREFIX } from '../constants';
 import { i18n } from '@/plugins/i18n';
 

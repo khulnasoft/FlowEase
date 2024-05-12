@@ -92,7 +92,7 @@ describe('AuthService', () => {
 
 			await authService.authMiddleware(req, res, next);
 			expect(next).toHaveBeenCalled();
-			expect(res.cookie).toHaveBeenCalledWith('n8n-auth', expect.any(String), {
+			expect(res.cookie).toHaveBeenCalledWith('flowease-auth', expect.any(String), {
 				httpOnly: true,
 				maxAge: 604800000,
 				sameSite: 'lax',
@@ -196,7 +196,7 @@ describe('AuthService', () => {
 
 			jest.advanceTimersByTime(6 * Time.days.toMilliseconds); // 6 Days
 			expect(await authService.resolveJwt(validToken, req, res)).toEqual(user);
-			expect(res.cookie).toHaveBeenCalledWith('n8n-auth', expect.any(String), {
+			expect(res.cookie).toHaveBeenCalledWith('flowease-auth', expect.any(String), {
 				httpOnly: true,
 				maxAge: 604800000,
 				sameSite: 'lax',
@@ -240,10 +240,10 @@ describe('AuthService', () => {
 
 	describe('generatePasswordResetUrl', () => {
 		it('should generate a valid url', () => {
-			urlService.getInstanceBaseUrl.mockReturnValue('https://n8n.instance');
+			urlService.getInstanceBaseUrl.mockReturnValue('https://flowease.instance');
 			const url = authService.generatePasswordResetUrl(user);
 			expect(url).toEqual(
-				'https://n8n.instance/change-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjMiLCJoYXNoIjoibUpBWXg0V2I3ayIsImlhdCI6MTcwNjc1MDYyNSwiZXhwIjoxNzA2NzUxODI1fQ.rg90I7MKjc_KC77mov59XYAeRc-CoW9ka4mt1dCfrnk&mfaEnabled=false',
+				'https://flowease.instance/change-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjMiLCJoYXNoIjoibUpBWXg0V2I3ayIsImlhdCI6MTcwNjc1MDYyNSwiZXhwIjoxNzA2NzUxODI1fQ.rg90I7MKjc_KC77mov59XYAeRc-CoW9ka4mt1dCfrnk&mfaEnabled=false',
 			);
 		});
 	});

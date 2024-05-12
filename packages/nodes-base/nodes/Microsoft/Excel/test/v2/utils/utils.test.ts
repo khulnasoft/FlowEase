@@ -1,6 +1,6 @@
 import { get } from 'lodash';
 import { mock } from 'jest-mock-extended';
-import type { IDataObject, IExecuteFunctions, IGetNodeParameterOptions, INode } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, IGetNodeParameterOptions, INode } from 'flowease-workflow';
 import { constructExecutionMetaData } from 'flowease-core';
 import {
 	checkRange,

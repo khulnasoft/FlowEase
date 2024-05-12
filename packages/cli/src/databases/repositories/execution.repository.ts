@@ -10,22 +10,22 @@ import {
 	Not,
 	Raw,
 	Repository,
-} from '@n8n/typeorm';
-import { DateUtils } from '@n8n/typeorm/util/DateUtils';
+} from '@flowease/typeorm';
+import { DateUtils } from '@flowease/typeorm/util/DateUtils';
 import type {
 	FindManyOptions,
 	FindOneOptions,
 	FindOperator,
 	FindOptionsWhere,
 	SelectQueryBuilder,
-} from '@n8n/typeorm';
+} from '@flowease/typeorm';
 import { parse, stringify } from 'flatted';
 import {
 	ApplicationError,
 	type ExecutionStatus,
 	type ExecutionSummary,
 	type IRunExecutionData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { BinaryDataService } from 'flowease-core';
 import type {
 	ExecutionPayload,

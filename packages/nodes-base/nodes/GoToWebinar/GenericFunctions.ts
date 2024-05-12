@@ -7,8 +7,8 @@ import type {
 	INodePropertyOptions,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 
@@ -38,7 +38,7 @@ export async function goToWebinarApiRequest(
 
 	const options: IRequestOptions = {
 		headers: {
-			'user-agent': 'n8n',
+			'user-agent': 'flowease',
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
 		},

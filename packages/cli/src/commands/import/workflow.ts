@@ -1,6 +1,6 @@
 import { Container } from 'typedi';
 import { Flags } from '@oclif/core';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 import fs from 'fs';
 import glob from 'fast-glob';
 
@@ -37,10 +37,10 @@ export class ImportWorkflowsCommand extends BaseCommand {
 	static description = 'Import workflows';
 
 	static examples = [
-		'$ n8n import:workflow --input=file.json',
-		'$ n8n import:workflow --separate --input=backups/latest/',
-		'$ n8n import:workflow --input=file.json --userId=1d64c3d2-85fe-4a83-a649-e446b07b3aae',
-		'$ n8n import:workflow --separate --input=backups/latest/ --userId=1d64c3d2-85fe-4a83-a649-e446b07b3aae',
+		'$ flowease import:workflow --input=file.json',
+		'$ flowease import:workflow --separate --input=backups/latest/',
+		'$ flowease import:workflow --input=file.json --userId=1d64c3d2-85fe-4a83-a649-e446b07b3aae',
+		'$ flowease import:workflow --separate --input=backups/latest/ --userId=1d64c3d2-85fe-4a83-a649-e446b07b3aae',
 	];
 
 	static flags = {

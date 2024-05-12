@@ -1,4 +1,4 @@
-import type { Workflow } from 'n8n-workflow';
+import type { Workflow } from 'flowease-workflow';
 import { Service } from 'typedi';
 import config from '@/config';
 import { Push } from '../push';
@@ -33,7 +33,7 @@ export class CollaborationService {
 	) {
 		if (!push.isBidirectional) {
 			logger.warn(
-				'Collaboration features are disabled because push is configured unidirectional. Use N8N_PUSH_BACKEND=websocket environment variable to enable them.',
+				'Collaboration features are disabled because push is configured unidirectional. Use FLOWEASE_PUSH_BACKEND=websocket environment variable to enable them.',
 			);
 			return;
 		}

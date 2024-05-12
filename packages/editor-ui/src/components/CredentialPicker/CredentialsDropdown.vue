@@ -38,12 +38,12 @@ const onCredentialSelected = (credentialId: string) => {
 </script>
 
 <template>
-	<n8n-select
+	<flowease-select
 		size="small"
 		:model-value="props.selectedCredentialId"
 		@update:model-value="onCredentialSelected"
 	>
-		<n8n-option
+		<flowease-option
 			v-for="item in props.credentialOptions"
 			:key="item.id"
 			:data-test-id="`node-credentials-select-item-${item.id}`"
@@ -51,18 +51,18 @@ const onCredentialSelected = (credentialId: string) => {
 			:value="item.id"
 		>
 			<div :class="[$style.credentialOption, 'mt-2xs mb-2xs']">
-				<n8n-text bold>{{ item.name }}</n8n-text>
-				<n8n-text size="small">{{ item.typeDisplayName }}</n8n-text>
+				<flowease-text bold>{{ item.name }}</flowease-text>
+				<flowease-text size="small">{{ item.typeDisplayName }}</flowease-text>
 			</div>
-		</n8n-option>
-		<n8n-option
+		</flowease-option>
+		<flowease-option
 			:key="NEW_CREDENTIALS_TEXT"
 			data-test-id="node-credentials-select-item-new"
 			:value="NEW_CREDENTIALS_TEXT"
 			:label="NEW_CREDENTIALS_TEXT"
 		>
-		</n8n-option>
-	</n8n-select>
+		</flowease-option>
+	</flowease-select>
 </template>
 
 <style lang="scss" module>

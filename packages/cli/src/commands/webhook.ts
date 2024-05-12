@@ -1,6 +1,6 @@
 import { Container } from 'typedi';
 import { Flags, type Config } from '@oclif/core';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 import config from '@/config';
 import { ActiveExecutions } from '@/ActiveExecutions';
@@ -12,9 +12,9 @@ import { OrchestrationWebhookService } from '@/services/orchestration/webhook/or
 import { OrchestrationHandlerWebhookService } from '@/services/orchestration/webhook/orchestration.handler.webhook.service';
 
 export class Webhook extends BaseCommand {
-	static description = 'Starts n8n webhook process. Intercepts only production URLs.';
+	static description = 'Starts flowease webhook process. Intercepts only production URLs.';
 
-	static examples = ['$ n8n webhook'];
+	static examples = ['$ flowease webhook'];
 
 	static flags = {
 		help: Flags.help({ char: 'h' }),
@@ -32,19 +32,19 @@ export class Webhook extends BaseCommand {
 	}
 
 	/**
-	 * Stops n8n in a graceful way.
+	 * Stops flowease in a graceful way.
 	 * Make for example sure that all the webhooks from third party services
 	 * get removed.
 	 */
 	async stopProcess() {
-		this.logger.info('\nStopping n8n...');
+		this.logger.info('\nStopping flowease...');
 
 		try {
-			await this.externalHooks?.run('n8n.stop', []);
+			await this.externalHooks?.run('flowease.stop', []);
 
 			await Container.get(ActiveExecutions).shutdown();
 		} catch (error) {
-			await this.exitWithCrash('There was an error shutting down n8n.', error);
+			await this.exitWithCrash('There was an error shutting down flowease.', error);
 		}
 
 		await this.exitSuccessFully();
@@ -70,7 +70,7 @@ export class Webhook extends BaseCommand {
 		await this.initCrashJournal();
 		this.logger.debug('Crash journal initialized');
 
-		this.logger.info('Initializing n8n webhook process');
+		this.logger.info('Initializing flowease webhook process');
 		this.logger.debug(`Queue mode id: ${this.queueModeId}`);
 
 		await super.init();

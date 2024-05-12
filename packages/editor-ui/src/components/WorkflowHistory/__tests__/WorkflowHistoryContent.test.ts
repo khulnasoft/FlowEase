@@ -81,7 +81,7 @@ describe('WorkflowHistoryContent', () => {
 			},
 		});
 
-		window.postMessage('{"command":"n8nReady"}', '*');
+		window.postMessage('{"command":"floweaseReady"}', '*');
 
 		await waitFor(() => {
 			expect(postMessageSpy).toHaveBeenCalledWith(expect.not.stringContaining('pinData'), '*');

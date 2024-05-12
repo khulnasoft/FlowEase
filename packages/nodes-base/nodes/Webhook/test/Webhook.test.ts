@@ -1,5 +1,5 @@
 import type { Request } from 'express';
-import type { IWebhookFunctions } from 'n8n-workflow';
+import type { IWebhookFunctions } from 'flowease-workflow';
 import { mock } from 'jest-mock-extended';
 import { Webhook } from '../Webhook.node';
 import { testWorkflows, getWorkflowFilenames } from '@test/nodes/Helpers';

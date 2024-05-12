@@ -1,4 +1,4 @@
-import type { IDataObject, INodeExecutionData } from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData } from 'flowease-workflow';
 import type pgPromise from 'pg-promise';
 import type pg from 'pg-promise/typescript/pg-subset';
 import type { Client } from 'ssh2';

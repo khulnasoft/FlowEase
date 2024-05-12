@@ -5,7 +5,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { LogOptions, SimpleGit, SimpleGitOptions } from 'simple-git';
 import simpleGit from 'simple-git';
@@ -236,7 +236,7 @@ export class Git implements INodeType {
 				const git: SimpleGit = simpleGit(gitOptions)
 					// Tell git not to ask for any information via the terminal like for
 					// example the username. As nobody will be able to answer it would
-					// n8n keep on waiting forever.
+					// flowease keep on waiting forever.
 					.env('GIT_TERMINAL_PROMPT', '0');
 
 				if (operation === 'add') {

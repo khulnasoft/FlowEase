@@ -133,7 +133,7 @@
 						:label="runButtonText"
 						:shortcut="{ metaKey: true, keys: ['↵'] }"
 					>
-						<n8n-button
+						<flowease-button
 							:loading="workflowRunning"
 							:label="runButtonText"
 							size="large"
@@ -146,7 +146,7 @@
 					</KeyboardShortcutTooltip>
 				</span>
 
-				<n8n-button
+				<flowease-button
 					v-if="containsChatNodes"
 					label="Chat"
 					size="large"
@@ -156,7 +156,7 @@
 					@click.stop="onOpenChat"
 				/>
 
-				<n8n-icon-button
+				<flowease-icon-button
 					v-if="workflowRunning === true && !executionWaitingForWebhook"
 					icon="stop"
 					size="large"
@@ -172,7 +172,7 @@
 					@click.stop="stopExecution"
 				/>
 
-				<n8n-icon-button
+				<flowease-icon-button
 					v-if="workflowRunning === true && executionWaitingForWebhook === true"
 					class="stop-execution"
 					icon="stop"
@@ -183,7 +183,7 @@
 					@click.stop="stopWaitingForWebhook"
 				/>
 
-				<n8n-icon-button
+				<flowease-icon-button
 					v-if="
 						!isReadOnlyRoute &&
 						!readOnlyEnv &&
@@ -290,14 +290,14 @@ import type {
 	Workflow,
 	ConnectionTypes,
 	INodeOutputConfiguration,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	deepCopy,
 	jsonParse,
 	NodeConnectionType,
 	NodeHelpers,
 	TelemetryHelpers,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type {
 	NewConnectionInfo,
 	ICredentialsResponse,
@@ -332,7 +332,7 @@ import { useNDVStore } from '@/stores/ndv.store';
 import { useNodeCreatorStore } from '@/stores/nodeCreator.store';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
 import { usePushConnectionStore } from '@/stores/pushConnection.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useSegment } from '@/stores/segment.store';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useTagsStore } from '@/stores/tags.store';
@@ -364,16 +364,16 @@ import {
 	EVENT_CONNECTION_MOUSEOVER,
 	ready,
 } from '@jsplumb/browser-ui';
-import type { N8nPlusEndpoint } from '@/plugins/jsplumb/N8nPlusEndpointType';
+import type { FloweasePlusEndpoint } from '@/plugins/jsplumb/FloweasePlusEndpointType';
 import {
-	N8nPlusEndpointType,
+	FloweasePlusEndpointType,
 	EVENT_PLUS_ENDPOINT_CLICK,
-} from '@/plugins/jsplumb/N8nPlusEndpointType';
-import type { N8nAddInputEndpoint } from '@/plugins/jsplumb/N8nAddInputEndpointType';
+} from '@/plugins/jsplumb/FloweasePlusEndpointType';
+import type { FloweaseAddInputEndpoint } from '@/plugins/jsplumb/FloweaseAddInputEndpointType';
 import {
 	EVENT_ADD_INPUT_ENDPOINT_CLICK,
-	N8nAddInputEndpointType,
-} from '@/plugins/jsplumb/N8nAddInputEndpointType';
+	FloweaseAddInputEndpointType,
+} from '@/plugins/jsplumb/FloweaseAddInputEndpointType';
 import { sourceControlEventBus } from '@/event-bus/source-control';
 import { getConnectorPaintStyleData, OVERLAY_ENDPOINT_ARROW_ID } from '@/utils/nodeViewUtils';
 import { useViewStacks } from '@/components/Node/NodeCreator/composables/useViewStacks';
@@ -874,7 +874,7 @@ export default defineComponent({
 				await this.initView();
 				if (window.parent) {
 					window.parent.postMessage(
-						JSON.stringify({ command: 'n8nReady', version: this.rootStore.versionCli }),
+						JSON.stringify({ command: 'floweaseReady', version: this.rootStore.versionCli }),
 						'*',
 					);
 				}
@@ -1138,11 +1138,11 @@ export default defineComponent({
 			);
 
 			allEndpoints
-				.filter((endpoint) => endpoint?.endpoint.type === N8nAddInputEndpointType)
+				.filter((endpoint) => endpoint?.endpoint.type === FloweaseAddInputEndpointType)
 				.forEach((endpoint) => {
-					const n8nAddInputEndpoint = endpoint?.endpoint as N8nAddInputEndpoint;
-					if (n8nAddInputEndpoint && (endpoint?.connections ?? []).length > 0) {
-						n8nAddInputEndpoint.resetError();
+					const floweaseAddInputEndpoint = endpoint?.endpoint as FloweaseAddInputEndpoint;
+					if (floweaseAddInputEndpoint && (endpoint?.connections ?? []).length > 0) {
+						floweaseAddInputEndpoint.resetError();
 					}
 				});
 		},
@@ -1159,9 +1159,9 @@ export default defineComponent({
 						(e) => e._defaultType.scope === connectionType,
 					);
 					inputEndpointsWithIssues.forEach((endpoint) => {
-						const n8nAddInputEndpoint = endpoint?.endpoint as N8nAddInputEndpoint;
-						if (n8nAddInputEndpoint) {
-							n8nAddInputEndpoint.setError();
+						const floweaseAddInputEndpoint = endpoint?.endpoint as FloweaseAddInputEndpoint;
+						if (floweaseAddInputEndpoint) {
+							floweaseAddInputEndpoint.setError();
 						}
 					});
 				});
@@ -3513,7 +3513,7 @@ export default defineComponent({
 		onConnectionDragAbortDetached(connection: Connection) {
 			Object.values(this.instance?.endpointsByElement)
 				.flatMap((endpoints) => Object.values(endpoints))
-				.filter((endpoint) => endpoint.endpoint.type === 'N8nPlus')
+				.filter((endpoint) => endpoint.endpoint.type === 'FloweasePlus')
 				.forEach((endpoint) => setTimeout(() => endpoint.instance.revalidate(endpoint.element), 0));
 		},
 		onPlusEndpointClick(endpoint: Endpoint) {
@@ -3614,8 +3614,8 @@ export default defineComponent({
 					const endpoints = element.endpoints;
 					for (const endpoint of endpoints || []) {
 						const endpointInstance = endpoint?.endpoint;
-						if (endpointInstance && endpointInstance.type === N8nPlusEndpointType) {
-							(endpointInstance as N8nPlusEndpoint).unbindEvents();
+						if (endpointInstance && endpointInstance.type === FloweasePlusEndpointType) {
+							(endpointInstance as FloweasePlusEndpoint).unbindEvents();
 						}
 					}
 				}
@@ -3956,8 +3956,8 @@ export default defineComponent({
 				});
 				const endpoints = NodeViewUtils.getJSPlumbEndpoints(sourceNode, this.instance);
 				endpoints.forEach((endpoint: Endpoint) => {
-					if (endpoint.endpoint.type === 'N8nPlus') {
-						(endpoint.endpoint as N8nPlusEndpoint).clearSuccessOutput();
+					if (endpoint.endpoint.type === 'FloweasePlus') {
+						(endpoint.endpoint as FloweasePlusEndpoint).clearSuccessOutput();
 					}
 				});
 

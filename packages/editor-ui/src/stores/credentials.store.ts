@@ -30,9 +30,9 @@ import type {
 	INodeCredentialTestResult,
 	INodeTypeDescription,
 	IUser,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { defineStore } from 'pinia';
-import { useRootStore } from './n8nRoot.store';
+import { useRootStore } from './floweaseRoot.store';
 import { useNodeTypesStore } from './nodeTypes.store';
 import { useSettingsStore } from './settings.store';
 import { useUsersStore } from './users.store';

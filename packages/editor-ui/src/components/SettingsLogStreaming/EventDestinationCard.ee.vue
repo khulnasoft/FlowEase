@@ -1,26 +1,26 @@
 <template>
-	<n8n-card :class="$style.cardLink" data-test-id="destination-card" @click="onClick">
+	<flowease-card :class="$style.cardLink" data-test-id="destination-card" @click="onClick">
 		<template #header>
 			<div>
-				<n8n-heading tag="h2" bold :class="$style.cardHeading">
+				<flowease-heading tag="h2" bold :class="$style.cardHeading">
 					{{ destination.label }}
-				</n8n-heading>
+				</flowease-heading>
 				<div :class="$style.cardDescription">
-					<n8n-text color="text-light" size="small">
+					<flowease-text color="text-light" size="small">
 						<span>{{ $locale.baseText(typeLabelName) }}</span>
-					</n8n-text>
+					</flowease-text>
 				</div>
 			</div>
 		</template>
 		<template #append>
 			<div ref="cardActions" :class="$style.cardActions">
 				<div :class="$style.activeStatusText" data-test-id="destination-activator-status">
-					<n8n-text v-if="nodeParameters.enabled" :color="'success'" size="small" bold>
+					<flowease-text v-if="nodeParameters.enabled" :color="'success'" size="small" bold>
 						{{ $locale.baseText('workflowActivator.active') }}
-					</n8n-text>
-					<n8n-text v-else color="text-base" size="small" bold>
+					</flowease-text>
+					<flowease-text v-else color="text-base" size="small" bold>
 						{{ $locale.baseText('workflowActivator.inactive') }}
-					</n8n-text>
+					</flowease-text>
 				</div>
 
 				<el-switch
@@ -39,10 +39,10 @@
 				>
 				</el-switch>
 
-				<n8n-action-toggle :actions="actions" theme="dark" @action="onAction" />
+				<flowease-action-toggle :actions="actions" theme="dark" @action="onAction" />
 			</div>
 		</template>
-	</n8n-card>
+	</flowease-card>
 </template>
 
 <script lang="ts">
@@ -52,8 +52,8 @@ import { useMessage } from '@/composables/useMessage';
 import { useLogStreamingStore } from '@/stores/logStreaming.store';
 import type { PropType } from 'vue';
 import { mapStores } from 'pinia';
-import type { MessageEventBusDestinationOptions } from 'n8n-workflow';
-import { deepCopy, defaultMessageEventBusDestinationOptions } from 'n8n-workflow';
+import type { MessageEventBusDestinationOptions } from 'flowease-workflow';
+import { deepCopy, defaultMessageEventBusDestinationOptions } from 'flowease-workflow';
 import type { BaseTextKey } from '@/plugins/i18n';
 import type { EventBus } from 'flowease-design-system';
 

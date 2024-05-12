@@ -24,8 +24,8 @@ import type {
 	IWorkflowExecuteAdditionalData,
 	IExecuteData,
 	IDataObject,
-} from 'n8n-workflow';
-import { ICredentialsHelper, NodeHelpers, Workflow, ApplicationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ICredentialsHelper, NodeHelpers, Workflow, ApplicationError } from 'flowease-workflow';
 
 import type { ICredentialsDb } from '@/Interfaces';
 

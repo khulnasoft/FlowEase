@@ -364,7 +364,7 @@ describe('Undo/Redo', () => {
 		WorkflowPage.getters.canvasNodes().should('have.have.length', 1);
 		ndv.getters.backToCanvas().click();
 		// Try while modal is open
-		cy.getByTestId('menu-item').contains('About n8n').click({ force: true });
+		cy.getByTestId('menu-item').contains('About flowease').click({ force: true });
 		cy.getByTestId('about-modal').should('be.visible');
 		WorkflowPage.actions.hitUndo();
 		WorkflowPage.getters.canvasNodes().should('have.have.length', 1);

@@ -1,5 +1,5 @@
 /* eslint-disable flowease-nodes-base/node-param-description-boolean-without-whether */
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 
 export const certificateOperations: INodeProperties[] = [
 	{

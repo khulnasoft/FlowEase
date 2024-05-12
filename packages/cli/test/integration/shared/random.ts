@@ -13,7 +13,7 @@ export function randomString(min: number, max: number) {
 }
 
 export function randomApiKey() {
-	return `n8n_api_${randomBytes(20).toString('hex')}`;
+	return `flowease_api_${randomBytes(20).toString('hex')}`;
 }
 
 export const chooseRandomly = <T>(array: T[]) => array[Math.floor(Math.random() * array.length)];

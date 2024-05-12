@@ -16,34 +16,34 @@
 		],
 		"generic": [
 			{
-				"label": "Love at first sight: Ricardo’s n8n journey",
+				"label": "Love at first sight: Ricardo’s flowease journey",
 				"icon": "❤️",
-				"url": "https://flowease.khulnasoft.com/blog/love-at-first-sight-ricardos-n8n-journey/"
+				"url": "https://flowease.khulnasoft.com/blog/love-at-first-sight-ricardos-flowease-journey/"
 			},
 			{
-				"label": "Database Monitoring and Alerting with n8n",
+				"label": "Database Monitoring and Alerting with flowease",
 				"icon": "📡",
-				"url": "https://flowease.khulnasoft.com/blog/database-monitoring-and-alerting-with-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/database-monitoring-and-alerting-with-flowease/"
 			},
 			{
-				"label": "Automatically Adding Expense Receipts to Google Sheets with Telegram, Mindee, Twilio, and n8n",
+				"label": "Automatically Adding Expense Receipts to Google Sheets with Telegram, Mindee, Twilio, and flowease",
 				"icon": "🧾",
-				"url": "https://flowease.khulnasoft.com/blog/automatically-adding-expense-receipts-to-google-sheets-with-telegram-mindee-twilio-and-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/automatically-adding-expense-receipts-to-google-sheets-with-telegram-mindee-twilio-and-flowease/"
 			},
 			{
-				"label": "Tracking Time Spent in Meetings With Google Calendar, Twilio, and n8n",
+				"label": "Tracking Time Spent in Meetings With Google Calendar, Twilio, and flowease",
 				"icon": "🗓",
-				"url": "https://flowease.khulnasoft.com/blog/tracking-time-spent-in-meetings-with-google-calendar-twilio-and-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/tracking-time-spent-in-meetings-with-google-calendar-twilio-and-flowease/"
 			},
 			{
-				"label": "Creating Error Workflows in n8n",
+				"label": "Creating Error Workflows in flowease",
 				"icon": "🌪",
-				"url": "https://flowease.khulnasoft.com/blog/creating-error-workflows-in-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/creating-error-workflows-in-flowease/"
 			},
 			{
-				"label": "Sending Automated Congratulations with Google Sheets, Twilio, and n8n ",
+				"label": "Sending Automated Congratulations with Google Sheets, Twilio, and flowease ",
 				"icon": "🙌",
-				"url": "https://flowease.khulnasoft.com/blog/sending-automated-congratulations-with-google-sheets-twilio-and-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/sending-automated-congratulations-with-google-sheets-twilio-and-flowease/"
 			},
 			{
 				"label": "Learn to Build Powerful API Endpoints Using Webhooks",
@@ -51,9 +51,9 @@
 				"url": "https://flowease.khulnasoft.com/blog/learn-to-build-powerful-api-endpoints-using-webhooks/"
 			},
 			{
-				"label": "Sending SMS the Low-Code Way with Airtable, Twilio Programmable SMS, and n8n",
+				"label": "Sending SMS the Low-Code Way with Airtable, Twilio Programmable SMS, and flowease",
 				"icon": "📱",
-				"url": "https://flowease.khulnasoft.com/blog/sending-sms-the-low-code-way-with-airtable-twilio-programmable-sms-and-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/sending-sms-the-low-code-way-with-airtable-twilio-programmable-sms-and-flowease/"
 			}
 		]
 	},

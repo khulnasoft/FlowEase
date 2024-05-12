@@ -36,7 +36,7 @@
 							}"
 							@click="onPlusClick(connection.type)"
 						>
-							<n8n-tooltip
+							<flowease-tooltip
 								placement="top"
 								:teleported="true"
 								:offset="10"
@@ -55,13 +55,13 @@
 										/>
 									</template>
 								</template>
-								<n8n-icon-button
+								<flowease-icon-button
 									size="medium"
 									icon="plus"
 									type="tertiary"
 									:data-test-id="`add-subnode-${connection.type}`"
 								/>
-							</n8n-tooltip>
+							</flowease-tooltip>
 						</div>
 						<div
 							v-if="connectedNodes[connection.type].length > 0"
@@ -78,7 +78,7 @@
 								:data-node-name="node.node.name"
 								:style="`--node-index: ${index}`"
 							>
-								<n8n-tooltip
+								<flowease-tooltip
 									:key="node.node.name"
 									placement="top"
 									:teleported="true"
@@ -108,7 +108,7 @@
 											circle
 										/>
 									</div>
-								</n8n-tooltip>
+								</flowease-tooltip>
 							</div>
 						</div>
 					</div>
@@ -123,11 +123,15 @@ import type { INodeUi } from '@/Interface';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { computed, ref, watch } from 'vue';
-import { NodeHelpers } from 'n8n-workflow';
+import { NodeHelpers } from 'flowease-workflow';
 import { useNodeHelpers } from '@/composables/useNodeHelpers';
 import NodeIcon from '@/components/NodeIcon.vue';
 import TitledList from '@/components/TitledList.vue';
-import type { ConnectionTypes, INodeInputConfiguration, INodeTypeDescription } from 'n8n-workflow';
+import type {
+	ConnectionTypes,
+	INodeInputConfiguration,
+	INodeTypeDescription,
+} from 'flowease-workflow';
 import { useDebounce } from '@/composables/useDebounce';
 
 interface Props {

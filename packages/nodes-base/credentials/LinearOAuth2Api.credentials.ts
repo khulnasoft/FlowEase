@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'flowease-workflow';
 
 const scopes = ['read', 'write', 'issues:create', 'comments:create'];
 

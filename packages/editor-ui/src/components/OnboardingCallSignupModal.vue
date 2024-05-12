@@ -10,30 +10,30 @@
 	>
 		<template #content>
 			<div class="pb-m">
-				<n8n-text>
+				<flowease-text>
 					{{ $locale.baseText('onboardingCallSignupModal.description') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 			<div @keyup.enter="onSignup">
-				<n8n-input
+				<flowease-input
 					v-model="email"
 					:placeholder="$locale.baseText('onboardingCallSignupModal.emailInput.placeholder')"
 				/>
-				<n8n-text v-if="showError" size="small" class="mt-4xs" tag="div" color="danger">
+				<flowease-text v-if="showError" size="small" class="mt-4xs" tag="div" color="danger">
 					{{ $locale.baseText('onboardingCallSignupModal.infoText.emailError') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 		</template>
 		<template #footer>
 			<div :class="$style.buttonsContainer">
-				<n8n-button
+				<flowease-button
 					:label="$locale.baseText('onboardingCallSignupModal.cancelButton.label')"
 					:disabled="loading"
 					float="right"
 					type="outline"
 					@click="onCancel"
 				/>
-				<n8n-button
+				<flowease-button
 					:disabled="email === '' || loading"
 					:label="$locale.baseText('onboardingCallSignupModal.signupButton.label')"
 					float="right"

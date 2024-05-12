@@ -1,5 +1,5 @@
 import Container, { Service } from 'typedi';
-import { NodeApiError } from 'n8n-workflow';
+import { NodeApiError } from 'flowease-workflow';
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 import { v4 as uuid } from 'uuid';

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 
 export const dataLocationOnSheet: INodeProperties = {
 	displayName: 'Data Location on Sheet',
@@ -219,7 +219,7 @@ export const cellFormat: INodeProperties = {
 		},
 		{
 			// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-			name: 'Let n8n format',
+			name: 'Let flowease format',
 			value: 'RAW',
 			description: 'Cells have the same types as the input data',
 		},

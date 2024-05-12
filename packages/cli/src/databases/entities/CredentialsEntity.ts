@@ -1,4 +1,4 @@
-import { Column, Entity, Index, OneToMany } from '@n8n/typeorm';
+import { Column, Entity, Index, OneToMany } from '@flowease/typeorm';
 import { IsObject, IsString, Length } from 'class-validator';
 import type { SharedCredentials } from './SharedCredentials';
 import { WithTimestampsAndStringId } from './AbstractEntity';

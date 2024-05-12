@@ -1,4 +1,4 @@
-import type { IDataObject, ExecutionStatus } from 'n8n-workflow';
+import type { IDataObject, ExecutionStatus } from 'flowease-workflow';
 import type { WorkflowEntity } from '@db/entities/WorkflowEntity';
 import type { TagEntity } from '@db/entities/TagEntity';
 import type { Risk } from '@/security-audit/types';

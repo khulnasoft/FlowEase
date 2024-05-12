@@ -1,7 +1,7 @@
 {
   "name": "flowease-editor-ui",
   "version": "1.41.0",
-  "description": "Workflow Editor UI for n8n",
+  "description": "Workflow Editor UI for flowease",
   "license": "SEE LICENSE IN LICENSE.md",
   "homepage": "https://flowease.khulnasoft.com",
   "author": {
@@ -49,7 +49,7 @@
     "@vueuse/core": "^10.5.0",
     "axios": "1.6.7",
     "chart.js": "^4.4.0",
-    "codemirror-lang-html-n8n": "^1.0.0",
+    "codemirror-lang-html-flowease": "^1.0.0",
     "@flowease/codemirror-lang": "workspace:*",
     "dateformat": "^3.0.3",
     "email-providers": "^2.0.1",
@@ -62,7 +62,7 @@
     "lodash-es": "^4.17.21",
     "luxon": "^3.3.0",
     "flowease-design-system": "workspace:*",
-    "n8n-workflow": "workspace:*",
+    "flowease-workflow": "workspace:*",
     "pinia": "^2.1.6",
     "prettier": "^3.1.0",
     "qrcode.vue": "^3.3.4",

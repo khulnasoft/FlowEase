@@ -6,7 +6,7 @@ export const defaultOptions: ChatOptions = {
 		method: 'POST',
 		headers: {},
 	},
-	target: '#n8n-chat',
+	target: '#flowease-chat',
 	mode: 'window',
 	loadPreviousSession: true,
 	chatInputKey: 'chatInput',
@@ -27,4 +27,4 @@ export const defaultOptions: ChatOptions = {
 	theme: {},
 };
 
-export const defaultMountingTarget = '#n8n-chat';
+export const defaultMountingTarget = '#flowease-chat';

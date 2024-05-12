@@ -5,7 +5,7 @@ import '@jsplumb/browser-ui/css/jsplumbtoolkit.css';
 import 'flowease-design-system/css/index.scss';
 import 'flowease-design-system/css/tailwind/index.css';
 
-import './n8n-theme.scss';
+import './flowease-theme.scss';
 
 import '@fontsource/open-sans/latin-400.css';
 import '@fontsource/open-sans/latin-600.css';

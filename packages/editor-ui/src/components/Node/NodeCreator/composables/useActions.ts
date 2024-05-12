@@ -1,5 +1,5 @@
 import { getCurrentInstance, computed } from 'vue';
-import type { IDataObject, INodeParameters } from 'n8n-workflow';
+import type { IDataObject, INodeParameters } from 'flowease-workflow';
 import type {
 	ActionTypeDescription,
 	AddedNode,

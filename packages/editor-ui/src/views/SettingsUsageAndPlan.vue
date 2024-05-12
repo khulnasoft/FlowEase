@@ -6,7 +6,7 @@ import { useUsageStore } from '@/stores/usage.store';
 import { telemetry } from '@/plugins/telemetry';
 import { i18n as locale } from '@/plugins/i18n';
 import { useUIStore } from '@/stores/ui.store';
-import { N8N_PRICING_PAGE_URL } from '@/constants';
+import { FLOWEASE_PRICING_PAGE_URL } from '@/constants';
 import { useToast } from '@/composables/useToast';
 import { hasPermission } from '@/rbac/permissions';
 
@@ -126,14 +126,16 @@ const onDialogOpened = () => {
 
 const openPricingPage = () => {
 	sendUsageTelemetry('desktop_view_plans');
-	window.open(N8N_PRICING_PAGE_URL, '_blank');
+	window.open(FLOWEASE_PRICING_PAGE_URL, '_blank');
 };
 </script>
 
 <template>
 	<div class="settings-usage-and-plan">
-		<n8n-heading size="2xlarge">{{ locale.baseText('settings.usageAndPlan.title') }}</n8n-heading>
-		<n8n-action-box
+		<flowease-heading size="2xlarge">{{
+			locale.baseText('settings.usageAndPlan.title')
+		}}</flowease-heading>
+		<flowease-action-box
 			v-if="usageStore.isDesktop"
 			:class="$style.actionBox"
 			:heading="locale.baseText('settings.usageAndPlan.desktop.title')"
@@ -142,7 +144,7 @@ const openPricingPage = () => {
 			@click:button="openPricingPage"
 		/>
 		<div v-if="!usageStore.isDesktop && !usageStore.isLoading">
-			<n8n-heading :class="$style.title" size="large">
+			<flowease-heading :class="$style.title" size="large">
 				<i18n-t keypath="settings.usageAndPlan.description" tag="span">
 					<template #name>{{ usageStore.planName }}</template>
 					<template #type>
@@ -152,12 +154,12 @@ const openPricingPage = () => {
 						<span v-else>{{ locale.baseText('settings.usageAndPlan.edition') }}</span>
 					</template>
 				</i18n-t>
-			</n8n-heading>
+			</flowease-heading>
 
 			<div :class="$style.quota">
-				<n8n-text size="medium" color="text-light">
+				<flowease-text size="medium" color="text-light">
 					{{ locale.baseText('settings.usageAndPlan.activeWorkflows') }}
-				</n8n-text>
+				</flowease-text>
 				<div :class="$style.chart">
 					<span v-if="usageStore.executionLimit > 0" :class="$style.chartLine">
 						<span
@@ -181,12 +183,12 @@ const openPricingPage = () => {
 				</div>
 			</div>
 
-			<n8n-info-tip>{{
+			<flowease-info-tip>{{
 				locale.baseText('settings.usageAndPlan.activeWorkflows.hint')
-			}}</n8n-info-tip>
+			}}</flowease-info-tip>
 
 			<div :class="$style.buttons">
-				<n8n-button
+				<flowease-button
 					v-if="canUserActivateLicense"
 					:class="$style.buttonTertiary"
 					type="tertiary"
@@ -194,17 +196,17 @@ const openPricingPage = () => {
 					@click="onAddActivationKey"
 				>
 					<span>{{ locale.baseText('settings.usageAndPlan.button.activation') }}</span>
-				</n8n-button>
-				<n8n-button v-if="usageStore.managementToken" size="large" @click="onManagePlan">
+				</flowease-button>
+				<flowease-button v-if="usageStore.managementToken" size="large" @click="onManagePlan">
 					<a :href="managePlanUrl" target="_blank">{{
 						locale.baseText('settings.usageAndPlan.button.manage')
 					}}</a>
-				</n8n-button>
-				<n8n-button v-else size="large" @click.prevent="onViewPlans">
+				</flowease-button>
+				<flowease-button v-else size="large" @click.prevent="onViewPlans">
 					<a :href="viewPlansUrl" target="_blank">{{
 						locale.baseText('settings.usageAndPlan.button.plans')
 					}}</a>
-				</n8n-button>
+				</flowease-button>
 			</div>
 
 			<el-dialog
@@ -217,19 +219,19 @@ const openPricingPage = () => {
 				@opened="onDialogOpened"
 			>
 				<template #default>
-					<n8n-input
+					<flowease-input
 						ref="activationKeyInput"
 						v-model="activationKey"
 						:placeholder="locale.baseText('settings.usageAndPlan.dialog.activation.label')"
 					/>
 				</template>
 				<template #footer>
-					<n8n-button type="secondary" @click="activationKeyModal = false">
+					<flowease-button type="secondary" @click="activationKeyModal = false">
 						{{ locale.baseText('settings.usageAndPlan.dialog.activation.cancel') }}
-					</n8n-button>
-					<n8n-button @click="onLicenseActivation">
+					</flowease-button>
+					<flowease-button @click="onLicenseActivation">
 						{{ locale.baseText('settings.usageAndPlan.dialog.activation.activate') }}
-					</n8n-button>
+					</flowease-button>
 				</template>
 			</el-dialog>
 		</div>

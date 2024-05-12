@@ -7,7 +7,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { xeroApiRequest, xeroApiRequestAllItems } from './GenericFunctions';
 

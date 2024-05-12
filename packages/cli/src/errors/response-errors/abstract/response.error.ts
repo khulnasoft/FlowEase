@@ -1,4 +1,4 @@
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 /**
  * Special Error which allows to return also an error code and http status code

@@ -1,4 +1,4 @@
-import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'n8n-workflow';
+import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 
@@ -196,7 +196,7 @@ export async function getTimezones(this: ILoadOptionsFunctions): Promise<INodePr
 	returnData.unshift({
 		name: 'Default',
 		value: 'default',
-		description: 'Timezone set in n8n',
+		description: 'Timezone set in flowease',
 	});
 	return returnData;
 }

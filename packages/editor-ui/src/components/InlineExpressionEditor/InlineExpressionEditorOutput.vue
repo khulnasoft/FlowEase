@@ -8,7 +8,7 @@ import InlineExpressionTip from './InlineExpressionTip.vue';
 import { outputTheme } from './theme';
 import { computed, onBeforeUnmount } from 'vue';
 import { useNDVStore } from '@/stores/ndv.store';
-import { N8nTooltip } from 'flowease-design-system/components';
+import { FloweaseTooltip } from 'flowease-design-system/components';
 
 interface InlineExpressionEditorOutputProps {
 	segments: Segment[];
@@ -62,17 +62,17 @@ onBeforeUnmount(() => {
 <template>
 	<div v-if="visible" :class="$style.dropdown" title="">
 		<div :class="$style.header">
-			<n8n-text bold size="small" compact>
+			<flowease-text bold size="small" compact>
 				{{ i18n.baseText('parameterInput.result') }}
-			</n8n-text>
+			</flowease-text>
 
 			<div :class="$style.item">
-				<n8n-text size="small" color="text-base" compact>
+				<flowease-text size="small" color="text-base" compact>
 					{{ i18n.baseText('parameterInput.item') }}
-				</n8n-text>
+				</flowease-text>
 
 				<div :class="$style.controls">
-					<N8nInputNumber
+					<FloweaseInputNumber
 						data-test-id="inline-expression-editor-item-input"
 						size="mini"
 						:controls="false"
@@ -81,8 +81,8 @@ onBeforeUnmount(() => {
 						:max="max"
 						:model-value="itemIndex"
 						@update:model-value="updateItemIndex"
-					></N8nInputNumber>
-					<N8nIconButton
+					></FloweaseInputNumber>
+					<FloweaseIconButton
 						data-test-id="inline-expression-editor-item-prev"
 						icon="chevron-left"
 						type="tertiary"
@@ -90,13 +90,13 @@ onBeforeUnmount(() => {
 						size="mini"
 						:disabled="!canSelectPrevItem"
 						@click="prevItem"
-					></N8nIconButton>
+					></FloweaseIconButton>
 
-					<N8nTooltip placement="right" :disabled="hideTableHoverHint">
+					<FloweaseTooltip placement="right" :disabled="hideTableHoverHint">
 						<template #content>
 							<div>{{ i18n.baseText('parameterInput.hoverTableItemTip') }}</div>
 						</template>
-						<N8nIconButton
+						<FloweaseIconButton
 							data-test-id="inline-expression-editor-item-next"
 							icon="chevron-right"
 							type="tertiary"
@@ -104,19 +104,19 @@ onBeforeUnmount(() => {
 							size="mini"
 							:disabled="!canSelectNextItem"
 							@click="nextItem"
-						></N8nIconButton>
-					</N8nTooltip>
+						></FloweaseIconButton>
+					</FloweaseTooltip>
 				</div>
 			</div>
 		</div>
-		<n8n-text :class="$style.body">
+		<flowease-text :class="$style.body">
 			<ExpressionOutput
 				data-test-id="inline-expression-editor-output"
 				:segments="segments"
 				:extensions="theme"
 			>
 			</ExpressionOutput>
-		</n8n-text>
+		</flowease-text>
 		<div :class="$style.footer">
 			<InlineExpressionTip
 				:editor-state="editorState"

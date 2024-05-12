@@ -11,7 +11,7 @@ import {
 	type EntityManager,
 	type DeleteResult,
 	Not,
-} from '@n8n/typeorm';
+} from '@flowease/typeorm';
 import type { ListQuery } from '@/requests';
 import { isStringArray } from '@/utils';
 import config from '@/config';

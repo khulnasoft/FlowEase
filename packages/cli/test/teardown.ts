@@ -1,5 +1,5 @@
 import 'tsconfig-paths/register';
-import { DataSource as Connection } from '@n8n/typeorm';
+import { DataSource as Connection } from '@flowease/typeorm';
 import config from '@/config';
 import { getBootstrapDBOptions, testDbPrefix } from './integration/shared/testDb';
 

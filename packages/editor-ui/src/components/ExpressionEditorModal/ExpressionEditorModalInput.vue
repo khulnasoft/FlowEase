@@ -9,7 +9,7 @@ import { EditorView, keymap } from '@codemirror/view';
 import { computed, onMounted, ref, toValue, watch } from 'vue';
 
 import { expressionInputHandler } from '@/plugins/codemirror/inputHandlers/expression.inputHandler';
-import { n8nAutocompletion, n8nLang } from '@/plugins/codemirror/n8nLang';
+import { floweaseAutocompletion, floweaseLang } from '@/plugins/codemirror/floweaseLang';
 import { forceParse } from '@/utils/forceParse';
 import { completionStatus } from '@codemirror/autocomplete';
 import { inputTheme } from './theme';
@@ -62,8 +62,8 @@ const extensions = computed(() => [
 			},
 		]),
 	),
-	n8nLang(),
-	n8nAutocompletion(),
+	floweaseLang(),
+	floweaseAutocompletion(),
 	history(),
 	expressionInputHandler(),
 	EditorView.lineWrapping,

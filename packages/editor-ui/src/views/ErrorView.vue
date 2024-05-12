@@ -3,17 +3,17 @@
 		<font-awesome-icon icon="exclamation-triangle" :class="$style.icon" />
 		<div :class="$style.message">
 			<div>
-				<n8n-heading size="2xlarge">
+				<flowease-heading size="2xlarge">
 					{{ $locale.baseText(messageKey) }}
-				</n8n-heading>
+				</flowease-heading>
 			</div>
 			<div>
-				<n8n-text v-if="errorCode" size="large">
+				<flowease-text v-if="errorCode" size="large">
 					{{ errorCode }} {{ $locale.baseText('error') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 		</div>
-		<n8n-button :label="$locale.baseText(redirectTextKey)" @click="onButtonClick" />
+		<flowease-button :label="$locale.baseText(redirectTextKey)" @click="onButtonClick" />
 	</div>
 </template>
 

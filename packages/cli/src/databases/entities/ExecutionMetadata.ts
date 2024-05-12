@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, RelationId } from '@n8n/typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, RelationId } from '@flowease/typeorm';
 import { ExecutionEntity } from './ExecutionEntity';
 
 @Entity()

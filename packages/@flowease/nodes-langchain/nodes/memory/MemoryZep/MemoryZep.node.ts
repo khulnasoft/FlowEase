@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { ZepMemory } from '@langchain/community/memory/zep';
 import { logWrapper } from '../../../utils/logWrapper';
 import { getConnectionHintNoticeField } from '../../../utils/sharedFields';
@@ -32,7 +32,7 @@ export class MemoryZep implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memoryzep/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.memoryzep/',
 					},
 				],
 			},

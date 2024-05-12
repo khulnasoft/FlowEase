@@ -7,9 +7,9 @@ export class ListWorkflowCommand extends BaseCommand {
 	static description = '\nList workflows';
 
 	static examples = [
-		'$ n8n list:workflow',
-		'$ n8n list:workflow --active=true --onlyId',
-		'$ n8n list:workflow --active=false',
+		'$ flowease list:workflow',
+		'$ flowease list:workflow --active=true --onlyId',
+		'$ flowease list:workflow --active=false',
 	];
 
 	static flags = {

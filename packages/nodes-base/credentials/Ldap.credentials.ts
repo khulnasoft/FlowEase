@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'flowease-workflow';
 
 // eslint-disable-next-line flowease-nodes-base/cred-class-name-unsuffixed
 export class Ldap implements ICredentialType {

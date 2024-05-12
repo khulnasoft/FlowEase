@@ -5,14 +5,14 @@ import type {
 	INode,
 	INodeExecutionData,
 	ValidationResult,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	ApplicationError,
 	NodeOperationError,
 	deepCopy,
 	jsonParse,
 	validateFieldType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import get from 'lodash/get';
 import set from 'lodash/set';

@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { type ContextMenuAction, useContextMenu } from '@/composables/useContextMenu';
-import { N8nActionDropdown } from 'flowease-design-system';
-import type { INode } from 'n8n-workflow';
+import { FloweaseActionDropdown } from 'flowease-design-system';
+import type { INode } from 'flowease-workflow';
 import { watch, ref } from 'vue';
 
 const contextMenu = useContextMenu();
 const { position, isOpen, actions, target } = contextMenu;
-const dropdown = ref<InstanceType<typeof N8nActionDropdown>>();
+const dropdown = ref<InstanceType<typeof FloweaseActionDropdown>>();
 const emit = defineEmits<{ (event: 'action', action: ContextMenuAction, nodes: INode[]): void }>();
 
 watch(
@@ -43,7 +43,7 @@ function onVisibleChange(open: boolean) {
 				top: `${position[1]}px`,
 			}"
 		>
-			<N8nActionDropdown
+			<FloweaseActionDropdown
 				ref="dropdown"
 				:items="actions"
 				placement="bottom-start"
@@ -55,7 +55,7 @@ function onVisibleChange(open: boolean) {
 				<template #activator>
 					<div :class="$style.activator"></div>
 				</template>
-			</N8nActionDropdown>
+			</FloweaseActionDropdown>
 		</div>
 	</Teleport>
 </template>

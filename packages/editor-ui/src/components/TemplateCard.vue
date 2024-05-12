@@ -10,24 +10,24 @@
 		@click="onCardClick"
 	>
 		<div v-if="loading" :class="$style.loading">
-			<n8n-loading :rows="2" :shrink-last="false" :loading="loading" />
+			<flowease-loading :rows="2" :shrink-last="false" :loading="loading" />
 		</div>
 		<div v-else>
-			<n8n-heading :bold="true" size="small">{{ workflow.name }}</n8n-heading>
+			<flowease-heading :bold="true" size="small">{{ workflow.name }}</flowease-heading>
 			<div v-if="!simpleView" :class="$style.content">
 				<span v-if="workflow.totalViews">
-					<n8n-text size="small" color="text-light">
+					<flowease-text size="small" color="text-light">
 						<font-awesome-icon icon="eye" />
 						{{ abbreviateNumber(workflow.totalViews) }}
-					</n8n-text>
+					</flowease-text>
 				</span>
 				<div v-if="workflow.totalViews" :class="$style.line" v-text="'|'" />
-				<n8n-text size="small" color="text-light">
+				<flowease-text size="small" color="text-light">
 					<TimeAgo :date="workflow.createdAt" />
-				</n8n-text>
+				</flowease-text>
 				<div v-if="workflow.user" :class="$style.line" v-text="'|'" />
-				<n8n-text v-if="workflow.user" size="small" color="text-light"
-					>By {{ workflow.user.username }}</n8n-text
+				<flowease-text v-if="workflow.user" size="small" color="text-light"
+					>By {{ workflow.user.username }}</flowease-text
 				>
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 			<NodeList v-if="workflow.nodes" :nodes="workflow.nodes" :limit="nodesToBeShown" size="md" />
 		</div>
 		<div v-if="useWorkflowButton" :class="$style.buttonContainer">
-			<n8n-button
+			<flowease-button
 				v-if="useWorkflowButton"
 				outline
 				label="Use workflow"

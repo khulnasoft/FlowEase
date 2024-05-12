@@ -1,4 +1,4 @@
-import type { ICredentialDataDecryptedObject, IWebhookFunctions } from 'n8n-workflow';
+import type { ICredentialDataDecryptedObject, IWebhookFunctions } from 'flowease-workflow';
 import basicAuth from 'basic-auth';
 import { ChatTriggerAuthorizationError } from './error';
 import type { AuthenticationChatOption } from './types';
@@ -30,7 +30,7 @@ export async function validateAuth(context: IWebhookFunctions) {
 			// Provided authentication data is wrong
 			throw new ChatTriggerAuthorizationError(403);
 		}
-	} else if (authentication === 'n8nUserAuth') {
+	} else if (authentication === 'floweaseUserAuth') {
 		const webhookName = context.getWebhookName();
 
 		function getCookie(name: string) {
@@ -43,7 +43,7 @@ export async function validateAuth(context: IWebhookFunctions) {
 			return '';
 		}
 
-		const authCookie = getCookie('n8n-auth');
+		const authCookie = getCookie('flowease-auth');
 		if (!authCookie && webhookName !== 'setup') {
 			// Data is not defined on node so can not authenticate
 			throw new ChatTriggerAuthorizationError(500, 'User not authenticated!');

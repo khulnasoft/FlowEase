@@ -7,7 +7,7 @@ import type {
 	INodeTypeDescription,
 	IWebhookFunctions,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { lonescaleApiRequest } from './GenericFunctions';
 
@@ -78,7 +78,7 @@ export class LoneScaleTrigger implements INodeType {
 				const webhook = await lonescaleApiRequest.call(
 					this,
 					'GET',
-					`/workflows/${workflowId}/hook?type=n8n`,
+					`/workflows/${workflowId}/hook?type=flowease`,
 				);
 				if (webhook.target_url === webhookUrl) {
 					webhookData.webhookId = webhook.webhook_id;
@@ -91,7 +91,7 @@ export class LoneScaleTrigger implements INodeType {
 				const webhookData = this.getWorkflowStaticData('node');
 				const workflowId = this.getNodeParameter('workflow') as string;
 				const body: IDataObject = {
-					type: 'n8n',
+					type: 'flowease',
 					target_url: webhookUrl,
 				};
 				const webhook = await lonescaleApiRequest.call(
@@ -109,7 +109,7 @@ export class LoneScaleTrigger implements INodeType {
 					await lonescaleApiRequest.call(
 						this,
 						'DELETE',
-						`/workflows/${webhookData.webhookId}/hook?type=n8n`,
+						`/workflows/${webhookData.webhookId}/hook?type=flowease`,
 					);
 				} catch (error) {
 					return false;

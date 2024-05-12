@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
-import type { ICredentialDataDecryptedObject } from 'n8n-workflow';
-import { deepCopy, jsonParse } from 'n8n-workflow';
+import type { ICredentialDataDecryptedObject } from 'flowease-workflow';
+import { deepCopy, jsonParse } from 'flowease-workflow';
 import config from '@/config';
 import type { ICredentialsOverwrite } from '@/Interfaces';
 import { CredentialTypes } from '@/CredentialTypes';

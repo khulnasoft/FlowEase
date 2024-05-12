@@ -16,12 +16,12 @@
 		<template #content>
 			<div v-if="!showRecoveryCodes" :class="[$style.container, $style.modalContent]">
 				<div :class="$style.textContainer">
-					<n8n-text size="large" color="text-dark" :bold="true">{{
+					<flowease-text size="large" color="text-dark" :bold="true">{{
 						$locale.baseText('mfa.setup.step1.instruction1.title')
-					}}</n8n-text>
+					}}</flowease-text>
 				</div>
 				<div>
-					<n8n-text size="medium" :bold="false">
+					<flowease-text size="medium" :bold="false">
 						<i18n-t keypath="mfa.setup.step1.instruction1.subtitle" tag="span">
 							<template #part1>
 								{{ $locale.baseText('mfa.setup.step1.instruction1.subtitle.part1') }}
@@ -35,24 +35,24 @@
 								>
 							</template>
 						</i18n-t>
-					</n8n-text>
+					</flowease-text>
 				</div>
 				<div :class="$style.qrContainer">
 					<QrcodeVue :value="qrCode" size="150" level="H" />
 				</div>
 				<div :class="$style.textContainer">
-					<n8n-text size="large" color="text-dark" :bold="true">{{
+					<flowease-text size="large" color="text-dark" :bold="true">{{
 						$locale.baseText('mfa.setup.step1.instruction2.title')
-					}}</n8n-text>
+					}}</flowease-text>
 				</div>
 				<div :class="[$style.form, infoTextErrorMessage ? $style.error : '']">
-					<n8n-input-label
+					<flowease-input-label
 						size="medium"
 						:bold="false"
 						:class="$style.labelTooltip"
 						:label="$locale.baseText('mfa.setup.step1.input.label')"
 					>
-						<n8n-input
+						<flowease-input
 							v-model="authenticatorCode"
 							type="text"
 							:maxlength="6"
@@ -61,7 +61,7 @@
 							data-test-id="mfa-token-input"
 							@input="onInput"
 						/>
-					</n8n-input-label>
+					</flowease-input-label>
 					<div :class="[$style.infoText, 'mt-4xs']">
 						<span size="small" v-text="infoTextErrorMessage"></span>
 					</div>
@@ -69,29 +69,29 @@
 			</div>
 			<div v-else :class="$style.container">
 				<div>
-					<n8n-text size="medium" :bold="false">{{
+					<flowease-text size="medium" :bold="false">{{
 						$locale.baseText('mfa.setup.step2.description')
-					}}</n8n-text>
+					}}</flowease-text>
 				</div>
 				<div :class="$style.recoveryCodesContainer">
 					<div v-for="recoveryCode in recoveryCodes" :key="recoveryCode">
-						<n8n-text size="medium">{{ recoveryCode }}</n8n-text>
+						<flowease-text size="medium">{{ recoveryCode }}</flowease-text>
 					</div>
 				</div>
-				<n8n-info-tip :bold="false" :class="$style['edit-mode-footer-infotip']">
+				<flowease-info-tip :bold="false" :class="$style['edit-mode-footer-infotip']">
 					<i18n-t keypath="mfa.setup.step2.infobox.description" tag="span">
 						<template #part1>
 							{{ $locale.baseText('mfa.setup.step2.infobox.description.part1') }}
 						</template>
 						<template #part2>
-							<n8n-text size="small" :bold="true" :class="$style.loseAccessText">
+							<flowease-text size="small" :bold="true" :class="$style.loseAccessText">
 								{{ $locale.baseText('mfa.setup.step2.infobox.description.part2') }}
-							</n8n-text>
+							</flowease-text>
 						</template>
 					</i18n-t>
-				</n8n-info-tip>
+				</flowease-info-tip>
 				<div>
-					<n8n-button
+					<flowease-button
 						type="primary"
 						icon="download"
 						float="right"
@@ -105,7 +105,7 @@
 		<template #footer>
 			<div v-if="showRecoveryCodes">
 				<div>
-					<n8n-button
+					<flowease-button
 						float="right"
 						:disabled="!recoveryCodesDownloaded"
 						:label="$locale.baseText('mfa.setup.step2.button.save')"
@@ -117,7 +117,7 @@
 			</div>
 			<div v-else>
 				<div>
-					<n8n-button
+					<flowease-button
 						float="right"
 						:label="$locale.baseText('mfa.setup.step1.button.continue')"
 						size="large"
@@ -223,7 +223,7 @@ export default defineComponent({
 			this.formBus.emit('submit');
 		},
 		onDownloadClick() {
-			const filename = 'n8n-recovery-codes.txt';
+			const filename = 'flowease-recovery-codes.txt';
 			const temporalElement = document.createElement('a');
 			temporalElement.setAttribute(
 				'href',

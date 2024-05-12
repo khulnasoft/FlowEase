@@ -158,11 +158,11 @@ beforeAll(async () => {
 	Container.get(SourceControlPreferencesService).getPreferences = () => ({
 		branchName: 'main',
 		connected: true,
-		repositoryUrl: 'git@example.com:n8ntest/n8n_testrepo.git',
+		repositoryUrl: 'git@example.com:floweasetest/flowease_testrepo.git',
 		branchReadOnly: false,
 		branchColor: '#5296D6',
 		publicKey:
-			'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDBSz2nMZAiUBWe6n89aWd5x9QMcIOaznVW3fpuCYC4L n8n deploy key',
+			'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDBSz2nMZAiUBWe6n89aWd5x9QMcIOaznVW3fpuCYC4L flowease deploy key',
 	});
 });
 
@@ -184,9 +184,9 @@ describe('Source Control', () => {
 	});
 
 	it('should check for git and ssh folders and create them if required', async () => {
-		const { n8nFolder } = Container.get(InstanceSettings);
-		const sshFolder = path.join(n8nFolder, SOURCE_CONTROL_SSH_FOLDER);
-		const gitFolder = path.join(n8nFolder, SOURCE_CONTROL_GIT_FOLDER);
+		const { floweaseFolder } = Container.get(InstanceSettings);
+		const sshFolder = path.join(floweaseFolder, SOURCE_CONTROL_SSH_FOLDER);
+		const gitFolder = path.join(floweaseFolder, SOURCE_CONTROL_GIT_FOLDER);
 		let hasThrown = false;
 		try {
 			accessSync(sshFolder, fsConstants.F_OK);
@@ -210,9 +210,9 @@ describe('Source Control', () => {
 	});
 
 	it('should get repo type from url', async () => {
-		expect(getRepoType('git@github.com:n8ntest/n8n_testrepo.git')).toBe('github');
-		expect(getRepoType('git@gitlab.com:n8ntest/n8n_testrepo.git')).toBe('gitlab');
-		expect(getRepoType('git@mygitea.io:n8ntest/n8n_testrepo.git')).toBe('other');
+		expect(getRepoType('git@github.com:floweasetest/flowease_testrepo.git')).toBe('github');
+		expect(getRepoType('git@gitlab.com:floweasetest/flowease_testrepo.git')).toBe('gitlab');
+		expect(getRepoType('git@mygitea.io:floweasetest/flowease_testrepo.git')).toBe('other');
 	});
 
 	it('should get tracking information from pre-push results', () => {
@@ -248,7 +248,7 @@ describe('Source Control', () => {
 	it('should class validate correct preferences', async () => {
 		const validPreferences: Partial<SourceControlPreferences> = {
 			branchName: 'main',
-			repositoryUrl: 'git@example.com:n8ntest/n8n_testrepo.git',
+			repositoryUrl: 'git@example.com:floweasetest/flowease_testrepo.git',
 			branchReadOnly: false,
 			branchColor: '#5296D6',
 		};

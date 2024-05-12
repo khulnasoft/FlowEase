@@ -4,7 +4,7 @@ import type {
 	INodeProperties,
 	NodeApiError,
 	IExecuteFunctions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { updateDisplayOptions, wrapData } from '../../../../../utils/utilities';
 import { apiRequest, downloadRecordAttachments } from '../../transport';
 import { flattenOutput, processAirtableError } from '../../helpers/utils';

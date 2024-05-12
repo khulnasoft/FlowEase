@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties, INodePropertyOptions } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties, INodePropertyOptions } from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 

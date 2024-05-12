@@ -7,7 +7,7 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import upperFirst from 'lodash/upperFirst';
 import * as changeCase from 'change-case';
 import { cortexApiRequest, getEntityLabel, prepareParameters, splitTags } from './GenericFunctions';

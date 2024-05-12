@@ -30,7 +30,7 @@ import {
 	historyKeyMap,
 	tabKeyMap,
 } from '@/plugins/codemirror/keymap';
-import { n8nAutocompletion } from '@/plugins/codemirror/n8nLang';
+import { floweaseAutocompletion } from '@/plugins/codemirror/floweaseLang';
 
 export default defineComponent({
 	name: 'JsEditor',
@@ -90,7 +90,7 @@ export default defineComponent({
 						]),
 					),
 					lintGutter(),
-					n8nAutocompletion(),
+					floweaseAutocompletion(),
 					indentOnInput(),
 					highlightActiveLine(),
 					highlightActiveLineGutter(),

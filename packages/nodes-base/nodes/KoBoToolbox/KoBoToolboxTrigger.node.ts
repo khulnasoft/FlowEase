@@ -5,7 +5,7 @@ import type {
 	INodeTypeDescription,
 	IWebhookFunctions,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import {
 	downloadAttachments,
@@ -102,7 +102,7 @@ export class KoBoToolboxTrigger implements INodeType {
 					method: 'POST',
 					url: `/api/v2/assets/${formId}/hooks/`,
 					body: {
-						name: `n8n webhook id ${workflow.id}: ${workflow.name}`,
+						name: `flowease webhook id ${workflow.id}: ${workflow.name}`,
 						endpoint: webhookUrl,
 						email_notification: true,
 					},

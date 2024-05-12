@@ -1,7 +1,7 @@
 <template>
-	<n8n-card v-if="worker" :class="$style.cardLink">
+	<flowease-card v-if="worker" :class="$style.cardLink">
 		<template #header>
-			<n8n-heading
+			<flowease-heading
 				tag="h2"
 				bold
 				:class="stale ? [$style.cardHeading, $style.stale] : [$style.cardHeading]"
@@ -11,26 +11,26 @@
 				Average Load: {{ averageWorkerLoadFromLoadsAsString(worker.loadAvg ?? [0]) }} | Free Memory:
 				{{ memAsGb(worker.freeMem).toFixed(2) }}GB / {{ memAsGb(worker.totalMem).toFixed(2) }}GB
 				{{ stale ? ' (stale)' : '' }}
-			</n8n-heading>
+			</flowease-heading>
 		</template>
 		<div :class="$style.cardDescription">
-			<n8n-text color="text-light" size="small" :class="$style.container">
+			<flowease-text color="text-light" size="small" :class="$style.container">
 				<span
 					>{{ $locale.baseText('workerList.item.lastUpdated') }} {{ secondsSinceLastUpdateString }}s
-					ago | n8n-Version: {{ worker.version }} | Architecture: {{ worker.arch }} (
+					ago | flowease-Version: {{ worker.version }} | Architecture: {{ worker.arch }} (
 					{{ worker.platform }}) | Uptime: {{ upTime(worker.uptime) }}</span
 				>
 				<WorkerJobAccordion :items="worker.runningJobsSummary" />
 				<WorkerNetAccordion :items="sortedWorkerInterfaces" />
 				<WorkerChartsAccordion :worker-id="worker.workerId" />
-			</n8n-text>
+			</flowease-text>
 		</div>
 		<template #append>
 			<div ref="cardActions" :class="$style.cardActions">
 				<!-- For future Worker actions -->
 			</div>
 		</template>
-	</n8n-card>
+	</flowease-card>
 </template>
 
 <script setup lang="ts">

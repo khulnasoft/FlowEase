@@ -14,13 +14,13 @@
 			<template #default="scope">
 				<div :key="scope.row.id" class="name" @keydown.stop>
 					<transition name="fade" mode="out-in">
-						<n8n-input
+						<flowease-input
 							v-if="scope.row.create || scope.row.update"
 							ref="nameInput"
 							:model-value="newName"
 							:maxlength="maxLength"
 							@update:model-value="onNewNameChange"
-						></n8n-input>
+						></flowease-input>
 						<span v-else-if="scope.row.delete">
 							<span>{{ $locale.baseText('tagsTable.areYouSureYouWantToDeleteThisTag') }}</span>
 							<input ref="deleteHiddenInput" class="hidden" />
@@ -48,52 +48,52 @@
 			<template #default="scope">
 				<transition name="fade" mode="out-in">
 					<div v-if="scope.row.create" class="ops">
-						<n8n-button
+						<flowease-button
 							:label="$locale.baseText('tagsTable.cancel')"
 							type="secondary"
 							:disabled="isSaving"
 							@click.stop="cancel"
 						/>
-						<n8n-button
+						<flowease-button
 							:label="$locale.baseText('tagsTable.createTag')"
 							:loading="isSaving"
 							@click.stop="apply"
 						/>
 					</div>
 					<div v-else-if="scope.row.update" class="ops">
-						<n8n-button
+						<flowease-button
 							:label="$locale.baseText('tagsTable.cancel')"
 							type="secondary"
 							:disabled="isSaving"
 							@click.stop="cancel"
 						/>
-						<n8n-button
+						<flowease-button
 							:label="$locale.baseText('tagsTable.saveChanges')"
 							:loading="isSaving"
 							@click.stop="apply"
 						/>
 					</div>
 					<div v-else-if="scope.row.delete" class="ops">
-						<n8n-button
+						<flowease-button
 							:label="$locale.baseText('tagsTable.cancel')"
 							type="secondary"
 							:disabled="isSaving"
 							@click.stop="cancel"
 						/>
-						<n8n-button
+						<flowease-button
 							:label="$locale.baseText('tagsTable.deleteTag')"
 							:loading="isSaving"
 							@click.stop="apply"
 						/>
 					</div>
 					<div v-else-if="!scope.row.disable" class="ops main">
-						<n8n-icon-button
+						<flowease-icon-button
 							:title="$locale.baseText('tagsTable.editTag')"
 							icon="pen"
 							data-test-id="edit-tag-button"
 							@click.stop="enableUpdate(scope.row)"
 						/>
-						<n8n-icon-button
+						<flowease-icon-button
 							v-if="scope.row.canDelete"
 							:title="$locale.baseText('tagsTable.deleteTag')"
 							icon="trash"
@@ -112,10 +112,10 @@ import type { ElTable } from 'element-plus';
 import { MAX_TAG_NAME_LENGTH } from '@/constants';
 import type { ITagRow } from '@/Interface';
 import { defineComponent } from 'vue';
-import type { N8nInput } from 'flowease-design-system';
+import type { FloweaseInput } from 'flowease-design-system';
 
 type TableRef = InstanceType<typeof ElTable>;
-type N8nInputRef = InstanceType<typeof N8nInput>;
+type FloweaseInputRef = InstanceType<typeof FloweaseInput>;
 
 const INPUT_TRANSITION_TIMEOUT = 350;
 const DELETE_TRANSITION_TIMEOUT = 100;
@@ -186,7 +186,7 @@ export default defineComponent({
 
 		focusOnInput(): void {
 			setTimeout(() => {
-				const inputRef = this.$refs.nameInput as N8nInputRef | undefined;
+				const inputRef = this.$refs.nameInput as FloweaseInputRef | undefined;
 				if (inputRef?.focus) {
 					inputRef.focus();
 				}
@@ -195,7 +195,7 @@ export default defineComponent({
 
 		focusOnDelete(): void {
 			setTimeout(() => {
-				const inputRef = this.$refs.deleteHiddenInput as N8nInputRef | undefined;
+				const inputRef = this.$refs.deleteHiddenInput as FloweaseInputRef | undefined;
 				if (inputRef?.focus) {
 					inputRef.focus();
 				}

@@ -13,8 +13,8 @@ import type {
 	IExecuteWorkflowInfo,
 	IHttpRequestHelper,
 	IHttpRequestOptions,
-	IN8nHttpFullResponse,
-	IN8nHttpResponse,
+	IFloweaseHttpFullResponse,
+	IFloweaseHttpResponse,
 	INode,
 	INodeCredentialsDetails,
 	INodeExecutionData,
@@ -307,7 +307,7 @@ export function getExecuteFunctions(
 			helpers: {
 				async httpRequest(
 					requestOptions: IHttpRequestOptions,
-				): Promise<IN8nHttpFullResponse | IN8nHttpResponse> {
+				): Promise<IFloweaseHttpFullResponse | IFloweaseHttpResponse> {
 					return {
 						body: {
 							headers: {},
@@ -477,7 +477,7 @@ export function getExecuteSingleFunctions(
 			helpers: {
 				async httpRequest(
 					requestOptions: IHttpRequestOptions,
-				): Promise<IN8nHttpFullResponse | IN8nHttpResponse> {
+				): Promise<IFloweaseHttpFullResponse | IFloweaseHttpResponse> {
 					return {
 						body: {
 							headers: {},

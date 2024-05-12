@@ -91,7 +91,7 @@ describe('SettingsSourceControl', () => {
 		expect(connectButton).toBeDisabled();
 
 		await userEvent.click(repoUrlInput);
-		await userEvent.type(repoUrlInput, '.com:john/n8n-data.git');
+		await userEvent.type(repoUrlInput, '.com:john/flowease-data.git');
 		await userEvent.tab();
 
 		await waitFor(() => expect(connectButton).toBeEnabled());

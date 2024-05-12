@@ -5,7 +5,7 @@ import {
 	type INodeExecutionData,
 	type INodeProperties,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 import * as ics from 'ics';

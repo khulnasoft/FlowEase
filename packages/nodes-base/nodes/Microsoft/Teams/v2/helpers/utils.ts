@@ -1,4 +1,8 @@
-import type { IExecuteFunctions, ILoadOptionsFunctions, INodeListSearchItems } from 'n8n-workflow';
+import type {
+	IExecuteFunctions,
+	ILoadOptionsFunctions,
+	INodeListSearchItems,
+} from 'flowease-workflow';
 
 export function prepareMessage(
 	this: IExecuteFunctions | ILoadOptionsFunctions,
@@ -9,11 +13,11 @@ export function prepareMessage(
 ) {
 	if (includeLinkToWorkflow) {
 		const { id } = this.getWorkflow();
-		const link = `${this.getInstanceBaseUrl()}workflow/${id}?utm_source=n8n-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
+		const link = `${this.getInstanceBaseUrl()}workflow/${id}?utm_source=flowease-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
 			'flowease-nodes-base.microsoftTeams',
 		)}${instanceId ? '_' + instanceId : ''}`;
 		contentType = 'html';
-		message = `${message}<br><br><em> Powered by <a href="${link}">this n8n workflow</a> </em>`;
+		message = `${message}<br><br><em> Powered by <a href="${link}">this flowease workflow</a> </em>`;
 	}
 
 	return {

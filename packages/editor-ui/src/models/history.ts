@@ -1,5 +1,5 @@
 import type { INodeUi, XYPosition } from '@/Interface';
-import type { IConnection } from 'n8n-workflow';
+import type { IConnection } from 'flowease-workflow';
 import { createEventBus } from 'flowease-design-system/utils';
 
 // Command names don't serve any particular purpose in the app

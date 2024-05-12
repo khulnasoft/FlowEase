@@ -3,7 +3,7 @@ import config from '@/config';
 import { Service } from 'typedi';
 import { TIME } from '@/constants';
 import { getRedisPrefix } from '@/services/redis/RedisServiceHelper';
-import { ErrorReporterProxy as EventReporter } from 'n8n-workflow';
+import { ErrorReporterProxy as EventReporter } from 'flowease-workflow';
 import { Logger } from '@/Logger';
 import { RedisServicePubSubPublisher } from '@/services/redis/RedisServicePubSubPublisher';
 

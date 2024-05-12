@@ -25,7 +25,7 @@ describe('Execution', () => {
 		workflowPage.getters.executeWorkflowButton().click();
 
 		// Check workflow buttons
-		workflowPage.getters.executeWorkflowButton().get('.n8n-spinner').should('be.visible');
+		workflowPage.getters.executeWorkflowButton().get('.flowease-spinner').should('be.visible');
 		workflowPage.getters.clearExecutionDataButton().should('not.exist');
 		workflowPage.getters.stopExecutionButton().should('be.visible');
 		workflowPage.getters.stopExecutionWaitingForWebhookButton().should('not.exist');
@@ -85,7 +85,7 @@ describe('Execution', () => {
 		workflowPage.getters.executeWorkflowButton().click();
 
 		// Check workflow buttons
-		workflowPage.getters.executeWorkflowButton().get('.n8n-spinner').should('be.visible');
+		workflowPage.getters.executeWorkflowButton().get('.flowease-spinner').should('be.visible');
 		workflowPage.getters.clearExecutionDataButton().should('not.exist');
 		workflowPage.getters.stopExecutionButton().should('be.visible');
 		workflowPage.getters.stopExecutionWaitingForWebhookButton().should('not.exist');
@@ -144,7 +144,7 @@ describe('Execution', () => {
 		workflowPage.getters.executeWorkflowButton().click();
 
 		// Check workflow buttons
-		workflowPage.getters.executeWorkflowButton().get('.n8n-spinner').should('be.visible');
+		workflowPage.getters.executeWorkflowButton().get('.flowease-spinner').should('be.visible');
 		workflowPage.getters.clearExecutionDataButton().should('not.exist');
 		workflowPage.getters.stopExecutionButton().should('not.exist');
 		workflowPage.getters.stopExecutionWaitingForWebhookButton().should('be.visible');
@@ -217,7 +217,7 @@ describe('Execution', () => {
 		workflowPage.getters.executeWorkflowButton().click();
 
 		// Check workflow buttons
-		workflowPage.getters.executeWorkflowButton().get('.n8n-spinner').should('be.visible');
+		workflowPage.getters.executeWorkflowButton().get('.flowease-spinner').should('be.visible');
 		workflowPage.getters.clearExecutionDataButton().should('not.exist');
 		workflowPage.getters.stopExecutionButton().should('not.exist');
 		workflowPage.getters.stopExecutionWaitingForWebhookButton().should('be.visible');

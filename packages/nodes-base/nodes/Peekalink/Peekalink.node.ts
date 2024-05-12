@@ -5,7 +5,7 @@ import {
 	type INodeExecutionData,
 	type INodeTypeDescription,
 	type JsonObject,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export const apiUrl = 'https://api.peekalink.io';
 

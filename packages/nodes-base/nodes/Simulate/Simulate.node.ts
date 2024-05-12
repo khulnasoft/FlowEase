@@ -1,11 +1,11 @@
-import { sleep, jsonParse, NodeOperationError } from 'n8n-workflow';
+import { sleep, jsonParse, NodeOperationError } from 'flowease-workflow';
 import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
 	IDataObject,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { loadOptions } from './methods';
 import {

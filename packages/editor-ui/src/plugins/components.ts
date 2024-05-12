@@ -3,7 +3,7 @@ import type { Plugin } from 'vue';
 import 'regenerator-runtime/runtime';
 
 import ElementPlus, { ElLoading, ElMessageBox } from 'element-plus';
-import { N8nPlugin } from 'flowease-design-system';
+import { FloweasePlugin } from 'flowease-design-system';
 import { useMessage } from '@/composables/useMessage';
 import EnterpriseEdition from '@/components/EnterpriseEdition.ee.vue';
 import RBAC from '@/components/RBAC.vue';
@@ -18,7 +18,7 @@ export const GlobalComponentsPlugin: Plugin<{}> = {
 		app.component('ParameterInputList', ParameterInputList);
 
 		app.use(ElementPlus);
-		app.use(N8nPlugin);
+		app.use(FloweasePlugin);
 
 		// app.use(ElLoading);
 		// app.use(ElNotification);

@@ -6,17 +6,17 @@ import type { ICredentialsDb, ICredentialsDecryptedDb } from '@/Interfaces';
 import { BaseCommand } from '../BaseCommand';
 import { CredentialsRepository } from '@db/repositories/credentials.repository';
 import Container from 'typedi';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 export class ExportCredentialsCommand extends BaseCommand {
 	static description = 'Export credentials';
 
 	static examples = [
-		'$ n8n export:credentials --all',
-		'$ n8n export:credentials --id=5 --output=file.json',
-		'$ n8n export:credentials --all --output=backups/latest.json',
-		'$ n8n export:credentials --backup --output=backups/latest/',
-		'$ n8n export:credentials --all --decrypted --output=backups/decrypted.json',
+		'$ flowease export:credentials --all',
+		'$ flowease export:credentials --id=5 --output=file.json',
+		'$ flowease export:credentials --all --output=backups/latest.json',
+		'$ flowease export:credentials --backup --output=backups/latest/',
+		'$ flowease export:credentials --all --decrypted --output=backups/decrypted.json',
 	];
 
 	static flags = {

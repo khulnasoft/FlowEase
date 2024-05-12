@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { TIMEZONE_VALIDATION_REGEX } from './GenericFunctions';
 
 export const calendarOperations: INodeProperties[] = [
@@ -144,7 +144,7 @@ export const calendarFields: INodeProperties[] = [
 				name: 'timezone',
 				type: 'resourceLocator',
 				default: { mode: 'list', value: '' },
-				description: 'Time zone used in the response. By default n8n timezone is used.',
+				description: 'Time zone used in the response. By default flowease timezone is used.',
 				modes: [
 					{
 						displayName: 'Timezone',

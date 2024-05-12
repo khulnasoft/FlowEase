@@ -1,5 +1,9 @@
 import { Service } from 'typedi';
-import { type IDataObject, type Workflow, ErrorReporterProxy as ErrorReporter } from 'n8n-workflow';
+import {
+	type IDataObject,
+	type Workflow,
+	ErrorReporterProxy as ErrorReporter,
+} from 'flowease-workflow';
 import { Logger } from '@/Logger';
 import { WorkflowRepository } from '@db/repositories/workflow.repository';
 import { isWorkflowIdValid } from '@/utils';

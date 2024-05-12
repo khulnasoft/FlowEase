@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	NodeConnectionType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { pick } from 'lodash';
 import type { BaseChatMemory } from '@langchain/community/memory/chat_memory';
 import { createPage } from './templates';
@@ -21,7 +21,7 @@ export class ChatTrigger implements INodeType {
 		icon: 'fa:comments',
 		group: ['trigger'],
 		version: 1,
-		description: 'Runs the workflow when an n8n generated webchat is submitted',
+		description: 'Runs the workflow when an flowease generated webchat is submitted',
 		defaults: {
 			name: 'Chat Trigger',
 		},
@@ -30,7 +30,7 @@ export class ChatTrigger implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/n8n-nodes-langchain.chattrigger/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-langchain.chattrigger/',
 					},
 				],
 			},
@@ -110,7 +110,7 @@ export class ChatTrigger implements INodeType {
 					{
 						name: 'Hosted Chat',
 						value: 'hostedChat',
-						description: 'Chat on a page served by n8n',
+						description: 'Chat on a page served by flowease',
 					},
 					{
 						name: 'Embedded Chat',
@@ -168,9 +168,9 @@ export class ChatTrigger implements INodeType {
 					},
 					{
 						// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-						name: 'n8n User Auth',
-						value: 'n8nUserAuth',
-						description: 'Require user to be logged in with their n8n account',
+						name: 'flowease User Auth',
+						value: 'floweaseUserAuth',
+						description: 'Require user to be logged in with their flowease account',
 					},
 					{
 						name: 'None',
@@ -369,7 +369,7 @@ export class ChatTrigger implements INodeType {
 				const authentication = this.getNodeParameter('authentication') as
 					| 'none'
 					| 'basicAuth'
-					| 'n8nUserAuth';
+					| 'floweaseUserAuth';
 				const initialMessagesRaw = this.getNodeParameter('initialMessages', '') as string;
 				const initialMessages = initialMessagesRaw
 					.split('\n')

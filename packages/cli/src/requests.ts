@@ -8,7 +8,7 @@ import type {
 	INodeParameters,
 	INodeTypeNameVersion,
 	IUser,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { Expose } from 'class-transformer';
 import { IsBoolean, IsEmail, IsIn, IsOptional, IsString, Length } from 'class-validator';

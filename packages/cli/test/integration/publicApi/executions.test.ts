@@ -61,7 +61,7 @@ afterEach(async () => {
 
 const testWithAPIKey =
 	(method: 'get' | 'post' | 'put' | 'delete', url: string, apiKey: string | null) => async () => {
-		void authOwnerAgent.set({ 'X-N8N-API-KEY': apiKey });
+		void authOwnerAgent.set({ 'X-FLOWEASE-API-KEY': apiKey });
 		const response = await authOwnerAgent[method](url);
 		expect(response.statusCode).toBe(401);
 	};
@@ -227,7 +227,7 @@ describe('GET /executions', () => {
 	});
 
 	// failing on Postgres and MySQL - ref: https://github.com/khulnasoft/flowease/pull/3834
-	// eslint-disable-next-line n8n-local-rules/no-skipped-tests
+	// eslint-disable-next-line flowease-local-rules/no-skipped-tests
 	test.skip('should paginate two executions', async () => {
 		const workflow = await createWorkflow({}, owner);
 

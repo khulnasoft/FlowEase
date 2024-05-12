@@ -1,9 +1,9 @@
 <template>
 	<div class="fixed-collection-parameter" @keydown.stop>
 		<div v-if="getProperties.length === 0" class="no-items-exist">
-			<n8n-text size="small">{{
+			<flowease-text size="small">{{
 				$locale.baseText('fixedCollectionParameter.currentlyNoItemsExist')
-			}}</n8n-text>
+			}}</flowease-text>
 		</div>
 
 		<div
@@ -11,7 +11,7 @@
 			:key="property.name"
 			class="fixed-collection-parameter-property"
 		>
-			<n8n-input-label
+			<flowease-input-label
 				v-if="property.displayName !== '' && parameter.options && parameter.options.length !== 1"
 				:label="$locale.nodeText().inputLabelDisplayName(property, path)"
 				:underline="true"
@@ -28,15 +28,15 @@
 						:class="index ? 'border-top-dashed parameter-item-wrapper ' : 'parameter-item-wrapper'"
 					>
 						<div v-if="!isReadOnly" class="delete-option">
-							<n8n-icon-button
+							<flowease-icon-button
 								type="tertiary"
 								text
 								size="mini"
 								icon="trash"
 								:title="$locale.baseText('fixedCollectionParameter.deleteItem')"
 								@click="deleteOption(property.name, index)"
-							></n8n-icon-button>
-							<n8n-icon-button
+							></flowease-icon-button>
+							<flowease-icon-button
 								v-if="sortable && index !== 0"
 								type="tertiary"
 								text
@@ -44,8 +44,8 @@
 								icon="angle-up"
 								:title="$locale.baseText('fixedCollectionParameter.moveUp')"
 								@click="moveOptionUp(property.name, index)"
-							></n8n-icon-button>
-							<n8n-icon-button
+							></flowease-icon-button>
+							<flowease-icon-button
 								v-if="sortable && index !== mutableValues[property.name].length - 1"
 								type="tertiary"
 								text
@@ -53,7 +53,7 @@
 								icon="angle-down"
 								:title="$locale.baseText('fixedCollectionParameter.moveDown')"
 								@click="moveOptionDown(property.name, index)"
-							></n8n-icon-button>
+							></flowease-icon-button>
 						</div>
 						<Suspense>
 							<ParameterInputList
@@ -71,14 +71,14 @@
 			<div v-else class="parameter-item">
 				<div class="parameter-item-wrapper">
 					<div v-if="!isReadOnly" class="delete-option">
-						<n8n-icon-button
+						<flowease-icon-button
 							type="tertiary"
 							text
 							size="mini"
 							icon="trash"
 							:title="$locale.baseText('fixedCollectionParameter.deleteItem')"
 							@click="deleteOption(property.name)"
-						></n8n-icon-button>
+						></flowease-icon-button>
 					</div>
 					<ParameterInputList
 						:parameters="property.values"
@@ -94,7 +94,7 @@
 		</div>
 
 		<div v-if="parameterOptions.length > 0 && !isReadOnly" class="controls">
-			<n8n-button
+			<flowease-button
 				v-if="parameter.options.length === 1"
 				type="tertiary"
 				block
@@ -102,20 +102,20 @@
 				@click="optionSelected(parameter.options[0].name)"
 			/>
 			<div v-else class="add-option">
-				<n8n-select
+				<flowease-select
 					v-model="selectedOption"
 					:placeholder="getPlaceholderText"
 					size="small"
 					filterable
 					@update:model-value="optionSelected"
 				>
-					<n8n-option
+					<flowease-option
 						v-for="item in parameterOptions"
 						:key="item.name"
 						:label="$locale.nodeText().collectionOptionDisplayName(parameter, item, path)"
 						:value="item.name"
-					></n8n-option>
-				</n8n-select>
+					></flowease-option>
+				</flowease-select>
 			</div>
 		</div>
 	</div>
@@ -131,8 +131,8 @@ import type {
 	INodeProperties,
 	INodePropertyCollection,
 	NodeParameterValue,
-} from 'n8n-workflow';
-import { deepCopy, isINodePropertyCollectionList } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy, isINodePropertyCollectionList } from 'flowease-workflow';
 
 import { get } from 'lodash-es';
 

@@ -1,6 +1,6 @@
 import { Container } from 'typedi';
 import type { SuperAgentTest } from 'supertest';
-import type { AuthenticationMethod } from 'n8n-workflow';
+import type { AuthenticationMethod } from 'flowease-workflow';
 import type { User } from '@db/entities/User';
 import { setSamlLoginEnabled } from '@/sso/saml/samlHelpers';
 import { getCurrentAuthenticationMethod, setCurrentAuthenticationMethod } from '@/sso/ssoHelpers';

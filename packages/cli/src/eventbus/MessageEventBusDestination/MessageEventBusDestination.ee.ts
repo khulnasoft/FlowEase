@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 import { Container } from 'typedi';
-import type { INodeCredentials, MessageEventBusDestinationOptions } from 'n8n-workflow';
-import { MessageEventBusDestinationTypeNames } from 'n8n-workflow';
+import type { INodeCredentials, MessageEventBusDestinationOptions } from 'flowease-workflow';
+import { MessageEventBusDestinationTypeNames } from 'flowease-workflow';
 import { Logger } from '@/Logger';
 import type { AbstractEventMessage } from '../EventMessageClasses/AbstractEventMessage';
 import type { EventMessageTypes } from '../EventMessageClasses';

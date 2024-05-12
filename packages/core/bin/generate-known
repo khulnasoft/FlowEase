@@ -3,7 +3,7 @@
 const path = require('path');
 const glob = require('fast-glob');
 const uniq = require('lodash/uniq');
-const { LoggerProxy, getCredentialsForNode } = require('n8n-workflow');
+const { LoggerProxy, getCredentialsForNode } = require('flowease-workflow');
 const { packageDir, writeJSON } = require('./common');
 const { loadClassInIsolation } = require('../dist/ClassLoader');
 

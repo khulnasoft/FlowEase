@@ -8,8 +8,8 @@ import type {
 	IRequestOptions,
 	IWebhookFunctions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 
@@ -28,7 +28,7 @@ export async function onfleetApiRequest(
 	const options: IRequestOptions = {
 		headers: {
 			'Content-Type': 'application/json',
-			'User-Agent': 'n8n-onfleet',
+			'User-Agent': 'flowease-onfleet',
 		},
 		auth: {
 			user: credentials.apiKey as string,

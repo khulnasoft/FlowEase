@@ -1,8 +1,8 @@
 import Container from 'typedi';
 import type { SuperAgentTest } from 'supertest';
 import type { Entry as LdapUser } from 'ldapts';
-import { Not } from '@n8n/typeorm';
-import { jsonParse } from 'n8n-workflow';
+import { Not } from '@flowease/typeorm';
+import { jsonParse } from 'flowease-workflow';
 import { Cipher } from 'flowease-core';
 
 import config from '@/config';
@@ -497,7 +497,7 @@ describe('POST /login', () => {
 
 		expect(response.statusCode).toBe(200);
 		expect(response.headers['set-cookie']).toBeDefined();
-		expect(response.headers['set-cookie'][0]).toContain('n8n-auth=');
+		expect(response.headers['set-cookie'][0]).toContain('flowease-auth=');
 
 		// Make sure the changes in the "LDAP server" were persisted in the database
 		const localLdapIdentities = await getLdapIdentities();

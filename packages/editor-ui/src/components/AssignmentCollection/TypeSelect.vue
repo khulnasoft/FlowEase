@@ -27,7 +27,7 @@ const onTypeChange = (type: string): void => {
 </script>
 
 <template>
-	<n8n-select
+	<flowease-select
 		data-test-id="assignment-type-select"
 		size="small"
 		:model-value="modelValue"
@@ -35,23 +35,23 @@ const onTypeChange = (type: string): void => {
 		@update:model-value="onTypeChange"
 	>
 		<template #prefix>
-			<n8n-icon :class="$style.icon" :icon="icon" color="text-light" size="small" />
+			<flowease-icon :class="$style.icon" :icon="icon" color="text-light" size="small" />
 		</template>
-		<n8n-option
+		<flowease-option
 			v-for="option in types"
 			:key="option.type"
 			:value="option.type"
 			:label="i18n.baseText(`type.${option.type}` as BaseTextKey)"
 			:class="$style.option"
 		>
-			<n8n-icon
+			<flowease-icon
 				:icon="option.icon"
 				:color="modelValue === option.type ? 'primary' : 'text-light'"
 				size="small"
 			/>
 			<span>{{ i18n.baseText(`type.${option.type}` as BaseTextKey) }}</span>
-		</n8n-option>
-	</n8n-select>
+		</flowease-option>
+	</flowease-select>
 </template>
 
 <style lang="scss" module>

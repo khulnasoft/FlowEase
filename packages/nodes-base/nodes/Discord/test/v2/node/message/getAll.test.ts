@@ -1,4 +1,4 @@
-import type { INodeTypes } from 'n8n-workflow';
+import type { INodeTypes } from 'flowease-workflow';
 import nock from 'nock';
 import * as transport from '../../../../v2/transport/discord.api';
 import { getResultNodeData, setup, workflowToTests } from '@test/nodes/Helpers';
@@ -17,7 +17,7 @@ discordApiRequestSpy.mockImplementation(async (method: string, endpoint) => {
 				channel_id: '1168516240332034067',
 				author: {
 					id: '1070667629972430879',
-					username: 'n8n-node-overhaul',
+					username: 'flowease-node-overhaul',
 					avatar: null,
 					discriminator: '1037',
 					public_flags: 0,

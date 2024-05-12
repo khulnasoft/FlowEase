@@ -2,7 +2,7 @@ import { WebhookRepository } from '@db/repositories/webhook.repository';
 import { Service } from 'typedi';
 import { CacheService } from '@/services/cache/cache.service';
 import type { WebhookEntity } from '@db/entities/WebhookEntity';
-import type { IHttpRequestMethods } from 'n8n-workflow';
+import type { IHttpRequestMethods } from 'flowease-workflow';
 
 type Method = NonNullable<IHttpRequestMethods>;
 

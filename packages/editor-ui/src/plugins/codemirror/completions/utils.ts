@@ -19,7 +19,7 @@ import type { TransactionSpec } from '@codemirror/state';
 import type { SyntaxNode } from '@lezer/common';
 import { javascriptLanguage } from '@codemirror/lang-javascript';
 import { useRouter } from 'vue-router';
-import type { DocMetadata } from 'n8n-workflow';
+import type { DocMetadata } from 'flowease-workflow';
 import { escapeMappingString } from '@/utils/mappingUtils';
 
 /**

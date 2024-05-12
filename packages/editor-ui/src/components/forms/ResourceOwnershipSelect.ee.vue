@@ -1,6 +1,6 @@
 <template>
 	<div class="resource-ownership-select">
-		<n8n-menu
+		<flowease-menu
 			:items="menuItems"
 			mode="tabs"
 			:model-value="value ? 'owner' : 'all'"

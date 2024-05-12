@@ -34,7 +34,7 @@ import type {
 import { getCredentialPermissions } from '@/permissions';
 import { getPersonalizedNodeTypes } from '@/utils/userUtils';
 import { defineStore } from 'pinia';
-import { useRootStore } from './n8nRoot.store';
+import { useRootStore } from './floweaseRoot.store';
 import { usePostHog } from './posthog.store';
 import { useSettingsStore } from './settings.store';
 import { useUIStore } from './ui.store';

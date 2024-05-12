@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'flowease-workflow';
 
 export class MySql implements ICredentialType {
 	name = 'mySql';

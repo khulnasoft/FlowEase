@@ -1,5 +1,5 @@
-import type { IDataObject, IExecuteSingleFunctions, IHttpRequestOptions } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, IExecuteSingleFunctions, IHttpRequestOptions } from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import FormData from 'form-data';
 

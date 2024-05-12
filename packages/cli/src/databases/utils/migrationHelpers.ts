@@ -1,9 +1,9 @@
 import { Container } from 'typedi';
 import { readFileSync, rmSync } from 'fs';
 import { InstanceSettings } from 'flowease-core';
-import type { ObjectLiteral } from '@n8n/typeorm';
-import type { QueryRunner } from '@n8n/typeorm/query-runner/QueryRunner';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import type { ObjectLiteral } from '@flowease/typeorm';
+import type { QueryRunner } from '@flowease/typeorm/query-runner/QueryRunner';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 import config from '@/config';
 import { inTest } from '@/constants';
 import type { BaseMigration, Migration, MigrationContext, MigrationFn } from '@db/types';
@@ -16,7 +16,7 @@ const PERSONALIZATION_SURVEY_FILENAME = 'personalizationSurvey.json';
 function loadSurveyFromDisk(): string | null {
 	try {
 		const filename = `${
-			Container.get(InstanceSettings).n8nFolder
+			Container.get(InstanceSettings).floweaseFolder
 		}/${PERSONALIZATION_SURVEY_FILENAME}`;
 		const surveyFile = readFileSync(filename, 'utf-8');
 		rmSync(filename);

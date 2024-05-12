@@ -6,8 +6,8 @@ import type {
 	INodeExecutionData,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { BINARY_ENCODING, NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { BINARY_ENCODING, NodeApiError } from 'flowease-workflow';
 
 export async function microsoftApiRequest(
 	this: IExecuteFunctions | ILoadOptionsFunctions,

@@ -2,14 +2,14 @@ import axios from 'axios';
 import type RudderStack from '@rudderstack/rudder-sdk-node';
 import { PostHogClient } from '@/posthog';
 import { Container, Service } from 'typedi';
-import type { ITelemetryTrackProperties } from 'n8n-workflow';
+import type { ITelemetryTrackProperties } from 'flowease-workflow';
 import { InstanceSettings } from 'flowease-core';
 
 import config from '@/config';
 import type { IExecutionTrackProperties } from '@/Interfaces';
 import { Logger } from '@/Logger';
 import { License } from '@/License';
-import { N8N_VERSION } from '@/constants';
+import { FLOWEASE_VERSION } from '@/constants';
 import { WorkflowRepository } from '@db/repositories/workflow.repository';
 import { SourceControlPreferencesService } from '../environments/sourceControl/sourceControlPreferences.service.ee';
 import { UserRepository } from '@db/repositories/user.repository';
@@ -163,7 +163,7 @@ export class Telemetry {
 		}
 	}
 
-	async trackN8nStop(): Promise<void> {
+	async trackFloweaseStop(): Promise<void> {
 		clearInterval(this.pulseIntervalReference);
 		await this.track('User instance stopped');
 		void Promise.all([this.postHog.stop(), this.rudderStack?.flush()]);
@@ -200,7 +200,7 @@ export class Telemetry {
 				const updatedProperties = {
 					...properties,
 					instance_id: instanceId,
-					version_cli: N8N_VERSION,
+					version_cli: FLOWEASE_VERSION,
 				};
 
 				const payload = {

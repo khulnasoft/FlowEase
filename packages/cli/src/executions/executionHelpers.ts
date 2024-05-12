@@ -1,5 +1,5 @@
 import { Container } from 'typedi';
-import type { ExecutionStatus } from 'n8n-workflow';
+import type { ExecutionStatus } from 'flowease-workflow';
 import { License } from '@/License';
 import type { IExecutionFlattedDb, IExecutionResponse } from '@/Interfaces';
 

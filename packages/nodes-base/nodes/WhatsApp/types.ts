@@ -1,4 +1,4 @@
-import type { GenericValue, IDataObject } from 'n8n-workflow';
+import type { GenericValue, IDataObject } from 'flowease-workflow';
 
 export type BaseFacebookResponse<TData> = { data: TData };
 export type BasePaginatedFacebookResponse<TData> = BaseFacebookResponse<TData> & {

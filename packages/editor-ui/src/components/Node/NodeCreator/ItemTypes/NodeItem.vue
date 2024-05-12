@@ -1,6 +1,6 @@
 <template>
 	<!-- Node Item is draggable only if it doesn't contain actions -->
-	<n8n-node-creator-node
+	<flowease-node-creator-node
 		:draggable="!showActionArrow"
 		:class="$style.nodeItem"
 		:description="description"
@@ -36,7 +36,7 @@
 				<NodeIcon :node-type="nodeType" :size="40" :shrink="false" @click.capture.stop />
 			</div>
 		</template>
-	</n8n-node-creator-node>
+	</flowease-node-creator-node>
 </template>
 
 <script setup lang="ts">

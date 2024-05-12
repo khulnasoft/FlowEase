@@ -6,8 +6,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 /**
  * Make an authenticated API request to Raindrop.
@@ -22,7 +22,7 @@ export async function raindropApiRequest(
 ) {
 	const options: IRequestOptions = {
 		headers: {
-			'user-agent': 'n8n',
+			'user-agent': 'flowease',
 			'Content-Type': 'application/json',
 		},
 		method,

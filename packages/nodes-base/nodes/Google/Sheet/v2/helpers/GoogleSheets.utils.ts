@@ -5,8 +5,8 @@ import type {
 	INodeListSearchItems,
 	INodePropertyOptions,
 	INode,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import type { GoogleSheet } from './GoogleSheet';
 import type {
 	RangeDetectionOptions,

@@ -6,7 +6,7 @@
 			['tab-bar-container']: true,
 		}"
 	>
-		<N8nRadioButtons
+		<FloweaseRadioButtons
 			:model-value="modelValue"
 			:options="items"
 			@update:model-value="onUpdateModelValue"

@@ -11,7 +11,7 @@ import {
 	type IRequestOptions,
 	NodeApiError,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import {
 	formatFeed,

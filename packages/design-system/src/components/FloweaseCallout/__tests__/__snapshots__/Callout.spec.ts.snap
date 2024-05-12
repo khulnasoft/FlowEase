@@ -1,0 +1,79 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`components > FloweaseCallout > should render additional slots correctly 1`] = `
+"<div class="flowease-callout callout custom round" role="alert">
+  <div class="messageSection">
+    <div class="icon">
+      <flowease-icon-stub icon="code-branch" size="medium" spin="false"></flowease-icon-stub>
+    </div>
+    <flowease-text-stub bold="false" size="small" compact="false" tag="span"></flowease-text-stub> &nbsp; <flowease-link-stub size="small"></flowease-link-stub>
+  </div>
+  <flowease-link-stub theme="secondary" size="small" bold="true" underline="true" to="https://flowease.khulnasoft.com"></flowease-link-stub>
+</div>"
+`;
+
+exports[`components > FloweaseCallout > should render custom theme correctly 1`] = `
+"<div class="flowease-callout callout custom round" role="alert">
+  <div class="messageSection">
+    <div class="icon">
+      <flowease-icon-stub icon="code-branch" size="medium" spin="false"></flowease-icon-stub>
+    </div>
+    <flowease-text-stub bold="false" size="small" compact="false" tag="span"></flowease-text-stub> &nbsp;
+  </div>
+</div>"
+`;
+
+exports[`components > FloweaseCallout > should render danger theme correctly 1`] = `
+"<div class="flowease-callout callout danger round" role="alert">
+  <div class="messageSection">
+    <div class="icon">
+      <flowease-icon-stub icon="exclamation-triangle" size="medium" spin="false"></flowease-icon-stub>
+    </div>
+    <flowease-text-stub bold="false" size="small" compact="false" tag="span"></flowease-text-stub> &nbsp;
+  </div>
+</div>"
+`;
+
+exports[`components > FloweaseCallout > should render info theme correctly 1`] = `
+"<div class="flowease-callout callout info round" role="alert">
+  <div class="messageSection">
+    <div class="icon">
+      <flowease-icon-stub icon="info-circle" size="medium" spin="false"></flowease-icon-stub>
+    </div>
+    <flowease-text-stub bold="false" size="small" compact="false" tag="span"></flowease-text-stub> &nbsp;
+  </div>
+</div>"
+`;
+
+exports[`components > FloweaseCallout > should render secondary theme correctly 1`] = `
+"<div class="flowease-callout callout secondary round" role="alert">
+  <div class="messageSection">
+    <div class="icon">
+      <flowease-icon-stub icon="info-circle" size="medium" spin="false"></flowease-icon-stub>
+    </div>
+    <flowease-text-stub bold="false" size="small" compact="false" tag="span"></flowease-text-stub> &nbsp;
+  </div>
+</div>"
+`;
+
+exports[`components > FloweaseCallout > should render success theme correctly 1`] = `
+"<div class="flowease-callout callout success round" role="alert">
+  <div class="messageSection">
+    <div class="icon">
+      <flowease-icon-stub icon="check-circle" size="medium" spin="false"></flowease-icon-stub>
+    </div>
+    <flowease-text-stub bold="false" size="small" compact="false" tag="span"></flowease-text-stub> &nbsp;
+  </div>
+</div>"
+`;
+
+exports[`components > FloweaseCallout > should render warning theme correctly 1`] = `
+"<div class="flowease-callout callout warning round" role="alert">
+  <div class="messageSection">
+    <div class="icon">
+      <flowease-icon-stub icon="exclamation-triangle" size="medium" spin="false"></flowease-icon-stub>
+    </div>
+    <flowease-text-stub bold="false" size="small" compact="false" tag="span"></flowease-text-stub> &nbsp;
+  </div>
+</div>"
+`;

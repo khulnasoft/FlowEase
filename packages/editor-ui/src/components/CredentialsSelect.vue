@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div :class="$style['parameter-value-container']">
-			<n8n-select
+			<flowease-select
 				ref="innerSelect"
 				:size="inputSize"
 				filterable
@@ -17,7 +17,7 @@
 				@focus="$emit('setFocus')"
 				@blur="$emit('onBlur')"
 			>
-				<n8n-option
+				<flowease-option
 					v-for="credType in supportedCredentialTypes"
 					:key="credType.name"
 					:value="credType.name"
@@ -34,8 +34,8 @@
 							v-html="credType.description"
 						/>
 					</div>
-				</n8n-option>
-			</n8n-select>
+				</flowease-option>
+			</flowease-select>
 			<slot name="issues-and-options" />
 		</div>
 
@@ -55,15 +55,15 @@
 </template>
 
 <script lang="ts">
-import type { ICredentialType } from 'n8n-workflow';
+import type { ICredentialType } from 'flowease-workflow';
 import { defineComponent } from 'vue';
 import ScopesNotice from '@/components/ScopesNotice.vue';
 import NodeCredentials from '@/components/NodeCredentials.vue';
 import { mapStores } from 'pinia';
 import { useCredentialsStore } from '@/stores/credentials.store';
-import type { N8nSelect } from 'flowease-design-system';
+import type { FloweaseSelect } from 'flowease-design-system';
 
-type N8nSelectRef = InstanceType<typeof N8nSelect>;
+type FloweaseSelectRef = InstanceType<typeof FloweaseSelect>;
 
 export default defineComponent({
 	name: 'CredentialsSelect',
@@ -96,7 +96,7 @@ export default defineComponent({
 	},
 	methods: {
 		focus() {
-			const selectRef = this.$refs.innerSelect as N8nSelectRef | undefined;
+			const selectRef = this.$refs.innerSelect as FloweaseSelectRef | undefined;
 			if (selectRef) {
 				selectRef.focus();
 			}

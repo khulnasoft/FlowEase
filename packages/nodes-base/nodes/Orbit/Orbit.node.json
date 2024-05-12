@@ -16,9 +16,9 @@
 		],
 		"generic": [
 			{
-				"label": "Migrating Community Metrics to Orbit using n8n",
+				"label": "Migrating Community Metrics to Orbit using flowease",
 				"icon": "📈",
-				"url": "https://flowease.khulnasoft.com/blog/migrating-community-metrics-to-orbit-using-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/migrating-community-metrics-to-orbit-using-flowease/"
 			}
 		]
 	}

@@ -2,7 +2,7 @@ import {
 	type IDataObject,
 	type ILoadOptionsFunctions,
 	type INodeListSearchResult,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { discordApiRequest } from '../transport';
 import { checkAccessToGuild } from '../helpers/utils';
 

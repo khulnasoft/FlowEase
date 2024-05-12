@@ -45,7 +45,7 @@ export namespace Risk {
 	export type InstanceSection = SectionBase & {
 		location?: NodeLocation[];
 		settings?: Record<string, unknown>;
-		nextVersions?: n8n.Version[];
+		nextVersions?: flowease.Version[];
 	};
 
 	export type StandardReport = {
@@ -67,7 +67,7 @@ export namespace Risk {
 	export type AsyncReportFn = (workflows: Workflow[]) => Promise<Report | null>;
 }
 
-export namespace n8n {
+export namespace flowease {
 	export type Version = {
 		name: string;
 		nodes: Array<

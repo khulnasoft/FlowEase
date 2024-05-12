@@ -9,18 +9,18 @@
 		:before-close="onModalClose"
 	>
 		<template #content>
-			<n8n-text>{{ getModalContent.message }}</n8n-text>
+			<flowease-text>{{ getModalContent.message }}</flowease-text>
 			<div
 				v-if="mode === COMMUNITY_PACKAGE_MANAGE_ACTIONS.UPDATE"
 				:class="$style.descriptionContainer"
 			>
-				<n8n-info-tip theme="info" type="note" :bold="false">
+				<flowease-info-tip theme="info" type="note" :bold="false">
 					<span v-text="getModalContent.description"></span>
-				</n8n-info-tip>
+				</flowease-info-tip>
 			</div>
 		</template>
 		<template #footer>
-			<n8n-button
+			<flowease-button
 				:loading="loading"
 				:disabled="loading"
 				:label="loading ? getModalContent.buttonLoadingLabel : getModalContent.buttonLabel"

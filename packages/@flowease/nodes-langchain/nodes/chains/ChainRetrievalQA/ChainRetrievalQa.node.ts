@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { RetrievalQAChain } from 'langchain/chains';
 import type { BaseLanguageModel } from '@langchain/core/language_models/base';
@@ -35,7 +35,7 @@ export class ChainRetrievalQa implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainretrievalqa/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.chainretrievalqa/',
 					},
 				],
 			},

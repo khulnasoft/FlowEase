@@ -17,7 +17,7 @@ import type {
 	ExternalSecretsProviderData,
 	ExternalSecretsProvider,
 } from '@/Interface';
-import type { IParameterLabel } from 'n8n-workflow';
+import type { IParameterLabel } from 'flowease-workflow';
 import ExternalSecretsProviderImage from '@/components/ExternalSecretsProviderImage.ee.vue';
 import ExternalSecretsProviderConnectionSwitch from '@/components/ExternalSecretsProviderConnectionSwitch.ee.vue';
 import { createEventBus } from 'flowease-design-system/utils';
@@ -190,7 +190,7 @@ async function onBeforeClose() {
 						:provider="provider"
 						@change="testConnection"
 					/>
-					<n8n-button
+					<flowease-button
 						type="primary"
 						:loading="saving"
 						:disabled="!canSave && !saving"
@@ -201,7 +201,7 @@ async function onBeforeClose() {
 								`settings.externalSecrets.provider.buttons.${saving ? 'saving' : 'save'}`,
 							)
 						}}
-					</n8n-button>
+					</flowease-button>
 				</div>
 			</div>
 		</template>
@@ -210,7 +210,7 @@ async function onBeforeClose() {
 			<div :class="$style.container">
 				<hr class="mb-l" />
 				<div v-if="connectionState !== 'initializing'" class="mb-l">
-					<n8n-callout
+					<flowease-callout
 						v-if="connectionState === 'connected' || connectionState === 'tested'"
 						theme="success"
 					>
@@ -236,16 +236,19 @@ async function onBeforeClose() {
 									<code>{{ `\{\{ \$secrets\.${provider.name}\.secret_name \}\}` }}</code>
 								</template>
 							</i18n-t>
-							<n8n-link :href="i18n.baseText('settings.externalSecrets.docs.use')" size="small">
+							<flowease-link
+								:href="i18n.baseText('settings.externalSecrets.docs.use')"
+								size="small"
+							>
 								{{
 									i18n.baseText(
 										'settings.externalSecrets.provider.testConnection.success.connected.docs',
 									)
 								}}
-							</n8n-link>
+							</flowease-link>
 						</span>
-					</n8n-callout>
-					<n8n-callout v-else-if="connectionState === 'error'" theme="danger">
+					</flowease-callout>
+					<flowease-callout v-else-if="connectionState === 'error'" theme="danger">
 						{{
 							i18n.baseText(
 								`settings.externalSecrets.provider.testConnection.error${
@@ -256,7 +259,7 @@ async function onBeforeClose() {
 								},
 							)
 						}}
-					</n8n-callout>
+					</flowease-callout>
 				</div>
 
 				<form
@@ -267,7 +270,7 @@ async function onBeforeClose() {
 					data-test-id="external-secrets-provider-properties-form"
 					@submit.prevent
 				>
-					<n8n-notice v-if="property.type === 'notice'" :content="property.displayName" />
+					<flowease-notice v-if="property.type === 'notice'" :content="property.displayName" />
 					<ParameterInputExpanded
 						v-else
 						class="mb-l"

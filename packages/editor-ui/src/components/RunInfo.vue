@@ -1,5 +1,5 @@
 <template>
-	<n8n-info-tip
+	<flowease-info-tip
 		v-if="hasStaleData"
 		theme="warning"
 		type="tooltip"
@@ -15,8 +15,8 @@
 				)
 			"
 		></span>
-	</n8n-info-tip>
-	<n8n-info-tip
+	</flowease-info-tip>
+	<flowease-info-tip
 		v-else-if="runMetadata"
 		type="tooltip"
 		:theme="theme"
@@ -24,28 +24,28 @@
 		tooltip-placement="right"
 	>
 		<div>
-			<n8n-text :bold="true" size="small"
+			<flowease-text :bold="true" size="small"
 				>{{
 					runTaskData.error
 						? $locale.baseText('runData.executionStatus.failed')
 						: $locale.baseText('runData.executionStatus.success')
-				}} </n8n-text
+				}} </flowease-text
 			><br />
-			<n8n-text :bold="true" size="small">{{
+			<flowease-text :bold="true" size="small">{{
 				$locale.baseText('runData.startTime') + ':'
-			}}</n8n-text>
+			}}</flowease-text>
 			{{ runMetadata.startTime }}<br />
-			<n8n-text :bold="true" size="small">{{
+			<flowease-text :bold="true" size="small">{{
 				$locale.baseText('runData.executionTime') + ':'
-			}}</n8n-text>
+			}}</flowease-text>
 			{{ runMetadata.executionTime }} {{ $locale.baseText('runData.ms') }}
 		</div>
-	</n8n-info-tip>
+	</flowease-info-tip>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import type { ITaskData } from 'n8n-workflow';
+import type { ITaskData } from 'flowease-workflow';
 import { convertToDisplayDateComponents } from '@/utils/formatters/dateFormatter';
 
 export default defineComponent({

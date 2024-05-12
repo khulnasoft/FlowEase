@@ -2,7 +2,9 @@
 	<div class="collection-parameter" @keydown.stop>
 		<div class="collection-parameter-wrapper">
 			<div v-if="getProperties.length === 0" class="no-items-exist">
-				<n8n-text size="small">{{ $locale.baseText('collectionParameter.noProperties') }}</n8n-text>
+				<flowease-text size="small">{{
+					$locale.baseText('collectionParameter.noProperties')
+				}}</flowease-text>
 			</div>
 
 			<Suspense>
@@ -18,7 +20,7 @@
 			</Suspense>
 
 			<div v-if="parameterOptions.length > 0 && !isReadOnly" class="param-options">
-				<n8n-button
+				<flowease-button
 					v-if="(parameter.options ?? []).length === 1"
 					type="tertiary"
 					block
@@ -26,22 +28,22 @@
 					@click="optionSelected((parameter.options ?? [])[0].name)"
 				/>
 				<div v-else class="add-option">
-					<n8n-select
+					<flowease-select
 						v-model="selectedOption"
 						:placeholder="getPlaceholderText"
 						size="small"
 						filterable
 						@update:model-value="optionSelected"
 					>
-						<n8n-option
+						<flowease-option
 							v-for="item in parameterOptions"
 							:key="item.name"
 							:label="getParameterOptionLabel(item)"
 							:value="item.name"
 							data-test-id="collection-parameter-option"
 						>
-						</n8n-option>
-					</n8n-select>
+						</flowease-option>
+					</flowease-select>
 				</div>
 			</div>
 		</div>
@@ -57,8 +59,8 @@ import type {
 	INodeProperties,
 	INodePropertyCollection,
 	INodePropertyOptions,
-} from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 
 import { get } from 'lodash-es';
 

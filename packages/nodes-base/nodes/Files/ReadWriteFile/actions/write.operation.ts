@@ -1,6 +1,6 @@
 import type { Readable } from 'stream';
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
-import { BINARY_ENCODING } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'flowease-workflow';
+import { BINARY_ENCODING } from 'flowease-workflow';
 
 import { errorMapper } from '../helpers/utils';
 import { updateDisplayOptions } from '@utils/utilities';

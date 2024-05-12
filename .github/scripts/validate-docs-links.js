@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const packages = ['nodes-base', '@n8n/nodes-langchain'];
+const packages = ['nodes-base', '@flowease/nodes-langchain'];
 const concurrency = 20;
 let exitCode = 0;
 
-const debug = require('debug')('n8n');
+const debug = require('debug')('flowease');
 const path = require('path');
 const https = require('https');
 const glob = require('glob');

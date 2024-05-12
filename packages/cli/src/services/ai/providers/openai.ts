@@ -1,11 +1,11 @@
 import { ChatOpenAI, OpenAIEmbeddings } from '@langchain/openai';
 import type { BaseMessageChunk, BaseMessageLike } from '@langchain/core/messages';
-import type { N8nAIProvider } from '@/types/ai.types';
+import type { FloweaseAIProvider } from '@/types/ai.types';
 import type { BaseChatModelCallOptions } from '@langchain/core/language_models/chat_models';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import type { ZodSchema } from 'zod';
 
-export class AIProviderOpenAI implements N8nAIProvider {
+export class AIProviderOpenAI implements FloweaseAIProvider {
 	public model: ChatOpenAI;
 
 	public embeddings: OpenAIEmbeddings;

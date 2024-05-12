@@ -3,8 +3,8 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	IDataObject,
-} from 'n8n-workflow';
-import { updateDisplayOptions } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { updateDisplayOptions } from 'flowease-workflow';
 import { apiRequest } from '../../transport';
 
 const properties: INodeProperties[] = [

@@ -1,7 +1,7 @@
 import Container from 'typedi';
 import { mock } from 'jest-mock-extended';
 import { v4 as uuid } from 'uuid';
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'flowease-workflow';
 
 import { CredentialsRepository } from '@/databases/repositories/credentials.repository';
 import { TagRepository } from '@/databases/repositories/tag.repository';
@@ -104,16 +104,16 @@ describe('ImportService', () => {
 
 	test('should leave intact new-format credentials', async () => {
 		const credential = {
-			n8nApi: { id: '123', name: 'n8n API' },
+			floweaseApi: { id: '123', name: 'flowease API' },
 		};
 
 		const nodes: INode[] = [
 			{
 				id: uuid(),
-				name: 'n8n',
+				name: 'flowease',
 				parameters: {},
 				position: [0, 0],
-				type: 'flowease-nodes-base.n8n',
+				type: 'flowease-nodes-base.flowease',
 				typeVersion: 1,
 				credentials: credential,
 			},

@@ -111,7 +111,7 @@ listenForModalChanges({
 				@new-credential="createNewCredential"
 			/>
 
-			<n8n-icon-button
+			<flowease-icon-button
 				icon="pen"
 				type="secondary"
 				:class="{
@@ -124,7 +124,7 @@ listenForModalChanges({
 			/>
 		</div>
 
-		<n8n-button
+		<flowease-button
 			v-else
 			:label="`Create new ${props.appName} credential`"
 			data-test-id="create-credential"

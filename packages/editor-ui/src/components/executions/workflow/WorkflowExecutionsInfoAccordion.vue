@@ -1,5 +1,5 @@
 <template>
-	<n8n-info-accordion
+	<flowease-info-accordion
 		:class="[$style.accordion, 'mt-2xl']"
 		:title="$locale.baseText('executionsLandingPage.emptyState.accordion.title')"
 		:items="accordionItems"
@@ -11,41 +11,41 @@
 		<template #customContent>
 			<footer class="mt-2xs">
 				{{ $locale.baseText('executionsLandingPage.emptyState.accordion.footer') }}
-				<n8n-tooltip :disabled="!isNewWorkflow">
+				<flowease-tooltip :disabled="!isNewWorkflow">
 					<template #content>
 						<div>
-							<n8n-link @click.prevent="onSaveWorkflowClick">{{
+							<flowease-link @click.prevent="onSaveWorkflowClick">{{
 								$locale.baseText('executionsLandingPage.emptyState.accordion.footer.tooltipLink')
-							}}</n8n-link>
+							}}</flowease-link>
 							{{
 								$locale.baseText('executionsLandingPage.emptyState.accordion.footer.tooltipText')
 							}}
 						</div>
 					</template>
-					<n8n-link
+					<flowease-link
 						:class="{ [$style.disabled]: isNewWorkflow }"
 						size="small"
 						@click.prevent="openWorkflowSettings"
 					>
 						{{ $locale.baseText('executionsLandingPage.emptyState.accordion.footer.settingsLink') }}
-					</n8n-link>
-				</n8n-tooltip>
+					</flowease-link>
+				</flowease-tooltip>
 			</footer>
 		</template>
-	</n8n-info-accordion>
+	</flowease-info-accordion>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapStores } from 'pinia';
 import { useRouter } from 'vue-router';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useUIStore } from '@/stores/ui.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { PLACEHOLDER_EMPTY_WORKFLOW_ID, WORKFLOW_SETTINGS_MODAL_KEY } from '@/constants';
-import type { IWorkflowSettings } from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+import type { IWorkflowSettings } from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 import { useWorkflowHelpers } from '@/composables/useWorkflowHelpers';
 
 interface IWorkflowSaveSettings {

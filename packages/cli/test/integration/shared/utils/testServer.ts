@@ -62,7 +62,7 @@ function publicApiAgent(
 	const agent = request.agent(app);
 	void agent.use(prefix(`${PUBLIC_API_REST_PATH_SEGMENT}/v${version}`));
 	if (user.apiKey) {
-		void agent.set({ 'X-N8N-API-KEY': user.apiKey });
+		void agent.set({ 'X-FLOWEASE-API-KEY': user.apiKey });
 	}
 	return agent;
 }

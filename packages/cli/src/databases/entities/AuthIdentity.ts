@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryColumn, Unique } from '@n8n/typeorm';
+import { Column, Entity, ManyToOne, PrimaryColumn, Unique } from '@flowease/typeorm';
 import { WithTimestamps } from './AbstractEntity';
 import { User } from './User';
 

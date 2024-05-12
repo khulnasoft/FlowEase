@@ -1,5 +1,5 @@
-import { IHttpRequestMethods } from 'n8n-workflow';
-import { Column, Entity, Index, PrimaryColumn } from '@n8n/typeorm';
+import { IHttpRequestMethods } from 'flowease-workflow';
+import { Column, Entity, Index, PrimaryColumn } from '@flowease/typeorm';
 
 @Entity()
 @Index(['webhookId', 'method', 'pathLength'])

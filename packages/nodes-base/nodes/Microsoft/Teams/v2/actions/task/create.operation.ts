@@ -1,4 +1,4 @@
-import type { INodeProperties, IExecuteFunctions, IDataObject } from 'n8n-workflow';
+import type { INodeProperties, IExecuteFunctions, IDataObject } from 'flowease-workflow';
 import { DateTime } from 'luxon';
 import { bucketRLC, groupRLC, memberRLC, planRLC } from '../../descriptions';
 import { microsoftApiRequest } from '../../transport';

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-loop-func */
-import type { NodeVMOptions } from '@n8n/vm2';
-import { NodeVM } from '@n8n/vm2';
+import type { NodeVMOptions } from '@flowease/vm2';
+import { NodeVM } from '@flowease/vm2';
 import type {
 	IExecuteFunctions,
 	IBinaryKeyData,
@@ -8,8 +8,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { deepCopy, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy, NodeOperationError } from 'flowease-workflow';
 import { vmResolver } from '../Code/JavaScriptSandbox';
 
 export class FunctionItem implements INodeType {

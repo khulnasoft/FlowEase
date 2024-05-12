@@ -1,14 +1,14 @@
 <template>
 	<div v-if="executionUIDetails?.name === 'running'" :class="$style.runningInfo">
 		<div :class="$style.spinner">
-			<n8n-spinner type="ring" />
+			<flowease-spinner type="ring" />
 		</div>
-		<n8n-text :class="$style.runningMessage" color="text-light">
+		<flowease-text :class="$style.runningMessage" color="text-light">
 			{{ $locale.baseText('executionDetails.runningMessage') }}
-		</n8n-text>
-		<n8n-button class="mt-l" type="tertiary" @click="handleStopClick">
+		</flowease-text>
+		<flowease-button class="mt-l" type="tertiary" @click="handleStopClick">
 			{{ $locale.baseText('executionsList.stopExecution') }}
-		</n8n-button>
+		</flowease-button>
 	</div>
 	<div v-else :class="$style.previewContainer">
 		<div
@@ -17,32 +17,32 @@
 			:data-test-id="`execution-preview-details-${executionId}`"
 		>
 			<div>
-				<n8n-text size="large" color="text-base" :bold="true" data-test-id="execution-time">{{
+				<flowease-text size="large" color="text-base" :bold="true" data-test-id="execution-time">{{
 					executionUIDetails?.startTime
-				}}</n8n-text
+				}}</flowease-text
 				><br />
-				<n8n-spinner
+				<flowease-spinner
 					v-if="executionUIDetails?.name === 'running'"
 					size="small"
 					:class="[$style.spinner, 'mr-4xs']"
 				/>
-				<n8n-text
+				<flowease-text
 					size="medium"
 					:class="[$style.status, $style[executionUIDetails.name]]"
 					data-test-id="execution-preview-label"
 				>
 					{{ executionUIDetails.label }}
-				</n8n-text>
+				</flowease-text>
 				{{ ' ' }}
-				<n8n-text v-if="executionUIDetails.name === 'running'" color="text-base" size="medium">
+				<flowease-text v-if="executionUIDetails.name === 'running'" color="text-base" size="medium">
 					{{
 						$locale.baseText('executionDetails.runningTimeRunning', {
 							interpolate: { time: executionUIDetails?.runningTime },
 						})
 					}}
 					| ID#{{ execution.id }}
-				</n8n-text>
-				<n8n-text
+				</flowease-text>
+				<flowease-text
 					v-else-if="executionUIDetails.name !== 'waiting'"
 					color="text-base"
 					size="medium"
@@ -54,15 +54,15 @@
 						})
 					}}
 					| ID#{{ execution.id }}
-				</n8n-text>
-				<n8n-text
+				</flowease-text>
+				<flowease-text
 					v-else-if="executionUIDetails?.name === 'waiting'"
 					color="text-base"
 					size="medium"
 				>
 					| ID#{{ execution.id }}
-				</n8n-text>
-				<br /><n8n-text v-if="execution.mode === 'retry'" color="text-base" size="medium">
+				</flowease-text>
+				<br /><flowease-text v-if="execution.mode === 'retry'" color="text-base" size="medium">
 					{{ $locale.baseText('executionDetails.retry') }}
 					<router-link
 						:class="$style.executionLink"
@@ -76,10 +76,10 @@
 					>
 						#{{ execution.retryOf }}
 					</router-link>
-				</n8n-text>
+				</flowease-text>
 			</div>
 			<div>
-				<n8n-button size="medium" :type="debugButtonData.type" :class="$style.debugLink">
+				<flowease-button size="medium" :type="debugButtonData.type" :class="$style.debugLink">
 					<router-link
 						:to="{
 							name: VIEWS.EXECUTION_DEBUG,
@@ -93,7 +93,7 @@
 							debugButtonData.text
 						}}</span>
 					</router-link>
-				</n8n-button>
+				</flowease-button>
 
 				<ElDropdown
 					v-if="isRetriable"
@@ -103,7 +103,7 @@
 					@command="handleRetryClick"
 				>
 					<span class="retry-button">
-						<n8n-icon-button
+						<flowease-icon-button
 							size="medium"
 							type="tertiary"
 							:title="$locale.baseText('executionsList.retryExecution')"
@@ -123,7 +123,7 @@
 						</el-dropdown-menu>
 					</template>
 				</ElDropdown>
-				<n8n-icon-button
+				<flowease-icon-button
 					:title="$locale.baseText('executionDetails.deleteExecution')"
 					icon="trash"
 					size="medium"
@@ -149,7 +149,7 @@ import { useExecutionDebugging } from '@/composables/useExecutionDebugging';
 import { useMessage } from '@/composables/useMessage';
 import WorkflowPreview from '@/components/WorkflowPreview.vue';
 import { MODAL_CONFIRM, VIEWS } from '@/constants';
-import type { ExecutionSummary } from 'n8n-workflow';
+import type { ExecutionSummary } from 'flowease-workflow';
 import type { IExecutionUIData } from '@/composables/useExecutionHelpers';
 import { useExecutionHelpers } from '@/composables/useExecutionHelpers';
 import { useWorkflowsStore } from '@/stores/workflows.store';

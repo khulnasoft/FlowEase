@@ -1,4 +1,4 @@
-import type { MessageEventBusDestinationOptions } from 'n8n-workflow';
+import type { MessageEventBusDestinationOptions } from 'flowease-workflow';
 import { defineStore } from 'pinia';
 import {
 	deleteDestinationFromDb,
@@ -7,7 +7,7 @@ import {
 	saveDestinationToDb,
 	sendTestMessageToDestination,
 } from '../api/eventbus.ee';
-import { useRootStore } from './n8nRoot.store';
+import { useRootStore } from './floweaseRoot.store';
 
 export interface EventSelectionItem {
 	selected: boolean;
@@ -253,8 +253,8 @@ export function eventGroupsFromStringList(
 	const groups: Set<string> = new Set<string>();
 
 	// since a Set returns iteration items on the order they were added, we can make sure workflow and nodes come first
-	groups.add('n8n.workflow');
-	groups.add('n8n.node');
+	groups.add('flowease.workflow');
+	groups.add('flowease.node');
 
 	for (const eventName of eventNameArray) {
 		const matches = eventName.match(/^[\w\s]+\.[\w\s]+/);

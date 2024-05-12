@@ -12,8 +12,13 @@ import type {
 } from '@codemirror/autocomplete';
 import { uniqBy } from 'lodash-es';
 import { DateTime } from 'luxon';
-import type { DocMetadata, IDataObject, NativeDoc } from 'n8n-workflow';
-import { Expression, ExpressionExtensions, NativeMethods, validateFieldType } from 'n8n-workflow';
+import type { DocMetadata, IDataObject, NativeDoc } from 'flowease-workflow';
+import {
+	Expression,
+	ExpressionExtensions,
+	NativeMethods,
+	validateFieldType,
+} from 'flowease-workflow';
 import {
 	ARRAY_NUMBER_ONLY_METHODS,
 	ARRAY_RECOMMENDED_OPTIONS,

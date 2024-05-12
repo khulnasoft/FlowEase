@@ -5,7 +5,7 @@ import {
 	type INodeTypeBaseDescription,
 	type INodeTypeDescription,
 	type IWebhookFunctions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import {
 	formDescription,
@@ -18,14 +18,14 @@ import {
 import { formWebhook } from '../utils';
 
 const descriptionV1: INodeTypeDescription = {
-	displayName: 'n8n Form Trigger',
+	displayName: 'flowease Form Trigger',
 	name: 'formTrigger',
 	icon: 'file:form.svg',
 	group: ['trigger'],
 	version: 1,
-	description: 'Runs the flow when an n8n generated webform is submitted',
+	description: 'Runs the flow when an flowease generated webform is submitted',
 	defaults: {
-		name: 'n8n Form Trigger',
+		name: 'flowease Form Trigger',
 	},
 	// eslint-disable-next-line flowease-nodes-base/node-class-description-inputs-wrong-regular-node
 	inputs: [],

@@ -10,7 +10,7 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import isEmpty from 'lodash/isEmpty';
 import type { IEmail } from '../GenericFunctions';

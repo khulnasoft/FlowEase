@@ -6,7 +6,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import {
 	getAutomaticSecret,
@@ -530,7 +530,7 @@ export class CiscoWebexTrigger implements INodeType {
 				const endpoint = '/webhooks';
 
 				const body: IDataObject = {
-					name: `n8n-webhook:${webhookUrl}`,
+					name: `flowease-webhook:${webhookUrl}`,
 					targetUrl: webhookUrl,
 					event,
 					resource: mapResource(resource),

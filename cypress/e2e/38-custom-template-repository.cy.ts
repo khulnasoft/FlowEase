@@ -8,30 +8,45 @@ const templatesPage = new TemplatesPage();
 const workflowPage = new WorkflowPage();
 const templateWorkflowPage = new TemplateWorkflowPage();
 
-
 describe.skip('In-app templates repository', () => {
 	beforeEach(() => {
-		cy.intercept('GET', '**/api/templates/search?page=1&rows=20&category=&search=', { fixture: 'templates_search/all_templates_search_response.json' }).as('searchRequest');
-		cy.intercept('GET', '**/api/templates/search?page=1&rows=20&category=Sales*', { fixture: 'templates_search/sales_templates_search_response.json' }).as('categorySearchRequest');
-		cy.intercept('GET', '**/api/templates/workflows/*', { fixture: 'templates_search/test_template_preview.json' }).as('singleTemplateRequest');
-		cy.intercept('GET', '**/api/workflows/templates/*', { fixture: 'templates_search/test_template_import.json' }).as('singleTemplateRequest');
+		cy.intercept('GET', '**/api/templates/search?page=1&rows=20&category=&search=', {
+			fixture: 'templates_search/all_templates_search_response.json',
+		}).as('searchRequest');
+		cy.intercept('GET', '**/api/templates/search?page=1&rows=20&category=Sales*', {
+			fixture: 'templates_search/sales_templates_search_response.json',
+		}).as('categorySearchRequest');
+		cy.intercept('GET', '**/api/templates/workflows/*', {
+			fixture: 'templates_search/test_template_preview.json',
+		}).as('singleTemplateRequest');
+		cy.intercept('GET', '**/api/workflows/templates/*', {
+			fixture: 'templates_search/test_template_import.json',
+		}).as('singleTemplateRequest');
 		cy.intercept('GET', '**/rest/settings', (req) => {
 			// Disable cache
-			delete req.headers['if-none-match']
+			delete req.headers['if-none-match'];
 			req.reply((res) => {
 				if (res.body.data) {
 					// Enable in-app templates by setting a custom host
-					res.body.data.templates = { enabled: true, host: 'https://api-staging.flowease.khulnasoft.com/api/' };
+					res.body.data.templates = {
+						enabled: true,
+						host: 'https://api-staging.flowease.khulnasoft.com/api/',
+					};
 				}
 			});
 		}).as('settingsRequest');
 	});
 
 	it('can open onboarding flow', () => {
-		templatesPage.actions.openOnboardingFlow(1, OnboardingWorkflow.name, OnboardingWorkflow, 'https://api-staging.flowease.khulnasoft.com');
+		templatesPage.actions.openOnboardingFlow(
+			1,
+			OnboardingWorkflow.name,
+			OnboardingWorkflow,
+			'https://api-staging.flowease.khulnasoft.com',
+		);
 		cy.url().then(($url) => {
 			expect($url).to.match(/.*\/workflow\/.*?onboardingId=1$/);
-		})
+		});
 
 		workflowPage.actions.shouldHaveWorkflowName(`Demo: ${name}`);
 
@@ -41,7 +56,12 @@ describe.skip('In-app templates repository', () => {
 	});
 
 	it('can import template', () => {
-		templatesPage.actions.importTemplate(1, OnboardingWorkflow.name, OnboardingWorkflow, 'https://api-staging.flowease.khulnasoft.com');
+		templatesPage.actions.importTemplate(
+			1,
+			OnboardingWorkflow.name,
+			OnboardingWorkflow,
+			'https://api-staging.flowease.khulnasoft.com',
+		);
 
 		cy.url().then(($url) => {
 			expect($url).to.include('/workflow/new?templateId=1');
@@ -54,7 +74,7 @@ describe.skip('In-app templates repository', () => {
 
 	it('should save template id with the workflow', () => {
 		cy.visit(templatesPage.url);
-		cy.get('.el-skeleton.n8n-loading').should('not.exist');
+		cy.get('.el-skeleton.flowease-loading').should('not.exist');
 		templatesPage.getters.firstTemplateCard().should('exist');
 		templatesPage.getters.templatesLoadingContainer().should('not.exist');
 		templatesPage.getters.firstTemplateCard().click();
@@ -79,11 +99,13 @@ describe.skip('In-app templates repository', () => {
 	});
 
 	it('can open template with images and hides workflow screenshots', () => {
-		templateWorkflowPage.actions.openTemplate(WorkflowTemplate, 'https://api-staging.flowease.khulnasoft.com');
+		templateWorkflowPage.actions.openTemplate(
+			WorkflowTemplate,
+			'https://api-staging.flowease.khulnasoft.com',
+		);
 
 		templateWorkflowPage.getters.description().find('img').should('have.length', 1);
 	});
-
 
 	it('renders search elements correctly', () => {
 		cy.visit(templatesPage.url);
@@ -113,7 +135,9 @@ describe.skip('In-app templates repository', () => {
 					expect(parseInt($el.text().replace(/\D/g, ''), 10)).to.be.lessThan(initialTemplateCount);
 				});
 				templatesPage.getters.collectionCountLabel().should(($el) => {
-					expect(parseInt($el.text().replace(/\D/g, ''), 10)).to.be.lessThan(initialCollectionCount);
+					expect(parseInt($el.text().replace(/\D/g, ''), 10)).to.be.lessThan(
+						initialCollectionCount,
+					);
 				});
 			});
 		});
@@ -140,8 +164,11 @@ describe.skip('In-app templates repository', () => {
 		// Search input should still have the search query
 		templatesPage.getters.searchInput().should('have.value', 'auto');
 		// Sales checkbox should be pushed to the top
-		templatesPage.getters.categoryFilters().eq(1).then(($el) => {
-			expect($el.text()).to.equal('Sales');
-		});
+		templatesPage.getters
+			.categoryFilters()
+			.eq(1)
+			.then(($el) => {
+				expect($el.text()).to.equal('Sales');
+			});
 	});
 });

@@ -8,9 +8,12 @@ import type {
 	SupplyData,
 	ExecutionError,
 	IDataObject,
-} from 'n8n-workflow';
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
-import type { SetField, SetNodeOptions } from 'flowease-nodes-base/dist/nodes/Set/v2/helpers/interfaces';
+} from 'flowease-workflow';
+import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
+import type {
+	SetField,
+	SetNodeOptions,
+} from 'flowease-nodes-base/dist/nodes/Set/v2/helpers/interfaces';
 import * as manual from 'flowease-nodes-base/dist/nodes/Set/v2/manual.mode';
 
 import { DynamicTool } from '@langchain/core/tools';
@@ -21,14 +24,15 @@ import { getConnectionHintNoticeField } from '../../../utils/sharedFields';
 
 export class ToolWorkflow implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'Custom n8n Workflow Tool',
+		displayName: 'Custom flowease Workflow Tool',
 		name: 'toolWorkflow',
 		icon: 'fa:network-wired',
 		group: ['transform'],
 		version: [1, 1.1],
-		description: 'Uses another n8n workflow as a tool. Allows packaging any n8n node(s) as a tool.',
+		description:
+			'Uses another flowease workflow as a tool. Allows packaging any flowease node(s) as a tool.',
 		defaults: {
-			name: 'Custom n8n Workflow Tool',
+			name: 'Custom flowease Workflow Tool',
 		},
 		codex: {
 			categories: ['AI'],
@@ -38,7 +42,7 @@ export class ToolWorkflow implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolworkflow/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.toolworkflow/',
 					},
 				],
 			},
@@ -172,7 +176,7 @@ export class ToolWorkflow implements INodeType {
 				required: true,
 				hint: 'The field in the last-executed node of the workflow that contains the response',
 				description:
-					'Where to find the data that this tool should return. n8n will look in the output of the last-executed node of the workflow for a field with this name, and return its value.',
+					'Where to find the data that this tool should return. flowease will look in the output of the last-executed node of the workflow for a field with this name, and return its value.',
 			},
 			{
 				displayName: 'Extra Workflow Inputs',

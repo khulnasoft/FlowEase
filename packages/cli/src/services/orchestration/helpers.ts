@@ -1,5 +1,5 @@
 import { Container } from 'typedi';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'flowease-workflow';
 import { Logger } from '@/Logger';
 import type { RedisServiceCommandObject } from '../redis/RedisServiceCommands';
 import { COMMAND_REDIS_CHANNEL } from '../redis/RedisServiceHelper';

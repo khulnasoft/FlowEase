@@ -1,5 +1,5 @@
 import type { ResolvableState } from '@/types/expressions';
-import { ExpressionError, ExpressionParser, type Result } from 'n8n-workflow';
+import { ExpressionError, ExpressionParser, type Result } from 'flowease-workflow';
 import { i18n } from '@/plugins/i18n';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 

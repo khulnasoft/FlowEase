@@ -1,11 +1,11 @@
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 import type {
 	ITriggerFunctions,
 	IDataObject,
 	ILoadOptionsFunctions,
 	INodeListSearchResult,
 	INodeListSearchItems,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import pgPromise from 'pg-promise';
 import type pg from 'pg-promise/typescript/pg-subset';
 
@@ -17,14 +17,14 @@ export function prepareNames(id: string, mode: string, additionalFields: IDataOb
 	}
 
 	let functionName =
-		(additionalFields.functionName as string) || `n8n_trigger_function_${suffix}()`;
+		(additionalFields.functionName as string) || `flowease_trigger_function_${suffix}()`;
 
 	if (!(functionName.includes('(') && functionName.includes(')'))) {
 		functionName = `${functionName}()`;
 	}
 
-	const triggerName = (additionalFields.triggerName as string) || `n8n_trigger_${suffix}`;
-	const channelName = (additionalFields.channelName as string) || `n8n_channel_${suffix}`;
+	const triggerName = (additionalFields.triggerName as string) || `flowease_trigger_${suffix}`;
+	const channelName = (additionalFields.channelName as string) || `flowease_channel_${suffix}`;
 
 	if (channelName.includes('-')) {
 		throw new ApplicationError('Channel name cannot contain hyphens (-)', { level: 'warning' });

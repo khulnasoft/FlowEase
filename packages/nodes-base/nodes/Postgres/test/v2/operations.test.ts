@@ -4,7 +4,7 @@ import type {
 	IGetNodeParameterOptions,
 	INode,
 	INodeParameters,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { get } from 'lodash';
 import type { ColumnInfo, PgpDatabase, QueriesRunner } from '../../v2/helpers/interfaces';

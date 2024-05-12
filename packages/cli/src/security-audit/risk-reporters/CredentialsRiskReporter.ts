@@ -1,5 +1,5 @@
 import { Service } from 'typedi';
-import type { IWorkflowBase } from 'n8n-workflow';
+import type { IWorkflowBase } from 'flowease-workflow';
 import config from '@/config';
 import { CREDENTIALS_REPORT } from '@/security-audit/constants';
 import type { RiskReporter, Risk } from '@/security-audit/types';

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<n8n-loading :loading="loading" :rows="5" variant="p" />
+		<flowease-loading :loading="loading" :rows="5" variant="p" />
 
 		<TemplateDetailsBlock v-if="!loading && template.nodes.length > 0" :title="blockTitle">
 			<div :class="$style.icons">
@@ -23,24 +23,24 @@
 			v-if="!loading && template?.categories.length > 0"
 			:title="$locale.baseText('template.details.categories')"
 		>
-			<n8n-tags :tags="template.categories" @click:tag="redirectToCategory" />
+			<flowease-tags :tags="template.categories" @click:tag="redirectToCategory" />
 		</TemplateDetailsBlock>
 
 		<TemplateDetailsBlock v-if="!loading" :title="$locale.baseText('template.details.details')">
 			<div :class="$style.text">
-				<n8n-text size="small" color="text-base">
+				<flowease-text size="small" color="text-base">
 					{{ $locale.baseText('template.details.created') }}
 					<TimeAgo :date="template.createdAt" />
 					{{ $locale.baseText('template.details.by') }}
-					{{ template.user ? template.user.username : 'n8n team' }}
-				</n8n-text>
+					{{ template.user ? template.user.username : 'flowease team' }}
+				</flowease-text>
 			</div>
 			<div :class="$style.text">
-				<n8n-text v-if="template.totalViews !== 0" size="small" color="text-base">
+				<flowease-text v-if="template.totalViews !== 0" size="small" color="text-base">
 					{{ $locale.baseText('template.details.viewed') }}
 					{{ abbreviateNumber(template.totalViews) }}
 					{{ $locale.baseText('template.details.times') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 		</TemplateDetailsBlock>
 	</div>

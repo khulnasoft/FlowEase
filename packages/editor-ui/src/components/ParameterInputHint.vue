@@ -1,5 +1,5 @@
 <template>
-	<n8n-text v-if="hint" size="small" color="text-base" tag="div">
+	<flowease-text v-if="hint" size="small" color="text-base" tag="div">
 		<div v-if="!renderHTML" :class="classes"><span v-html="simplyText"></span></div>
 		<div
 			v-else
@@ -7,7 +7,7 @@
 			:class="{ [$style.singleline]: singleLine, [$style.highlight]: highlight }"
 			v-html="sanitizeHtml(hint)"
 		></div>
-	</n8n-text>
+	</flowease-text>
 </template>
 
 <script lang="ts">

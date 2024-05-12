@@ -42,14 +42,14 @@ import {
 	type IUserManagementSettings,
 	type WorkflowSettings,
 	type IUserSettings,
-	type IN8nUISettings,
+	type IFloweaseUISettings,
 	type BannerName,
 	type INodeExecutionData,
 	type INodeProperties,
 	type NodeConnectionType,
 	type INodeCredentialsDetails,
 	type StartNodeData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { BulkCommand, Undoable } from '@/models/history';
 import type { PartialBy, TupleToUnion } from '@/utils/typeHelpers';
 import type { Component } from 'vue';
@@ -222,7 +222,7 @@ export interface IVariableSelectorOption {
 	dataType?: string;
 }
 
-// Simple version of n8n-workflow.Workflow
+// Simple version of flowease-workflow.Workflow
 export interface IWorkflowData {
 	id?: string;
 	name?: string;
@@ -748,18 +748,18 @@ export interface IUserListAction {
 	guard?: (user: IUser) => boolean;
 }
 
-export interface IN8nPrompts {
+export interface IFloweasePrompts {
 	message: string;
 	title: string;
 	showContactPrompt: boolean;
 	showValueSurvey: boolean;
 }
 
-export interface IN8nValueSurveyData {
+export interface IFloweaseValueSurveyData {
 	[key: string]: string;
 }
 
-export interface IN8nPromptResponse {
+export interface IFloweasePromptResponse {
 	updated: boolean;
 }
 
@@ -1113,7 +1113,7 @@ export interface RootState {
 	maxExecutionTimeout: number;
 	versionCli: string;
 	oauthCallbackUrls: object;
-	n8nMetadata: {
+	floweaseMetadata: {
 		[key: string]: string | number | undefined;
 	};
 	pushRef: string;
@@ -1152,7 +1152,7 @@ export interface IRootState {
 	maxExecutionTimeout: number;
 	versionCli: string;
 	oauthCallbackUrls: object;
-	n8nMetadata: object;
+	floweaseMetadata: object;
 	workflowExecutionData: IExecutionResponse | null;
 	workflowExecutionPairedItemMappings: { [itemId: string]: Set<string> };
 	lastSelectedNode: string | null;
@@ -1353,8 +1353,8 @@ export interface INodeCreatorState {
 
 export interface ISettingsState {
 	initialized: boolean;
-	settings: IN8nUISettings;
-	promptsData: IN8nPrompts;
+	settings: IFloweaseUISettings;
+	promptsData: IFloweasePrompts;
 	userManagement: IUserManagementSettings;
 	templatesEndpointHealthy: boolean;
 	api: {
@@ -1411,7 +1411,7 @@ export interface ITemplateState {
 	};
 	currentSessionId: string;
 	previousSessionId: string;
-	currentN8nPath: string;
+	currentFloweasePath: string;
 }
 
 export interface IVersionsState {
@@ -1820,7 +1820,7 @@ export type CloudUpdateLinkSourceType =
 	| 'custom-data-filter'
 	| 'workflow_sharing'
 	| 'credential_sharing'
-	| 'settings-n8n-api'
+	| 'settings-flowease-api'
 	| 'audit-logs'
 	| 'ldap'
 	| 'log-streaming'
@@ -1852,7 +1852,7 @@ export type UTMCampaign =
 	| 'upgrade-advanced-permissions'
 	| 'upgrade-worker-view';
 
-export type N8nBanners = {
+export type FloweaseBanners = {
 	[key in BannerName]: {
 		priority: number;
 		component: Component;

@@ -1,6 +1,6 @@
 /* eslint-disable flowease-nodes-base/node-filename-against-convention */
-import type { INodeTypeDescription } from 'n8n-workflow';
-import { NodeConnectionType } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
+import { NodeConnectionType } from 'flowease-workflow';
 
 import * as assistant from './assistant';
 import * as audio from './audio';
@@ -83,7 +83,7 @@ export const versionDescription: INodeTypeDescription = {
 		resources: {
 			primaryDocumentation: [
 				{
-					url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/',
+					url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-langchain.openai/',
 				},
 			],
 		},

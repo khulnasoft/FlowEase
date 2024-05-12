@@ -1,7 +1,7 @@
 {
   "name": "flowease-nodes-base",
   "version": "1.41.0",
-  "description": "Base nodes of n8n",
+  "description": "Base nodes of flowease",
   "license": "SEE LICENSE IN LICENSE.md",
   "homepage": "https://flowease.khulnasoft.com",
   "author": {
@@ -17,18 +17,18 @@
     "clean": "rimraf dist .turbo",
     "dev": "pnpm watch",
     "typecheck": "tsc",
-    "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json && pnpm n8n-copy-icons && pnpm n8n-generate-translations && pnpm build:metadata",
-    "build:metadata": "pnpm n8n-generate-known && pnpm n8n-generate-ui-types",
+    "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json && pnpm flowease-copy-icons && pnpm flowease-generate-translations && pnpm build:metadata",
+    "build:metadata": "pnpm flowease-generate-known && pnpm flowease-generate-ui-types",
     "format": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint . --quiet && node ./scripts/validate-load-options-methods.js",
     "lintfix": "eslint . --fix",
-    "watch": "tsc-watch -p tsconfig.build.json --onCompilationComplete \"tsc-alias -p tsconfig.build.json\" --onSuccess \"pnpm n8n-generate-ui-types\"",
+    "watch": "tsc-watch -p tsconfig.build.json --onCompilationComplete \"tsc-alias -p tsconfig.build.json\" --onSuccess \"pnpm flowease-generate-ui-types\"",
     "test": "jest"
   },
   "files": [
     "dist"
   ],
-  "n8n": {
+  "flowease": {
     "credentials": [
       "dist/credentials/ActionNetworkApi.credentials.js",
       "dist/credentials/ActiveCampaignApi.credentials.js",
@@ -240,7 +240,7 @@
       "dist/credentials/Mqtt.credentials.js",
       "dist/credentials/Msg91Api.credentials.js",
       "dist/credentials/MySql.credentials.js",
-      "dist/credentials/N8nApi.credentials.js",
+      "dist/credentials/FloweaseApi.credentials.js",
       "dist/credentials/NasaApi.credentials.js",
       "dist/credentials/NetlifyApi.credentials.js",
       "dist/credentials/NextCloudApi.credentials.js",
@@ -636,10 +636,10 @@
       "dist/nodes/MQTT/MqttTrigger.node.js",
       "dist/nodes/Msg91/Msg91.node.js",
       "dist/nodes/MySql/MySql.node.js",
-      "dist/nodes/N8n/N8n.node.js",
-      "dist/nodes/N8nTrainingCustomerDatastore/N8nTrainingCustomerDatastore.node.js",
-      "dist/nodes/N8nTrainingCustomerMessenger/N8nTrainingCustomerMessenger.node.js",
-      "dist/nodes/N8nTrigger/N8nTrigger.node.js",
+      "dist/nodes/Flowease/Flowease.node.js",
+      "dist/nodes/FloweaseTrainingCustomerDatastore/FloweaseTrainingCustomerDatastore.node.js",
+      "dist/nodes/FloweaseTrainingCustomerMessenger/FloweaseTrainingCustomerMessenger.node.js",
+      "dist/nodes/FloweaseTrigger/FloweaseTrigger.node.js",
       "dist/nodes/Nasa/Nasa.node.js",
       "dist/nodes/Netlify/Netlify.node.js",
       "dist/nodes/Netlify/NetlifyTrigger.node.js",
@@ -840,7 +840,7 @@
   "dependencies": {
     "@kafkajs/confluent-schema-registry": "1.0.6",
     "@flowease/imap": "workspace:*",
-    "@n8n/vm2": "3.9.20",
+    "@flowease/vm2": "^3.9.23",
     "amqplib": "0.10.3",
     "aws4": "1.11.0",
     "basic-auth": "2.0.1",
@@ -874,7 +874,7 @@
     "mqtt": "5.0.2",
     "mssql": "10.0.2",
     "mysql2": "3.9.7",
-    "n8n-workflow": "workspace:*",
+    "flowease-workflow": "workspace:*",
     "nanoid": "3.3.6",
     "node-html-markdown": "1.2.0",
     "node-ssh": "12.0.5",

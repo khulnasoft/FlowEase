@@ -5,8 +5,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import get from 'lodash/get';
 
@@ -25,7 +25,7 @@ export async function spotifyApiRequest(
 	const options: IRequestOptions = {
 		method,
 		headers: {
-			'User-Agent': 'n8n',
+			'User-Agent': 'flowease',
 			'Content-Type': 'text/plain',
 			Accept: ' application/json',
 		},

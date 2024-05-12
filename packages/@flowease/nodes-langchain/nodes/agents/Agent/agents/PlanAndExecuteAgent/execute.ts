@@ -3,7 +3,7 @@ import {
 	type INodeExecutionData,
 	NodeConnectionType,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { BaseOutputParser } from '@langchain/core/output_parsers';
 import { PromptTemplate } from '@langchain/core/prompts';

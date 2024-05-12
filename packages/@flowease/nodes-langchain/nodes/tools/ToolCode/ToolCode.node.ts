@@ -5,8 +5,8 @@ import type {
 	INodeTypeDescription,
 	SupplyData,
 	ExecutionError,
-} from 'n8n-workflow';
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
 import type { Sandbox } from 'flowease-nodes-base/dist/nodes/Code/Sandbox';
 import { getSandboxContext } from 'flowease-nodes-base/dist/nodes/Code/Sandbox';
 import { JavaScriptSandbox } from 'flowease-nodes-base/dist/nodes/Code/JavaScriptSandbox';
@@ -34,7 +34,7 @@ export class ToolCode implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolcode/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.toolcode/',
 					},
 				],
 			},

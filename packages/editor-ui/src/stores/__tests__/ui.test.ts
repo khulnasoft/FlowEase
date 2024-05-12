@@ -4,7 +4,7 @@ import { useSettingsStore } from '@/stores/settings.store';
 import { useUsersStore } from '@/stores/users.store';
 import { merge } from 'lodash-es';
 import { SETTINGS_STORE_DEFAULT_STATE } from '@/__tests__/utils';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useCloudPlanStore } from '@/stores/cloudPlan.store';
 import * as cloudPlanApi from '@/api/cloudPlans';
 import {
@@ -37,7 +37,7 @@ function setupOwnerAndCloudDeployment() {
 	setUser(ROLE.Owner);
 	settingsStore.setSettings(
 		merge({}, SETTINGS_STORE_DEFAULT_STATE.settings, {
-			n8nMetadata: {
+			floweaseMetadata: {
 				userId: '1',
 			},
 			deployment: { type: 'cloud' },
@@ -62,7 +62,7 @@ describe('UI store', () => {
 
 		global.window = Object.create(window);
 
-		const url = 'https://test.app.n8n.cloud';
+		const url = 'https://test.app.flowease.cloud';
 
 		Object.defineProperty(window, 'location', {
 			value: {
@@ -89,7 +89,7 @@ describe('UI store', () => {
 			'cloud',
 			'production',
 			ROLE.Owner,
-			`https://app.n8n.cloud/login?code=123&returnPath=${encodeURIComponent(
+			`https://app.flowease.cloud/login?code=123&returnPath=${encodeURIComponent(
 				'/account/change-plan',
 			)}&utm_campaign=utm-test-campaign&source=test_source`,
 		],

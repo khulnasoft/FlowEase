@@ -15,7 +15,7 @@
 import InlineExpressionEditorOutput from '@/components/InlineExpressionEditor/InlineExpressionEditorOutput.vue';
 import { codeNodeEditorEventBus } from '@/event-bus';
 import { useExpressionEditor } from '@/composables/useExpressionEditor';
-import { n8nCompletionSources } from '@/plugins/codemirror/completions/addCompletions';
+import { floweaseCompletionSources } from '@/plugins/codemirror/completions/addCompletions';
 import { expressionInputHandler } from '@/plugins/codemirror/inputHandlers/expression.inputHandler';
 import {
 	autocompleteKeyMap,
@@ -23,7 +23,7 @@ import {
 	historyKeyMap,
 	tabKeyMap,
 } from '@/plugins/codemirror/keymap';
-import { n8nAutocompletion } from '@/plugins/codemirror/n8nLang';
+import { floweaseAutocompletion } from '@/plugins/codemirror/floweaseLang';
 import { ifNotIn } from '@codemirror/autocomplete';
 import { history, toggleComment } from '@codemirror/commands';
 import { LanguageSupport, bracketMatching, foldGutter, indentOnInput } from '@codemirror/language';
@@ -83,17 +83,17 @@ const emit = defineEmits<{
 const sqlEditor = ref<HTMLElement>();
 const extensions = computed(() => {
 	const dialect = SQL_DIALECTS[props.dialect] ?? SQL_DIALECTS.StandardSQL;
-	function sqlWithN8nLanguageSupport() {
+	function sqlWithFloweaseLanguageSupport() {
 		return new LanguageSupport(dialect.language, [
 			dialect.language.data.of({
 				autocomplete: ifNotIn(['Resolvable'], keywordCompletionSource(dialect, true)),
 			}),
-			n8nCompletionSources().map((source) => dialect.language.data.of(source)),
+			floweaseCompletionSources().map((source) => dialect.language.data.of(source)),
 		]);
 	}
 
 	const baseExtensions = [
-		sqlWithN8nLanguageSupport(),
+		sqlWithFloweaseLanguageSupport(),
 		expressionInputHandler(),
 		codeNodeEditorTheme({
 			isReadOnly: props.isReadOnly,
@@ -117,7 +117,7 @@ const extensions = computed(() => {
 					{ key: 'Mod-/', run: toggleComment },
 				]),
 			),
-			n8nAutocompletion(),
+			floweaseAutocompletion(),
 			indentOnInput(),
 			highlightActiveLine(),
 			highlightActiveLineGutter(),

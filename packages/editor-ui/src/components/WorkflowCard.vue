@@ -1,12 +1,12 @@
 <template>
-	<n8n-card :class="$style.cardLink" @click="onClick">
+	<flowease-card :class="$style.cardLink" @click="onClick">
 		<template #header>
-			<n8n-heading tag="h2" bold :class="$style.cardHeading" data-test-id="workflow-card-name">
+			<flowease-heading tag="h2" bold :class="$style.cardHeading" data-test-id="workflow-card-name">
 				{{ data.name }}
-			</n8n-heading>
+			</flowease-heading>
 		</template>
 		<div :class="$style.cardDescription">
-			<n8n-text color="text-light" size="small">
+			<flowease-text color="text-light" size="small">
 				<span v-show="data"
 					>{{ $locale.baseText('workflows.item.updated') }} <TimeAgo :date="data.updatedAt" /> |
 				</span>
@@ -17,7 +17,7 @@
 					v-if="settingsStore.areTagsEnabled && data.tags && data.tags.length > 0"
 					v-show="data"
 				>
-					<n8n-tags
+					<flowease-tags
 						:tags="data.tags"
 						:truncate-at="3"
 						truncate
@@ -26,14 +26,14 @@
 						@expand="onExpandTags"
 					/>
 				</span>
-			</n8n-text>
+			</flowease-text>
 		</div>
 		<template #append>
 			<div :class="$style.cardActions" @click.stop>
 				<enterprise-edition :features="[EnterpriseEditionFeature.Sharing]">
-					<n8n-badge v-if="workflowPermissions.isOwner" class="mr-xs" theme="tertiary" bold>
+					<flowease-badge v-if="workflowPermissions.isOwner" class="mr-xs" theme="tertiary" bold>
 						{{ $locale.baseText('workflows.item.owner') }}
-					</n8n-badge>
+					</flowease-badge>
 				</enterprise-edition>
 
 				<WorkflowActivator
@@ -43,7 +43,7 @@
 					data-test-id="workflow-card-activator"
 				/>
 
-				<n8n-action-toggle
+				<flowease-action-toggle
 					:actions="actions"
 					theme="dark"
 					data-test-id="workflow-card-actions"
@@ -51,7 +51,7 @@
 				/>
 			</div>
 		</template>
-	</n8n-card>
+	</flowease-card>
 </template>
 
 <script lang="ts">

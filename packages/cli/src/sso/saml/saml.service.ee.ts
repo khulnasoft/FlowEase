@@ -1,7 +1,7 @@
 import type express from 'express';
 import Container, { Service } from 'typedi';
 import type { User } from '@db/entities/User';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 import { getServiceProviderInstance } from './serviceProvider.ee';
 import type { SamlUserAttributes } from './types/samlUserAttributes';
 import { isSsoJustInTimeProvisioningEnabled } from '../ssoHelpers';

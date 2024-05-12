@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { Calculator } from '@langchain/community/tools/calculator';
 import { logWrapper } from '../../../utils/logWrapper';
 import { getConnectionHintNoticeField } from '../../../utils/sharedFields';
@@ -29,7 +29,7 @@ export class ToolCalculator implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.toolcalculator/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.toolcalculator/',
 					},
 				],
 			},

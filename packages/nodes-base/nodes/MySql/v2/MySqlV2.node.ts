@@ -4,7 +4,7 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { listSearch, credentialTest, loadOptions } from './methods';
 

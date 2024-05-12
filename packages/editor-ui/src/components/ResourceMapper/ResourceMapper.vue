@@ -9,8 +9,8 @@ import type {
 	INodeTypeDescription,
 	ResourceMapperField,
 	ResourceMapperValue,
-} from 'n8n-workflow';
-import { NodeHelpers } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeHelpers } from 'flowease-workflow';
 import { computed, onMounted, reactive, watch } from 'vue';
 import MappingModeSelect from './MappingModeSelect.vue';
 import MatchingColumnsSelect from './MatchingColumnsSelect.vue';
@@ -491,8 +491,8 @@ defineExpose({
 			@matching-columns-changed="onMatchingColumnsChanged"
 			@refresh-field-list="initFetching(true)"
 		/>
-		<n8n-text v-if="!showMappingModeSelect && state.loading" size="small">
-			<n8n-icon icon="sync-alt" size="xsmall" :spin="true" />
+		<flowease-text v-if="!showMappingModeSelect && state.loading" size="small">
+			<flowease-icon icon="sync-alt" size="xsmall" :spin="true" />
 			{{
 				locale.baseText('resourceMapper.fetchingFields.message', {
 					interpolate: {
@@ -500,7 +500,7 @@ defineExpose({
 					},
 				})
 			}}
-		</n8n-text>
+		</flowease-text>
 		<MappingFields
 			v-if="showMappingFields"
 			:parameter="props.parameter"
@@ -519,7 +519,7 @@ defineExpose({
 			@add-field="addField"
 			@refresh-field-list="initFetching(true)"
 		/>
-		<n8n-notice
+		<flowease-notice
 			v-if="state.paramValue.mappingMode === 'autoMapInputData' && hasAvailableMatchingColumns"
 		>
 			{{
@@ -530,6 +530,6 @@ defineExpose({
 					},
 				})
 			}}
-		</n8n-notice>
+		</flowease-notice>
 	</div>
 </template>

@@ -414,7 +414,7 @@ describe('Canvas Node Manipulation and Navigation', () => {
 
 			WorkflowPage.getters.canvasNodes().should('have.have.length', 2);
 
-			WorkflowPage.actions.openNodeFromContextMenu('n8n');
+			WorkflowPage.actions.openNodeFromContextMenu('flowease');
 			cy.get('[class*=hasIssues]').should('have.length', 1);
 			NDVDialog.actions.close();
 		});

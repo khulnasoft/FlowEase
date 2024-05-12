@@ -2,7 +2,7 @@ import {
 	ApplicationError,
 	ErrorReporterProxy as ErrorReporter,
 	WorkflowOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { Container, Service } from 'typedi';
 import type { ExecutionStopResult, IWorkflowExecutionDataProcess } from '@/Interfaces';
 import { WorkflowRunner } from '@/WorkflowRunner';
@@ -74,7 +74,7 @@ export class WaitTracker {
 			const executionId = execution.id;
 			if (this.waitingExecutions[executionId] === undefined) {
 				if (!(execution.waitTill instanceof Date)) {
-					// n8n expects waitTill to be a date object
+					// flowease expects waitTill to be a date object
 					// but for some reason it's not being converted
 					// we are handling this like this since it seems to address the issue
 					// for some users, as reported by Jon when using a custom image.

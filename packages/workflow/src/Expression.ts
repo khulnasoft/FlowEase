@@ -1,5 +1,5 @@
 import { DateTime, Duration, Interval } from 'luxon';
-import * as tmpl from '@n8n_io/riot-tmpl';
+import * as tmpl from '@flowease/riot-tmpl';
 
 import type {
 	IDataObject,
@@ -155,7 +155,7 @@ export class Expression {
 			typeof process !== 'undefined'
 				? {
 						arch: process.arch,
-						env: process.env.N8N_BLOCK_ENV_ACCESS_IN_NODE === 'true' ? {} : process.env,
+						env: process.env.FLOWEASE_BLOCK_ENV_ACCESS_IN_NODE === 'true' ? {} : process.env,
 						platform: process.platform,
 						pid: process.pid,
 						ppid: process.ppid,

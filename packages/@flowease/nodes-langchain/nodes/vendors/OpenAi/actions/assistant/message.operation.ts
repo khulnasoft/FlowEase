@@ -4,8 +4,8 @@ import { OpenAIAssistantRunnable } from 'langchain/experimental/openai_assistant
 import type { OpenAIToolType } from 'langchain/dist/experimental/openai_assistant/schema';
 import { OpenAI as OpenAIClient } from 'openai';
 
-import { NodeOperationError, updateDisplayOptions } from 'n8n-workflow';
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
+import { NodeOperationError, updateDisplayOptions } from 'flowease-workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'flowease-workflow';
 
 import { formatToOpenAIAssistantTool } from '../../helpers/utils';
 import { assistantRLC } from '../descriptions';
@@ -51,7 +51,7 @@ const properties: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Connect your own custom n8n tools to this node on the canvas',
+		displayName: 'Connect your own custom flowease tools to this node on the canvas',
 		name: 'noticeTools',
 		type: 'notice',
 		default: '',

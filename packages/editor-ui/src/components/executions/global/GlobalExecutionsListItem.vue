@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { PropType } from 'vue';
 import { ref, computed, useCssModule } from 'vue';
-import type { ExecutionSummary } from 'n8n-workflow';
+import type { ExecutionSummary } from 'flowease-workflow';
 import { useI18n } from '@/composables/useI18n';
 import { VIEWS, WAIT_TIME_UNLIMITED } from '@/constants';
 import { useRouter } from 'vue-router';
@@ -191,12 +191,12 @@ async function handleActionItemClick(commandData: 'retrySaved' | 'retryOriginal'
 						<ExecutionsTime v-else :start-time="execution.startedAt" />
 					</template>
 				</i18n-t>
-				<N8nTooltip v-else placement="top">
+				<FloweaseTooltip v-else placement="top">
 					<template #content>
 						<span>{{ statusTooltipText }}</span>
 					</template>
 					<span :class="$style.status">{{ statusText }}</span>
-				</N8nTooltip>
+				</FloweaseTooltip>
 			</div>
 		</td>
 		<td>
@@ -213,16 +213,16 @@ async function handleActionItemClick(commandData: 'retrySaved' | 'retryOriginal'
 			</span>
 		</td>
 		<td>
-			<N8nTooltip v-if="execution.mode === 'manual'" placement="top">
+			<FloweaseTooltip v-if="execution.mode === 'manual'" placement="top">
 				<template #content>
 					<span>{{ i18n.baseText('executionsList.test') }}</span>
 				</template>
 				<FontAwesomeIcon icon="flask" />
-			</N8nTooltip>
+			</FloweaseTooltip>
 		</td>
 		<td>
 			<div :class="$style.buttonCell">
-				<N8nButton
+				<FloweaseButton
 					v-if="!!execution.stoppedAt && execution.id"
 					size="small"
 					outline
@@ -233,7 +233,7 @@ async function handleActionItemClick(commandData: 'retrySaved' | 'retryOriginal'
 		</td>
 		<td>
 			<div :class="$style.buttonCell">
-				<N8nButton
+				<FloweaseButton
 					v-if="!execution.stoppedAt || execution.waitTill"
 					data-test-id="stop-execution-button"
 					size="small"
@@ -246,7 +246,7 @@ async function handleActionItemClick(commandData: 'retrySaved' | 'retryOriginal'
 		</td>
 		<td>
 			<ElDropdown v-if="!isRunning" trigger="click" @command="handleActionItemClick">
-				<N8nIconButton text type="tertiary" size="mini" icon="ellipsis-v" />
+				<FloweaseIconButton text type="tertiary" size="mini" icon="ellipsis-v" />
 				<template #dropdown>
 					<ElDropdownMenu
 						:class="{

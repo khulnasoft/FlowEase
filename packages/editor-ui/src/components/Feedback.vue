@@ -21,17 +21,17 @@ function onFeedback(feedback: 'positive' | 'negative') {
 </script>
 <template>
 	<div class="feedback">
-		<N8nText v-if="!modelValue" class="mr-2xs">
+		<FloweaseText v-if="!modelValue" class="mr-2xs">
 			{{ i18n.baseText('feedback.title') }}
-		</N8nText>
-		<N8nText v-else :color="modelValue === 'positive' ? 'success' : 'danger'">
+		</FloweaseText>
+		<FloweaseText v-else :color="modelValue === 'positive' ? 'success' : 'danger'">
 			<FontAwesomeIcon
 				:icon="modelValue === 'positive' ? 'thumbs-up' : 'thumbs-down'"
 				class="mr-2xs"
 			/>
 			{{ i18n.baseText(`feedback.${modelValue}`) }}
-		</N8nText>
-		<N8nTooltip v-if="!modelValue" :content="i18n.baseText('feedback.positive')">
+		</FloweaseText>
+		<FloweaseTooltip v-if="!modelValue" :content="i18n.baseText('feedback.positive')">
 			<span
 				class="feedback-button"
 				data-test-id="feedback-button-positive"
@@ -39,8 +39,8 @@ function onFeedback(feedback: 'positive' | 'negative') {
 			>
 				<FontAwesomeIcon icon="thumbs-up" />
 			</span>
-		</N8nTooltip>
-		<N8nTooltip v-if="!modelValue" :content="i18n.baseText('feedback.negative')">
+		</FloweaseTooltip>
+		<FloweaseTooltip v-if="!modelValue" :content="i18n.baseText('feedback.negative')">
 			<span
 				class="feedback-button"
 				data-test-id="feedback-button-negative"
@@ -48,7 +48,7 @@ function onFeedback(feedback: 'positive' | 'negative') {
 			>
 				<FontAwesomeIcon icon="thumbs-down" />
 			</span>
-		</N8nTooltip>
+		</FloweaseTooltip>
 	</div>
 </template>
 

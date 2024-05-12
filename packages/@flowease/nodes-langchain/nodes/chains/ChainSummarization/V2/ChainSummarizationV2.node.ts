@@ -1,4 +1,4 @@
-import { NodeConnectionType } from 'n8n-workflow';
+import { NodeConnectionType } from 'flowease-workflow';
 import type {
 	INodeTypeBaseDescription,
 	IExecuteFunctions,
@@ -6,15 +6,15 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IDataObject,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { loadSummarizationChain } from 'langchain/chains';
 import type { BaseLanguageModel } from '@langchain/core/language_models/base';
 import type { Document } from '@langchain/core/documents';
 import type { TextSplitter } from 'langchain/text_splitter';
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
-import { N8nJsonLoader } from '../../../../utils/N8nJsonLoader';
-import { N8nBinaryLoader } from '../../../../utils/N8nBinaryLoader';
+import { FloweaseJsonLoader } from '../../../../utils/FloweaseJsonLoader';
+import { FloweaseBinaryLoader } from '../../../../utils/FloweaseBinaryLoader';
 import { getTemplateNoticeField } from '../../../../utils/sharedFields';
 import { REFINE_PROMPT_TEMPLATE, DEFAULT_PROMPT_TEMPLATE } from '../prompt';
 import { getChainPromptsArgs } from '../helpers';
@@ -357,12 +357,13 @@ export class ChainSummarizationV2 implements INodeType {
 					const documentInput = (await this.getInputConnectionData(
 						NodeConnectionType.AiDocument,
 						0,
-					)) as N8nJsonLoader | Array<Document<Record<string, unknown>>>;
+					)) as FloweaseJsonLoader | Array<Document<Record<string, unknown>>>;
 
-					const isN8nLoader =
-						documentInput instanceof N8nJsonLoader || documentInput instanceof N8nBinaryLoader;
+					const isFloweaseLoader =
+						documentInput instanceof FloweaseJsonLoader ||
+						documentInput instanceof FloweaseBinaryLoader;
 
-					processedDocuments = isN8nLoader
+					processedDocuments = isFloweaseLoader
 						? await documentInput.processItem(item, itemIndex)
 						: documentInput;
 
@@ -397,16 +398,16 @@ export class ChainSummarizationV2 implements INodeType {
 							break;
 					}
 
-					let processor: N8nJsonLoader | N8nBinaryLoader;
+					let processor: FloweaseJsonLoader | FloweaseBinaryLoader;
 					if (operationMode === 'nodeInputBinary') {
 						const binaryDataKey = this.getNodeParameter(
 							'options.binaryDataKey',
 							itemIndex,
 							'data',
 						) as string;
-						processor = new N8nBinaryLoader(this, 'options.', binaryDataKey, textSplitter);
+						processor = new FloweaseBinaryLoader(this, 'options.', binaryDataKey, textSplitter);
 					} else {
-						processor = new N8nJsonLoader(this, 'options.', textSplitter);
+						processor = new FloweaseJsonLoader(this, 'options.', textSplitter);
 					}
 
 					const processedItem = await processor.processItem(item, itemIndex);

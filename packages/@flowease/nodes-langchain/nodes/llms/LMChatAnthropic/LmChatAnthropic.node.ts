@@ -6,7 +6,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { ChatAnthropic } from '@langchain/anthropic';
 import { logWrapper } from '../../../utils/logWrapper';
@@ -72,7 +72,7 @@ export class LmChatAnthropic implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatanthropic/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.lmchatanthropic/',
 					},
 				],
 			},

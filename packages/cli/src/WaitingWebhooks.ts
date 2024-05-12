@@ -1,4 +1,4 @@
-import { NodeHelpers, Workflow } from 'n8n-workflow';
+import { NodeHelpers, Workflow } from 'flowease-workflow';
 import { Service } from 'typedi';
 import type express from 'express';
 

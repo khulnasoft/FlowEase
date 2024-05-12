@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'n8n Release version to push to a channel'
+        description: 'flowease Release version to push to a channel'
         required: true
 
       release-channel:
@@ -27,7 +27,7 @@ jobs:
           node-version: 18.x
       - run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-          npm dist-tag add n8n@${{ github.event.inputs.version }} ${{ github.event.inputs.release-channel }}
+          npm dist-tag add flowease@${{ github.event.inputs.version }} ${{ github.event.inputs.release-channel }}
 
   release-to-docker-hub:
     name: Release to DockerHub
@@ -37,9 +37,9 @@ jobs:
       - uses: docker/login-action@v3.0.0
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.DOCKER_TOKEN }}
 
-      - run: docker buildx imagetools create -t ${{ secrets.DOCKER_USERNAME }}/n8n:${{ github.event.inputs.release-channel }} ${{ secrets.DOCKER_USERNAME }}/n8n:${{ github.event.inputs.version }}
+      - run: docker buildx imagetools create -t ${{ secrets.DOCKER_USERNAME }}/flowease:${{ github.event.inputs.release-channel }} ${{ secrets.DOCKER_USERNAME }}/flowease:${{ github.event.inputs.version }}
 
   release-to-github-container-registry:
     name: Release to GitHub Container Registry
@@ -52,7 +52,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: docker buildx imagetools create -t ghcr.io/${{ github.repository_owner }}/n8n:${{ github.event.inputs.release-channel }} ghcr.io/${{ github.repository_owner }}/n8n:${{ github.event.inputs.version }}
+      - run: docker buildx imagetools create -t ghcr.io/${{ github.repository_owner }}/flowease:${{ github.event.inputs.release-channel }} ghcr.io/${{ github.repository_owner }}/flowease:${{ github.event.inputs.version }}
 
   update-docs:
     name: Update latest and next in the docs
@@ -60,4 +60,4 @@ jobs:
     needs: [release-to-npm, release-to-docker-hub]
     steps:
       - continue-on-error: true
-        run: curl -u docsWorkflows:${{ secrets.N8N_WEBHOOK_DOCS_PASSWORD }} --request GET 'https://internal.users.n8n.cloud/webhook/update-latest-next'
+        run: curl -u docsWorkflows:${{ secrets.FLOWEASE_WEBHOOK_DOCS_PASSWORD }} --request GET 'https://internal.users.flowease.cloud/webhook/update-latest-next'

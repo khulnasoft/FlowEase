@@ -13,12 +13,12 @@ import type {
 	IRun,
 	WorkflowExecuteMode,
 	WorkflowHooks,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	ErrorReporterProxy as ErrorReporter,
 	Workflow,
 	WorkflowOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import PCancelable from 'p-cancelable';
 

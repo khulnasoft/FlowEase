@@ -22,7 +22,7 @@ import { Logger } from '@/Logger';
 import { AuthError } from '@/errors/response-errors/auth.error';
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';
 import { UnauthorizedError } from '@/errors/response-errors/unauthorized.error';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 import { UserRepository } from '@/databases/repositories/user.repository';
 
 @RestController()

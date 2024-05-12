@@ -8,7 +8,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	INodeTypeBaseDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { oldVersionNotice } from '../../../../utils/descriptions';
 import {

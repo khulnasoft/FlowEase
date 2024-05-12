@@ -56,7 +56,7 @@ defineExpose({
 <template>
 	<div :class="$style.container" data-test-id="suggested-templates-page-container">
 		<div :class="$style.header">
-			<n8n-heading tag="h1" size="2xlarge" class="mb-2xs">
+			<flowease-heading tag="h1" size="2xlarge" class="mb-2xs">
 				{{
 					$locale.baseText('suggestedTemplates.heading', {
 						interpolate: {
@@ -64,14 +64,14 @@ defineExpose({
 						},
 					})
 				}}
-			</n8n-heading>
-			<n8n-text
+			</flowease-heading>
+			<flowease-text
 				size="large"
 				color="text-base"
 				data-test-id="suggested-template-section-description"
 			>
 				{{ defaultSection?.description }}
-			</n8n-text>
+			</flowease-text>
 		</div>
 		<div :class="$style.content">
 			<SuggestedTemplatesSection
@@ -82,7 +82,7 @@ defineExpose({
 			/>
 		</div>
 		<div>
-			<n8n-button
+			<flowease-button
 				:label="$locale.baseText('suggestedTemplates.newWorkflowButton')"
 				type="secondary"
 				size="medium"

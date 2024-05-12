@@ -13,8 +13,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { ApplicationError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ApplicationError, NodeOperationError } from 'flowease-workflow';
 import { generatePairedItemData } from '../../utils/utilities';
 
 export class Kafka implements INodeType {

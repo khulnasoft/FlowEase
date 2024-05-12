@@ -38,7 +38,7 @@ export default defineConfig({
 		emptyOutDir: !includeVue,
 		lib: {
 			entry: resolve(__dirname, 'src', 'index.ts'),
-			name: 'N8nChat',
+			name: 'FloweaseChat',
 			fileName: (format) => (includeVue ? `chat.bundle.${format}.js` : `chat.${format}.js`),
 		},
 		rollupOptions: {

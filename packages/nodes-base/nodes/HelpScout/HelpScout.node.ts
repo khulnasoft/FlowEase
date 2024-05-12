@@ -7,8 +7,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { countriesCodes } from './CountriesCodes';
 

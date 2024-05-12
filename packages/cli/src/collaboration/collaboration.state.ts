@@ -1,5 +1,5 @@
 import type { User } from '@db/entities/User';
-import type { Workflow } from 'n8n-workflow';
+import type { Workflow } from 'flowease-workflow';
 import { Service } from 'typedi';
 
 type ActiveWorkflowUser = {

@@ -16,8 +16,8 @@ import type {
 	INodeTypeDescription,
 	INodeTypeData,
 	ICredentialTypeData,
-} from 'n8n-workflow';
-import { ApplicationError, ErrorReporterProxy as ErrorReporter } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ApplicationError, ErrorReporterProxy as ErrorReporter } from 'flowease-workflow';
 
 import config from '@/config';
 import {
@@ -73,9 +73,9 @@ export class LoadNodesAndCredentials {
 
 		// Load nodes from `flowease-nodes-base`
 		const basePathsToScan = [
-			// In case "n8n" package is in same node_modules folder.
+			// In case "flowease" package is in same node_modules folder.
 			path.join(CLI_DIR, '..'),
-			// In case "n8n" package is the root and the packages are
+			// In case "flowease" package is the root and the packages are
 			// in the "node_modules" folder underneath it.
 			path.join(CLI_DIR, 'node_modules'),
 		];
@@ -85,7 +85,7 @@ export class LoadNodesAndCredentials {
 			await this.loadNodesFromNodeModules(nodeModulesDir, '@flowease/flowease-nodes-langchain');
 		}
 
-		// Load nodes from any other `n8n-nodes-*` packages in the download directory
+		// Load nodes from any other `flowease-nodes-*` packages in the download directory
 		// This includes the community nodes
 		await this.loadNodesFromNodeModules(
 			path.join(this.instanceSettings.nodesDownloadDir, 'node_modules'),
@@ -131,8 +131,8 @@ export class LoadNodesAndCredentials {
 		const installedPackagePaths = packageName
 			? await glob(packageName, globOptions)
 			: [
-					...(await glob('n8n-nodes-*', globOptions)),
-					...(await glob('@*/n8n-nodes-*', { ...globOptions, deep: 2 })),
+					...(await glob('flowease-nodes-*', globOptions)),
+					...(await glob('@*/flowease-nodes-*', { ...globOptions, deep: 2 })),
 				];
 
 		for (const packagePath of installedPackagePaths) {

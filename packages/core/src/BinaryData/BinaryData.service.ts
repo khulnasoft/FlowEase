@@ -1,13 +1,13 @@
 import { readFile, stat } from 'node:fs/promises';
 import prettyBytes from 'pretty-bytes';
 import Container, { Service } from 'typedi';
-import { BINARY_ENCODING } from 'n8n-workflow';
+import { BINARY_ENCODING } from 'flowease-workflow';
 import { InvalidModeError } from '../errors/invalid-mode.error';
 import { areConfigModes, toBuffer } from './utils';
 
 import type { Readable } from 'stream';
 import type { BinaryData } from './types';
-import type { INodeExecutionData, IBinaryData } from 'n8n-workflow';
+import type { INodeExecutionData, IBinaryData } from 'flowease-workflow';
 import { InvalidManagerError } from '../errors/invalid-manager.error';
 
 @Service()

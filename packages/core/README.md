@@ -2,7 +2,7 @@
 
 # flowease-core
 
-Core components for n8n
+Core components for flowease
 
 ```
 npm install flowease-core
@@ -10,7 +10,7 @@ npm install flowease-core
 
 ## License
 
-n8n is [fair-code](https://faircode.io) distributed under the [**Sustainable Use License**](https://github.com/khulnasoft/flowease/blob/master/packages/cli/LICENSE.md).
+flowease is [fair-code](https://faircode.io) distributed under the [**Sustainable Use License**](https://github.com/khulnasoft/flowease/blob/master/packages/cli/LICENSE.md).
 
 Proprietary licenses are available for enterprise customers. [Get in touch](mailto:license@flowease.khulnasoft.com)
 

@@ -1,15 +1,15 @@
-const sharedOptions = require('@n8n_io/eslint-config/shared');
+const sharedOptions = require('@flowease/eslint-config/shared');
 
 /**
  * @type {import('@types/eslint').ESLint.ConfigData}
  */
 module.exports = {
-	extends: ['@n8n_io/eslint-config/base'],
+	extends: ['@flowease/eslint-config/base'],
 
 	...sharedOptions(__dirname),
 
 	rules: {
 		'@typescript-eslint/consistent-type-imports': 'error',
-		'n8n-local-rules/no-plain-errors': 'off',
+		'flowease-local-rules/no-plain-errors': 'off',
 	},
 };

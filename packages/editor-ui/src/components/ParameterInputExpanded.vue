@@ -1,5 +1,5 @@
 <template>
-	<n8n-input-label
+	<flowease-input-label
 		:label="$locale.credText().inputLabelDisplayName(parameter)"
 		:tooltip-text="$locale.credText().inputLabelDescription(parameter)"
 		:required="parameter.required"
@@ -38,9 +38,9 @@
 			@update="valueChanged"
 		/>
 		<div v-if="showRequiredErrors" :class="$style.errors">
-			<n8n-text color="danger" size="small">
+			<flowease-text color="danger" size="small">
 				{{ $locale.baseText('parameterInputExpanded.thisFieldIsRequired') }}
-				<n8n-link
+				<flowease-link
 					v-if="documentationUrl"
 					:to="documentationUrl"
 					size="small"
@@ -48,10 +48,10 @@
 					@click="onDocumentationUrlClick"
 				>
 					{{ $locale.baseText('parameterInputExpanded.openDocs') }}
-				</n8n-link>
-			</n8n-text>
+				</flowease-link>
+			</flowease-text>
 		</div>
-	</n8n-input-label>
+	</flowease-input-label>
 </template>
 
 <script lang="ts">
@@ -61,7 +61,11 @@ import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 import ParameterInputWrapper from './ParameterInputWrapper.vue';
 import { isValueExpression } from '@/utils/nodeTypesUtils';
-import type { INodeParameterResourceLocator, INodeProperties, IParameterLabel } from 'n8n-workflow';
+import type {
+	INodeParameterResourceLocator,
+	INodeProperties,
+	IParameterLabel,
+} from 'flowease-workflow';
 import { mapStores } from 'pinia';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { createEventBus } from 'flowease-design-system/utils';

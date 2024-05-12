@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'flowease-workflow';
 
 export class MicrosoftGraphSecurityOAuth2Api implements ICredentialType {
 	name = 'microsoftGraphSecurityOAuth2Api';

@@ -6,7 +6,7 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { mailerliteApiRequest, mailerliteApiRequestAllItems } from './GenericFunctions';
 

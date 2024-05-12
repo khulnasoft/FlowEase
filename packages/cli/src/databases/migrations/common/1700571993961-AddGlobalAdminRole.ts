@@ -1,5 +1,5 @@
 import type { MigrationContext, ReversibleMigration } from '@db/types';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 export class AddGlobalAdminRole1700571993961 implements ReversibleMigration {
 	async up({ escape, runQuery }: MigrationContext) {

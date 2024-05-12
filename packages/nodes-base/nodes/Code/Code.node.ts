@@ -5,7 +5,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import set from 'lodash/set';
 import { javascriptCodeDescription } from './descriptions/JavascriptCodeDescription';
 import { pythonCodeDescription } from './descriptions/PythonCodeDescription';

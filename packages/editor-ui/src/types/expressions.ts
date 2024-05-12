@@ -6,7 +6,7 @@ export type Segment = Plaintext | Resolvable;
 
 export type Plaintext = { kind: 'plaintext'; plaintext: string } & Range;
 
-export type Html = Plaintext; // for n8n parser, functionally identical to plaintext
+export type Html = Plaintext; // for flowease parser, functionally identical to plaintext
 
 export type ResolvableState = 'valid' | 'invalid' | 'pending';
 

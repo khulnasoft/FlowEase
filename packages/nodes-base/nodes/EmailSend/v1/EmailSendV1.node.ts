@@ -6,7 +6,7 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { createTransport } from 'nodemailer';
 import type SMTPTransport from 'nodemailer/lib/smtp-transport';

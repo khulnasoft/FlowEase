@@ -2,7 +2,7 @@ import type { IOnboardingCallPrompt, IUser } from '@/Interface';
 import { get, post } from '@/utils/apiUtils';
 import { isUserGlobalOwner } from '@/utils/userUtils';
 
-const N8N_API_BASE_URL = 'https://api.flowease.khulnasoft.com/api';
+const FLOWEASE_API_BASE_URL = 'https://api.flowease.khulnasoft.com/api';
 const ONBOARDING_PROMPTS_ENDPOINT = '/prompts/onboarding';
 const CONTACT_EMAIL_SUBMISSION_ENDPOINT = '/accounts/onboarding';
 
@@ -10,7 +10,7 @@ export async function fetchNextOnboardingPrompt(
 	instanceId: string,
 	currentUser: IUser,
 ): Promise<IOnboardingCallPrompt> {
-	return await get(N8N_API_BASE_URL, ONBOARDING_PROMPTS_ENDPOINT, {
+	return await get(FLOWEASE_API_BASE_URL, ONBOARDING_PROMPTS_ENDPOINT, {
 		instance_id: instanceId,
 		user_id: `${instanceId}#${currentUser.id}`,
 		is_owner: isUserGlobalOwner(currentUser),
@@ -24,7 +24,7 @@ export async function applyForOnboardingCall(
 	email: string,
 ): Promise<string> {
 	try {
-		const response = await post(N8N_API_BASE_URL, ONBOARDING_PROMPTS_ENDPOINT, {
+		const response = await post(FLOWEASE_API_BASE_URL, ONBOARDING_PROMPTS_ENDPOINT, {
 			instance_id: instanceId,
 			user_id: `${instanceId}#${currentUser.id}`,
 			email,
@@ -41,7 +41,7 @@ export async function submitEmailOnSignup(
 	email: string | undefined,
 	agree: boolean,
 ): Promise<string> {
-	return await post(N8N_API_BASE_URL, CONTACT_EMAIL_SUBMISSION_ENDPOINT, {
+	return await post(FLOWEASE_API_BASE_URL, CONTACT_EMAIL_SUBMISSION_ENDPOINT, {
 		instance_id: instanceId,
 		user_id: `${instanceId}#${currentUser.id}`,
 		email,

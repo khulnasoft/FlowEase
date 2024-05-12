@@ -1,4 +1,4 @@
-import { EventMessageTypeNames } from 'n8n-workflow';
+import { EventMessageTypeNames } from 'flowease-workflow';
 import config from '@/config';
 import type { EventMessageTypes } from '../EventMessageClasses';
 
@@ -6,11 +6,11 @@ export const METRICS_EVENT_NAME = 'metrics.messageEventBus.Event';
 
 export function getMetricNameForEvent(event: EventMessageTypes): string {
 	const prefix = config.getEnv('endpoints.metrics.prefix');
-	return prefix + event.eventName.replace('n8n.', '').replace(/\./g, '_') + '_total';
+	return prefix + event.eventName.replace('flowease.', '').replace(/\./g, '_') + '_total';
 }
 
 export function getLabelValueForNode(nodeType: string): string {
-	return nodeType.replace('n8n-nodes-', '').replace(/\./g, '_');
+	return nodeType.replace('flowease-nodes-', '').replace(/\./g, '_');
 }
 
 export function getLabelValueForCredential(credentialType: string): string {
@@ -20,7 +20,7 @@ export function getLabelValueForCredential(credentialType: string): string {
 export function getLabelsForEvent(event: EventMessageTypes): Record<string, string> {
 	switch (event.__type) {
 		case EventMessageTypeNames.audit:
-			if (event.eventName.startsWith('n8n.audit.user.credentials')) {
+			if (event.eventName.startsWith('flowease.audit.user.credentials')) {
 				return config.getEnv('endpoints.metrics.includeCredentialTypeLabel')
 					? {
 							credential_type: getLabelValueForCredential(
@@ -30,7 +30,7 @@ export function getLabelsForEvent(event: EventMessageTypes): Record<string, stri
 					: {};
 			}
 
-			if (event.eventName.startsWith('n8n.audit.workflow')) {
+			if (event.eventName.startsWith('flowease.audit.workflow')) {
 				return config.getEnv('endpoints.metrics.includeWorkflowIdLabel')
 					? { workflow_id: event.payload.workflowId?.toString() ?? 'unknown' }
 					: {};

@@ -11,8 +11,8 @@ import type {
 	IWebhookResponseData,
 	MultiPartFormData,
 	INodeProperties,
-} from 'n8n-workflow';
-import { BINARY_ENCODING, NodeOperationError, Node } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { BINARY_ENCODING, NodeOperationError, Node } from 'flowease-workflow';
 
 import { v4 as uuid } from 'uuid';
 import basicAuth from 'basic-auth';
@@ -421,7 +421,7 @@ export class Webhook extends Node {
 		const options = context.getNodeParameter('options', {}) as IDataObject;
 
 		// TODO: create empty binaryData placeholder, stream into that path, and then finalize the binaryData
-		const binaryFile = await tmpFile({ prefix: 'n8n-webhook-' });
+		const binaryFile = await tmpFile({ prefix: 'flowease-webhook-' });
 
 		try {
 			await pipeline(req, createWriteStream(binaryFile.path));

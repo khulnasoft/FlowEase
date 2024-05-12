@@ -7,9 +7,9 @@ import compression from 'compression';
 import isbot from 'isbot';
 
 import config from '@/config';
-import { N8N_VERSION, TEMPLATES_DIR, inDevelopment, inTest } from '@/constants';
+import { FLOWEASE_VERSION, TEMPLATES_DIR, inDevelopment, inTest } from '@/constants';
 import * as Db from '@/Db';
-import { N8nInstanceType } from '@/Interfaces';
+import { FloweaseInstanceType } from '@/Interfaces';
 import { ExternalHooks } from '@/ExternalHooks';
 import { send, sendErrorResponse } from '@/ResponseHelper';
 import { rawBodyReader, bodyParser, corsMiddleware } from '@/middlewares';
@@ -59,7 +59,7 @@ export abstract class AbstractServer {
 
 	readonly uniqueInstanceId: string;
 
-	constructor(instanceType: N8nInstanceType = 'main') {
+	constructor(instanceType: FloweaseInstanceType = 'main') {
 		this.app = express();
 		this.app.disable('x-powered-by');
 
@@ -127,7 +127,7 @@ export abstract class AbstractServer {
 		this.app.use((_req, res, next) => {
 			if (connectionState.connected) {
 				if (connectionState.migrated) next();
-				else res.send('n8n is starting up. Please wait');
+				else res.send('flowease is starting up. Please wait');
 			} else sendErrorResponse(res, new ServiceUnavailableError('Database is not ready!'));
 		});
 	}
@@ -155,7 +155,7 @@ export abstract class AbstractServer {
 		this.server.on('error', (error: Error & { code: string }) => {
 			if (error.code === 'EADDRINUSE') {
 				this.logger.info(
-					`n8n's port ${PORT} is already in use. Do you have another instance of n8n running already?`,
+					`flowease's port ${PORT} is already in use. Do you have another instance of flowease running already?`,
 				);
 				process.exit(1);
 			}
@@ -167,7 +167,7 @@ export abstract class AbstractServer {
 
 		await this.setupHealthCheck();
 
-		this.logger.info(`n8n ready on ${ADDRESS}, port ${PORT}`);
+		this.logger.info(`flowease ready on ${ADDRESS}, port ${PORT}`);
 	}
 
 	async start(): Promise<void> {
@@ -236,14 +236,14 @@ export abstract class AbstractServer {
 		await this.configure();
 
 		if (!inTest) {
-			this.logger.info(`Version: ${N8N_VERSION}`);
+			this.logger.info(`Version: ${FLOWEASE_VERSION}`);
 
 			const defaultLocale = config.getEnv('defaultLocale');
 			if (defaultLocale !== 'en') {
 				this.logger.info(`Locale: ${defaultLocale}`);
 			}
 
-			await this.externalHooks.run('n8n.ready', [this, config]);
+			await this.externalHooks.run('flowease.ready', [this, config]);
 		}
 	}
 

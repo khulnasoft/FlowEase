@@ -5,7 +5,7 @@ import {
 	type ICredentialType,
 	type ICredentialTypes,
 	type LoadedClass,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { RESPONSE_ERROR_MESSAGES } from '@/constants';
 import { LoadNodesAndCredentials } from '@/LoadNodesAndCredentials';
 

@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { GoogleGenerativeAIEmbeddings } from '@langchain/google-genai';
 
 import { logWrapper } from '../../../utils/logWrapper';
@@ -40,7 +40,7 @@ export class EmbeddingsGoogleGemini implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsgooglegemini/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.embeddingsgooglegemini/',
 					},
 				],
 			},

@@ -6,7 +6,7 @@ import type { TagRequest } from '../../../types';
 import { encodeNextCursor } from '../../shared/services/pagination.service';
 
 import { Container } from 'typedi';
-import type { FindManyOptions } from '@n8n/typeorm';
+import type { FindManyOptions } from '@flowease/typeorm';
 import { TagRepository } from '@db/repositories/tag.repository';
 import { TagService } from '@/services/tag.service';
 

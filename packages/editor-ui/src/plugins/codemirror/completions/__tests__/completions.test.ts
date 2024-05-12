@@ -16,7 +16,7 @@ import { mockNodes, mockProxy } from './mock';
 import type { CompletionSource, CompletionResult } from '@codemirror/autocomplete';
 import { CompletionContext } from '@codemirror/autocomplete';
 import { EditorState } from '@codemirror/state';
-import { n8nLang } from '@/plugins/codemirror/n8nLang';
+import { floweaseLang } from '@/plugins/codemirror/floweaseLang';
 import { useExternalSecretsStore } from '@/stores/externalSecrets.ee.store';
 import { useUIStore } from '@/stores/ui.store';
 import { useSettingsStore } from '@/stores/settings.store';
@@ -817,7 +817,7 @@ export function completions(docWithCursor: string, explicit = false) {
 	const state = EditorState.create({
 		doc,
 		selection: { anchor: cursorPosition },
-		extensions: [n8nLang()],
+		extensions: [floweaseLang()],
 	});
 
 	const context = new CompletionContext(state, cursorPosition, explicit);

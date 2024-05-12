@@ -4,7 +4,7 @@ import {
 	type INodeTypeDescription,
 	type SupplyData,
 	NodeConnectionType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { Embeddings } from '@langchain/core/embeddings';
 import { createClient } from '@supabase/supabase-js';
 import type { SupabaseLibArgs } from '@langchain/community/vectorstores/supabase';
@@ -37,7 +37,7 @@ export class VectorStoreSupabaseLoad implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoresupabase/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstoresupabase/',
 					},
 				],
 			},

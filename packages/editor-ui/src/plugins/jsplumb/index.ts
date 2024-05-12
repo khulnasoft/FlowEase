@@ -1,19 +1,19 @@
 import type { Plugin } from 'vue';
-import { N8nPlusEndpointHandler } from '@/plugins/jsplumb/N8nPlusEndpointType';
-import * as N8nPlusEndpointRenderer from '@/plugins/jsplumb/N8nPlusEndpointRenderer';
-import { N8nConnector } from '@/plugins/connectors/N8nCustomConnector';
-import * as N8nAddInputEndpointRenderer from '@/plugins/jsplumb/N8nAddInputEndpointRenderer';
-import { N8nAddInputEndpointHandler } from '@/plugins/jsplumb/N8nAddInputEndpointType';
+import { FloweasePlusEndpointHandler } from '@/plugins/jsplumb/FloweasePlusEndpointType';
+import * as FloweasePlusEndpointRenderer from '@/plugins/jsplumb/FloweasePlusEndpointRenderer';
+import { FloweaseConnector } from '@/plugins/connectors/FloweaseCustomConnector';
+import * as FloweaseAddInputEndpointRenderer from '@/plugins/jsplumb/FloweaseAddInputEndpointRenderer';
+import { FloweaseAddInputEndpointHandler } from '@/plugins/jsplumb/FloweaseAddInputEndpointType';
 import { Connectors, EndpointFactory } from '@jsplumb/core';
 
 export const JsPlumbPlugin: Plugin<{}> = {
 	install: () => {
-		Connectors.register(N8nConnector.type, N8nConnector);
+		Connectors.register(FloweaseConnector.type, FloweaseConnector);
 
-		N8nPlusEndpointRenderer.register();
-		EndpointFactory.registerHandler(N8nPlusEndpointHandler);
+		FloweasePlusEndpointRenderer.register();
+		EndpointFactory.registerHandler(FloweasePlusEndpointHandler);
 
-		N8nAddInputEndpointRenderer.register();
-		EndpointFactory.registerHandler(N8nAddInputEndpointHandler);
+		FloweaseAddInputEndpointRenderer.register();
+		EndpointFactory.registerHandler(FloweaseAddInputEndpointHandler);
 	},
 };

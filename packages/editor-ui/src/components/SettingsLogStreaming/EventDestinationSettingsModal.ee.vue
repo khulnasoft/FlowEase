@@ -31,7 +31,7 @@
 						/>
 					</div>
 					<div :class="$style.destinationActions">
-						<n8n-button
+						<flowease-button
 							v-if="nodeParameters && hasOnceBeenSaved && unchanged"
 							:icon="testMessageSent ? (testMessageResult ? 'check' : 'exclamation-triangle') : ''"
 							:title="
@@ -46,7 +46,7 @@
 							@click="sendTestEvent"
 						/>
 						<template v-if="canManageLogStreaming">
-							<n8n-icon-button
+							<flowease-icon-button
 								v-if="nodeParameters && hasOnceBeenSaved"
 								:title="$locale.baseText('settings.log-streaming.delete')"
 								icon="trash"
@@ -72,7 +72,7 @@
 		<template #content>
 			<div :class="$style.container">
 				<template v-if="isTypeAbstract">
-					<n8n-input-label
+					<flowease-input-label
 						:class="$style.typeSelector"
 						:label="$locale.baseText('settings.log-streaming.selecttype')"
 						:tooltip-text="$locale.baseText('settings.log-streaming.selecttypehint')"
@@ -80,7 +80,7 @@
 						size="medium"
 						:underline="false"
 					>
-						<n8n-select
+						<flowease-select
 							ref="typeSelectRef"
 							:model-value="typeSelectValue"
 							:placeholder="typeSelectPlaceholder"
@@ -88,28 +88,28 @@
 							name="name"
 							@update:model-value="onTypeSelectInput"
 						>
-							<n8n-option
+							<flowease-option
 								v-for="option in typeSelectOptions || []"
 								:key="option.value"
 								:value="option.value"
 								:label="$locale.baseText(option.label)"
 							/>
-						</n8n-select>
+						</flowease-select>
 						<div class="mt-m text-right">
-							<n8n-button
+							<flowease-button
 								size="large"
 								data-test-id="select-destination-button"
 								:disabled="!typeSelectValue"
 								@click="onContinueAddClicked"
 							>
 								{{ $locale.baseText(`settings.log-streaming.continue`) }}
-							</n8n-button>
+							</flowease-button>
 						</div>
-					</n8n-input-label>
+					</flowease-input-label>
 				</template>
 				<template v-else>
 					<div :class="$style.sidebar">
-						<n8n-menu mode="tabs" :items="sidebarItems" @select="onTabSelect"></n8n-menu>
+						<flowease-menu mode="tabs" :items="sidebarItems" @select="onTabSelect"></flowease-menu>
 					</div>
 					<div v-if="activeTab === 'settings'" ref="content" :class="$style.mainContent">
 						<template v-if="isTypeWebhook">
@@ -145,7 +145,7 @@
 					</div>
 					<div v-if="activeTab === 'events'" :class="$style.mainContent">
 						<div class="">
-							<n8n-input-label
+							<flowease-input-label
 								class="mb-m mt-m"
 								:label="$locale.baseText('settings.log-streaming.tab.events.title')"
 								:bold="true"
@@ -179,7 +179,7 @@ import type {
 	INodeCredentials,
 	NodeParameterValue,
 	MessageEventBusDestinationOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	deepCopy,
 	defaultMessageEventBusDestinationOptions,
@@ -187,7 +187,7 @@ import {
 	MessageEventBusDestinationTypeNames,
 	defaultMessageEventBusDestinationSyslogOptions,
 	defaultMessageEventBusDestinationSentryOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { PropType } from 'vue';
 import { defineComponent } from 'vue';
 import { LOG_STREAM_MODAL_KEY, MODAL_CONFIRM } from '@/constants';
@@ -208,7 +208,7 @@ import EventSelection from '@/components/SettingsLogStreaming/EventSelection.ee.
 import type { EventBus } from 'flowease-design-system';
 import { createEventBus } from 'flowease-design-system/utils';
 import { useTelemetry } from '@/composables/useTelemetry';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 
 export default defineComponent({
 	name: 'EventDestinationSettingsModal',

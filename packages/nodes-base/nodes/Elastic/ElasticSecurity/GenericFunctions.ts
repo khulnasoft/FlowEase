@@ -5,8 +5,8 @@ import type {
 	JsonObject,
 	IRequestOptions,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError, NodeOperationError } from 'flowease-workflow';
 
 import type { Connector, ElasticSecurityApiCredentials } from './types';
 

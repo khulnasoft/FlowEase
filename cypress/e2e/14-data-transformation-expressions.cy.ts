@@ -25,7 +25,7 @@ describe('Data transformation expressions', () => {
 		ndv.getters.outputDataContainer().contains(output);
 	});
 
-	it('$json + n8n string methods', () => {
+	it('$json + flowease string methods', () => {
 		wf.actions.addInitialNodeToCanvas('Schedule Trigger', { keepNdvOpen: true });
 		ndv.actions.setPinnedData([{ myStr: 'hello@flowease.khulnasoft.com is an email' }]);
 		ndv.actions.close();
@@ -57,7 +57,7 @@ describe('Data transformation expressions', () => {
 		ndv.getters.outputDataContainer().contains(output);
 	});
 
-	it('$json + n8n numeric methods', () => {
+	it('$json + flowease numeric methods', () => {
 		wf.actions.addInitialNodeToCanvas('Schedule Trigger', { keepNdvOpen: true });
 		ndv.actions.setPinnedData([{ myStr: 'hello@flowease.khulnasoft.com is an email' }]);
 		ndv.actions.close();
@@ -88,7 +88,7 @@ describe('Data transformation expressions', () => {
 		ndv.getters.outputDataContainer().find('[class*=value_]').should('contain', output);
 	});
 
-	it('$json + n8n array methods', () => {
+	it('$json + flowease array methods', () => {
 		wf.actions.addInitialNodeToCanvas('Schedule Trigger', { keepNdvOpen: true });
 		ndv.actions.setPinnedData([{ myArr: [1, 2, 3] }]);
 		ndv.actions.close();

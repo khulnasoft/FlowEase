@@ -62,14 +62,14 @@
 		/>
 
 		<template v-if="credentialPermissions.update">
-			<n8n-notice v-if="documentationUrl && credentialProperties.length" theme="warning">
+			<flowease-notice v-if="documentationUrl && credentialProperties.length" theme="warning">
 				{{ $locale.baseText('credentialEdit.credentialConfig.needHelpFillingOutTheseFields') }}
 				<span class="ml-4xs">
-					<n8n-link :to="documentationUrl" size="small" bold @click="onDocumentationUrlClick">
+					<flowease-link :to="documentationUrl" size="small" bold @click="onDocumentationUrlClick">
 						{{ $locale.baseText('credentialEdit.credentialConfig.openDocs') }}
-					</n8n-link>
+					</flowease-link>
 				</span>
-			</n8n-notice>
+			</flowease-notice>
 
 			<AuthTypeSelector
 				v-if="showAuthTypeSelector && isNewCredential"
@@ -93,13 +93,13 @@
 		</template>
 		<EnterpriseEdition v-else :features="[EnterpriseEditionFeature.Sharing]">
 			<div>
-				<n8n-info-tip :bold="false">
+				<flowease-info-tip :bold="false">
 					{{
 						$locale.baseText('credentialEdit.credentialEdit.info.sharee', {
 							interpolate: { credentialOwnerName },
 						})
 					}}
-				</n8n-info-tip>
+				</flowease-info-tip>
 			</div>
 		</EnterpriseEdition>
 
@@ -123,18 +123,18 @@
 			@click="$emit('oauth')"
 		/>
 
-		<n8n-text v-if="isMissingCredentials" color="text-base" size="medium">
+		<flowease-text v-if="isMissingCredentials" color="text-base" size="medium">
 			{{ $locale.baseText('credentialEdit.credentialConfig.missingCredentialType') }}
-		</n8n-text>
+		</flowease-text>
 
 		<EnterpriseEdition :features="[EnterpriseEditionFeature.ExternalSecrets]">
 			<template #fallback>
-				<n8n-info-tip class="mt-s">
+				<flowease-info-tip class="mt-s">
 					{{ $locale.baseText('credentialEdit.credentialConfig.externalSecrets') }}
-					<n8n-link bold :to="$locale.baseText('settings.externalSecrets.docs')" size="small">
+					<flowease-link bold :to="$locale.baseText('settings.externalSecrets.docs')" size="small">
 						{{ $locale.baseText('credentialEdit.credentialConfig.externalSecrets.moreInfo') }}
-					</n8n-link>
-				</n8n-info-tip>
+					</flowease-link>
+				</flowease-info-tip>
 			</template>
 		</EnterpriseEdition>
 	</div>
@@ -144,7 +144,7 @@
 import { defineComponent } from 'vue';
 import { mapStores } from 'pinia';
 
-import type { ICredentialType, INodeTypeDescription } from 'n8n-workflow';
+import type { ICredentialType, INodeTypeDescription } from 'flowease-workflow';
 import { getAppNameFromCredType, isCommunityPackageName } from '@/utils/nodeTypesUtils';
 
 import Banner from '../Banner.vue';
@@ -156,7 +156,7 @@ import { BUILTIN_CREDENTIALS_DOCS_URL, DOCS_DOMAIN, EnterpriseEditionFeature } f
 import type { IPermissions } from '@/permissions';
 import { useUIStore } from '@/stores/ui.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useNDVStore } from '@/stores/ndv.store';
 import { useCredentialsStore } from '@/stores/credentials.store';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
@@ -308,7 +308,7 @@ export default defineComponent({
 			}
 
 			if (url.hostname === DOCS_DOMAIN) {
-				url.searchParams.set('utm_source', 'n8n_app');
+				url.searchParams.set('utm_source', 'flowease_app');
 				url.searchParams.set('utm_medium', 'credential_settings');
 				url.searchParams.set('utm_campaign', 'create_new_credentials_modal');
 			}

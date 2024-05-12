@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-	<n8n-button
+	<flowease-button
 		v-if="showButton"
 		:label="i18n.baseText('nodeView.setupTemplate')"
 		size="large"

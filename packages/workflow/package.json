@@ -1,7 +1,7 @@
 {
-  "name": "n8n-workflow",
+  "name": "flowease-workflow",
   "version": "1.40.0",
-  "description": "Workflow base code of n8n",
+  "description": "Workflow base code of flowease",
   "license": "SEE LICENSE IN LICENSE.md",
   "homepage": "https://flowease.khulnasoft.com",
   "author": {
@@ -48,8 +48,8 @@
     "@types/xml2js": "^0.4.14"
   },
   "dependencies": {
-    "@n8n/tournament": "1.0.2",
-    "@n8n_io/riot-tmpl": "4.0.0",
+    "@flowease/tournament": "1.0.2",
+    "@flowease/riot-tmpl": "^4.0.1",
     "ast-types": "0.15.2",
     "axios": "1.6.7",
     "callsites": "3.1.0",

@@ -12,18 +12,18 @@ import type {
 	INodeTypeNameVersion,
 	IVersionedNodeType,
 	KnownNodesAndCredentials,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	ApplicationError,
 	LoggerProxy as Logger,
 	getCredentialsForNode,
 	getVersionedNodeTypeAll,
 	jsonParse,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import * as path from 'path';
 import { loadClassInIsolation } from './ClassLoader';
 import { CUSTOM_NODES_CATEGORY } from './Constants';
-import type { n8n } from './Interfaces';
+import type { flowease } from './Interfaces';
 
 function toJSON(this: ICredentialType) {
 	return {
@@ -296,7 +296,7 @@ export abstract class DirectoryLoader {
 
 /**
  * Loader for source files of nodes and credentials located in a custom dir,
- * e.g. `~/.n8n/custom`
+ * e.g. `~/.flowease/custom`
  */
 export class CustomDirectoryLoader extends DirectoryLoader {
 	packageName = 'CUSTOM';
@@ -331,7 +331,7 @@ export class CustomDirectoryLoader extends DirectoryLoader {
 export class PackageDirectoryLoader extends DirectoryLoader {
 	packageName = '';
 
-	packageJson!: n8n.PackageJson;
+	packageJson!: flowease.PackageJson;
 
 	async readPackageJson() {
 		this.packageJson = await this.readJSON('package.json');
@@ -341,10 +341,10 @@ export class PackageDirectoryLoader extends DirectoryLoader {
 	override async loadAll() {
 		await this.readPackageJson();
 
-		const { n8n } = this.packageJson;
-		if (!n8n) return;
+		const { flowease } = this.packageJson;
+		if (!flowease) return;
 
-		const { nodes, credentials } = n8n;
+		const { nodes, credentials } = flowease;
 
 		if (Array.isArray(nodes)) {
 			for (const node of nodes) {

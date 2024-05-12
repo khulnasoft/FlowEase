@@ -8,7 +8,7 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import ISO6391 from 'iso-639-1';
 import { directMessageFields, directMessageOperations } from './DirectMessageDescription';

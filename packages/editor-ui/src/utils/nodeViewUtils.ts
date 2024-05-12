@@ -3,7 +3,7 @@ import { NODE_OUTPUT_DEFAULT_KEY, STICKY_NODE_TYPE } from '@/constants';
 import type { EndpointStyle, IBounds, INodeUi, XYPosition } from '@/Interface';
 import type { ArrayAnchorSpec, ConnectorSpec, OverlaySpec, PaintStyle } from '@jsplumb/common';
 import type { Endpoint, Connection } from '@jsplumb/core';
-import { N8nConnector } from '@/plugins/connectors/N8nCustomConnector';
+import { FloweaseConnector } from '@/plugins/connectors/FloweaseCustomConnector';
 import type {
 	ConnectionTypes,
 	IConnection,
@@ -11,8 +11,8 @@ import type {
 	INodeExecutionData,
 	NodeInputConnections,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeConnectionType } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeConnectionType } from 'flowease-workflow';
 import type { BrowserJsPlumbInstance } from '@jsplumb/browser-ui';
 import { EVENT_CONNECTION_MOUSEOUT, EVENT_CONNECTION_MOUSEOVER } from '@jsplumb/browser-ui';
 import { useUIStore } from '@/stores/ui.store';
@@ -64,7 +64,7 @@ export const DEFAULT_PLACEHOLDER_TRIGGER_BUTTON = {
 };
 
 export const CONNECTOR_FLOWCHART_TYPE: ConnectorSpec = {
-	type: N8nConnector.type,
+	type: FloweaseConnector.type,
 	options: {
 		cornerRadius: 12,
 		stub: JSPLUMB_FLOWCHART_STUB + 10,
@@ -874,7 +874,7 @@ export const getZoomToFit = (
 
 export const showDropConnectionState = (connection: Connection, targetEndpoint?: Endpoint) => {
 	if (connection?.connector) {
-		const connector = connection.connector as N8nConnector;
+		const connector = connection.connector as FloweaseConnector;
 		if (targetEndpoint) {
 			connector.setTargetEndpoint(targetEndpoint);
 		}
@@ -885,7 +885,7 @@ export const showDropConnectionState = (connection: Connection, targetEndpoint?:
 
 export const showPullConnectionState = (connection: Connection) => {
 	if (connection?.connector) {
-		const connector = connection.connector as N8nConnector;
+		const connector = connection.connector as FloweaseConnector;
 		connector.resetTargetEndpoint();
 		connection.setPaintStyle(getConnectorPaintStylePull(connection));
 		showOverlay(connection, OVERLAY_DROP_NODE_ID);
@@ -894,7 +894,7 @@ export const showPullConnectionState = (connection: Connection) => {
 
 export const resetConnectionAfterPull = (connection: Connection) => {
 	if (connection?.connector) {
-		const connector = connection.connector as N8nConnector;
+		const connector = connection.connector as FloweaseConnector;
 		connector.resetTargetEndpoint();
 		connection.setPaintStyle(getConnectorPaintStyleDefault(connection));
 	}
@@ -1104,7 +1104,7 @@ export const getPlusEndpoint = (
 	return endpoints.find(
 		(endpoint: Endpoint) =>
 			// @ts-ignore
-			endpoint.endpoint.type === 'N8nPlus' && endpoint?.__meta?.index === outputIndex,
+			endpoint.endpoint.type === 'FloweasePlus' && endpoint?.__meta?.index === outputIndex,
 	);
 };
 

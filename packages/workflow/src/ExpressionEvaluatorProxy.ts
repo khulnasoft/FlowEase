@@ -1,6 +1,6 @@
-import * as tmpl from '@n8n_io/riot-tmpl';
-import type { ReturnValue, TmplDifference } from '@n8n/tournament';
-import { Tournament } from '@n8n/tournament';
+import * as tmpl from '@flowease/riot-tmpl';
+import type { ReturnValue, TmplDifference } from '@flowease/tournament';
+import { Tournament } from '@flowease/tournament';
 import type { ExpressionEvaluatorType } from './Interfaces';
 import * as LoggerProxy from './LoggerProxy';
 

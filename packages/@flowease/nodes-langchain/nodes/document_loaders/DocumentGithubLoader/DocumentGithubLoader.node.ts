@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { GithubRepoLoader } from 'langchain/document_loaders/web/github';
 import type { CharacterTextSplitter } from 'langchain/text_splitter';
 import { logWrapper } from '../../../utils/logWrapper';
@@ -30,7 +30,7 @@ export class DocumentGithubLoader implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentgithubloader/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.documentgithubloader/',
 					},
 				],
 			},

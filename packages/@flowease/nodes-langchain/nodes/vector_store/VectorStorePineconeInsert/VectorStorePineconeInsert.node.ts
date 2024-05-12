@@ -4,13 +4,13 @@ import {
 	type INodeTypeDescription,
 	type INodeExecutionData,
 	NodeConnectionType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { Embeddings } from '@langchain/core/embeddings';
 import type { Document } from '@langchain/core/documents';
 
 import { PineconeStore } from '@langchain/pinecone';
 import { Pinecone } from '@pinecone-database/pinecone';
-import type { N8nJsonLoader } from '../../../utils/N8nJsonLoader';
+import type { FloweaseJsonLoader } from '../../../utils/FloweaseJsonLoader';
 import { processDocuments } from '../shared/processDocuments';
 import { pineconeIndexRLC } from '../shared/descriptions';
 import { pineconeIndexSearch } from '../shared/methods/listSearch';
@@ -38,7 +38,7 @@ export class VectorStorePineconeInsert implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstorepinecone/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstorepinecone/',
 					},
 				],
 			},
@@ -106,7 +106,7 @@ export class VectorStorePineconeInsert implements INodeType {
 		const credentials = await this.getCredentials('pineconeApi');
 
 		const documentInput = (await this.getInputConnectionData(NodeConnectionType.AiDocument, 0)) as
-			| N8nJsonLoader
+			| FloweaseJsonLoader
 			| Array<Document<Record<string, unknown>>>;
 
 		const embeddings = (await this.getInputConnectionData(

@@ -6,8 +6,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError, NodeOperationError } from 'flowease-workflow';
 
 import flow from 'lodash/flow';
 import sortBy from 'lodash/sortBy';
@@ -341,7 +341,7 @@ export const adjustProductPayload = adjustCustomFields;
 // ----------------------------------------
 
 /**
- * Convert items in a Zoho CRM API response into n8n load options.
+ * Convert items in a Zoho CRM API response into flowease load options.
  */
 export const toLoadOptions = (items: ResourceItems, nameProperty: NameType) =>
 	items.map((item) => ({ name: item[nameProperty], value: item.id }));

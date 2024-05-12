@@ -21,7 +21,7 @@ let uiStore: ReturnType<typeof useUIStore>;
 
 const createComponent = createComponentRenderer(WorkflowSettingsVue, {
 	global: {
-		stubs: ['n8n-tooltip'],
+		stubs: ['flowease-tooltip'],
 	},
 });
 

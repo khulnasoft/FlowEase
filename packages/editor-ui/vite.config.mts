@@ -9,7 +9,7 @@ import { vitestConfig } from '../design-system/vite.config.mts';
 import icons from 'unplugin-icons/vite';
 
 const vendorChunks = ['vue', 'vue-router'];
-const n8nChunks = ['n8n-workflow', 'flowease-design-system', '@flowease/chat'];
+const floweaseChunks = ['flowease-workflow', 'flowease-design-system', '@flowease/chat'];
 const ignoreChunks = [
 	'@fontsource/open-sans',
 	'@vueuse/components',
@@ -25,7 +25,7 @@ function renderChunks() {
 	const chunks: Record<string, string[]> = {};
 
 	Object.keys(dependencies).forEach((key) => {
-		if ([...vendorChunks, ...n8nChunks, ...ignoreChunks].includes(key)) {
+		if ([...vendorChunks, ...floweaseChunks, ...ignoreChunks].includes(key)) {
 			return;
 		}
 
@@ -53,12 +53,12 @@ const alias = [
 		replacement: resolve(__dirname, '..', 'design-system', 'src') + '/',
 	},
 	{
-		find: /^@n8n\/chat$/,
-		replacement: resolve(__dirname, '..', '@n8n', 'chat', 'src', 'index.ts'),
+		find: /^@flowease\/chat$/,
+		replacement: resolve(__dirname, '..', '@flowease', 'chat', 'src', 'index.ts'),
 	},
 	{
-		find: /^@n8n\/chat\//,
-		replacement: resolve(__dirname, '..', '@n8n', 'chat', 'src') + '/',
+		find: /^@flowease\/chat\//,
+		replacement: resolve(__dirname, '..', '@flowease', 'chat', 'src') + '/',
 	},
 	...['orderBy', 'camelCase', 'cloneDeep', 'startCase'].map((name) => ({
 		find: new RegExp(`^lodash.${name}$`, 'i'),
@@ -84,7 +84,7 @@ const { SENTRY_AUTH_TOKEN: authToken, RELEASE: release } = process.env;
 if (release && authToken) {
 	plugins.push(
 		sentryVitePlugin({
-			org: 'n8nio',
+			org: 'floweaseio',
 			project: 'instance-frontend',
 			// Specify the directory containing build artifacts
 			include: './dist',
@@ -112,7 +112,7 @@ export default mergeConfig(
 		css: {
 			preprocessorOptions: {
 				scss: {
-					additionalData: '\n@use "@/n8n-theme-variables.scss" as *;\n',
+					additionalData: '\n@use "@/flowease-theme-variables.scss" as *;\n',
 				},
 			},
 		},
@@ -125,7 +125,7 @@ export default mergeConfig(
 				output: {
 					manualChunks: {
 						vendor: vendorChunks,
-						n8n: n8nChunks,
+						flowease: floweaseChunks,
 						...renderChunks(),
 					},
 				},

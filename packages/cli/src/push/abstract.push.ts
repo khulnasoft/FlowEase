@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import { assert, jsonStringify } from 'n8n-workflow';
+import { assert, jsonStringify } from 'flowease-workflow';
 import type { IPushDataType } from '@/Interfaces';
 import type { Logger } from '@/Logger';
 import type { User } from '@db/entities/User';

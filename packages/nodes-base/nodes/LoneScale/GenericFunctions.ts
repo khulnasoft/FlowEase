@@ -7,7 +7,7 @@ import {
 	type ILoadOptionsFunctions,
 	type IWebhookFunctions,
 	type IRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { BASE_URL } from './constants';
 
 export async function lonescaleApiRequest(

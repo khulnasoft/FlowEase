@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData } from 'flowease-workflow';
 
 import * as employee from './employee';
 import * as employeeDocument from './employeeDocument';

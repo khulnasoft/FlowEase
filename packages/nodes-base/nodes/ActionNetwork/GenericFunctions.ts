@@ -4,7 +4,7 @@ import type {
 	IHttpRequestMethods,
 	ILoadOptionsFunctions,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import flow from 'lodash/flow';
 import omit from 'lodash/omit';

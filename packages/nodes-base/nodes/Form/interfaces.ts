@@ -27,7 +27,7 @@ export type FormTriggerData = {
 	formDescription?: string;
 	formSubmittedText?: string;
 	redirectUrl?: string;
-	n8nWebsiteLink: string;
+	floweaseWebsiteLink: string;
 	formFields: FormTriggerInput[];
 	useResponseData?: boolean;
 	appendAttribution?: boolean;

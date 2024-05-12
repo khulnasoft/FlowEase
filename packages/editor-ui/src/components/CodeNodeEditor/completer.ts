@@ -242,7 +242,7 @@ export const completerExtension = defineComponent({
 		},
 
 		/**
-		 * Collect uses of variables pointing to n8n syntax if they have been extended.
+		 * Collect uses of variables pointing to flowease syntax if they have been extended.
 		 *
 		 * x.first().
 		 * x.first().json.

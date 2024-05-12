@@ -5,7 +5,7 @@ import {
 	type IDataObject,
 	type INodeExecutionData,
 	type INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 // Define these because we'll be using them in two separate places
 const metagenerationFilters: INodeProperties[] = [

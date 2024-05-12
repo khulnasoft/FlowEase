@@ -1,25 +1,30 @@
 <template>
 	<span :class="$style.container" data-test-id="node-title-container" @click="onEdit">
 		<span :class="$style.iconWrapper"><NodeIcon :node-type="nodeType" :size="18" /></span>
-		<n8n-popover placement="right" width="200" :visible="editName" :disabled="!editable">
+		<flowease-popover placement="right" width="200" :visible="editName" :disabled="!editable">
 			<div
 				:class="$style.editContainer"
 				@keydown.enter="onRename"
 				@keydown.stop
 				@keydown.esc="editName = false"
 			>
-				<n8n-text :bold="true" color="text-base" tag="div">{{
+				<flowease-text :bold="true" color="text-base" tag="div">{{
 					$locale.baseText('ndv.title.renameNode')
-				}}</n8n-text>
-				<n8n-input ref="input" v-model="newName" size="small" data-test-id="node-rename-input" />
+				}}</flowease-text>
+				<flowease-input
+					ref="input"
+					v-model="newName"
+					size="small"
+					data-test-id="node-rename-input"
+				/>
 				<div :class="$style.editButtons">
-					<n8n-button
+					<flowease-button
 						type="secondary"
 						size="small"
 						:label="$locale.baseText('ndv.title.cancel')"
 						@click="editName = false"
 					/>
-					<n8n-button
+					<flowease-button
 						type="primary"
 						size="small"
 						:label="$locale.baseText('ndv.title.rename')"
@@ -35,7 +40,7 @@
 					</div>
 				</div>
 			</template>
-		</n8n-popover>
+		</flowease-popover>
 	</span>
 </template>
 

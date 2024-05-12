@@ -1,4 +1,4 @@
-import type { IDataObject, IPollFunctions } from 'n8n-workflow';
+import type { IDataObject, IPollFunctions } from 'flowease-workflow';
 
 import * as XLSX from 'xlsx';
 import isEqual from 'lodash/isEqual';

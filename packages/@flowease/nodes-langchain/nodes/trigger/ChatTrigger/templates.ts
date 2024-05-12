@@ -23,7 +23,7 @@ export function createPage({
 	const validAuthenticationOptions: AuthenticationChatOption[] = [
 		'none',
 		'basicAuth',
-		'n8nUserAuth',
+		'floweaseUserAuth',
 	];
 	const validLoadPreviousSessionOptions: LoadPreviousSessionChatOption[] = [
 		'manually',
@@ -57,11 +57,11 @@ export function createPage({
 				(async function () {
 					const authentication = '${sanitizedAuthentication}';
 					let metadata;
-					if (authentication === 'n8nUserAuth') {
+					if (authentication === 'floweaseUserAuth') {
 						try {
 							const response = await fetch('/rest/login', {
 									method: 'GET',
-									headers: { 'browser-id': localStorage.getItem('n8n-browserId') }
+									headers: { 'browser-id': localStorage.getItem('flowease-browserId') }
 							});
 
 							if (response.status !== 200) {

@@ -1,7 +1,7 @@
 <template>
 	<span>
 		<div v-if="!rootStore.pushConnectionActive" class="push-connection-lost primary-color">
-			<n8n-tooltip placement="bottom-end">
+			<flowease-tooltip placement="bottom-end">
 				<template #content>
 					<div v-html="$locale.baseText('pushConnectionTracker.cannotConnectToServer')"></div>
 				</template>
@@ -9,7 +9,7 @@
 					<font-awesome-icon icon="exclamation-triangle" />&nbsp;
 					{{ $locale.baseText('pushConnectionTracker.connectionLost') }}
 				</span>
-			</n8n-tooltip>
+			</flowease-tooltip>
 		</div>
 		<slot v-else />
 	</span>
@@ -18,7 +18,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapStores } from 'pinia';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 
 export default defineComponent({
 	name: 'PushConnectionTracker',

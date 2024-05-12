@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 
 export const messageOperations: INodeProperties[] = [
 	{
@@ -57,7 +57,7 @@ export const messageFields: INodeProperties[] = [
 		name: 'text',
 		type: 'string',
 		default: '',
-		placeholder: 'Hello from n8n!',
+		placeholder: 'Hello from flowease!',
 		displayOptions: {
 			show: {
 				operation: ['create'],

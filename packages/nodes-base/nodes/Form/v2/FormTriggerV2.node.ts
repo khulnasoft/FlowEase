@@ -4,7 +4,7 @@ import {
 	type INodeTypeBaseDescription,
 	type INodeTypeDescription,
 	type IWebhookFunctions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { formWebhook } from '../utils';
 import {
@@ -18,14 +18,14 @@ import {
 } from '../common.descriptions';
 
 const descriptionV2: INodeTypeDescription = {
-	displayName: 'n8n Form Trigger',
+	displayName: 'flowease Form Trigger',
 	name: 'formTrigger',
 	icon: 'file:form.svg',
 	group: ['trigger'],
 	version: 2,
-	description: 'Runs the flow when an n8n generated webform is submitted',
+	description: 'Runs the flow when an flowease generated webform is submitted',
 	defaults: {
-		name: 'n8n Form Trigger',
+		name: 'flowease Form Trigger',
 	},
 	// eslint-disable-next-line flowease-nodes-base/node-class-description-inputs-wrong-regular-node
 	inputs: [],
@@ -79,12 +79,12 @@ const descriptionV2: INodeTypeDescription = {
 			options: [
 				{
 					// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-					displayName: 'Append n8n Attribution',
+					displayName: 'Append flowease Attribution',
 					name: 'appendAttribution',
 					type: 'boolean',
 					default: true,
 					description:
-						'Whether to include the link “Form automated with n8n” at the bottom of the form',
+						'Whether to include the link “Form automated with flowease” at the bottom of the form',
 				},
 				{
 					...respondWithOptions,

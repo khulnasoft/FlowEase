@@ -6,7 +6,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { shopifyApiRequest } from './GenericFunctions';
 

@@ -7,8 +7,8 @@ import type {
 	INodeTypeDescription,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError, NodeOperationError } from 'flowease-workflow';
 
 export class FacebookGraphApi implements INodeType {
 	description: INodeTypeDescription = {

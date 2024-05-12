@@ -3,7 +3,7 @@ import type {
 	ILoadOptionsFunctions,
 	INodeListSearchItems,
 	INodeListSearchResult,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { notionApiRequestAllItems } from '../GenericFunctions';
 
 export async function getDatabases(

@@ -1,4 +1,4 @@
-import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeProperties } from 'flowease-workflow';
 import { getSubfolders, microsoftApiRequest, microsoftApiRequestAllItems } from '../../transport';
 import { folderFields, folderRLC, returnAllOrLimit } from '../../descriptions';
 import { updateDisplayOptions } from '@utils/utilities';

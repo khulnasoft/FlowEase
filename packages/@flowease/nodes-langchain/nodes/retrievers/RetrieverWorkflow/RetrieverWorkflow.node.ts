@@ -1,5 +1,5 @@
 /* eslint-disable flowease-nodes-base/node-dirname-against-convention */
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
+import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
 import type {
 	IDataObject,
 	IExecuteWorkflowInfo,
@@ -9,12 +9,15 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { BaseRetriever, type BaseRetrieverInput } from '@langchain/core/retrievers';
 import { Document } from '@langchain/core/documents';
 
-import type { SetField, SetNodeOptions } from 'flowease-nodes-base/dist/nodes/Set/v2/helpers/interfaces';
+import type {
+	SetField,
+	SetNodeOptions,
+} from 'flowease-nodes-base/dist/nodes/Set/v2/helpers/interfaces';
 import * as manual from 'flowease-nodes-base/dist/nodes/Set/v2/manual.mode';
 import type { CallbackManagerForRetrieverRun } from '@langchain/core/callbacks/manager';
 import { logWrapper } from '../../../utils/logWrapper';
@@ -42,7 +45,7 @@ export class RetrieverWorkflow implements INodeType {
 		icon: 'fa:box-open',
 		group: ['transform'],
 		version: 1,
-		description: 'Use an n8n Workflow as Retriever',
+		description: 'Use an flowease Workflow as Retriever',
 		defaults: {
 			name: 'Workflow Retriever',
 		},
@@ -54,7 +57,7 @@ export class RetrieverWorkflow implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.retrieverworkflow/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.retrieverworkflow/',
 					},
 				],
 			},
@@ -279,7 +282,7 @@ export class RetrieverWorkflow implements INodeType {
 
 	async supplyData(this: IExecuteFunctions, itemIndex: number): Promise<SupplyData> {
 		class WorkflowRetriever extends BaseRetriever {
-			lc_namespace = ['n8n-nodes-langchain', 'retrievers', 'workflow'];
+			lc_namespace = ['flowease-nodes-langchain', 'retrievers', 'workflow'];
 
 			executeFunctions: IExecuteFunctions;
 

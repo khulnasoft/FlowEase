@@ -21,7 +21,8 @@ describe('Versions', () => {
 						versionNotifications: {
 							enabled: true,
 							endpoint: 'https://api.flowease.khulnasoft.com/api/versions/',
-							infoUrl: 'https://docs.flowease.khulnasoft.com/getting-started/installation/updating.html',
+							infoUrl:
+								'https://docs.flowease.khulnasoft.com/getting-started/installation/updating.html',
 						},
 					};
 				}
@@ -36,7 +37,7 @@ describe('Versions', () => {
 				hasSecurityFix: null,
 				securityIssueFixVersion: null,
 				hasBreakingChange: null,
-				documentationUrl: 'https://docs.flowease.khulnasoft.com/release-notes/#n8n131',
+				documentationUrl: 'https://docs.flowease.khulnasoft.com/release-notes/#flowease131',
 				nodes: [],
 				description: 'Includes <strong>bug fixes</strong>',
 			},
@@ -47,7 +48,7 @@ describe('Versions', () => {
 				hasSecurityFix: null,
 				securityIssueFixVersion: null,
 				hasBreakingChange: true,
-				documentationUrl: 'https://docs.flowease.khulnasoft.com/release-notes/#n8n104',
+				documentationUrl: 'https://docs.flowease.khulnasoft.com/release-notes/#flowease104',
 				nodes: [],
 				description: 'Includes <strong>core functionality</strong> and <strong>bug fixes</strong>',
 			},

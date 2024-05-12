@@ -3,9 +3,9 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
-import { ApplicationError, NodeOperationError, sleep } from 'n8n-workflow';
+import { ApplicationError, NodeOperationError, sleep } from 'flowease-workflow';
 import type { ResponseWithJobReference } from '../../helpers/interfaces';
 
 import { prepareOutput } from '../../helpers/utils';

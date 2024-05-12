@@ -180,7 +180,7 @@ export const fullShopifyTelegramTwitterTemplate = {
 	image: [
 		{
 			id: 527,
-			url: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/89a078b208fe4c6181902608b1cd1332.png',
+			url: 'https://floweaseiostorageaccount.blob.core.windows.net/floweaseio-strapi-blobs-prod/assets/89a078b208fe4c6181902608b1cd1332.png',
 		},
 	],
 } satisfies ITemplatesWorkflowFull;
@@ -191,7 +191,7 @@ export const fullSaveEmailAttachmentsToNextCloudTemplate = {
 	totalViews: 649,
 	createdAt: '2021-11-29T13:59:16.771Z',
 	description:
-		'This workflow will take all emails you put into a certain folder, upload any attachements to Nextcloud, and mark the emails as read (configurable).\n\nAttachements will be saved with automatically generated filenames:\n`2021-01-01_From-Sender-Name_Filename-of-attachement.pdf`\n\nInstructions:\n1. **Allow lodash to be used in n8n** (or rewrite the code...)\n  `NODE_FUNCTION_ALLOW_EXTERNAL=lodash` (environment variable)\n2. Import workflow\n3. Set credentials for Email & Nextcloud nodes\n4. Configure to use correct folder / custom filters\n5. Activate\n\nCustom filter examples:\n- Only unread emails:\n  `Custom Email Config` = `["UNSEEN"]`\n- Filter emails by \'to\' address:\n  `Custom Email Config` = `[["TO", "example+invoices@posteo.de"]]`',
+		'This workflow will take all emails you put into a certain folder, upload any attachements to Nextcloud, and mark the emails as read (configurable).\n\nAttachements will be saved with automatically generated filenames:\n`2021-01-01_From-Sender-Name_Filename-of-attachement.pdf`\n\nInstructions:\n1. **Allow lodash to be used in flowease** (or rewrite the code...)\n  `NODE_FUNCTION_ALLOW_EXTERNAL=lodash` (environment variable)\n2. Import workflow\n3. Set credentials for Email & Nextcloud nodes\n4. Configure to use correct folder / custom filters\n5. Activate\n\nCustom filter examples:\n- Only unread emails:\n  `Custom Email Config` = `["UNSEEN"]`\n- Filter emails by \'to\' address:\n  `Custom Email Config` = `[["TO", "example+invoices@posteo.de"]]`',
 	workflow: {
 		nodes: [
 			{
@@ -384,7 +384,7 @@ export const fullCreateApiEndpointTemplate = {
 	},
 	lastUpdatedBy: 1,
 	workflowInfo: null,
-	user: { username: 'jon-n8n' },
+	user: { username: 'jon-flowease' },
 	nodes: [
 		{
 			id: 38,

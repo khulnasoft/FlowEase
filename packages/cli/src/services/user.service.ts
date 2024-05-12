@@ -1,6 +1,6 @@
 import { Container, Service } from 'typedi';
-import type { IUserSettings } from 'n8n-workflow';
-import { ApplicationError, ErrorReporterProxy as ErrorReporter } from 'n8n-workflow';
+import type { IUserSettings } from 'flowease-workflow';
+import { ApplicationError, ErrorReporterProxy as ErrorReporter } from 'flowease-workflow';
 
 import { type AssignableRole, User } from '@db/entities/User';
 import { UserRepository } from '@db/repositories/user.repository';

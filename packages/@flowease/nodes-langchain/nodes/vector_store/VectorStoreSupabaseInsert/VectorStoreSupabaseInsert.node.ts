@@ -4,13 +4,13 @@ import {
 	type INodeTypeDescription,
 	type INodeExecutionData,
 	NodeConnectionType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { Embeddings } from '@langchain/core/embeddings';
 import type { Document } from '@langchain/core/documents';
 import { createClient } from '@supabase/supabase-js';
 import { SupabaseVectorStore } from '@langchain/community/vectorstores/supabase';
 
-import type { N8nJsonLoader } from '../../../utils/N8nJsonLoader';
+import type { FloweaseJsonLoader } from '../../../utils/FloweaseJsonLoader';
 import { processDocuments } from '../shared/processDocuments';
 import { supabaseTableNameRLC } from '../shared/descriptions';
 import { supabaseTableNameSearch } from '../shared/methods/listSearch';
@@ -38,7 +38,7 @@ export class VectorStoreSupabaseInsert implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoresupabase/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstoresupabase/',
 					},
 				],
 			},
@@ -102,7 +102,7 @@ export class VectorStoreSupabaseInsert implements INodeType {
 		const credentials = await this.getCredentials('supabaseApi');
 
 		const documentInput = (await this.getInputConnectionData(NodeConnectionType.AiDocument, 0)) as
-			| N8nJsonLoader
+			| FloweaseJsonLoader
 			| Array<Document<Record<string, unknown>>>;
 
 		const embeddings = (await this.getInputConnectionData(

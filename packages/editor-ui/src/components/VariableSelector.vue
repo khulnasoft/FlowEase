@@ -1,13 +1,13 @@
 <template>
 	<div class="variable-selector-wrapper" @keydown.stop>
 		<div class="input-wrapper">
-			<n8n-input
+			<flowease-input
 				ref="inputField"
 				v-model="variableFilter"
 				:placeholder="$locale.baseText('variableSelector.variableFilter')"
 				size="small"
 				type="text"
-			></n8n-input>
+			></flowease-input>
 		</div>
 
 		<div class="result-wrapper">
@@ -39,14 +39,14 @@ import type {
 	IRunExecutionData,
 	IWorkflowDataProxyAdditionalKeys,
 	Workflow,
-} from 'n8n-workflow';
-import { NodeConnectionType, WorkflowDataProxy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeConnectionType, WorkflowDataProxy } from 'flowease-workflow';
 
 import VariableSelectorItem from '@/components/VariableSelectorItem.vue';
 import type { INodeUi, IVariableItemSelected, IVariableSelectorOption } from '@/Interface';
 
 import { useWorkflowsStore } from '@/stores/workflows.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useNDVStore } from '@/stores/ndv.store';
 import { useRouter } from 'vue-router';
 import { useWorkflowHelpers } from '@/composables/useWorkflowHelpers';

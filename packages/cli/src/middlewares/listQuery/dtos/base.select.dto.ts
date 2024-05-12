@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import { isStringArray } from '@/utils';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 
 export class BaseSelect {
 	static selectableFields: Set<string>;

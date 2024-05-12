@@ -6,7 +6,7 @@ import { createPinia, setActivePinia } from 'pinia';
 import { useSourceControlStore } from '@/stores/sourceControl.store';
 import { useUIStore } from '@/stores/ui.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
-import { NodeHelpers } from 'n8n-workflow';
+import { NodeHelpers } from 'flowease-workflow';
 
 const nodeFactory = (data: Partial<INodeUi> = {}): INodeUi => ({
 	id: faker.string.uuid(),

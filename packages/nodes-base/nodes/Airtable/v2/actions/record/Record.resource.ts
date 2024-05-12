@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { baseRLC, tableRLC } from '../common.descriptions';
 
 import * as create from './create.operation';

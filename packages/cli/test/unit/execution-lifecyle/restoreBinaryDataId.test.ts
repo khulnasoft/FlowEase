@@ -2,7 +2,7 @@ import { restoreBinaryDataId } from '@/executionLifecycleHooks/restoreBinaryData
 import { BinaryDataService } from 'flowease-core';
 import { mockInstance } from '../../shared/mocking';
 
-import type { IRun } from 'n8n-workflow';
+import type { IRun } from 'flowease-workflow';
 import config from '@/config';
 
 function toIRun(item?: object) {

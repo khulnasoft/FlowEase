@@ -16,19 +16,19 @@
 		],
 		"generic": [
 			{
-				"label": "Why business process automation with n8n can change your daily life",
+				"label": "Why business process automation with flowease can change your daily life",
 				"icon": "🧬",
-				"url": "https://flowease.khulnasoft.com/blog/why-business-process-automation-with-n8n-can-change-your-daily-life/"
+				"url": "https://flowease.khulnasoft.com/blog/why-business-process-automation-with-flowease-can-change-your-daily-life/"
 			},
 			{
-				"label": "Running n8n on ships: An interview with Maranics",
+				"label": "Running flowease on ships: An interview with Maranics",
 				"icon": "🛳",
-				"url": "https://flowease.khulnasoft.com/blog/running-n8n-on-ships-an-interview-with-maranics/"
+				"url": "https://flowease.khulnasoft.com/blog/running-flowease-on-ships-an-interview-with-maranics/"
 			},
 			{
 				"label": "Automate your data processing pipeline in 9 steps",
 				"icon": "⚙️",
-				"url": "https://flowease.khulnasoft.com/blog/automate-your-data-processing-pipeline-in-9-steps-with-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/automate-your-data-processing-pipeline-in-9-steps-with-flowease/"
 			},
 			{
 				"label": "How uProc scraped a multi-page website with a low-code workflow",

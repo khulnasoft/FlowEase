@@ -7,8 +7,8 @@ export class UpdateWorkflowCommand extends BaseCommand {
 	static description = 'Update workflows';
 
 	static examples = [
-		'$ n8n update:workflow --all --active=false',
-		'$ n8n update:workflow --id=5 --active=true',
+		'$ flowease update:workflow --all --active=false',
+		'$ flowease update:workflow --id=5 --active=true',
 	];
 
 	static flags = {
@@ -64,8 +64,10 @@ export class UpdateWorkflowCommand extends BaseCommand {
 			}
 		}
 
-		this.logger.info('Activation or deactivation will not take effect if n8n is running.');
-		this.logger.info('Please restart n8n for changes to take effect if n8n is currently running.');
+		this.logger.info('Activation or deactivation will not take effect if flowease is running.');
+		this.logger.info(
+			'Please restart flowease for changes to take effect if flowease is currently running.',
+		);
 	}
 
 	async catch(error: Error) {

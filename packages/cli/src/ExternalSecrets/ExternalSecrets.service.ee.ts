@@ -1,8 +1,8 @@
 import { CREDENTIAL_BLANKING_VALUE } from '@/constants';
 import type { SecretsProvider } from '@/Interfaces';
 import type { ExternalSecretsRequest } from '@/requests';
-import type { IDataObject } from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 import Container, { Service } from 'typedi';
 import { ExternalSecretsManager } from './ExternalSecretsManager.ee';
 import { ExternalSecretsProviderNotFoundError } from '@/errors/external-secrets-provider-not-found.error';

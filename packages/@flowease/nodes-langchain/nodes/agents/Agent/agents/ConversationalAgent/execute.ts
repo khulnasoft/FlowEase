@@ -1,5 +1,5 @@
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
+import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
+import type { IExecuteFunctions, INodeExecutionData } from 'flowease-workflow';
 
 import { initializeAgentExecutorWithOptions } from 'langchain/agents';
 import type { BaseChatMemory } from '@langchain/community/memory/chat_memory';

@@ -32,8 +32,13 @@ import type {
 	IWorkflowExecuteAdditionalData,
 	NodeLoadingDetails,
 	WorkflowTestData,
-} from 'n8n-workflow';
-import { ApplicationError, ICredentialsHelper, NodeHelpers, WorkflowHooks } from 'n8n-workflow';
+} from 'flowease-workflow';
+import {
+	ApplicationError,
+	ICredentialsHelper,
+	NodeHelpers,
+	WorkflowHooks,
+} from 'flowease-workflow';
 import { executeWorkflow } from './ExecuteWorkflow';
 
 import { FAKE_CREDENTIALS_DATA } from './FakeCredentialsMap';
@@ -211,7 +216,7 @@ class NodeTypes implements INodeTypes {
 	}
 }
 
-export function createTemporaryDir(prefix = 'n8n') {
+export function createTemporaryDir(prefix = 'flowease') {
 	return mkdtempSync(path.join(tmpdir(), prefix));
 }
 

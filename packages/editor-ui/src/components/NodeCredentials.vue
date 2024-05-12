@@ -7,7 +7,7 @@
 			v-for="credentialTypeDescription in credentialTypesNodeDescriptionDisplayed"
 			:key="credentialTypeDescription.name"
 		>
-			<n8n-input-label
+			<flowease-input-label
 				:label="getCredentialsFieldLabel(credentialTypeDescription)"
 				:bold="false"
 				:set="(issues = getIssues(credentialTypeDescription.name))"
@@ -16,7 +16,7 @@
 				data-test-id="credentials-label"
 			>
 				<div v-if="readonly">
-					<n8n-input
+					<flowease-input
 						:model-value="getSelectedName(credentialTypeDescription.name)"
 						disabled
 						size="small"
@@ -28,7 +28,7 @@
 					:class="issues.length && !hideIssues ? $style.hasIssues : $style.input"
 					data-test-id="node-credentials-select"
 				>
-					<n8n-select
+					<flowease-select
 						:model-value="getSelectedId(credentialTypeDescription.name)"
 						:placeholder="getSelectPlaceholder(credentialTypeDescription.name, issues)"
 						size="small"
@@ -42,7 +42,7 @@
 						"
 						@blur="$emit('blur', 'credentials')"
 					>
-						<n8n-option
+						<flowease-option
 							v-for="item in getCredentialOptions(
 								getAllRelatedCredentialTypes(credentialTypeDescription),
 							)"
@@ -52,21 +52,21 @@
 							:value="item.id"
 						>
 							<div :class="[$style.credentialOption, 'mt-2xs', 'mb-2xs']">
-								<n8n-text bold>{{ item.name }}</n8n-text>
-								<n8n-text size="small">{{ item.typeDisplayName }}</n8n-text>
+								<flowease-text bold>{{ item.name }}</flowease-text>
+								<flowease-text size="small">{{ item.typeDisplayName }}</flowease-text>
 							</div>
-						</n8n-option>
-						<n8n-option
+						</flowease-option>
+						<flowease-option
 							:key="NEW_CREDENTIALS_TEXT"
 							data-test-id="node-credentials-select-item-new"
 							:value="NEW_CREDENTIALS_TEXT"
 							:label="NEW_CREDENTIALS_TEXT"
 						>
-						</n8n-option>
-					</n8n-select>
+						</flowease-option>
+					</flowease-select>
 
 					<div v-if="issues.length && !hideIssues" :class="$style.warning">
-						<n8n-tooltip placement="top">
+						<flowease-tooltip placement="top">
 							<template #content>
 								<TitledList
 									:title="`${$locale.baseText('nodeCredentials.issues')}:`"
@@ -74,7 +74,7 @@
 								/>
 							</template>
 							<font-awesome-icon icon="exclamation-triangle" />
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</div>
 
 					<div
@@ -93,7 +93,7 @@
 						/>
 					</div>
 				</div>
-			</n8n-input-label>
+			</flowease-input-label>
 		</div>
 	</div>
 </template>
@@ -115,7 +115,7 @@ import type {
 	INodeParameters,
 	INodeProperties,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { useNodeHelpers } from '@/composables/useNodeHelpers';
 import { useToast } from '@/composables/useToast';

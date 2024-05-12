@@ -5,7 +5,7 @@ import type { EventBus } from 'flowease-design-system/utils';
 import { createEventBus } from 'flowease-design-system/utils';
 import Modal from './Modal.vue';
 import { CHAT_EMBED_MODAL_KEY, CHAT_TRIGGER_NODE_TYPE, WEBHOOK_NODE_TYPE } from '../constants';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import HtmlEditor from '@/components/HtmlEditor/HtmlEditor.vue';
 import JsEditor from '@/components/JsEditor/JsEditor.vue';
@@ -142,25 +142,25 @@ function closeDialog() {
 	>
 		<template #content>
 			<div :class="$style.container">
-				<n8n-tabs v-model="currentTab" :options="tabs" />
+				<flowease-tabs v-model="currentTab" :options="tabs" />
 
 				<div v-if="currentTab !== 'cdn'">
 					<div class="mb-s">
-						<n8n-text>
+						<flowease-text>
 							{{ i18n.baseText('chatEmbed.install') }}
-						</n8n-text>
+						</flowease-text>
 					</div>
 					<HtmlEditor :model-value="commonCode.install" is-read-only />
 				</div>
 
 				<div class="mb-s">
-					<n8n-text>
+					<flowease-text>
 						<i18n-t :keypath="`chatEmbed.paste.${currentTab}`">
 							<template #code>
 								<code>{{ i18n.baseText(`chatEmbed.paste.${currentTab}.file`) }}</code>
 							</template>
 						</i18n-t>
-					</n8n-text>
+					</flowease-text>
 				</div>
 
 				<HtmlEditor v-if="currentTab === 'cdn'" :model-value="cdnCode" is-read-only />
@@ -168,22 +168,26 @@ function closeDialog() {
 				<JsEditor v-if="currentTab === 'react'" :model-value="reactCode" is-read-only />
 				<JsEditor v-if="currentTab === 'other'" :model-value="otherCode" is-read-only />
 
-				<n8n-text>
+				<flowease-text>
 					{{ i18n.baseText('chatEmbed.packageInfo.description') }}
-					<n8n-link :href="i18n.baseText('chatEmbed.url')" new-window bold>
+					<flowease-link :href="i18n.baseText('chatEmbed.url')" new-window bold>
 						{{ i18n.baseText('chatEmbed.packageInfo.link') }}
-					</n8n-link>
-				</n8n-text>
+					</flowease-link>
+				</flowease-text>
 
-				<n8n-info-tip class="mt-s">
+				<flowease-info-tip class="mt-s">
 					{{ i18n.baseText('chatEmbed.chatTriggerNode') }}
-				</n8n-info-tip>
+				</flowease-info-tip>
 			</div>
 		</template>
 
 		<template #footer>
 			<div class="action-buttons">
-				<n8n-button float="right" :label="i18n.baseText('chatEmbed.close')" @click="closeDialog" />
+				<flowease-button
+					float="right"
+					:label="i18n.baseText('chatEmbed.close')"
+					@click="closeDialog"
+				/>
 			</div>
 		</template>
 	</Modal>

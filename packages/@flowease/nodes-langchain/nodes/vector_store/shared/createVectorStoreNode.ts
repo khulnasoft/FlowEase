@@ -1,7 +1,7 @@
 /* eslint-disable flowease-nodes-base/node-filename-against-convention */
 /* eslint-disable flowease-nodes-base/node-dirname-against-convention */
 import type { VectorStore } from '@langchain/core/vectorstores';
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
+import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
 import type {
 	INodeCredentialDescription,
 	INodeProperties,
@@ -12,12 +12,12 @@ import type {
 	INodeType,
 	ILoadOptionsFunctions,
 	INodeListSearchResult,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { Embeddings } from '@langchain/core/embeddings';
 import type { Document } from '@langchain/core/documents';
 import { logWrapper } from '../../../utils/logWrapper';
-import type { N8nJsonLoader } from '../../../utils/N8nJsonLoader';
-import type { N8nBinaryLoader } from '../../../utils/N8nBinaryLoader';
+import type { FloweaseJsonLoader } from '../../../utils/FloweaseJsonLoader';
+import type { FloweaseBinaryLoader } from '../../../utils/FloweaseBinaryLoader';
 import { getMetadataFiltersValues, logAiEvent } from '../../../utils/helpers';
 import { getConnectionHintNoticeField } from '../../../utils/sharedFields';
 import { processDocument } from './processDocuments';
@@ -237,7 +237,7 @@ export const createVectorStoreNode = (args: VectorStoreNodeConstructorArgs) =>
 					});
 
 					resultData.push(...serializedDocs);
-					void logAiEvent(this, 'n8n.ai.vector.store.searched', { query: prompt });
+					void logAiEvent(this, 'flowease.ai.vector.store.searched', { query: prompt });
 				}
 
 				return await this.prepareOutputData(resultData);
@@ -249,7 +249,7 @@ export const createVectorStoreNode = (args: VectorStoreNodeConstructorArgs) =>
 				const documentInput = (await this.getInputConnectionData(
 					NodeConnectionType.AiDocument,
 					0,
-				)) as N8nJsonLoader | N8nBinaryLoader | Array<Document<Record<string, unknown>>>;
+				)) as FloweaseJsonLoader | FloweaseBinaryLoader | Array<Document<Record<string, unknown>>>;
 
 				const resultData = [];
 				for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
@@ -264,7 +264,7 @@ export const createVectorStoreNode = (args: VectorStoreNodeConstructorArgs) =>
 					try {
 						await args.populateVectorStore(this, embeddings, processedDocuments, itemIndex);
 
-						void logAiEvent(this, 'n8n.ai.vector.store.populated');
+						void logAiEvent(this, 'flowease.ai.vector.store.populated');
 					} catch (error) {
 						throw error;
 					}

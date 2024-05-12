@@ -2,7 +2,7 @@ import type { SecretsProvider, SecretsProviderSettings, SecretsProviderState } f
 import InfisicalClient from 'infisical-node';
 import { populateClientWorkspaceConfigsHelper } from 'infisical-node/lib/helpers/key';
 import { getServiceTokenData } from 'infisical-node/lib/api/serviceTokenData';
-import { ApplicationError, type IDataObject, type INodeProperties } from 'n8n-workflow';
+import { ApplicationError, type IDataObject, type INodeProperties } from 'flowease-workflow';
 import { EXTERNAL_SECRETS_NAME_REGEX } from '../constants';
 
 export interface InfisicalSettings {
@@ -26,7 +26,7 @@ export class InfisicalProvider implements SecretsProvider {
 	properties: INodeProperties[] = [
 		{
 			displayName:
-				'Need help filling out these fields? <a href="https://docs.flowease.khulnasoft.com/external-secrets/#connect-n8n-to-your-secrets-store" target="_blank">Open docs</a>',
+				'Need help filling out these fields? <a href="https://docs.flowease.khulnasoft.com/external-secrets/#connect-flowease-to-your-secrets-store" target="_blank">Open docs</a>',
 			name: 'notice',
 			type: 'notice',
 			default: '',

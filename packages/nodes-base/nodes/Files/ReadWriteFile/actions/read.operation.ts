@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'flowease-workflow';
 
 import glob from 'fast-glob';
 import { errorMapper } from '../helpers/utils';

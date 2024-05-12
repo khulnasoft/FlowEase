@@ -63,7 +63,7 @@ describe('PersonalizationModal.vue', () => {
 			expect(wrapper.container.querySelector('.modal-content')).toBeInTheDocument(),
 		);
 
-		expect(wrapper.container.querySelectorAll('.n8n-select').length).toEqual(5);
+		expect(wrapper.container.querySelectorAll('.flowease-select').length).toEqual(5);
 	});
 
 	it('should display new option when role is "Devops", "Engineering", "IT", or "Sales and marketing"', async () => {
@@ -74,7 +74,7 @@ describe('PersonalizationModal.vue', () => {
 		);
 
 		for (const index of [3, 4, 5, 6]) {
-			const select = wrapper.container.querySelectorAll('.n8n-select')[1];
+			const select = wrapper.container.querySelectorAll('.flowease-select')[1];
 
 			await fireEvent.click(select);
 
@@ -83,7 +83,7 @@ describe('PersonalizationModal.vue', () => {
 			await fireEvent.click(item);
 
 			await retry(() => {
-				expect(wrapper.container.querySelectorAll('.n8n-select').length).toEqual(6);
+				expect(wrapper.container.querySelectorAll('.flowease-select').length).toEqual(6);
 				expect(wrapper.container.querySelector('[name^="automationGoal"]')).toBeInTheDocument();
 			});
 		}
@@ -96,7 +96,7 @@ describe('PersonalizationModal.vue', () => {
 			expect(wrapper.container.querySelector('.modal-content')).toBeInTheDocument(),
 		);
 
-		const select = wrapper.container.querySelectorAll('.n8n-select')[3];
+		const select = wrapper.container.querySelectorAll('.flowease-select')[3];
 		await fireEvent.click(select);
 
 		const item = select.querySelectorAll('.el-select-dropdown__item')[3];
@@ -120,13 +120,13 @@ describe('PersonalizationModal.vue', () => {
 			expect(wrapper.container.querySelector('.modal-content')).toBeInTheDocument(),
 		);
 
-		const select = wrapper.container.querySelectorAll('.n8n-select')[3];
+		const select = wrapper.container.querySelectorAll('.flowease-select')[3];
 		await fireEvent.click(select);
 
 		const item = select.querySelectorAll('.el-select-dropdown__item')[3];
 		await fireEvent.click(item);
 
-		const agreeCheckbox = wrapper.container.querySelector('.n8n-checkbox')!;
+		const agreeCheckbox = wrapper.container.querySelector('.flowease-checkbox')!;
 		await fireEvent.click(agreeCheckbox);
 
 		const submitButton = wrapper.getByRole('button');

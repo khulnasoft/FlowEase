@@ -3,8 +3,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { ApplicationError, NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ApplicationError, NodeApiError, NodeOperationError } from 'flowease-workflow';
 import { setSeed, array as mfArray } from 'minifaker';
 import {
 	generateCreditCard,

@@ -8,8 +8,8 @@ import type {
 	ILoadOptionsFunctions,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 export async function dhlApiRequest(
 	this: IHookFunctions | IExecuteFunctions | ILoadOptionsFunctions,

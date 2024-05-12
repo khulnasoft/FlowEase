@@ -5,8 +5,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 /**
  * Make an authenticated or unauthenticated API request to Reddit.
@@ -25,7 +25,7 @@ export async function redditApiRequest(
 
 	const options: IRequestOptions = {
 		headers: {
-			'user-agent': 'n8n',
+			'user-agent': 'flowease',
 		},
 		method,
 		uri: authRequired

@@ -3,8 +3,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import pgPromise from 'pg-promise';
 import {
@@ -87,7 +87,7 @@ export class CrateDb implements INodeType {
 				placeholder: 'SELECT id, name FROM product WHERE quantity > $1 AND price <= $2',
 				required: true,
 				description:
-					'The SQL query to execute. You can use n8n expressions or $1 and $2 in conjunction with query parameters.',
+					'The SQL query to execute. You can use flowease expressions or $1 and $2 in conjunction with query parameters.',
 			},
 
 			// ----------------------------------
@@ -352,7 +352,7 @@ export class CrateDb implements INodeType {
 				const where =
 					' WHERE ' +
 					updateKeys
-						// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+						// eslint-disable-next-line flowease-local-rules/no-interpolation-in-regular-string
 						.map((updateKey) => pgp.as.name(updateKey) + ' = ${' + updateKey + '}')
 						.join(' AND ');
 				// updateKeyValue = item.json[updateKey] as string | number;

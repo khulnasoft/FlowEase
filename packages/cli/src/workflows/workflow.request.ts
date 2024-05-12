@@ -7,7 +7,7 @@ import type {
 	IRunData,
 	IPinData,
 	StartNodeData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export declare namespace WorkflowRequest {
 	type CreateUpdatePayload = Partial<{

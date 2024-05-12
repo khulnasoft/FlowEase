@@ -4,7 +4,7 @@ import type {
 	INodeExecutionData,
 	INodeParameterResourceLocator,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { googleApiRequest } from '../../transport';
 import { driveRLC, fileRLC, folderRLC } from '../common.descriptions';

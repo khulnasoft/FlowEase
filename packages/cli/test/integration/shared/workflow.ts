@@ -1,4 +1,4 @@
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'flowease-workflow';
 import { WorkflowEntity } from '@db/entities/WorkflowEntity';
 
 export const FIRST_CREDENTIAL_ID = '1';

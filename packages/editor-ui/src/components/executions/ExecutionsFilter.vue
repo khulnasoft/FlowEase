@@ -152,28 +152,28 @@ onBeforeMount(() => {
 });
 </script>
 <template>
-	<n8n-popover trigger="click" :placement="popoverPlacement" width="440">
+	<flowease-popover trigger="click" :placement="popoverPlacement" width="440">
 		<template #reference>
-			<n8n-button
+			<flowease-button
 				icon="filter"
 				type="tertiary"
 				:active="!!countSelectedFilterProps"
 				data-test-id="executions-filter-button"
 			>
-				<n8n-badge
+				<flowease-badge
 					v-if="!!countSelectedFilterProps"
 					theme="primary"
 					class="mr-4xs"
 					data-test-id="execution-filter-badge"
-					>{{ countSelectedFilterProps }}</n8n-badge
+					>{{ countSelectedFilterProps }}</flowease-badge
 				>
 				{{ locale.baseText('executionsList.filters') }}
-			</n8n-button>
+			</flowease-button>
 		</template>
 		<div data-test-id="execution-filter-form">
 			<div v-if="workflows && workflows.length > 0" :class="$style.group">
 				<label for="execution-filter-workflows">{{ locale.baseText('workflows.heading') }}</label>
-				<n8n-select
+				<flowease-select
 					id="execution-filter-workflows"
 					v-model="vModel.workflowId"
 					:placeholder="locale.baseText('executionsFilter.selectWorkflow')"
@@ -182,14 +182,14 @@ onBeforeMount(() => {
 					:teleported="teleported"
 				>
 					<div>
-						<n8n-option
+						<flowease-option
 							v-for="(item, idx) in props.workflows"
 							:key="idx"
 							:label="item.name"
 							:value="item.id"
 						/>
 					</div>
-				</n8n-select>
+				</flowease-select>
 			</div>
 			<div v-if="showTags" :class="$style.group">
 				<label for="execution-filter-tags">{{ locale.baseText('workflows.filters.tags') }}</label>
@@ -204,7 +204,7 @@ onBeforeMount(() => {
 			</div>
 			<div :class="$style.group">
 				<label for="execution-filter-status">{{ locale.baseText('executionsList.status') }}</label>
-				<n8n-select
+				<flowease-select
 					id="execution-filter-status"
 					v-model="vModel.status"
 					:placeholder="locale.baseText('executionsFilter.selectStatus')"
@@ -212,13 +212,13 @@ onBeforeMount(() => {
 					data-test-id="executions-filter-status-select"
 					:teleported="teleported"
 				>
-					<n8n-option
+					<flowease-option
 						v-for="(item, idx) in statuses"
 						:key="idx"
 						:label="item.name"
 						:value="item.id"
 					/>
-				</n8n-select>
+				</flowease-select>
 			</div>
 			<div :class="$style.group">
 				<label for="execution-filter-start-date">{{
@@ -247,7 +247,7 @@ onBeforeMount(() => {
 				</div>
 			</div>
 			<div :class="$style.group">
-				<n8n-tooltip placement="right">
+				<flowease-tooltip placement="right">
 					<template #content>
 						<i18n-t tag="span" keypath="executionsFilter.customData.docsTooltip">
 							<template #link>
@@ -262,14 +262,14 @@ onBeforeMount(() => {
 					</template>
 					<span :class="$style.label">
 						{{ locale.baseText('executionsFilter.savedData') }}
-						<n8n-icon :class="$style.tooltipIcon" icon="question-circle" size="small" />
+						<flowease-icon :class="$style.tooltipIcon" icon="question-circle" size="small" />
 					</span>
-				</n8n-tooltip>
+				</flowease-tooltip>
 				<div :class="$style.subGroup">
 					<label for="execution-filter-saved-data-key">{{
 						locale.baseText('executionsFilter.savedDataKey')
 					}}</label>
-					<n8n-tooltip :disabled="isAdvancedExecutionFilterEnabled" placement="top">
+					<flowease-tooltip :disabled="isAdvancedExecutionFilterEnabled" placement="top">
 						<template #content>
 							<i18n-t tag="span" keypath="executionsFilter.customData.inputTooltip">
 								<template #link>
@@ -282,7 +282,7 @@ onBeforeMount(() => {
 								</template>
 							</i18n-t>
 						</template>
-						<n8n-input
+						<flowease-input
 							id="execution-filter-saved-data-key"
 							name="execution-filter-saved-data-key"
 							type="text"
@@ -292,11 +292,11 @@ onBeforeMount(() => {
 							data-test-id="execution-filter-saved-data-key-input"
 							@update:model-value="onFilterMetaChange(0, 'key', $event)"
 						/>
-					</n8n-tooltip>
+					</flowease-tooltip>
 					<label for="execution-filter-saved-data-value">{{
 						locale.baseText('executionsFilter.savedDataValue')
 					}}</label>
-					<n8n-tooltip :disabled="isAdvancedExecutionFilterEnabled" placement="top">
+					<flowease-tooltip :disabled="isAdvancedExecutionFilterEnabled" placement="top">
 						<template #content>
 							<i18n-t tag="span" keypath="executionsFilter.customData.inputTooltip">
 								<template #link>
@@ -306,7 +306,7 @@ onBeforeMount(() => {
 								</template>
 							</i18n-t>
 						</template>
-						<n8n-input
+						<flowease-input
 							id="execution-filter-saved-data-value"
 							name="execution-filter-saved-data-value"
 							type="text"
@@ -316,10 +316,10 @@ onBeforeMount(() => {
 							data-test-id="execution-filter-saved-data-value-input"
 							@update:model-value="onFilterMetaChange(0, 'value', $event)"
 						/>
-					</n8n-tooltip>
+					</flowease-tooltip>
 				</div>
 			</div>
-			<n8n-button
+			<flowease-button
 				v-if="!!countSelectedFilterProps"
 				:class="$style.resetBtn"
 				size="large"
@@ -328,9 +328,9 @@ onBeforeMount(() => {
 				@click="onFilterReset"
 			>
 				{{ locale.baseText('executionsFilter.reset') }}
-			</n8n-button>
+			</flowease-button>
 		</div>
-	</n8n-popover>
+	</flowease-popover>
 </template>
 <style lang="scss" module>
 .group {

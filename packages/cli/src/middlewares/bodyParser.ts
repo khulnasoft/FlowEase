@@ -5,7 +5,7 @@ import type { Request, RequestHandler } from 'express';
 import { parse as parseQueryString } from 'querystring';
 import { Parser as XmlParser } from 'xml2js';
 import { parseIncomingMessage } from 'flowease-core';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'flowease-workflow';
 import config from '@/config';
 import { UnprocessableRequestError } from '@/errors/response-errors/unprocessable.error';
 

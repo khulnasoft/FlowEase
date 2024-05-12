@@ -3,14 +3,15 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class QdrantApi implements ICredentialType {
 	name = 'qdrantApi';
 
 	displayName = 'QdrantApi';
 
-	documentationUrl = 'https://docs.flowease.khulnasoft.com/integrations/builtin/credentials/qdrant/';
+	documentationUrl =
+		'https://docs.flowease.khulnasoft.com/integrations/builtin/credentials/qdrant/';
 
 	properties: INodeProperties[] = [
 		{

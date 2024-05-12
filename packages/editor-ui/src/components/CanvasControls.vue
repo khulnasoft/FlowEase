@@ -10,7 +10,7 @@
 			:label="$locale.baseText('nodeView.zoomToFit')"
 			:shortcut="{ keys: ['1'] }"
 		>
-			<n8n-icon-button
+			<flowease-icon-button
 				type="tertiary"
 				size="large"
 				icon="expand"
@@ -22,7 +22,7 @@
 			:label="$locale.baseText('nodeView.zoomIn')"
 			:shortcut="{ keys: ['+'] }"
 		>
-			<n8n-icon-button
+			<flowease-icon-button
 				type="tertiary"
 				size="large"
 				icon="search-plus"
@@ -34,7 +34,7 @@
 			:label="$locale.baseText('nodeView.zoomOut')"
 			:shortcut="{ keys: ['-'] }"
 		>
-			<n8n-icon-button
+			<flowease-icon-button
 				type="tertiary"
 				size="large"
 				icon="search-minus"
@@ -46,7 +46,7 @@
 			:label="$locale.baseText('nodeView.resetZoom')"
 			:shortcut="{ keys: ['0'] }"
 		>
-			<n8n-icon-button
+			<flowease-icon-button
 				v-if="nodeViewScale !== 1 && !isDemo"
 				type="tertiary"
 				size="large"

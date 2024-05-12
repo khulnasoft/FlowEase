@@ -1,11 +1,11 @@
-import type { ColumnOptions } from '@n8n/typeorm';
+import type { ColumnOptions } from '@flowease/typeorm';
 import {
 	BeforeInsert,
 	BeforeUpdate,
 	CreateDateColumn,
 	PrimaryColumn,
 	UpdateDateColumn,
-} from '@n8n/typeorm';
+} from '@flowease/typeorm';
 import config from '@/config';
 import type { Class } from 'flowease-core';
 import { generateNanoId } from '../utils/generators';

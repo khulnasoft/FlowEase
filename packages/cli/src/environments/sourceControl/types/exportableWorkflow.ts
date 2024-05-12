@@ -1,4 +1,4 @@
-import type { INode, IConnections, IWorkflowSettings } from 'n8n-workflow';
+import type { INode, IConnections, IWorkflowSettings } from 'flowease-workflow';
 
 export interface ExportableWorkflow {
 	id: string;

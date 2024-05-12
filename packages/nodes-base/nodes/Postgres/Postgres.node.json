@@ -16,29 +16,29 @@
 		],
 		"generic": [
 			{
-				"label": "Love at first sight: Ricardo’s n8n journey",
+				"label": "Love at first sight: Ricardo’s flowease journey",
 				"icon": "❤️",
-				"url": "https://flowease.khulnasoft.com/blog/love-at-first-sight-ricardos-n8n-journey/"
+				"url": "https://flowease.khulnasoft.com/blog/love-at-first-sight-ricardos-flowease-journey/"
 			},
 			{
-				"label": "Why I chose n8n over Zapier in 2020",
+				"label": "Why I chose flowease over Zapier in 2020",
 				"icon": "😍",
-				"url": "https://flowease.khulnasoft.com/blog/why-i-chose-n8n-over-zapier-in-2020/"
+				"url": "https://flowease.khulnasoft.com/blog/why-i-chose-flowease-over-zapier-in-2020/"
 			},
 			{
-				"label": "Database Monitoring and Alerting with n8n",
+				"label": "Database Monitoring and Alerting with flowease",
 				"icon": "📡",
-				"url": "https://flowease.khulnasoft.com/blog/database-monitoring-and-alerting-with-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/database-monitoring-and-alerting-with-flowease/"
 			},
 			{
-				"label": "Running n8n on ships: An interview with Maranics",
+				"label": "Running flowease on ships: An interview with Maranics",
 				"icon": "🛳",
-				"url": "https://flowease.khulnasoft.com/blog/running-n8n-on-ships-an-interview-with-maranics/"
+				"url": "https://flowease.khulnasoft.com/blog/running-flowease-on-ships-an-interview-with-maranics/"
 			},
 			{
 				"label": "Automate your data processing pipeline in 9 steps",
 				"icon": "⚙️",
-				"url": "https://flowease.khulnasoft.com/blog/automate-your-data-processing-pipeline-in-9-steps-with-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/automate-your-data-processing-pipeline-in-9-steps-with-flowease/"
 			},
 			{
 				"label": "How Honest Burgers Use Automation to Save $100k per year",

@@ -5,8 +5,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 
 import { Converter } from 'showdown';
 

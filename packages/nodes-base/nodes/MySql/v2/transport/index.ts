@@ -1,5 +1,5 @@
-import { ApplicationError } from 'n8n-workflow';
-import type { ICredentialDataDecryptedObject, IDataObject } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
+import type { ICredentialDataDecryptedObject, IDataObject } from 'flowease-workflow';
 
 import mysql2 from 'mysql2/promise';
 import type { Client, ConnectConfig } from 'ssh2';

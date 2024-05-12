@@ -28,27 +28,27 @@
 				@value-changed="valueChanged"
 			/>
 
-			<n8n-notice
+			<flowease-notice
 				v-else-if="parameter.type === 'notice'"
 				:class="['parameter-item', parameter.typeOptions?.containerClass ?? '']"
 				:content="$locale.nodeText().inputLabelDisplayName(parameter, path)"
 				@action="onNoticeAction"
 			/>
 
-			<n8n-button
+			<flowease-button
 				v-else-if="parameter.type === 'button'"
 				class="parameter-item"
 				block
 				@click="onButtonAction(parameter)"
 			>
 				{{ $locale.nodeText().inputLabelDisplayName(parameter, path) }}
-			</n8n-button>
+			</flowease-button>
 
 			<div
 				v-else-if="['collection', 'fixedCollection'].includes(parameter.type)"
 				class="multi-parameter"
 			>
-				<n8n-icon-button
+				<flowease-icon-button
 					v-if="hideDelete !== true && !isReadOnly && !parameter.isNodeSetting"
 					type="tertiary"
 					text
@@ -57,8 +57,8 @@
 					class="delete-option"
 					:title="$locale.baseText('parameterInputList.delete')"
 					@click="deleteOption(parameter.name)"
-				></n8n-icon-button>
-				<n8n-input-label
+				></flowease-icon-button>
+				<flowease-input-label
 					:label="$locale.nodeText().inputLabelDisplayName(parameter, path)"
 					:tooltip-text="$locale.nodeText().inputLabelDescription(parameter, path)"
 					size="small"
@@ -87,16 +87,16 @@
 						/>
 					</template>
 					<template #fallback>
-						<n8n-text size="small" class="async-notice">
-							<n8n-icon icon="sync-alt" size="xsmall" :spin="true" />
+						<flowease-text size="small" class="async-notice">
+							<flowease-icon icon="sync-alt" size="xsmall" :spin="true" />
 							{{ $locale.baseText('parameterInputList.loadingFields') }}
-						</n8n-text>
+						</flowease-text>
 					</template>
 				</Suspense>
-				<n8n-text v-else size="small" color="danger" class="async-notice">
-					<n8n-icon icon="exclamation-triangle" size="xsmall" />
+				<flowease-text v-else size="small" color="danger" class="async-notice">
+					<flowease-icon icon="exclamation-triangle" size="xsmall" />
 					{{ $locale.baseText('parameterInputList.loadingError') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 			<ResourceMapper
 				v-else-if="parameter.type === 'resourceMapper'"
@@ -130,7 +130,7 @@
 				v-else-if="displayNodeParameter(parameter) && credentialsParameterIndex !== index"
 				class="parameter-item"
 			>
-				<n8n-icon-button
+				<flowease-icon-button
 					v-if="hideDelete !== true && !isReadOnly && !parameter.isNodeSetting"
 					type="tertiary"
 					text
@@ -139,7 +139,7 @@
 					class="delete-option"
 					:title="$locale.baseText('parameterInputList.delete')"
 					@click="deleteOption(parameter.name)"
-				></n8n-icon-button>
+				></flowease-icon-button>
 
 				<ParameterInputFull
 					:parameter="parameter"
@@ -167,8 +167,8 @@ import type {
 	INodeProperties,
 	INodeTypeDescription,
 	NodeParameterValue,
-} from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 import { mapStores } from 'pinia';
 import type { PropType } from 'vue';
 import { defineAsyncComponent, defineComponent, onErrorCaptured, ref } from 'vue';

@@ -1,5 +1,5 @@
 # @flowease/codemirror-lang
 
-Language support package for CodeMirror 6 in n8n
+Language support package for CodeMirror 6 in flowease
 
-[n8n Expression Language support](./src/expressions/README.md)
+[flowease Expression Language support](./src/expressions/README.md)

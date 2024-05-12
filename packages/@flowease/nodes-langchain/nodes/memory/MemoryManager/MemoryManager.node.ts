@@ -1,12 +1,12 @@
 /* eslint-disable flowease-nodes-base/node-dirname-against-convention */
-import { NodeConnectionType } from 'n8n-workflow';
+import { NodeConnectionType } from 'flowease-workflow';
 import type {
 	IDataObject,
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { BaseChatMemory } from '@langchain/community/memory/chat_memory';
 import { AIMessage, SystemMessage, HumanMessage, type BaseMessage } from '@langchain/core/messages';
 
@@ -82,7 +82,7 @@ export class MemoryManager implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorymanager/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.memorymanager/',
 					},
 				],
 			},

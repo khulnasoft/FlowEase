@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.container">
 		<GoogleAuthButton v-if="isGoogleOAuthType" />
-		<n8n-button
+		<flowease-button
 			v-else
 			:label="$locale.baseText('credentialEdit.oAuthButton.connectMyAccount')"
 			size="large"

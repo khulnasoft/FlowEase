@@ -5,8 +5,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError, NodeOperationError } from 'flowease-workflow';
 
 import omit from 'lodash/omit';
 import type {
@@ -154,7 +154,7 @@ export function adjustAttendees(attendees: [{ type: string; contactId: string; u
 }
 
 // /**
-//  * Adjust attendee data from n8n UI to the format expected by Freshworks CRM API.
+//  * Adjust attendee data from flowease UI to the format expected by Freshworks CRM API.
 //  */
 // export function adjustAttendees(additionalFields: IDataObject & Attendees) {
 // 	if (!additionalFields?.appointment_attendees_attributes) return additionalFields;
@@ -168,7 +168,7 @@ export function adjustAttendees(attendees: [{ type: string; contactId: string; u
 // }
 
 /**
- * Adjust account data from n8n UI to the format expected by Freshworks CRM API.
+ * Adjust account data from flowease UI to the format expected by Freshworks CRM API.
  */
 export function adjustAccounts(additionalFields: IDataObject & SalesAccounts) {
 	if (!additionalFields?.sales_accounts) return additionalFields;

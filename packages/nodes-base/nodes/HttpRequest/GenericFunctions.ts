@@ -4,7 +4,7 @@ import type {
 	INodeExecutionData,
 	IOAuth2Options,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import set from 'lodash/set';
 

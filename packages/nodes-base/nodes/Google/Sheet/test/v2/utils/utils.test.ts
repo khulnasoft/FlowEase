@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, INode } from 'n8n-workflow';
+import type { IExecuteFunctions, INode } from 'flowease-workflow';
 import { GoogleSheet } from '../../../v2/helpers/GoogleSheet';
 import {
 	addRowNumber,

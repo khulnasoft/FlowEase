@@ -8,14 +8,14 @@ import type {
 	IHttpRequestMethods,
 	IHttpRequestOptions,
 	ILoadOptionsFunctions,
-	IN8nHttpFullResponse,
+	IFloweaseHttpFullResponse,
 	INodeExecutionData,
 	INodePropertyOptions,
 	IPollFunctions,
 	IRequestOptions,
 	IWebhookFunctions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import type { ToISOTimeOptions } from 'luxon';
 import { DateTime } from 'luxon';
@@ -41,7 +41,7 @@ function dateToIsoSupressMillis(dateTime: string) {
 export async function taskPostReceiceAction(
 	this: IExecuteSingleFunctions,
 	items: INodeExecutionData[],
-	_response: IN8nHttpFullResponse,
+	_response: IFloweaseHttpFullResponse,
 ): Promise<INodeExecutionData[]> {
 	const contactId = this.getNodeParameter('contactId');
 	items.forEach((item) => (item.json.contactId = contactId));

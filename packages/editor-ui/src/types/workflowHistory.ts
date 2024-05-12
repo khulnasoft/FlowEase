@@ -1,4 +1,4 @@
-import type { IConnections } from 'n8n-workflow';
+import type { IConnections } from 'flowease-workflow';
 import type { INodeUi } from '@/Interface';
 
 export type WorkflowHistory = {

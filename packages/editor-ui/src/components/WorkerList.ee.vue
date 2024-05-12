@@ -2,10 +2,10 @@
 	<div>
 		<PushConnectionTracker class="actions"></PushConnectionTracker>
 		<div :class="$style.workerListHeader">
-			<n8n-heading tag="h1" size="2xlarge">{{ pageTitle }}</n8n-heading>
+			<flowease-heading tag="h1" size="2xlarge">{{ pageTitle }}</flowease-heading>
 		</div>
 		<div v-if="!initialStatusReceived">
-			<n8n-spinner />
+			<flowease-spinner />
 		</div>
 		<div v-else>
 			<div v-if="workerIds.length === 0">{{ $locale.baseText('workerList.empty') }}</div>
@@ -25,7 +25,7 @@ import PushConnectionTracker from '@/components/PushConnectionTracker.vue';
 import { useI18n } from '@/composables/useI18n';
 import { useToast } from '@/composables/useToast';
 import type { IPushDataWorkerStatusPayload } from '@/Interface';
-import type { ExecutionStatus } from 'n8n-workflow';
+import type { ExecutionStatus } from 'flowease-workflow';
 import { useUIStore } from '@/stores/ui.store';
 import { useOrchestrationStore } from '@/stores/orchestration.store';
 import { setPageTitle } from '@/utils/htmlUtils';
@@ -33,7 +33,7 @@ import WorkerCard from './Workers/WorkerCard.ee.vue';
 import { usePushConnection } from '@/composables/usePushConnection';
 import { useRouter } from 'vue-router';
 import { usePushConnectionStore } from '@/stores/pushConnection.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 
 // eslint-disable-next-line import/no-default-export
 export default defineComponent({
@@ -77,7 +77,7 @@ export default defineComponent({
 		},
 	},
 	mounted() {
-		setPageTitle(`n8n - ${this.pageTitle}`);
+		setPageTitle(`flowease - ${this.pageTitle}`);
 
 		this.$telemetry.track('User viewed worker view', {
 			instance_id: this.rootStore.instanceId,

@@ -9,9 +9,9 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
-import { NodeApiError } from 'n8n-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import { v4 as uuid } from 'uuid';
 import { generatePairedItemData } from '../../../../utils/utilities';

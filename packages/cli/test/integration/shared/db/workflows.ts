@@ -1,5 +1,5 @@
 import Container from 'typedi';
-import type { DeepPartial } from '@n8n/typeorm';
+import type { DeepPartial } from '@flowease/typeorm';
 import { v4 as uuid } from 'uuid';
 
 import type { User } from '@db/entities/User';

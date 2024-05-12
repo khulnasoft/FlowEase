@@ -1,17 +1,17 @@
 <template>
 	<div v-if="featureInfo" :class="[$style.container]">
 		<div v-if="showTitle" class="mb-2xl">
-			<n8n-heading size="2xlarge">
+			<flowease-heading size="2xlarge">
 				{{ $locale.baseText(featureInfo.featureName) }}
-			</n8n-heading>
+			</flowease-heading>
 		</div>
 		<div v-if="featureInfo.infoText" class="mb-l">
-			<n8n-info-tip theme="info" type="note">
+			<flowease-info-tip theme="info" type="note">
 				<span v-html="$locale.baseText(featureInfo.infoText)"></span>
-			</n8n-info-tip>
+			</flowease-info-tip>
 		</div>
 		<div :class="$style.actionBoxContainer">
-			<n8n-action-box
+			<flowease-action-box
 				:description="$locale.baseText(featureInfo.actionBoxDescription)"
 				:button-text="
 					$locale.baseText(featureInfo.actionBoxButtonLabel || 'fakeDoor.actionBox.button.label')
@@ -21,7 +21,7 @@
 				<template #heading>
 					<span v-html="$locale.baseText(featureInfo.actionBoxTitle)" />
 				</template>
-			</n8n-action-box>
+			</flowease-action-box>
 		</div>
 	</div>
 </template>
@@ -30,7 +30,7 @@
 import { defineComponent } from 'vue';
 import { mapStores } from 'pinia';
 import type { IFakeDoor } from '@/Interface';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useUIStore } from '@/stores/ui.store';
 import { useUsersStore } from '@/stores/users.store';

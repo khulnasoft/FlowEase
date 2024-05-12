@@ -9,7 +9,7 @@ import {
 	type FilterConditionValue,
 	type FilterOptionsValue,
 	type INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { computed, ref } from 'vue';
 import OperatorSelect from './OperatorSelect.vue';
 import { type FilterOperatorId } from './constants';
@@ -136,7 +136,7 @@ const onBlur = (): void => {
 		}"
 		data-test-id="filter-condition"
 	>
-		<n8n-icon-button
+		<flowease-icon-button
 			v-if="canRemove && !readOnly"
 			type="tertiary"
 			text
@@ -146,7 +146,7 @@ const onBlur = (): void => {
 			:title="i18n.baseText('filter.removeCondition')"
 			:class="$style.remove"
 			@click="onRemove"
-		></n8n-icon-button>
+		></flowease-icon-button>
 		<InputTriple>
 			<template #left>
 				<ParameterInputFull
@@ -196,25 +196,35 @@ const onBlur = (): void => {
 		<div :class="$style.status">
 			<ParameterIssues v-if="allIssues.length > 0" :issues="allIssues" />
 
-			<n8n-tooltip
+			<flowease-tooltip
 				v-else-if="conditionResult.status === 'success' && conditionResult.result === true"
 				:show-after="500"
 			>
 				<template #content>
 					{{ i18n.baseText('filter.condition.resolvedTrue') }}
 				</template>
-				<n8n-icon :class="$style.statusIcon" icon="check-circle" size="medium" color="text-light" />
-			</n8n-tooltip>
+				<flowease-icon
+					:class="$style.statusIcon"
+					icon="check-circle"
+					size="medium"
+					color="text-light"
+				/>
+			</flowease-tooltip>
 
-			<n8n-tooltip
+			<flowease-tooltip
 				v-else-if="conditionResult.status === 'success' && conditionResult.result === false"
 				:show-after="500"
 			>
 				<template #content>
 					{{ i18n.baseText('filter.condition.resolvedFalse') }}
 				</template>
-				<n8n-icon :class="$style.statusIcon" icon="times-circle" size="medium" color="text-light" />
-			</n8n-tooltip>
+				<flowease-icon
+					:class="$style.statusIcon"
+					icon="times-circle"
+					size="medium"
+					color="text-light"
+				/>
+			</flowease-tooltip>
 		</div>
 	</div>
 </template>

@@ -9,7 +9,7 @@ import {
 	getNodeAuthOptions,
 	isAuthRelatedParameter,
 } from '@/utils/nodeTypesUtils';
-import type { INodeProperties, INodeTypeDescription, NodeParameterValue } from 'n8n-workflow';
+import type { INodeProperties, INodeTypeDescription, NodeParameterValue } from 'flowease-workflow';
 import { computed, onMounted, ref } from 'vue';
 
 export interface Props {
@@ -127,7 +127,7 @@ defineExpose({
 			/>
 		</div>
 		<div>
-			<n8n-input-label
+			<flowease-input-label
 				:label="$locale.baseText('credentialEdit.credentialConfig.authTypeSelectorLabel')"
 				:tooltip-text="$locale.baseText('credentialEdit.credentialConfig.authTypeSelectorTooltip')"
 				:required="true"

@@ -12,7 +12,7 @@ import type {
 	Workflow,
 	WorkflowActivateMode,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	ApplicationError,
 	ErrorReporterProxy as ErrorReporter,
@@ -21,7 +21,7 @@ import {
 	TriggerCloseError,
 	WorkflowActivationError,
 	WorkflowDeactivationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { IWorkflowData } from './Interfaces';
 

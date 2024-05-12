@@ -6,7 +6,7 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { v4 as uuid } from 'uuid';
 import moment from 'moment-timezone';

@@ -3,7 +3,7 @@ import type {
 	ICredentialsDecrypted,
 	ICredentialTestFunctions,
 	INodeCredentialTestResult,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { Client } from 'ssh2';
 import { createPool } from '../transport';

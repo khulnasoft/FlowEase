@@ -14,7 +14,7 @@ export class MainSidebar extends BasePage {
 		executions: () => this.getters.menuItem('Executions'),
 		adminPanel: () => this.getters.menuItem('Admin Panel'),
 		userMenu: () => cy.get('div[class="action-dropdown-container"]'),
-		logo: () => cy.getByTestId('n8n-logo'),
+		logo: () => cy.getByTestId('flowease-logo'),
 	};
 	actions = {
 		goToSettings: () => {

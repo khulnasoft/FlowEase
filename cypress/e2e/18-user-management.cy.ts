@@ -53,7 +53,7 @@ describe('User Management', { disableAutoLogin: true }, () => {
 		// List item for current user should have the `Owner` badge
 		usersSettingsPage.getters
 			.userItem(INSTANCE_OWNER.email)
-			.find('.n8n-badge:contains("Owner")')
+			.find('.flowease-badge:contains("Owner")')
 			.should('exist');
 		// Other users list items should contain action pop-up list
 		usersSettingsPage.getters.userActionsToggle(INSTANCE_MEMBERS[0].email).should('exist');

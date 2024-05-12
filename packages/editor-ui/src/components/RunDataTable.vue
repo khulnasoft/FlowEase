@@ -16,7 +16,7 @@
 					@mouseenter="onMouseEnterCell"
 					@mouseleave="onMouseLeaveCell"
 				>
-					<n8n-info-tip>{{ $locale.baseText('runData.emptyItemHint') }}</n8n-info-tip>
+					<flowease-info-tip>{{ $locale.baseText('runData.emptyItemHint') }}</flowease-info-tip>
 				</td>
 				<td :class="$style.tableRightMargin"></td>
 			</tr>
@@ -25,7 +25,11 @@
 			<thead>
 				<tr>
 					<th v-for="(column, i) in tableData.columns || []" :key="column">
-						<n8n-tooltip placement="bottom-start" :disabled="!mappingEnabled" :show-after="1000">
+						<flowease-tooltip
+							placement="bottom-start"
+							:disabled="!mappingEnabled"
+							:show-after="1000"
+						>
 							<template #content>
 								<div>
 									<img src="/static/data-mapping-gif.gif" />
@@ -62,10 +66,10 @@
 									</div>
 								</template>
 							</Draggable>
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</th>
 					<th v-if="columnLimitExceeded" :class="$style.header">
-						<n8n-tooltip placement="bottom-end">
+						<flowease-tooltip placement="bottom-end">
 							<template #content>
 								<div>
 									<i18n-t tag="span" keypath="dataMapping.tableView.tableColumnsExceeded.tooltip">
@@ -85,7 +89,7 @@
 								></font-awesome-icon>
 								{{ $locale.baseText('dataMapping.tableView.tableColumnsExceeded') }}
 							</span>
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</th>
 					<th :class="$style.tableRightMargin"></th>
 				</tr>
@@ -126,7 +130,7 @@
 							:search="search"
 							:class="{ [$style.value]: true, [$style.empty]: isEmpty(data) }"
 						/>
-						<n8n-tree v-else :node-class="$style.nodeClass" :value="data">
+						<flowease-tree v-else :node-class="$style.nodeClass" :value="data">
 							<template #label="{ label, path }">
 								<span
 									:class="{
@@ -151,7 +155,7 @@
 									:class="{ [$style.nestedValue]: true, [$style.empty]: isEmpty(value) }"
 								/>
 							</template>
-						</n8n-tree>
+						</flowease-tree>
 					</td>
 					<td v-if="columnLimitExceeded"></td>
 					<td :class="$style.tableRightMargin"></td>
@@ -168,7 +172,7 @@ import { mapStores } from 'pinia';
 import type { INodeUi, ITableData, NDVState } from '@/Interface';
 import { shorten } from '@/utils/typesUtils';
 import { getPairedItemId } from '@/utils/pairedItemUtils';
-import type { GenericValue, IDataObject, INodeExecutionData } from 'n8n-workflow';
+import type { GenericValue, IDataObject, INodeExecutionData } from 'flowease-workflow';
 import Draggable from './Draggable.vue';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { useNDVStore } from '@/stores/ndv.store';

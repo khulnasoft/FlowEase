@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import { STORES, TIME } from '@/constants';
 import { ref, computed } from 'vue';
 import { useSettingsStore } from './settings.store';
-import { useRootStore } from './n8nRoot.store';
+import { useRootStore } from './floweaseRoot.store';
 import type { IPushData } from '../Interface';
 
 export interface PushState {

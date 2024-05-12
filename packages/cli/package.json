@@ -1,7 +1,7 @@
 {
-  "name": "n8n",
+  "name": "flowease",
   "version": "1.41.0",
-  "description": "n8n Workflow Automation Tool",
+  "description": "flowease Workflow Automation Tool",
   "license": "SEE LICENSE IN LICENSE.md",
   "homepage": "https://flowease.khulnasoft.com",
   "author": {
@@ -17,7 +17,7 @@
   "oclif": {
     "commands": "./dist/commands",
     "helpClass": "./dist/help",
-    "bin": "n8n"
+    "bin": "flowease"
   },
   "scripts": {
     "clean": "rimraf dist .turbo",
@@ -31,23 +31,23 @@
     "lint": "eslint . --quiet",
     "lintfix": "eslint . --fix",
     "start": "run-script-os",
-    "start:default": "cd bin && ./n8n",
-    "start:windows": "cd bin && n8n",
+    "start:default": "cd bin && ./flowease",
+    "start:windows": "cd bin && flowease",
     "test": "pnpm test:sqlite",
-    "test:sqlite": "N8N_LOG_LEVEL=silent DB_TYPE=sqlite jest",
-    "test:postgres": "N8N_LOG_LEVEL=silent DB_TYPE=postgresdb DB_POSTGRESDB_SCHEMA=alt_schema DB_TABLE_PREFIX=test_ jest --no-coverage",
-    "test:mysql": "N8N_LOG_LEVEL=silent DB_TYPE=mysqldb DB_TABLE_PREFIX=test_ jest --no-coverage",
+    "test:sqlite": "FLOWEASE_LOG_LEVEL=silent DB_TYPE=sqlite jest",
+    "test:postgres": "FLOWEASE_LOG_LEVEL=silent DB_TYPE=postgresdb DB_POSTGRESDB_SCHEMA=alt_schema DB_TABLE_PREFIX=test_ jest --no-coverage",
+    "test:mysql": "FLOWEASE_LOG_LEVEL=silent DB_TYPE=mysqldb DB_TABLE_PREFIX=test_ jest --no-coverage",
     "watch": "concurrently \"tsc -w -p tsconfig.build.json\" \"tsc-alias -w -p tsconfig.build.json\""
   },
   "bin": {
-    "n8n": "./bin/n8n"
+    "flowease": "./bin/flowease"
   },
   "keywords": [
     "automate",
     "automation",
     "IaaS",
     "iPaaS",
-    "n8n",
+    "flowease",
     "workflow"
   ],
   "engines": {
@@ -90,21 +90,23 @@
     "ts-essentials": "^7.0.3"
   },
   "dependencies": {
+    "@flowease/client-oauth2": "workspace:*",
+    "@flowease/flowease-nodes-langchain": "workspace:*",
+    "@flowease/localtunnel": "2.1.0",
+    "@flowease/permissions": "workspace:*",
+    "@flowease/typeorm": "0.3.20-9",
     "@langchain/community": "0.0.53",
     "@langchain/core": "0.1.61",
     "@langchain/openai": "0.0.28",
     "@langchain/pinecone": "^0.0.3",
-    "@flowease/client-oauth2": "workspace:*",
-    "@n8n/localtunnel": "2.1.0",
-    "@flowease/flowease-nodes-langchain": "workspace:*",
-    "@flowease/permissions": "workspace:*",
-    "@n8n/typeorm": "0.3.20-9",
     "@n8n_io/license-sdk": "2.10.0",
     "@oclif/core": "3.18.1",
     "@pinecone-database/pinecone": "2.1.0",
     "@rudderstack/rudder-sdk-node": "2.0.7",
+    "@sentry/cli": "2.17.0",
     "@sentry/integrations": "7.87.0",
     "@sentry/node": "7.87.0",
+    "@types/express-serve-static-core": "4.17.43",
     "aws4": "1.11.0",
     "axios": "1.6.7",
     "basic-auth": "2.0.1",
@@ -129,6 +131,10 @@
     "express-rate-limit": "7.2.0",
     "fast-glob": "3.2.12",
     "flatted": "3.2.7",
+    "flowease-core": "workspace:*",
+    "flowease-editor-ui": "workspace:*",
+    "flowease-nodes-base": "workspace:*",
+    "flowease-workflow": "workspace:*",
     "formidable": "3.5.1",
     "fuse.js": "^7.0.0",
     "google-timezones-json": "1.1.0",
@@ -146,10 +152,6 @@
     "lodash": "4.17.21",
     "luxon": "3.3.0",
     "mysql2": "3.9.7",
-    "flowease-core": "workspace:*",
-    "flowease-editor-ui": "workspace:*",
-    "flowease-nodes-base": "workspace:*",
-    "n8n-workflow": "workspace:*",
     "nanoid": "3.3.6",
     "nodemailer": "6.9.9",
     "oauth-1.0a": "2.2.6",

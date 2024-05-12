@@ -15,8 +15,8 @@
 				"returnAll": true
 			},
 			"id": "7d925077-afaa-46d5-ba2f-0c19d93afecc",
-			"name": "Customer Datastore (n8n training)",
-			"type": "flowease-nodes-base.n8nTrainingCustomerDatastore",
+			"name": "Customer Datastore (flowease training)",
+			"type": "flowease-nodes-base.floweaseTrainingCustomerDatastore",
 			"typeVersion": 1,
 			"position": [640, 400]
 		},
@@ -436,14 +436,14 @@
 			"main": [
 				[
 					{
-						"node": "Customer Datastore (n8n training)",
+						"node": "Customer Datastore (flowease training)",
 						"type": "main",
 						"index": 0
 					}
 				]
 			]
 		},
-		"Customer Datastore (n8n training)": {
+		"Customer Datastore (flowease training)": {
 			"main": [
 				[
 					{

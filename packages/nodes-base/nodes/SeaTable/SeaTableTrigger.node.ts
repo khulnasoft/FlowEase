@@ -5,7 +5,7 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 import { getColumns, rowFormatColumns, seaTableApiRequest, simplify } from './GenericFunctions';

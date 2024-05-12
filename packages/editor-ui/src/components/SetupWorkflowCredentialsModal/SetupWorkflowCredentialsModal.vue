@@ -2,7 +2,7 @@
 import Modal from '@/components/Modal.vue';
 import { useSetupWorkflowCredentialsModalState } from '@/components/SetupWorkflowCredentialsModal/useSetupWorkflowCredentialsModalState';
 import { useI18n } from '@/composables/useI18n';
-import N8nHeading from 'flowease-design-system/components/N8nHeading';
+import FloweaseHeading from 'flowease-design-system/components/FloweaseHeading';
 import AppsRequiringCredsNotice from '@/views/SetupWorkflowFromTemplateView/AppsRequiringCredsNotice.vue';
 import SetupTemplateFormStep from '@/views/SetupWorkflowFromTemplateView/SetupTemplateFormStep.vue';
 import { onMounted, onUnmounted } from 'vue';
@@ -49,9 +49,9 @@ onUnmounted(() => {
 <template>
 	<Modal width="700px" max-height="90%" :name="props.modalName">
 		<template #header>
-			<N8nHeading tag="h2" size="xlarge">
+			<FloweaseHeading tag="h2" size="xlarge">
 				{{ i18n.baseText('setupCredentialsModal.title') }}
-			</N8nHeading>
+			</FloweaseHeading>
 		</template>
 
 		<template #content>
@@ -79,7 +79,7 @@ onUnmounted(() => {
 
 		<template #footer>
 			<div :class="$style.footer">
-				<n8n-button
+				<flowease-button
 					size="large"
 					:label="i18n.baseText('templateSetup.continue.button')"
 					:disabled="numFilledCredentials === 0"

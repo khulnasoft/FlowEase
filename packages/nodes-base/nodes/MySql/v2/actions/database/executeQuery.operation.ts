@@ -3,8 +3,8 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import type { QueryRunner, QueryWithValues } from '../../helpers/interfaces';
 
@@ -22,7 +22,7 @@ const properties: INodeProperties[] = [
 		placeholder: 'e.g. SELECT id, name FROM product WHERE id < 40',
 		required: true,
 		description:
-			"The SQL query to execute. You can use n8n expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.",
+			"The SQL query to execute. You can use flowease expressions and $1, $2, $3, etc to refer to the 'Query Parameters' set in options below.",
 		noDataExpression: true,
 		typeOptions: {
 			editor: 'sqlEditor',

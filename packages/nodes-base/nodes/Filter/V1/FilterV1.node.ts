@@ -6,7 +6,7 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	NodeParameterValue,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { compareOperationFunctions, convertDateTime } from './GenericFunctions';
 

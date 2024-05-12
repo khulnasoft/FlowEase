@@ -35,7 +35,7 @@ import {
 	SOURCE_CONTROL_PUSH_MODAL_KEY,
 	SOURCE_CONTROL_PULL_MODAL_KEY,
 	DEBUG_PAYWALL_MODAL_KEY,
-	N8N_PRICING_PAGE_URL,
+	FLOWEASE_PRICING_PAGE_URL,
 	WORKFLOW_HISTORY_VERSION_RESTORE,
 	SUGGESTED_TEMPLATES_PREVIEW_MODAL_KEY,
 	SETUP_CREDENTIALS_MODAL_KEY,
@@ -59,7 +59,7 @@ import type {
 	ModalState,
 } from '@/Interface';
 import { defineStore } from 'pinia';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { getCurlToJson } from '@/api/curlHelper';
 import { useCloudPlanStore } from '@/stores/cloudPlan.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
@@ -68,7 +68,7 @@ import { hasPermission } from '@/rbac/permissions';
 import { useTelemetryStore } from '@/stores/telemetry.store';
 import { useUsersStore } from '@/stores/users.store';
 import { dismissBannerPermanently } from '@/api/ui';
-import type { BannerName } from 'n8n-workflow';
+import type { BannerName } from 'flowease-workflow';
 import {
 	addThemeToBody,
 	getPreferredTheme,
@@ -168,7 +168,7 @@ export const useUIStore = defineStore(STORES.UI, {
 				icon: 'key',
 				actionBoxTitle: 'fakeDoor.settings.sso.actionBox.title',
 				actionBoxDescription: 'fakeDoor.settings.sso.actionBox.description',
-				linkURL: 'https://n8n-community.typeform.com/to/l7QOrERN#f=sso',
+				linkURL: 'https://flowease-community.typeform.com/to/l7QOrERN#f=sso',
 				uiLocations: ['settings/users'],
 			},
 		],
@@ -353,7 +353,7 @@ export const useUIStore = defineStore(STORES.UI, {
 					searchParams.set('code', code);
 					searchParams.set('returnPath', '/account/change-plan');
 				} else {
-					linkUrl = N8N_PRICING_PAGE_URL;
+					linkUrl = FLOWEASE_PRICING_PAGE_URL;
 				}
 
 				if (utm_campaign) {

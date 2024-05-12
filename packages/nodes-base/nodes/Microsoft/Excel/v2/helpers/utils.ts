@@ -1,5 +1,5 @@
-import type { IDataObject, IExecuteFunctions, INode, INodeExecutionData } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INode, INodeExecutionData } from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import type { ExcelResponse, SheetData, UpdateSummary } from './interfaces';
 import { generatePairedItemData, wrapData } from '@utils/utilities';
 

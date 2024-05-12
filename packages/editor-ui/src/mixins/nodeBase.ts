@@ -10,14 +10,14 @@ import {
 	NODE_MIN_INPUT_ITEMS_COUNT,
 } from '@/constants';
 
-import { NodeHelpers, NodeConnectionType } from 'n8n-workflow';
+import { NodeHelpers, NodeConnectionType } from 'flowease-workflow';
 import type {
 	ConnectionTypes,
 	INodeInputConfiguration,
 	INodeTypeDescription,
 	INodeOutputConfiguration,
 	Workflow,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { useUIStore } from '@/stores/ui.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
@@ -28,7 +28,7 @@ import { useHistoryStore } from '@/stores/history.store';
 import { useCanvasStore } from '@/stores/canvas.store';
 import type { EndpointSpec } from '@jsplumb/common';
 import { useDeviceSupport } from 'flowease-design-system';
-import type { N8nEndpointLabelLength } from '@/plugins/jsplumb/N8nPlusEndpointType';
+import type { FloweaseEndpointLabelLength } from '@/plugins/jsplumb/FloweasePlusEndpointType';
 
 const createAddInputEndpointSpec = (
 	connectionName: NodeConnectionType,
@@ -37,7 +37,7 @@ const createAddInputEndpointSpec = (
 	const multiple = NODE_CONNECTION_TYPE_ALLOW_MULTIPLE.includes(connectionName);
 
 	return {
-		type: 'N8nAddInput',
+		type: 'FloweaseAddInput',
 		options: {
 			width: 24,
 			height: 72,
@@ -56,7 +56,7 @@ const createDiamondOutputEndpointSpec = (): EndpointSpec => ({
 	},
 });
 
-const getEndpointLabelLength = (length: number): N8nEndpointLabelLength => {
+const getEndpointLabelLength = (length: number): FloweaseEndpointLabelLength => {
 	if (length <= 2) return 'small';
 	else if (length <= 6) return 'medium';
 	return 'large';
@@ -480,7 +480,7 @@ export const nodeBase = defineComponent({
 						anchor: anchorPosition,
 						maxConnections: -1,
 						endpoint: {
-							type: 'N8nPlus',
+							type: 'FloweasePlus',
 							options: {
 								dimensions: 24,
 								connectedEndpoint: endpoint,

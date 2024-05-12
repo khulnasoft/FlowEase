@@ -1,4 +1,4 @@
-import { ApplicationError, type IDataObject } from 'n8n-workflow';
+import { ApplicationError, type IDataObject } from 'flowease-workflow';
 
 import get from 'lodash/get';
 import set from 'lodash/set';

@@ -1,6 +1,6 @@
 import { Container } from 'typedi';
 import { BinaryDataService } from 'flowease-core';
-import { type INode } from 'n8n-workflow';
+import { type INode } from 'flowease-workflow';
 import { GithubApi } from 'flowease-nodes-base/credentials/GithubApi.credentials';
 import { Ftp } from 'flowease-nodes-base/credentials/Ftp.credentials';
 import { Cron } from 'flowease-nodes-base/nodes/Cron/Cron.node';

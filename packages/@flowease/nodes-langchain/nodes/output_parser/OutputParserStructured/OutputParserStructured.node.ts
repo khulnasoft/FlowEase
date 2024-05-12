@@ -7,7 +7,7 @@ import {
 	type SupplyData,
 	NodeOperationError,
 	NodeConnectionType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { z } from 'zod';
 import type { JSONSchema7 } from 'json-schema';
 import { StructuredOutputParser } from 'langchain/output_parsers';
@@ -15,7 +15,7 @@ import { OutputParserException } from '@langchain/core/output_parsers';
 import get from 'lodash/get';
 import { getSandboxContext } from 'flowease-nodes-base/dist/nodes/Code/Sandbox';
 import { JavaScriptSandbox } from 'flowease-nodes-base/dist/nodes/Code/JavaScriptSandbox';
-import { makeResolverFromLegacyOptions } from '@n8n/vm2';
+import { makeResolverFromLegacyOptions } from '@flowease/vm2';
 import { getConnectionHintNoticeField } from '../../../utils/sharedFields';
 import { logWrapper } from '../../../utils/logWrapper';
 
@@ -23,7 +23,9 @@ const STRUCTURED_OUTPUT_KEY = '__structured__output';
 const STRUCTURED_OUTPUT_OBJECT_KEY = '__structured__output__object';
 const STRUCTURED_OUTPUT_ARRAY_KEY = '__structured__output__array';
 
-export class N8nStructuredOutputParser<T extends z.ZodTypeAny> extends StructuredOutputParser<T> {
+export class FloweaseStructuredOutputParser<
+	T extends z.ZodTypeAny,
+> extends StructuredOutputParser<T> {
 	async parse(text: string): Promise<z.infer<T>> {
 		try {
 			const parsed = (await super.parse(text)) as object;
@@ -78,7 +80,7 @@ export class N8nStructuredOutputParser<T extends z.ZodTypeAny> extends Structure
 			});
 		}
 
-		return N8nStructuredOutputParser.fromZodSchema(returnSchema);
+		return FloweaseStructuredOutputParser.fromZodSchema(returnSchema);
 	}
 }
 export class OutputParserStructured implements INodeType {
@@ -103,7 +105,7 @@ export class OutputParserStructured implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.outputparserstructured/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.outputparserstructured/',
 					},
 				],
 			},
@@ -209,7 +211,7 @@ export class OutputParserStructured implements INodeType {
 
 		const nodeVersion = this.getNode().typeVersion;
 		try {
-			const parser = await N8nStructuredOutputParser.fromZedJsonSchema(
+			const parser = await FloweaseStructuredOutputParser.fromZedJsonSchema(
 				sandboxedSchema,
 				nodeVersion,
 			);

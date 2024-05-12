@@ -4,7 +4,7 @@ import { inTest, TIME } from '@/constants';
 import config from '@/config';
 import { ExecutionRepository } from '@db/repositories/execution.repository';
 import { Logger } from '@/Logger';
-import { jsonStringify } from 'n8n-workflow';
+import { jsonStringify } from 'flowease-workflow';
 import { OnShutdown } from '@/decorators/OnShutdown';
 
 @Service()

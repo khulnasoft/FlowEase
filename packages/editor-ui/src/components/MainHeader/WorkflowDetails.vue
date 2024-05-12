@@ -22,7 +22,7 @@ import InlineTextEdit from '@/components/InlineTextEdit.vue';
 import BreakpointsObserver from '@/components/BreakpointsObserver.vue';
 import CollaborationPane from '@/components/MainHeader/CollaborationPane.vue';
 
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useSourceControlStore } from '@/stores/sourceControl.store';
 import { useTagsStore } from '@/stores/tags.store';
@@ -582,19 +582,19 @@ function goToUpgrade() {
 			<EnterpriseEdition :features="[EnterpriseEditionFeature.Sharing]">
 				<div :class="$style.group">
 					<CollaborationPane />
-					<N8nButton
+					<FloweaseButton
 						type="secondary"
 						data-test-id="workflow-share-button"
 						@click="onShareButtonClick"
 					>
 						{{ $locale.baseText('workflowDetails.share') }}
-					</N8nButton>
+					</FloweaseButton>
 				</div>
 				<template #fallback>
-					<N8nTooltip>
-						<N8nButton type="secondary" :class="['mr-2xs', $style.disabledShareButton]">
+					<FloweaseTooltip>
+						<FloweaseButton type="secondary" :class="['mr-2xs', $style.disabledShareButton]">
 							{{ $locale.baseText('workflowDetails.share') }}
-						</N8nButton>
+						</FloweaseButton>
 						<template #content>
 							<i18n-t
 								:keypath="
@@ -615,7 +615,7 @@ function goToUpgrade() {
 								</template>
 							</i18n-t>
 						</template>
-					</N8nTooltip>
+					</FloweaseTooltip>
 				</template>
 			</EnterpriseEdition>
 			<div :class="$style.group">
@@ -633,7 +633,7 @@ function goToUpgrade() {
 					:to="workflowHistoryRoute"
 					:class="$style.workflowHistoryButton"
 				>
-					<N8nIconButton
+					<FloweaseIconButton
 						:disabled="isWorkflowHistoryButtonDisabled"
 						data-test-id="workflow-history-button"
 						type="tertiary"
@@ -651,7 +651,7 @@ function goToUpgrade() {
 					data-test-id="workflow-import-input"
 					@change="handleFileImport()"
 				/>
-				<N8nActionDropdown
+				<FloweaseActionDropdown
 					:items="workflowMenuItems"
 					data-test-id="workflow-menu"
 					@select="onWorkflowMenuSelect"

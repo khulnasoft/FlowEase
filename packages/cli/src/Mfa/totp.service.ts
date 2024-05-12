@@ -8,7 +8,7 @@ export class TOTPService {
 	}
 
 	generateTOTPUri({
-		issuer = 'n8n',
+		issuer = 'flowease',
 		secret,
 		label,
 	}: {

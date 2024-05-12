@@ -6,8 +6,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { allEvents, eventExists, getId, jiraSoftwareCloudApiRequest } from './GenericFunctions';
 
@@ -436,7 +436,7 @@ export class JiraTrigger implements INodeType {
 				}
 
 				const body = {
-					name: `n8n-webhook:${webhookUrl}`,
+					name: `flowease-webhook:${webhookUrl}`,
 					url: webhookUrl,
 					events,
 					filters: {},
@@ -475,7 +475,7 @@ export class JiraTrigger implements INodeType {
 
 				if (additionalFields.includeFields) {
 					for (const field of additionalFields.includeFields as string[]) {
-						// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+						// eslint-disable-next-line flowease-local-rules/no-interpolation-in-regular-string
 						parameters[field] = '${' + field + '}';
 					}
 				}

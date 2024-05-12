@@ -10,9 +10,9 @@ import {
 	WEBHOOK_NODE_TYPE,
 	WEBHOOK_VALIDATOR_NODE_TYPES,
 } from '@/security-audit/constants';
-import { getN8nPackageJson, inDevelopment } from '@/constants';
+import { getFloweasePackageJson, inDevelopment } from '@/constants';
 import type { WorkflowEntity } from '@db/entities/WorkflowEntity';
-import type { RiskReporter, Risk, n8n } from '@/security-audit/types';
+import type { RiskReporter, Risk, flowease } from '@/security-audit/types';
 import { isApiEnabled } from '@/PublicApi';
 import { Logger } from '@/Logger';
 
@@ -63,7 +63,7 @@ export class InstanceRiskReporter implements RiskReporter {
 				title: INSTANCE_REPORT.SECTIONS.OUTDATED_INSTANCE,
 				description: outdatedState.description,
 				recommendation:
-					'Consider updating this n8n instance to the latest version to prevent security vulnerabilities.',
+					'Consider updating this flowease instance to the latest version to prevent security vulnerabilities.',
 				nextVersions: outdatedState.nextVersions,
 			});
 		}
@@ -71,8 +71,8 @@ export class InstanceRiskReporter implements RiskReporter {
 		if (securitySettings !== null) {
 			report.sections.push({
 				title: INSTANCE_REPORT.SECTIONS.SECURITY_SETTINGS,
-				description: 'This n8n instance has the following security settings.',
-				recommendation: `Consider adjusting the security settings for your n8n instance based on your needs. See: ${ENV_VARS_DOCS_URL}`,
+				description: 'This flowease instance has the following security settings.',
+				recommendation: `Consider adjusting the security settings for your flowease instance based on your needs. See: ${ENV_VARS_DOCS_URL}`,
 				settings: securitySettings,
 			});
 		}
@@ -145,15 +145,15 @@ export class InstanceRiskReporter implements RiskReporter {
 		const BASE_URL = config.getEnv('versionNotifications.endpoint');
 		const { instanceId } = this.instanceSettings;
 
-		const response = await axios.get<n8n.Version[]>(BASE_URL + currentVersionName, {
+		const response = await axios.get<flowease.Version[]>(BASE_URL + currentVersionName, {
 			// eslint-disable-next-line @typescript-eslint/naming-convention
-			headers: { 'n8n-instance-id': instanceId },
+			headers: { 'flowease-instance-id': instanceId },
 		});
 
 		return response.data;
 	}
 
-	private removeIconData(versions: n8n.Version[]) {
+	private removeIconData(versions: flowease.Version[]) {
 		return versions.map((version) => {
 			if (version.nodes.length === 0) return version;
 
@@ -163,7 +163,7 @@ export class InstanceRiskReporter implements RiskReporter {
 		});
 	}
 
-	private classify(versions: n8n.Version[], currentVersionName: string) {
+	private classify(versions: flowease.Version[], currentVersionName: string) {
 		const [pass, fail] = separate(versions, (v) => v.name === currentVersionName);
 
 		return { currentVersion: pass[0], nextVersions: fail };
@@ -172,13 +172,15 @@ export class InstanceRiskReporter implements RiskReporter {
 	private async getOutdatedState() {
 		let versions = [];
 
-		const localVersion = getN8nPackageJson().version;
+		const localVersion = getFloweasePackageJson().version;
 
 		try {
 			versions = await this.getNextVersions(localVersion).then((v) => this.removeIconData(v));
 		} catch (error) {
 			if (inDevelopment) {
-				this.logger.error('Failed to fetch n8n versions. Skipping outdated instance report...');
+				this.logger.error(
+					'Failed to fetch flowease versions. Skipping outdated instance report...',
+				);
 			}
 			return null;
 		}
@@ -190,7 +192,7 @@ export class InstanceRiskReporter implements RiskReporter {
 		if (nextVersionsNumber === 0) return null;
 
 		const description = [
-			`This n8n instance is outdated. Currently at version ${
+			`This flowease instance is outdated. Currently at version ${
 				currentVersion.name
 			}, missing ${nextVersionsNumber} ${nextVersionsNumber > 1 ? 'updates' : 'update'}.`,
 		];

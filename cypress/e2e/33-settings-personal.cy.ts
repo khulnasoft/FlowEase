@@ -1,4 +1,4 @@
-import { WorkflowPage } from "../pages";
+import { WorkflowPage } from '../pages';
 
 const workflowPage = new WorkflowPage();
 
@@ -7,7 +7,7 @@ const INVALID_NAMES = [
 	'http://flowease.khulnasoft.com',
 	'www.flowease.khulnasoft.com',
 	'flowease.khulnasoft.com',
-	'n8n.бг',
+	'flowease.бг',
 	'flowease.khulnasoft.com/home',
 	'flowease.khulnasoft.com/home?send=true',
 	'<a href="#">Jack</a>',
@@ -27,7 +27,7 @@ const VALID_NAMES = [
 ];
 
 describe('Personal Settings', () => {
-	it ('should allow to change first and last name', () => {
+	it('should allow to change first and last name', () => {
 		cy.visit('/settings/personal');
 		VALID_NAMES.forEach((name) => {
 			cy.getByTestId('personal-data-form').find('input[name="firstName"]').clear().type(name[0]);

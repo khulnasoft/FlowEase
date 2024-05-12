@@ -24,7 +24,7 @@
 				@click.left="mouseLeftClick"
 				@contextmenu="onContextMenu"
 			>
-				<n8n-sticky
+				<flowease-sticky
 					:id="node.id"
 					:model-value="node.parameters.content"
 					:height="node.parameters.height"
@@ -56,7 +56,7 @@
 				>
 					<font-awesome-icon icon="trash" />
 				</div>
-				<n8n-popover
+				<flowease-popover
 					effect="dark"
 					:popper-style="{ width: '208px' }"
 					trigger="click"
@@ -95,7 +95,7 @@
 							@click="changeColor(index + 1)"
 						></div>
 					</div>
-				</n8n-popover>
+				</flowease-popover>
 			</div>
 		</div>
 	</div>
@@ -114,7 +114,7 @@ import type {
 	XYPosition,
 } from '@/Interface';
 
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
 import { QUICKSTART_NOTE_NAME } from '@/constants';
 import { useUIStore } from '@/stores/ui.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
@@ -252,7 +252,7 @@ export default defineComponent({
 		onMarkdownClick(link: HTMLAnchorElement, event: Event) {
 			if (link) {
 				const isOnboardingNote = this.name === QUICKSTART_NOTE_NAME;
-				const isWelcomeVideo = link.querySelector('img[alt="n8n quickstart video"');
+				const isWelcomeVideo = link.querySelector('img[alt="flowease quickstart video"');
 				const type =
 					isOnboardingNote && isWelcomeVideo
 						? 'welcome_video'

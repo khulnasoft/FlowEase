@@ -1,15 +1,15 @@
 import type {
 	IDataObject,
 	IExecuteSingleFunctions,
-	IN8nHttpFullResponse,
+	IFloweaseHttpFullResponse,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 async function processCampaignSearchResponse(
 	this: IExecuteSingleFunctions,
 	_inputData: INodeExecutionData[],
-	responseData: IN8nHttpFullResponse,
+	responseData: IFloweaseHttpFullResponse,
 ): Promise<INodeExecutionData[]> {
 	const results = (responseData.body as IDataObject).results as GoogleAdsCampaignElement;
 

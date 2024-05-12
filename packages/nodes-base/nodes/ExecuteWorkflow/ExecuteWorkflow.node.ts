@@ -1,10 +1,10 @@
-import { NodeOperationError } from 'n8n-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { generatePairedItemData } from '../../utils/utilities';
 import { getWorkflowInfo } from './GenericFunctions';

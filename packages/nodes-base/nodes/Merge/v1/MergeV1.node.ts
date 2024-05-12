@@ -9,8 +9,8 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	IPairedItemData,
-} from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 
 import { generatePairedItemData } from '../../../utils/utilities';
 import { oldVersionNotice } from '@utils/descriptions';

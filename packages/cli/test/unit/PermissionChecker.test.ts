@@ -1,4 +1,4 @@
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'flowease-workflow';
 import { mock } from 'jest-mock-extended';
 import type { User } from '@db/entities/User';
 import type { UserRepository } from '@db/repositories/user.repository';

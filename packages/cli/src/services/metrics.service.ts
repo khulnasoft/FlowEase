@@ -1,5 +1,5 @@
 import config from '@/config';
-import { N8N_VERSION } from '@/constants';
+import { FLOWEASE_VERSION } from '@/constants';
 import type express from 'express';
 import promBundle from 'express-prom-bundle';
 import promClient, { type Counter } from 'prom-client';
@@ -27,29 +27,29 @@ export class MetricsService extends EventEmitter {
 	async configureMetrics(app: express.Application) {
 		promClient.register.clear(); // clear all metrics in case we call this a second time
 		this.setupDefaultMetrics();
-		this.setupN8nVersionMetric();
+		this.setupFloweaseVersionMetric();
 		this.setupCacheMetrics();
 		this.setupMessageEventBusMetrics();
 		this.setupApiMetrics(app);
 		this.mountMetricsEndpoint(app);
 	}
 
-	private setupN8nVersionMetric() {
-		const n8nVersion = semverParse(N8N_VERSION || '0.0.0');
+	private setupFloweaseVersionMetric() {
+		const floweaseVersion = semverParse(FLOWEASE_VERSION || '0.0.0');
 
-		if (n8nVersion) {
+		if (floweaseVersion) {
 			const versionGauge = new promClient.Gauge({
 				name: config.getEnv('endpoints.metrics.prefix') + 'version_info',
-				help: 'n8n version info.',
+				help: 'flowease version info.',
 				labelNames: ['version', 'major', 'minor', 'patch'],
 			});
 
 			versionGauge.set(
 				{
-					version: 'v' + n8nVersion.version,
-					major: n8nVersion.major,
-					minor: n8nVersion.minor,
-					patch: n8nVersion.patch,
+					version: 'v' + floweaseVersion.version,
+					major: floweaseVersion.major,
+					minor: floweaseVersion.minor,
+					patch: floweaseVersion.patch,
 				},
 				1,
 			);
@@ -124,7 +124,7 @@ export class MetricsService extends EventEmitter {
 		if (!this.counters[event.eventName]) {
 			const prefix = config.getEnv('endpoints.metrics.prefix');
 			const metricName =
-				prefix + event.eventName.replace('n8n.', '').replace(/\./g, '_') + '_total';
+				prefix + event.eventName.replace('flowease.', '').replace(/\./g, '_') + '_total';
 
 			if (!promClient.validateMetricName(metricName)) {
 				this.logger.debug(`Invalid metric name: ${metricName}. Ignoring it!`);

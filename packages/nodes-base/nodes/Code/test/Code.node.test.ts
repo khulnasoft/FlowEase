@@ -1,7 +1,7 @@
 import { anyNumber, mock } from 'jest-mock-extended';
-import { NodeVM } from '@n8n/vm2';
-import type { IExecuteFunctions, IWorkflowDataProxyData } from 'n8n-workflow';
-import { ApplicationError, NodeHelpers } from 'n8n-workflow';
+import { NodeVM } from '@flowease/vm2';
+import type { IExecuteFunctions, IWorkflowDataProxyData } from 'flowease-workflow';
+import { ApplicationError, NodeHelpers } from 'flowease-workflow';
 import { normalizeItems } from 'flowease-core';
 import { Code } from '../Code.node';
 import { ValidationError } from '../ValidationError';

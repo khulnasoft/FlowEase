@@ -1,10 +1,10 @@
-import type { JsonObject } from 'n8n-workflow';
-import { EventMessageTypeNames } from 'n8n-workflow';
+import type { JsonObject } from 'flowease-workflow';
+import { EventMessageTypeNames } from 'flowease-workflow';
 import { AbstractEventMessage, isEventMessageOptionsWithType } from './AbstractEventMessage';
 import type { AbstractEventPayload } from './AbstractEventPayload';
 import type { AbstractEventMessageOptions } from './AbstractEventMessageOptions';
 
-export const eventMessageGenericDestinationTestEvent = 'n8n.destination.test';
+export const eventMessageGenericDestinationTestEvent = 'flowease.destination.test';
 
 export interface EventPayloadGeneric extends AbstractEventPayload {
 	msg?: string;

@@ -5,7 +5,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { acuitySchedulingApiRequest } from './GenericFunctions';
 

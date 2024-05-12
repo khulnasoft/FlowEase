@@ -1,4 +1,4 @@
-import { ApplicationError, NodeConnectionType, NodeOperationError } from 'n8n-workflow';
+import { ApplicationError, NodeConnectionType, NodeOperationError } from 'flowease-workflow';
 import type {
 	IBinaryData,
 	IDataObject,
@@ -6,7 +6,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { BaseLanguageModel } from '@langchain/core/language_models/base';
 import {
@@ -262,7 +262,7 @@ export class ChainLlm implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.chainllm/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.chainllm/',
 					},
 				],
 			},

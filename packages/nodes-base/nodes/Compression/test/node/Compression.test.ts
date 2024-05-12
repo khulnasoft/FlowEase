@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-loop-func */
 import path from 'path';
 import os from 'node:os';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import type { WorkflowTestData } from '@test/nodes/types';
 
 import {

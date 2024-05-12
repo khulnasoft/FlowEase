@@ -1,4 +1,4 @@
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 import type {
 	IDataObject,
 	IExecuteFunctions,
@@ -6,7 +6,7 @@ import type {
 	ILoadOptionsFunctions,
 	IPollFunctions,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import get from 'lodash/get';
 

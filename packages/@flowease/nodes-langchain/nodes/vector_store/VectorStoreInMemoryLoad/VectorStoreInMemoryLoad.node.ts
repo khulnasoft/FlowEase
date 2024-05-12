@@ -5,7 +5,7 @@ import {
 	type IExecuteFunctions,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { Embeddings } from '@langchain/core/embeddings';
 import { MemoryVectorStoreManager } from '../shared/MemoryVectorStoreManager';
 import { logWrapper } from '../../../utils/logWrapper';
@@ -31,7 +31,7 @@ export class VectorStoreInMemoryLoad implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreinmemory/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstoreinmemory/',
 					},
 				],
 			},

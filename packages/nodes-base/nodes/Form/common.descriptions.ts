@@ -1,5 +1,5 @@
 /* eslint-disable flowease-nodes-base/node-filename-against-convention */
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 
 export const webhookPath: INodeProperties = {
 	displayName: 'Form Path',

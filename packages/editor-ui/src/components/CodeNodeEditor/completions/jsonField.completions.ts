@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 import { escape, toVariableOption } from '../utils';
 import type { Completion, CompletionContext, CompletionResult } from '@codemirror/autocomplete';
-import type { IDataObject, IPinData, IRunData } from 'n8n-workflow';
+import type { IDataObject, IPinData, IRunData } from 'flowease-workflow';
 import { mapStores } from 'pinia';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { useNDVStore } from '@/stores/ndv.store';

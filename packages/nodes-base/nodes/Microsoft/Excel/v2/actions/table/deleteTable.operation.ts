@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'flowease-workflow';
 import { microsoftApiRequest } from '../../transport';
 import { tableRLC, workbookRLC, worksheetRLC } from '../common.descriptions';
 import { updateDisplayOptions } from '@utils/utilities';

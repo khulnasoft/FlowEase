@@ -19,7 +19,7 @@ export const vitestConfig = defineVitestConfig({
 						reporter: process.env.CI === 'true' ? 'cobertura' : 'text-summary',
 						all: true,
 					},
-			  }
+				}
 			: {}),
 		css: {
 			modules: {
@@ -47,7 +47,7 @@ export default mergeConfig(
 		build: {
 			lib: {
 				entry: resolve(__dirname, 'src', 'main.ts'),
-				name: 'N8nDesignSystem',
+				name: 'FloweaseDesignSystem',
 				fileName: (format) => `flowease-design-system.${format}.js`,
 			},
 			rollupOptions: {

@@ -34,5 +34,5 @@ export class CertifyCorrectCollation1623936588000 implements IrreversibleMigrati
 	}
 
 	// There is no down migration in this case as we already expect default collation to be utf8mb4
-	// The up migration exists simply to enforce that n8n will work with older mysql versions
+	// The up migration exists simply to enforce that flowease will work with older mysql versions
 }

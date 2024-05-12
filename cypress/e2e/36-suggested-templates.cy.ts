@@ -3,7 +3,7 @@ import { WorkflowPage as WorkflowPageClass } from '../pages/workflow';
 
 type SuggestedTemplatesStub = {
 	sections: SuggestedTemplatesSectionStub[];
-}
+};
 
 type SuggestedTemplatesSectionStub = {
 	name: string;
@@ -15,10 +15,9 @@ type SuggestedTemplatesSectionStub = {
 const WorkflowsListPage = new WorkflowsPageClass();
 const WorkflowPage = new WorkflowPageClass();
 
-let fixtureSections: SuggestedTemplatesStub = { sections: [] };;
+let fixtureSections: SuggestedTemplatesStub = { sections: [] };
 
 describe('Suggested templates - Should render', () => {
-
 	before(() => {
 		cy.fixture('Suggested_Templates.json').then((data) => {
 			fixtureSections = data;
@@ -26,7 +25,7 @@ describe('Suggested templates - Should render', () => {
 	});
 
 	beforeEach(() => {
-		localStorage.removeItem('SHOW_N8N_SUGGESTED_TEMPLATES');
+		localStorage.removeItem('SHOW_FLOWEASE_SUGGESTED_TEMPLATES');
 		cy.intercept('GET', '/rest/settings', (req) => {
 			req.on('response', (res) => {
 				res.send({
@@ -43,8 +42,12 @@ describe('Suggested templates - Should render', () => {
 
 	it('should render suggested templates page in empty workflow list', () => {
 		WorkflowsListPage.getters.suggestedTemplatesPageContainer().should('exist');
-		WorkflowsListPage.getters.suggestedTemplatesCards().should('have.length', fixtureSections.sections[0].workflows.length);
-		WorkflowsListPage.getters.suggestedTemplatesSectionDescription().should('contain', fixtureSections.sections[0].description);
+		WorkflowsListPage.getters
+			.suggestedTemplatesCards()
+			.should('have.length', fixtureSections.sections[0].workflows.length);
+		WorkflowsListPage.getters
+			.suggestedTemplatesSectionDescription()
+			.should('contain', fixtureSections.sections[0].description);
 	});
 
 	it('should render suggested templates when there are workflows in the list', () => {
@@ -52,8 +55,12 @@ describe('Suggested templates - Should render', () => {
 		cy.createFixtureWorkflow('Test_workflow_1.json', 'Test workflow');
 		cy.visit(WorkflowsListPage.url);
 		WorkflowsListPage.getters.suggestedTemplatesSectionContainer().should('exist');
-		cy.contains(`Explore ${fixtureSections.sections[0].name.toLocaleLowerCase()} workflow templates`).should('exist');
-		WorkflowsListPage.getters.suggestedTemplatesCards().should('have.length', fixtureSections.sections[0].workflows.length);
+		cy.contains(
+			`Explore ${fixtureSections.sections[0].name.toLocaleLowerCase()} workflow templates`,
+		).should('exist');
+		WorkflowsListPage.getters
+			.suggestedTemplatesCards()
+			.should('have.length', fixtureSections.sections[0].workflows.length);
 	});
 
 	it('should enable users to signup for suggested templates templates', () => {
@@ -63,18 +70,19 @@ describe('Suggested templates - Should render', () => {
 		WorkflowsListPage.getters.suggestedTemplatesUseTemplateButton().click();
 		cy.url().should('include', '/workflow/new');
 		WorkflowPage.getters.infoToast().should('contain', 'Template coming soon!');
-		WorkflowPage.getters.infoToast().contains('Notify me when it\'s available').click();
-		WorkflowPage.getters.successToast().should('contain', 'We will contact you via email once this template is released.');
+		WorkflowPage.getters.infoToast().contains("Notify me when it's available").click();
+		WorkflowPage.getters
+			.successToast()
+			.should('contain', 'We will contact you via email once this template is released.');
 		cy.visit(WorkflowsListPage.url);
 		// Once users have signed up for a template, suggestions should not be shown again
 		WorkflowsListPage.getters.suggestedTemplatesSectionContainer().should('not.exist');
 	});
-
 });
 
 describe('Suggested templates - Should not render', () => {
 	beforeEach(() => {
-		localStorage.removeItem('SHOW_N8N_SUGGESTED_TEMPLATES');
+		localStorage.removeItem('SHOW_FLOWEASE_SUGGESTED_TEMPLATES');
 		cy.visit(WorkflowsListPage.url);
 	});
 

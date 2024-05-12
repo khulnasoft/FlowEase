@@ -8,7 +8,7 @@ import type {
 	IWorkflowTemplate,
 	TemplateSearchFacet,
 } from '@/Interface';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import { get } from '@/utils/apiUtils';
 
 function stringifyArray(arr: number[]) {

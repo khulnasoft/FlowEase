@@ -119,7 +119,7 @@ describe('Code node', () => {
 
 				askAiReq
 					.its('request.body')
-					.should('have.keys', ['question', 'model', 'context', 'n8nVersion']);
+					.should('have.keys', ['question', 'model', 'context', 'floweaseVersion']);
 
 				askAiReq.its('context').should('have.keys', ['schema', 'ndvPushRef', 'pushRef']);
 

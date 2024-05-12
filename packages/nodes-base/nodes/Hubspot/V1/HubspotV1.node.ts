@@ -12,8 +12,8 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { snakeCase } from 'change-case';
 import {

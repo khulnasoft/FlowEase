@@ -27,32 +27,32 @@
 				@click.left="onClick"
 			>
 				<i v-if="isTriggerNode" class="trigger-icon">
-					<n8n-tooltip placement="bottom">
+					<flowease-tooltip placement="bottom">
 						<template #content>
 							<span v-html="$locale.baseText('node.thisIsATriggerNode')" />
 						</template>
 						<FontAwesomeIcon icon="bolt" size="lg" />
-					</n8n-tooltip>
+					</flowease-tooltip>
 				</i>
 				<div
 					v-if="!data.disabled"
 					:class="{ 'node-info-icon': true, 'shift-icon': shiftOutputCount }"
 				>
 					<div v-if="hasIssues && !hideNodeIssues" class="node-issues" data-test-id="node-issues">
-						<n8n-tooltip :show-after="500" placement="bottom">
+						<flowease-tooltip :show-after="500" placement="bottom">
 							<template #content>
 								<TitledList :title="`${$locale.baseText('node.issues')}:`" :items="nodeIssues" />
 							</template>
 							<FontAwesomeIcon icon="exclamation-triangle" />
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</div>
 					<div v-else-if="waiting || nodeExecutionStatus === 'waiting'" class="waiting">
-						<n8n-tooltip placement="bottom">
+						<flowease-tooltip placement="bottom">
 							<template #content>
 								<div v-text="waiting"></div>
 							</template>
 							<FontAwesomeIcon icon="clock" />
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</div>
 					<span v-else-if="showPinnedDataInfo" class="node-pin-data-icon">
 						<FontAwesomeIcon icon="thumbtack" />
@@ -72,7 +72,7 @@
 				</div>
 
 				<div class="node-trigger-tooltip__wrapper">
-					<n8n-tooltip
+					<flowease-tooltip
 						placement="top"
 						:show-after="500"
 						:visible="showTriggerNodeTooltip"
@@ -82,8 +82,8 @@
 							<div v-text="getTriggerNodeTooltip"></div>
 						</template>
 						<span />
-					</n8n-tooltip>
-					<n8n-tooltip
+					</flowease-tooltip>
+					<flowease-tooltip
 						v-if="isTriggerNode"
 						placement="top"
 						:visible="pinDataDiscoveryTooltipVisible"
@@ -93,7 +93,7 @@
 							{{ $locale.baseText('node.discovery.pinData.canvas') }}
 						</template>
 						<span />
-					</n8n-tooltip>
+					</flowease-tooltip>
 				</div>
 
 				<NodeIcon
@@ -134,7 +134,7 @@
 			@mousedown.stop
 		>
 			<div class="node-options-inner">
-				<n8n-icon-button
+				<flowease-icon-button
 					v-if="!isConfigNode"
 					data-test-id="execute-node-button"
 					type="tertiary"
@@ -145,7 +145,7 @@
 					:title="$locale.baseText('node.testStep')"
 					@click="executeNode"
 				/>
-				<n8n-icon-button
+				<flowease-icon-button
 					data-test-id="disable-node-button"
 					type="tertiary"
 					text
@@ -154,7 +154,7 @@
 					:title="nodeDisabledTitle"
 					@click="toggleDisableNode"
 				/>
-				<n8n-icon-button
+				<flowease-icon-button
 					data-test-id="delete-node-button"
 					type="tertiary"
 					size="small"
@@ -163,7 +163,7 @@
 					:title="$locale.baseText('node.delete')"
 					@click="deleteNode"
 				/>
-				<n8n-icon-button
+				<flowease-icon-button
 					data-test-id="overflow-node-button"
 					type="tertiary"
 					size="small"
@@ -199,8 +199,8 @@ import type {
 	INodeTypeDescription,
 	ITaskData,
 	NodeOperationError,
-} from 'n8n-workflow';
-import { NodeConnectionType, NodeHelpers } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeConnectionType, NodeHelpers } from 'flowease-workflow';
 
 import NodeIcon from '@/components/NodeIcon.vue';
 import TitledList from '@/components/TitledList.vue';

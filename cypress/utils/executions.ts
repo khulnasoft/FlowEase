@@ -29,7 +29,7 @@ export function createMockNodeExecutionData(
 						];
 
 						return acc;
-				  }, {})
+					}, {})
 				: data,
 			source: [null],
 			...rest,

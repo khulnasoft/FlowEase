@@ -6,9 +6,9 @@ import type {
 	IHttpRequestOptions,
 	INode,
 	INodeProperties,
-} from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
-import { Workflow } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
+import { Workflow } from 'flowease-workflow';
 import { CredentialsHelper } from '@/CredentialsHelper';
 import { NodeTypes } from '@/NodeTypes';
 import { LoadNodesAndCredentials } from '@/LoadNodesAndCredentials';

@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError, NodeOperationError } from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 import { v4 as uuid } from 'uuid';
@@ -72,8 +72,8 @@ export class GoogleCalendar implements INodeType {
 			...eventFields,
 			{
 				displayName:
-					'This node will use the time zone set in n8n’s settings, but you can override this in the workflow settings',
-				name: 'useN8nTimeZone',
+					'This node will use the time zone set in flowease’s settings, but you can override this in the workflow settings',
+				name: 'useFloweaseTimeZone',
 				type: 'notice',
 				default: '',
 			},

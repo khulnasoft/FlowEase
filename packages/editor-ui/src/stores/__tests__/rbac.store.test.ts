@@ -5,7 +5,8 @@ import { hasScope } from '@flowease/permissions';
 
 vi.mock('@flowease/permissions', async () => {
 	// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-	const { hasScope } = await vi.importActual<typeof import('@flowease/permissions')>('@flowease/permissions');
+	const { hasScope } =
+		await vi.importActual<typeof import('@flowease/permissions')>('@flowease/permissions');
 	return {
 		hasScope: vi.fn().mockImplementation(hasScope),
 	};

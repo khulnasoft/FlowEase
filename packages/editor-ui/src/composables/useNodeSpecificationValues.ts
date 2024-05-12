@@ -1,4 +1,4 @@
-import type { INodePropertyTypeOptions, ResourceMapperTypeOptions } from 'n8n-workflow';
+import type { INodePropertyTypeOptions, ResourceMapperTypeOptions } from 'flowease-workflow';
 import { computed } from 'vue';
 import { i18n as locale } from '@/plugins/i18n';
 

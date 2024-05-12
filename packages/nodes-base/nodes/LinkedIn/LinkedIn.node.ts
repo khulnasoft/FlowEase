@@ -6,7 +6,7 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { linkedInApiRequest } from './GenericFunctions';
 import { postFields, postOperations } from './PostDescription';
 

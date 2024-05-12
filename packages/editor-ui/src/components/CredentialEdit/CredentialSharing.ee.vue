@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.container">
 		<div v-if="!isSharingEnabled">
-			<n8n-action-box
+			<flowease-action-box
 				:heading="
 					$locale.baseText(
 						uiStore.contextBasedTranslationKeys.credentials.sharing.unavailable.title,
@@ -21,7 +21,7 @@
 			/>
 		</div>
 		<div v-else-if="isDefaultUser">
-			<n8n-action-box
+			<flowease-action-box
 				:heading="$locale.baseText('credentialEdit.credentialSharing.isDefaultUser.title')"
 				:description="
 					$locale.baseText('credentialEdit.credentialSharing.isDefaultUser.description')
@@ -31,17 +31,17 @@
 			/>
 		</div>
 		<div v-else>
-			<n8n-info-tip v-if="credentialPermissions.isOwner" :bold="false" class="mb-s">
+			<flowease-info-tip v-if="credentialPermissions.isOwner" :bold="false" class="mb-s">
 				{{ $locale.baseText('credentialEdit.credentialSharing.info.owner') }}
-			</n8n-info-tip>
-			<n8n-info-tip v-if="!credentialPermissions.share" :bold="false" class="mb-s">
+			</flowease-info-tip>
+			<flowease-info-tip v-if="!credentialPermissions.share" :bold="false" class="mb-s">
 				{{
 					$locale.baseText('credentialEdit.credentialSharing.info.sharee', {
 						interpolate: { credentialOwnerName },
 					})
 				}}
-			</n8n-info-tip>
-			<n8n-info-tip
+			</flowease-info-tip>
+			<flowease-info-tip
 				v-if="
 					credentialPermissions.read &&
 					credentialPermissions.share &&
@@ -55,8 +55,8 @@
 						{{ $locale.baseText('credentialEdit.credentialSharing.info.notShared') }}
 					</template>
 				</i18n-t>
-			</n8n-info-tip>
-			<n8n-user-select
+			</flowease-info-tip>
+			<flowease-user-select
 				v-if="credentialPermissions.share"
 				class="mb-s"
 				size="large"
@@ -67,10 +67,10 @@
 				@update:model-value="onAddSharee"
 			>
 				<template #prefix>
-					<n8n-icon icon="search" />
+					<flowease-icon icon="search" />
 				</template>
-			</n8n-user-select>
-			<n8n-users-list
+			</flowease-user-select>
+			<flowease-users-list
 				:actions="usersListActions"
 				:users="sharedWithList"
 				:current-user-id="usersStore.currentUser.id"

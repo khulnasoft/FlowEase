@@ -1,7 +1,7 @@
 <template>
 	<el-row class="tags-header">
 		<el-col :span="10">
-			<n8n-input
+			<flowease-input
 				:placeholder="$locale.baseText('tagsTableHeader.searchTags')"
 				:model-value="search"
 				:disabled="disabled"
@@ -12,10 +12,10 @@
 				<template #prefix>
 					<font-awesome-icon icon="search" />
 				</template>
-			</n8n-input>
+			</flowease-input>
 		</el-col>
 		<el-col :span="14">
-			<n8n-button
+			<flowease-button
 				:disabled="disabled"
 				icon="plus"
 				:label="$locale.baseText('tagsTableHeader.addNew')"

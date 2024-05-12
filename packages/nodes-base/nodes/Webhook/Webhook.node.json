@@ -11,14 +11,14 @@
 		],
 		"generic": [
 			{
-				"label": "Learn how to automatically cross-post your content with n8n",
+				"label": "Learn how to automatically cross-post your content with flowease",
 				"icon": "✍️",
-				"url": "https://flowease.khulnasoft.com/blog/learn-how-to-automatically-cross-post-your-content-with-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/learn-how-to-automatically-cross-post-your-content-with-flowease/"
 			},
 			{
-				"label": "Running n8n on ships: An interview with Maranics",
+				"label": "Running flowease on ships: An interview with Maranics",
 				"icon": "🛳",
-				"url": "https://flowease.khulnasoft.com/blog/running-n8n-on-ships-an-interview-with-maranics/"
+				"url": "https://flowease.khulnasoft.com/blog/running-flowease-on-ships-an-interview-with-maranics/"
 			},
 			{
 				"label": "How to build a low-code, self-hosted URL shortener in 3 steps",
@@ -36,33 +36,33 @@
 				"url": "https://flowease.khulnasoft.com/blog/5-tasks-you-can-automate-with-notion-api/"
 			},
 			{
-				"label": "How a digital strategist uses n8n for online marketing",
+				"label": "How a digital strategist uses flowease for online marketing",
 				"icon": "💻",
-				"url": "https://flowease.khulnasoft.com/blog/how-a-digital-strategist-uses-n8n-for-online-marketing/"
+				"url": "https://flowease.khulnasoft.com/blog/how-a-digital-strategist-uses-flowease-for-online-marketing/"
 			},
 			{
-				"label": "The ultimate guide to automate your video collaboration with Whereby, Mattermost, and n8n",
+				"label": "The ultimate guide to automate your video collaboration with Whereby, Mattermost, and flowease",
 				"icon": "📹",
-				"url": "https://flowease.khulnasoft.com/blog/the-ultimate-guide-to-automate-your-video-collaboration-with-whereby-mattermost-and-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/the-ultimate-guide-to-automate-your-video-collaboration-with-whereby-mattermost-and-flowease/"
 			},
 			{
-				"label": "How to automatically give kudos to contributors with GitHub, Slack, and n8n",
+				"label": "How to automatically give kudos to contributors with GitHub, Slack, and flowease",
 				"icon": "👏",
-				"url": "https://flowease.khulnasoft.com/blog/how-to-automatically-give-kudos-to-contributors-with-github-slack-and-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/how-to-automatically-give-kudos-to-contributors-with-github-slack-and-flowease/"
 			},
 			{
-				"label": "5 workflow automations for Mattermost that we love at n8n",
+				"label": "5 workflow automations for Mattermost that we love at flowease",
 				"icon": "🤖",
-				"url": "https://flowease.khulnasoft.com/blog/5-workflow-automations-for-mattermost-that-we-love-at-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/5-workflow-automations-for-mattermost-that-we-love-at-flowease/"
 			},
 			{
-				"label": "Why this Product Manager loves workflow automation with n8n",
+				"label": "Why this Product Manager loves workflow automation with flowease",
 				"icon": "🧠",
-				"url": "https://flowease.khulnasoft.com/blog/why-this-product-manager-loves-workflow-automation-with-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/why-this-product-manager-loves-workflow-automation-with-flowease/"
 			},
 			{
 				"label": "How to automate every step of an incident response workflow",
-				"url": "https://flowease.khulnasoft.com/blog/creating-custom-incident-response-workflows-with-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/creating-custom-incident-response-workflows-with-flowease/"
 			},
 			{
 				"label": "Learn to Build Powerful API Endpoints Using Webhooks",
@@ -75,9 +75,9 @@
 				"url": "https://flowease.khulnasoft.com/blog/learn-how-to-use-webhooks-with-mattermost-slash-commands/"
 			},
 			{
-				"label": "How Goomer automated their operations with over 200 n8n workflows",
+				"label": "How Goomer automated their operations with over 200 flowease workflows",
 				"icon": "🛵",
-				"url": "https://flowease.khulnasoft.com/blog/how-goomer-automated-their-operations-with-over-200-n8n-workflows/"
+				"url": "https://flowease.khulnasoft.com/blog/how-goomer-automated-their-operations-with-over-200-flowease-workflows/"
 			}
 		]
 	},

@@ -45,20 +45,20 @@ jobs:
           node scripts/trim-fe-packageJson.js
           sed -i "s/default: 'dev'/default: 'stable'/g" packages/cli/dist/config/schema.js
           pnpm publish -r --publish-branch ${{github.event.pull_request.base.ref}} --access public --tag rc --no-git-checks
-          npm dist-tag rm n8n rc
+          npm dist-tag rm flowease rc
 
       - name: Create a Release on GitHub
         uses: ncipollo/release-action@v1
         with:
           commit: ${{github.event.pull_request.base.ref}}
-          tag: 'n8n@${{env.RELEASE}}'
+          tag: 'flowease@${{env.RELEASE}}'
           prerelease: true
           makeLatest: false
           body: ${{github.event.pull_request.body}}
 
       - name: Trigger a release note
         continue-on-error: true
-        run: curl -u docsWorkflows:${{ secrets.N8N_WEBHOOK_DOCS_PASSWORD }} --request GET 'https://internal.users.n8n.cloud/webhook/trigger-release-note' --header 'Content-Type:application/json' --data '{"version":"${{env.RELEASE}}"}'
+        run: curl -u docsWorkflows:${{ secrets.FLOWEASE_WEBHOOK_DOCS_PASSWORD }} --request GET 'https://internal.users.flowease.cloud/webhook/trigger-release-note' --header 'Content-Type:application/json' --data '{"version":"${{env.RELEASE}}"}'
 
       # - name: Merge Release into 'master'
       #   run: |
@@ -66,6 +66,6 @@ jobs:
       #     git checkout --track origin/master
       #     git config user.name "Jan Oberhauser"
       #     git config user.email jan.oberhauser@gmail.com
-      #     git merge --ff n8n@${{env.RELEASE}}
+      #     git merge --ff flowease@${{env.RELEASE}}
       #     git push origin master
       #     git push origin :${{github.event.pull_request.base.ref}}

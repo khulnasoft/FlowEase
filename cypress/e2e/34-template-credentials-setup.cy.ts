@@ -29,16 +29,23 @@ Cypress.on('window:before:load', (win) => {
 
 describe('Template credentials setup', () => {
 	beforeEach(() => {
-		cy.intercept('GET', `https://api.flowease.khulnasoft.com/api/templates/workflows/${testTemplate.id}`, {
-			fixture: testTemplate.fixture,
-		});
+		cy.intercept(
+			'GET',
+			`https://api.flowease.khulnasoft.com/api/templates/workflows/${testTemplate.id}`,
+			{
+				fixture: testTemplate.fixture,
+			},
+		);
 		cy.intercept('GET', '**/rest/settings', (req) => {
 			// Disable cache
-			delete req.headers['if-none-match']
+			delete req.headers['if-none-match'];
 			req.reply((res) => {
 				if (res.body.data) {
 					// Disable custom templates host if it has been overridden by another intercept
-					res.body.data.templates = { enabled: true, host: 'https://api.flowease.khulnasoft.com/api/' };
+					res.body.data.templates = {
+						enabled: true,
+						host: 'https://api.flowease.khulnasoft.com/api/',
+					};
 				}
 			});
 		}).as('settingsRequest');
@@ -125,9 +132,13 @@ describe('Template credentials setup', () => {
 
 	it('should work with a template that has no credentials (ADO-1603)', () => {
 		const templateWithoutCreds = templateCredentialsSetupPage.testData.templateWithoutCredentials;
-		cy.intercept('GET', `https://api.flowease.khulnasoft.com/api/templates/workflows/${templateWithoutCreds.id}`, {
-			fixture: templateWithoutCreds.fixture,
-		});
+		cy.intercept(
+			'GET',
+			`https://api.flowease.khulnasoft.com/api/templates/workflows/${templateWithoutCreds.id}`,
+			{
+				fixture: templateWithoutCreds.fixture,
+			},
+		);
 		templateCredentialsSetupPage.visitTemplateCredentialSetupPage(templateWithoutCreds.id);
 
 		const expectedAppNames = ['1. Email (IMAP)', '2. Nextcloud'];

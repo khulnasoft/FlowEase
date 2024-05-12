@@ -13,8 +13,8 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	ITriggerResponse,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import type { ImapSimple, ImapSimpleOptions, Message } from '@flowease/imap';
 import { connect as imapConnect, getParts } from '@flowease/imap';
@@ -328,7 +328,7 @@ export class EmailReadImapV1 implements INodeType {
 				attachmentPromise = imapConnection
 					.getPartData(message, attachmentPart)
 					.then(async (partData) => {
-						// Return it in the format n8n expects
+						// Return it in the format flowease expects
 						return await this.helpers.prepareBinaryData(
 							Buffer.from(partData),
 							attachmentPart.disposition.params.filename as string,
@@ -557,7 +557,7 @@ export class EmailReadImapV1 implements INodeType {
 							this.logger.error('Email Read Imap node encountered an error fetching new emails', {
 								error,
 							});
-							// Wait with resolving till the returnedPromise got resolved, else n8n will be unhappy
+							// Wait with resolving till the returnedPromise got resolved, else flowease will be unhappy
 							// if it receives an error before the workflow got activated
 							await returnedPromise.promise().then(() => {
 								this.emitError(error as Error);

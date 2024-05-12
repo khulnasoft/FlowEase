@@ -1,5 +1,5 @@
-import type { IExecuteFunctions, ILoadOptionsFunctions, IDataObject } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions, ILoadOptionsFunctions, IDataObject } from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { utils as xlsxUtils } from 'xlsx';
 

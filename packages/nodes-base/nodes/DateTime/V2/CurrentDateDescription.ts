@@ -1,10 +1,10 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { includeInputFields } from './common.descriptions';
 
 export const CurrentDateDescription: INodeProperties[] = [
 	{
 		displayName:
-			'You can also refer to the current date in n8n expressions by using <code>{{$now}}</code> or <code>{{$today}}</code>. <a target="_blank" href="https://docs.flowease.khulnasoft.com/code-examples/expressions/luxon/">More info</a>',
+			'You can also refer to the current date in flowease expressions by using <code>{{$now}}</code> or <code>{{$today}}</code>. <a target="_blank" href="https://docs.flowease.khulnasoft.com/code-examples/expressions/luxon/">More info</a>',
 		name: 'notice',
 		type: 'notice',
 		default: '',
@@ -59,7 +59,7 @@ export const CurrentDateDescription: INodeProperties[] = [
 				placeholder: 'America/New_York',
 				default: '',
 				description:
-					'The timezone to use. If not set, the timezone of the n8n instance will be used. Use ‘GMT’ for +00:00 timezone.',
+					'The timezone to use. If not set, the timezone of the flowease instance will be used. Use ‘GMT’ for +00:00 timezone.',
 			},
 		],
 	},

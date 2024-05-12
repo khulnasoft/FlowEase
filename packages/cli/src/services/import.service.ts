@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
 import { v4 as uuid } from 'uuid';
-import { type INode, type INodeCredentialsDetails } from 'n8n-workflow';
+import { type INode, type INodeCredentialsDetails } from 'flowease-workflow';
 
 import { Logger } from '@/Logger';
 import * as Db from '@/Db';

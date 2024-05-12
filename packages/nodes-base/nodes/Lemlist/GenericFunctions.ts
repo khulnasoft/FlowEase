@@ -5,7 +5,7 @@ import type {
 	ILoadOptionsFunctions,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { capitalCase } from 'change-case';
 

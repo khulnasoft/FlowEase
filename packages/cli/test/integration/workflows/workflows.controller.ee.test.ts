@@ -1,7 +1,7 @@
 import Container from 'typedi';
 import type { SuperAgentTest } from 'supertest';
 import { v4 as uuid } from 'uuid';
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'flowease-workflow';
 
 import type { User } from '@db/entities/User';
 import { WorkflowHistoryRepository } from '@db/repositories/workflowHistory.repository';

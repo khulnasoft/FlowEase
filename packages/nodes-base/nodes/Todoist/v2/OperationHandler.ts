@@ -1,5 +1,5 @@
-import type { IDataObject } from 'n8n-workflow';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 import { v4 as uuid } from 'uuid';
 import type { Context } from '../GenericFunctions';
 import { FormatDueDatetime, todoistApiRequest, todoistSyncRequest } from '../GenericFunctions';

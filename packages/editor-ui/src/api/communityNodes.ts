@@ -1,5 +1,5 @@
 import type { IRestApiContext } from '@/Interface';
-import type { PublicInstalledPackage } from 'n8n-workflow';
+import type { PublicInstalledPackage } from 'flowease-workflow';
 import { get, post, makeRestApiRequest } from '@/utils/apiUtils';
 
 export async function getInstalledCommunityNodes(

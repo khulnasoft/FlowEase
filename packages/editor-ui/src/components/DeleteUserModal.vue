@@ -10,63 +10,65 @@
 		<template #content>
 			<div>
 				<div v-if="isPending">
-					<n8n-text color="text-base">{{
+					<flowease-text color="text-base">{{
 						$locale.baseText('settings.users.confirmUserDeletion')
-					}}</n8n-text>
+					}}</flowease-text>
 				</div>
 				<div v-else :class="$style.content">
 					<div>
-						<n8n-text color="text-base">{{
+						<flowease-text color="text-base">{{
 							$locale.baseText('settings.users.confirmDataHandlingAfterDeletion')
-						}}</n8n-text>
+						}}</flowease-text>
 					</div>
 					<el-radio
 						:model-value="operation"
 						label="transfer"
 						@update:model-value="() => setOperation('transfer')"
 					>
-						<n8n-text color="text-dark">{{
+						<flowease-text color="text-dark">{{
 							$locale.baseText('settings.users.transferWorkflowsAndCredentials')
-						}}</n8n-text>
+						}}</flowease-text>
 					</el-radio>
 					<div v-if="operation === 'transfer'" :class="$style.optionInput">
-						<n8n-input-label :label="$locale.baseText('settings.users.userToTransferTo')">
-							<n8n-user-select
+						<flowease-input-label :label="$locale.baseText('settings.users.userToTransferTo')">
+							<flowease-user-select
 								:users="usersStore.allUsers"
 								:model-value="transferId"
 								:ignore-ids="ignoreIds"
 								:current-user-id="usersStore.currentUserId"
 								@update:model-value="setTransferId"
 							/>
-						</n8n-input-label>
+						</flowease-input-label>
 					</div>
 					<el-radio
 						:model-value="operation"
 						label="delete"
 						@update:model-value="() => setOperation('delete')"
 					>
-						<n8n-text color="text-dark">{{
+						<flowease-text color="text-dark">{{
 							$locale.baseText('settings.users.deleteWorkflowsAndCredentials')
-						}}</n8n-text>
+						}}</flowease-text>
 					</el-radio>
 					<div
 						v-if="operation === 'delete'"
 						:class="$style.optionInput"
 						data-test-id="delete-data-input"
 					>
-						<n8n-input-label :label="$locale.baseText('settings.users.deleteConfirmationMessage')">
-							<n8n-input
+						<flowease-input-label
+							:label="$locale.baseText('settings.users.deleteConfirmationMessage')"
+						>
+							<flowease-input
 								:model-value="deleteConfirmText"
 								:placeholder="$locale.baseText('settings.users.deleteConfirmationText')"
 								@update:model-value="setConfirmText"
 							/>
-						</n8n-input-label>
+						</flowease-input-label>
 					</div>
 				</div>
 			</div>
 		</template>
 		<template #footer>
-			<n8n-button
+			<flowease-button
 				:loading="loading"
 				:disabled="!enabled"
 				:label="$locale.baseText('settings.users.delete')"

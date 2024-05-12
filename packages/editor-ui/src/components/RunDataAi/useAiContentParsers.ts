@@ -1,5 +1,5 @@
-import type { IDataObject, INodeExecutionData } from 'n8n-workflow';
-import { isObjectEmpty, NodeConnectionType } from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData } from 'flowease-workflow';
+import { isObjectEmpty, NodeConnectionType } from 'flowease-workflow';
 
 interface MemoryMessage {
 	lc: number;

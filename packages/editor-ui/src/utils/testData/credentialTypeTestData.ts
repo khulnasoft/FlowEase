@@ -1,7 +1,7 @@
 /**
  * Credential type test data
  */
-import type { ICredentialType } from 'n8n-workflow';
+import type { ICredentialType } from 'flowease-workflow';
 
 export const newCredentialType = (name: string): ICredentialType => ({
 	name,

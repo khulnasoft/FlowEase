@@ -2,7 +2,7 @@
 
 # flowease-design-system
 
-A component system for [n8n](https://flowease.khulnasoft.com) using Storybook to preview.
+A component system for [flowease](https://flowease.khulnasoft.com) using Storybook to preview.
 
 ## Project setup
 
@@ -48,7 +48,7 @@ pnpm watch:theme
 
 ## License
 
-n8n is [fair-code](https://faircode.io) distributed under the [**Sustainable Use License**](https://github.com/khulnasoft/flowease/blob/master/packages/cli/LICENSE.md).
+flowease is [fair-code](https://faircode.io) distributed under the [**Sustainable Use License**](https://github.com/khulnasoft/flowease/blob/master/packages/cli/LICENSE.md).
 
 Proprietary licenses are available for enterprise customers. [Get in touch](mailto:license@flowease.khulnasoft.com)
 

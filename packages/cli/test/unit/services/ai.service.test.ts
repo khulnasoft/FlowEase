@@ -1,4 +1,4 @@
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 import { AIService } from '@/services/ai.service';
 import config from '@/config';
 import {
@@ -43,7 +43,9 @@ jest.mock('@pinecone-database/pinecone', () => ({
 }));
 
 jest.mock('@/services/ai/providers/openai', () => {
-	const modelInvoke = jest.fn().mockImplementation(() => ({ curl: 'curl -X GET https://flowease.khulnasoft.com' }));
+	const modelInvoke = jest
+		.fn()
+		.mockImplementation(() => ({ curl: 'curl -X GET https://flowease.khulnasoft.com' }));
 
 	return {
 		AIProviderOpenAI: jest.fn().mockImplementation(() => {
@@ -210,8 +212,12 @@ describe('AIService', () => {
 
 		it('should replace boolean and number placeholders in the curl command', () => {
 			const aiService = new AIService();
-			const result = { curl: 'curl -X GET https://flowease.khulnasoft.com -d "{ "key": {{value}} }"' };
-			const expected = { curl: 'curl -X GET https://flowease.khulnasoft.com -d "{ "key": "{{value}}" }"' };
+			const result = {
+				curl: 'curl -X GET https://flowease.khulnasoft.com -d "{ "key": {{value}} }"',
+			};
+			const expected = {
+				curl: 'curl -X GET https://flowease.khulnasoft.com -d "{ "key": "{{value}}" }"',
+			};
 			const validatedResult = aiService.validateCurl(result);
 			expect(validatedResult).toEqual(expected);
 		});

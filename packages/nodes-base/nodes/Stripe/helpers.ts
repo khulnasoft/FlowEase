@@ -9,7 +9,7 @@ import type {
 	INodePropertyOptions,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 /**
  * Make an API request to Stripe
@@ -38,7 +38,7 @@ export async function stripeApiRequest(
 }
 
 /**
- * Convert n8n's address object into a Stripe API request shipping object.
+ * Convert flowease's address object into a Stripe API request shipping object.
  */
 function adjustAddress(addressFields: { address: { details: IDataObject } }) {
 	if (!addressFields.address) return addressFields;
@@ -50,7 +50,7 @@ function adjustAddress(addressFields: { address: { details: IDataObject } }) {
 }
 
 /**
- * Convert n8n's `fixedCollection` metadata object into a Stripe API request metadata object.
+ * Convert flowease's `fixedCollection` metadata object into a Stripe API request metadata object.
  */
 export function adjustMetadata(fields: {
 	metadata?: { metadataProperties: Array<{ key: string; value: string }> };
@@ -70,7 +70,7 @@ export function adjustMetadata(fields: {
 }
 
 /**
- * Convert n8n's shipping object into a Stripe API request shipping object.
+ * Convert flowease's shipping object into a Stripe API request shipping object.
  */
 function adjustShipping(shippingFields: {
 	shipping?: { shippingProperties: Array<{ address: { details: IDataObject }; name: string }> };
@@ -89,12 +89,12 @@ function adjustShipping(shippingFields: {
 }
 
 /**
- * Make n8n's charge fields compliant with the Stripe API request object.
+ * Make flowease's charge fields compliant with the Stripe API request object.
  */
 export const adjustChargeFields = flow([adjustShipping, adjustMetadata]);
 
 /**
- * Make n8n's customer fields compliant with the Stripe API request object.
+ * Make flowease's customer fields compliant with the Stripe API request object.
  */
 export const adjustCustomerFields = flow([adjustShipping, adjustAddress, adjustMetadata]);
 

@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import { customerIoApiRequest, validateJSON } from './GenericFunctions';
 import { campaignFields, campaignOperations } from './CampaignDescription';
 import { customerFields, customerOperations } from './CustomerDescription';

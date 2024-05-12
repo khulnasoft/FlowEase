@@ -18,7 +18,7 @@ import { useWorkflowHistoryStore } from '@/stores/workflowHistory.store';
 import { useUIStore } from '@/stores/ui.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { telemetry } from '@/plugins/telemetry';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 
 type WorkflowHistoryActionRecord = {
 	[K in Uppercase<WorkflowHistoryActionTypes[number]>]: Lowercase<K>;
@@ -316,15 +316,15 @@ watchEffect(async () => {
 </script>
 <template>
 	<div :class="$style.view">
-		<n8n-heading :class="$style.header" tag="h2" size="medium">
+		<flowease-heading :class="$style.header" tag="h2" size="medium">
 			{{ activeWorkflow?.name }}
-		</n8n-heading>
+		</flowease-heading>
 		<div :class="$style.corner">
-			<n8n-heading tag="h2" size="medium" bold>
+			<flowease-heading tag="h2" size="medium" bold>
 				{{ i18n.baseText('workflowHistory.title') }}
-			</n8n-heading>
+			</flowease-heading>
 			<router-link :to="editorRoute" data-test-id="workflow-history-close-button">
-				<n8n-button type="tertiary" icon="times" size="small" text square />
+				<flowease-button type="tertiary" icon="times" size="small" text square />
 			</router-link>
 		</div>
 		<div :class="$style.listComponentWrapper">

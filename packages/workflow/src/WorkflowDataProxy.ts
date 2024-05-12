@@ -479,10 +479,10 @@ export class WorkflowDataProxy {
 							itemIndex: that.itemIndex,
 						});
 					}
-					if (process.env.N8N_BLOCK_ENV_ACCESS_IN_NODE === 'true') {
+					if (process.env.FLOWEASE_BLOCK_ENV_ACCESS_IN_NODE === 'true') {
 						throw new ExpressionError('access to env vars denied', {
 							causeDetailed:
-								'If you need access please contact the administrator to remove the environment variable ‘N8N_BLOCK_ENV_ACCESS_IN_NODE‘',
+								'If you need access please contact the administrator to remove the environment variable ‘FLOWEASE_BLOCK_ENV_ACCESS_IN_NODE‘',
 							runIndex: that.runIndex,
 							itemIndex: that.itemIndex,
 						});

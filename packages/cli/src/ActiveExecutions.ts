@@ -5,8 +5,8 @@ import type {
 	IExecuteResponsePromiseData,
 	IRun,
 	ExecutionStatus,
-} from 'n8n-workflow';
-import { ApplicationError, createDeferredPromise, sleep } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ApplicationError, createDeferredPromise, sleep } from 'flowease-workflow';
 
 import type {
 	ExecutionPayload,

@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, IDataObject, INodeExecutionData } from 'n8n-workflow';
+import type { IExecuteFunctions, IDataObject, INodeExecutionData } from 'flowease-workflow';
 import { apiRequest } from '../../transport';
 import type { GoogleSheet } from '../../helpers/GoogleSheet';
 import { wrapData } from '../../../../../../utils/utilities';

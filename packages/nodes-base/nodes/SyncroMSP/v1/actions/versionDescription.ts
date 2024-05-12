@@ -1,5 +1,5 @@
 /* eslint-disable flowease-nodes-base/node-filename-against-convention */
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
 
 import * as customer from './customer';
 import * as ticket from './ticket';

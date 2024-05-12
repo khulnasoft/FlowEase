@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { logWrapper } from '../../../utils/logWrapper';
 import { getConnectionHintNoticeField } from '../../../utils/sharedFields';
 import { ItemListOutputParser } from './ItemListOutputParser';
@@ -30,7 +30,7 @@ export class OutputParserItemList implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.outputparseritemlist/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.outputparseritemlist/',
 					},
 				],
 			},

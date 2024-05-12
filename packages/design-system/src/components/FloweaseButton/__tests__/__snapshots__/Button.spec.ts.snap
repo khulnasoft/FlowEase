@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`components > FloweaseButton > props > icon > should render icon button 1`] = `"<button class="button button primary medium withIcon" aria-live="polite"><span class="icon"><flowease-icon-stub icon="plus-circle" size="medium" spin="false"></flowease-icon-stub></span><span>Button</span></button>"`;
+
+exports[`components > FloweaseButton > props > loading > should render loading spinner 1`] = `"<button class="button button primary medium loading withIcon" disabled="" aria-busy="true" aria-live="polite"><span class="icon"><flowease-spinner-stub size="medium" type="dots"></flowease-spinner-stub></span><span>Button</span></button>"`;
+
+exports[`components > FloweaseButton > props > square > should render square button 1`] = `
+"<button class="button button primary medium square" aria-live="polite">
+  <!--v-if--><span>48</span>
+</button>"
+`;
+
+exports[`components > FloweaseButton > should render correctly 1`] = `
+"<button class="button button primary medium" aria-live="polite">
+  <!--v-if--><span>Button</span>
+</button>"
+`;

@@ -6,7 +6,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { stravaApiRequest } from './GenericFunctions';
 
@@ -176,7 +176,7 @@ export class StravaTrigger implements INodeType {
 										'DELETE',
 										`/push_subscriptions/${webhooks[0].id}`,
 									);
-									// now there is room create a subscription with the n8n data
+									// now there is room create a subscription with the flowease data
 									const requestBody = {
 										callback_url: webhookUrl,
 										verify_token: randomBytes(20).toString('hex'),

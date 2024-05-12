@@ -193,7 +193,7 @@ describe('NDV', () => {
 			ndv.getters.backToCanvas().click();
 			workflowPage.getters.canvasNodeByName('Set').click();
 			workflowPage.actions.addNodeToCanvas(
-				'Customer Datastore (n8n training)',
+				'Customer Datastore (flowease training)',
 				true,
 				true,
 				'Get All People',

@@ -9,7 +9,7 @@ import {
 	type INode,
 	type NodeParameterValue,
 	type FilterOptionsValue,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { computed, reactive, watch } from 'vue';
 import { useNDVStore } from '@/stores/ndv.store';
 import {
@@ -149,7 +149,7 @@ function getIssues(index: number): string[] {
 		:class="{ [$style.filter]: true, [$style.single]: singleCondition }"
 		:data-test-id="`filter-${parameter.name}`"
 	>
-		<n8n-input-label
+		<flowease-input-label
 			v-if="!singleCondition"
 			:label="parameter.displayName"
 			:underline="true"
@@ -158,7 +158,7 @@ function getIssues(index: number): string[] {
 			size="small"
 			color="text-dark"
 		>
-		</n8n-input-label>
+		</flowease-input-label>
 		<div :class="$style.content">
 			<div :class="$style.conditions">
 				<div v-for="(condition, index) of state.paramValue.conditions" :key="condition.id">
@@ -187,7 +187,7 @@ function getIssues(index: number): string[] {
 				</div>
 			</div>
 			<div v-if="!singleCondition && !readOnly" :class="$style.addConditionWrapper">
-				<n8n-button
+				<flowease-button
 					type="tertiary"
 					block
 					:class="$style.addCondition"

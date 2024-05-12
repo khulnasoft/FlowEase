@@ -1,4 +1,4 @@
-import type { IDataObject, IExecuteFunctions, IGetNodeParameterOptions, INode } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, IGetNodeParameterOptions, INode } from 'flowease-workflow';
 
 import { get } from 'lodash';
 import { constructExecutionMetaData, returnJsonArray } from 'flowease-core';

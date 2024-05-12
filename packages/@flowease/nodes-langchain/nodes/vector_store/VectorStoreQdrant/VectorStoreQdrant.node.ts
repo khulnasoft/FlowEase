@@ -1,4 +1,4 @@
-import { type INodeProperties } from 'n8n-workflow';
+import { type INodeProperties } from 'flowease-workflow';
 import type { QdrantLibArgs } from '@langchain/community/vectorstores/qdrant';
 import { QdrantVectorStore } from '@langchain/community/vectorstores/qdrant';
 import type { Schemas as QdrantSchemas } from '@qdrant/js-client-rest';
@@ -35,7 +35,7 @@ export const VectorStoreQdrant = createVectorStoreNode({
 		description: 'Work with your data in a Qdrant collection',
 		icon: 'file:qdrant.svg',
 		docsUrl:
-			'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreqdrant/',
+			'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstoreqdrant/',
 		credentials: [
 			{
 				name: 'qdrantApi',

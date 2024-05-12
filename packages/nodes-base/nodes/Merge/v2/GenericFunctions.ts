@@ -1,11 +1,11 @@
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 import type {
 	GenericValue,
 	IBinaryKeyData,
 	IDataObject,
 	INodeExecutionData,
 	IPairedItemData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import assign from 'lodash/assign';
 import assignWith from 'lodash/assignWith';

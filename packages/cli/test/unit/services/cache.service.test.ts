@@ -1,6 +1,6 @@
 import { CacheService } from '@/services/cache/cache.service';
 import config from '@/config';
-import { sleep } from 'n8n-workflow';
+import { sleep } from 'flowease-workflow';
 
 jest.mock('ioredis', () => {
 	const Redis = require('ioredis-mock');

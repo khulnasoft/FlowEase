@@ -5,7 +5,7 @@ import type {
 	IHttpRequestMethods,
 	ILoadOptionsFunctions,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 

@@ -1,4 +1,4 @@
-import type { INodeExecutionData, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
+import type { INodeExecutionData, IExecuteFunctions, INodeProperties } from 'flowease-workflow';
 import { theHiveApiRequest } from '../../transport';
 import { alertRLC } from '../../descriptions';
 import { updateDisplayOptions, wrapData } from '@utils/utilities';

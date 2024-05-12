@@ -2,7 +2,7 @@ import path from 'path';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { createHash, randomBytes } from 'crypto';
 import { Service } from 'typedi';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 
 interface ReadOnlySettings {
 	encryptionKey: string;
@@ -20,19 +20,19 @@ const inTest = process.env.NODE_ENV === 'test';
 export class InstanceSettings {
 	private readonly userHome = this.getUserHome();
 
-	/** The path to the n8n folder in which all n8n related data gets saved */
-	readonly n8nFolder = path.join(this.userHome, '.n8n');
+	/** The path to the flowease folder in which all flowease related data gets saved */
+	readonly floweaseFolder = path.join(this.userHome, '.flowease');
 
 	/** The path to the folder where all generated static assets are copied to */
-	readonly staticCacheDir = path.join(this.userHome, '.cache/n8n/public');
+	readonly staticCacheDir = path.join(this.userHome, '.cache/flowease/public');
 
 	/** The path to the folder containing custom nodes and credentials */
-	readonly customExtensionDir = path.join(this.n8nFolder, 'custom');
+	readonly customExtensionDir = path.join(this.floweaseFolder, 'custom');
 
 	/** The path to the folder containing installed nodes (like community nodes) */
-	readonly nodesDownloadDir = path.join(this.n8nFolder, 'nodes');
+	readonly nodesDownloadDir = path.join(this.floweaseFolder, 'nodes');
 
-	private readonly settingsFile = path.join(this.n8nFolder, 'config');
+	private readonly settingsFile = path.join(this.floweaseFolder, 'config');
 
 	private settings = this.loadOrCreate();
 
@@ -56,7 +56,7 @@ export class InstanceSettings {
 	 */
 	private getUserHome() {
 		const homeVarName = process.platform === 'win32' ? 'USERPROFILE' : 'HOME';
-		return process.env.N8N_USER_FOLDER ?? process.env[homeVarName] ?? process.cwd();
+		return process.env.FLOWEASE_USER_FOLDER ?? process.env[homeVarName] ?? process.cwd();
 	}
 
 	/**
@@ -68,31 +68,34 @@ export class InstanceSettings {
 			const content = readFileSync(this.settingsFile, 'utf8');
 
 			const settings = jsonParse<Settings>(content, {
-				errorMessage: `Error parsing n8n-config file "${this.settingsFile}". It does not seem to be valid JSON.`,
+				errorMessage: `Error parsing flowease-config file "${this.settingsFile}". It does not seem to be valid JSON.`,
 			});
 
 			if (!inTest) console.info(`User settings loaded from: ${this.settingsFile}`);
 
 			const { encryptionKey, tunnelSubdomain } = settings;
 
-			if (process.env.N8N_ENCRYPTION_KEY && encryptionKey !== process.env.N8N_ENCRYPTION_KEY) {
+			if (
+				process.env.FLOWEASE_ENCRYPTION_KEY &&
+				encryptionKey !== process.env.FLOWEASE_ENCRYPTION_KEY
+			) {
 				throw new ApplicationError(
-					`Mismatching encryption keys. The encryption key in the settings file ${this.settingsFile} does not match the N8N_ENCRYPTION_KEY env var. Please make sure both keys match. More information: https://docs.flowease.khulnasoft.com/hosting/environment-variables/configuration-methods/#encryption-key`,
+					`Mismatching encryption keys. The encryption key in the settings file ${this.settingsFile} does not match the FLOWEASE_ENCRYPTION_KEY env var. Please make sure both keys match. More information: https://docs.flowease.khulnasoft.com/hosting/environment-variables/configuration-methods/#encryption-key`,
 				);
 			}
 
 			return { encryptionKey, tunnelSubdomain };
 		}
 
-		mkdirSync(this.n8nFolder, { recursive: true });
+		mkdirSync(this.floweaseFolder, { recursive: true });
 
-		const encryptionKey = process.env.N8N_ENCRYPTION_KEY ?? randomBytes(24).toString('base64');
+		const encryptionKey = process.env.FLOWEASE_ENCRYPTION_KEY ?? randomBytes(24).toString('base64');
 
 		const settings: Settings = { encryptionKey };
 
 		this.save(settings);
 
-		if (!inTest && !process.env.N8N_ENCRYPTION_KEY) {
+		if (!inTest && !process.env.FLOWEASE_ENCRYPTION_KEY) {
 			console.info(`No encryption key found - Auto-generated and saved to: ${this.settingsFile}`);
 		}
 

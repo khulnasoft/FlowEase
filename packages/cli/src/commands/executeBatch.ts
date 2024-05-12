@@ -3,8 +3,8 @@ import { Container } from 'typedi';
 import { Flags } from '@oclif/core';
 import fs from 'fs';
 import os from 'os';
-import type { IRun, ITaskData } from 'n8n-workflow';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import type { IRun, ITaskData } from 'flowease-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 import { sep } from 'path';
 import { diff } from 'json-diff';
 import pick from 'lodash/pick';
@@ -52,12 +52,12 @@ export class ExecuteBatch extends BaseCommand {
 	static instanceOwner: User;
 
 	static examples = [
-		'$ n8n executeBatch',
-		'$ n8n executeBatch --concurrency=10 --skipList=/data/skipList.txt',
-		'$ n8n executeBatch --debug --output=/data/output.json',
-		'$ n8n executeBatch --ids=10,13,15 --shortOutput',
-		'$ n8n executeBatch --snapshot=/data/snapshots --shallow',
-		'$ n8n executeBatch --compare=/data/previousExecutionData --retries=2',
+		'$ flowease executeBatch',
+		'$ flowease executeBatch --concurrency=10 --skipList=/data/skipList.txt',
+		'$ flowease executeBatch --debug --output=/data/output.json',
+		'$ flowease executeBatch --ids=10,13,15 --shortOutput',
+		'$ flowease executeBatch --snapshot=/data/snapshots --shallow',
+		'$ flowease executeBatch --compare=/data/previousExecutionData --retries=2',
 	];
 
 	static flags = {
@@ -547,7 +547,7 @@ export class ExecuteBatch extends BaseCommand {
 
 	initializeLogs() {
 		process.stdout.write('**********************************************\n');
-		process.stdout.write('              n8n test workflows\n');
+		process.stdout.write('              flowease test workflows\n');
 		process.stdout.write('**********************************************\n');
 		process.stdout.write('\n');
 		process.stdout.write('Batch number:\n');

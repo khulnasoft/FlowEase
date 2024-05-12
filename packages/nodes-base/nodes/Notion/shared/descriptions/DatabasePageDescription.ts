@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 
 import { getConditions, getSearchFilters } from '../GenericFunctions';
 
@@ -493,7 +493,7 @@ export const databasePageFields: INodeProperties[] = [
 						},
 						default: 'default',
 						description:
-							'Time zone to use. By default n8n timezone is used. Choose from the list, or specify an ID using an <a href="https://docs.flowease.khulnasoft.com/code-examples/expressions/">expression</a>.',
+							'Time zone to use. By default flowease timezone is used. Choose from the list, or specify an ID using an <a href="https://docs.flowease.khulnasoft.com/code-examples/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'File URLs',
@@ -962,7 +962,7 @@ export const databasePageFields: INodeProperties[] = [
 						},
 						default: 'default',
 						description:
-							'Time zone to use. By default n8n timezone is used. Choose from the list, or specify an ID using an <a href="https://docs.flowease.khulnasoft.com/code-examples/expressions/">expression</a>.',
+							'Time zone to use. By default flowease timezone is used. Choose from the list, or specify an ID using an <a href="https://docs.flowease.khulnasoft.com/code-examples/expressions/">expression</a>.',
 					},
 					{
 						displayName: 'File URLs',

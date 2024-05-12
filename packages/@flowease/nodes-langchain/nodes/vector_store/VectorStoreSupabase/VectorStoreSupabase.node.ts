@@ -1,4 +1,4 @@
-import { NodeOperationError, type INodeProperties } from 'n8n-workflow';
+import { NodeOperationError, type INodeProperties } from 'flowease-workflow';
 import { createClient } from '@supabase/supabase-js';
 import { SupabaseVectorStore } from '@langchain/community/vectorstores/supabase';
 import { createVectorStoreNode } from '../shared/createVectorStoreNode';
@@ -50,7 +50,7 @@ export const VectorStoreSupabase = createVectorStoreNode({
 		icon: 'file:supabase.svg',
 		displayName: 'Supabase Vector Store',
 		docsUrl:
-			'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoresupabase/',
+			'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstoresupabase/',
 		name: 'vectorStoreSupabase',
 		credentials: [
 			{

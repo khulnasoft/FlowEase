@@ -23,10 +23,12 @@
 		<template v-else-if="title" #title>
 			<div :class="centerTitle ? $style.centerTitle : ''">
 				<div v-if="title">
-					<n8n-heading tag="h1" size="xlarge">{{ title }}</n8n-heading>
+					<flowease-heading tag="h1" size="xlarge">{{ title }}</flowease-heading>
 				</div>
 				<div v-if="subtitle" :class="$style.subtitle">
-					<n8n-heading tag="h3" size="small" color="text-light">{{ subtitle }}</n8n-heading>
+					<flowease-heading tag="h3" size="small" color="text-light">{{
+						subtitle
+					}}</flowease-heading>
 				</div>
 			</div>
 		</template>
@@ -38,7 +40,7 @@
 		>
 			<slot v-if="!loading" name="content" />
 			<div v-else :class="$style.loader">
-				<n8n-spinner />
+				<flowease-spinner />
 			</div>
 		</div>
 		<div v-if="!loading && $slots.footer" :class="$style.footer">

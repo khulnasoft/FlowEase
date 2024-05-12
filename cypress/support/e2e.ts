@@ -15,7 +15,7 @@ beforeEach(() => {
 	}
 
 	cy.window().then((win): void => {
-		win.localStorage.setItem('N8N_THEME', 'light');
+		win.localStorage.setItem('FLOWEASE_THEME', 'light');
 	});
 
 	cy.intercept('GET', '/rest/settings').as('loadSettings');

@@ -24,7 +24,7 @@ function onGenerateCurlClicked() {
 
 <template>
 	<div :class="$style.importSection">
-		<n8n-button
+		<flowease-button
 			type="secondary"
 			:label="$locale.baseText('importCurlParameter.label')"
 			:disabled="isReadOnly"
@@ -32,7 +32,7 @@ function onGenerateCurlClicked() {
 			@click="onImportCurlClicked"
 		/>
 
-		<n8n-button
+		<flowease-button
 			v-if="aiStore.isGenerateCurlEnabled"
 			class="mr-2xs"
 			type="secondary"

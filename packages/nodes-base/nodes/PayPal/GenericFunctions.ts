@@ -7,8 +7,8 @@ import type {
 	IWebhookFunctions,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { BINARY_ENCODING, NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { BINARY_ENCODING, NodeApiError, NodeOperationError } from 'flowease-workflow';
 
 function getEnvironment(env: string) {
 	return {

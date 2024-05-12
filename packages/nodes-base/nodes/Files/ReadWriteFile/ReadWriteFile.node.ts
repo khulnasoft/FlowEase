@@ -3,7 +3,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import * as read from './actions/read.operation';
 import * as write from './actions/write.operation';
@@ -15,7 +15,7 @@ export class ReadWriteFile implements INodeType {
 		icon: 'file:readWriteFile.svg',
 		group: ['input'],
 		version: 1,
-		description: 'Read or write files from the computer that runs n8n',
+		description: 'Read or write files from the computer that runs flowease',
 		defaults: {
 			name: 'Read/Write Files from Disk',
 		},
@@ -24,7 +24,7 @@ export class ReadWriteFile implements INodeType {
 		properties: [
 			{
 				displayName:
-					'Use this node to read and write files on the same computer running n8n. To handle files between different computers please use other nodes (e.g. FTP, HTTP Request, AWS).',
+					'Use this node to read and write files on the same computer running flowease. To handle files between different computers please use other nodes (e.g. FTP, HTTP Request, AWS).',
 				name: 'info',
 				type: 'notice',
 				default: '',
@@ -38,13 +38,13 @@ export class ReadWriteFile implements INodeType {
 					{
 						name: 'Read File(s) From Disk',
 						value: 'read',
-						description: 'Retrieve one or more files from the computer that runs n8n',
+						description: 'Retrieve one or more files from the computer that runs flowease',
 						action: 'Read File(s) From Disk',
 					},
 					{
 						name: 'Write File to Disk',
 						value: 'write',
-						description: 'Create a binary file on the computer that runs n8n',
+						description: 'Create a binary file on the computer that runs flowease',
 						action: 'Write File to Disk',
 					},
 				],

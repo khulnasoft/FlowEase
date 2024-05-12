@@ -1,8 +1,8 @@
 import * as ResponseHelper from '@/ResponseHelper';
 import type { NextFunction, Response } from 'express';
 import type { ExecutionRequest } from './execution.types';
-import type { JsonObject } from 'n8n-workflow';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import type { JsonObject } from 'flowease-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 import {
 	allowedExecutionsQueryFilterFields as ALLOWED_FILTER_FIELDS,
 	schemaGetExecutionsQueryFilter as SCHEMA,

@@ -7,12 +7,12 @@
 		@mouseleave="showTooltip = false"
 	>
 		<div :class="$style.tooltip">
-			<n8n-tooltip placement="top" :visible="showTooltip">
+			<flowease-tooltip placement="top" :visible="showTooltip">
 				<template #content>
 					<div v-text="nodeType.displayName"></div>
 				</template>
 				<span />
-			</n8n-tooltip>
+			</flowease-tooltip>
 		</div>
 		<div v-if="nodeIconData !== null" :class="$style.icon" title="">
 			<div :class="$style.iconWrapper" :style="iconStyleData">
@@ -43,9 +43,9 @@
 import { defineComponent } from 'vue';
 
 import type { ITemplatesNode } from '@/Interface';
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
 import { mapStores } from 'pinia';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 
 interface NodeIconData {
 	type: string;

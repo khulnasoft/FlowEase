@@ -1,7 +1,7 @@
 {
   "name": "@flowease/codemirror-lang",
   "version": "0.3.0",
-  "description": "Language support package for CodeMirror 6 in n8n",
+  "description": "Language support package for CodeMirror 6 in flowease",
   "private": true,
   "sideEffects": false,
   "main": "dist/index.js",

@@ -5,8 +5,8 @@ import type {
 	IDataObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 import { Eq } from './QueryFunctions';

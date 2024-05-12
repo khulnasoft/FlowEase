@@ -1,5 +1,5 @@
-import { NodeVM, makeResolverFromLegacyOptions, type Resolver } from '@n8n/vm2';
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
+import { NodeVM, makeResolverFromLegacyOptions, type Resolver } from '@flowease/vm2';
+import type { IExecuteFunctions, INodeExecutionData } from 'flowease-workflow';
 
 import { ValidationError } from './ValidationError';
 import { ExecutionError } from './ExecutionError';

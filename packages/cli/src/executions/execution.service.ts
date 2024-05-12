@@ -7,13 +7,13 @@ import type {
 	IRunExecutionData,
 	WorkflowExecuteMode,
 	ExecutionStatus,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	ApplicationError,
 	ExecutionStatusList,
 	Workflow,
 	WorkflowOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { ActiveExecutions } from '@/ActiveExecutions';
 import type {
 	ExecutionPayload,

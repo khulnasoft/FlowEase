@@ -4,7 +4,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class ChargebeeTrigger implements INodeType {
 	description: INodeTypeDescription = {

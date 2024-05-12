@@ -1,4 +1,4 @@
-import { NodeOperationError, type INodeProperties } from 'n8n-workflow';
+import { NodeOperationError, type INodeProperties } from 'flowease-workflow';
 import type { PineconeStoreParams } from '@langchain/pinecone';
 import { PineconeStore } from '@langchain/pinecone';
 import { Pinecone } from '@pinecone-database/pinecone';
@@ -63,7 +63,7 @@ export const VectorStorePinecone = createVectorStoreNode({
 		description: 'Work with your data in Pinecone Vector Store',
 		icon: 'file:pinecone.svg',
 		docsUrl:
-			'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstorepinecone/',
+			'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstorepinecone/',
 		credentials: [
 			{
 				name: 'pineconeApi',

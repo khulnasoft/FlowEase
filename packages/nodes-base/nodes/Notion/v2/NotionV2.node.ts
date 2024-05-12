@@ -5,8 +5,8 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { jsonParse, NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse, NodeApiError } from 'flowease-workflow';
 
 import type { SortData, FileRecord } from '../shared/GenericFunctions';
 import {

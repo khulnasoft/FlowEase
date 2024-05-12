@@ -12,13 +12,13 @@
 			:class="['clickable', $style.sideMenuCollapseButton]"
 			@click="toggleCollapse"
 		>
-			<n8n-icon v-if="isCollapsed" icon="chevron-right" size="xsmall" class="ml-5xs" />
-			<n8n-icon v-else icon="chevron-left" size="xsmall" class="mr-5xs" />
+			<flowease-icon v-if="isCollapsed" icon="chevron-right" size="xsmall" class="ml-5xs" />
+			<flowease-icon v-else icon="chevron-left" size="xsmall" class="mr-5xs" />
 		</div>
-		<n8n-menu :items="mainMenuItems" :collapsed="isCollapsed" @select="handleSelect">
+		<flowease-menu :items="mainMenuItems" :collapsed="isCollapsed" @select="handleSelect">
 			<template #header>
 				<div :class="$style.logo">
-					<img :src="logoPath" data-test-id="n8n-logo" :class="$style.icon" alt="n8n" />
+					<img :src="logoPath" data-test-id="flowease-logo" :class="$style.icon" alt="flowease" />
 				</div>
 			</template>
 
@@ -39,14 +39,14 @@
 						<div :class="$style.giftContainer">
 							<GiftNotificationIcon />
 						</div>
-						<n8n-text
+						<flowease-text
 							:class="{ ['ml-xs']: true, [$style.expanded]: fullyExpanded }"
 							color="text-base"
 						>
 							{{ nextVersions.length > 99 ? '99+' : nextVersions.length }} update{{
 								nextVersions.length > 1 ? 's' : ''
 							}}
-						</n8n-text>
+						</flowease-text>
 					</div>
 					<MainSidebarSourceControl :is-collapsed="isCollapsed" />
 				</div>
@@ -62,7 +62,7 @@
 							@command="onUserActionToggle"
 						>
 							<div :class="{ [$style.avatar]: true, ['clickable']: isCollapsed }">
-								<n8n-avatar
+								<flowease-avatar
 									:first-name="usersStore.currentUser.firstName"
 									:last-name="usersStore.currentUser.lastName"
 									size="small"
@@ -83,12 +83,12 @@
 					<div
 						:class="{ ['ml-2xs']: true, [$style.userName]: true, [$style.expanded]: fullyExpanded }"
 					>
-						<n8n-text size="small" :bold="true" color="text-dark">{{
+						<flowease-text size="small" :bold="true" color="text-dark">{{
 							usersStore.currentUser.fullName
-						}}</n8n-text>
+						}}</flowease-text>
 					</div>
 					<div :class="{ [$style.userActions]: true, [$style.expanded]: fullyExpanded }">
-						<n8n-action-dropdown
+						<flowease-action-dropdown
 							:items="userMenuItems"
 							placement="top-start"
 							data-test-id="user-menu"
@@ -97,7 +97,7 @@
 					</div>
 				</div>
 			</template>
-		</n8n-menu>
+		</flowease-menu>
 	</div>
 </template>
 
@@ -111,7 +111,7 @@ import { userHelpers } from '@/mixins/userHelpers';
 import { defineComponent } from 'vue';
 import { mapStores } from 'pinia';
 import { useCloudPlanStore } from '@/stores/cloudPlan.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useSourceControlStore } from '@/stores/sourceControl.store';
 import { useUIStore } from '@/stores/ui.store';
@@ -306,7 +306,7 @@ export default defineComponent({
 							icon: 'book',
 							label: this.$locale.baseText('mainSidebar.helpMenuItems.documentation'),
 							link: {
-								href: 'https://docs.flowease.khulnasoft.com?utm_source=n8n_app&utm_medium=app_sidebar',
+								href: 'https://docs.flowease.khulnasoft.com?utm_source=flowease_app&utm_medium=app_sidebar',
 								target: '_blank',
 							},
 						},
@@ -315,7 +315,7 @@ export default defineComponent({
 							icon: 'users',
 							label: this.$locale.baseText('mainSidebar.helpMenuItems.forum'),
 							link: {
-								href: 'https://community.flowease.khulnasoft.com?utm_source=n8n_app&utm_medium=app_sidebar',
+								href: 'https://community.flowease.khulnasoft.com?utm_source=flowease_app&utm_medium=app_sidebar',
 								target: '_blank',
 							},
 						},
@@ -331,7 +331,7 @@ export default defineComponent({
 						{
 							id: 'about',
 							icon: 'info',
-							label: this.$locale.baseText('mainSidebar.aboutN8n'),
+							label: this.$locale.baseText('mainSidebar.aboutFlowease'),
 							position: 'bottom',
 						},
 					],

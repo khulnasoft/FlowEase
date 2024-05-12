@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Placement } from 'element-plus';
-import type { KeyboardShortcut } from 'flowease-design-system/src/components/N8nKeyboardShortcut';
+import type { KeyboardShortcut } from 'flowease-design-system/src/components/FloweaseKeyboardShortcut';
 
 interface Props {
 	label: string;
@@ -11,15 +11,15 @@ withDefaults(defineProps<Props>(), { placement: 'top' });
 </script>
 
 <template>
-	<n8n-tooltip :placement="placement" :show-after="500">
+	<flowease-tooltip :placement="placement" :show-after="500">
 		<template #content>
 			<div :class="$style.shortcut">
 				<div :class="$style.label">{{ label }}</div>
-				<n8n-keyboard-shortcut v-bind="shortcut"></n8n-keyboard-shortcut>
+				<flowease-keyboard-shortcut v-bind="shortcut"></flowease-keyboard-shortcut>
 			</div>
 		</template>
 		<slot />
-	</n8n-tooltip>
+	</flowease-tooltip>
 </template>
 
 <style lang="scss" module>

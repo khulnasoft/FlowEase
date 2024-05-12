@@ -1,4 +1,4 @@
-import type { ILoadOptionsFunctions, ResourceMapperFields, FieldType } from 'n8n-workflow';
+import type { ILoadOptionsFunctions, ResourceMapperFields, FieldType } from 'flowease-workflow';
 import { getEnumValues, getEnums, getTableSchema, uniqueColumns } from '../helpers/utils';
 import { configurePostgres } from '../transport';
 import type { PostgresNodeCredentials } from '../helpers/interfaces';

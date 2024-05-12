@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from '@/composables/useI18n';
-import type { FilterTypeCombinator } from 'n8n-workflow';
+import type { FilterTypeCombinator } from 'flowease-workflow';
 
 interface Props {
 	options: FilterTypeCombinator[];
@@ -26,20 +26,20 @@ const onCombinatorChange = (combinator: FilterTypeCombinator): void => {
 		<div v-if="readOnly || options.length === 1">
 			{{ i18n.baseText(`filter.combinator.${selected}`) }}
 		</div>
-		<n8n-select
+		<flowease-select
 			v-else
 			size="small"
 			:model-value="selected"
 			@update:model-value="onCombinatorChange"
 		>
-			<n8n-option
+			<flowease-option
 				v-for="option in options"
 				:key="option"
 				:value="option"
 				:label="i18n.baseText(`filter.combinator.${option}`)"
 			>
-			</n8n-option>
-		</n8n-select>
+			</flowease-option>
+		</flowease-select>
 	</div>
 </template>
 

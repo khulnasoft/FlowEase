@@ -8,7 +8,7 @@
 			@submit.prevent
 		>
 			<!-- Why form? to break up inputs, to prevent Chrome autofill -->
-			<n8n-notice v-if="parameter.type === 'notice'" :content="parameter.displayName" />
+			<flowease-notice v-if="parameter.type === 'notice'" :content="parameter.displayName" />
 			<ParameterInputExpanded
 				v-else
 				:parameter="parameter"
@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import type { IParameterLabel } from 'n8n-workflow';
+import type { IParameterLabel } from 'flowease-workflow';
 import type { IUpdateInformation } from '@/Interface';
 import ParameterInputExpanded from '../ParameterInputExpanded.vue';
 

@@ -2,13 +2,13 @@ import type { Readable } from 'stream';
 import type {
 	IDataObject,
 	IExecuteFunctions,
-	IN8nHttpFullResponse,
-	IN8nHttpResponse,
+	IFloweaseHttpFullResponse,
+	IFloweaseHttpResponse,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { jsonParse, BINARY_ENCODING, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse, BINARY_ENCODING, NodeOperationError } from 'flowease-workflow';
 import set from 'lodash/set';
 import jwt from 'jsonwebtoken';
 import { formatPrivateKey, generatePairedItemData } from '../../utils/utilities';
@@ -321,7 +321,7 @@ export class RespondToWebhook implements INodeType {
 			}
 
 			let statusCode = (options.responseCode as number) || 200;
-			let responseBody: IN8nHttpResponse | Readable;
+			let responseBody: IFloweaseHttpResponse | Readable;
 			if (respondWith === 'json') {
 				const responseBodyParameter = this.getNodeParameter('responseBody', 0) as string;
 				if (responseBodyParameter) {
@@ -421,7 +421,7 @@ export class RespondToWebhook implements INodeType {
 				);
 			}
 
-			const response: IN8nHttpFullResponse = {
+			const response: IFloweaseHttpFullResponse = {
 				body: responseBody,
 				headers,
 				statusCode,

@@ -8,8 +8,8 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { BINARY_ENCODING } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { BINARY_ENCODING } from 'flowease-workflow';
 
 import { v4 as uuid } from 'uuid';
 import { GOOGLE_DRIVE_FILE_URL_REGEX, GOOGLE_DRIVE_FOLDER_URL_REGEX } from '../../constants';

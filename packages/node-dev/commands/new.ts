@@ -135,7 +135,7 @@ export class New extends Command {
 			const replaceValues = {
 				ClassNameReplace: changeCase.pascalCase(nodeName),
 				DisplayNameReplace: changeCase.capitalCase(nodeName),
-				N8nNameReplace: changeCase.camelCase(nodeName),
+				FloweaseNameReplace: changeCase.camelCase(nodeName),
 				NodeDescriptionReplace: additionalAnswers.description,
 			};
 

@@ -14,12 +14,12 @@
 				<div v-if="!isProductionOnly" class="url-selection">
 					<el-row>
 						<el-col :span="24">
-							<n8n-radio-buttons v-model="showUrlFor" :options="urlOptions" />
+							<flowease-radio-buttons v-model="showUrlFor" :options="urlOptions" />
 						</el-col>
 					</el-row>
 				</div>
 
-				<n8n-tooltip
+				<flowease-tooltip
 					v-for="(webhook, index) in visibleWebhookUrls"
 					:key="index"
 					class="item"
@@ -43,14 +43,14 @@
 							</div>
 						</div>
 					</div>
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</div>
 		</el-collapse-transition>
 	</div>
 </template>
 
 <script lang="ts">
-import type { INodeTypeDescription, IWebhookDescription } from 'n8n-workflow';
+import type { INodeTypeDescription, IWebhookDescription } from 'flowease-workflow';
 import { defineComponent } from 'vue';
 
 import { useToast } from '@/composables/useToast';

@@ -1,9 +1,9 @@
 import { Service } from 'typedi';
-import { QueryFailedError } from '@n8n/typeorm';
+import { QueryFailedError } from '@flowease/typeorm';
 import type { Entry as LdapUser, ClientOptions } from 'ldapts';
 import { Client } from 'ldapts';
 import type { ConnectionOptions } from 'tls';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 import { Cipher } from 'flowease-core';
 
 import config from '@/config';

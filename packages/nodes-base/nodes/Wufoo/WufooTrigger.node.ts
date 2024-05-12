@@ -8,8 +8,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
-import { jsonParse } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse } from 'flowease-workflow';
 
 import { wufooApiRequest } from './GenericFunctions';
 

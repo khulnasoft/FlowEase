@@ -6,8 +6,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 import { GOOGLE_DRIVE_FILE_URL_REGEX, GOOGLE_DRIVE_FOLDER_URL_REGEX } from '../constants';

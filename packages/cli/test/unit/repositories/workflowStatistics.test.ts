@@ -1,5 +1,5 @@
 import { Container } from 'typedi';
-import { type InsertResult, QueryFailedError } from '@n8n/typeorm';
+import { type InsertResult, QueryFailedError } from '@flowease/typeorm';
 import { mock, mockClear } from 'jest-mock-extended';
 
 import { StatisticsNames, WorkflowStatistics } from '@db/entities/WorkflowStatistics';

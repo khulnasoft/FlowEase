@@ -8,8 +8,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { ApplicationError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ApplicationError, NodeOperationError } from 'flowease-workflow';
 
 import type {
 	FindOneAndReplaceOptions,

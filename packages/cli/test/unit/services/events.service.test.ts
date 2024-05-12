@@ -1,10 +1,10 @@
-import type { IRun, WorkflowExecuteMode } from 'n8n-workflow';
+import type { IRun, WorkflowExecuteMode } from 'flowease-workflow';
 import {
 	QueryFailedError,
 	type DataSource,
 	type EntityManager,
 	type EntityMetadata,
-} from '@n8n/typeorm';
+} from '@flowease/typeorm';
 import { mocked } from 'jest-mock';
 import { mock } from 'jest-mock-extended';
 
@@ -34,7 +34,7 @@ describe('EventsService', () => {
 	Object.assign(entityManager, { connection: dataSource });
 
 	config.set('diagnostics.enabled', true);
-	config.set('deployment.type', 'n8n-testing');
+	config.set('deployment.type', 'flowease-testing');
 	mocked(ownershipService.getWorkflowOwnerCached).mockResolvedValue(fakeUser);
 	const updateSettingsMock = jest.spyOn(userService, 'updateSettings').mockImplementation();
 

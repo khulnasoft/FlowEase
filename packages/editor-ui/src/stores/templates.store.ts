@@ -21,7 +21,7 @@ import {
 	getWorkflowTemplate,
 } from '@/api/templates';
 import { getFixedNodesList } from '@/utils/nodeViewUtils';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useUsersStore } from './users.store';
 import { useWorkflowsStore } from './workflows.store';
 
@@ -42,7 +42,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, {
 		workflowSearches: {},
 		currentSessionId: '',
 		previousSessionId: '',
-		currentN8nPath: `${window.location.protocol}//${window.location.host}${window.BASE_PATH}`,
+		currentFloweasePath: `${window.location.protocol}//${window.location.host}${window.BASE_PATH}`,
 	}),
 	getters: {
 		allCategories(): ITemplatesCategory[] {
@@ -127,8 +127,8 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, {
 			const workflowsStore = useWorkflowsStore();
 			const defaultParameters: Record<string, string> = {
 				...TEMPLATES_URLS.UTM_QUERY,
-				utm_instance: this.currentN8nPath,
-				utm_n8n_version: rootStore.versionCli,
+				utm_instance: this.currentFloweasePath,
+				utm_flowease_version: rootStore.versionCli,
 				utm_awc: String(workflowsStore.activeWorkflows.length),
 			};
 			const userRole: string | undefined =
@@ -282,7 +282,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, {
 			const apiEndpoint: string = settingsStore.templatesHost;
 			const versionCli: string = settingsStore.versionCli;
 			const response = await getTemplateById(apiEndpoint, templateId, {
-				'n8n-version': versionCli,
+				'flowease-version': versionCli,
 			});
 
 			const template: ITemplatesWorkflowFull = {
@@ -298,7 +298,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, {
 			const apiEndpoint: string = settingsStore.templatesHost;
 			const versionCli: string = settingsStore.versionCli;
 			const response = await getCollectionById(apiEndpoint, collectionId, {
-				'n8n-version': versionCli,
+				'flowease-version': versionCli,
 			});
 			const collection: ITemplatesCollectionFull = {
 				...response.collection,
@@ -317,7 +317,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, {
 			const settingsStore = useSettingsStore();
 			const apiEndpoint: string = settingsStore.templatesHost;
 			const versionCli: string = settingsStore.versionCli;
-			const response = await getCategories(apiEndpoint, { 'n8n-version': versionCli });
+			const response = await getCategories(apiEndpoint, { 'flowease-version': versionCli });
 			const categories = response.categories;
 
 			this.addCategories(categories);
@@ -332,7 +332,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, {
 			const settingsStore = useSettingsStore();
 			const apiEndpoint: string = settingsStore.templatesHost;
 			const versionCli: string = settingsStore.versionCli;
-			const response = await getCollections(apiEndpoint, query, { 'n8n-version': versionCli });
+			const response = await getCollections(apiEndpoint, query, { 'flowease-version': versionCli });
 			const collections = response.collections;
 
 			this.addCollections(collections);
@@ -357,7 +357,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, {
 			const payload = await getWorkflows(
 				apiEndpoint,
 				{ ...query, page: 1, limit: TEMPLATES_PAGE_SIZE },
-				{ 'n8n-version': versionCli },
+				{ 'flowease-version': versionCli },
 			);
 
 			this.addWorkflows(payload.workflows);
@@ -394,7 +394,7 @@ export const useTemplatesStore = defineStore(STORES.TEMPLATES, {
 			const settingsStore = useSettingsStore();
 			const apiEndpoint: string = settingsStore.templatesHost;
 			const versionCli: string = settingsStore.versionCli;
-			return await getWorkflowTemplate(apiEndpoint, templateId, { 'n8n-version': versionCli });
+			return await getWorkflowTemplate(apiEndpoint, templateId, { 'flowease-version': versionCli });
 		},
 
 		async getFixedWorkflowTemplate(templateId: string): Promise<IWorkflowTemplate | undefined> {

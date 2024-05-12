@@ -1,6 +1,6 @@
 <template>
 	<div :class="$style.actionsGroup">
-		<n8n-icon-button
+		<flowease-icon-button
 			v-if="noSelection"
 			:title="i18n.baseText('runData.copyToClipboard')"
 			icon="copy"
@@ -10,7 +10,7 @@
 		/>
 		<el-dropdown v-else trigger="click" @command="handleCopyClick">
 			<span class="el-dropdown-link">
-				<n8n-icon-button
+				<flowease-icon-button
 					:title="i18n.baseText('runData.copyToClipboard')"
 					icon="copy"
 					type="tertiary"
@@ -40,7 +40,7 @@ import type { PropType } from 'vue';
 import { mapStores, storeToRefs } from 'pinia';
 import jp from 'jsonpath';
 import type { INodeUi } from '@/Interface';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import { clearJsonKey, convertPath } from '@/utils/typesUtils';
 import { executionDataToJson } from '@/utils/nodeTypesUtils';
 import { useWorkflowsStore } from '@/stores/workflows.store';

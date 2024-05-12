@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { schemaRLC, tableRLC } from '../common.descriptions';
 
 import * as deleteTable from './deleteTable.operation';

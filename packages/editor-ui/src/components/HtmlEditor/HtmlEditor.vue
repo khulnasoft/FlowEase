@@ -31,7 +31,7 @@ import { computed, onBeforeUnmount, onMounted, ref, toValue, watch } from 'vue';
 
 import { htmlEditorEventBus } from '@/event-bus';
 import { useExpressionEditor } from '@/composables/useExpressionEditor';
-import { n8nCompletionSources } from '@/plugins/codemirror/completions/addCompletions';
+import { floweaseCompletionSources } from '@/plugins/codemirror/completions/addCompletions';
 import { expressionInputHandler } from '@/plugins/codemirror/inputHandlers/expression.inputHandler';
 import {
 	autocompleteKeyMap,
@@ -39,8 +39,8 @@ import {
 	historyKeyMap,
 	tabKeyMap,
 } from '@/plugins/codemirror/keymap';
-import { n8nAutocompletion } from '@/plugins/codemirror/n8nLang';
-import { autoCloseTags, htmlLanguage } from 'codemirror-lang-html-n8n';
+import { floweaseAutocompletion } from '@/plugins/codemirror/floweaseLang';
+import { autoCloseTags, htmlLanguage } from 'codemirror-lang-html-flowease';
 import { codeNodeEditorTheme } from '../CodeNodeEditor/theme';
 import type { Range, Section } from './types';
 import { nonTakenRanges } from './utils';
@@ -66,10 +66,10 @@ const htmlEditor = ref<HTMLElement>();
 const editorValue = ref<string>(props.modelValue);
 const extensions = computed(() => [
 	bracketMatching(),
-	n8nAutocompletion(),
+	floweaseAutocompletion(),
 	new LanguageSupport(
 		htmlLanguage,
-		n8nCompletionSources().map((source) => htmlLanguage.data.of(source)),
+		floweaseCompletionSources().map((source) => htmlLanguage.data.of(source)),
 	),
 	autoCloseTags,
 	expressionInputHandler(),

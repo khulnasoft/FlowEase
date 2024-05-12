@@ -1,4 +1,4 @@
-import type { IAuthenticateGeneric, ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { IAuthenticateGeneric, ICredentialType, INodeProperties } from 'flowease-workflow';
 
 export class QualysApi implements ICredentialType {
 	name = 'qualysApi';
@@ -35,7 +35,7 @@ export class QualysApi implements ICredentialType {
 			displayName: 'Requested With',
 			name: 'requestedWith',
 			type: 'string',
-			default: 'n8n application',
+			default: 'flowease application',
 			description: 'User description, like a user agent',
 		},
 	];

@@ -1,5 +1,5 @@
-import type { DataSourceOptions, Repository } from '@n8n/typeorm';
-import { DataSource as Connection } from '@n8n/typeorm';
+import type { DataSourceOptions, Repository } from '@flowease/typeorm';
+import { DataSource as Connection } from '@flowease/typeorm';
 import { Container } from 'typedi';
 import type { Class } from 'flowease-core';
 
@@ -9,7 +9,7 @@ import { getOptionOverrides } from '@db/config';
 
 import { randomString } from './random';
 
-export const testDbPrefix = 'n8n_test_';
+export const testDbPrefix = 'flowease_test_';
 
 /**
  * Initialize one test DB per suite run, with bootstrap connection if needed.

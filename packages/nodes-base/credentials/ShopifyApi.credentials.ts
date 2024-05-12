@@ -1,11 +1,11 @@
-import { BINARY_ENCODING } from 'n8n-workflow';
+import { BINARY_ENCODING } from 'flowease-workflow';
 import type {
 	ICredentialDataDecryptedObject,
 	ICredentialTestRequest,
 	ICredentialType,
 	IHttpRequestOptions,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class ShopifyApi implements ICredentialType {
 	name = 'shopifyApi';

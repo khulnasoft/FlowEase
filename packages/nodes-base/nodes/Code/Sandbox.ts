@@ -1,5 +1,9 @@
 import { EventEmitter } from 'events';
-import type { IExecuteFunctions, INodeExecutionData, IWorkflowDataProxyData } from 'n8n-workflow';
+import type {
+	IExecuteFunctions,
+	INodeExecutionData,
+	IWorkflowDataProxyData,
+} from 'flowease-workflow';
 import { ValidationError } from './ValidationError';
 import { isObject } from './utils';
 
@@ -16,7 +20,7 @@ export interface SandboxContext extends IWorkflowDataProxyData {
 	helpers: IExecuteFunctions['helpers'];
 }
 
-export const REQUIRED_N8N_ITEM_KEYS = new Set(['json', 'binary', 'pairedItem', 'error']);
+export const REQUIRED_FLOWEASE_ITEM_KEYS = new Set(['json', 'binary', 'pairedItem', 'error']);
 
 export function getSandboxContext(this: IExecuteFunctions, index: number): SandboxContext {
 	return {
@@ -97,17 +101,17 @@ export abstract class Sandbox extends EventEmitter {
 
 		if (Array.isArray(executionResult)) {
 			/**
-			 * If at least one top-level key is an n8n item key (`json`, `binary`, etc.),
-			 * then require all item keys to be an n8n item key.
+			 * If at least one top-level key is an flowease item key (`json`, `binary`, etc.),
+			 * then require all item keys to be an flowease item key.
 			 *
-			 * If no top-level key is an n8n key, then skip this check, allowing non-n8n
+			 * If no top-level key is an flowease key, then skip this check, allowing non-flowease
 			 * item keys to be wrapped in `json` when normalizing items below.
 			 */
-			const mustHaveTopLevelN8nKey = executionResult.some((item) =>
-				Object.keys(item).find((key) => REQUIRED_N8N_ITEM_KEYS.has(key)),
+			const mustHaveTopLevelFloweaseKey = executionResult.some((item) =>
+				Object.keys(item).find((key) => REQUIRED_FLOWEASE_ITEM_KEYS.has(key)),
 			);
 
-			if (mustHaveTopLevelN8nKey) {
+			if (mustHaveTopLevelFloweaseKey) {
 				for (const item of executionResult) {
 					this.validateTopLevelKeys(item);
 				}
@@ -159,7 +163,7 @@ export abstract class Sandbox extends EventEmitter {
 
 	private validateTopLevelKeys(item: INodeExecutionData) {
 		Object.keys(item).forEach((key) => {
-			if (REQUIRED_N8N_ITEM_KEYS.has(key)) return;
+			if (REQUIRED_FLOWEASE_ITEM_KEYS.has(key)) return;
 			throw new ValidationError({
 				message: `Unknown top-level item key: ${key}`,
 				description: 'Access the properties of an item under `.json`, e.g. `item.json`',

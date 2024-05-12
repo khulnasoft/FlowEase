@@ -2,17 +2,17 @@ import type { PartialDeep } from 'type-fest';
 import type { ExternalHooks, ExternalHooksGenericContext } from '@/types';
 
 export function extendExternalHooks(hooksExtension: PartialDeep<ExternalHooks>) {
-	if (typeof window.n8nExternalHooks === 'undefined') {
-		window.n8nExternalHooks = {};
+	if (typeof window.floweaseExternalHooks === 'undefined') {
+		window.floweaseExternalHooks = {};
 	}
 
 	for (const resource of Object.keys(hooksExtension) as Array<keyof ExternalHooks>) {
-		if (typeof window.n8nExternalHooks[resource] === 'undefined') {
-			window.n8nExternalHooks[resource] = {};
+		if (typeof window.floweaseExternalHooks[resource] === 'undefined') {
+			window.floweaseExternalHooks[resource] = {};
 		}
 
 		const extensionContext = hooksExtension[resource] as ExternalHooksGenericContext;
-		const context = window.n8nExternalHooks[resource] as ExternalHooksGenericContext;
+		const context = window.floweaseExternalHooks[resource] as ExternalHooksGenericContext;
 		for (const operator of Object.keys(extensionContext)) {
 			if (typeof context[operator] === 'undefined') {
 				context[operator] = [];
@@ -30,8 +30,8 @@ export async function initializeCloudHooks() {
 	}
 
 	try {
-		const { n8nCloudHooks } = await import('@/hooks/cloud');
-		extendExternalHooks(n8nCloudHooks);
+		const { floweaseCloudHooks } = await import('@/hooks/cloud');
+		extendExternalHooks(floweaseCloudHooks);
 	} catch (error) {
 		throw new Error(`Failed to extend external hooks: ${error.message}`);
 	} finally {

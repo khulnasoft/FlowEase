@@ -9,8 +9,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
-import { deepCopy, jsonParse, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy, jsonParse, NodeOperationError } from 'flowease-workflow';
 
 import { idsExist, surveyMonkeyApiRequest, surveyMonkeyRequestAllItems } from './GenericFunctions';
 
@@ -420,7 +420,7 @@ export class SurveyMonkeyTrigger implements INodeType {
 				}
 
 				const body: IDataObject = {
-					name: `n8n - Webhook [${event}]`,
+					name: `flowease - Webhook [${event}]`,
 					object_type: objectType,
 					object_ids: ids,
 					subscription_url: webhookUrl,

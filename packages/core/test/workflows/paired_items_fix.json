@@ -133,7 +133,7 @@
 			},
 			"id": "5ba8d43b-9fa3-4ba0-9c08-3199a9d2d602",
 			"name": "cuctomers",
-			"type": "flowease-nodes-base.n8nTrainingCustomerDatastore",
+			"type": "flowease-nodes-base.floweaseTrainingCustomerDatastore",
 			"typeVersion": 1,
 			"position": [640, 1340]
 		},

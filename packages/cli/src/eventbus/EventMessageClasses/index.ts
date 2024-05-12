@@ -3,40 +3,40 @@ import type { EventMessageAudit } from './EventMessageAudit';
 import type { EventMessageGeneric } from './EventMessageGeneric';
 import type { EventMessageNode } from './EventMessageNode';
 import type { EventMessageWorkflow } from './EventMessageWorkflow';
-import { eventNamesAiNodes, type EventNamesAiNodesType } from 'n8n-workflow';
+import { eventNamesAiNodes, type EventNamesAiNodesType } from 'flowease-workflow';
 
 export const eventNamesWorkflow = [
-	'n8n.workflow.started',
-	'n8n.workflow.success',
-	'n8n.workflow.failed',
-	'n8n.workflow.crashed',
+	'flowease.workflow.started',
+	'flowease.workflow.success',
+	'flowease.workflow.failed',
+	'flowease.workflow.crashed',
 ] as const;
-export const eventNamesGeneric = ['n8n.worker.started', 'n8n.worker.stopped'] as const;
-export const eventNamesNode = ['n8n.node.started', 'n8n.node.finished'] as const;
+export const eventNamesGeneric = ['flowease.worker.started', 'flowease.worker.stopped'] as const;
+export const eventNamesNode = ['flowease.node.started', 'flowease.node.finished'] as const;
 export const eventNamesAudit = [
-	'n8n.audit.user.login.success',
-	'n8n.audit.user.login.failed',
-	'n8n.audit.user.signedup',
-	'n8n.audit.user.updated',
-	'n8n.audit.user.deleted',
-	'n8n.audit.user.invited',
-	'n8n.audit.user.invitation.accepted',
-	'n8n.audit.user.reinvited',
-	'n8n.audit.user.email.failed',
-	'n8n.audit.user.reset.requested',
-	'n8n.audit.user.reset',
-	'n8n.audit.user.credentials.created',
-	'n8n.audit.user.credentials.shared',
-	'n8n.audit.user.credentials.updated',
-	'n8n.audit.user.credentials.deleted',
-	'n8n.audit.user.api.created',
-	'n8n.audit.user.api.deleted',
-	'n8n.audit.package.installed',
-	'n8n.audit.package.updated',
-	'n8n.audit.package.deleted',
-	'n8n.audit.workflow.created',
-	'n8n.audit.workflow.deleted',
-	'n8n.audit.workflow.updated',
+	'flowease.audit.user.login.success',
+	'flowease.audit.user.login.failed',
+	'flowease.audit.user.signedup',
+	'flowease.audit.user.updated',
+	'flowease.audit.user.deleted',
+	'flowease.audit.user.invited',
+	'flowease.audit.user.invitation.accepted',
+	'flowease.audit.user.reinvited',
+	'flowease.audit.user.email.failed',
+	'flowease.audit.user.reset.requested',
+	'flowease.audit.user.reset',
+	'flowease.audit.user.credentials.created',
+	'flowease.audit.user.credentials.shared',
+	'flowease.audit.user.credentials.updated',
+	'flowease.audit.user.credentials.deleted',
+	'flowease.audit.user.api.created',
+	'flowease.audit.user.api.deleted',
+	'flowease.audit.package.installed',
+	'flowease.audit.package.updated',
+	'flowease.audit.package.deleted',
+	'flowease.audit.workflow.created',
+	'flowease.audit.workflow.deleted',
+	'flowease.audit.workflow.updated',
 ] as const;
 
 export type EventNamesWorkflowType = (typeof eventNamesWorkflow)[number];
@@ -50,7 +50,7 @@ export type EventNamesTypes =
 	| EventNamesNodeType
 	| EventNamesGenericType
 	| EventNamesAiNodesType
-	| 'n8n.destination.test';
+	| 'flowease.destination.test';
 
 export const eventNamesAll = [
 	...eventNamesAudit,

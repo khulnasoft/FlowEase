@@ -5,8 +5,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { gitlabApiRequest, gitlabApiRequestAllItems } from './GenericFunctions';
 
@@ -286,7 +286,7 @@ export class Gitlab implements INodeType {
 				type: 'string',
 				default: '',
 				required: true,
-				placeholder: 'n8n-io',
+				placeholder: 'khulnasoft',
 				description: 'User, group or namespace of the project',
 			},
 			{
@@ -301,7 +301,7 @@ export class Gitlab implements INodeType {
 						operation: ['getRepositories'],
 					},
 				},
-				placeholder: 'n8n',
+				placeholder: 'flowease',
 				description: 'The name of the project',
 			},
 
@@ -1616,7 +1616,7 @@ export class Gitlab implements INodeType {
 						}
 
 						if (this.getNodeParameter('binaryData', i)) {
-							// Currently internally n8n uses base64 and also GitLab expects it base64 encoded.
+							// Currently internally flowease uses base64 and also GitLab expects it base64 encoded.
 							// If that ever changes the data has to get converted here.
 							const binaryPropertyName = this.getNodeParameter('binaryPropertyName', i);
 							const binaryData = this.helpers.assertBinaryData(i, binaryPropertyName);

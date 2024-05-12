@@ -1,6 +1,6 @@
 <template>
 	<div v-if="windowVisible" :class="['binary-data-window', binaryData?.fileType]">
-		<n8n-button
+		<flowease-button
 			size="small"
 			class="binary-data-window-back"
 			:title="$locale.baseText('binaryDataDisplay.backToOverviewPage')"
@@ -21,7 +21,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapStores } from 'pinia';
-import type { IBinaryData, IRunData } from 'n8n-workflow';
+import type { IBinaryData, IRunData } from 'flowease-workflow';
 
 import BinaryDataDisplayEmbed from '@/components/BinaryDataDisplayEmbed.vue';
 

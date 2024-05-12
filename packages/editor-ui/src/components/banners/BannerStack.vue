@@ -5,13 +5,13 @@ import TrialBanner from '@/components/banners/TrialBanner.vue';
 import V1Banner from '@/components/banners/V1Banner.vue';
 import EmailConfirmationBanner from '@/components/banners/EmailConfirmationBanner.vue';
 import type { Component } from 'vue';
-import type { N8nBanners } from '@/Interface';
+import type { FloweaseBanners } from '@/Interface';
 
 // All banners that can be shown in the app should be registered here.
 // This component renders the banner with the highest priority from the banner stack, located in the UI store.
 // When registering a new banner, please consult this document to determine it's priority:
-// https://www.notion.so/n8n/Banner-stack-60948c4167c743718fde80d6745258d5
-export const N8N_BANNERS: N8nBanners = {
+// https://www.notion.so/flowease/Banner-stack-60948c4167c743718fde80d6745258d5
+export const FLOWEASE_BANNERS: FloweaseBanners = {
 	V1: { priority: 350, component: V1Banner as Component },
 	TRIAL_OVER: { priority: 260, component: TrialOverBanner as Component },
 	EMAIL_CONFIRMATION: { priority: 250, component: EmailConfirmationBanner as Component },
@@ -36,10 +36,10 @@ const currentlyShownBanner = computed(() => {
 	void updateCurrentBannerHeight();
 	if (uiStore.bannerStack.length === 0) return null;
 	// Find the banner with the highest priority
-	let banner = N8N_BANNERS[uiStore.bannerStack[0]];
+	let banner = FLOWEASE_BANNERS[uiStore.bannerStack[0]];
 	uiStore.bannerStack.forEach((bannerName, index) => {
 		if (index === 0) return;
-		const bannerToCompare = N8N_BANNERS[bannerName];
+		const bannerToCompare = FLOWEASE_BANNERS[bannerName];
 		if (bannerToCompare.priority > banner.priority) {
 			banner = bannerToCompare;
 		}

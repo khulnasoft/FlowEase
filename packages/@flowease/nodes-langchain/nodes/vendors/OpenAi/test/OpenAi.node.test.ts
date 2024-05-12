@@ -1,4 +1,4 @@
-import type { IDataObject, IExecuteFunctions } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions } from 'flowease-workflow';
 import get from 'lodash/get';
 import * as assistant from '../actions/assistant';
 import * as audio from '../actions/audio';

@@ -1,7 +1,7 @@
 import type { SuperAgentTest } from 'supertest';
 import config from '@/config';
 import Container from 'typedi';
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'flowease-workflow';
 import { STARTING_NODES } from '@/constants';
 import type { TagEntity } from '@db/entities/TagEntity';
 import type { User } from '@db/entities/User';
@@ -67,7 +67,7 @@ afterEach(async () => {
 
 const testWithAPIKey =
 	(method: 'get' | 'post' | 'put' | 'delete', url: string, apiKey: string | null) => async () => {
-		void authOwnerAgent.set({ 'X-N8N-API-KEY': apiKey });
+		void authOwnerAgent.set({ 'X-FLOWEASE-API-KEY': apiKey });
 		const response = await authOwnerAgent[method](url);
 		expect(response.statusCode).toBe(401);
 	};

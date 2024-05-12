@@ -13,9 +13,9 @@ export function vistDemoPage(theme?: 'dark' | 'light') {
 }
 
 export function importWorkflow(workflow: object) {
-	const OPEN_WORKFLOW = {command: 'openWorkflow', workflow};
-	cy.window().then($window => {
+	const OPEN_WORKFLOW = { command: 'openWorkflow', workflow };
+	cy.window().then(($window) => {
 		const message = JSON.stringify(OPEN_WORKFLOW);
-		$window.postMessage(message, '*')
+		$window.postMessage(message, '*');
 	});
 }

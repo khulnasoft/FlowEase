@@ -3,7 +3,7 @@ import { Router } from 'express';
 import type { Application, Request, Response, RequestHandler } from 'express';
 import { rateLimit as expressRateLimit } from 'express-rate-limit';
 import type { Scope } from '@flowease/permissions';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 import type { Class } from 'flowease-core';
 
 import { AuthService } from '@/auth/auth.service';

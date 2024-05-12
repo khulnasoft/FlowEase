@@ -9,7 +9,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { mauticApiRequest } from './GenericFunctions';
 
@@ -147,8 +147,8 @@ export class MauticTrigger implements INodeType {
 				const eventsOrder = this.getNodeParameter('eventsOrder', 0) as string;
 				const urlParts = urlParse(webhookUrl);
 				const body: IDataObject = {
-					name: `n8n-webhook:${urlParts.path}`,
-					description: 'n8n webhook',
+					name: `flowease-webhook:${urlParts.path}`,
+					description: 'flowease webhook',
 					webhookUrl,
 					triggers: events,
 					eventsOrderbyDir: eventsOrder,

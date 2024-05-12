@@ -1,4 +1,4 @@
-import { ApplicationError, type IDataObject, type ILoadOptionsFunctions } from 'n8n-workflow';
+import { ApplicationError, type IDataObject, type ILoadOptionsFunctions } from 'flowease-workflow';
 import { Pinecone } from '@pinecone-database/pinecone';
 import { QdrantClient } from '@qdrant/js-client-rest';
 

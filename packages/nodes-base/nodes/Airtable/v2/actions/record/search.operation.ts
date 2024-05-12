@@ -3,7 +3,7 @@ import type {
 	INodeExecutionData,
 	INodeProperties,
 	IExecuteFunctions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { generatePairedItemData, updateDisplayOptions } from '../../../../../utils/utilities';
 import { apiRequest, apiRequestAllItems, downloadRecordAttachments } from '../../transport';
 import type { IRecord } from '../../helpers/interfaces';

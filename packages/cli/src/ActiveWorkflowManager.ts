@@ -17,14 +17,14 @@ import type {
 	WorkflowActivateMode,
 	WorkflowExecuteMode,
 	INodeType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	Workflow,
 	WorkflowActivationError,
 	ErrorReporterProxy as ErrorReporter,
 	WebhookPathTakenError,
 	ApplicationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { IWorkflowDb } from '@/Interfaces';
 import * as WebhookHelpers from '@/WebhookHelpers';
@@ -186,7 +186,7 @@ export class ActiveWorkflowManager {
 				);
 			} catch (error) {
 				if (activation === 'init' && error.name === 'QueryFailedError') {
-					// n8n does not remove the registered webhooks on exit.
+					// flowease does not remove the registered webhooks on exit.
 					// This means that further initializations will always fail
 					// when inserting to database. This is why we ignore this error
 					// as it's expected to happen.

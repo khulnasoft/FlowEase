@@ -1,5 +1,5 @@
-import type { INode, NodeParameterValue } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { INode, NodeParameterValue } from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 

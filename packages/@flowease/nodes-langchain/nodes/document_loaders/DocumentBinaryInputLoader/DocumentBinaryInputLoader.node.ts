@@ -5,12 +5,12 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { TextSplitter } from 'langchain/text_splitter';
 
 import { logWrapper } from '../../../utils/logWrapper';
-import { N8nBinaryLoader } from '../../../utils/N8nBinaryLoader';
+import { FloweaseBinaryLoader } from '../../../utils/FloweaseBinaryLoader';
 import { getConnectionHintNoticeField, metadataFilterField } from '../../../utils/sharedFields';
 
 // Dependencies needed underneath the hood for the loaders. We add them
@@ -42,7 +42,7 @@ export class DocumentBinaryInputLoader implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentdefaultdataloader/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.documentdefaultdataloader/',
 					},
 				],
 			},
@@ -185,7 +185,7 @@ export class DocumentBinaryInputLoader implements INodeType {
 		)) as TextSplitter | undefined;
 
 		const binaryDataKey = this.getNodeParameter('binaryDataKey', 0) as string;
-		const processor = new N8nBinaryLoader(this, undefined, binaryDataKey, textSplitter);
+		const processor = new FloweaseBinaryLoader(this, undefined, binaryDataKey, textSplitter);
 
 		return {
 			response: logWrapper(processor, this),

@@ -18,7 +18,7 @@
 						{{ $locale.baseText('workflowSettings.executionOrder') + ':' }}
 					</el-col>
 					<el-col :span="14" class="ignore-key-press">
-						<n8n-select
+						<flowease-select
 							v-model="workflowSettings.executionOrder"
 							placeholder="Select Execution Order"
 							size="medium"
@@ -27,29 +27,29 @@
 							:limit-popper-width="true"
 							data-test-id="workflow-settings-execution-order"
 						>
-							<n8n-option
+							<flowease-option
 								v-for="option in executionOrderOptions"
 								:key="option.key"
 								:label="option.value"
 								:value="option.key"
 							>
-							</n8n-option>
-						</n8n-select>
+							</flowease-option>
+						</flowease-select>
 					</el-col>
 				</el-row>
 
 				<el-row>
 					<el-col :span="10" class="setting-name">
 						{{ $locale.baseText('workflowSettings.errorWorkflow') + ':' }}
-						<n8n-tooltip placement="top">
+						<flowease-tooltip placement="top">
 							<template #content>
 								<div v-html="helpTexts.errorWorkflow"></div>
 							</template>
 							<font-awesome-icon icon="question-circle" />
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</el-col>
 					<el-col :span="14" class="ignore-key-press">
-						<n8n-select
+						<flowease-select
 							v-model="workflowSettings.errorWorkflow"
 							placeholder="Select Workflow"
 							filterable
@@ -57,58 +57,58 @@
 							:limit-popper-width="true"
 							data-test-id="workflow-settings-error-workflow"
 						>
-							<n8n-option
+							<flowease-option
 								v-for="item in workflows"
 								:key="item.id"
 								:label="item.name"
 								:value="item.id"
 							>
-							</n8n-option>
-						</n8n-select>
+							</flowease-option>
+						</flowease-select>
 					</el-col>
 				</el-row>
 				<div v-if="isSharingEnabled" data-test-id="workflow-caller-policy">
 					<el-row>
 						<el-col :span="10" class="setting-name">
 							{{ $locale.baseText('workflowSettings.callerPolicy') + ':' }}
-							<n8n-tooltip placement="top">
+							<flowease-tooltip placement="top">
 								<template #content>
 									<div v-text="helpTexts.workflowCallerPolicy"></div>
 								</template>
 								<font-awesome-icon icon="question-circle" />
-							</n8n-tooltip>
+							</flowease-tooltip>
 						</el-col>
 
 						<el-col :span="14" class="ignore-key-press">
-							<n8n-select
+							<flowease-select
 								v-model="workflowSettings.callerPolicy"
 								:disabled="readOnlyEnv"
 								:placeholder="$locale.baseText('workflowSettings.selectOption')"
 								filterable
 								:limit-popper-width="true"
 							>
-								<n8n-option
+								<flowease-option
 									v-for="option of workflowCallerPolicyOptions"
 									:key="option.key"
 									:label="option.value"
 									:value="option.key"
 								>
-								</n8n-option>
-							</n8n-select>
+								</flowease-option>
+							</flowease-select>
 						</el-col>
 					</el-row>
 					<el-row v-if="workflowSettings.callerPolicy === 'workflowsFromAList'">
 						<el-col :span="10" class="setting-name">
 							{{ $locale.baseText('workflowSettings.callerIds') + ':' }}
-							<n8n-tooltip placement="top">
+							<flowease-tooltip placement="top">
 								<template #content>
 									<div v-text="helpTexts.workflowCallerIds"></div>
 								</template>
 								<font-awesome-icon icon="question-circle" />
-							</n8n-tooltip>
+							</flowease-tooltip>
 						</el-col>
 						<el-col :span="14">
-							<n8n-input
+							<flowease-input
 								v-model="workflowSettings.callerIds"
 								:disabled="readOnlyEnv"
 								:placeholder="$locale.baseText('workflowSettings.callerIds.placeholder')"
@@ -122,15 +122,15 @@
 				<el-row>
 					<el-col :span="10" class="setting-name">
 						{{ $locale.baseText('workflowSettings.timezone') + ':' }}
-						<n8n-tooltip placement="top">
+						<flowease-tooltip placement="top">
 							<template #content>
 								<div v-text="helpTexts.timezone"></div>
 							</template>
 							<font-awesome-icon icon="question-circle" />
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</el-col>
 					<el-col :span="14" class="ignore-key-press">
-						<n8n-select
+						<flowease-select
 							v-model="workflowSettings.timezone"
 							placeholder="Select Timezone"
 							filterable
@@ -138,28 +138,28 @@
 							:limit-popper-width="true"
 							data-test-id="workflow-settings-timezone"
 						>
-							<n8n-option
+							<flowease-option
 								v-for="timezone of timezones"
 								:key="timezone.key"
 								:label="timezone.value"
 								:value="timezone.key"
 							>
-							</n8n-option>
-						</n8n-select>
+							</flowease-option>
+						</flowease-select>
 					</el-col>
 				</el-row>
 				<el-row>
 					<el-col :span="10" class="setting-name">
 						{{ $locale.baseText('workflowSettings.saveDataErrorExecution') + ':' }}
-						<n8n-tooltip placement="top">
+						<flowease-tooltip placement="top">
 							<template #content>
 								<div v-text="helpTexts.saveDataErrorExecution"></div>
 							</template>
 							<font-awesome-icon icon="question-circle" />
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</el-col>
 					<el-col :span="14" class="ignore-key-press">
-						<n8n-select
+						<flowease-select
 							v-model="workflowSettings.saveDataErrorExecution"
 							:placeholder="$locale.baseText('workflowSettings.selectOption')"
 							filterable
@@ -167,28 +167,28 @@
 							:limit-popper-width="true"
 							data-test-id="workflow-settings-save-failed-executions"
 						>
-							<n8n-option
+							<flowease-option
 								v-for="option of saveDataErrorExecutionOptions"
 								:key="option.key"
 								:label="option.value"
 								:value="option.key"
 							>
-							</n8n-option>
-						</n8n-select>
+							</flowease-option>
+						</flowease-select>
 					</el-col>
 				</el-row>
 				<el-row>
 					<el-col :span="10" class="setting-name">
 						{{ $locale.baseText('workflowSettings.saveDataSuccessExecution') + ':' }}
-						<n8n-tooltip placement="top">
+						<flowease-tooltip placement="top">
 							<template #content>
 								<div v-text="helpTexts.saveDataSuccessExecution"></div>
 							</template>
 							<font-awesome-icon icon="question-circle" />
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</el-col>
 					<el-col :span="14" class="ignore-key-press">
-						<n8n-select
+						<flowease-select
 							v-model="workflowSettings.saveDataSuccessExecution"
 							:placeholder="$locale.baseText('workflowSettings.selectOption')"
 							filterable
@@ -196,28 +196,28 @@
 							:limit-popper-width="true"
 							data-test-id="workflow-settings-save-success-executions"
 						>
-							<n8n-option
+							<flowease-option
 								v-for="option of saveDataSuccessExecutionOptions"
 								:key="option.key"
 								:label="option.value"
 								:value="option.key"
 							>
-							</n8n-option>
-						</n8n-select>
+							</flowease-option>
+						</flowease-select>
 					</el-col>
 				</el-row>
 				<el-row>
 					<el-col :span="10" class="setting-name">
 						{{ $locale.baseText('workflowSettings.saveManualExecutions') + ':' }}
-						<n8n-tooltip placement="top">
+						<flowease-tooltip placement="top">
 							<template #content>
 								<div v-text="helpTexts.saveManualExecutions"></div>
 							</template>
 							<font-awesome-icon icon="question-circle" />
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</el-col>
 					<el-col :span="14" class="ignore-key-press">
-						<n8n-select
+						<flowease-select
 							v-model="workflowSettings.saveManualExecutions"
 							:placeholder="$locale.baseText('workflowSettings.selectOption')"
 							filterable
@@ -225,28 +225,28 @@
 							:limit-popper-width="true"
 							data-test-id="workflow-settings-save-manual-executions"
 						>
-							<n8n-option
+							<flowease-option
 								v-for="option of saveManualOptions"
 								:key="option.key"
 								:label="option.value"
 								:value="option.key"
 							>
-							</n8n-option>
-						</n8n-select>
+							</flowease-option>
+						</flowease-select>
 					</el-col>
 				</el-row>
 				<el-row>
 					<el-col :span="10" class="setting-name">
 						{{ $locale.baseText('workflowSettings.saveExecutionProgress') + ':' }}
-						<n8n-tooltip placement="top">
+						<flowease-tooltip placement="top">
 							<template #content>
 								<div v-text="helpTexts.saveExecutionProgress"></div>
 							</template>
 							<font-awesome-icon icon="question-circle" />
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</el-col>
 					<el-col :span="14" class="ignore-key-press">
-						<n8n-select
+						<flowease-select
 							v-model="workflowSettings.saveExecutionProgress"
 							:placeholder="$locale.baseText('workflowSettings.selectOption')"
 							filterable
@@ -254,25 +254,25 @@
 							:limit-popper-width="true"
 							data-test-id="workflow-settings-save-execution-progress"
 						>
-							<n8n-option
+							<flowease-option
 								v-for="option of saveExecutionProgressOptions"
 								:key="option.key"
 								:label="option.value"
 								:value="option.key"
 							>
-							</n8n-option>
-						</n8n-select>
+							</flowease-option>
+						</flowease-select>
 					</el-col>
 				</el-row>
 				<el-row>
 					<el-col :span="10" class="setting-name">
 						{{ $locale.baseText('workflowSettings.timeoutWorkflow') + ':' }}
-						<n8n-tooltip placement="top">
+						<flowease-tooltip placement="top">
 							<template #content>
 								<div v-text="helpTexts.executionTimeoutToggle"></div>
 							</template>
 							<font-awesome-icon icon="question-circle" />
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</el-col>
 					<el-col :span="14">
 						<div>
@@ -294,25 +294,25 @@
 					<el-row>
 						<el-col :span="10" class="setting-name">
 							{{ $locale.baseText('workflowSettings.timeoutAfter') + ':' }}
-							<n8n-tooltip placement="top">
+							<flowease-tooltip placement="top">
 								<template #content>
 									<div v-text="helpTexts.executionTimeout"></div>
 								</template>
 								<font-awesome-icon icon="question-circle" />
-							</n8n-tooltip>
+							</flowease-tooltip>
 						</el-col>
 						<el-col :span="4">
-							<n8n-input
+							<flowease-input
 								:disabled="readOnlyEnv"
 								:model-value="timeoutHMS.hours"
 								:min="0"
 								@update:model-value="(value) => setTimeout('hours', value)"
 							>
 								<template #append>{{ $locale.baseText('workflowSettings.hours') }}</template>
-							</n8n-input>
+							</flowease-input>
 						</el-col>
 						<el-col :span="4" class="timeout-input">
-							<n8n-input
+							<flowease-input
 								:disabled="readOnlyEnv"
 								:model-value="timeoutHMS.minutes"
 								:min="0"
@@ -320,10 +320,10 @@
 								@update:model-value="(value) => setTimeout('minutes', value)"
 							>
 								<template #append>{{ $locale.baseText('workflowSettings.minutes') }}</template>
-							</n8n-input>
+							</flowease-input>
 						</el-col>
 						<el-col :span="4" class="timeout-input">
-							<n8n-input
+							<flowease-input
 								:disabled="readOnlyEnv"
 								:model-value="timeoutHMS.seconds"
 								:min="0"
@@ -331,7 +331,7 @@
 								@update:model-value="(value) => setTimeout('seconds', value)"
 							>
 								<template #append>{{ $locale.baseText('workflowSettings.seconds') }}</template>
-							</n8n-input>
+							</flowease-input>
 						</el-col>
 					</el-row>
 				</div>
@@ -339,7 +339,7 @@
 		</template>
 		<template #footer>
 			<div class="action-buttons" data-test-id="workflow-settings-save-button">
-				<n8n-button
+				<flowease-button
 					:disabled="readOnlyEnv"
 					:label="$locale.baseText('workflowSettings.save')"
 					size="large"
@@ -371,11 +371,11 @@ import {
 	WORKFLOW_SETTINGS_MODAL_KEY,
 } from '@/constants';
 
-import type { WorkflowSettings } from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+import type { WorkflowSettings } from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useUsersStore } from '@/stores/users.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useWorkflowsEEStore } from '@/stores/workflows.ee.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { createEventBus } from 'flowease-design-system/utils';

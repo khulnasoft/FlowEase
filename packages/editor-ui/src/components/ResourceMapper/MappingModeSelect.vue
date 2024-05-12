@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { INodePropertyTypeOptions, ResourceMapperFields } from 'n8n-workflow';
+import type { INodePropertyTypeOptions, ResourceMapperFields } from 'flowease-workflow';
 import { computed, ref, watch } from 'vue';
 import { i18n as locale } from '@/plugins/i18n';
 import { useNodeSpecificationValues } from '@/composables/useNodeSpecificationValues';
@@ -103,7 +103,7 @@ defineExpose({
 
 <template>
 	<div data-test-id="mapping-mode-select">
-		<n8n-input-label
+		<flowease-input-label
 			:label="locale.baseText('resourceMapper.mappingMode.label')"
 			:bold="false"
 			:required="false"
@@ -111,13 +111,13 @@ defineExpose({
 			color="text-dark"
 		>
 			<div class="mt-5xs">
-				<n8n-select
+				<flowease-select
 					:model-value="selected"
 					:teleported="teleported"
 					:size="props.inputSize"
 					@update:model-value="onModeChanged"
 				>
-					<n8n-option
+					<flowease-option
 						v-for="option in mappingModeOptions"
 						:key="option.value"
 						:value="option.value"
@@ -130,12 +130,12 @@ defineExpose({
 							</div>
 							<div class="option-description" v-html="option.description" />
 						</div>
-					</n8n-option>
-				</n8n-select>
+					</flowease-option>
+				</flowease-select>
 			</div>
 			<div class="mt-5xs">
-				<n8n-text v-if="loading" size="small">
-					<n8n-icon icon="sync-alt" size="xsmall" :spin="true" />
+				<flowease-text v-if="loading" size="small">
+					<flowease-icon icon="sync-alt" size="xsmall" :spin="true" />
 					{{
 						locale.baseText('resourceMapper.fetchingFields.message', {
 							interpolate: {
@@ -143,15 +143,15 @@ defineExpose({
 							},
 						})
 					}}
-				</n8n-text>
-				<n8n-text v-else-if="errorMessage !== ''" size="small" color="danger">
-					<n8n-icon icon="exclamation-triangle" size="xsmall" />
+				</flowease-text>
+				<flowease-text v-else-if="errorMessage !== ''" size="small" color="danger">
+					<flowease-icon icon="exclamation-triangle" size="xsmall" />
 					{{ errorMessage }}
-					<n8n-link size="small" theme="danger" :underline="true" @click="onRetryClick">
+					<flowease-link size="small" theme="danger" :underline="true" @click="onRetryClick">
 						{{ locale.baseText('generic.retry') }}
-					</n8n-link>
-				</n8n-text>
+					</flowease-link>
+				</flowease-text>
 			</div>
-		</n8n-input-label>
+		</flowease-input-label>
 	</div>
 </template>

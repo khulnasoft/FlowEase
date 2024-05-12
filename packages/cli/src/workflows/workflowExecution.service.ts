@@ -9,12 +9,12 @@ import type {
 	IRunExecutionData,
 	IWorkflowExecuteAdditionalData,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	SubworkflowOperationError,
 	Workflow,
 	ErrorReporterProxy as ErrorReporter,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import config from '@/config';
 import type { User } from '@db/entities/User';

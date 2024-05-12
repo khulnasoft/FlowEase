@@ -3,7 +3,7 @@ import type {
 	IDataObject,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { driveRLC, fileRLC, folderRLC } from '../common.descriptions';
 import { googleApiRequest } from '../../transport';

@@ -4,7 +4,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { hunterApiRequest, hunterApiRequestAllItems } from './GenericFunctions';
 
 export class Hunter implements INodeType {

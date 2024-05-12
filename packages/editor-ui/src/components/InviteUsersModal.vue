@@ -12,34 +12,34 @@
 		@enter="onSubmit"
 	>
 		<template #content>
-			<n8n-notice v-if="!isAdvancedPermissionsEnabled">
+			<flowease-notice v-if="!isAdvancedPermissionsEnabled">
 				<i18n-t keypath="settings.users.advancedPermissions.warning">
 					<template #link>
-						<n8n-link size="small" @click="goToUpgradeAdvancedPermissions">
+						<flowease-link size="small" @click="goToUpgradeAdvancedPermissions">
 							{{ $locale.baseText('settings.users.advancedPermissions.warning.link') }}
-						</n8n-link>
+						</flowease-link>
 					</template>
 				</i18n-t>
-			</n8n-notice>
+			</flowease-notice>
 			<div v-if="showInviteUrls">
-				<n8n-users-list :users="invitedUsers">
+				<flowease-users-list :users="invitedUsers">
 					<template #actions="{ user }">
-						<n8n-tooltip>
+						<flowease-tooltip>
 							<template #content>
 								{{ $locale.baseText('settings.users.inviteLink.copy') }}
 							</template>
-							<n8n-icon-button
+							<flowease-icon-button
 								icon="link"
 								type="tertiary"
 								data-test-id="copy-invite-link-button"
 								:data-invite-link="user.inviteAcceptUrl"
 								@click="onCopyInviteLink(user)"
-							></n8n-icon-button>
-						</n8n-tooltip>
+							></flowease-icon-button>
+						</flowease-tooltip>
 					</template>
-				</n8n-users-list>
+				</flowease-users-list>
 			</div>
-			<n8n-form-inputs
+			<flowease-form-inputs
 				v-else
 				:inputs="config"
 				:event-bus="formBus"
@@ -49,7 +49,7 @@
 			/>
 		</template>
 		<template v-if="!showInviteUrls" #footer>
-			<n8n-button
+			<flowease-button
 				:loading="loading"
 				:disabled="!enabledButton"
 				:label="buttonLabel"

@@ -13,12 +13,12 @@ import {
 	historyKeyMap,
 	tabKeyMap,
 } from '@/plugins/codemirror/keymap';
-import { n8nAutocompletion, n8nLang } from '@/plugins/codemirror/n8nLang';
+import { floweaseAutocompletion, floweaseLang } from '@/plugins/codemirror/floweaseLang';
 import { useNDVStore } from '@/stores/ndv.store';
 import type { Segment } from '@/types/expressions';
 import { removeExpressionPrefix } from '@/utils/expressions';
 import { createEventBus, type EventBus } from 'flowease-design-system/utils';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import { inputTheme } from './theme';
 
 type Props = {
@@ -50,8 +50,8 @@ const extensions = computed(() => [
 	Prec.highest(
 		keymap.of([...tabKeyMap(true), ...enterKeyMap, ...autocompleteKeyMap, ...historyKeyMap]),
 	),
-	n8nLang(),
-	n8nAutocompletion(),
+	floweaseLang(),
+	floweaseAutocompletion(),
 	inputTheme({ rows: props.rows }),
 	history(),
 	expressionInputHandler(),

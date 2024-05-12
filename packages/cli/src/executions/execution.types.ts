@@ -1,6 +1,6 @@
 import type { ExecutionEntity } from '@/databases/entities/ExecutionEntity';
 import type { AuthenticatedRequest } from '@/requests';
-import type { ExecutionStatus, IDataObject } from 'n8n-workflow';
+import type { ExecutionStatus, IDataObject } from 'flowease-workflow';
 
 export declare namespace ExecutionRequest {
 	namespace QueryParams {

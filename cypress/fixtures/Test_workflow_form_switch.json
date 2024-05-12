@@ -15,7 +15,7 @@
         "options": {}
       },
       "id": "9e685367-fb94-4376-a9a4-7f311d9f7e2d",
-      "name": "n8n Form Trigger",
+      "name": "flowease Form Trigger",
       "type": "flowease-nodes-base.formTrigger",
       "typeVersion": 2,
       "position": [
@@ -37,7 +37,7 @@
     }
   ],
   "pinData": {
-    "n8n Form Trigger": [
+    "flowease Form Trigger": [
       {
         "json": {
           "name": "First item",
@@ -53,7 +53,7 @@
     ]
   },
   "connections": {
-    "n8n Form Trigger": {
+    "flowease Form Trigger": {
       "main": [
         [
           {

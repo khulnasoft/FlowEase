@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`components > FloweaseBadge > props > should render default theme correctly 1`] = `"<span class="flowease-badge default"><flowease-text-stub bold="true" size="large" compact="true" tag="span"></flowease-text-stub></span>"`;
+
+exports[`components > FloweaseBadge > props > should render secondary theme correctly 1`] = `"<span class="flowease-badge secondary"><flowease-text-stub bold="false" size="medium" compact="true" tag="span"></flowease-text-stub></span>"`;
+
+exports[`components > FloweaseBadge > props > should render with default values correctly 1`] = `"<span class="flowease-badge default"><flowease-text-stub bold="false" size="small" compact="true" tag="span"></flowease-text-stub></span>"`;

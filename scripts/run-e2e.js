@@ -5,12 +5,12 @@ const { tmpdir } = require('os');
 const { join } = require('path');
 
 function runTests(options) {
-	const testsDir = join(tmpdir(), 'n8n-e2e/');
+	const testsDir = join(tmpdir(), 'flowease-e2e/');
 	mkdirSync(testsDir, { recursive: true });
 
 	const userFolder = mkdtempSync(testsDir);
 
-	process.env.N8N_USER_FOLDER = userFolder;
+	process.env.FLOWEASE_USER_FOLDER = userFolder;
 	process.env.E2E_TESTS = 'true';
 	process.env.NODE_OPTIONS = '--dns-result-order=ipv4first';
 	process.env.VUE_APP_MAX_PINNED_DATA_SIZE = `${16 * 1024}`;

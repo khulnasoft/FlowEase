@@ -34,7 +34,7 @@ import { InternalHooks } from '@/InternalHooks';
 import { TagRepository } from '@db/repositories/tag.repository';
 import { Logger } from '@/Logger';
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 @Service()
 export class SourceControlService {

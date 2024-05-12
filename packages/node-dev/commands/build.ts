@@ -6,11 +6,12 @@ import type { IBuildOptions } from '../src';
 import { buildFiles } from '../src';
 
 export class Build extends Command {
-	static description = 'Builds credentials and nodes and copies it to n8n custom extension folder';
+	static description =
+		'Builds credentials and nodes and copies it to flowease custom extension folder';
 
 	static examples = [
 		'$ flowease-node-dev build',
-		'$ flowease-node-dev build --destination ~/n8n-nodes',
+		'$ flowease-node-dev build --destination ~/flowease-nodes',
 		'$ flowease-node-dev build --watch',
 	];
 

@@ -8,7 +8,7 @@ import * as WebhookHelpers from '@/WebhookHelpers';
 import type * as express from 'express';
 
 import type { IWorkflowDb, WebhookRequest } from '@/Interfaces';
-import type { IWebhookData, IWorkflowExecuteAdditionalData, Workflow } from 'n8n-workflow';
+import type { IWebhookData, IWorkflowExecuteAdditionalData, Workflow } from 'flowease-workflow';
 import type {
 	TestWebhookRegistrationsService,
 	TestWebhookRegistration,

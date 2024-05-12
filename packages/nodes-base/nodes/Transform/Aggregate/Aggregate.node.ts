@@ -9,7 +9,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type IPairedItemData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { prepareFieldsArray } from '../utils/utils';
 import { addBinariesToItem } from './utils';
 

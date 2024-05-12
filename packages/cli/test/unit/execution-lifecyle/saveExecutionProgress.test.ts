@@ -8,7 +8,7 @@ import {
 	type IRunExecutionData,
 	type ITaskData,
 	type IWorkflowBase,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { IExecutionResponse } from '@/Interfaces';
 
 mockInstance(Logger);

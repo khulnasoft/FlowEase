@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.block">
 		<div :class="$style.header">
-			<n8n-heading tag="h3" size="small" color="text-base">{{ title }}</n8n-heading>
+			<flowease-heading tag="h3" size="small" color="text-base">{{ title }}</flowease-heading>
 		</div>
 		<div :class="$style.content">
 			<slot></slot>

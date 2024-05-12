@@ -4,7 +4,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { IZepConfig } from '@langchain/community/vectorstores/zep';
 import { ZepVectorStore } from '@langchain/community/vectorstores/zep';
 import type { Embeddings } from '@langchain/core/embeddings';
@@ -34,7 +34,7 @@ export class VectorStoreZepLoad implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstorezep/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstorezep/',
 					},
 				],
 			},

@@ -4,8 +4,8 @@ import type {
 	INode,
 	INodeExecutionData,
 	INodePropertyOptions,
-} from 'n8n-workflow';
-import { NodeOperationError, jsonParse } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError, jsonParse } from 'flowease-workflow';
 
 import { generatePairedItemData } from '../../../../utils/utilities';
 import type {

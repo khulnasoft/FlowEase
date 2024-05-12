@@ -1,6 +1,6 @@
 import type { SecretsProviderSettings, SecretsProviderState } from '@/Interfaces';
 import { SecretsProvider } from '@/Interfaces';
-import type { IDataObject, INodeProperties } from 'n8n-workflow';
+import type { IDataObject, INodeProperties } from 'flowease-workflow';
 import type { AxiosInstance, AxiosResponse } from 'axios';
 import axios from 'axios';
 import { Logger } from '@/Logger';
@@ -87,7 +87,7 @@ export class VaultProvider extends SecretsProvider {
 	properties: INodeProperties[] = [
 		{
 			displayName:
-				'Need help filling out these fields? <a href="https://docs.flowease.khulnasoft.com/external-secrets/#connect-n8n-to-your-secrets-store" target="_blank">Open docs</a>',
+				'Need help filling out these fields? <a href="https://docs.flowease.khulnasoft.com/external-secrets/#connect-flowease-to-your-secrets-store" target="_blank">Open docs</a>',
 			name: 'notice',
 			type: 'notice',
 			default: '',

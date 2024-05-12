@@ -2,14 +2,14 @@
 
 import { MessageEventBusDestination } from './MessageEventBusDestination.ee';
 import * as Sentry from '@sentry/node';
-import { MessageEventBusDestinationTypeNames } from 'n8n-workflow';
+import { MessageEventBusDestinationTypeNames } from 'flowease-workflow';
 import type {
 	MessageEventBusDestinationOptions,
 	MessageEventBusDestinationSentryOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { isLogStreamingEnabled } from '../MessageEventBus/MessageEventBusHelper';
 import { eventMessageGenericDestinationTestEvent } from '../EventMessageClasses/EventMessageGeneric';
-import { N8N_VERSION } from '@/constants';
+import { FLOWEASE_VERSION } from '@/constants';
 import type { MessageEventBus, MessageWithCallback } from '../MessageEventBus/MessageEventBus';
 
 export const isMessageEventBusDestinationSentryOptions = (
@@ -45,7 +45,7 @@ export class MessageEventBusDestinationSentry
 			dsn: this.dsn,
 			tracesSampleRate: this.tracesSampleRate,
 			environment,
-			release: N8N_VERSION,
+			release: FLOWEASE_VERSION,
 			transport: Sentry.makeNodeTransport,
 			integrations: Sentry.defaultIntegrations,
 			stackParser: Sentry.defaultStackParser,
@@ -70,7 +70,7 @@ export class MessageEventBusDestinationSentry
 			scope.setTags({
 				event: msg.getEventName(),
 				logger: this.label ?? this.getId(),
-				app: 'n8n',
+				app: 'flowease',
 			});
 			if (this.sendPayload) {
 				scope.setExtras(payload);

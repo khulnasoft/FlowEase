@@ -5,10 +5,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapStores } from 'pinia';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useUsersStore } from '@/stores/users.store';
-import type { ITelemetrySettings } from 'n8n-workflow';
+import type { ITelemetrySettings } from 'flowease-workflow';
 
 export default defineComponent({
 	name: 'Telemetry',

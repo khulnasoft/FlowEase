@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`components > FloweaseNotice > props > content > should render HTML 1`] = `
+"<div id="notice" class="notice notice warning" role="alert">
+  <div class="notice-content"><span class="flowease-text compact size-small regular"><span id="notice-content" class="truncated" role="region"><strong>Hello world!</strong> This is a notice.</span></span></div>
+</div>"
+`;
+
+exports[`components > FloweaseNotice > props > content > should render correctly with content prop 1`] = `
+"<div id="notice" class="notice notice warning" role="alert">
+  <div class="notice-content">
+    <flowease-text-stub bold="false" size="small" compact="true" tag="span"></flowease-text-stub>
+  </div>
+</div>"
+`;
+
+exports[`components > FloweaseNotice > props > content > should sanitize rendered HTML 1`] = `
+"<div id="notice" class="notice notice warning" role="alert">
+  <div class="notice-content">
+    <flowease-text-stub bold="false" size="small" compact="true" tag="span"></flowease-text-stub>
+  </div>
+</div>"
+`;
+
+exports[`components > FloweaseNotice > should render correctly 1`] = `
+"<div id="notice" class="notice notice warning" role="alert">
+  <div class="notice-content">
+    <flowease-text-stub bold="false" size="small" compact="true" tag="span"></flowease-text-stub>
+  </div>
+</div>"
+`;

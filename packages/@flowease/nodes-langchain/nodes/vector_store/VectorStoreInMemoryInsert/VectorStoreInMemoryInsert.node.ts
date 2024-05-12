@@ -5,10 +5,10 @@ import {
 	type IExecuteFunctions,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { Document } from 'langchain/document';
 import type { Embeddings } from '@langchain/core/embeddings';
-import type { N8nJsonLoader } from '../../../utils/N8nJsonLoader';
+import type { FloweaseJsonLoader } from '../../../utils/FloweaseJsonLoader';
 import { processDocuments } from '../shared/processDocuments';
 import { MemoryVectorStoreManager } from '../shared/MemoryVectorStoreManager';
 
@@ -33,7 +33,7 @@ export class VectorStoreInMemoryInsert implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreinmemory/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstoreinmemory/',
 					},
 				],
 			},
@@ -91,7 +91,7 @@ export class VectorStoreInMemoryInsert implements INodeType {
 		const memoryKey = this.getNodeParameter('memoryKey', 0) as string;
 		const clearStore = this.getNodeParameter('clearStore', 0) as boolean;
 		const documentInput = (await this.getInputConnectionData(NodeConnectionType.AiDocument, 0)) as
-			| N8nJsonLoader
+			| FloweaseJsonLoader
 			| Array<Document<Record<string, unknown>>>;
 
 		const { processedDocuments, serializedDocuments } = await processDocuments(

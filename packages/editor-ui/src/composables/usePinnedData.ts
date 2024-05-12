@@ -1,7 +1,7 @@
 import { useToast } from '@/composables/useToast';
 import { useI18n } from '@/composables/useI18n';
-import type { INodeExecutionData, IPinData } from 'n8n-workflow';
-import { jsonParse, jsonStringify, NodeConnectionType, NodeHelpers } from 'n8n-workflow';
+import type { INodeExecutionData, IPinData } from 'flowease-workflow';
+import { jsonParse, jsonStringify, NodeConnectionType, NodeHelpers } from 'flowease-workflow';
 import {
 	MAX_EXPECTED_REQUEST_SIZE,
 	MAX_PINNED_DATA_SIZE,
@@ -15,7 +15,7 @@ import { useExternalHooks } from '@/composables/useExternalHooks';
 import { useTelemetry } from '@/composables/useTelemetry';
 import type { MaybeRef } from 'vue';
 import { computed, unref } from 'vue';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { storeToRefs } from 'pinia';
 import { useNodeType } from '@/composables/useNodeType';
 import { useDataSchema } from './useDataSchema';

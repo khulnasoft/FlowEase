@@ -1,4 +1,4 @@
-import type { IDataObject, ILoadOptionsFunctions, INodeListSearchResult } from 'n8n-workflow';
+import type { IDataObject, ILoadOptionsFunctions, INodeListSearchResult } from 'flowease-workflow';
 import { getSubfolders, microsoftApiRequest } from '../transport';
 import { encodeOutlookId } from '../helpers/utils';
 

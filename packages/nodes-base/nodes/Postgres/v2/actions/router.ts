@@ -1,5 +1,5 @@
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData } from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { configurePostgres } from '../transport';
 import { configureQueryRunner } from '../helpers/utils';

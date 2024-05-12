@@ -7,7 +7,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { activeCampaignApiRequest, activeCampaignApiRequestAllItems } from './GenericFunctions';
 
@@ -132,7 +132,7 @@ export class ActiveCampaignTrigger implements INodeType {
 				const sources = this.getNodeParameter('sources', '') as string[];
 				const body: IDataObject = {
 					webhook: {
-						name: `n8n-webhook:${webhookUrl}`,
+						name: `flowease-webhook:${webhookUrl}`,
 						url: webhookUrl,
 						events,
 						sources,

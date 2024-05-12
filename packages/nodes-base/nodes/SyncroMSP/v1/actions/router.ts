@@ -1,5 +1,5 @@
-import type { IExecuteFunctions, INodeExecutionData, JsonObject } from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, JsonObject } from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import * as customer from './customer';
 import * as ticket from './ticket';

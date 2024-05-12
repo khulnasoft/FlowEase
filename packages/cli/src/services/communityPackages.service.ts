@@ -5,7 +5,7 @@ import { Service } from 'typedi';
 import { promisify } from 'util';
 import axios from 'axios';
 
-import { ApplicationError, type PublicInstalledPackage } from 'n8n-workflow';
+import { ApplicationError, type PublicInstalledPackage } from 'flowease-workflow';
 import { InstanceSettings } from 'flowease-core';
 import type { PackageDirectoryLoader } from 'flowease-core';
 
@@ -154,8 +154,8 @@ export class CommunityPackagesService {
 				[NPM_DISK_INSUFFICIENT_SPACE]: DISK_IS_FULL,
 			};
 
-			Object.entries(map).forEach(([npmMessage, n8nMessage]) => {
-				if (errorMessage.includes(npmMessage)) throw new ApplicationError(n8nMessage);
+			Object.entries(map).forEach(([npmMessage, floweaseMessage]) => {
+				if (errorMessage.includes(npmMessage)) throw new ApplicationError(floweaseMessage);
 			});
 
 			this.logger.warn('npm command failed', { errorMessage });
@@ -212,11 +212,11 @@ export class CommunityPackagesService {
 	}
 
 	async checkNpmPackageStatus(packageName: string) {
-		const N8N_BACKEND_SERVICE_URL = 'https://api.flowease.khulnasoft.com/api/package';
+		const FLOWEASE_BACKEND_SERVICE_URL = 'https://api.flowease.khulnasoft.com/api/package';
 
 		try {
 			const response = await axios.post<CommunityPackages.PackageStatusCheck>(
-				N8N_BACKEND_SERVICE_URL,
+				FLOWEASE_BACKEND_SERVICE_URL,
 				{ name: packageName },
 				{ method: 'POST' },
 			);
@@ -272,10 +272,10 @@ export class CommunityPackagesService {
 		if (missingPackages.size === 0) return;
 
 		this.logger.error(
-			'n8n detected that some packages are missing. For more information, visit https://docs.flowease.khulnasoft.com/integrations/community-nodes/troubleshooting/',
+			'flowease detected that some packages are missing. For more information, visit https://docs.flowease.khulnasoft.com/integrations/community-nodes/troubleshooting/',
 		);
 
-		if (reinstallMissingPackages || process.env.N8N_REINSTALL_MISSING_PACKAGES) {
+		if (reinstallMissingPackages || process.env.FLOWEASE_REINSTALL_MISSING_PACKAGES) {
 			this.logger.info('Attempting to reinstall missing packages', { missingPackages });
 			try {
 				// Optimistic approach - stop if any installation fails
@@ -287,7 +287,7 @@ export class CommunityPackagesService {
 				}
 				this.logger.info('Packages reinstalled successfully. Resuming regular initialization.');
 			} catch (error) {
-				this.logger.error('n8n was unable to install the missing packages.');
+				this.logger.error('flowease was unable to install the missing packages.');
 			}
 		}
 

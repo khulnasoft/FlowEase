@@ -3,7 +3,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import * as spreadsheet from './actions/spreadsheet.operation';
 import * as toBinary from './actions/toBinary.operation';

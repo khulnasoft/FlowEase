@@ -1,4 +1,4 @@
-import type { N8nInput } from 'flowease-design-system';
+import type { FloweaseInput } from 'flowease-design-system';
 import type {
 	IConnections,
 	INodeParameters,
@@ -8,7 +8,7 @@ import type {
 	INodeParameterResourceLocator,
 	NodeParameterValue,
 	ResourceMapperValue,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { RouteLocation } from 'vue-router';
 import type {
 	AuthenticationModalEventData,
@@ -46,7 +46,7 @@ export interface ExternalHooks {
 	parameterInput: {
 		mount: Array<
 			ExternalHooksMethod<{
-				inputFieldRef?: InstanceType<typeof N8nInput>;
+				inputFieldRef?: InstanceType<typeof FloweaseInput>;
 				parameter?: INodeProperties;
 			}>
 		>;

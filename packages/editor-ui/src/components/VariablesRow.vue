@@ -137,7 +137,7 @@ function focusFirstInput() {
 		<td class="variables-key-column">
 			<div>
 				<span v-if="!editing">{{ data.key }}</span>
-				<n8n-form-input
+				<flowease-form-input
 					v-else
 					ref="keyInputRef"
 					v-model="modelValue.key"
@@ -155,7 +155,7 @@ function focusFirstInput() {
 		<td class="variables-value-column">
 			<div>
 				<span v-if="!editing">{{ data.value }}</span>
-				<n8n-form-input
+				<flowease-form-input
 					v-else
 					ref="valueInputRef"
 					v-model="modelValue.value"
@@ -171,39 +171,39 @@ function focusFirstInput() {
 		</td>
 		<td class="variables-usage-column">
 			<div>
-				<n8n-tooltip placement="top">
+				<flowease-tooltip placement="top">
 					<span v-if="modelValue.key && usage" :class="$style.usageSyntax" @click="onUsageClick">{{
 						usage
 					}}</span>
 					<template #content>
 						{{ i18n.baseText('variables.row.usage.copyToClipboard') }}
 					</template>
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</div>
 		</td>
 		<td v-if="isFeatureEnabled">
 			<div v-if="editing" :class="$style.buttons">
-				<n8n-button
+				<flowease-button
 					data-test-id="variable-row-cancel-button"
 					type="tertiary"
 					class="mr-xs"
 					@click="onCancel"
 				>
 					{{ i18n.baseText('variables.row.button.cancel') }}
-				</n8n-button>
-				<n8n-button
+				</flowease-button>
+				<flowease-button
 					data-test-id="variable-row-save-button"
 					:disabled="!formValid"
 					type="primary"
 					@click="onSave"
 				>
 					{{ i18n.baseText('variables.row.button.save') }}
-				</n8n-button>
+				</flowease-button>
 			</div>
 			<div v-else :class="[$style.buttons, $style.hoverButtons]">
-				<n8n-tooltip :disabled="permissions.edit" placement="top">
+				<flowease-tooltip :disabled="permissions.edit" placement="top">
 					<div>
-						<n8n-button
+						<flowease-button
 							data-test-id="variable-row-edit-button"
 							type="tertiary"
 							class="mr-xs"
@@ -211,27 +211,27 @@ function focusFirstInput() {
 							@click="onEdit"
 						>
 							{{ i18n.baseText('variables.row.button.edit') }}
-						</n8n-button>
+						</flowease-button>
 					</div>
 					<template #content>
 						{{ i18n.baseText('variables.row.button.edit.onlyOwnerCanSave') }}
 					</template>
-				</n8n-tooltip>
-				<n8n-tooltip :disabled="permissions.delete" placement="top">
+				</flowease-tooltip>
+				<flowease-tooltip :disabled="permissions.delete" placement="top">
 					<div>
-						<n8n-button
+						<flowease-button
 							data-test-id="variable-row-delete-button"
 							type="tertiary"
 							:disabled="!permissions.delete"
 							@click="onDelete"
 						>
 							{{ i18n.baseText('variables.row.button.delete') }}
-						</n8n-button>
+						</flowease-button>
 					</div>
 					<template #content>
 						{{ i18n.baseText('variables.row.button.delete.onlyOwnerCanDelete') }}
 					</template>
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</div>
 		</td>
 	</tr>

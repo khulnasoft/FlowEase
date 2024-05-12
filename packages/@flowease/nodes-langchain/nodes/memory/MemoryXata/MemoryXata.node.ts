@@ -1,6 +1,11 @@
 /* eslint-disable flowease-nodes-base/node-dirname-against-convention */
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
-import type { IExecuteFunctions, INodeType, INodeTypeDescription, SupplyData } from 'n8n-workflow';
+import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
+import type {
+	IExecuteFunctions,
+	INodeType,
+	INodeTypeDescription,
+	SupplyData,
+} from 'flowease-workflow';
 import { XataChatMessageHistory } from '@langchain/community/stores/message/xata';
 import { BufferMemory } from 'langchain/memory';
 import { BaseClient } from '@xata.io/client';
@@ -30,7 +35,7 @@ export class MemoryXata implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memoryxata/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.memoryxata/',
 					},
 				],
 			},

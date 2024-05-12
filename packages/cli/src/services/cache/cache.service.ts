@@ -2,7 +2,7 @@ import EventEmitter from 'node:events';
 
 import { Service } from 'typedi';
 import { caching } from 'cache-manager';
-import { ApplicationError, jsonStringify } from 'n8n-workflow';
+import { ApplicationError, jsonStringify } from 'flowease-workflow';
 
 import config from '@/config';
 import { getDefaultRedisClient, getRedisPrefix } from '@/services/redis/RedisServiceHelper';

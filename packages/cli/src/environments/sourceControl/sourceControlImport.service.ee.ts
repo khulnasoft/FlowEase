@@ -8,7 +8,11 @@ import {
 	SOURCE_CONTROL_WORKFLOW_EXPORT_FOLDER,
 } from './constants';
 import glob from 'fast-glob';
-import { ApplicationError, jsonParse, ErrorReporterProxy as ErrorReporter } from 'n8n-workflow';
+import {
+	ApplicationError,
+	jsonParse,
+	ErrorReporterProxy as ErrorReporter,
+} from 'flowease-workflow';
 import { readFile as fsReadFile } from 'fs/promises';
 import { Credentials, InstanceSettings } from 'flowease-core';
 import type { IWorkflowToImport } from '@/Interfaces';
@@ -18,7 +22,7 @@ import { SharedCredentials } from '@db/entities/SharedCredentials';
 import type { WorkflowTagMapping } from '@db/entities/WorkflowTagMapping';
 import type { TagEntity } from '@db/entities/TagEntity';
 import { ActiveWorkflowManager } from '@/ActiveWorkflowManager';
-import { In } from '@n8n/typeorm';
+import { In } from '@flowease/typeorm';
 import { isUniqueConstraintError } from '@/ResponseHelper';
 import type { SourceControlWorkflowVersionId } from './types/sourceControlWorkflowVersionId';
 import { getCredentialExportPath, getWorkflowExportPath } from './sourceControlHelper.ee';
@@ -49,7 +53,7 @@ export class SourceControlImportService {
 		private readonly tagRepository: TagRepository,
 		instanceSettings: InstanceSettings,
 	) {
-		this.gitFolder = path.join(instanceSettings.n8nFolder, SOURCE_CONTROL_GIT_FOLDER);
+		this.gitFolder = path.join(instanceSettings.floweaseFolder, SOURCE_CONTROL_GIT_FOLDER);
 		this.workflowExportFolder = path.join(this.gitFolder, SOURCE_CONTROL_WORKFLOW_EXPORT_FOLDER);
 		this.credentialExportFolder = path.join(
 			this.gitFolder,

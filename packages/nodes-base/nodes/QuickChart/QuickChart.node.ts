@@ -2,12 +2,12 @@ import type {
 	IDataObject,
 	IExecuteFunctions,
 	IHttpRequestOptions,
-	IN8nHttpFullResponse,
+	IFloweaseHttpFullResponse,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { jsonParse, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse, NodeOperationError } from 'flowease-workflow';
 
 import {
 	CHART_TYPE_OPTIONS,
@@ -409,7 +409,7 @@ export class QuickChart implements INodeType {
 			json: false,
 		};
 
-		const response = (await this.helpers.httpRequest(options)) as IN8nHttpFullResponse;
+		const response = (await this.helpers.httpRequest(options)) as IFloweaseHttpFullResponse;
 		let mimeType = response.headers['content-type'] as string | undefined;
 		mimeType = mimeType ? mimeType.split(';').find((value) => value.includes('/')) : undefined;
 

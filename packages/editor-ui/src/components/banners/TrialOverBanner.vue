@@ -14,9 +14,9 @@ function onUpdatePlanClick() {
 			<span>{{ locale.baseText('banners.trialOver.message') }}</span>
 		</template>
 		<template #trailingContent>
-			<n8n-button type="success" icon="gem" size="small" @click="onUpdatePlanClick">{{
+			<flowease-button type="success" icon="gem" size="small" @click="onUpdatePlanClick">{{
 				locale.baseText('generic.upgradeNow')
-			}}</n8n-button>
+			}}</flowease-button>
 		</template>
 	</BaseBanner>
 </template>

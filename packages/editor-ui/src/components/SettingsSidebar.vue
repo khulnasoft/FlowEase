@@ -1,22 +1,24 @@
 <template>
 	<div :class="$style.container">
-		<n8n-menu :items="sidebarMenuItems" @select="handleSelect">
+		<flowease-menu :items="sidebarMenuItems" @select="handleSelect">
 			<template #header>
 				<div :class="$style.returnButton" data-test-id="settings-back" @click="$emit('return')">
 					<i class="mr-xs">
 						<font-awesome-icon icon="arrow-left" />
 					</i>
-					<n8n-heading size="large" :bold="true">{{ $locale.baseText('settings') }}</n8n-heading>
+					<flowease-heading size="large" :bold="true">{{
+						$locale.baseText('settings')
+					}}</flowease-heading>
 				</div>
 			</template>
 			<template #menuSuffix>
 				<div :class="$style.versionContainer">
-					<n8n-link size="small" @click="onVersionClick">
+					<flowease-link size="small" @click="onVersionClick">
 						{{ $locale.baseText('settings.version') }} {{ rootStore.versionCli }}
-					</n8n-link>
+					</flowease-link>
 				</div>
 			</template>
-		</n8n-menu>
+		</flowease-menu>
 	</div>
 </template>
 
@@ -30,7 +32,7 @@ import type { IMenuItem } from 'flowease-design-system';
 import type { BaseTextKey } from '@/plugins/i18n';
 import { useUIStore } from '@/stores/ui.store';
 import { useSettingsStore } from '@/stores/settings.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { hasPermission } from '@/rbac/permissions';
 
 export default defineComponent({
@@ -70,7 +72,7 @@ export default defineComponent({
 				{
 					id: 'settings-api',
 					icon: 'plug',
-					label: this.$locale.baseText('settings.n8napi'),
+					label: this.$locale.baseText('settings.floweaseapi'),
 					position: 'top',
 					available: this.canAccessApiSettings(),
 					route: { to: { name: VIEWS.API_SETTINGS } },

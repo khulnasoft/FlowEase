@@ -1,5 +1,5 @@
 import type { Application } from 'express';
-import type { ICredentialDataDecryptedObject } from 'n8n-workflow';
+import type { ICredentialDataDecryptedObject } from 'flowease-workflow';
 import type { SuperAgentTest } from 'supertest';
 import type { Server } from 'http';
 

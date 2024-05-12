@@ -6,8 +6,8 @@ import type {
 	ITriggerResponse,
 	IDeferredPromise,
 	IRun,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import * as mqtt from 'mqtt';
 import { formatPrivateKey } from '@utils/utilities';

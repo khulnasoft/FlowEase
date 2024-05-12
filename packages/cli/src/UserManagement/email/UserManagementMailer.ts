@@ -3,7 +3,7 @@ import { existsSync } from 'fs';
 import { readFile } from 'fs/promises';
 import Handlebars from 'handlebars';
 import { join as pathJoin } from 'path';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 import config from '@/config';
 import type { User } from '@db/entities/User';
@@ -74,7 +74,7 @@ export class UserManagementMailer {
 		const template = await getTemplate('invite');
 		const result = await this.mailer?.sendMail({
 			emailRecipients: inviteEmailData.email,
-			subject: 'You have been invited to n8n',
+			subject: 'You have been invited to flowease',
 			body: template(inviteEmailData),
 		});
 
@@ -87,7 +87,7 @@ export class UserManagementMailer {
 		const template = await getTemplate('passwordReset', 'passwordReset.html');
 		const result = await this.mailer?.sendMail({
 			emailRecipients: passwordResetData.email,
-			subject: 'n8n password reset',
+			subject: 'flowease password reset',
 			body: template(passwordResetData),
 		});
 
@@ -120,7 +120,7 @@ export class UserManagementMailer {
 		try {
 			const result = await this.mailer.sendMail({
 				emailRecipients,
-				subject: `${sharer.firstName} has shared an n8n workflow with you`,
+				subject: `${sharer.firstName} has shared an flowease workflow with you`,
 				body: populateTemplate({
 					workflowName: workflow.name,
 					workflowUrl: `${baseUrl}/workflow/${workflow.id}`,
@@ -175,7 +175,7 @@ export class UserManagementMailer {
 		try {
 			const result = await this.mailer.sendMail({
 				emailRecipients,
-				subject: `${sharer.firstName} has shared an n8n credential with you`,
+				subject: `${sharer.firstName} has shared an flowease credential with you`,
 				body: populateTemplate({ credentialsName, credentialsListUrl: `${baseUrl}/credentials` }),
 			});
 

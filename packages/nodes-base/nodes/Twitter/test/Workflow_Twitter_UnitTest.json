@@ -100,7 +100,7 @@
 				},
 				"user": {
 					"__rl": true,
-					"value": "n8n_io",
+					"value": "flowease_io",
 					"mode": "username"
 				}
 			},
@@ -142,8 +142,8 @@
 			{
 				"json": {
 					"id": "1285192200213626880",
-					"name": "Integration-n8n",
-					"username": "IntegrationN8n"
+					"name": "Integration-flowease",
+					"username": "IntegrationFlowease"
 				}
 			}
 		],

@@ -10,8 +10,8 @@ import type {
 	INodeTypeDescription,
 	ITriggerResponse,
 	IRun,
-} from 'n8n-workflow';
-import { createDeferredPromise, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { createDeferredPromise, NodeOperationError } from 'flowease-workflow';
 
 export class KafkaTrigger implements INodeType {
 	description: INodeTypeDescription = {
@@ -48,7 +48,7 @@ export class KafkaTrigger implements INodeType {
 				type: 'string',
 				default: '',
 				required: true,
-				placeholder: 'n8n-kafka',
+				placeholder: 'flowease-kafka',
 				description: 'ID of the consumer group',
 			},
 			{
@@ -295,13 +295,13 @@ export class KafkaTrigger implements INodeType {
 
 		await startConsumer();
 
-		// The "closeFunction" function gets called by n8n whenever
+		// The "closeFunction" function gets called by flowease whenever
 		// the workflow gets deactivated and can so clean up.
 		async function closeFunction() {
 			await consumer.disconnect();
 		}
 
-		// The "manualTriggerFunction" function gets called by n8n
+		// The "manualTriggerFunction" function gets called by flowease
 		// when a user is in the workflow editor and starts the
 		// workflow manually. So the function has to make sure that
 		// the emit() gets called with similar data like when it

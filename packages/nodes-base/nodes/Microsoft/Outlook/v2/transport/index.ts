@@ -7,7 +7,7 @@ import type {
 	ILoadOptionsFunctions,
 	INodeExecutionData,
 	IPollFunctions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { prepareApiError } from '../helpers/utils';
 
 export async function microsoftApiRequest(

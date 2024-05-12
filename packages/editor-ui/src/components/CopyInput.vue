@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<n8n-input-label :label="label">
+		<flowease-input-label :label="label">
 			<div
 				:class="{
 					[$style.copyText]: true,
@@ -16,7 +16,7 @@
 					<span>{{ copyButtonText }}</span>
 				</div>
 			</div>
-		</n8n-input-label>
+		</flowease-input-label>
 		<div v-if="hint" :class="$style.hint">{{ hint }}</div>
 	</div>
 </template>

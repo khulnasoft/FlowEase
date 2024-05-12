@@ -6,7 +6,7 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 import { zoomApiRequest, zoomApiRequestAllItems } from './GenericFunctions';
@@ -292,7 +292,7 @@ export class Zoom implements INodeType {
 									'YYYY-MM-DDTHH:mm:ss',
 								);
 							} else {
-								// if none timezone it's defined used n8n timezone
+								// if none timezone it's defined used flowease timezone
 								body.start_time = moment
 									.tz(additionalFields.startTime as string, this.getTimezone())
 									.format();

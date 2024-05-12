@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData } from 'flowease-workflow';
 import type { PyDict } from 'pyodide/ffi';
 import { LoadPyodide } from './Pyodide';
 import type { SandboxContext } from './Sandbox';
@@ -10,7 +10,7 @@ type PythonSandboxContext = {
 
 type PyodideError = Error & { type: string };
 
-const envAccessBlocked = process.env.N8N_BLOCK_ENV_ACCESS_IN_NODE === 'true';
+const envAccessBlocked = process.env.FLOWEASE_BLOCK_ENV_ACCESS_IN_NODE === 'true';
 
 export class PythonSandbox extends Sandbox {
 	private readonly context: PythonSandboxContext;

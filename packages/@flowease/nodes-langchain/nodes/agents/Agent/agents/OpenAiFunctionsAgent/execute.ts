@@ -3,7 +3,7 @@ import {
 	type INodeExecutionData,
 	NodeConnectionType,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { AgentExecutorInput } from 'langchain/agents';
 import { AgentExecutor, OpenAIAgent } from 'langchain/agents';

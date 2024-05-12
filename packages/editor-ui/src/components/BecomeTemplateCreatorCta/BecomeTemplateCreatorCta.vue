@@ -28,11 +28,11 @@ const onClick = () => {
 				data-test-id="close-become-template-creator-cta"
 				@click="store.dismissCta()"
 			>
-				<n8n-icon icon="times" size="xsmall" :title="i18n.baseText('generic.close')" />
+				<flowease-icon icon="times" size="xsmall" :title="i18n.baseText('generic.close')" />
 			</button>
 		</div>
 
-		<n8n-button
+		<flowease-button
 			:class="$style.becomeCreatorButton"
 			:label="i18n.baseText('becomeCreator.buttonText')"
 			size="xmini"

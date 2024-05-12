@@ -4,7 +4,7 @@ import { linter as createLinter } from '@codemirror/lint';
 import type { EditorView } from '@codemirror/view';
 import * as esprima from 'esprima-next';
 import type { Node } from 'estree';
-import type { CodeNodeEditorLanguage } from 'n8n-workflow';
+import type { CodeNodeEditorLanguage } from 'flowease-workflow';
 
 import {
 	DEFAULT_LINTER_DELAY_IN_MS,
@@ -57,7 +57,7 @@ export const linterExtension = defineComponent({
 					];
 				} catch {
 					/**
-					 * For invalid (e.g. half-written) n8n syntax, esprima errors with an off-by-one line number for the final line. In future, we should add full linting for n8n syntax before parsing JS.
+					 * For invalid (e.g. half-written) flowease syntax, esprima errors with an off-by-one line number for the final line. In future, we should add full linting for flowease syntax before parsing JS.
 					 */
 					return [];
 				}
@@ -383,7 +383,7 @@ export const linterExtension = defineComponent({
 					left: { declarations: Array<{ id: { type: string; name: string } }> };
 				};
 
-				const isForOfStatementOverN8nVar = (node: Node) =>
+				const isForOfStatementOverFloweaseVar = (node: Node) =>
 					node.type === 'ForOfStatement' &&
 					node.left.type === 'VariableDeclaration' &&
 					node.left.declarations.length === 1 &&
@@ -393,9 +393,9 @@ export const linterExtension = defineComponent({
 					node.right.callee.type === 'MemberExpression' &&
 					!node.right.callee.computed &&
 					node.right.callee.object.type === 'Identifier' &&
-					node.right.callee.object.name.startsWith('$'); // n8n var, e.g $input
+					node.right.callee.object.name.startsWith('$'); // flowease var, e.g $input
 
-				const found = walk<TargetNode>(ast, isForOfStatementOverN8nVar);
+				const found = walk<TargetNode>(ast, isForOfStatementOverFloweaseVar);
 
 				if (found.length === 1) {
 					const itemAlias = found[0].left.declarations[0].id.name;

@@ -11,9 +11,9 @@
 		],
 		"generic": [
 			{
-				"label": "Build your own virtual assistant with n8n: A step by step guide",
+				"label": "Build your own virtual assistant with flowease: A step by step guide",
 				"icon": "👦",
-				"url": "https://flowease.khulnasoft.com/blog/build-your-own-virtual-assistant-with-n8n-a-step-by-step-guide/"
+				"url": "https://flowease.khulnasoft.com/blog/build-your-own-virtual-assistant-with-flowease-a-step-by-step-guide/"
 			},
 			{
 				"label": "How uProc scraped a multi-page website with a low-code workflow",

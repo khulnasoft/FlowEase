@@ -10,7 +10,7 @@ import type {
 	IWebhookFunctions,
 	IHttpRequestOptions,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { pascalCase } from 'change-case';
 

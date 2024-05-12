@@ -1,5 +1,5 @@
 <template>
-	<n8n-popover
+	<flowease-popover
 		placement="bottom"
 		:width="width"
 		:popper-class="$style.popover"
@@ -11,7 +11,7 @@
 			<slot name="error"></slot>
 		</div>
 		<div v-if="filterable && !errorView" :class="$style.searchInput" @keydown="onKeyDown">
-			<n8n-input
+			<flowease-input
 				ref="search"
 				:model-value="filter"
 				:clearable="true"
@@ -22,7 +22,7 @@
 				<template #prefix>
 					<font-awesome-icon :class="$style.searchIcon" icon="search" />
 				</template>
-			</n8n-input>
+			</flowease-input>
 		</div>
 		<div v-if="filterRequired && !filter && !errorView && !loading" :class="$style.searchRequired">
 			{{ $locale.baseText('resourceLocator.mode.list.searchRequired') }}
@@ -67,14 +67,14 @@
 			</div>
 			<div v-if="loading && !errorView">
 				<div v-for="i in 3" :key="i" :class="$style.loadingItem">
-					<n8n-loading :class="$style.loader" variant="p" :rows="1" />
+					<flowease-loading :class="$style.loader" variant="p" :rows="1" />
 				</div>
 			</div>
 		</div>
 		<template #reference>
 			<slot />
 		</template>
-	</n8n-popover>
+	</flowease-popover>
 </template>
 
 <script lang="ts">

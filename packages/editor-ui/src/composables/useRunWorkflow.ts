@@ -14,8 +14,8 @@ import type {
 	Workflow,
 	StartNodeData,
 	IRun,
-} from 'n8n-workflow';
-import { NodeConnectionType, FORM_TRIGGER_PATH_IDENTIFIER } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeConnectionType, FORM_TRIGGER_PATH_IDENTIFIER } from 'flowease-workflow';
 
 import { useToast } from '@/composables/useToast';
 import { useNodeHelpers } from '@/composables/useNodeHelpers';
@@ -27,7 +27,7 @@ import {
 	WORKFLOW_LM_CHAT_MODAL_KEY,
 } from '@/constants';
 import { useTitleChange } from '@/composables/useTitleChange';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useUIStore } from '@/stores/ui.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { openPopUpWindow } from '@/utils/executionUtils';

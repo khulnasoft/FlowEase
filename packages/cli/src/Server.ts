@@ -11,7 +11,7 @@ import cookieParser from 'cookie-parser';
 import express from 'express';
 import helmet from 'helmet';
 import { type Class, InstanceSettings } from 'flowease-core';
-import type { IN8nUISettings } from 'n8n-workflow';
+import type { IFloweaseUISettings } from 'flowease-workflow';
 
 // @ts-ignore
 import timezones from 'google-timezones-json';
@@ -20,7 +20,7 @@ import config from '@/config';
 import { Queue } from '@/Queue';
 
 import { WorkflowsController } from '@/workflows/workflows.controller';
-import { EDITOR_UI_DIST_DIR, inDevelopment, inE2ETests, N8N_VERSION, Time } from '@/constants';
+import { EDITOR_UI_DIST_DIR, inDevelopment, inE2ETests, FLOWEASE_VERSION, Time } from '@/constants';
 import { CredentialsController } from '@/credentials/credentials.controller';
 import type { APIRequest, CurlHelper } from '@/requests';
 import { registerController } from '@/decorators';
@@ -105,7 +105,7 @@ export class Server extends AbstractServer {
 		await super.start();
 		this.logger.debug(`Server ID: ${this.uniqueInstanceId}`);
 
-		if (inDevelopment && process.env.N8N_DEV_RELOAD === 'true') {
+		if (inDevelopment && process.env.FLOWEASE_DEV_RELOAD === 'true') {
 			void this.loadNodesAndCredentials.setupHotReload();
 		}
 
@@ -199,7 +199,7 @@ export class Server extends AbstractServer {
 				isNpmAvailable: await exec('npm --version')
 					.then(() => true)
 					.catch(() => false),
-				versionCli: N8N_VERSION,
+				versionCli: FLOWEASE_VERSION,
 			});
 
 			await this.externalHooks.run('frontend.settings', [frontendService.getSettings()]);
@@ -298,7 +298,7 @@ export class Server extends AbstractServer {
 			this.app.get(
 				`/${this.restEndpoint}/settings`,
 				ResponseHelper.send(
-					async (req: express.Request): Promise<IN8nUISettings> =>
+					async (req: express.Request): Promise<IFloweaseUISettings> =>
 						frontendService.getSettings(req.headers['push-ref'] as string),
 				),
 			);
@@ -364,7 +364,7 @@ export class Server extends AbstractServer {
 			this.app.use('/icons/:packageName/*/*.(svg|png)', serveIcons);
 
 			const isTLSEnabled = this.protocol === 'https' && !!(this.sslKey && this.sslCert);
-			const isPreviewMode = process.env.N8N_PREVIEW_MODE === 'true';
+			const isPreviewMode = process.env.FLOWEASE_PREVIEW_MODE === 'true';
 			const securityHeadersMiddleware = helmet({
 				contentSecurityPolicy: false,
 				xFrameOptions: isPreviewMode || inE2ETests ? false : { action: 'sameorigin' },
@@ -373,8 +373,8 @@ export class Server extends AbstractServer {
 				ieNoOpen: false,
 				// This is already disabled in AbstractServer
 				xPoweredBy: false,
-				// Enable HSTS headers only when n8n handles TLS.
-				// if n8n is behind a reverse-proxy, then these headers needs to be configured there
+				// Enable HSTS headers only when flowease handles TLS.
+				// if flowease is behind a reverse-proxy, then these headers needs to be configured there
 				strictTransportSecurity: isTLSEnabled
 					? {
 							maxAge: 180 * Time.days.toSeconds,

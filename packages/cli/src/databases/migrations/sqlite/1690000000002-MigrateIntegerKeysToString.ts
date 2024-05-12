@@ -192,7 +192,7 @@ const migrationsPruningEnabled = process.env.MIGRATIONS_PRUNING_ENABLED === 'tru
 
 function getSqliteDbFileSize(): number {
 	const filename = path.resolve(
-		Container.get(InstanceSettings).n8nFolder,
+		Container.get(InstanceSettings).floweaseFolder,
 		config.getEnv('database.sqlite.database'),
 	);
 	const { size } = statSync(filename);

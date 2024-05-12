@@ -2,7 +2,7 @@ import fs from 'fs';
 import { InstanceSettings } from '@/InstanceSettings';
 
 describe('InstanceSettings', () => {
-	process.env.N8N_USER_FOLDER = '/test';
+	process.env.FLOWEASE_USER_FOLDER = '/test';
 
 	const existSpy = jest.spyOn(fs, 'existsSync');
 	beforeEach(() => jest.resetAllMocks());
@@ -27,7 +27,7 @@ describe('InstanceSettings', () => {
 
 		it('should throw if the env and file keys do not match', () => {
 			readSpy.mockReturnValue(JSON.stringify({ encryptionKey: 'key_1' }));
-			process.env.N8N_ENCRYPTION_KEY = 'key_2';
+			process.env.FLOWEASE_ENCRYPTION_KEY = 'key_2';
 			expect(() => new InstanceSettings()).toThrowError();
 		});
 	});
@@ -44,25 +44,25 @@ describe('InstanceSettings', () => {
 		it('should create a new settings file', () => {
 			const settings = new InstanceSettings();
 			expect(settings.encryptionKey).not.toEqual('test_key');
-			expect(mkdirSpy).toHaveBeenCalledWith('/test/.n8n', { recursive: true });
+			expect(mkdirSpy).toHaveBeenCalledWith('/test/.flowease', { recursive: true });
 			expect(writeFileSpy).toHaveBeenCalledWith(
-				'/test/.n8n/config',
+				'/test/.flowease/config',
 				expect.stringContaining('"encryptionKey":'),
 				'utf-8',
 			);
 		});
 
-		it('should pick up the encryption key from env var N8N_ENCRYPTION_KEY', () => {
-			process.env.N8N_ENCRYPTION_KEY = 'env_key';
+		it('should pick up the encryption key from env var FLOWEASE_ENCRYPTION_KEY', () => {
+			process.env.FLOWEASE_ENCRYPTION_KEY = 'env_key';
 			const settings = new InstanceSettings();
 			expect(settings.encryptionKey).toEqual('env_key');
 			expect(settings.instanceId).toEqual(
 				'2c70e12b7a0646f92279f427c7b38e7334d8e5389cff167a1dc30e73f826b683',
 			);
 			expect(settings.encryptionKey).not.toEqual('test_key');
-			expect(mkdirSpy).toHaveBeenCalledWith('/test/.n8n', { recursive: true });
+			expect(mkdirSpy).toHaveBeenCalledWith('/test/.flowease', { recursive: true });
 			expect(writeFileSpy).toHaveBeenCalledWith(
-				'/test/.n8n/config',
+				'/test/.flowease/config',
 				expect.stringContaining('"encryptionKey":'),
 				'utf-8',
 			);

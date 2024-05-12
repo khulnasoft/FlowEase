@@ -7,7 +7,7 @@ import { join, dirname, resolve as resolvePath } from 'path';
 import { Container } from 'typedi';
 import { file as tmpFile } from 'tmp-promise';
 
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'flowease-workflow';
 import { InstanceSettings } from 'flowease-core';
 import type { IBuildOptions } from './Interfaces';
 
@@ -19,7 +19,10 @@ import type { IBuildOptions } from './Interfaces';
 
 export async function createCustomTsconfig() {
 	// Get path to simple tsconfig file which should be used for build
-	const tsconfigPath = join(dirname(require.resolve('flowease-node-dev/src')), 'tsconfig-build.json');
+	const tsconfigPath = join(
+		dirname(require.resolve('flowease-node-dev/src')),
+		'tsconfig-build.json',
+	);
 
 	// Read the tsconfig file
 	const tsConfigString = await readFile(tsconfigPath, { encoding: 'utf8' });
@@ -68,7 +71,7 @@ export async function buildFiles({
 		}),
 	);
 
-	// Supply a node base path so that it finds flowease-core and n8n-workflow
+	// Supply a node base path so that it finds flowease-core and flowease-workflow
 	const nodeModulesPath = join(__dirname, '../../node_modules/');
 	let buildCommand = `${tscPath} --p ${
 		tsconfigData.path

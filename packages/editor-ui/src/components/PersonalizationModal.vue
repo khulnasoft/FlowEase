@@ -1,7 +1,7 @@
 <template>
 	<Modal
 		:name="PERSONALIZATION_MODAL_KEY"
-		:title="$locale.baseText('personalizationModal.customizeN8n')"
+		:title="$locale.baseText('personalizationModal.customizeFlowease')"
 		:subtitle="$locale.baseText('personalizationModal.theseQuestionsHelpUs')"
 		:center-title="true"
 		:show-close="false"
@@ -14,7 +14,7 @@
 	>
 		<template #content>
 			<div :class="$style.container">
-				<n8n-form-inputs
+				<flowease-form-inputs
 					v-model="formValues"
 					:inputs="survey"
 					:column-view="true"
@@ -23,8 +23,8 @@
 					tag-size="small"
 					@submit="onSubmit"
 				/>
-				<n8n-card v-if="canRegisterForEnterpriseTrial">
-					<n8n-checkbox v-model="registerForEnterpriseTrial">
+				<flowease-card v-if="canRegisterForEnterpriseTrial">
+					<flowease-checkbox v-model="registerForEnterpriseTrial">
 						<i18n-t keypath="personalizationModal.registerEmailForTrial">
 							<template #trial>
 								<strong>
@@ -32,16 +32,16 @@
 								</strong>
 							</template>
 						</i18n-t>
-						<n8n-text size="small" tag="div" color="text-light">
+						<flowease-text size="small" tag="div" color="text-light">
 							{{ $locale.baseText('personalizationModal.registerEmailForTrial.notice') }}
-						</n8n-text>
-					</n8n-checkbox>
-				</n8n-card>
+						</flowease-text>
+					</flowease-checkbox>
+				</flowease-card>
 			</div>
 		</template>
 		<template #footer>
 			<div>
-				<n8n-button
+				<flowease-button
 					:loading="isSaving"
 					:label="$locale.baseText('personalizationModal.getStarted')"
 					float="right"
@@ -143,10 +143,10 @@ import { useToast } from '@/composables/useToast';
 import Modal from '@/components/Modal.vue';
 import type { IFormInputs, IPersonalizationLatestVersion, IUser } from '@/Interface';
 import { getAccountAge } from '@/utils/userUtils';
-import type { GenericValue } from 'n8n-workflow';
+import type { GenericValue } from 'flowease-workflow';
 import { useUIStore } from '@/stores/ui.store';
 import { useSettingsStore } from '@/stores/settings.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useUsersStore } from '@/stores/users.store';
 import { createEventBus } from 'flowease-design-system/utils';
 import { usePostHog } from '@/stores/posthog.store';
@@ -266,7 +266,7 @@ export default defineComponent({
 								value: OTHER_COMPANY_TYPE,
 							},
 							{
-								label: this.$locale.baseText('personalizationModal.imNotUsingN8nForWork'),
+								label: this.$locale.baseText('personalizationModal.imNotUsingFloweaseForWork'),
 								value: PERSONAL_COMPANY_TYPE,
 							},
 						],
@@ -605,7 +605,7 @@ export default defineComponent({
 								value: COMPANY_SIZE_1000_OR_MORE,
 							},
 							{
-								label: this.$locale.baseText('personalizationModal.imNotUsingN8nForWork'),
+								label: this.$locale.baseText('personalizationModal.imNotUsingFloweaseForWork'),
 								value: COMPANY_SIZE_PERSONAL_USE,
 							},
 						],
@@ -619,7 +619,7 @@ export default defineComponent({
 					name: REPORTED_SOURCE_KEY,
 					properties: {
 						type: 'select',
-						label: this.$locale.baseText('personalizationModal.howDidYouHearAboutN8n'),
+						label: this.$locale.baseText('personalizationModal.howDidYouHearAboutFlowease'),
 						placeholder: this.$locale.baseText('personalizationModal.select'),
 						options: [
 							{
@@ -700,7 +700,7 @@ export default defineComponent({
 					...values,
 					version: SURVEY_VERSION,
 					personalization_survey_submitted_at: new Date().toISOString(),
-					personalization_survey_n8n_version: this.rootStore.versionCli,
+					personalization_survey_flowease_version: this.rootStore.versionCli,
 				};
 
 				await this.externalHooks.run(

@@ -1,5 +1,5 @@
 import { Container, Service } from 'typedi';
-import { ApplicationError, ErrorReporterProxy, assert } from 'n8n-workflow';
+import { ApplicationError, ErrorReporterProxy, assert } from 'flowease-workflow';
 import type { Class } from 'flowease-core';
 import { Logger } from '@/Logger';
 

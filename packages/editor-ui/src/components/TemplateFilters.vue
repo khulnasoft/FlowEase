@@ -2,7 +2,7 @@
 	<div :class="$style.filters" class="template-filters" data-test-id="templates-filter-container">
 		<div :class="$style.title" v-text="$locale.baseText('templates.categoriesHeading')" />
 		<div v-if="loading" :class="$style.list">
-			<n8n-loading :loading="loading" :rows="expandLimit" />
+			<flowease-loading :loading="loading" :rows="expandLimit" />
 		</div>
 		<ul v-if="!loading" :class="$style.categories">
 			<li :class="$style.item" data-test-id="template-filter-all-categories">
@@ -32,9 +32,9 @@
 			data-test-id="expand-categories-button"
 			@click="collapseAction"
 		>
-			<n8n-text size="small" color="primary">
+			<flowease-text size="small" color="primary">
 				+ {{ `${sortedCategories.length - expandLimit} more` }}
-			</n8n-text>
+			</flowease-text>
 		</div>
 	</div>
 </template>

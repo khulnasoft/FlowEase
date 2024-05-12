@@ -1,6 +1,6 @@
 import type { IWorkflowDb } from '@/Interfaces';
-import type { Workflow } from 'n8n-workflow';
-import { ApplicationError } from 'n8n-workflow';
+import type { Workflow } from 'flowease-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 export class WorkflowMissingIdError extends ApplicationError {
 	constructor(workflow: Workflow | IWorkflowDb) {
