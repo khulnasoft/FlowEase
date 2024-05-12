@@ -1,4 +1,9 @@
-import type { IDataObject, IExecuteFunctions, INodeExecutionData, JsonObject } from 'flowease-workflow';
+import type {
+	IDataObject,
+	IExecuteFunctions,
+	INodeExecutionData,
+	JsonObject,
+} from 'flowease-workflow';
 import { NodeApiError } from 'flowease-workflow';
 
 import { apiRequest } from '../../../transport';

@@ -21,7 +21,8 @@ toInt.doc = {
 	description: 'Converts a boolean to an integer. `false` is 0, `true` is 1.',
 	section: 'cast',
 	returnType: 'boolean',
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/booleans/#boolean-toInt',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/booleans/#boolean-toInt',
 };
 
 export const booleanExtensions: ExtensionMap = {

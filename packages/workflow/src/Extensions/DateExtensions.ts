@@ -241,7 +241,8 @@ endOfMonth.doc = {
 	hidden: true,
 	description: 'Transforms a date to the last possible moment that lies within the month.',
 	section: 'edit',
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-endOfMonth',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-endOfMonth',
 };
 
 isDst.doc = {
@@ -250,7 +251,8 @@ isDst.doc = {
 	hidden: true,
 	description: 'Checks if a Date is within Daylight Savings Time.',
 	section: 'query',
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-isDst',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-isDst',
 };
 
 isWeekend.doc = {
@@ -259,7 +261,8 @@ isWeekend.doc = {
 	hidden: true,
 	description: 'Checks if the Date falls on a Saturday or Sunday.',
 	section: 'query',
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-isWeekend',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-isWeekend',
 };
 
 beginningOf.doc = {
@@ -269,7 +272,8 @@ beginningOf.doc = {
 	hidden: true,
 	returnType: 'Date',
 	args: [{ name: 'unit?', type: 'DurationUnit' }],
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-beginningOf',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-beginningOf',
 };
 
 extract.doc = {
@@ -278,7 +282,8 @@ extract.doc = {
 	section: 'query',
 	returnType: 'number',
 	args: [{ name: 'datePart?', type: 'DurationUnit' }],
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-extract',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-extract',
 };
 
 format.doc = {
@@ -287,7 +292,8 @@ format.doc = {
 	returnType: 'string',
 	section: 'format',
 	args: [{ name: 'fmt', default: "'yyyy-MM-dd'", type: 'TimeFormat' }],
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-format',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-format',
 };
 
 isBetween.doc = {
@@ -299,7 +305,8 @@ isBetween.doc = {
 		{ name: 'date1', type: 'Date|string' },
 		{ name: 'date2', type: 'Date|string' },
 	],
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-isBetween',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-isBetween',
 };
 
 isInLast.doc = {
@@ -312,7 +319,8 @@ isInLast.doc = {
 		{ name: 'n', type: 'number' },
 		{ name: 'unit?', type: 'DurationUnit' },
 	],
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-isInLast',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-isInLast',
 };
 
 toDateTime.doc = {
@@ -320,7 +328,8 @@ toDateTime.doc = {
 	description: 'Convert a JavaScript Date to a Luxon DateTime.',
 	returnType: 'DateTime',
 	hidden: true,
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-toDateTime',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-toDateTime',
 };
 
 minus.doc = {
@@ -332,7 +341,8 @@ minus.doc = {
 		{ name: 'n', type: 'number' },
 		{ name: 'unit?', type: 'DurationUnit' },
 	],
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-minus',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-minus',
 };
 
 plus.doc = {
@@ -344,7 +354,8 @@ plus.doc = {
 		{ name: 'n', type: 'number' },
 		{ name: 'unit?', type: 'DurationUnit' },
 	],
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-plus',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/dates/#date-plus',
 };
 
 export const dateExtensions: ExtensionMap = {

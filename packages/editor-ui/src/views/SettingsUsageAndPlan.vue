@@ -132,7 +132,9 @@ const openPricingPage = () => {
 
 <template>
 	<div class="settings-usage-and-plan">
-		<flowease-heading size="2xlarge">{{ locale.baseText('settings.usageAndPlan.title') }}</flowease-heading>
+		<flowease-heading size="2xlarge">{{
+			locale.baseText('settings.usageAndPlan.title')
+		}}</flowease-heading>
 		<flowease-action-box
 			v-if="usageStore.isDesktop"
 			:class="$style.actionBox"

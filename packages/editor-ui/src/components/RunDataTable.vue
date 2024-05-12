@@ -25,7 +25,11 @@
 			<thead>
 				<tr>
 					<th v-for="(column, i) in tableData.columns || []" :key="column">
-						<flowease-tooltip placement="bottom-start" :disabled="!mappingEnabled" :show-after="1000">
+						<flowease-tooltip
+							placement="bottom-start"
+							:disabled="!mappingEnabled"
+							:show-after="1000"
+						>
 							<template #content>
 								<div>
 									<img src="/static/data-mapping-gif.gif" />

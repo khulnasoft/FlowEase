@@ -1,5 +1,5 @@
-import type { TEntitlement, TFeatures, TLicenseBlock } from '@flowease_io/license-sdk';
-import { LicenseManager } from '@flowease_io/license-sdk';
+import type { TEntitlement, TFeatures, TLicenseBlock } from '@n8n_io/license-sdk';
+import { LicenseManager } from '@n8n_io/license-sdk';
 import { InstanceSettings, ObjectStoreService } from 'flowease-core';
 import Container, { Service } from 'typedi';
 import { Logger } from '@/Logger';
@@ -12,7 +12,11 @@ import {
 	UNLIMITED_LICENSE_QUOTA,
 } from './constants';
 import { SettingsRepository } from '@db/repositories/settings.repository';
-import type { BooleanLicenseFeature, FloweaseInstanceType, NumericLicenseFeature } from './Interfaces';
+import type {
+	BooleanLicenseFeature,
+	FloweaseInstanceType,
+	NumericLicenseFeature,
+} from './Interfaces';
 import type { RedisServicePubSubPublisher } from './services/redis/RedisServicePubSubPublisher';
 import { RedisService } from './services/redis.service';
 import { OrchestrationService } from '@/services/orchestration.service';

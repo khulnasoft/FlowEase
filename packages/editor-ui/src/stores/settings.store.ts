@@ -348,7 +348,9 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, {
 				return;
 			}
 		},
-		async submitValueSurvey(params: IFloweaseValueSurveyData): Promise<IFloweasePromptResponse | undefined> {
+		async submitValueSurvey(
+			params: IFloweaseValueSurveyData,
+		): Promise<IFloweasePromptResponse | undefined> {
 			try {
 				const usersStore = useUsersStore();
 				return await submitValueSurvey(

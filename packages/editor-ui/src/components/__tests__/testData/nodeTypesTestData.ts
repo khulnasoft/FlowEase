@@ -545,9 +545,13 @@ export const twitterV2: INodeTypeDescription = {
 		categories: ['Marketing & Content'],
 		resources: {
 			primaryDocumentation: [
-				{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.twitter/' },
+				{
+					url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.twitter/',
+				},
 			],
-			credentialDocumentation: [{ url: 'https://docs.flowease.khulnasoft.com/credentials/twitter' }],
+			credentialDocumentation: [
+				{ url: 'https://docs.flowease.khulnasoft.com/credentials/twitter' },
+			],
 		},
 		alias: ['Tweet', 'Twitter', 'X', 'X API'],
 	},

@@ -1,5 +1,9 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import type { INodeProperties, INodePropertyCollection, INodePropertyOptions } from 'flowease-workflow';
+import type {
+	INodeProperties,
+	INodePropertyCollection,
+	INodePropertyOptions,
+} from 'flowease-workflow';
 
 export function summarizeOption(
 	option: INodePropertyOptions | INodeProperties | INodePropertyCollection,

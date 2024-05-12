@@ -26,7 +26,9 @@
 					<flowease-heading tag="h1" size="xlarge">{{ title }}</flowease-heading>
 				</div>
 				<div v-if="subtitle" :class="$style.subtitle">
-					<flowease-heading tag="h3" size="small" color="text-light">{{ subtitle }}</flowease-heading>
+					<flowease-heading tag="h3" size="small" color="text-light">{{
+						subtitle
+					}}</flowease-heading>
 				</div>
 			</div>
 		</template>

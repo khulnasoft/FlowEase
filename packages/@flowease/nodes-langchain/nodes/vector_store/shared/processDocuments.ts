@@ -4,12 +4,18 @@ import { FloweaseJsonLoader } from '../../../utils/FloweaseJsonLoader';
 import { FloweaseBinaryLoader } from '../../../utils/FloweaseBinaryLoader';
 
 export async function processDocuments(
-	documentInput: FloweaseJsonLoader | FloweaseBinaryLoader | Array<Document<Record<string, unknown>>>,
+	documentInput:
+		| FloweaseJsonLoader
+		| FloweaseBinaryLoader
+		| Array<Document<Record<string, unknown>>>,
 	inputItems: INodeExecutionData[],
 ) {
 	let processedDocuments: Document[];
 
-	if (documentInput instanceof FloweaseJsonLoader || documentInput instanceof FloweaseBinaryLoader) {
+	if (
+		documentInput instanceof FloweaseJsonLoader ||
+		documentInput instanceof FloweaseBinaryLoader
+	) {
 		processedDocuments = await documentInput.processAll(inputItems);
 	} else {
 		processedDocuments = documentInput;
@@ -25,13 +31,19 @@ export async function processDocuments(
 	};
 }
 export async function processDocument(
-	documentInput: FloweaseJsonLoader | FloweaseBinaryLoader | Array<Document<Record<string, unknown>>>,
+	documentInput:
+		| FloweaseJsonLoader
+		| FloweaseBinaryLoader
+		| Array<Document<Record<string, unknown>>>,
 	inputItem: INodeExecutionData,
 	itemIndex: number,
 ) {
 	let processedDocuments: Document[];
 
-	if (documentInput instanceof FloweaseJsonLoader || documentInput instanceof FloweaseBinaryLoader) {
+	if (
+		documentInput instanceof FloweaseJsonLoader ||
+		documentInput instanceof FloweaseBinaryLoader
+	) {
 		processedDocuments = await documentInput.processItem(inputItem, itemIndex);
 	} else {
 		processedDocuments = documentInput;

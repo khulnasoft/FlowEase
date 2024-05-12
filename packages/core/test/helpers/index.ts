@@ -24,7 +24,12 @@ import type {
 	INodeTypeData,
 } from 'flowease-workflow';
 
-import { ApplicationError, ICredentialsHelper, NodeHelpers, WorkflowHooks } from 'flowease-workflow';
+import {
+	ApplicationError,
+	ICredentialsHelper,
+	NodeHelpers,
+	WorkflowHooks,
+} from 'flowease-workflow';
 import { Credentials } from '@/Credentials';
 
 import { predefinedNodesTypes } from './constants';

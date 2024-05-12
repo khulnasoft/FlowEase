@@ -24,7 +24,11 @@
 					<img v-if="type === 'file'" :src="src" :class="$style.nodeIconImage" />
 					<FontAwesomeIcon v-else :icon="name" :style="fontStyleData" />
 					<div v-if="badge" :class="$style.badge" :style="badgeStyleData">
-						<flowease-node-icon :type="badge.type" :src="badge.src" :size="badgeSize"></flowease-node-icon>
+						<flowease-node-icon
+							:type="badge.type"
+							:src="badge.src"
+							:size="badgeSize"
+						></flowease-node-icon>
 					</div>
 				</div>
 				<div v-else :class="$style.nodeIconPlaceholder">

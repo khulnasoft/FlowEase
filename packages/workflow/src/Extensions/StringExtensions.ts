@@ -439,7 +439,8 @@ toDate.doc = {
 	section: 'cast',
 	returnType: 'Date',
 	hidden: true,
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-toDate',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-toDate',
 };
 
 toDateTime.doc = {
@@ -493,7 +494,8 @@ toInt.doc = {
 	args: [{ name: 'radix?', type: 'number' }],
 	aliases: ['toWholeNumber'],
 	hidden: true,
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-toInt',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-toInt',
 };
 
 toSentenceCase.doc = {
@@ -601,7 +603,8 @@ isDomain.doc = {
 	description: 'Returns <code>true</code> if a string is a domain.',
 	section: 'validation',
 	returnType: 'boolean',
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-isDomain',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-isDomain',
 	examples: [
 		{ example: '"flowease.khulnasoft.com".isDomain()', evaluated: 'true' },
 		{ example: '"http://flowease.khulnasoft.com".isDomain()', evaluated: 'false' },
@@ -614,7 +617,8 @@ isEmail.doc = {
 	description: 'Returns <code>true</code> if the string is an email.',
 	section: 'validation',
 	returnType: 'boolean',
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-isEmail',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-isEmail',
 	examples: [
 		{ example: '"me@example.com".isEmail()', evaluated: 'true' },
 		{ example: '"It\'s me@example.com".isEmail()', evaluated: 'false' },
@@ -641,7 +645,8 @@ isUrl.doc = {
 	description: 'Returns <code>true</code> if a string is a valid URL',
 	section: 'validation',
 	returnType: 'boolean',
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-isUrl',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-isUrl',
 	examples: [
 		{ example: '"https://flowease.khulnasoft.com".isUrl()', evaluated: 'true' },
 		{ example: '"flowease.khulnasoft.com".isUrl()', evaluated: 'false' },
@@ -654,7 +659,8 @@ isEmpty.doc = {
 	description: 'Returns <code>true</code> if the string has no characters.',
 	section: 'validation',
 	returnType: 'boolean',
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-isEmpty',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-isEmpty',
 	examples: [
 		{ example: '"".isEmpty()', evaluated: 'true' },
 		{ example: '"hello".isEmpty()', evaluated: 'false' },
@@ -697,7 +703,10 @@ extractDomain.doc = {
 		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-extractDomain',
 	examples: [
 		{ example: '"me@example.com".extractDomain()', evaluated: "'example.com'" },
-		{ example: '"http://flowease.khulnasoft.com/workflows".extractDomain()', evaluated: "'flowease.khulnasoft.com'" },
+		{
+			example: '"http://flowease.khulnasoft.com/workflows".extractDomain()',
+			evaluated: "'flowease.khulnasoft.com'",
+		},
 		{
 			example: '"It\'s me@example.com".extractEmail().extractDomain()',
 			evaluated: "'example.com'",
@@ -713,7 +722,12 @@ extractUrl.doc = {
 	returnType: 'string',
 	docURL:
 		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-extractUrl',
-	examples: [{ example: '"Check out http://flowease.khulnasoft.com".extractUrl()', evaluated: "'http://flowease.khulnasoft.com'" }],
+	examples: [
+		{
+			example: '"Check out http://flowease.khulnasoft.com".extractUrl()',
+			evaluated: "'http://flowease.khulnasoft.com'",
+		},
+	],
 };
 
 extractUrlPath.doc = {
@@ -725,7 +739,10 @@ extractUrlPath.doc = {
 	docURL:
 		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-extractUrlPath',
 	examples: [
-		{ example: '"http://flowease.khulnasoft.com/workflows".extractUrlPath()', evaluated: "'/workflows'" },
+		{
+			example: '"http://flowease.khulnasoft.com/workflows".extractUrlPath()',
+			evaluated: "'/workflows'",
+		},
 		{
 			example: '"Check out http://flowease.khulnasoft.com/workflows".extractUrl().extractUrlPath()',
 			evaluated: "'/workflows'",
@@ -749,7 +766,8 @@ hash.doc = {
 			type: 'string',
 		},
 	],
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-hash',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-hash',
 	examples: [{ example: '"hello".hash()', evaluated: "'5d41402abc4b2a76b9719d911017c592'" }],
 };
 
@@ -768,7 +786,8 @@ quote.doc = {
 			type: 'string',
 		},
 	],
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-quote',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-quote',
 	examples: [{ example: '\'Nathan says "hi"\'.quote()', evaluated: '\'"Nathan says \\"hi\\""\'' }],
 };
 
@@ -813,7 +832,8 @@ toNumber.doc = {
 		"Converts a string representing a number to a number. Errors if the string doesn't start with a valid number.",
 	section: 'cast',
 	returnType: 'number',
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-toNumber',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/strings/#string-toNumber',
 	examples: [
 		{ example: '"123".toNumber()', evaluated: '123' },
 		{ example: '"1.23E10".toNumber()', evaluated: '12300000000' },

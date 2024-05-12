@@ -75,7 +75,10 @@ export class InstanceSettings {
 
 			const { encryptionKey, tunnelSubdomain } = settings;
 
-			if (process.env.FLOWEASE_ENCRYPTION_KEY && encryptionKey !== process.env.FLOWEASE_ENCRYPTION_KEY) {
+			if (
+				process.env.FLOWEASE_ENCRYPTION_KEY &&
+				encryptionKey !== process.env.FLOWEASE_ENCRYPTION_KEY
+			) {
 				throw new ApplicationError(
 					`Mismatching encryption keys. The encryption key in the settings file ${this.settingsFile} does not match the FLOWEASE_ENCRYPTION_KEY env var. Please make sure both keys match. More information: https://docs.flowease.khulnasoft.com/hosting/environment-variables/configuration-methods/#encryption-key`,
 				);

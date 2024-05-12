@@ -6,7 +6,9 @@
 					<i class="mr-xs">
 						<font-awesome-icon icon="arrow-left" />
 					</i>
-					<flowease-heading size="large" :bold="true">{{ $locale.baseText('settings') }}</flowease-heading>
+					<flowease-heading size="large" :bold="true">{{
+						$locale.baseText('settings')
+					}}</flowease-heading>
 				</div>
 			</template>
 			<template #menuSuffix>

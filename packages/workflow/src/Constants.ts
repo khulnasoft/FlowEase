@@ -49,7 +49,8 @@ export const NODES_WITH_RENAMABLE_CONTENT = new Set([
 ]);
 
 //@flowease/flowease-nodes-langchain
-export const MANUAL_CHAT_TRIGGER_LANGCHAIN_NODE_TYPE = '@flowease/flowease-nodes-langchain.manualChatTrigger';
+export const MANUAL_CHAT_TRIGGER_LANGCHAIN_NODE_TYPE =
+	'@flowease/flowease-nodes-langchain.manualChatTrigger';
 export const AGENT_LANGCHAIN_NODE_TYPE = '@flowease/flowease-nodes-langchain.agent';
 export const CHAIN_LLM_LANGCHAIN_NODE_TYPE = '@flowease/flowease-nodes-langchain.chainLlm';
 export const OPENAI_LANGCHAIN_NODE_TYPE = '@flowease/flowease-nodes-langchain.openAi';

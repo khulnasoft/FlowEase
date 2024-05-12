@@ -2,7 +2,11 @@ import type { Plugin } from 'vue';
 import axios from 'axios';
 import { createI18n } from 'vue-i18n';
 import { locale } from 'flowease-design-system';
-import type { INodeProperties, INodePropertyCollection, INodePropertyOptions } from 'flowease-workflow';
+import type {
+	INodeProperties,
+	INodePropertyCollection,
+	INodePropertyOptions,
+} from 'flowease-workflow';
 
 import type { INodeTranslationHeaders } from '@/Interface';
 import { useUIStore } from '@/stores/ui.store';

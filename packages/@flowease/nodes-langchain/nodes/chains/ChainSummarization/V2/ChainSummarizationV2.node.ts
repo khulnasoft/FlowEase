@@ -360,7 +360,8 @@ export class ChainSummarizationV2 implements INodeType {
 					)) as FloweaseJsonLoader | Array<Document<Record<string, unknown>>>;
 
 					const isFloweaseLoader =
-						documentInput instanceof FloweaseJsonLoader || documentInput instanceof FloweaseBinaryLoader;
+						documentInput instanceof FloweaseJsonLoader ||
+						documentInput instanceof FloweaseBinaryLoader;
 
 					processedDocuments = isFloweaseLoader
 						? await documentInput.processItem(item, itemIndex)

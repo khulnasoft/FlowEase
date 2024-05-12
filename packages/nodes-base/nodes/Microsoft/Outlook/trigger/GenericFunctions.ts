@@ -1,5 +1,10 @@
 import { NodeApiError } from 'flowease-workflow';
-import type { JsonObject, IDataObject, INodeExecutionData, IPollFunctions } from 'flowease-workflow';
+import type {
+	JsonObject,
+	IDataObject,
+	INodeExecutionData,
+	IPollFunctions,
+} from 'flowease-workflow';
 
 import {
 	downloadAttachments,

@@ -252,7 +252,11 @@ onMounted(() => {
 					data-test-id="ask-ai-prompt-counter"
 					v-text="`${prompt.length} / ${ASK_AI_MAX_PROMPT_LENGTH}`"
 				/>
-				<a href="https://docs.flowease.khulnasoft.com/code-examples/ai-code" target="_blank" :class="$style.help">
+				<a
+					href="https://docs.flowease.khulnasoft.com/code-examples/ai-code"
+					target="_blank"
+					:class="$style.help"
+				>
 					<flowease-icon icon="question-circle" color="text-light" size="large" />{{
 						i18n.baseText('codeNodeEditor.askAi.help')
 					}}

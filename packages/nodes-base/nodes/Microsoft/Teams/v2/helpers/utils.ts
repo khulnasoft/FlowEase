@@ -1,4 +1,8 @@
-import type { IExecuteFunctions, ILoadOptionsFunctions, INodeListSearchItems } from 'flowease-workflow';
+import type {
+	IExecuteFunctions,
+	ILoadOptionsFunctions,
+	INodeListSearchItems,
+} from 'flowease-workflow';
 
 export function prepareMessage(
 	this: IExecuteFunctions | ILoadOptionsFunctions,

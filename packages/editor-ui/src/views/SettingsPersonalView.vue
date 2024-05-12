@@ -34,7 +34,9 @@
 		</div>
 		<div v-if="isPersonalSecurityEnabled">
 			<div class="mb-s">
-				<flowease-heading size="large">{{ i18n.baseText('settings.personal.security') }}</flowease-heading>
+				<flowease-heading size="large">{{
+					i18n.baseText('settings.personal.security')
+				}}</flowease-heading>
 			</div>
 			<div class="mb-s">
 				<flowease-input-label :label="i18n.baseText('auth.password')">

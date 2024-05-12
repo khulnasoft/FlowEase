@@ -12,7 +12,10 @@ export async function getSettings(context: IRestApiContext): Promise<IFloweaseUI
 	return await makeRestApiRequest(context, 'GET', '/settings');
 }
 
-export async function getPromptsData(instanceId: string, userId: string): Promise<IFloweasePrompts> {
+export async function getPromptsData(
+	instanceId: string,
+	userId: string,
+): Promise<IFloweasePrompts> {
 	return await get(
 		FLOWEASE_IO_BASE_URL,
 		'/prompts',

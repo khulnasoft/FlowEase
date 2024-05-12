@@ -414,9 +414,13 @@ export const nodeTypeTwitterV1 = {
 		categories: ['Marketing'],
 		resources: {
 			primaryDocumentation: [
-				{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.twitter/' },
+				{
+					url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.twitter/',
+				},
 			],
-			credentialDocumentation: [{ url: 'https://docs.flowease.khulnasoft.com/credentials/twitter' }],
+			credentialDocumentation: [
+				{ url: 'https://docs.flowease.khulnasoft.com/credentials/twitter' },
+			],
 		},
 		alias: ['Tweet', 'Twitter', 'X', 'X API'],
 	},
@@ -974,9 +978,13 @@ export const nodeTypeTwitterV2 = {
 		categories: ['Marketing'],
 		resources: {
 			primaryDocumentation: [
-				{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.twitter/' },
+				{
+					url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.twitter/',
+				},
 			],
-			credentialDocumentation: [{ url: 'https://docs.flowease.khulnasoft.com/credentials/twitter' }],
+			credentialDocumentation: [
+				{ url: 'https://docs.flowease.khulnasoft.com/credentials/twitter' },
+			],
 		},
 		alias: ['Tweet', 'Twitter', 'X', 'X API'],
 	},
@@ -1795,9 +1803,13 @@ export const nodeTypeNextCloudV1 = {
 		categories: ['Data & Storage'],
 		resources: {
 			primaryDocumentation: [
-				{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.nextcloud/' },
+				{
+					url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.nextcloud/',
+				},
 			],
-			credentialDocumentation: [{ url: 'https://docs.flowease.khulnasoft.com/credentials/nextCloud' }],
+			credentialDocumentation: [
+				{ url: 'https://docs.flowease.khulnasoft.com/credentials/nextCloud' },
+			],
 		},
 	},
 	iconUrl: 'icons/flowease-nodes-base/dist/nodes/NextCloud/nextcloud.svg',
@@ -2986,9 +2998,13 @@ export const nodeTypeTelegramV1 = {
 		categories: ['Communication'],
 		resources: {
 			primaryDocumentation: [
-				{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.telegram/' },
+				{
+					url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.telegram/',
+				},
 			],
-			credentialDocumentation: [{ url: 'https://docs.flowease.khulnasoft.com/credentials/telegram' }],
+			credentialDocumentation: [
+				{ url: 'https://docs.flowease.khulnasoft.com/credentials/telegram' },
+			],
 		},
 	},
 	iconUrl: 'icons/flowease-nodes-base/dist/nodes/Telegram/telegram.svg',
@@ -4177,9 +4193,13 @@ export const nodeTypeTelegramV1_1 = {
 		categories: ['Communication'],
 		resources: {
 			primaryDocumentation: [
-				{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.telegram/' },
+				{
+					url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.telegram/',
+				},
 			],
-			credentialDocumentation: [{ url: 'https://docs.flowease.khulnasoft.com/credentials/telegram' }],
+			credentialDocumentation: [
+				{ url: 'https://docs.flowease.khulnasoft.com/credentials/telegram' },
+			],
 		},
 	},
 	iconUrl: 'icons/flowease-nodes-base/dist/nodes/Telegram/telegram.svg',
@@ -4301,7 +4321,9 @@ export const nodeTypeShopifyTriggerV1 = {
 					url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/trigger-nodes/flowease-nodes-base.shopifytrigger/',
 				},
 			],
-			credentialDocumentation: [{ url: 'https://docs.flowease.khulnasoft.com/credentials/shopify' }],
+			credentialDocumentation: [
+				{ url: 'https://docs.flowease.khulnasoft.com/credentials/shopify' },
+			],
 		},
 	},
 	iconUrl: 'icons/flowease-nodes-base/dist/nodes/Shopify/shopify.svg',
@@ -5225,7 +5247,9 @@ export const nodeTypeWebhookV1 = {
 		subcategories: { 'Core Nodes': ['Helpers'] },
 		resources: {
 			primaryDocumentation: [
-				{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.webhook/' },
+				{
+					url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.webhook/',
+				},
 			],
 		},
 		alias: ['HTTP', 'API', 'Build', 'WH'],
@@ -5551,7 +5575,9 @@ export const nodeTypeWebhookV1_1 = {
 		subcategories: { 'Core Nodes': ['Helpers'] },
 		resources: {
 			primaryDocumentation: [
-				{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.webhook/' },
+				{
+					url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.webhook/',
+				},
 			],
 		},
 		alias: ['HTTP', 'API', 'Build', 'WH'],
@@ -5680,7 +5706,9 @@ export const nodeTypesSet = {
 			subcategories: { 'Core Nodes': ['Data Transformation'] },
 			resources: {
 				primaryDocumentation: [
-					{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.set/' },
+					{
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.set/',
+					},
 				],
 			},
 			alias: ['Set', 'JSON', 'Filter', 'Transform', 'Map'],
@@ -5806,7 +5834,9 @@ export const nodeTypesSet = {
 			subcategories: { 'Core Nodes': ['Data Transformation'] },
 			resources: {
 				primaryDocumentation: [
-					{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.set/' },
+					{
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.set/',
+					},
 				],
 			},
 			alias: ['Set', 'JSON', 'Filter', 'Transform', 'Map'],
@@ -6065,7 +6095,9 @@ export const nodeTypesSet = {
 			subcategories: { 'Core Nodes': ['Data Transformation'] },
 			resources: {
 				primaryDocumentation: [
-					{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.set/' },
+					{
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.set/',
+					},
 				],
 			},
 			alias: ['Set', 'JSON', 'Filter', 'Transform', 'Map'],
@@ -6324,7 +6356,9 @@ export const nodeTypesSet = {
 			subcategories: { 'Core Nodes': ['Data Transformation'] },
 			resources: {
 				primaryDocumentation: [
-					{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.set/' },
+					{
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.set/',
+					},
 				],
 			},
 			alias: ['Set', 'JSON', 'Filter', 'Transform', 'Map'],
@@ -6583,7 +6617,9 @@ export const nodeTypesSet = {
 			subcategories: { 'Core Nodes': ['Data Transformation'] },
 			resources: {
 				primaryDocumentation: [
-					{ url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.set/' },
+					{
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.set/',
+					},
 				],
 			},
 			alias: ['Set', 'JSON', 'Filter', 'Transform', 'Map'],

@@ -3,7 +3,15 @@ import { Length } from 'class-validator';
 import { IConnections, IDataObject, IWorkflowSettings, WorkflowFEMeta } from 'flowease-workflow';
 import type { IBinaryKeyData, INode, IPairedItemData } from 'flowease-workflow';
 
-import { Column, Entity, Index, JoinColumn, JoinTable, ManyToMany, OneToMany } from '@flowease/typeorm';
+import {
+	Column,
+	Entity,
+	Index,
+	JoinColumn,
+	JoinTable,
+	ManyToMany,
+	OneToMany,
+} from '@flowease/typeorm';
 
 import config from '@/config';
 import type { TagEntity } from './TagEntity';

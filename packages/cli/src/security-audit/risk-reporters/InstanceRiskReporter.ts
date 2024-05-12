@@ -178,7 +178,9 @@ export class InstanceRiskReporter implements RiskReporter {
 			versions = await this.getNextVersions(localVersion).then((v) => this.removeIconData(v));
 		} catch (error) {
 			if (inDevelopment) {
-				this.logger.error('Failed to fetch flowease versions. Skipping outdated instance report...');
+				this.logger.error(
+					'Failed to fetch flowease versions. Skipping outdated instance report...',
+				);
 			}
 			return null;
 		}

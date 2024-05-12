@@ -117,7 +117,9 @@ export function simulateOutdatedInstanceOnce(versionName = MOCK_01110_FLOWEASE_V
 		.spyOn(constants, 'getFloweasePackageJson')
 		.mockReturnValueOnce({ name: 'flowease', version: versionName });
 
-	nock(baseUrl).get(versionName).reply(200, [MOCK_01110_FLOWEASE_VERSION, MOCK_09990_FLOWEASE_VERSION]);
+	nock(baseUrl)
+		.get(versionName)
+		.reply(200, [MOCK_01110_FLOWEASE_VERSION, MOCK_09990_FLOWEASE_VERSION]);
 }
 
 export function simulateUpToDateInstance(versionName = MOCK_09990_FLOWEASE_VERSION.name) {

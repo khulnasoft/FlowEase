@@ -1,4 +1,8 @@
-import type { INodeProperties, INodePropertyCollection, INodePropertyOptions } from 'flowease-workflow';
+import type {
+	INodeProperties,
+	INodePropertyCollection,
+	INodePropertyOptions,
+} from 'flowease-workflow';
 import {
 	summarizeNodeTypeProperties,
 	summarizeOption,

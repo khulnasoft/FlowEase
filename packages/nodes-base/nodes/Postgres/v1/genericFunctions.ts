@@ -1,5 +1,10 @@
 import { ApplicationError } from 'flowease-workflow';
-import type { IExecuteFunctions, IDataObject, INodeExecutionData, JsonObject } from 'flowease-workflow';
+import type {
+	IExecuteFunctions,
+	IDataObject,
+	INodeExecutionData,
+	JsonObject,
+} from 'flowease-workflow';
 import type pgPromise from 'pg-promise';
 import type pg from 'pg-promise/typescript/pg-subset';
 import { getResolvables } from '@utils/utilities';

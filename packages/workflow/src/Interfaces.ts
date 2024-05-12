@@ -587,7 +587,8 @@ export interface IFloweaseRequestOperationPaginationBase {
 	};
 }
 
-export interface IFloweaseRequestOperationPaginationGeneric extends IFloweaseRequestOperationPaginationBase {
+export interface IFloweaseRequestOperationPaginationGeneric
+	extends IFloweaseRequestOperationPaginationBase {
 	type: 'generic';
 	properties: {
 		continue: boolean | string;
@@ -595,7 +596,8 @@ export interface IFloweaseRequestOperationPaginationGeneric extends IFloweaseReq
 	};
 }
 
-export interface IFloweaseRequestOperationPaginationOffset extends IFloweaseRequestOperationPaginationBase {
+export interface IFloweaseRequestOperationPaginationOffset
+	extends IFloweaseRequestOperationPaginationBase {
 	type: 'offset';
 	properties: {
 		limitParameter: string;

@@ -61,7 +61,11 @@ import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 import ParameterInputWrapper from './ParameterInputWrapper.vue';
 import { isValueExpression } from '@/utils/nodeTypesUtils';
-import type { INodeParameterResourceLocator, INodeProperties, IParameterLabel } from 'flowease-workflow';
+import type {
+	INodeParameterResourceLocator,
+	INodeProperties,
+	IParameterLabel,
+} from 'flowease-workflow';
 import { mapStores } from 'pinia';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { createEventBus } from 'flowease-design-system/utils';

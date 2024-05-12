@@ -10,7 +10,8 @@ export class QdrantApi implements ICredentialType {
 
 	displayName = 'QdrantApi';
 
-	documentationUrl = 'https://docs.flowease.khulnasoft.com/integrations/builtin/credentials/qdrant/';
+	documentationUrl =
+		'https://docs.flowease.khulnasoft.com/integrations/builtin/credentials/qdrant/';
 
 	properties: INodeProperties[] = [
 		{

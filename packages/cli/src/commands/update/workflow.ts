@@ -65,7 +65,9 @@ export class UpdateWorkflowCommand extends BaseCommand {
 		}
 
 		this.logger.info('Activation or deactivation will not take effect if flowease is running.');
-		this.logger.info('Please restart flowease for changes to take effect if flowease is currently running.');
+		this.logger.info(
+			'Please restart flowease for changes to take effect if flowease is currently running.',
+		);
 	}
 
 	async catch(error: Error) {

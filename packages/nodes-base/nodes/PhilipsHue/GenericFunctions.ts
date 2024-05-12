@@ -60,6 +60,8 @@ export async function getUser(this: IExecuteFunctions | ILoadOptionsFunctions): 
 	}
 	// flowease user was not fount then create the user
 	await philipsHueApiRequest.call(this, 'PUT', '/api/0/config', { linkbutton: true });
-	const { success } = await philipsHueApiRequest.call(this, 'POST', '/api', { devicetype: 'flowease' });
+	const { success } = await philipsHueApiRequest.call(this, 'POST', '/api', {
+		devicetype: 'flowease',
+	});
 	return success.username;
 }

@@ -19,7 +19,7 @@ export const vitestConfig = defineVitestConfig({
 						reporter: process.env.CI === 'true' ? 'cobertura' : 'text-summary',
 						all: true,
 					},
-			  }
+				}
 			: {}),
 		css: {
 			modules: {

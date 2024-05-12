@@ -1,4 +1,8 @@
-import { BINARY_ENCODING, type IDataObject, type IExecuteResponsePromiseData } from 'flowease-workflow';
+import {
+	BINARY_ENCODING,
+	type IDataObject,
+	type IExecuteResponsePromiseData,
+} from 'flowease-workflow';
 
 export function decodeWebhookResponse(
 	response: IExecuteResponsePromiseData,

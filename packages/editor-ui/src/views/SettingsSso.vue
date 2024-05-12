@@ -150,7 +150,9 @@ onMounted(async () => {
 	<div class="pb-3xl">
 		<flowease-heading size="2xlarge">{{ i18n.baseText('settings.sso.title') }}</flowease-heading>
 		<div :class="$style.top">
-			<flowease-heading size="xlarge">{{ i18n.baseText('settings.sso.subtitle') }}</flowease-heading>
+			<flowease-heading size="xlarge">{{
+				i18n.baseText('settings.sso.subtitle')
+			}}</flowease-heading>
 			<flowease-tooltip
 				v-if="ssoStore.isEnterpriseSamlEnabled"
 				:disabled="ssoStore.isSamlLoginEnabled || ssoSettingsSaved"
@@ -214,7 +216,12 @@ onMounted(async () => {
 				</div>
 			</div>
 			<div :class="$style.buttons">
-				<flowease-button :disabled="!isSaveEnabled" size="large" data-test-id="sso-save" @click="onSave">
+				<flowease-button
+					:disabled="!isSaveEnabled"
+					size="large"
+					data-test-id="sso-save"
+					@click="onSave"
+				>
 					{{ i18n.baseText('settings.sso.settings.save') }}
 				</flowease-button>
 				<flowease-button

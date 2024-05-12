@@ -1,7 +1,11 @@
 <template>
 	<div
 		role="radiogroup"
-		:class="{ 'flowease-radio-buttons': true, [$style.radioGroup]: true, [$style.disabled]: disabled }"
+		:class="{
+			'flowease-radio-buttons': true,
+			[$style.radioGroup]: true,
+			[$style.disabled]: disabled,
+		}"
 	>
 		<RadioButton
 			v-for="option in options"

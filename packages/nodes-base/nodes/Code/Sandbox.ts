@@ -1,5 +1,9 @@
 import { EventEmitter } from 'events';
-import type { IExecuteFunctions, INodeExecutionData, IWorkflowDataProxyData } from 'flowease-workflow';
+import type {
+	IExecuteFunctions,
+	INodeExecutionData,
+	IWorkflowDataProxyData,
+} from 'flowease-workflow';
 import { ValidationError } from './ValidationError';
 import { isObject } from './utils';
 

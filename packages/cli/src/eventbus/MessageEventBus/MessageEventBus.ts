@@ -159,7 +159,9 @@ export class MessageEventBus extends EventEmitter {
 
 			if (unfinishedExecutionIds.length > 0) {
 				this.logger.warn(`Found unfinished executions: ${unfinishedExecutionIds.join(', ')}`);
-				this.logger.info('This could be due to a crash of an active workflow or a restart of flowease.');
+				this.logger.info(
+					'This could be due to a crash of an active workflow or a restart of flowease.',
+				);
 				const activeWorkflows = await this.workflowRepository.find({
 					where: { active: true },
 					select: ['id', 'name'],

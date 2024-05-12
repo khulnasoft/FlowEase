@@ -203,7 +203,12 @@ const onBlur = (): void => {
 				<template #content>
 					{{ i18n.baseText('filter.condition.resolvedTrue') }}
 				</template>
-				<flowease-icon :class="$style.statusIcon" icon="check-circle" size="medium" color="text-light" />
+				<flowease-icon
+					:class="$style.statusIcon"
+					icon="check-circle"
+					size="medium"
+					color="text-light"
+				/>
 			</flowease-tooltip>
 
 			<flowease-tooltip
@@ -213,7 +218,12 @@ const onBlur = (): void => {
 				<template #content>
 					{{ i18n.baseText('filter.condition.resolvedFalse') }}
 				</template>
-				<flowease-icon :class="$style.statusIcon" icon="times-circle" size="medium" color="text-light" />
+				<flowease-icon
+					:class="$style.statusIcon"
+					icon="times-circle"
+					size="medium"
+					color="text-light"
+				/>
 			</flowease-tooltip>
 		</div>
 	</div>

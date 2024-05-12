@@ -2384,7 +2384,11 @@ export function getNodeParameter(
 		);
 		cleanupParameterData(returnData);
 	} catch (e) {
-		if (e instanceof ExpressionError && node.continueOnFail && node.type === 'flowease-nodes-base.set') {
+		if (
+			e instanceof ExpressionError &&
+			node.continueOnFail &&
+			node.type === 'flowease-nodes-base.set'
+		) {
 			// https://linear.app/flowease/issue/PAY-684
 			returnData = [{ name: undefined, value: undefined }];
 		} else {
@@ -3186,7 +3190,8 @@ const getAllowedPaths = () => {
 function isFilePathBlocked(filePath: string): boolean {
 	const allowedPaths = getAllowedPaths();
 	const resolvedFilePath = path.resolve(filePath);
-	const blockFileAccessToFloweaseFiles = process.env[BLOCK_FILE_ACCESS_TO_FLOWEASE_FILES] !== 'false';
+	const blockFileAccessToFloweaseFiles =
+		process.env[BLOCK_FILE_ACCESS_TO_FLOWEASE_FILES] !== 'false';
 
 	//if allowed paths are defined, allow access only to those paths
 	if (allowedPaths.length) {

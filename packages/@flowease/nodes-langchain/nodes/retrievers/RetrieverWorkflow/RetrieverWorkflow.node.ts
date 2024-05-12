@@ -14,7 +14,10 @@ import type {
 import { BaseRetriever, type BaseRetrieverInput } from '@langchain/core/retrievers';
 import { Document } from '@langchain/core/documents';
 
-import type { SetField, SetNodeOptions } from 'flowease-nodes-base/dist/nodes/Set/v2/helpers/interfaces';
+import type {
+	SetField,
+	SetNodeOptions,
+} from 'flowease-nodes-base/dist/nodes/Set/v2/helpers/interfaces';
 import * as manual from 'flowease-nodes-base/dist/nodes/Set/v2/manual.mode';
 import type { CallbackManagerForRetrieverRun } from '@langchain/core/callbacks/manager';
 import { logWrapper } from '../../../utils/logWrapper';

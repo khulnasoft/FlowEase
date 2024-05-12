@@ -21,7 +21,9 @@
 						<flowease-text>{{ $locale.baseText('about.sourceCode') }}</flowease-text>
 					</el-col>
 					<el-col :span="16">
-						<flowease-link to="https://github.com/khulnasoft/flowease">https://github.com/khulnasoft/flowease</flowease-link>
+						<flowease-link to="https://github.com/khulnasoft/flowease"
+							>https://github.com/khulnasoft/flowease</flowease-link
+						>
 					</el-col>
 				</el-row>
 				<el-row>
@@ -29,7 +31,9 @@
 						<flowease-text>{{ $locale.baseText('about.license') }}</flowease-text>
 					</el-col>
 					<el-col :span="16">
-						<flowease-link to="https://github.com/khulnasoft/flowease/blob/master/packages/cli/LICENSE.md">
+						<flowease-link
+							to="https://github.com/khulnasoft/flowease/blob/master/packages/cli/LICENSE.md"
+						>
 							{{ $locale.baseText('about.floweaseLicense') }}
 						</flowease-link>
 					</el-col>

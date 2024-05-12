@@ -1,6 +1,11 @@
 import { Service } from 'typedi';
 import { DataSource, In, Not, Repository, Like } from '@flowease/typeorm';
-import type { FindManyOptions, DeleteResult, EntityManager, FindOptionsWhere } from '@flowease/typeorm';
+import type {
+	FindManyOptions,
+	DeleteResult,
+	EntityManager,
+	FindOptionsWhere,
+} from '@flowease/typeorm';
 import { CredentialsEntity } from '../entities/CredentialsEntity';
 import { SharedCredentials } from '../entities/SharedCredentials';
 import type { ListQuery } from '@/requests';

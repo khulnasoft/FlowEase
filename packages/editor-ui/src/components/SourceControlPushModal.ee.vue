@@ -305,7 +305,10 @@ async function commitAndPush() {
 					<flowease-notice v-else class="mt-0">
 						<i18n-t keypath="settings.sourceControl.modals.push.noWorkflowChanges">
 							<template #link>
-								<flowease-link size="small" :to="i18n.baseText('settings.sourceControl.docs.using.url')">
+								<flowease-link
+									size="small"
+									:to="i18n.baseText('settings.sourceControl.docs.using.url')"
+								>
 									{{
 										i18n.baseText('settings.sourceControl.modals.push.noWorkflowChanges.moreInfo')
 									}}

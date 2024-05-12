@@ -1,4 +1,9 @@
-import { ITriggerFunctions, INodeType, INodeTypeDescription, ITriggerResponse } from 'flowease-workflow';
+import {
+	ITriggerFunctions,
+	INodeType,
+	INodeTypeDescription,
+	ITriggerResponse,
+} from 'flowease-workflow';
 
 export class ClassNameReplace implements INodeType {
 	description: INodeTypeDescription = {

@@ -61,7 +61,10 @@
 								size="small"
 								@update:model-value="onRoleAction(user, $event)"
 							>
-								<flowease-option :label="$locale.baseText('workflows.roles.editor')" value="editor" />
+								<flowease-option
+									:label="$locale.baseText('workflows.roles.editor')"
+									value="editor"
+								/>
 								<flowease-option :class="$style.roleSelectRemoveOption" value="remove">
 									<flowease-text color="danger">{{
 										$locale.baseText('workflows.shareModal.list.delete')

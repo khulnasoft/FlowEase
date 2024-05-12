@@ -19,7 +19,9 @@
 				</span>
 			</div>
 			<div>
-				<FloweaseText data-test-id="user-email" size="small" color="text-light">{{ email }}</FloweaseText>
+				<FloweaseText data-test-id="user-email" size="small" color="text-light">{{
+					email
+				}}</FloweaseText>
 			</div>
 		</div>
 	</div>

@@ -107,7 +107,11 @@
 					<div v-if="showFiltersDropdown" v-show="hasFilters" class="mt-xs">
 						<flowease-info-tip :bold="false">
 							{{ i18n.baseText(`${resourceKey}.filters.active`) }}
-							<flowease-link data-test-id="workflows-filter-reset" size="small" @click="resetFilters">
+							<flowease-link
+								data-test-id="workflows-filter-reset"
+								size="small"
+								@click="resetFilters"
+							>
 								{{ i18n.baseText(`${resourceKey}.filters.active.reset`) }}
 							</flowease-link>
 						</flowease-info-tip>

@@ -7,7 +7,9 @@
 		<div v-else :class="$style.packageCard">
 			<div :class="$style.cardInfoContainer">
 				<div :class="$style.cardTitle">
-					<flowease-text :bold="true" size="large">{{ communityPackage.packageName }}</flowease-text>
+					<flowease-text :bold="true" size="large">{{
+						communityPackage.packageName
+					}}</flowease-text>
 				</div>
 				<div :class="$style.cardSubtitle">
 					<flowease-text :bold="true" size="small" color="text-light">
@@ -54,7 +56,10 @@
 					<flowease-icon icon="check-circle" color="text-light" size="large" />
 				</flowease-tooltip>
 				<div :class="$style.cardActions">
-					<flowease-action-toggle :actions="packageActions" @action="onAction"></flowease-action-toggle>
+					<flowease-action-toggle
+						:actions="packageActions"
+						@action="onAction"
+					></flowease-action-toggle>
 				</div>
 			</div>
 		</div>

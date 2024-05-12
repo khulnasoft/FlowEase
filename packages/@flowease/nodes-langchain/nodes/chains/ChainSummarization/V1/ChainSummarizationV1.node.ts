@@ -245,7 +245,10 @@ export class ChainSummarizationV1 implements INodeType {
 
 		for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
 			let processedDocuments: Document[];
-			if (documentInput instanceof FloweaseJsonLoader || documentInput instanceof FloweaseBinaryLoader) {
+			if (
+				documentInput instanceof FloweaseJsonLoader ||
+				documentInput instanceof FloweaseBinaryLoader
+			) {
 				processedDocuments = await documentInput.processItem(items[itemIndex], itemIndex);
 			} else {
 				processedDocuments = documentInput;

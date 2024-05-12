@@ -19,7 +19,10 @@ import type { IBuildOptions } from './Interfaces';
 
 export async function createCustomTsconfig() {
 	// Get path to simple tsconfig file which should be used for build
-	const tsconfigPath = join(dirname(require.resolve('flowease-node-dev/src')), 'tsconfig-build.json');
+	const tsconfigPath = join(
+		dirname(require.resolve('flowease-node-dev/src')),
+		'tsconfig-build.json',
+	);
 
 	// Read the tsconfig file
 	const tsConfigString = await readFile(tsconfigPath, { encoding: 'utf8' });

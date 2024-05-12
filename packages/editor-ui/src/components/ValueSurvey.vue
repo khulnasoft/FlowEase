@@ -11,7 +11,9 @@
 	>
 		<template #header>
 			<div :class="$style.title">
-				<flowease-heading tag="h2" size="medium" color="text-xlight">{{ getTitle }}</flowease-heading>
+				<flowease-heading tag="h2" size="medium" color="text-xlight">{{
+					getTitle
+				}}</flowease-heading>
 			</div>
 		</template>
 		<template #content>
@@ -143,9 +145,10 @@ export default defineComponent({
 			this.form.value = value;
 			this.showButtons = false;
 
-			const response: IFloweasePromptResponse | undefined = await this.settingsStore.submitValueSurvey({
-				value: this.form.value,
-			});
+			const response: IFloweasePromptResponse | undefined =
+				await this.settingsStore.submitValueSurvey({
+					value: this.form.value,
+				});
 
 			if (response && response.updated) {
 				this.$telemetry.track('User responded value survey score', {
@@ -156,12 +159,11 @@ export default defineComponent({
 		},
 		async send() {
 			if (this.isEmailValid) {
-				const response: IFloweasePromptResponse | undefined = await this.settingsStore.submitValueSurvey(
-					{
+				const response: IFloweasePromptResponse | undefined =
+					await this.settingsStore.submitValueSurvey({
 						email: this.form.email,
 						value: this.form.value,
-					},
-				);
+					});
 
 				if (response && response.updated) {
 					this.$telemetry.track('User responded value survey email', {

@@ -301,7 +301,9 @@
 			</div>
 
 			<div v-else-if="hasNodeRun && !showData" :class="$style.center">
-				<flowease-text :bold="true" color="text-dark" size="large">{{ tooMuchDataTitle }}</flowease-text>
+				<flowease-text :bold="true" color="text-dark" size="large">{{
+					tooMuchDataTitle
+				}}</flowease-text>
 				<flowease-text align="center" tag="div"
 					><span
 						v-html="
@@ -533,7 +535,8 @@
 					<template #prepend>{{ $locale.baseText('ndv.output.pageSize') }}</template>
 					<flowease-option v-for="size in pageSizes" :key="size" :label="size" :value="size">
 					</flowease-option>
-					<flowease-option :label="$locale.baseText('ndv.output.all')" :value="dataCount"> </flowease-option>
+					<flowease-option :label="$locale.baseText('ndv.output.all')" :value="dataCount">
+					</flowease-option>
 				</flowease-select>
 			</div>
 		</div>

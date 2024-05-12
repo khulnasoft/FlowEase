@@ -112,7 +112,8 @@ isEmpty.doc = {
 	name: 'isEmpty',
 	description: 'Checks if the Object has no key-value pairs.',
 	returnType: 'boolean',
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/objects/#object-isEmpty',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/objects/#object-isEmpty',
 };
 
 isNotEmpty.doc = {
@@ -127,7 +128,8 @@ compact.doc = {
 	name: 'compact',
 	description: 'Removes empty values from an Object.',
 	returnType: 'boolean',
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/objects/#object-compact',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/objects/#object-compact',
 };
 
 urlEncode.doc = {
@@ -143,7 +145,8 @@ hasField.doc = {
 	description: 'Checks if the Object has a given field. Only top-level keys are supported.',
 	returnType: 'boolean',
 	args: [{ name: 'fieldName', type: 'string' }],
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/objects/#object-hasField',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/objects/#object-hasField',
 };
 
 removeField.doc = {
@@ -177,14 +180,16 @@ keepFieldsContaining.doc = {
 keys.doc = {
 	name: 'keys',
 	description: "Returns an array of a given object's own enumerable string-keyed property names.",
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/objects/#object-keys',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/objects/#object-keys',
 	returnType: 'Array',
 };
 
 values.doc = {
 	name: 'values',
 	description: "Returns an array of a given object's own enumerable string-keyed property values.",
-	docURL: 'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/objects/#object-values',
+	docURL:
+		'https://docs.flowease.khulnasoft.com/code/builtin/data-transformation-functions/objects/#object-values',
 	returnType: 'Array',
 };
 

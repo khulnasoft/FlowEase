@@ -1,4 +1,8 @@
-import type { ILoadOptionsFunctions, INodeListSearchResult, INodeProperties } from 'flowease-workflow';
+import type {
+	ILoadOptionsFunctions,
+	INodeListSearchResult,
+	INodeProperties,
+} from 'flowease-workflow';
 import { apiRequestAllItems } from './GenericFunctions';
 
 type DataItemsResponse<T> = {

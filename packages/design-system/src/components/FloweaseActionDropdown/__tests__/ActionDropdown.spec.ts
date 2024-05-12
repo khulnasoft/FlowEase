@@ -19,7 +19,13 @@ describe('components', () => {
 					],
 				},
 				global: {
-					stubs: ['flowease-icon', 'el-tooltip', 'el-dropdown', 'el-dropdown-menu', 'el-dropdown-item'],
+					stubs: [
+						'flowease-icon',
+						'el-tooltip',
+						'el-dropdown',
+						'el-dropdown-menu',
+						'el-dropdown-item',
+					],
 				},
 			});
 			expect(wrapper.html()).toMatchSnapshot();

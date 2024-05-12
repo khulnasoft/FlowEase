@@ -102,7 +102,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import type { IExecutionResponse, INodeUi } from '@/Interface';
-import type { INodeTypeDescription, IRunData, IRunExecutionData, ITaskData } from 'flowease-workflow';
+import type {
+	INodeTypeDescription,
+	IRunData,
+	IRunExecutionData,
+	ITaskData,
+} from 'flowease-workflow';
 import RunData from './RunData.vue';
 import RunInfo from './RunInfo.vue';
 import { mapStores, storeToRefs } from 'pinia';

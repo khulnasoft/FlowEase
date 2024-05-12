@@ -183,7 +183,11 @@ function closeDialog() {
 
 		<template #footer>
 			<div class="action-buttons">
-				<flowease-button float="right" :label="i18n.baseText('chatEmbed.close')" @click="closeDialog" />
+				<flowease-button
+					float="right"
+					:label="i18n.baseText('chatEmbed.close')"
+					@click="closeDialog"
+				/>
 			</div>
 		</template>
 	</Modal>

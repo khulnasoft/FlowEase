@@ -1,4 +1,4 @@
-import { LicenseManager } from '@flowease_io/license-sdk';
+import { LicenseManager } from '@n8n_io/license-sdk';
 import { InstanceSettings } from 'flowease-core';
 import { mock } from 'jest-mock-extended';
 import config from '@/config';
@@ -8,7 +8,7 @@ import { FLOWEASE_VERSION } from '@/constants';
 import { mockInstance } from '../shared/mocking';
 import { OrchestrationService } from '@/services/orchestration.service';
 
-jest.mock('@flowease_io/license-sdk');
+jest.mock('@n8n_io/license-sdk');
 
 const MOCK_SERVER_URL = 'https://server.com/v1';
 const MOCK_RENEW_OFFSET = 259200;

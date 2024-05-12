@@ -11,7 +11,12 @@
 				<flowease-text :bold="true" color="text-base" tag="div">{{
 					$locale.baseText('ndv.title.renameNode')
 				}}</flowease-text>
-				<flowease-input ref="input" v-model="newName" size="small" data-test-id="node-rename-input" />
+				<flowease-input
+					ref="input"
+					v-model="newName"
+					size="small"
+					data-test-id="node-rename-input"
+				/>
 				<div :class="$style.editButtons">
 					<flowease-button
 						type="secondary"

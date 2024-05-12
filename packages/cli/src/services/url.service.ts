@@ -23,7 +23,9 @@ export class UrlService {
 	getInstanceBaseUrl(): string {
 		const floweaseBaseUrl = config.getEnv('editorBaseUrl') || this.getWebhookBaseUrl();
 
-		return floweaseBaseUrl.endsWith('/') ? floweaseBaseUrl.slice(0, floweaseBaseUrl.length - 1) : floweaseBaseUrl;
+		return floweaseBaseUrl.endsWith('/')
+			? floweaseBaseUrl.slice(0, floweaseBaseUrl.length - 1)
+			: floweaseBaseUrl;
 	}
 
 	private generateBaseUrl(): string {

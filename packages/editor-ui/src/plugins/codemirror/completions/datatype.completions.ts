@@ -13,7 +13,12 @@ import type {
 import { uniqBy } from 'lodash-es';
 import { DateTime } from 'luxon';
 import type { DocMetadata, IDataObject, NativeDoc } from 'flowease-workflow';
-import { Expression, ExpressionExtensions, NativeMethods, validateFieldType } from 'flowease-workflow';
+import {
+	Expression,
+	ExpressionExtensions,
+	NativeMethods,
+	validateFieldType,
+} from 'flowease-workflow';
 import {
 	ARRAY_NUMBER_ONLY_METHODS,
 	ARRAY_RECOMMENDED_OPTIONS,

@@ -1,4 +1,8 @@
-import { type INodeProperties, type IExecuteFunctions, NodeOperationError } from 'flowease-workflow';
+import {
+	type INodeProperties,
+	type IExecuteFunctions,
+	NodeOperationError,
+} from 'flowease-workflow';
 import { microsoftApiRequest } from '../../transport';
 import { channelRLC, teamRLC } from '../../descriptions';
 import { updateDisplayOptions } from '@utils/utilities';

@@ -343,7 +343,10 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 				<div :class="$style.group">
 					<label>{{ locale.baseText('settings.sourceControl.color') }}</label>
 					<div>
-						<flowease-color-picker v-model="sourceControlStore.preferences.branchColor" size="small" />
+						<flowease-color-picker
+							v-model="sourceControlStore.preferences.branchColor"
+							size="small"
+						/>
 					</div>
 				</div>
 				<div :class="[$style.group, 'pt-s']">

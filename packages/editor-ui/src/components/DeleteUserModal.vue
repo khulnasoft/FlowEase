@@ -54,7 +54,9 @@
 						:class="$style.optionInput"
 						data-test-id="delete-data-input"
 					>
-						<flowease-input-label :label="$locale.baseText('settings.users.deleteConfirmationMessage')">
+						<flowease-input-label
+							:label="$locale.baseText('settings.users.deleteConfirmationMessage')"
+						>
 							<flowease-input
 								:model-value="deleteConfirmText"
 								:placeholder="$locale.baseText('settings.users.deleteConfirmationText')"

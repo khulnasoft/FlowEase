@@ -42,7 +42,7 @@
     "flowease": "workspace:*"
   },
   "devDependencies": {
-    "@flowease_io/eslint-config": "workspace:*",
+    "@flowease/eslint-config": "workspace:*",
     "@ngneat/falso": "^6.4.0",
     "@types/jest": "^29.5.3",
     "@types/supertest": "^6.0.2",

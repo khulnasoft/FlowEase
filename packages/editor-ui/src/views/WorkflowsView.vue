@@ -29,7 +29,10 @@
 				<template #content>
 					<i18n-t tag="span" keypath="mainSidebar.workflows.readOnlyEnv.tooltip">
 						<template #link>
-							<a target="_blank" href="https://docs.flowease.khulnasoft.com/source-control-environments/">
+							<a
+								target="_blank"
+								href="https://docs.flowease.khulnasoft.com/source-control-environments/"
+							>
 								{{ $locale.baseText('mainSidebar.workflows.readOnlyEnv.tooltip.link') }}
 							</a>
 						</template>

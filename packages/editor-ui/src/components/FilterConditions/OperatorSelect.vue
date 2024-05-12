@@ -89,7 +89,12 @@ function onGroupSelect(group: string) {
 							@click="() => onGroupSelect(group.id)"
 						>
 							<div :class="$style.groupTitle">
-								<flowease-icon v-if="group.icon" :icon="group.icon" color="text-light" size="small" />
+								<flowease-icon
+									v-if="group.icon"
+									:icon="group.icon"
+									color="text-light"
+									size="small"
+								/>
 								<span>{{ i18n.baseText(group.name) }}</span>
 							</div>
 							<flowease-icon icon="chevron-right" color="text-light" size="xsmall" />

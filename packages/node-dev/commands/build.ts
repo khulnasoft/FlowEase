@@ -6,7 +6,8 @@ import type { IBuildOptions } from '../src';
 import { buildFiles } from '../src';
 
 export class Build extends Command {
-	static description = 'Builds credentials and nodes and copies it to flowease custom extension folder';
+	static description =
+		'Builds credentials and nodes and copies it to flowease custom extension folder';
 
 	static examples = [
 		'$ flowease-node-dev build',

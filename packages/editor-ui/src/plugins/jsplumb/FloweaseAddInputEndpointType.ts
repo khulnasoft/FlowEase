@@ -62,7 +62,10 @@ export const FloweaseAddInputEndpointHandler: EndpointHandler<
 > = {
 	type: FloweaseAddInputEndpoint.type,
 	cls: FloweaseAddInputEndpoint,
-	compute: (ep: FloweaseAddInputEndpoint, anchorPoint: AnchorPlacement): ComputedFloweaseAddInputEndpoint => {
+	compute: (
+		ep: FloweaseAddInputEndpoint,
+		anchorPoint: AnchorPlacement,
+	): ComputedFloweaseAddInputEndpoint => {
 		const x = anchorPoint.curX - ep.params.width / 2;
 		const y = anchorPoint.curY - ep.params.width / 2;
 		const w = ep.params.width;

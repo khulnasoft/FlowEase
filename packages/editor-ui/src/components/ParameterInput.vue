@@ -1061,7 +1061,10 @@ function trackExpressionEditOpen() {
 		return;
 	}
 
-	if (node.value.type.startsWith('flowease-nodes-base') || isCredentialOnlyNodeType(node.value.type)) {
+	if (
+		node.value.type.startsWith('flowease-nodes-base') ||
+		isCredentialOnlyNodeType(node.value.type)
+	) {
 		telemetry.track('User opened Expression Editor', {
 			node_type: node.value.type,
 			parameter_name: props.parameter.displayName,

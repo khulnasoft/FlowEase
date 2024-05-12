@@ -1,6 +1,11 @@
 /* eslint-disable flowease-nodes-base/node-dirname-against-convention */
 import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
-import type { IExecuteFunctions, INodeType, INodeTypeDescription, SupplyData } from 'flowease-workflow';
+import type {
+	IExecuteFunctions,
+	INodeType,
+	INodeTypeDescription,
+	SupplyData,
+} from 'flowease-workflow';
 import { XataChatMessageHistory } from '@langchain/community/stores/message/xata';
 import { BufferMemory } from 'langchain/memory';
 import { BaseClient } from '@xata.io/client';

@@ -10,7 +10,10 @@ import type {
 	IDataObject,
 } from 'flowease-workflow';
 import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
-import type { SetField, SetNodeOptions } from 'flowease-nodes-base/dist/nodes/Set/v2/helpers/interfaces';
+import type {
+	SetField,
+	SetNodeOptions,
+} from 'flowease-nodes-base/dist/nodes/Set/v2/helpers/interfaces';
 import * as manual from 'flowease-nodes-base/dist/nodes/Set/v2/manual.mode';
 
 import { DynamicTool } from '@langchain/core/tools';
@@ -26,7 +29,8 @@ export class ToolWorkflow implements INodeType {
 		icon: 'fa:network-wired',
 		group: ['transform'],
 		version: [1, 1.1],
-		description: 'Uses another flowease workflow as a tool. Allows packaging any flowease node(s) as a tool.',
+		description:
+			'Uses another flowease workflow as a tool. Allows packaging any flowease node(s) as a tool.',
 		defaults: {
 			name: 'Custom flowease Workflow Tool',
 		},

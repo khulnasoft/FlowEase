@@ -65,7 +65,7 @@ Cypress.Commands.add('signout', () => {
 	cy.request({
 		method: 'POST',
 		url: `${BACKEND_BASE_URL}/rest/logout`,
-		headers: { 'browser-id': localStorage.getItem('flowease-browserId') }
+		headers: { 'browser-id': localStorage.getItem('flowease-browserId') },
 	});
 	cy.getCookie(FLOWEASE_AUTH_COOKIE).should('not.exist');
 });

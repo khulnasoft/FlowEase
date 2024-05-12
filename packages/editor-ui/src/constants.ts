@@ -430,7 +430,10 @@ export const HIRING_BANNER = `
 Love flowease? Help us build the future of automation! https://flowease.khulnasoft.com/careers?utm_source=flowease_user&utm_medium=console_output
 `;
 
-export const TEMPLATES_NODES_FILTER = ['flowease-nodes-base.start', 'flowease-nodes-base.respondToWebhook'];
+export const TEMPLATES_NODES_FILTER = [
+	'flowease-nodes-base.start',
+	'flowease-nodes-base.respondToWebhook',
+];
 
 export const enum VIEWS {
 	HOMEPAGE = 'Homepage',

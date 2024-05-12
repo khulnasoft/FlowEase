@@ -35,7 +35,9 @@ function goToUpgrade() {
 
 <template>
 	<div class="pb-3xl">
-		<flowease-heading size="2xlarge">{{ i18n.baseText('settings.externalSecrets.title') }}</flowease-heading>
+		<flowease-heading size="2xlarge">{{
+			i18n.baseText('settings.externalSecrets.title')
+		}}</flowease-heading>
 		<div
 			v-if="externalSecretsStore.isEnterpriseExternalSecretsEnabled"
 			data-test-id="external-secrets-content-licensed"

@@ -28,7 +28,11 @@ describe('Cloud', { disableAutoLogin: true }, () => {
 			cy.intercept('GET', '/rest/settings', (req) => {
 				req.on('response', (res) => {
 					res.send({
-						data: { ...res.body.data, deployment: { type: 'cloud' }, floweaseMetadata: { userId: 1 } },
+						data: {
+							...res.body.data,
+							deployment: { type: 'cloud' },
+							floweaseMetadata: { userId: 1 },
+						},
 					});
 				});
 			}).as('loadSettings');
@@ -78,7 +82,11 @@ describe('Cloud', { disableAutoLogin: true }, () => {
 			cy.intercept('GET', '/rest/settings', (req) => {
 				req.on('response', (res) => {
 					res.send({
-						data: { ...res.body.data, deployment: { type: 'cloud' }, floweaseMetadata: { userId: 1 } },
+						data: {
+							...res.body.data,
+							deployment: { type: 'cloud' },
+							floweaseMetadata: { userId: 1 },
+						},
 					});
 				});
 			}).as('loadSettings');

@@ -98,7 +98,10 @@
 				<flowease-text tag="div" :bold="true" color="text-dark" size="large">{{
 					$locale.baseText('ndv.input.noOutputData.title')
 				}}</flowease-text>
-				<flowease-tooltip v-if="!readOnly" :visible="showDraggableHint && showDraggableHintWithDelay">
+				<flowease-tooltip
+					v-if="!readOnly"
+					:visible="showDraggableHint && showDraggableHintWithDelay"
+				>
 					<template #content>
 						<div
 							v-html="

@@ -64,7 +64,9 @@
 					@update:model-value="onCheckboxChecked"
 				>
 					<flowease-text>
-						{{ $locale.baseText('settings.communityNodes.installModal.checkbox.label') }} </flowease-text
+						{{
+							$locale.baseText('settings.communityNodes.installModal.checkbox.label')
+						}} </flowease-text
 					><br />
 					<flowease-link :to="COMMUNITY_NODES_RISKS_DOCS_URL" @click="onLearnMoreLinkClick">{{
 						$locale.baseText('_reusableDynamicText.moreInfo')

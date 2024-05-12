@@ -15,7 +15,10 @@
 					{{ $locale.baseText('nodeCreator.noResults.httpRequest') }}
 				</flowease-link>
 
-				<flowease-link v-if="rootView === TRIGGER_NODE_CREATOR_VIEW" @click="$emit('addWebhookNode')">
+				<flowease-link
+					v-if="rootView === TRIGGER_NODE_CREATOR_VIEW"
+					@click="$emit('addWebhookNode')"
+				>
 					{{ $locale.baseText('nodeCreator.noResults.webhook') }}
 				</flowease-link>
 				{{ $locale.baseText('nodeCreator.noResults.node') }}

@@ -2,7 +2,7 @@ import { LicenseErrors, LicenseService } from '@/license/license.service';
 import type { License } from '@/License';
 import type { InternalHooks } from '@/InternalHooks';
 import type { WorkflowRepository } from '@db/repositories/workflow.repository';
-import type { TEntitlement } from '@flowease_io/license-sdk';
+import type { TEntitlement } from '@n8n_io/license-sdk';
 import { mock } from 'jest-mock-extended';
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';
 

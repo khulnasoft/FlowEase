@@ -2,7 +2,9 @@
 	<div class="collection-parameter" @keydown.stop>
 		<div class="collection-parameter-wrapper">
 			<div v-if="getProperties.length === 0" class="no-items-exist">
-				<flowease-text size="small">{{ $locale.baseText('collectionParameter.noProperties') }}</flowease-text>
+				<flowease-text size="small">{{
+					$locale.baseText('collectionParameter.noProperties')
+				}}</flowease-text>
 			</div>
 
 			<Suspense>

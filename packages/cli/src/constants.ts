@@ -96,7 +96,8 @@ export const LICENSE_QUOTAS = {
 } as const;
 export const UNLIMITED_LICENSE_QUOTA = -1;
 
-export const CREDENTIAL_BLANKING_VALUE = '__flowease_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6';
+export const CREDENTIAL_BLANKING_VALUE =
+	'__flowease_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6';
 
 export const UM_FIX_INSTRUCTION =
 	'Please fix the database by running ./packages/cli/bin/flowease user-management:reset';

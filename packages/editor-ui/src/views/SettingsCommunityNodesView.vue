@@ -1,7 +1,9 @@
 <template>
 	<div :class="$style.container">
 		<div :class="$style.headingContainer">
-			<flowease-heading size="2xlarge">{{ $locale.baseText('settings.communityNodes') }}</flowease-heading>
+			<flowease-heading size="2xlarge">{{
+				$locale.baseText('settings.communityNodes')
+			}}</flowease-heading>
 			<flowease-button
 				v-if="
 					!settingsStore.isQueueModeEnabled &&

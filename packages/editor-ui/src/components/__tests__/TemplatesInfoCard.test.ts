@@ -61,7 +61,9 @@ describe('TemplatesInfoCard', () => {
 		});
 		expect(getByText(TEST_COLLECTION.name)).toBeInTheDocument();
 		expect(getByText(`${TEST_COLLECTION.workflows.length} Workflows`)).toBeVisible();
-		expect(container.querySelectorAll('.flowease-node-icon').length).toBe(TEST_COLLECTION.nodes.length);
+		expect(container.querySelectorAll('.flowease-node-icon').length).toBe(
+			TEST_COLLECTION.nodes.length,
+		);
 	});
 
 	it('should not render item count if configured so', () => {

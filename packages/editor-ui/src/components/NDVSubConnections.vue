@@ -127,7 +127,11 @@ import { NodeHelpers } from 'flowease-workflow';
 import { useNodeHelpers } from '@/composables/useNodeHelpers';
 import NodeIcon from '@/components/NodeIcon.vue';
 import TitledList from '@/components/TitledList.vue';
-import type { ConnectionTypes, INodeInputConfiguration, INodeTypeDescription } from 'flowease-workflow';
+import type {
+	ConnectionTypes,
+	INodeInputConfiguration,
+	INodeTypeDescription,
+} from 'flowease-workflow';
 import { useDebounce } from '@/composables/useDebounce';
 
 interface Props {

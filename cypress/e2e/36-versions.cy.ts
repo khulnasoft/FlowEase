@@ -21,7 +21,8 @@ describe('Versions', () => {
 						versionNotifications: {
 							enabled: true,
 							endpoint: 'https://api.flowease.khulnasoft.com/api/versions/',
-							infoUrl: 'https://docs.flowease.khulnasoft.com/getting-started/installation/updating.html',
+							infoUrl:
+								'https://docs.flowease.khulnasoft.com/getting-started/installation/updating.html',
 						},
 					};
 				}

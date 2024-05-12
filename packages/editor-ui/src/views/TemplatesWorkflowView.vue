@@ -23,7 +23,9 @@
 				</div>
 			</div>
 			<div v-else :class="$style.notFound">
-				<flowease-text color="text-base">{{ $locale.baseText('templates.workflowsNotFound') }}</flowease-text>
+				<flowease-text color="text-base">{{
+					$locale.baseText('templates.workflowsNotFound')
+				}}</flowease-text>
 			</div>
 		</template>
 		<template v-if="!notFoundError" #content>

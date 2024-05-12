@@ -180,10 +180,16 @@ export class FloweasePlusEndpoint extends EndpointRepresentation<ComputedFloweas
 	}
 }
 
-export const FloweasePlusEndpointHandler: EndpointHandler<FloweasePlusEndpoint, ComputedFloweasePlusEndpoint> = {
+export const FloweasePlusEndpointHandler: EndpointHandler<
+	FloweasePlusEndpoint,
+	ComputedFloweasePlusEndpoint
+> = {
 	type: FloweasePlusEndpoint.type,
 	cls: FloweasePlusEndpoint,
-	compute: (ep: FloweasePlusEndpoint, anchorPoint: AnchorPlacement): ComputedFloweasePlusEndpoint => {
+	compute: (
+		ep: FloweasePlusEndpoint,
+		anchorPoint: AnchorPlacement,
+	): ComputedFloweasePlusEndpoint => {
 		const x = anchorPoint.curX - ep.params.dimensions / 2;
 		const y = anchorPoint.curY - ep.params.dimensions / 2;
 		const w = ep.params.dimensions;
