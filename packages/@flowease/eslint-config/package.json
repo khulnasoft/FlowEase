@@ -1,6 +1,6 @@
 {
-  "name": "@flowease_io/eslint-config",
-  "private": true,
+  "name": "@flowease/eslint-config",
+  "private": false,
   "version": "0.0.1",
   "devDependencies": {
     "@types/eslint": "^8.56.5",

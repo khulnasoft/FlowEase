@@ -1,4 +1,4 @@
-import * as tmpl from '@flowease_io/riot-tmpl';
+import * as tmpl from '@flowease/riot-tmpl';
 import type { ReturnValue, TmplDifference } from '@flowease/tournament';
 import { Tournament } from '@flowease/tournament';
 import type { ExpressionEvaluatorType } from './Interfaces';
