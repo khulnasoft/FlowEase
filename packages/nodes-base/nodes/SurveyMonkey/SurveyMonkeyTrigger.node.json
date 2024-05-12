@@ -1,0 +1,19 @@
+{
+	"node": "flowease-nodes-base.surveyMonkeyTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing", "Communication"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/surveyMonkey"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/trigger-nodes/flowease-nodes-base.surveymonkeytrigger/"
+			}
+		]
+	},
+	"alias": ["Form"]
+}

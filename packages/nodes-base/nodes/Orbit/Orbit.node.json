@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.orbit",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Analytics"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/orbit"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.orbit/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Migrating Community Metrics to Orbit using n8n",
+				"icon": "📈",
+				"url": "https://flowease.khulnasoft.com/blog/migrating-community-metrics-to-orbit-using-n8n/"
+			}
+		]
+	}
+}

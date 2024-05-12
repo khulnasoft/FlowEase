@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.eventbriteTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Sales"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/eventbrite"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/trigger-nodes/flowease-nodes-base.eventbritetrigger/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Hey founders! Your business doesn't need you to operate",
+				"icon": " 🖥️",
+				"url": "https://flowease.khulnasoft.com/blog/your-business-doesnt-need-you-to-operate/"
+			}
+		]
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"node": "flowease-nodes-base.awsSes",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Communication", "Development"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/aws"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.awsses/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Why business process automation with n8n can change your daily life",
+				"icon": "🧬",
+				"url": "https://flowease.khulnasoft.com/blog/why-business-process-automation-with-n8n-can-change-your-daily-life/"
+			},
+			{
+				"label": "7 no-code workflow automations for Amazon Web Services",
+				"url": "https://flowease.khulnasoft.com/blog/aws-workflow-automation/"
+			}
+		]
+	}
+}

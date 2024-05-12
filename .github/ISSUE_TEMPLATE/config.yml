@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Feature request
+    url: https://community.flowease.khulnasoft.com
+    about: Suggest an idea for this project
+  - name: Question / Problem
+    url: https://community.flowease.khulnasoft.com
+    about: Questions and problems with n8n
+  - name: n8n Security Vulnerability
+    url: https://flowease.khulnasoft.com/legal/#vulnerability
+    about: Learn about our Vulnerability Disclosure Policy

@@ -1,0 +1,18 @@
+{
+	"node": "flowease-nodes-base.monicaCrm",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Communication"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/monicaCrm/"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.monicacrm/"
+			}
+		]
+	}
+}

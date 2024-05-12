@@ -1,0 +1,19 @@
+{
+	"node": "flowease-nodes-base.facebookTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/credentials/facebookapp/"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/trigger-nodes/flowease-nodes-base.facebooktrigger/"
+			}
+		]
+	},
+	"alias": ["FB"]
+}

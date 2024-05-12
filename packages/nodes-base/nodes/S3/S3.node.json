@@ -1,0 +1,18 @@
+{
+	"node": "flowease-nodes-base.s3",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development", "Data & Storage"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/s3"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.s3/"
+			}
+		]
+	}
+}

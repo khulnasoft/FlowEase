@@ -1,0 +1,22 @@
+{
+	"node": "flowease-nodes-base.ftp",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Core Nodes", "Data & Storage", "Development", "Utility"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/ftp"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.ftp/"
+			}
+		]
+	},
+	"alias": ["SFTP", "FTP", "Binary", "File", "Transfer"],
+	"subcategories": {
+		"Core Nodes": ["Files"]
+	}
+}

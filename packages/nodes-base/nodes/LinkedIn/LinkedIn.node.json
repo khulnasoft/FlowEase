@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.linkedIn",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing", "Communication"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/linkedIn"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.linkedin/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Why business process automation with n8n can change your daily life",
+				"icon": "🧬",
+				"url": "https://flowease.khulnasoft.com/blog/why-business-process-automation-with-n8n-can-change-your-daily-life/"
+			}
+		]
+	}
+}

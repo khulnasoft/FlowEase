@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.matrix",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Communication"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/matrix"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.matrix/"
+			}
+		],
+		"generic": [
+			{
+				"label": "How to host virtual coffee breaks with n8n",
+				"icon": "☕️",
+				"url": "https://flowease.khulnasoft.com/blog/how-to-host-virtual-coffee-breaks-with-n8n/"
+			}
+		]
+	}
+}

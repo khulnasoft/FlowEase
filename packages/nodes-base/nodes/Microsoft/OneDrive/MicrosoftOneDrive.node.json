@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.microsoftOneDrive",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Data & Storage"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/microsoft"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.microsoftonedrive/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Hey founders! Your business doesn't need you to operate",
+				"icon": " 🖥️",
+				"url": "https://flowease.khulnasoft.com/blog/your-business-doesnt-need-you-to-operate/"
+			}
+		]
+	}
+}

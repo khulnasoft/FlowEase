@@ -1,0 +1,18 @@
+{
+	"node": "flowease-nodes-base.rabbitmqTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/rabbitMQ"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/trigger-nodes/flowease-nodes-base.rabbitmqtrigger/"
+			}
+		]
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"node": "flowease-nodes-base.uproc",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Data & Storage"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/uProc"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.uproc/"
+			}
+		],
+		"generic": [
+			{
+				"label": "How uProc scraped a multi-page website with a low-code workflow",
+				"icon": " 🕸️",
+				"url": "https://flowease.khulnasoft.com/blog/how-uproc-scraped-a-multi-page-website-with-a-low-code-workflow/"
+			},
+			{
+				"label": "7 no-code workflow automations for Amazon Web Services",
+				"url": "https://flowease.khulnasoft.com/blog/aws-workflow-automation/"
+			}
+		]
+	}
+}

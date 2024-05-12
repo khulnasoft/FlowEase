@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.asana",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Productivity"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/asana"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.asana/"
+			}
+		],
+		"generic": [
+			{
+				"label": "How a digital strategist uses n8n for online marketing",
+				"icon": "💻",
+				"url": "https://flowease.khulnasoft.com/blog/how-a-digital-strategist-uses-n8n-for-online-marketing/"
+			}
+		]
+	}
+}

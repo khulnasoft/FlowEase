@@ -1,0 +1,19 @@
+{
+	"node": "flowease-nodes-base.urlScanIo",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development", "Utility"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/urlScanIo"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.urlscanio/"
+			}
+		]
+	},
+	"alias": ["Scrape"]
+}

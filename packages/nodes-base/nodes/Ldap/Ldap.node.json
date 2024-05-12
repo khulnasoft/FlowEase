@@ -1,0 +1,19 @@
+{
+	"node": "flowease-nodes-base.ldap",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development", "Developer Tools"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/ldap"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.ldap/"
+			}
+		]
+	},
+	"alias": ["ad", "active directory"]
+}

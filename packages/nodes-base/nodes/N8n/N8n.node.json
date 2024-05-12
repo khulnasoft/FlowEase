@@ -1,0 +1,22 @@
+{
+	"node": "flowease-nodes-base.n8n",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development", "Core Nodes"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/api/authentication/"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.n8n/"
+			}
+		]
+	},
+	"alias": ["Workflow", "Execution"],
+	"subcategories": {
+		"Core Nodes": ["Helpers", "Other Trigger Nodes"]
+	}
+}

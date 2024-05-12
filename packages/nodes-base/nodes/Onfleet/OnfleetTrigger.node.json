@@ -1,0 +1,18 @@
+{
+	"node": "flowease-nodes-base.onfleetTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Miscellaneous"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/onfleet/"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/trigger-nodes/flowease-nodes-base.onfleettrigger/"
+			}
+		]
+	}
+}

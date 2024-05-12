@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.rocketchat",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Communication"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/rocketchat"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.rocketchat/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Automate Designs with Bannerbear and n8n",
+				"icon": "🎨",
+				"url": "https://flowease.khulnasoft.com/blog/automate-designs-with-bannerbear-and-n8n/"
+			}
+		]
+	}
+}

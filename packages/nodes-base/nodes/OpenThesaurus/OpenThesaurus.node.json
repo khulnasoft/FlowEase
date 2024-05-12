@@ -1,0 +1,13 @@
+{
+	"node": "flowease-nodes-base.openThesaurus",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Utility"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.openthesaurus/"
+			}
+		]
+	}
+}

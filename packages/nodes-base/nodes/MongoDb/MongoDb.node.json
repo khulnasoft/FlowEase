@@ -1,0 +1,40 @@
+{
+	"node": "flowease-nodes-base.mongoDb",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development", "Data & Storage"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/mongoDb"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.mongodb/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Why business process automation with n8n can change your daily life",
+				"icon": "🧬",
+				"url": "https://flowease.khulnasoft.com/blog/why-business-process-automation-with-n8n-can-change-your-daily-life/"
+			},
+			{
+				"label": "Running n8n on ships: An interview with Maranics",
+				"icon": "🛳",
+				"url": "https://flowease.khulnasoft.com/blog/running-n8n-on-ships-an-interview-with-maranics/"
+			},
+			{
+				"label": "Automate your data processing pipeline in 9 steps",
+				"icon": "⚙️",
+				"url": "https://flowease.khulnasoft.com/blog/automate-your-data-processing-pipeline-in-9-steps-with-n8n/"
+			},
+			{
+				"label": "How uProc scraped a multi-page website with a low-code workflow",
+				"icon": " 🕸️",
+				"url": "https://flowease.khulnasoft.com/blog/how-uproc-scraped-a-multi-page-website-with-a-low-code-workflow/"
+			}
+		]
+	}
+}

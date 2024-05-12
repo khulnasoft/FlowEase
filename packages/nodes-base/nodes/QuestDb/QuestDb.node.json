@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.questDb",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Data & Storage", "Development"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/questDb"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.questdb/"
+			}
+		],
+		"generic": [
+			{
+				"label": "A low-code bitcoin ticker built with QuestDB and flowease.khulnasoft.com",
+				"icon": "📈",
+				"url": "https://flowease.khulnasoft.com/blog/a-low-code-bitcoin-ticker-built-with-questdb-and-n8n-io/"
+			}
+		]
+	}
+}

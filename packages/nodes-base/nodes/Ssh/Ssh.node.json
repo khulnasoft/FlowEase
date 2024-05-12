@@ -1,0 +1,15 @@
+{
+	"node": "flowease-nodes-base.ssh",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Core Nodes", "Development"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.ssh/"
+			}
+		]
+	},
+	"alias": ["remote"],
+	"subcategories": ["Helpers"]
+}

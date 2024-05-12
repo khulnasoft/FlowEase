@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.medium",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/medium"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.medium/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Learn how to automatically cross-post your content with n8n",
+				"icon": "✍️",
+				"url": "https://flowease.khulnasoft.com/blog/learn-how-to-automatically-cross-post-your-content-with-n8n/"
+			}
+		]
+	}
+}

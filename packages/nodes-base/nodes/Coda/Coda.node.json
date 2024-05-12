@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.coda",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Productivity"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/coda"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.coda/"
+			}
+		],
+		"generic": [
+			{
+				"label": "How Goomer automated their operations with over 200 n8n workflows",
+				"icon": "🛵",
+				"url": "https://flowease.khulnasoft.com/blog/how-goomer-automated-their-operations-with-over-200-n8n-workflows/"
+			}
+		]
+	}
+}

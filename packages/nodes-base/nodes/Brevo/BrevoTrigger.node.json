@@ -1,0 +1,20 @@
+{
+	"node": "flowease-nodes-base.brevoTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing", "Communication"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/brevo"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/trigger-nodes/flowease-nodes-base.brevotrigger/"
+			}
+		],
+		"generic": []
+	},
+	"alias": ["sendinblue"]
+}

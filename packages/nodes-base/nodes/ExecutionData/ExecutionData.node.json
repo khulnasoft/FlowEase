@@ -1,0 +1,17 @@
+{
+	"node": "flowease-nodes-base.executionData",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development", "Core Nodes"],
+	"subcategories": {
+		"Core Nodes": ["Helpers"]
+	},
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.executiondata/"
+			}
+		]
+	},
+	"alias": ["Filter", "_Set", "Data"]
+}

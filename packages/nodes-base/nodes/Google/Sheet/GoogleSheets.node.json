@@ -1,0 +1,95 @@
+{
+	"node": "flowease-nodes-base.googleSheets",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Data & Storage", "Productivity"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/credentials/google/oauth-single-service/"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.googlesheets/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Love at first sight: Ricardo’s n8n journey",
+				"icon": "❤️",
+				"url": "https://flowease.khulnasoft.com/blog/love-at-first-sight-ricardos-n8n-journey/"
+			},
+			{
+				"label": "Why business process automation with n8n can change your daily life",
+				"icon": "🧬",
+				"url": "https://flowease.khulnasoft.com/blog/why-business-process-automation-with-n8n-can-change-your-daily-life/"
+			},
+			{
+				"label": "Automatically Adding Expense Receipts to Google Sheets with Telegram, Mindee, Twilio, and n8n",
+				"icon": "🧾",
+				"url": "https://flowease.khulnasoft.com/blog/automatically-adding-expense-receipts-to-google-sheets-with-telegram-mindee-twilio-and-n8n/"
+			},
+			{
+				"label": "Supercharging your conference registration process with n8n",
+				"icon": "🎫",
+				"url": "https://flowease.khulnasoft.com/blog/supercharging-your-conference-registration-process-with-n8n/"
+			},
+			{
+				"label": "Creating triggers for n8n workflows using polling",
+				"icon": "⏲",
+				"url": "https://flowease.khulnasoft.com/blog/creating-triggers-for-n8n-workflows-using-polling/"
+			},
+			{
+				"label": "6 e-commerce workflows to power up your Shopify s",
+				"icon": "store",
+				"url": "https://flowease.khulnasoft.com/blog/no-code-ecommerce-workflow-automations/"
+			},
+			{
+				"label": "Migrating Community Metrics to Orbit using n8n",
+				"icon": "📈",
+				"url": "https://flowease.khulnasoft.com/blog/migrating-community-metrics-to-orbit-using-n8n/"
+			},
+			{
+				"label": "15 Google apps you can combine and automate to increase productivity",
+				"icon": "💡",
+				"url": "https://flowease.khulnasoft.com/blog/automate-google-apps-for-productivity/"
+			},
+			{
+				"label": "Hey founders! Your business doesn't need you to operate",
+				"icon": " 🖥️",
+				"url": "https://flowease.khulnasoft.com/blog/your-business-doesnt-need-you-to-operate/"
+			},
+			{
+				"label": "How Honest Burgers Use Automation to Save $100k per year",
+				"icon": "🍔",
+				"url": "https://flowease.khulnasoft.com/blog/how-honest-burgers-use-automation-to-save-100k-per-year/"
+			},
+			{
+				"label": "How a digital strategist uses n8n for online marketing",
+				"icon": "💻",
+				"url": "https://flowease.khulnasoft.com/blog/how-a-digital-strategist-uses-n8n-for-online-marketing/"
+			},
+			{
+				"label": "Why this Product Manager loves workflow automation with n8n",
+				"icon": "🧠",
+				"url": "https://flowease.khulnasoft.com/blog/why-this-product-manager-loves-workflow-automation-with-n8n/"
+			},
+			{
+				"label": "Sending Automated Congratulations with Google Sheets, Twilio, and n8n ",
+				"icon": "🙌",
+				"url": "https://flowease.khulnasoft.com/blog/sending-automated-congratulations-with-google-sheets-twilio-and-n8n/"
+			},
+			{
+				"label": "How a Membership Development Manager automates his work and investments",
+				"icon": "📈",
+				"url": "https://flowease.khulnasoft.com/blog/how-a-membership-development-manager-automates-his-work-and-investments/"
+			},
+			{
+				"label": "7 no-code workflow automations for Amazon Web Services",
+				"url": "https://flowease.khulnasoft.com/blog/aws-workflow-automation/"
+			}
+		]
+	},
+	"alias": ["CSV", "Sheet", "Spreadsheet", "GS"]
+}

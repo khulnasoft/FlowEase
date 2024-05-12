@@ -1,0 +1,19 @@
+{
+	"node": "flowease-nodes-base.twilioTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Communication", "Development"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/twilio"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/trigger-nodes/flowease-nodes-base.twiliotrigger/"
+			}
+		]
+	},
+	"alias": ["SMS", "Phone", "Voice"]
+}

@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.rssFeedRead",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Core Nodes"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.rssfeedread/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Why business process automation with n8n can change your daily life",
+				"icon": "🧬",
+				"url": "https://flowease.khulnasoft.com/blog/why-business-process-automation-with-n8n-can-change-your-daily-life/"
+			},
+			{
+				"label": "Why I chose n8n over Zapier in 2020",
+				"icon": "😍",
+				"url": "https://flowease.khulnasoft.com/blog/why-i-chose-n8n-over-zapier-in-2020/"
+			}
+		]
+	}
+}

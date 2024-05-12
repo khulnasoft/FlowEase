@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.mandrill",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Communication", "Development"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/mandrill"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.mandrill/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Love at first sight: Ricardo’s n8n journey",
+				"icon": "❤️",
+				"url": "https://flowease.khulnasoft.com/blog/love-at-first-sight-ricardos-n8n-journey/"
+			}
+		]
+	}
+}

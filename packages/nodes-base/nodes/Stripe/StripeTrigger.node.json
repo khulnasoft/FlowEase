@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.stripeTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Finance & Accounting", "Sales"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/stripe"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/trigger-nodes/flowease-nodes-base.stripetrigger/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Automate your customer journey with n8n: An interview with Blent.ai",
+				"icon": "🚀",
+				"url": "https://flowease.khulnasoft.com/blog/automate-your-customer-journey-with-n8n-an-interview-with-blent-ai/"
+			}
+		]
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"node": "flowease-nodes-base.jwt",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development"],
+	"alias": ["Token", "Key", "JSON", "Payload", "Sign", "Verify", "Decode"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/jwt"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.jwt/"
+			}
+		]
+	}
+}

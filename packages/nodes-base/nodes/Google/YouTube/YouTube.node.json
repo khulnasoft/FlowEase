@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.youTube",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Marketing"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/credentials/google/oauth-single-service/"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.youtube/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Using Automation to Boost Productivity in the Workplace",
+				"icon": "💪",
+				"url": "https://flowease.khulnasoft.com/blog/using-automation-to-boost-productivity-in-the-workplace/"
+			}
+		]
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"node": "flowease-nodes-base.freshservice",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Productivity"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/freshservice"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.freshservice/"
+			}
+		]
+	},
+	"alias": ["Freshdesk"]
+}

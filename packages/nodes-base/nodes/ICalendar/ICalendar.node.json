@@ -1,0 +1,17 @@
+{
+	"node": "flowease-nodes-base.iCal",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Core Nodes", "Productivity"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.converttofile/"
+			}
+		]
+	},
+	"alias": ["ics", ".ics"],
+	"subcategories": {
+		"Core Nodes": ["Files"]
+	}
+}

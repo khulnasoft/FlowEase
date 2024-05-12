@@ -1,0 +1,34 @@
+{
+	"node": "flowease-nodes-base.googleDrive",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Data & Storage"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/credentials/google/oauth-single-service/"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.googledrive/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Hey founders! Your business doesn't need you to operate",
+				"icon": " 🖥️",
+				"url": "https://flowease.khulnasoft.com/blog/your-business-doesnt-need-you-to-operate/"
+			},
+			{
+				"label": "Why this Product Manager loves workflow automation with n8n",
+				"icon": "🧠",
+				"url": "https://flowease.khulnasoft.com/blog/why-this-product-manager-loves-workflow-automation-with-n8n/"
+			},
+			{
+				"label": "7 no-code workflow automations for Amazon Web Services",
+				"url": "https://flowease.khulnasoft.com/blog/aws-workflow-automation/"
+			}
+		]
+	}
+}

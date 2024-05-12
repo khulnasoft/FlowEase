@@ -1,0 +1,25 @@
+{
+	"node": "flowease-nodes-base.redis",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development", "Data & Storage"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/credentials/redis"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-base.redis/"
+			}
+		],
+		"generic": [
+			{
+				"label": "Why this Product Manager loves workflow automation with n8n",
+				"icon": "🧠",
+				"url": "https://flowease.khulnasoft.com/blog/why-this-product-manager-loves-workflow-automation-with-n8n/"
+			}
+		]
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"node": "flowease-nodes-base.debughelper",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.debughelper/"
+			}
+		]
+	},
+	"alias": ["Mock", "Sample", "Demo", "Test", "Throw error", "OOM", "Out of Memory", "placeholder"]
+}

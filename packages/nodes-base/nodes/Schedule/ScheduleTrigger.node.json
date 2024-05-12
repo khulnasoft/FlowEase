@@ -1,0 +1,15 @@
+{
+	"node": "flowease-nodes-base.scheduleTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Core Nodes"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-base.scheduletrigger/"
+			}
+		],
+		"generic": []
+	},
+	"alias": ["Time", "Scheduler", "Polling", "Cron", "Interval"]
+}
