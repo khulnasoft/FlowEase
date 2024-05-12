@@ -3,9 +3,9 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
-import { BINARY_ENCODING, NodeOperationError, deepCopy, jsonParse } from 'n8n-workflow';
+import { BINARY_ENCODING, NodeOperationError, deepCopy, jsonParse } from 'flowease-workflow';
 
 import get from 'lodash/get';
 import set from 'lodash/set';

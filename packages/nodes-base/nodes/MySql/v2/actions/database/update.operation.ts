@@ -3,7 +3,7 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { QueryRunner, QueryValues, QueryWithValues } from '../../helpers/interfaces';
 import { AUTO_MAP, DATA_MODE } from '../../helpers/interfaces';

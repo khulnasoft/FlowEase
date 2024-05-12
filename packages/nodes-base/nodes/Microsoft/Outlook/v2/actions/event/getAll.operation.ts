@@ -1,4 +1,4 @@
-import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeProperties } from 'flowease-workflow';
 import { eventfields } from '../../helpers/utils';
 import { microsoftApiRequest, microsoftApiRequestAllItems } from '../../transport';
 import { calendarRLC, returnAllOrLimit } from '../../descriptions';

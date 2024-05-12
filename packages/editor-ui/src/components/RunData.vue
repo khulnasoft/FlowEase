@@ -1,6 +1,6 @@
 <template>
 	<div :class="['run-data', $style.container]" @mouseover="activatePane">
-		<n8n-callout
+		<flowease-callout
 			v-if="
 				canPinData && pinnedData.hasData.value && !editMode.enabled && !isProductionExecutionPreview
 			"
@@ -10,7 +10,7 @@
 		>
 			{{ $locale.baseText('runData.pindata.thisDataIsPinned') }}
 			<span v-if="!isReadOnlyRoute && !readOnlyEnv" class="ml-4xs">
-				<n8n-link
+				<flowease-link
 					theme="secondary"
 					size="small"
 					underline
@@ -18,10 +18,10 @@
 					@click.stop="onTogglePinData({ source: 'banner-link' })"
 				>
 					{{ $locale.baseText('runData.pindata.unpin') }}
-				</n8n-link>
+				</flowease-link>
 			</span>
 			<template #trailingContent>
-				<n8n-link
+				<flowease-link
 					:to="dataPinningDocsUrl"
 					size="small"
 					theme="secondary"
@@ -30,9 +30,9 @@
 					@click="onClickDataPinningDocsLink"
 				>
 					{{ $locale.baseText('runData.pindata.learnMore') }}
-				</n8n-link>
+				</flowease-link>
 			</template>
-		</n8n-callout>
+		</flowease-callout>
 
 		<BinaryDataDisplay
 			:window-visible="binaryDataDisplayVisible"
@@ -49,7 +49,7 @@
 				data-test-id="run-data-pane-header"
 				@click.stop
 			>
-				<n8n-radio-buttons
+				<flowease-radio-buttons
 					v-show="
 						hasNodeRun && (inputData.length || binaryData.length || search) && !editMode.enabled
 					"
@@ -58,7 +58,7 @@
 					data-test-id="ndv-run-data-display-mode"
 					@update:model-value="onDisplayModeChange"
 				/>
-				<n8n-icon-button
+				<flowease-icon-button
 					v-if="canPinData && !isReadOnlyRoute && !readOnlyEnv"
 					v-show="!editMode.enabled"
 					:title="$locale.baseText('runData.editOutput')"
@@ -90,12 +90,12 @@
 				/>
 
 				<div v-show="editMode.enabled" :class="$style.editModeActions">
-					<n8n-button
+					<flowease-button
 						type="tertiary"
 						:label="$locale.baseText('runData.editor.cancel')"
 						@click="onClickCancelEdit"
 					/>
-					<n8n-button
+					<flowease-button
 						class="ml-2xs"
 						type="primary"
 						:label="$locale.baseText('runData.editor.save')"
@@ -112,7 +112,7 @@
 			data-test-id="run-selector"
 		>
 			<div :class="$style.runSelectorWrapper">
-				<n8n-select
+				<flowease-select
 					size="small"
 					:model-value="runIndex"
 					teleported
@@ -120,18 +120,18 @@
 					@click.stop
 				>
 					<template #prepend>{{ $locale.baseText('ndv.output.run') }}</template>
-					<n8n-option
+					<flowease-option
 						v-for="option in maxRunIndex + 1"
 						:key="option"
 						:label="getRunLabel(option)"
 						:value="option - 1"
-					></n8n-option>
-				</n8n-select>
-				<n8n-tooltip v-if="canLinkRuns" placement="right">
+					></flowease-option>
+				</flowease-select>
+				<flowease-tooltip v-if="canLinkRuns" placement="right">
 					<template #content>
 						{{ $locale.baseText(linkedRuns ? 'runData.unlinking.hint' : 'runData.linking.hint') }}
 					</template>
-					<n8n-icon-button
+					<flowease-icon-button
 						class="linkRun"
 						:icon="linkedRuns ? 'unlink' : 'link'"
 						text
@@ -139,7 +139,7 @@
 						size="small"
 						@click="toggleLinkRuns"
 					/>
-				</n8n-tooltip>
+				</flowease-tooltip>
 				<slot name="run-info"></slot>
 			</div>
 			<RunDataSearch
@@ -157,7 +157,7 @@
 			:class="$style.tabs"
 			data-test-id="branches"
 		>
-			<n8n-tabs
+			<flowease-tabs
 				:model-value="currentOutputIndex"
 				:options="branches"
 				@update:model-value="onBranchChange"
@@ -182,22 +182,22 @@
 			:class="$style.itemsCount"
 			data-test-id="ndv-items-count"
 		>
-			<n8n-text v-if="search">
+			<flowease-text v-if="search">
 				{{
 					$locale.baseText('ndv.search.items', {
 						adjustToNumber: unfilteredDataCount,
 						interpolate: { matched: dataCount, total: unfilteredDataCount },
 					})
 				}}
-			</n8n-text>
-			<n8n-text v-else>
+			</flowease-text>
+			<flowease-text v-else>
 				{{
 					$locale.baseText('ndv.output.items', {
 						adjustToNumber: dataCount,
 						interpolate: { count: dataCount },
 					})
 				}}
-			</n8n-text>
+			</flowease-text>
 			<RunDataSearch
 				v-if="showIOSearch"
 				v-model="search"
@@ -209,8 +209,8 @@
 
 		<div ref="dataContainer" :class="$style.dataContainer" data-test-id="ndv-data-container">
 			<div v-if="isExecuting" :class="$style.center" data-test-id="ndv-executing">
-				<div :class="$style.spinner"><n8n-spinner type="ring" /></div>
-				<n8n-text>{{ executingMessage }}</n8n-text>
+				<div :class="$style.spinner"><flowease-spinner type="ring" /></div>
+				<flowease-text>{{ executingMessage }}</flowease-text>
 			</div>
 
 			<div v-else-if="editMode.enabled" :class="$style.editMode">
@@ -222,12 +222,12 @@
 					/>
 				</div>
 				<div :class="$style.editModeFooter">
-					<n8n-info-tip :bold="false" :class="$style.editModeFooterInfotip">
+					<flowease-info-tip :bold="false" :class="$style.editModeFooterInfotip">
 						{{ $locale.baseText('runData.editor.copyDataInfo') }}
-						<n8n-link :to="dataEditingDocsUrl" size="small">
+						<flowease-link :to="dataEditingDocsUrl" size="small">
 							{{ $locale.baseText('generic.learnMore') }}
-						</n8n-link>
-					</n8n-info-tip>
+						</flowease-link>
+					</flowease-info-tip>
 				</div>
 			</div>
 
@@ -243,12 +243,12 @@
 			</div>
 
 			<div v-else-if="paneType === 'input' && node.disabled" :class="$style.center">
-				<n8n-text>
+				<flowease-text>
 					{{ $locale.baseText('ndv.input.disabled', { interpolate: { nodeName: node.name } }) }}
-					<n8n-link @click="enableNode">
+					<flowease-link @click="enableNode">
 						{{ $locale.baseText('ndv.input.disabled.cta') }}
-					</n8n-link>
-				</n8n-text>
+					</flowease-link>
+				</flowease-text>
 			</div>
 
 			<div v-else-if="hasNodeRun && isArtificialRecoveredEventItem" :class="$style.center">
@@ -256,13 +256,13 @@
 			</div>
 
 			<div v-else-if="hasNodeRun && hasRunError" :class="$style.stretchVertically">
-				<n8n-text v-if="isPaneTypeInput" :class="$style.center" size="large" tag="p" bold>
+				<flowease-text v-if="isPaneTypeInput" :class="$style.center" size="large" tag="p" bold>
 					{{
 						$locale.baseText('nodeErrorView.inputPanel.previousNodeError.title', {
 							interpolate: { nodeName: node.name },
 						})
 					}}
-				</n8n-text>
+				</flowease-text>
 				<slot v-else-if="$slots['content']" name="content"></slot>
 				<NodeErrorView
 					v-else
@@ -278,10 +278,10 @@
 				:class="$style.center"
 			>
 				<div v-if="search">
-					<n8n-text tag="h3" size="large">{{
+					<flowease-text tag="h3" size="large">{{
 						$locale.baseText('ndv.search.noMatch.title')
-					}}</n8n-text>
-					<n8n-text>
+					}}</flowease-text>
+					<flowease-text>
 						<i18n-t keypath="ndv.search.noMatch.description" tag="span">
 							<template #link>
 								<a href="#" @click="onSearchClear">
@@ -289,11 +289,11 @@
 								</a>
 							</template>
 						</i18n-t>
-					</n8n-text>
+					</flowease-text>
 				</div>
-				<n8n-text v-else>
+				<flowease-text v-else>
 					{{ noDataInBranchMessage }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 
 			<div v-else-if="hasNodeRun && !inputData.length && !search" :class="$style.center">
@@ -301,8 +301,8 @@
 			</div>
 
 			<div v-else-if="hasNodeRun && !showData" :class="$style.center">
-				<n8n-text :bold="true" color="text-dark" size="large">{{ tooMuchDataTitle }}</n8n-text>
-				<n8n-text align="center" tag="div"
+				<flowease-text :bold="true" color="text-dark" size="large">{{ tooMuchDataTitle }}</flowease-text>
+				<flowease-text align="center" tag="div"
 					><span
 						v-html="
 							$locale.baseText('ndv.output.tooMuchData.message', {
@@ -310,15 +310,15 @@
 							})
 						"
 					></span
-				></n8n-text>
+				></flowease-text>
 
-				<n8n-button
+				<flowease-button
 					outline
 					:label="$locale.baseText('ndv.output.tooMuchData.showDataAnyway')"
 					@click="showTooMuchData"
 				/>
 
-				<n8n-button
+				<flowease-button
 					size="small"
 					:label="$locale.baseText('runData.downloadBinaryData')"
 					@click="downloadJsonData()"
@@ -338,19 +338,19 @@
 				"
 				:class="$style.center"
 			>
-				<n8n-text>
+				<flowease-text>
 					{{ $locale.baseText('runData.switchToBinary.info') }}
 					<a @click="switchToBinary">
 						{{ $locale.baseText('runData.switchToBinary.binary') }}
 					</a>
-				</n8n-text>
+				</flowease-text>
 			</div>
 
 			<div v-else-if="showIoSearchNoMatchContent" :class="$style.center">
-				<n8n-text tag="h3" size="large">{{
+				<flowease-text tag="h3" size="large">{{
 					$locale.baseText('ndv.search.noMatch.title')
-				}}</n8n-text>
-				<n8n-text>
+				}}</flowease-text>
+				<flowease-text>
 					<i18n-t keypath="ndv.search.noMatch.description" tag="span">
 						<template #link>
 							<a href="#" @click="onSearchClear">
@@ -358,7 +358,7 @@
 							</a>
 						</template>
 					</i18n-t>
-				</n8n-text>
+				</flowease-text>
 			</div>
 
 			<Suspense v-else-if="hasNodeRun && displayMode === 'table'">
@@ -411,9 +411,9 @@
 			</Suspense>
 
 			<div v-else-if="displayMode === 'binary' && binaryData.length === 0" :class="$style.center">
-				<n8n-text align="center" tag="div">{{
+				<flowease-text align="center" tag="div">{{
 					$locale.baseText('runData.noBinaryDataFound')
-				}}</n8n-text>
+				}}</flowease-text>
 			</div>
 
 			<div v-else-if="displayMode === 'binary'" :class="$style.dataDisplay">
@@ -436,54 +436,54 @@
 								</div>
 								<div v-if="binaryData.fileName">
 									<div>
-										<n8n-text size="small" :bold="true"
+										<flowease-text size="small" :bold="true"
 											>{{ $locale.baseText('runData.fileName') }}:
-										</n8n-text>
+										</flowease-text>
 									</div>
 									<div :class="$style.binaryValue">{{ binaryData.fileName }}</div>
 								</div>
 								<div v-if="binaryData.directory">
 									<div>
-										<n8n-text size="small" :bold="true"
+										<flowease-text size="small" :bold="true"
 											>{{ $locale.baseText('runData.directory') }}:
-										</n8n-text>
+										</flowease-text>
 									</div>
 									<div :class="$style.binaryValue">{{ binaryData.directory }}</div>
 								</div>
 								<div v-if="binaryData.fileExtension">
 									<div>
-										<n8n-text size="small" :bold="true"
-											>{{ $locale.baseText('runData.fileExtension') }}:</n8n-text
+										<flowease-text size="small" :bold="true"
+											>{{ $locale.baseText('runData.fileExtension') }}:</flowease-text
 										>
 									</div>
 									<div :class="$style.binaryValue">{{ binaryData.fileExtension }}</div>
 								</div>
 								<div v-if="binaryData.mimeType">
 									<div>
-										<n8n-text size="small" :bold="true"
+										<flowease-text size="small" :bold="true"
 											>{{ $locale.baseText('runData.mimeType') }}:
-										</n8n-text>
+										</flowease-text>
 									</div>
 									<div :class="$style.binaryValue">{{ binaryData.mimeType }}</div>
 								</div>
 								<div v-if="binaryData.fileSize">
 									<div>
-										<n8n-text size="small" :bold="true"
+										<flowease-text size="small" :bold="true"
 											>{{ $locale.baseText('runData.fileSize') }}:
-										</n8n-text>
+										</flowease-text>
 									</div>
 									<div :class="$style.binaryValue">{{ binaryData.fileSize }}</div>
 								</div>
 
 								<div :class="$style.binaryButtonContainer">
-									<n8n-button
+									<flowease-button
 										v-if="isViewable(index, key)"
 										size="small"
 										:label="$locale.baseText('runData.showBinaryData')"
 										data-test-id="ndv-view-binary-data"
 										@click="displayBinaryData(index, key)"
 									/>
-									<n8n-button
+									<flowease-button
 										v-if="isDownloadable(index, key)"
 										size="small"
 										type="secondary"
@@ -524,20 +524,20 @@
 			</el-pagination>
 
 			<div :class="$style.pageSizeSelector">
-				<n8n-select
+				<flowease-select
 					size="mini"
 					:model-value="pageSize"
 					teleported
 					@update:model-value="onPageSizeChange"
 				>
 					<template #prepend>{{ $locale.baseText('ndv.output.pageSize') }}</template>
-					<n8n-option v-for="size in pageSizes" :key="size" :label="size" :value="size">
-					</n8n-option>
-					<n8n-option :label="$locale.baseText('ndv.output.all')" :value="dataCount"> </n8n-option>
-				</n8n-select>
+					<flowease-option v-for="size in pageSizes" :key="size" :label="size" :value="size">
+					</flowease-option>
+					<flowease-option :label="$locale.baseText('ndv.output.all')" :value="dataCount"> </flowease-option>
+				</flowease-select>
 			</div>
 		</div>
-		<n8n-block-ui :show="blockUI" :class="$style.uiBlocker" />
+		<flowease-block-ui :show="blockUI" :class="$style.uiBlocker" />
 	</div>
 </template>
 
@@ -557,8 +557,8 @@ import type {
 	INodeTypeDescription,
 	IRunData,
 	IRunExecutionData,
-} from 'n8n-workflow';
-import { NodeHelpers, NodeConnectionType } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeHelpers, NodeConnectionType } from 'flowease-workflow';
 
 import type {
 	IExecutionResponse,
@@ -599,7 +599,7 @@ import { useToast } from '@/composables/useToast';
 import { isEqual, isObject } from 'lodash-es';
 import { useExternalHooks } from '@/composables/useExternalHooks';
 import { useSourceControlStore } from '@/stores/sourceControl.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import RunDataPinButton from '@/components/RunDataPinButton.vue';
 
 const RunDataTable = defineAsyncComponent(
@@ -1058,7 +1058,7 @@ export default defineComponent({
 						node: this.node.type,
 						errorMessage: error.message,
 						nodeVersion: this.node.typeVersion,
-						n8nVersion: this.rootStore.versionCli,
+						floweaseVersion: this.rootStore.versionCli,
 					},
 					{
 						withPostHog: true,

@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 
 export const createEmployeeSharedDescription = (sync = false): INodeProperties[] => {
 	let elements: INodeProperties[] = [

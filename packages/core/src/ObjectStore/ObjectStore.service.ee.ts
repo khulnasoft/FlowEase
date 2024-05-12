@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Service } from 'typedi';
 import { sign } from 'aws4';
 import { isStream, parseXml, writeBlockedMessage } from './utils';
-import { ApplicationError, LoggerProxy as Logger } from 'n8n-workflow';
+import { ApplicationError, LoggerProxy as Logger } from 'flowease-workflow';
 
 import type { AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig, Method } from 'axios';
 import type { Request as Aws4Options, Credentials as Aws4Credentials } from 'aws4';

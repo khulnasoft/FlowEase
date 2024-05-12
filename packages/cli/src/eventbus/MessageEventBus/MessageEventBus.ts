@@ -1,10 +1,10 @@
 import { Service } from 'typedi';
-import type { DeleteResult } from '@n8n/typeorm';
-import { In } from '@n8n/typeorm';
+import type { DeleteResult } from '@flowease/typeorm';
+import { In } from '@flowease/typeorm';
 import EventEmitter from 'events';
 import uniqby from 'lodash/uniqBy';
-import { jsonParse } from 'n8n-workflow';
-import type { MessageEventBusDestinationOptions } from 'n8n-workflow';
+import { jsonParse } from 'flowease-workflow';
+import type { MessageEventBusDestinationOptions } from 'flowease-workflow';
 
 import config from '@/config';
 import { EventDestinationsRepository } from '@db/repositories/eventDestinations.repository';
@@ -159,7 +159,7 @@ export class MessageEventBus extends EventEmitter {
 
 			if (unfinishedExecutionIds.length > 0) {
 				this.logger.warn(`Found unfinished executions: ${unfinishedExecutionIds.join(', ')}`);
-				this.logger.info('This could be due to a crash of an active workflow or a restart of n8n.');
+				this.logger.info('This could be due to a crash of an active workflow or a restart of flowease.');
 				const activeWorkflows = await this.workflowRepository.find({
 					where: { active: true },
 					select: ['id', 'name'],
@@ -368,7 +368,7 @@ export class MessageEventBus extends EventEmitter {
 			const uniques = uniqby(queryResult, 'id');
 			const filteredExecutionIds = uniques
 				.filter((e) =>
-					(['n8n.workflow.crashed', 'n8n.workflow.failed'] as EventNamesTypes[]).includes(
+					(['flowease.workflow.crashed', 'flowease.workflow.failed'] as EventNamesTypes[]).includes(
 						e.eventName,
 					),
 				)

@@ -6,14 +6,14 @@ import { SettingsRepository } from '@db/repositories/settings.repository';
 export class ClearLicenseCommand extends BaseCommand {
 	static description = 'Clear license';
 
-	static examples = ['$ n8n clear:license'];
+	static examples = ['$ flowease clear:license'];
 
 	async run() {
 		this.logger.info('Clearing license from database.');
 		await Container.get(SettingsRepository).delete({
 			key: SETTINGS_LICENSE_CERT_KEY,
 		});
-		this.logger.info('Done. Restart n8n to take effect.');
+		this.logger.info('Done. Restart flowease to take effect.');
 	}
 
 	async catch(error: Error) {

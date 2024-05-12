@@ -9,7 +9,7 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 import { reportFields, reportOperations } from './ReportDescription';

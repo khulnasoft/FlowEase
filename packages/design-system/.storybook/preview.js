@@ -10,7 +10,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import ElementPlus from 'element-plus';
 import lang from 'element-plus/lib/locale/lang/en';
 
-import { N8nPlugin } from '../src/plugin';
+import { FloweasePlugin } from '../src/plugin';
 
 setup((app) => {
 	library.add(fas);
@@ -19,7 +19,7 @@ setup((app) => {
 		locale: lang,
 	});
 
-	app.use(N8nPlugin);
+	app.use(FloweasePlugin);
 });
 
 export const parameters = {

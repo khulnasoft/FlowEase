@@ -7,7 +7,7 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 import type { SortData } from '../shared/GenericFunctions';
@@ -214,7 +214,7 @@ export class NotionV1 implements INodeType {
 				returnData.unshift({
 					name: 'Default',
 					value: 'default',
-					description: 'Timezone set in n8n',
+					description: 'Timezone set in flowease',
 				});
 				return returnData;
 			},

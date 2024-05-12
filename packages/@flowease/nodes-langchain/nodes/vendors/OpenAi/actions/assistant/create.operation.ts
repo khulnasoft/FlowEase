@@ -3,8 +3,8 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	IDataObject,
-} from 'n8n-workflow';
-import { NodeOperationError, updateDisplayOptions } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError, updateDisplayOptions } from 'flowease-workflow';
 import { apiRequest } from '../../transport';
 import { modelRLC } from '../descriptions';
 
@@ -121,7 +121,7 @@ const properties: INodeProperties[] = [
 	},
 	{
 		displayName:
-			'Add custom n8n tools when you <i>message</i> your assistant (rather than when creating it)',
+			'Add custom flowease tools when you <i>message</i> your assistant (rather than when creating it)',
 		name: 'noticeTools',
 		type: 'notice',
 		default: '',

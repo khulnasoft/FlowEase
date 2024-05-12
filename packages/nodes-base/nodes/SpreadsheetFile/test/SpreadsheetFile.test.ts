@@ -1,5 +1,5 @@
 import path from 'path';
-import type { IWorkflowBase } from 'n8n-workflow';
+import type { IWorkflowBase } from 'flowease-workflow';
 import * as Helpers from '@test/nodes/Helpers';
 import type { WorkflowTestData } from '@test/nodes/types';
 import { executeWorkflow } from '@test/nodes/ExecuteWorkflow';

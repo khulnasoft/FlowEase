@@ -7,7 +7,7 @@ import type {
 	INodePropertyCollection,
 	INodePropertyOptions,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { i18n } from '@/plugins/i18n';
 

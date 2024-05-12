@@ -1,5 +1,5 @@
-import type { TEntitlement, TFeatures, TLicenseBlock } from '@n8n_io/license-sdk';
-import { LicenseManager } from '@n8n_io/license-sdk';
+import type { TEntitlement, TFeatures, TLicenseBlock } from '@flowease_io/license-sdk';
+import { LicenseManager } from '@flowease_io/license-sdk';
 import { InstanceSettings, ObjectStoreService } from 'flowease-core';
 import Container, { Service } from 'typedi';
 import { Logger } from '@/Logger';
@@ -7,12 +7,12 @@ import config from '@/config';
 import {
 	LICENSE_FEATURES,
 	LICENSE_QUOTAS,
-	N8N_VERSION,
+	FLOWEASE_VERSION,
 	SETTINGS_LICENSE_CERT_KEY,
 	UNLIMITED_LICENSE_QUOTA,
 } from './constants';
 import { SettingsRepository } from '@db/repositories/settings.repository';
-import type { BooleanLicenseFeature, N8nInstanceType, NumericLicenseFeature } from './Interfaces';
+import type { BooleanLicenseFeature, FloweaseInstanceType, NumericLicenseFeature } from './Interfaces';
 import type { RedisServicePubSubPublisher } from './services/redis/RedisServicePubSubPublisher';
 import { RedisService } from './services/redis.service';
 import { OrchestrationService } from '@/services/orchestration.service';
@@ -44,7 +44,7 @@ export class License {
 	/**
 	 * Whether this instance should renew the license - on init and periodically.
 	 */
-	private renewalEnabled(instanceType: N8nInstanceType) {
+	private renewalEnabled(instanceType: FloweaseInstanceType) {
 		if (instanceType !== 'main') return false;
 
 		const autoRenewEnabled = config.getEnv('license.autoRenewEnabled');
@@ -61,7 +61,7 @@ export class License {
 		return autoRenewEnabled;
 	}
 
-	async init(instanceType: N8nInstanceType = 'main') {
+	async init(instanceType: FloweaseInstanceType = 'main') {
 		if (this.manager) {
 			this.logger.warn('License manager already initialized or shutting down');
 			return;
@@ -91,7 +91,7 @@ export class License {
 			this.manager = new LicenseManager({
 				server,
 				tenantId: config.getEnv('license.tenantId'),
-				productIdentifier: `n8n-${N8N_VERSION}`,
+				productIdentifier: `flowease-${FLOWEASE_VERSION}`,
 				autoRenewEnabled: renewalEnabled,
 				renewOnInit: renewalEnabled,
 				autoRenewOffset,

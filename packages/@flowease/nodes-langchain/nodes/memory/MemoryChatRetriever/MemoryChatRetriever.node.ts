@@ -6,7 +6,7 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { BaseChatMemory } from '@langchain/community/memory/chat_memory';
 import type { BaseMessage } from '@langchain/core/messages';
 
@@ -53,7 +53,7 @@ export class MemoryChatRetriever implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorymanager/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.memorymanager/',
 					},
 				],
 			},

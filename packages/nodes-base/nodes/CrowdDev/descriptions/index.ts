@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { resources } from './resources';
 import { activityOperations, activityFields } from './activityFields';
 import { memberFields, memberOperations } from './memberFields';

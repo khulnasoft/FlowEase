@@ -4,7 +4,7 @@
 		:class="{ 'tags-container': true, focused }"
 		@keydown.stop
 	>
-		<n8n-select
+		<flowease-select
 			ref="selectRef"
 			:teleported="true"
 			:model-value="appliedTags"
@@ -22,7 +22,7 @@
 			@visible-change="onVisibleChange"
 			@remove-tag="onRemoveTag"
 		>
-			<n8n-option
+			<flowease-option
 				v-if="options.length === 0 && filter && createEnabled"
 				:key="CREATE_KEY"
 				ref="createRef"
@@ -33,17 +33,17 @@
 				<span>
 					{{ i18n.baseText('tagsDropdown.createTag', { interpolate: { filter } }) }}
 				</span>
-			</n8n-option>
-			<n8n-option v-else-if="options.length === 0" value="message" disabled>
+			</flowease-option>
+			<flowease-option v-else-if="options.length === 0" value="message" disabled>
 				<span v-if="createEnabled">{{ i18n.baseText('tagsDropdown.typeToCreateATag') }}</span>
 				<span v-else-if="allTags.length > 0">{{
 					i18n.baseText('tagsDropdown.noMatchingTagsExist')
 				}}</span>
 				<span v-else>{{ i18n.baseText('tagsDropdown.noTagsExist') }}</span>
-			</n8n-option>
+			</flowease-option>
 
 			<!-- key is id+index for keyboard navigation to work well with filter -->
-			<n8n-option
+			<flowease-option
 				v-for="(tag, i) in options"
 				:key="tag.id + '_' + i"
 				ref="tagRefs"
@@ -53,11 +53,11 @@
 				data-test-id="tag"
 			/>
 
-			<n8n-option :key="MANAGE_KEY" :value="MANAGE_KEY" class="ops manage-tags">
+			<flowease-option :key="MANAGE_KEY" :value="MANAGE_KEY" class="ops manage-tags">
 				<font-awesome-icon icon="cog" />
 				<span>{{ i18n.baseText('tagsDropdown.manageTags') }}</span>
-			</n8n-option>
-		</n8n-select>
+			</flowease-option>
+		</flowease-select>
 	</div>
 </template>
 
@@ -71,13 +71,13 @@ import { useI18n } from '@/composables/useI18n';
 import { useToast } from '@/composables/useToast';
 import { useUIStore } from '@/stores/ui.store';
 import { useTagsStore } from '@/stores/tags.store';
-import type { EventBus, N8nOption, N8nSelect } from 'flowease-design-system';
+import type { EventBus, FloweaseOption, FloweaseSelect } from 'flowease-design-system';
 import type { PropType } from 'vue';
 import { storeToRefs } from 'pinia';
 
-type SelectRef = InstanceType<typeof N8nSelect>;
-type TagRef = InstanceType<typeof N8nOption>;
-type CreateRef = InstanceType<typeof N8nOption>;
+type SelectRef = InstanceType<typeof FloweaseSelect>;
+type TagRef = InstanceType<typeof FloweaseOption>;
+type CreateRef = InstanceType<typeof FloweaseOption>;
 
 const MANAGE_KEY = '__manage';
 const CREATE_KEY = '__create';

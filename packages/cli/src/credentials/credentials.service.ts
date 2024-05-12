@@ -4,9 +4,9 @@ import type {
 	ICredentialsDecrypted,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
-import { CREDENTIAL_EMPTY_VALUE, deepCopy, NodeHelpers } from 'n8n-workflow';
-import type { FindOptionsWhere } from '@n8n/typeorm';
+} from 'flowease-workflow';
+import { CREDENTIAL_EMPTY_VALUE, deepCopy, NodeHelpers } from 'flowease-workflow';
+import type { FindOptionsWhere } from '@flowease/typeorm';
 import type { Scope } from '@flowease/permissions';
 import * as Db from '@/Db';
 import type { ICredentialsDb } from '@/Interfaces';

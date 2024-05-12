@@ -3,7 +3,7 @@ const shelljs = require('shelljs');
 const glob = require('fast-glob');
 
 const rootDirPath = path.resolve(__dirname, '..');
-const n8nRootDirPath = path.resolve(rootDirPath, '..', '..', '..');
+const floweaseRootDirPath = path.resolve(rootDirPath, '..', '..', '..');
 const distDirPath = path.resolve(rootDirPath, 'dist');
 const srcDirPath = path.resolve(rootDirPath, 'src');
 const libDirPath = path.resolve(rootDirPath, 'tmp', 'lib');
@@ -11,7 +11,7 @@ const cjsDirPath = path.resolve(rootDirPath, 'tmp', 'cjs');
 
 const packageJsonFilePath = path.resolve(rootDirPath, 'package.json');
 const readmeFilePath = path.resolve(rootDirPath, 'README.md');
-const licenseFilePath = path.resolve(n8nRootDirPath, 'LICENSE.md');
+const licenseFilePath = path.resolve(floweaseRootDirPath, 'LICENSE.md');
 
 shelljs.cp(packageJsonFilePath, distDirPath);
 shelljs.cp(readmeFilePath, distDirPath);

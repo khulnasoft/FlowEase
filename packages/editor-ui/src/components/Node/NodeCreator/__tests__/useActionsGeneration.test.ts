@@ -1,4 +1,4 @@
-import type { INodeProperties, INodeTypeDescription } from 'n8n-workflow';
+import type { INodeProperties, INodeTypeDescription } from 'flowease-workflow';
 import { useActionsGenerator } from '../composables/useActionsGeneration';
 
 describe('useActionsGenerator', () => {

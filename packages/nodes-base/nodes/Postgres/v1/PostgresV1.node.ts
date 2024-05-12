@@ -9,8 +9,8 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import pgPromise from 'pg-promise';
 
@@ -88,7 +88,7 @@ const versionDescription: INodeTypeDescription = {
 			placeholder: 'SELECT id, name FROM product WHERE quantity > $1 AND price <= $2',
 			required: true,
 			description:
-				'The SQL query to execute. You can use n8n expressions or $1 and $2 in conjunction with query parameters.',
+				'The SQL query to execute. You can use flowease expressions or $1 and $2 in conjunction with query parameters.',
 		},
 		// ----------------------------------
 		//         insert

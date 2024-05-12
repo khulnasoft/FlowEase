@@ -7,8 +7,8 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { jsonParse, NodeApiError, NodeOperationError, sleep } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse, NodeApiError, NodeOperationError, sleep } from 'flowease-workflow';
 
 import { oldVersionNotice } from '../../../utils/descriptions';
 import type { DiscordAttachment, DiscordWebhook } from './Interfaces';

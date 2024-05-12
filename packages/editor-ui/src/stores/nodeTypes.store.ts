@@ -20,11 +20,11 @@ import type {
 	INodeTypeNameVersion,
 	ResourceMapperFields,
 	Workflow,
-} from 'n8n-workflow';
-import { NodeConnectionType, NodeHelpers } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeConnectionType, NodeHelpers } from 'flowease-workflow';
 import { defineStore } from 'pinia';
 import { useCredentialsStore } from './credentials.store';
-import { useRootStore } from './n8nRoot.store';
+import { useRootStore } from './floweaseRoot.store';
 import {
 	getCredentialOnlyNodeType,
 	getCredentialTypeName,

@@ -54,9 +54,9 @@ BQIDAQAB
 	airtableApi: {
 		apiKey: 'key123',
 	},
-	n8nApi: {
+	floweaseApi: {
 		apiKey: 'key123',
-		baseUrl: 'https://test.app.n8n.cloud/api/v1',
+		baseUrl: 'https://test.app.flowease.cloud/api/v1',
 	},
 	npmApi: {
 		accessToken: 'fake-npm-access-token',

@@ -16,7 +16,7 @@ const renderComponent = createComponentRenderer(CredentialIcon, {
 		initialState: defaultState,
 	}),
 	global: {
-		stubs: ['n8n-tooltip'],
+		stubs: ['flowease-tooltip'],
 	},
 });
 

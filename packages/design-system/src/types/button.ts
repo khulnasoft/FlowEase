@@ -29,7 +29,7 @@ export interface ButtonProps extends IconButtonProps {
 	square?: boolean;
 }
 
-export type IN8nButton = {
+export type IFloweaseButton = {
 	attrs: ButtonProps & {
 		// eslint-disable-next-line @typescript-eslint/naming-convention
 		'data-test-id'?: string;

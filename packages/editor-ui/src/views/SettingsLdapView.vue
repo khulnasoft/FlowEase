@@ -1,15 +1,15 @@
 <template>
 	<div v-if="!isLDAPFeatureEnabled">
 		<div :class="[$style.header, 'mb-2xl']">
-			<n8n-heading size="2xlarge">
+			<flowease-heading size="2xlarge">
 				{{ $locale.baseText('settings.ldap') }}
-			</n8n-heading>
+			</flowease-heading>
 		</div>
 
-		<n8n-info-tip type="note" theme="info" tooltip-placement="right" class="mb-l">
+		<flowease-info-tip type="note" theme="info" tooltip-placement="right" class="mb-l">
 			{{ $locale.baseText('settings.ldap.note') }}
-		</n8n-info-tip>
-		<n8n-action-box
+		</flowease-info-tip>
+		<flowease-action-box
 			:description="$locale.baseText('settings.ldap.disabled.description')"
 			:button-text="$locale.baseText('settings.ldap.disabled.buttonText')"
 			@click:button="goToUpgrade"
@@ -17,22 +17,22 @@
 			<template #heading>
 				<span>{{ $locale.baseText('settings.ldap.disabled.title') }}</span>
 			</template>
-		</n8n-action-box>
+		</flowease-action-box>
 	</div>
 	<div v-else>
 		<div :class="$style.container">
 			<div :class="$style.header">
-				<n8n-heading size="2xlarge">
+				<flowease-heading size="2xlarge">
 					{{ $locale.baseText('settings.ldap') }}
-				</n8n-heading>
+				</flowease-heading>
 			</div>
 			<div :class="$style.docsInfoTip">
-				<n8n-info-tip theme="info" type="note">
+				<flowease-info-tip theme="info" type="note">
 					<span v-html="$locale.baseText('settings.ldap.infoTip')"></span>
-				</n8n-info-tip>
+				</flowease-info-tip>
 			</div>
 			<div :class="$style.settingsForm">
-				<n8n-form-inputs
+				<flowease-form-inputs
 					v-if="formInputs"
 					ref="ldapConfigForm"
 					:inputs="formInputs"
@@ -45,7 +45,7 @@
 				/>
 			</div>
 			<div>
-				<n8n-button
+				<flowease-button
 					v-if="loginEnabled"
 					:label="
 						loadingTestConnection
@@ -58,7 +58,7 @@
 					:loading="loadingTestConnection"
 					@click="onTestConnectionClick"
 				/>
-				<n8n-button
+				<flowease-button
 					:label="$locale.baseText('settings.ldap.save')"
 					size="large"
 					:disabled="!hasAnyChanges || !readyToSubmit"
@@ -67,9 +67,9 @@
 			</div>
 		</div>
 		<div v-if="loginEnabled">
-			<n8n-heading tag="h1" class="mb-xl mt-3xl" size="medium">{{
+			<flowease-heading tag="h1" class="mb-xl mt-3xl" size="medium">{{
 				$locale.baseText('settings.ldap.section.synchronization.title')
-			}}</n8n-heading>
+			}}</flowease-heading>
 			<div :class="$style.syncTable">
 				<ElTable
 					:key="tableKey"
@@ -116,7 +116,7 @@
 				</ElTable>
 			</div>
 			<div class="pb-3xl">
-				<n8n-button
+				<flowease-button
 					:label="$locale.baseText('settings.ldap.dryRun')"
 					type="secondary"
 					size="large"
@@ -125,7 +125,7 @@
 					:loading="loadingDryRun"
 					@click="onDryRunClick"
 				/>
-				<n8n-button
+				<flowease-button
 					:label="$locale.baseText('settings.ldap.synchronizeNow')"
 					size="large"
 					:disabled="hasAnyChanges || !readyToSubmit"

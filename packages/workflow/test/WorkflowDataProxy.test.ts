@@ -170,7 +170,7 @@ describe('WorkflowDataProxy', () => {
 		test('$("NodeName").item, node has no connection to referenced node', (done) => {
 			const proxy = getProxyFromFixture(fixture.workflow, fixture.run, 'NoPathBack');
 			try {
-				proxy.$('Customer Datastore (n8n training)').item;
+				proxy.$('Customer Datastore (flowease training)').item;
 				done('should throw');
 			} catch (error) {
 				expect(error).toBeInstanceOf(ExpressionError);

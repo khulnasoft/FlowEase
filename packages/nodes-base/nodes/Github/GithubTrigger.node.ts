@@ -6,8 +6,8 @@ import type {
 	INodeTypeDescription,
 	IWebhookResponseData,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError, NodeOperationError } from 'flowease-workflow';
 
 import { githubApiRequest } from './GenericFunctions';
 import { getRepositories, getUsers } from './SearchFunctions';
@@ -101,7 +101,7 @@ export class GithubTrigger implements INodeType {
 						displayName: 'Link',
 						name: 'url',
 						type: 'string',
-						placeholder: 'e.g. https://github.com/n8n-io',
+						placeholder: 'e.g. https://github.com/khulnasoft',
 						extractValue: {
 							type: 'regex',
 							regex: 'https:\\/\\/github.com\\/([-_0-9a-zA-Z]+)',
@@ -120,7 +120,7 @@ export class GithubTrigger implements INodeType {
 						displayName: 'By Name',
 						name: 'name',
 						type: 'string',
-						placeholder: 'e.g. n8n-io',
+						placeholder: 'e.g. khulnasoft',
 						validation: [
 							{
 								type: 'regex',
@@ -174,7 +174,7 @@ export class GithubTrigger implements INodeType {
 						displayName: 'By Name',
 						name: 'name',
 						type: 'string',
-						placeholder: 'e.g. n8n',
+						placeholder: 'e.g. flowease',
 						validation: [
 							{
 								type: 'regex',
@@ -447,7 +447,7 @@ export class GithubTrigger implements INodeType {
 						type: 'boolean',
 						default: false,
 						description:
-							'Whether the SSL certificate of the n8n host be verified by GitHub when delivering payloads',
+							'Whether the SSL certificate of the flowease host be verified by GitHub when delivering payloads',
 					},
 				],
 			},
@@ -494,7 +494,7 @@ export class GithubTrigger implements INodeType {
 				if (webhookUrl.includes('//localhost')) {
 					throw new NodeOperationError(
 						this.getNode(),
-						'The Webhook can not work on "localhost". Please, either setup n8n on a custom domain or start with "--tunnel"!',
+						'The Webhook can not work on "localhost". Please, either setup flowease on a custom domain or start with "--tunnel"!',
 					);
 				}
 

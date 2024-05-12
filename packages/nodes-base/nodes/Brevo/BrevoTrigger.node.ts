@@ -5,7 +5,7 @@ import type {
 	INodeTypeDescription,
 	IWebhookFunctions,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { BrevoWebhookApi } from './GenericFunctions';
 
 export class BrevoTrigger implements INodeType {

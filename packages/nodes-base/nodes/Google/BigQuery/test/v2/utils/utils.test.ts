@@ -1,4 +1,4 @@
-import type { IDataObject, IExecuteFunctions, INode } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INode } from 'flowease-workflow';
 import { constructExecutionMetaData } from 'flowease-core';
 import { mock } from 'jest-mock-extended';
 import { prepareOutput } from '../../../v2/helpers/utils';

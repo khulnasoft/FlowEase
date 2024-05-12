@@ -1,7 +1,7 @@
 import { NodeCreator } from '../pages/features/node-creator';
 import CustomNodeFixture from '../fixtures/Custom_node.json';
 import { CredentialsModal, WorkflowPage } from '../pages';
-import CustomNodeWithN8nCredentialFixture from '../fixtures/Custom_node_n8n_credential.json';
+import CustomNodeWithFloweaseCredentialFixture from '../fixtures/Custom_node_flowease_credential.json';
 import CustomNodeWithCustomCredentialFixture from '../fixtures/Custom_node_custom_credential.json';
 import CustomCredential from '../fixtures/Custom_credential.json';
 import { getVisibleSelect } from '../utils';
@@ -23,7 +23,7 @@ describe('Community Nodes', () => {
 
 				nodes.push(
 					CustomNodeFixture,
-					CustomNodeWithN8nCredentialFixture,
+					CustomNodeWithFloweaseCredentialFixture,
 					CustomNodeWithCustomCredentialFixture,
 				);
 			});
@@ -76,9 +76,9 @@ describe('Community Nodes', () => {
 		secondParameter().find('input.el-input__inner').should('have.value', 'option4');
 	});
 
-	it('should render custom node with n8n credential', () => {
+	it('should render custom node with flowease credential', () => {
 		workflowPage.actions.addNodeToCanvas('Manual');
-		workflowPage.actions.addNodeToCanvas('E2E Node with native n8n credential', true, true);
+		workflowPage.actions.addNodeToCanvas('E2E Node with native flowease credential', true, true);
 		workflowPage.getters.nodeCredentialsLabel().click();
 		cy.contains('Create New Credential').click();
 		credentialsModal.getters.editCredentialModal().should('be.visible');

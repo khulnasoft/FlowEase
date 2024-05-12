@@ -1,8 +1,8 @@
-import type { TableForeignKeyOptions, TableIndexOptions, QueryRunner } from '@n8n/typeorm';
-import { Table, TableColumn, TableForeignKey } from '@n8n/typeorm';
+import type { TableForeignKeyOptions, TableIndexOptions, QueryRunner } from '@flowease/typeorm';
+import { Table, TableColumn, TableForeignKey } from '@flowease/typeorm';
 import LazyPromise from 'p-lazy';
 import { Column } from './Column';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 abstract class TableOperation<R = void> extends LazyPromise<R> {
 	abstract execute(queryRunner: QueryRunner): Promise<R>;

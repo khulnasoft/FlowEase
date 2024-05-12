@@ -3,26 +3,26 @@
 		<template #header>
 			<div v-if="!notFoundError" :class="$style.wrapper">
 				<div :class="$style.title">
-					<n8n-heading v-if="collection && collection.name" tag="h1" size="2xlarge">
+					<flowease-heading v-if="collection && collection.name" tag="h1" size="2xlarge">
 						{{ collection.name }}
-					</n8n-heading>
-					<n8n-text v-if="collection && collection.name" color="text-base" size="small">
+					</flowease-heading>
+					<flowease-text v-if="collection && collection.name" color="text-base" size="small">
 						{{ $locale.baseText('templates.collection') }}
-					</n8n-text>
-					<n8n-loading :loading="!collection || !collection.name" :rows="2" variant="h1" />
+					</flowease-text>
+					<flowease-loading :loading="!collection || !collection.name" :rows="2" variant="h1" />
 				</div>
 			</div>
 			<div v-else :class="$style.notFound">
-				<n8n-text color="text-base">{{
+				<flowease-text color="text-base">{{
 					$locale.baseText('templates.collectionsNotFound')
-				}}</n8n-text>
+				}}</flowease-text>
 			</div>
 		</template>
 		<template v-if="!notFoundError" #content>
 			<div :class="$style.wrapper">
 				<div :class="$style.mainContent">
 					<div v-if="loading || (collection && collection.description)" :class="$style.markdown">
-						<n8n-markdown
+						<flowease-markdown
 							:content="collection && collection.description"
 							:images="collection && collection.image"
 							:loading="loading"
@@ -114,9 +114,9 @@ export default defineComponent({
 	watch: {
 		collection(collection: ITemplatesCollection) {
 			if (collection) {
-				setPageTitle(`n8n - Template collection: ${collection.name}`);
+				setPageTitle(`flowease - Template collection: ${collection.name}`);
 			} else {
-				setPageTitle('n8n - Templates');
+				setPageTitle('flowease - Templates');
 			}
 		},
 	},

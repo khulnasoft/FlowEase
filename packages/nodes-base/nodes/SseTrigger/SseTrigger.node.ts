@@ -5,8 +5,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	ITriggerResponse,
-} from 'n8n-workflow';
-import { jsonParse } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse } from 'flowease-workflow';
 
 export class SseTrigger implements INodeType {
 	description: INodeTypeDescription = {

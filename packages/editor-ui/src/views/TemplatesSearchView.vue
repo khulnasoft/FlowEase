@@ -3,12 +3,12 @@
 		<template #header>
 			<div :class="$style.wrapper">
 				<div :class="$style.title">
-					<n8n-heading tag="h1" size="2xlarge">
+					<flowease-heading tag="h1" size="2xlarge">
 						{{ $locale.baseText('templates.heading') }}
-					</n8n-heading>
+					</flowease-heading>
 				</div>
 				<div :class="$style.button">
-					<n8n-button
+					<flowease-button
 						size="large"
 						type="secondary"
 						element="a"
@@ -33,7 +33,7 @@
 					/>
 				</div>
 				<div :class="$style.search">
-					<n8n-input
+					<flowease-input
 						:model-value="search"
 						:placeholder="$locale.baseText('templates.searchPlaceholder')"
 						clearable
@@ -44,17 +44,17 @@
 						<template #prefix>
 							<font-awesome-icon icon="search" />
 						</template>
-					</n8n-input>
+					</flowease-input>
 					<div v-show="collections.length || loadingCollections" :class="$style.carouselContainer">
 						<div :class="$style.header">
-							<n8n-heading :bold="true" size="medium" color="text-light">
+							<flowease-heading :bold="true" size="medium" color="text-light">
 								{{ $locale.baseText('templates.collections') }}
 								<span
 									v-if="!loadingCollections"
 									data-test-id="collection-count-label"
 									v-text="`(${collections.length})`"
 								/>
-							</n8n-heading>
+							</flowease-heading>
 						</div>
 						<TemplatesInfoCarousel
 							:collections="collections"
@@ -71,9 +71,9 @@
 						@open-template="onOpenTemplate"
 					/>
 					<div v-if="endOfSearchMessage" :class="$style.endText">
-						<n8n-text size="medium" color="text-base">
+						<flowease-text size="medium" color="text-base">
 							<span v-html="endOfSearchMessage" />
-						</n8n-text>
+						</flowease-text>
 					</div>
 				</div>
 			</div>
@@ -95,7 +95,7 @@ import type {
 	ITemplatesQuery,
 	ITemplatesCategory,
 } from '@/Interface';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import { setPageTitle } from '@/utils/htmlUtils';
 import { CREATOR_HUB_URL, VIEWS } from '@/constants';
 import { useSettingsStore } from '@/stores/settings.store';
@@ -189,7 +189,7 @@ export default defineComponent({
 		},
 	},
 	async mounted() {
-		setPageTitle('n8n - Templates');
+		setPageTitle('flowease - Templates');
 		await this.loadCategories();
 		void this.loadWorkflowsAndCollections(true);
 		void this.usersStore.showPersonalizationSurvey();

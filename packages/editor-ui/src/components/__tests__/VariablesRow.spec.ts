@@ -22,7 +22,7 @@ const renderComponent = createComponentRenderer(VariablesRow, {
 		},
 	}),
 	global: {
-		stubs: ['n8n-tooltip'],
+		stubs: ['flowease-tooltip'],
 	},
 });
 

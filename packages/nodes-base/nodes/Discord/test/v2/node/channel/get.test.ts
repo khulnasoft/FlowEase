@@ -1,4 +1,4 @@
-import type { INodeTypes, IRequestOptions } from 'n8n-workflow';
+import type { INodeTypes, IRequestOptions } from 'flowease-workflow';
 import nock from 'nock';
 import * as transport from '../../../../v2/transport/helpers';
 import { getResultNodeData, setup, workflowToTests } from '@test/nodes/Helpers';

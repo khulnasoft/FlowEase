@@ -6,8 +6,8 @@ import type {
 	INodeTypeDescription,
 	IDataObject,
 	INodeProperties,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import get from 'lodash/get';
 import { placeholder } from './placeholder';
 import { getValue } from './utils';
@@ -179,7 +179,7 @@ export class Html implements INodeType {
 			},
 			{
 				displayName:
-					'<b>Tips</b>: Type ctrl+space for completions. Use <code>{{ }}</code> for expressions and <code>&lt;style&gt;</code> tags for CSS. JS in <code>&lt;script&gt;</code> tags is included but not executed in n8n.',
+					'<b>Tips</b>: Type ctrl+space for completions. Use <code>{{ }}</code> for expressions and <code>&lt;style&gt;</code> tags for CSS. JS in <code>&lt;script&gt;</code> tags is included but not executed in flowease.',
 				name: 'notice',
 				type: 'notice',
 				default: '',

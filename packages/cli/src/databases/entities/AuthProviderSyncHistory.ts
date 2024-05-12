@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from '@n8n/typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from '@flowease/typeorm';
 import { datetimeColumnType } from './AbstractEntity';
 import { AuthProviderType } from './AuthIdentity';
 

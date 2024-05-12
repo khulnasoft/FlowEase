@@ -73,9 +73,9 @@ function openCanvas() {
 <template>
 	<Modal width="900px" height="640px" :name="props.modalName">
 		<template #header>
-			<n8n-heading tag="h2" size="xlarge">
+			<flowease-heading tag="h2" size="xlarge">
 				{{ $props.data.workflow.title }}
-			</n8n-heading>
+			</flowease-heading>
 		</template>
 		<template #content>
 			<WorkflowPreview
@@ -88,10 +88,10 @@ function openCanvas() {
 		</template>
 		<template #footer>
 			<div>
-				<n8n-text> {{ $props.data.workflow.description }} </n8n-text>
+				<flowease-text> {{ $props.data.workflow.description }} </flowease-text>
 			</div>
 			<div :class="$style.footerButtons">
-				<n8n-button
+				<flowease-button
 					float="right"
 					data-test-id="use-template-button"
 					:label="$locale.baseText('suggestedTemplates.modal.button.label')"

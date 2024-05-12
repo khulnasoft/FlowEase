@@ -3,7 +3,7 @@ import {
 	type IDataObject,
 	type INodeExecutionData,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { MicrosoftTeamsType } from './node.type';
 

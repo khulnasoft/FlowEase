@@ -3,7 +3,7 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { versionDescription } from './actions/versionDescription';
 import { credentialTest, listSearch, loadOptions, resourceMapping } from './methods';
 import { router } from './actions/router';

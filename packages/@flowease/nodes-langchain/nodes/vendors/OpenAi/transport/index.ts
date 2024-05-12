@@ -3,7 +3,7 @@ import type {
 	IExecuteFunctions,
 	IHttpRequestMethods,
 	ILoadOptionsFunctions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 type RequestParameters = {
 	headers?: IDataObject;
 	body?: IDataObject | string;

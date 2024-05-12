@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { resolve, join, dirname } from 'path';
-import type { n8n } from 'flowease-core';
-import { jsonParse } from 'n8n-workflow';
+import type { flowease } from 'flowease-core';
+import { jsonParse } from 'flowease-workflow';
 
 const { NODE_ENV, E2E_TESTS } = process.env;
 export const inProduction = NODE_ENV === 'production';
@@ -17,8 +17,8 @@ export const TEMPLATES_DIR = join(CLI_DIR, 'templates');
 export const NODES_BASE_DIR = dirname(require.resolve('flowease-nodes-base'));
 export const EDITOR_UI_DIST_DIR = join(dirname(require.resolve('flowease-editor-ui')), 'dist');
 
-export function getN8nPackageJson() {
-	return jsonParse<n8n.PackageJson>(readFileSync(join(CLI_DIR, 'package.json'), 'utf8'));
+export function getFloweasePackageJson() {
+	return jsonParse<flowease.PackageJson>(readFileSync(join(CLI_DIR, 'package.json'), 'utf8'));
 }
 
 export const STARTING_NODES = [
@@ -27,9 +27,9 @@ export const STARTING_NODES = [
 	'flowease-nodes-base.manualTrigger',
 ];
 
-export const N8N_VERSION = getN8nPackageJson().version;
+export const FLOWEASE_VERSION = getFloweasePackageJson().version;
 
-export const NODE_PACKAGE_PREFIX = 'n8n-nodes-';
+export const NODE_PACKAGE_PREFIX = 'flowease-nodes-';
 
 export const STARTER_TEMPLATE_NAME = `${NODE_PACKAGE_PREFIX}starter`;
 
@@ -50,7 +50,7 @@ export const RESPONSE_ERROR_MESSAGES = {
 	OAUTH2_CREDENTIAL_TEST_FAILED: 'This OAuth2 credential was not connected to an account.',
 };
 
-export const AUTH_COOKIE_NAME = 'n8n-auth';
+export const AUTH_COOKIE_NAME = 'flowease-auth';
 
 export const NPM_COMMAND_TOKENS = {
 	NPM_PACKAGE_NOT_FOUND_ERROR: '404 Not Found',
@@ -96,10 +96,10 @@ export const LICENSE_QUOTAS = {
 } as const;
 export const UNLIMITED_LICENSE_QUOTA = -1;
 
-export const CREDENTIAL_BLANKING_VALUE = '__n8n_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6';
+export const CREDENTIAL_BLANKING_VALUE = '__flowease_BLANK_VALUE_e5362baf-c777-4d57-a609-6eaf1f9e87f6';
 
 export const UM_FIX_INSTRUCTION =
-	'Please fix the database by running ./packages/cli/bin/n8n user-management:reset';
+	'Please fix the database by running ./packages/cli/bin/flowease user-management:reset';
 
 /**
  * Units of time in milliseconds
@@ -143,4 +143,4 @@ export const TEST_WEBHOOK_TIMEOUT = 2 * TIME.MINUTE;
 
 export const TEST_WEBHOOK_TIMEOUT_BUFFER = 30 * TIME.SECOND;
 
-export const N8N_DOCS_URL = 'https://docs.flowease.khulnasoft.com';
+export const FLOWEASE_DOCS_URL = 'https://docs.flowease.khulnasoft.com';

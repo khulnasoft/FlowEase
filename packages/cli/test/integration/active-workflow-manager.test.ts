@@ -1,7 +1,7 @@
 import { Container } from 'typedi';
 import { mock } from 'jest-mock-extended';
-import { NodeApiError, NodeOperationError, Workflow } from 'n8n-workflow';
-import type { IWebhookData, WorkflowActivateMode } from 'n8n-workflow';
+import { NodeApiError, NodeOperationError, Workflow } from 'flowease-workflow';
+import type { IWebhookData, WorkflowActivateMode } from 'flowease-workflow';
 
 import { ActiveExecutions } from '@/ActiveExecutions';
 import { ActiveWorkflowManager } from '@/ActiveWorkflowManager';

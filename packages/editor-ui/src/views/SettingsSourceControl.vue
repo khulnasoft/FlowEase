@@ -187,14 +187,14 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 
 <template>
 	<div>
-		<n8n-heading size="2xlarge" tag="h1">{{
+		<flowease-heading size="2xlarge" tag="h1">{{
 			locale.baseText('settings.sourceControl.title')
-		}}</n8n-heading>
+		}}</flowease-heading>
 		<div
 			v-if="sourceControlStore.isEnterpriseSourceControlEnabled"
 			data-test-id="source-control-content-licensed"
 		>
-			<n8n-callout theme="secondary" icon="info-circle" class="mt-2xl mb-l">
+			<flowease-callout theme="secondary" icon="info-circle" class="mt-2xl mb-l">
 				<i18n-t keypath="settings.sourceControl.description" tag="span">
 					<template #link>
 						<a :href="locale.baseText('settings.sourceControl.docs.url')" target="_blank">
@@ -202,14 +202,14 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 						</a>
 					</template>
 				</i18n-t>
-			</n8n-callout>
-			<n8n-heading size="xlarge" tag="h2" class="mb-s">{{
+			</flowease-callout>
+			<flowease-heading size="xlarge" tag="h2" class="mb-s">{{
 				locale.baseText('settings.sourceControl.gitConfig')
-			}}</n8n-heading>
+			}}</flowease-heading>
 			<div :class="$style.group">
 				<label for="repoUrl">{{ locale.baseText('settings.sourceControl.repoUrl') }}</label>
 				<div :class="$style.groupFlex">
-					<n8n-form-input
+					<flowease-form-input
 						id="repoUrl"
 						v-model="sourceControlStore.preferences.repositoryUrl"
 						label
@@ -221,7 +221,7 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 						:placeholder="locale.baseText('settings.sourceControl.repoUrlPlaceholder')"
 						@validate="(value) => onValidate('repoUrl', value)"
 					/>
-					<n8n-button
+					<flowease-button
 						v-if="isConnected"
 						:class="$style.disconnectButton"
 						type="tertiary"
@@ -229,14 +229,14 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 						icon="trash"
 						data-test-id="source-control-disconnect-button"
 						@click="onDisconnect"
-						>{{ locale.baseText('settings.sourceControl.button.disconnect') }}</n8n-button
+						>{{ locale.baseText('settings.sourceControl.button.disconnect') }}</flowease-button
 					>
 				</div>
 			</div>
 			<div v-if="sourceControlStore.preferences.publicKey" :class="$style.group">
 				<label>{{ locale.baseText('settings.sourceControl.sshKey') }}</label>
 				<div :class="{ [$style.sshInput]: !isConnected }">
-					<n8n-form-input
+					<flowease-form-input
 						v-if="!isConnected"
 						id="keyGeneratorType"
 						:class="$style.sshKeyTypeSelect"
@@ -258,7 +258,7 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 						:value="sourceControlStore.preferences.publicKey"
 						:copy-button-text="locale.baseText('generic.clickToCopy')"
 					/>
-					<n8n-button
+					<flowease-button
 						v-if="!isConnected"
 						size="large"
 						type="tertiary"
@@ -267,9 +267,9 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 						@click="refreshSshKey"
 					>
 						{{ locale.baseText('settings.sourceControl.refreshSshKey') }}
-					</n8n-button>
+					</flowease-button>
 				</div>
-				<n8n-notice type="info" class="mt-s">
+				<flowease-notice type="info" class="mt-s">
 					<i18n-t keypath="settings.sourceControl.sshKeyDescription" tag="span">
 						<template #link>
 							<a
@@ -279,26 +279,26 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 							>
 						</template>
 					</i18n-t>
-				</n8n-notice>
+				</flowease-notice>
 			</div>
-			<n8n-button
+			<flowease-button
 				v-if="!isConnected"
 				size="large"
 				:disabled="!validForConnection"
 				:class="$style.connect"
 				data-test-id="source-control-connect-button"
 				@click="onConnect"
-				>{{ locale.baseText('settings.sourceControl.button.connect') }}</n8n-button
+				>{{ locale.baseText('settings.sourceControl.button.connect') }}</flowease-button
 			>
 			<div v-if="isConnected" data-test-id="source-control-connected-content">
 				<div :class="$style.group">
 					<hr />
-					<n8n-heading size="xlarge" tag="h2" class="mb-s">{{
+					<flowease-heading size="xlarge" tag="h2" class="mb-s">{{
 						locale.baseText('settings.sourceControl.instanceSettings')
-					}}</n8n-heading>
+					}}</flowease-heading>
 					<label>{{ locale.baseText('settings.sourceControl.branches') }}</label>
 					<div :class="$style.branchSelection">
-						<n8n-form-input
+						<flowease-form-input
 							id="branchName"
 							label
 							type="select"
@@ -312,13 +312,13 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 							@validate="(value) => onValidate('branchName', value)"
 							@update:model-value="onSelect"
 						/>
-						<n8n-tooltip placement="top">
+						<flowease-tooltip placement="top">
 							<template #content>
 								<span>
 									{{ locale.baseText('settings.sourceControl.refreshBranches.tooltip') }}
 								</span>
 							</template>
-							<n8n-button
+							<flowease-button
 								size="small"
 								type="tertiary"
 								icon="sync"
@@ -327,9 +327,9 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 								data-test-id="source-control-refresh-branches-button"
 								@click="refreshBranches"
 							/>
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</div>
-					<n8n-checkbox
+					<flowease-checkbox
 						v-model="sourceControlStore.preferences.branchReadOnly"
 						:class="$style.readOnly"
 					>
@@ -338,26 +338,26 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 								<strong>{{ locale.baseText('settings.sourceControl.protected.bold') }}</strong>
 							</template>
 						</i18n-t>
-					</n8n-checkbox>
+					</flowease-checkbox>
 				</div>
 				<div :class="$style.group">
 					<label>{{ locale.baseText('settings.sourceControl.color') }}</label>
 					<div>
-						<n8n-color-picker v-model="sourceControlStore.preferences.branchColor" size="small" />
+						<flowease-color-picker v-model="sourceControlStore.preferences.branchColor" size="small" />
 					</div>
 				</div>
 				<div :class="[$style.group, 'pt-s']">
-					<n8n-button
+					<flowease-button
 						size="large"
 						:disabled="!sourceControlStore.preferences.branchName"
 						data-test-id="source-control-save-settings-button"
 						@click="onSave"
-						>{{ locale.baseText('settings.sourceControl.button.save') }}</n8n-button
+						>{{ locale.baseText('settings.sourceControl.button.save') }}</flowease-button
 					>
 				</div>
 			</div>
 		</div>
-		<n8n-action-box
+		<flowease-action-box
 			v-else
 			data-test-id="source-control-content-unlicensed"
 			:class="$style.actionBox"
@@ -374,7 +374,7 @@ const onSelectSshKeyType = async (sshKeyType: TupleToUnion<SshKeyTypes>) => {
 					{{ locale.baseText('settings.sourceControl.actionBox.description.link') }}
 				</a>
 			</template>
-		</n8n-action-box>
+		</flowease-action-box>
 	</div>
 </template>
 

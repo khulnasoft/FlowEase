@@ -1,5 +1,5 @@
 <template>
-	<n8n-notice :content="scopesShortContent" :full-content="scopesFullContent" />
+	<flowease-notice :content="scopesShortContent" :full-content="scopesFullContent" />
 </template>
 
 <script lang="ts">

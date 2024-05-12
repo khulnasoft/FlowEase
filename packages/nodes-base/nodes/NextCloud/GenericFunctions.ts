@@ -5,7 +5,7 @@ import {
 	type IHttpRequestMethods,
 	type IRequestOptions,
 	type IDataObject,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 /**
  * Make an API request to NextCloud

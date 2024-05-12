@@ -4,8 +4,8 @@ import type {
 	INodeProperties,
 	IDataObject,
 	INode,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { updateDisplayOptions } from '../../../utils/utilities';
 import { parseJsonParameter, composeReturnItem, resolveRawData } from './helpers/utils';

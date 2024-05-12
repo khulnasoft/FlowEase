@@ -1,11 +1,11 @@
 <template>
 	<div v-if="loading || workflows.length" :class="$style.list">
 		<div v-if="!simpleView" :class="$style.header">
-			<n8n-heading :bold="true" size="medium" color="text-light">
+			<flowease-heading :bold="true" size="medium" color="text-light">
 				{{ $locale.baseText('templates.workflows') }}
 				<span v-if="totalCount > 0" data-test-id="template-count-label">({{ totalCount }})</span>
 				<span v-if="!loading && totalWorkflows" v-text="`(${totalWorkflows})`" />
-			</n8n-heading>
+			</flowease-heading>
 		</div>
 		<div :class="$style.container">
 			<TemplateCard

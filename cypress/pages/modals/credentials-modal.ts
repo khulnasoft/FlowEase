@@ -11,7 +11,7 @@ export class CredentialsModal extends BasePage {
 		newCredentialTypeButton: () => cy.getByTestId('new-credential-type-button'),
 		connectionParameters: () => cy.getByTestId('credential-connection-parameter'),
 		connectionParameter: (fieldName: string) =>
-			this.getters.connectionParameters().find(`:contains('${fieldName}') .n8n-input input`),
+			this.getters.connectionParameters().find(`:contains('${fieldName}') .flowease-input input`),
 		name: () => cy.getByTestId('credential-name'),
 		nameInput: () => cy.getByTestId('credential-name').find('input'),
 		// Saving of the credentials takes a while on the CI so we need to increase the timeout
@@ -24,7 +24,7 @@ export class CredentialsModal extends BasePage {
 			this.getters.credentialsAuthTypeSelector().find('label.el-radio'),
 		credentialInputs: () => cy.getByTestId('credential-connection-parameter'),
 		menu: () => this.getters.editCredentialModal().get('.menu-container'),
-		menuItem: (name: string) => this.getters.menu().get('.n8n-menu-item').contains(name),
+		menuItem: (name: string) => this.getters.menu().get('.flowease-menu-item').contains(name),
 		usersSelect: () => cy.getByTestId('credential-sharing-modal-users-select'),
 		testSuccessTag: () => cy.getByTestId('credentials-config-container-test-success'),
 	};

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { Container } from 'typedi';
-import type { EntityManager } from '@n8n/typeorm';
-import { DataSource as Connection } from '@n8n/typeorm';
-import { ErrorReporterProxy as ErrorReporter } from 'n8n-workflow';
+import type { EntityManager } from '@flowease/typeorm';
+import { DataSource as Connection } from '@flowease/typeorm';
+import { ErrorReporterProxy as ErrorReporter } from 'flowease-workflow';
 
 import config from '@/config';
 import { inTest } from '@/constants';

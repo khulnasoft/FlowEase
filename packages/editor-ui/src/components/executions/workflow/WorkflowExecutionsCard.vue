@@ -18,28 +18,28 @@
 			:data-test-execution-status="executionUIDetails.name"
 		>
 			<div :class="$style.description">
-				<n8n-text color="text-dark" :bold="true" size="medium" data-test-id="execution-time">
+				<flowease-text color="text-dark" :bold="true" size="medium" data-test-id="execution-time">
 					{{ executionUIDetails.startTime }}
-				</n8n-text>
+				</flowease-text>
 				<div :class="$style.executionStatus">
-					<n8n-spinner
+					<flowease-spinner
 						v-if="executionUIDetails.name === 'running'"
 						size="small"
 						:class="[$style.spinner, 'mr-4xs']"
 					/>
-					<n8n-text :class="$style.statusLabel" size="small">{{
+					<flowease-text :class="$style.statusLabel" size="small">{{
 						executionUIDetails.label
-					}}</n8n-text>
+					}}</flowease-text>
 					{{ ' ' }}
-					<n8n-text
+					<flowease-text
 						v-if="executionUIDetails.name === 'running'"
 						:color="isActive ? 'text-dark' : 'text-base'"
 						size="small"
 					>
 						{{ $locale.baseText('executionDetails.runningTimeRunning') }}
 						<ExecutionsTime :start-time="execution.startedAt" />
-					</n8n-text>
-					<n8n-text
+					</flowease-text>
+					<flowease-text
 						v-else-if="executionUIDetails.runningTime !== ''"
 						:color="isActive ? 'text-dark' : 'text-base'"
 						size="small"
@@ -49,16 +49,16 @@
 								interpolate: { time: executionUIDetails?.runningTime },
 							})
 						}}
-					</n8n-text>
+					</flowease-text>
 				</div>
 				<div v-if="execution.mode === 'retry'">
-					<n8n-text :color="isActive ? 'text-dark' : 'text-base'" size="small">
+					<flowease-text :color="isActive ? 'text-dark' : 'text-base'" size="small">
 						{{ $locale.baseText('executionDetails.retry') }} #{{ execution.retryOf }}
-					</n8n-text>
+					</flowease-text>
 				</div>
 			</div>
 			<div :class="$style.icons">
-				<n8n-action-dropdown
+				<flowease-action-dropdown
 					v-if="isRetriable"
 					:class="[$style.icon, $style.retry]"
 					:items="retryExecutionActions"
@@ -66,7 +66,7 @@
 					data-test-id="retry-execution-button"
 					@select="onRetryMenuItemSelect"
 				/>
-				<n8n-tooltip v-if="execution.mode === 'manual'" placement="top">
+				<flowease-tooltip v-if="execution.mode === 'manual'" placement="top">
 					<template #content>
 						<span>{{ $locale.baseText('executionsList.test') }}</span>
 					</template>
@@ -75,7 +75,7 @@
 						:class="[$style.icon, $style.manual]"
 						icon="flask"
 					/>
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</div>
 		</router-link>
 	</div>
@@ -87,7 +87,7 @@ import type { IExecutionUIData } from '@/composables/useExecutionHelpers';
 import { VIEWS } from '@/constants';
 import ExecutionsTime from '@/components/executions/ExecutionsTime.vue';
 import { useExecutionHelpers } from '@/composables/useExecutionHelpers';
-import type { ExecutionSummary } from 'n8n-workflow';
+import type { ExecutionSummary } from 'flowease-workflow';
 import { mapStores } from 'pinia';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 

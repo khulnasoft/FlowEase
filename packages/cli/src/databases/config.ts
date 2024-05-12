@@ -1,13 +1,13 @@
 import path from 'path';
 import { Container } from 'typedi';
 import type { TlsOptions } from 'tls';
-import type { DataSourceOptions, LoggerOptions } from '@n8n/typeorm';
-import type { SqliteConnectionOptions } from '@n8n/typeorm/driver/sqlite/SqliteConnectionOptions';
-import type { SqlitePooledConnectionOptions } from '@n8n/typeorm/driver/sqlite-pooled/SqlitePooledConnectionOptions';
-import type { PostgresConnectionOptions } from '@n8n/typeorm/driver/postgres/PostgresConnectionOptions';
-import type { MysqlConnectionOptions } from '@n8n/typeorm/driver/mysql/MysqlConnectionOptions';
+import type { DataSourceOptions, LoggerOptions } from '@flowease/typeorm';
+import type { SqliteConnectionOptions } from '@flowease/typeorm/driver/sqlite/SqliteConnectionOptions';
+import type { SqlitePooledConnectionOptions } from '@flowease/typeorm/driver/sqlite-pooled/SqlitePooledConnectionOptions';
+import type { PostgresConnectionOptions } from '@flowease/typeorm/driver/postgres/PostgresConnectionOptions';
+import type { MysqlConnectionOptions } from '@flowease/typeorm/driver/mysql/MysqlConnectionOptions';
 import { InstanceSettings } from 'flowease-core';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 import config from '@/config';
 import { entities } from './entities';
@@ -53,7 +53,7 @@ const getSqliteConnectionOptions = (): SqliteConnectionOptions | SqlitePooledCon
 	const commonOptions = {
 		...getCommonOptions(),
 		database: path.resolve(
-			Container.get(InstanceSettings).n8nFolder,
+			Container.get(InstanceSettings).floweaseFolder,
 			config.getEnv('database.sqlite.database'),
 		),
 		migrations: sqliteMigrations,

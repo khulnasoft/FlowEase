@@ -7,8 +7,8 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	IPairedItemData,
-} from 'n8n-workflow';
-import { NodeOperationError, deepCopy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError, deepCopy } from 'flowease-workflow';
 
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';

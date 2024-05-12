@@ -24,7 +24,7 @@ import type {
 	NodeParameterValue,
 	Workflow,
 	WorkflowHooks,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { BinaryDataService } from '@/BinaryData/BinaryData.service';
 import nock from 'nock';
 import { tmpdir } from 'os';
@@ -33,7 +33,7 @@ import Container from 'typedi';
 import type { Agent } from 'https';
 import toPlainObject from 'lodash/toPlainObject';
 
-const temporaryDir = mkdtempSync(join(tmpdir(), 'n8n'));
+const temporaryDir = mkdtempSync(join(tmpdir(), 'flowease'));
 
 describe('NodeExecuteFunctions', () => {
 	describe('test binary data helper methods', () => {

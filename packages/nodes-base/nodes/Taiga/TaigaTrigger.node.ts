@@ -7,7 +7,7 @@ import type {
 	INodeTypeDescription,
 	IWebhookFunctions,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { getAutomaticSecret, taigaApiRequest } from './GenericFunctions';
 
@@ -175,7 +175,7 @@ export class TaigaTrigger implements INodeType {
 				const key = getAutomaticSecret(credentials);
 
 				const body: IDataObject = {
-					name: `n8n-webhook:${webhookUrl}`,
+					name: `flowease-webhook:${webhookUrl}`,
 					url: webhookUrl,
 					key,
 					project: projectId,

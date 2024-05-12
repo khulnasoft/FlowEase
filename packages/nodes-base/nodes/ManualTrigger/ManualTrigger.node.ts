@@ -3,7 +3,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	ITriggerResponse,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class ManualTrigger implements INodeType {
 	description: INodeTypeDescription = {
@@ -12,7 +12,7 @@ export class ManualTrigger implements INodeType {
 		icon: 'fa:mouse-pointer',
 		group: ['trigger'],
 		version: 1,
-		description: 'Runs the flow on clicking a button in n8n',
+		description: 'Runs the flow on clicking a button in flowease',
 		eventTriggerDescription: '',
 		maxNodes: 1,
 		defaults: {

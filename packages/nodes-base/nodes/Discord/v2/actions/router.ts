@@ -1,5 +1,5 @@
-import type { IDataObject, IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeExecutionData } from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { discordApiRequest } from '../transport';
 import { checkAccessToGuild } from '../helpers/utils';

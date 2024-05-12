@@ -1,4 +1,4 @@
-import { NodeApiError } from 'n8n-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import type {
 	IDataObject,
@@ -9,7 +9,7 @@ import type {
 	ILoadOptionsFunctions,
 	INodePropertyOptions,
 	JsonObject,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { DateTime } from 'luxon';
 import {

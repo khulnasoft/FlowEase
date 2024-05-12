@@ -1,5 +1,5 @@
-import type { IDataObject, IExecuteFunctions, ITriggerFunctions } from 'n8n-workflow';
-import { sleep } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, ITriggerFunctions } from 'flowease-workflow';
+import { sleep } from 'flowease-workflow';
 import * as amqplib from 'amqplib';
 import { formatPrivateKey } from '@utils/utilities';
 

@@ -6,7 +6,7 @@ import type { RedisServiceBaseCommand, RedisServiceCommand } from './redis/Redis
 
 import { RedisService } from './redis.service';
 import { MultiMainSetup } from './orchestration/main/MultiMainSetup.ee';
-import type { WorkflowActivateMode } from 'n8n-workflow';
+import type { WorkflowActivateMode } from 'flowease-workflow';
 
 @Service()
 export class OrchestrationService {

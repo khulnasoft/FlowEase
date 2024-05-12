@@ -1,5 +1,5 @@
-import type { IRun, WorkflowTestData } from 'n8n-workflow';
-import { ApplicationError, createDeferredPromise, Workflow } from 'n8n-workflow';
+import type { IRun, WorkflowTestData } from 'flowease-workflow';
+import { ApplicationError, createDeferredPromise, Workflow } from 'flowease-workflow';
 import { WorkflowExecute } from '@/WorkflowExecute';
 
 import * as Helpers from './helpers';

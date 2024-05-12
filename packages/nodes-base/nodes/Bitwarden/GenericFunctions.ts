@@ -6,8 +6,8 @@ import type {
 	INodePropertyOptions,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 /**
  * Return the access token URL based on the user's environment.
@@ -43,7 +43,7 @@ export async function bitwardenApiRequest(
 	const baseUrl = await getBaseUrl.call(this);
 	const options: IRequestOptions = {
 		headers: {
-			'user-agent': 'n8n',
+			'user-agent': 'flowease',
 			Authorization: `Bearer ${token}`,
 			'Content-Type': 'application/json',
 		},
@@ -87,9 +87,9 @@ export async function getAccessToken(
 			client_secret: credentials.clientSecret,
 			grant_type: 'client_credentials',
 			scope: 'api.organization',
-			deviceName: 'n8n',
+			deviceName: 'flowease',
 			deviceType: 2, // https://github.com/bitwarden/server/blob/master/src/Core/Enums/DeviceType.cs
-			deviceIdentifier: 'n8n',
+			deviceIdentifier: 'flowease',
 		},
 		uri: await getTokenUrl.call(this),
 		json: true,

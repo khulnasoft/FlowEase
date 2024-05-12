@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 
 export const scanOperations: INodeProperties[] = [
 	{
@@ -142,7 +142,7 @@ export const scanFields: INodeProperties[] = [
 				displayName: 'Custom Agent',
 				name: 'customAgent',
 				description:
-					'<code>User-Agent</code> header to set for this scan. Defaults to <code>n8n</code>',
+					'<code>User-Agent</code> header to set for this scan. Defaults to <code>flowease</code>',
 				type: 'string',
 				default: '',
 			},

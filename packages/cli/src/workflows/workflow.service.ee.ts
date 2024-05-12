@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
 import omit from 'lodash/omit';
-import { ApplicationError, NodeOperationError } from 'n8n-workflow';
+import { ApplicationError, NodeOperationError } from 'flowease-workflow';
 
 import type { CredentialsEntity } from '@db/entities/CredentialsEntity';
 import type { User } from '@db/entities/User';

@@ -1,4 +1,4 @@
-import type { EntityManager, FindOptionsWhere } from '@n8n/typeorm';
+import type { EntityManager, FindOptionsWhere } from '@flowease/typeorm';
 import type { SharedCredentials } from '@db/entities/SharedCredentials';
 import type { User } from '@db/entities/User';
 import { type CredentialsGetSharedOptions } from './credentials.service';

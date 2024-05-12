@@ -34,7 +34,7 @@ onBeforeMount(async () => {
 });
 
 onMounted(async () => {
-	setPageTitle(`n8n - ${i18n.baseText('executionsList.workflowExecutions')}`);
+	setPageTitle(`flowease - ${i18n.baseText('executionsList.workflowExecutions')}`);
 	document.addEventListener('visibilitychange', onDocumentVisibilityChange);
 
 	await executionsStore.initialize();

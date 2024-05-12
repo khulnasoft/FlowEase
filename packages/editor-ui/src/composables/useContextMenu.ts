@@ -4,7 +4,7 @@ import { useNodeTypesStore } from '@/stores/nodeTypes.store';
 import { useSourceControlStore } from '@/stores/sourceControl.store';
 import { useUIStore } from '@/stores/ui.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
-import type { INode, INodeTypeDescription } from 'n8n-workflow';
+import type { INode, INodeTypeDescription } from 'flowease-workflow';
 import { computed, ref, watch } from 'vue';
 import { getMousePosition } from '../utils/nodeViewUtils';
 import { useI18n } from './useI18n';

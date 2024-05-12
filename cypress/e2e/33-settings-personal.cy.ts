@@ -7,7 +7,7 @@ const INVALID_NAMES = [
 	'http://flowease.khulnasoft.com',
 	'www.flowease.khulnasoft.com',
 	'flowease.khulnasoft.com',
-	'n8n.бг',
+	'flowease.бг',
 	'flowease.khulnasoft.com/home',
 	'flowease.khulnasoft.com/home?send=true',
 	'<a href="#">Jack</a>',

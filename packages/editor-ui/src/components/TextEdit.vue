@@ -10,9 +10,9 @@
 			:before-close="closeDialog"
 		>
 			<div class="ignore-key-press">
-				<n8n-input-label :label="$locale.nodeText().inputLabelDisplayName(parameter, path)">
+				<flowease-input-label :label="$locale.nodeText().inputLabelDisplayName(parameter, path)">
 					<div @keydown.stop @keydown.esc="onKeyDownEsc()">
-						<n8n-input
+						<flowease-input
 							ref="inputField"
 							v-model="tempValue"
 							type="textarea"
@@ -22,7 +22,7 @@
 							@update:model-value="valueChanged"
 						/>
 					</div>
-				</n8n-input-label>
+				</flowease-input-label>
 			</div>
 		</el-dialog>
 	</div>

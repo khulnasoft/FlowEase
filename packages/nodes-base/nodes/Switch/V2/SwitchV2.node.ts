@@ -8,8 +8,8 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	NodeParameterValue,
-} from 'n8n-workflow';
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
 
 export class SwitchV2 implements INodeType {
 	description: INodeTypeDescription;

@@ -1,4 +1,4 @@
-import { Column, Entity } from '@n8n/typeorm';
+import { Column, Entity } from '@flowease/typeorm';
 import { WithStringId } from './AbstractEntity';
 
 @Entity()

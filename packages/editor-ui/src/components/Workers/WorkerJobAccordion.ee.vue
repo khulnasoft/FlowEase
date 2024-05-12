@@ -9,12 +9,12 @@
 					<a :href="'/workflow/' + item.workflowId + '/executions/' + item.executionId">
 						Execution {{ item.executionId }} - {{ item.workflowName }}</a
 					>
-					<n8n-text color="text-base" size="small" align="left">
+					<flowease-text color="text-base" size="small" align="left">
 						| Started at:
 						{{ new Date(item.startedAt)?.toLocaleTimeString() }} | Running for
 						{{ runningSince(new Date(item.startedAt)) }}
 						{{ item.retryOf ? `| Retry of: ${item.retryOf}` : '' }} |
-					</n8n-text>
+					</flowease-text>
 					<a target="_blank" :href="'/workflow/' + item.workflowId"> (Open workflow)</a>
 				</div>
 			</div>

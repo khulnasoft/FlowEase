@@ -1,6 +1,6 @@
 import { Container } from 'typedi';
 import { mock } from 'jest-mock-extended';
-import type { CredentialInformation } from 'n8n-workflow';
+import type { CredentialInformation } from 'flowease-workflow';
 import { Cipher } from '@/Cipher';
 import { Credentials } from '@/Credentials';
 import type { InstanceSettings } from '@/InstanceSettings';

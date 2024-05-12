@@ -3,7 +3,7 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { observableRLC, responderOptions } from '../../descriptions';
 import { theHiveApiRequest } from '../../transport';
 import { updateDisplayOptions, wrapData } from '@utils/utilities';

@@ -6,7 +6,7 @@ import ParameterInputHint from '@/components/ParameterInputHint.vue';
 import ParameterIssues from '@/components/ParameterIssues.vue';
 import { useWorkflowHelpers } from '@/composables/useWorkflowHelpers';
 import { isExpression, stringifyExpressionResult } from '@/utils/expressions';
-import type { AssignmentValue, INodeProperties, Result } from 'n8n-workflow';
+import type { AssignmentValue, INodeProperties, Result } from 'flowease-workflow';
 import { computed, ref } from 'vue';
 import TypeSelect from './TypeSelect.vue';
 import { useNDVStore } from '@/stores/ndv.store';
@@ -148,7 +148,7 @@ const onBlur = (): void => {
 		}"
 		data-test-id="assignment"
 	>
-		<n8n-icon-button
+		<flowease-icon-button
 			v-if="!isReadOnly"
 			type="tertiary"
 			text
@@ -157,7 +157,7 @@ const onBlur = (): void => {
 			data-test-id="assignment-remove"
 			:class="$style.remove"
 			@click="onRemove"
-		></n8n-icon-button>
+		></flowease-icon-button>
 
 		<div :class="$style.inputs">
 			<InputTriple middle-width="100px">

@@ -1,14 +1,14 @@
-# n8n Expression language support
+# flowease Expression language support
 
 ## Usage
 
 ```js
-import { parserWithMetaData as n8nParser } from '@flowease/codemirror-lang';
+import { parserWithMetaData as floweaseParser } from '@flowease/codemirror-lang';
 import { LanguageSupport, LRLanguage } from '@codemirror/language';
 import { parseMixed } from '@lezer/common';
 import { parser as jsParser } from '@lezer/javascript';
 
-const n8nPlusJsParser = n8nParser.configure({
+const floweasePlusJsParser = floweaseParser.configure({
 	wrap: parseMixed((node) => {
 		if (node.type.isTop) return null;
 
@@ -18,9 +18,9 @@ const n8nPlusJsParser = n8nParser.configure({
 	}),
 });
 
-const n8nLanguage = LRLanguage.define({ parser: n8nPlusJsParser });
+const floweaseLanguage = LRLanguage.define({ parser: floweasePlusJsParser });
 
-export function n8nExpressionLanguageSupport() {
-	return new LanguageSupport(n8nLanguage);
+export function floweaseExpressionLanguageSupport() {
+	return new LanguageSupport(floweaseLanguage);
 }
 ```

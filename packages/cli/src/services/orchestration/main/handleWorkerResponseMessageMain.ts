@@ -1,4 +1,4 @@
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'flowease-workflow';
 import Container from 'typedi';
 import { Logger } from '@/Logger';
 import { Push } from '../../../push';

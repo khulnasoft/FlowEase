@@ -7,7 +7,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { Profile } from './GenericFunctions';
 import { getTriggerName, livePublicKey, testPublicKey, wiseApiRequest } from './GenericFunctions';
@@ -129,7 +129,7 @@ export class WiseTrigger implements INodeType {
 				const event = this.getNodeParameter('event') as string;
 				const trigger = getTriggerName(event);
 				const body: IDataObject = {
-					name: 'n8n Webhook',
+					name: 'flowease Webhook',
 					trigger_on: trigger,
 					delivery: {
 						version: '2.0.0',

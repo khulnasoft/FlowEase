@@ -1,7 +1,7 @@
 import { Container } from 'typedi';
 
-import type { IRunExecutionData, ITaskData, IWorkflowBase } from 'n8n-workflow';
-import { ErrorReporterProxy as ErrorReporter } from 'n8n-workflow';
+import type { IRunExecutionData, ITaskData, IWorkflowBase } from 'flowease-workflow';
+import { ErrorReporterProxy as ErrorReporter } from 'flowease-workflow';
 
 import { Logger } from '@/Logger';
 import { ExecutionRepository } from '@/databases/repositories/execution.repository';

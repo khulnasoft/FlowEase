@@ -7,7 +7,7 @@ import { useI18n } from '@/composables/useI18n';
 import { useMessage } from '@/composables/useMessage';
 import { useToast } from '@/composables/useToast';
 import { useTelemetry } from '@/composables/useTelemetry';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 
 const IdentityProviderSettingsType = {
 	URL: 'url',
@@ -148,10 +148,10 @@ onMounted(async () => {
 
 <template>
 	<div class="pb-3xl">
-		<n8n-heading size="2xlarge">{{ i18n.baseText('settings.sso.title') }}</n8n-heading>
+		<flowease-heading size="2xlarge">{{ i18n.baseText('settings.sso.title') }}</flowease-heading>
 		<div :class="$style.top">
-			<n8n-heading size="xlarge">{{ i18n.baseText('settings.sso.subtitle') }}</n8n-heading>
-			<n8n-tooltip
+			<flowease-heading size="xlarge">{{ i18n.baseText('settings.sso.subtitle') }}</flowease-heading>
+			<flowease-tooltip
 				v-if="ssoStore.isEnterpriseSamlEnabled"
 				:disabled="ssoStore.isSamlLoginEnabled || ssoSettingsSaved"
 			>
@@ -166,14 +166,14 @@ onMounted(async () => {
 					:class="$style.switch"
 					:inactive-text="ssoActivatedLabel"
 				/>
-			</n8n-tooltip>
+			</flowease-tooltip>
 		</div>
-		<n8n-info-tip>
+		<flowease-info-tip>
 			{{ i18n.baseText('settings.sso.info') }}
 			<a href="https://docs.flowease.khulnasoft.com/user-management/saml/" target="_blank">
 				{{ i18n.baseText('settings.sso.info.link') }}
 			</a>
-		</n8n-info-tip>
+		</flowease-info-tip>
 		<div v-if="ssoStore.isEnterpriseSamlEnabled" data-test-id="sso-content-licensed">
 			<div :class="$style.group">
 				<label>{{ i18n.baseText('settings.sso.settings.redirectUrl.label') }}</label>
@@ -196,10 +196,10 @@ onMounted(async () => {
 			<div :class="$style.group">
 				<label>{{ i18n.baseText('settings.sso.settings.ips.label') }}</label>
 				<div class="mt-2xs mb-s">
-					<n8n-radio-buttons v-model="ipsType" :options="ipsOptions" />
+					<flowease-radio-buttons v-model="ipsType" :options="ipsOptions" />
 				</div>
 				<div v-show="ipsType === IdentityProviderSettingsType.URL">
-					<n8n-input
+					<flowease-input
 						v-model="metadataUrl"
 						type="text"
 						name="metadataUrl"
@@ -209,15 +209,15 @@ onMounted(async () => {
 					<small>{{ i18n.baseText('settings.sso.settings.ips.url.help') }}</small>
 				</div>
 				<div v-show="ipsType === IdentityProviderSettingsType.XML">
-					<n8n-input v-model="metadata" type="textarea" name="metadata" :rows="4" />
+					<flowease-input v-model="metadata" type="textarea" name="metadata" :rows="4" />
 					<small>{{ i18n.baseText('settings.sso.settings.ips.xml.help') }}</small>
 				</div>
 			</div>
 			<div :class="$style.buttons">
-				<n8n-button :disabled="!isSaveEnabled" size="large" data-test-id="sso-save" @click="onSave">
+				<flowease-button :disabled="!isSaveEnabled" size="large" data-test-id="sso-save" @click="onSave">
 					{{ i18n.baseText('settings.sso.settings.save') }}
-				</n8n-button>
-				<n8n-button
+				</flowease-button>
+				<flowease-button
 					:disabled="!isTestEnabled"
 					size="large"
 					type="tertiary"
@@ -225,13 +225,13 @@ onMounted(async () => {
 					@click="onTest"
 				>
 					{{ i18n.baseText('settings.sso.settings.test') }}
-				</n8n-button>
+				</flowease-button>
 			</div>
 			<footer :class="$style.footer">
 				{{ i18n.baseText('settings.sso.settings.footer.hint') }}
 			</footer>
 		</div>
-		<n8n-action-box
+		<flowease-action-box
 			v-else
 			data-test-id="sso-content-unlicensed"
 			:class="$style.actionBox"
@@ -242,7 +242,7 @@ onMounted(async () => {
 			<template #heading>
 				<span>{{ i18n.baseText('settings.sso.actionBox.title') }}</span>
 			</template>
-		</n8n-action-box>
+		</flowease-action-box>
 	</div>
 </template>
 

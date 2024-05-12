@@ -29,8 +29,8 @@ import type {
 	IWorkflowSettings,
 	NodeParameterValue,
 	Workflow,
-} from 'n8n-workflow';
-import { NodeConnectionType, ExpressionEvaluatorProxy, NodeHelpers } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeConnectionType, ExpressionEvaluatorProxy, NodeHelpers } from 'flowease-workflow';
 
 import type {
 	ICredentialsResponse,
@@ -54,7 +54,7 @@ import { get, isEqual } from 'lodash-es';
 import type { IPermissions } from '@/permissions';
 import { getWorkflowPermissions } from '@/permissions';
 import { useEnvironmentsStore } from '@/stores/environments.ee.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useNDVStore } from '@/stores/ndv.store';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
 import { useTemplatesStore } from '@/stores/templates.store';

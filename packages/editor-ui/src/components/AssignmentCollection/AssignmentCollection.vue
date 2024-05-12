@@ -7,7 +7,7 @@ import type {
 	AssignmentValue,
 	INode,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { v4 as uuid } from 'uuid';
 import { computed, reactive, watch } from 'vue';
 import DropArea from '../DropArea/DropArea.vue';
@@ -115,7 +115,7 @@ function optionSelected(action: 'clearAll' | 'addAll') {
 		:class="{ [$style.assignmentCollection]: true, [$style.empty]: empty }"
 		:data-test-id="`assignment-collection-${parameter.name}`"
 	>
-		<n8n-input-label
+		<flowease-input-label
 			:label="parameter.displayName"
 			:show-expression-selector="false"
 			size="small"
@@ -132,7 +132,7 @@ function optionSelected(action: 'clearAll' | 'addAll') {
 					@update:model-value="optionSelected"
 				/>
 			</template>
-		</n8n-input-label>
+		</flowease-input-label>
 		<div :class="$style.content">
 			<div :class="$style.assignments">
 				<div v-for="(assignment, index) of state.paramValue.assignments" :key="assignment.id">

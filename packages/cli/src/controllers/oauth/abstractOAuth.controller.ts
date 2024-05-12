@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
 import { Credentials } from 'flowease-core';
-import type { ICredentialDataDecryptedObject, IWorkflowExecuteAdditionalData } from 'n8n-workflow';
+import type { ICredentialDataDecryptedObject, IWorkflowExecuteAdditionalData } from 'flowease-workflow';
 import config from '@/config';
 import type { CredentialsEntity } from '@db/entities/CredentialsEntity';
 import type { User } from '@db/entities/User';

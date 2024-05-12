@@ -103,12 +103,12 @@ registerKeyHook(`CategoryLeft_${props.category}`, {
 			@click="toggleExpanded"
 		>
 			<span v-if="mouseOverTooltip" :class="$style.mouseOverTooltip">
-				<n8n-tooltip placement="top" :popper-class="$style.tooltipPopper">
-					<n8n-icon icon="question-circle" size="small" />
+				<flowease-tooltip placement="top" :popper-class="$style.tooltipPopper">
+					<flowease-icon icon="question-circle" size="small" />
 					<template #content>
 						<div v-html="mouseOverTooltip" />
 					</template>
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</span>
 		</CategoryItem>
 		<div v-if="expanded && actionCount > 0 && $slots.default" :class="$style.contentSlot">

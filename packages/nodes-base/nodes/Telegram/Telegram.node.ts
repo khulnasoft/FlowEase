@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
-import { BINARY_ENCODING, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { BINARY_ENCODING, NodeOperationError } from 'flowease-workflow';
 
 import { addAdditionalFields, apiRequest, getPropertyName } from './GenericFunctions';
 
@@ -1469,12 +1469,12 @@ export class Telegram implements INodeType {
 				options: [
 					{
 						// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-						displayName: 'Append n8n Attribution',
+						displayName: 'Append flowease Attribution',
 						name: 'appendAttribution',
 						type: 'boolean',
 						default: true,
 						description:
-							'Whether to include the phrase “This message was sent automatically with n8n” to the end of the message',
+							'Whether to include the phrase “This message was sent automatically with flowease” to the end of the message',
 						displayOptions: {
 							show: {
 								'/operation': ['sendMessage'],

@@ -45,7 +45,7 @@
 				<!-- We weren't able to parse text or raw switch -->
 				<template v-else>
 					<div :class="$style.rawContent">
-						<n8n-icon-button
+						<flowease-icon-button
 							size="small"
 							:class="$style.copyToClipboard"
 							type="secondary"
@@ -71,7 +71,7 @@ import VueMarkdown from 'vue-markdown-render';
 import { useClipboard } from '@/composables/useClipboard';
 import { useI18n } from '@/composables/useI18n';
 import { useToast } from '@/composables/useToast';
-import { NodeConnectionType, type IDataObject } from 'n8n-workflow';
+import { NodeConnectionType, type IDataObject } from 'flowease-workflow';
 
 const props = defineProps<{
 	runData: IAiDataContent;

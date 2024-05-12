@@ -1,7 +1,7 @@
-import { Column, Entity, ManyToOne, PrimaryColumn } from '@n8n/typeorm';
+import { Column, Entity, ManyToOne, PrimaryColumn } from '@flowease/typeorm';
 import { WithTimestamps, jsonColumnType } from './AbstractEntity';
-import { IConnections } from 'n8n-workflow';
-import type { INode } from 'n8n-workflow';
+import { IConnections } from 'flowease-workflow';
+import type { INode } from 'flowease-workflow';
 import { WorkflowEntity } from './WorkflowEntity';
 
 @Entity()

@@ -5,13 +5,13 @@ import type { RedisClientType } from './RedisServiceBaseClasses';
 import Container from 'typedi';
 import { Logger } from '@/Logger';
 
-export const EVENT_BUS_REDIS_STREAM = 'n8n:eventstream';
-export const COMMAND_REDIS_STREAM = 'n8n:commandstream';
-export const WORKER_RESPONSE_REDIS_STREAM = 'n8n:workerstream';
-export const EVENT_BUS_REDIS_CHANNEL = 'n8n.events';
-export const COMMAND_REDIS_CHANNEL = 'n8n.commands';
-export const WORKER_RESPONSE_REDIS_CHANNEL = 'n8n.worker-response';
-export const WORKER_RESPONSE_REDIS_LIST = 'n8n:list:worker-response';
+export const EVENT_BUS_REDIS_STREAM = 'flowease:eventstream';
+export const COMMAND_REDIS_STREAM = 'flowease:commandstream';
+export const WORKER_RESPONSE_REDIS_STREAM = 'flowease:workerstream';
+export const EVENT_BUS_REDIS_CHANNEL = 'flowease.events';
+export const COMMAND_REDIS_CHANNEL = 'flowease.commands';
+export const WORKER_RESPONSE_REDIS_CHANNEL = 'flowease.worker-response';
+export const WORKER_RESPONSE_REDIS_LIST = 'flowease:list:worker-response';
 
 export function getRedisClusterNodes(): Array<{ host: string; port: number }> {
 	const clusterNodePairs = config

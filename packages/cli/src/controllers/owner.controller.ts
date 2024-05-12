@@ -29,7 +29,7 @@ export class OwnerController {
 	) {}
 
 	/**
-	 * Promote a shell into the owner of the n8n instance,
+	 * Promote a shell into the owner of the flowease instance,
 	 * and enable `isInstanceOwnerSetUp` setting.
 	 */
 	@Post('/setup', { skipAuth: true })

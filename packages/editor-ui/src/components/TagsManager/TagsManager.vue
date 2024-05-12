@@ -23,7 +23,7 @@
 			</el-row>
 		</template>
 		<template #footer="{ close }">
-			<n8n-button :label="$locale.baseText('tagsManager.done')" float="right" @click="close" />
+			<flowease-button :label="$locale.baseText('tagsManager.done')" float="right" @click="close" />
 		</template>
 	</Modal>
 </template>

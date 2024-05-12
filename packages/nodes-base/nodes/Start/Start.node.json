@@ -11,19 +11,19 @@
 		],
 		"generic": [
 			{
-				"label": "Why business process automation with n8n can change your daily life",
+				"label": "Why business process automation with flowease can change your daily life",
 				"icon": "🧬",
-				"url": "https://flowease.khulnasoft.com/blog/why-business-process-automation-with-n8n-can-change-your-daily-life/"
+				"url": "https://flowease.khulnasoft.com/blog/why-business-process-automation-with-flowease-can-change-your-daily-life/"
 			},
 			{
-				"label": "Why I chose n8n over Zapier in 2020",
+				"label": "Why I chose flowease over Zapier in 2020",
 				"icon": "😍",
-				"url": "https://flowease.khulnasoft.com/blog/why-i-chose-n8n-over-zapier-in-2020/"
+				"url": "https://flowease.khulnasoft.com/blog/why-i-chose-flowease-over-zapier-in-2020/"
 			},
 			{
-				"label": "Automatically pulling and visualizing data with n8n",
+				"label": "Automatically pulling and visualizing data with flowease",
 				"icon": "📈",
-				"url": "https://flowease.khulnasoft.com/blog/automatically-pulling-and-visualizing-data-with-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/automatically-pulling-and-visualizing-data-with-flowease/"
 			},
 			{
 				"label": "How to use the HTTP Request Node - The Swiss Army Knife for Workflow Automation",
@@ -31,14 +31,14 @@
 				"url": "https://flowease.khulnasoft.com/blog/how-to-use-the-http-request-node-the-swiss-army-knife-for-workflow-automation/"
 			},
 			{
-				"label": "Sending SMS the Low-Code Way with Airtable, Twilio Programmable SMS, and n8n",
+				"label": "Sending SMS the Low-Code Way with Airtable, Twilio Programmable SMS, and flowease",
 				"icon": "📱",
-				"url": "https://flowease.khulnasoft.com/blog/sending-sms-the-low-code-way-with-airtable-twilio-programmable-sms-and-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/sending-sms-the-low-code-way-with-airtable-twilio-programmable-sms-and-flowease/"
 			},
 			{
-				"label": "Automating Conference Organization Processes with n8n",
+				"label": "Automating Conference Organization Processes with flowease",
 				"icon": "🙋‍♀️",
-				"url": "https://flowease.khulnasoft.com/blog/automating-conference-organization-processes-with-n8n/"
+				"url": "https://flowease.khulnasoft.com/blog/automating-conference-organization-processes-with-flowease/"
 			}
 		]
 	}

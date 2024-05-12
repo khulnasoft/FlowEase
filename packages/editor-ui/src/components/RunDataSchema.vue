@@ -5,7 +5,7 @@ import RunDataSchemaItem from '@/components/RunDataSchemaItem.vue';
 import Draggable from '@/components/Draggable.vue';
 import { useNDVStore } from '@/stores/ndv.store';
 import { telemetry } from '@/plugins/telemetry';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import { isEmpty } from '@/utils/typesUtils';
 import { useExternalHooks } from '@/composables/useExternalHooks';
 import { i18n } from '@/plugins/i18n';
@@ -71,9 +71,9 @@ const onDragEnd = (el: HTMLElement) => {
 
 <template>
 	<div :class="[$style.schemaWrapper, { highlightSchema: highlight }]">
-		<n8n-info-tip v-if="isDataEmpty">{{
+		<flowease-info-tip v-if="isDataEmpty">{{
 			i18n.baseText('dataMapping.schemaView.emptyData')
-		}}</n8n-info-tip>
+		}}</flowease-info-tip>
 		<Draggable
 			v-else
 			type="mapping"

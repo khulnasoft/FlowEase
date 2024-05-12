@@ -4,8 +4,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IPollFunctions,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import Parser from 'rss-parser';
 import moment from 'moment-timezone';
 

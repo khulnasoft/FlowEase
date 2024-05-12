@@ -94,20 +94,20 @@ async function pullWorkfolder() {
 	>
 		<template #content>
 			<div :class="$style.container">
-				<n8n-text>
+				<flowease-text>
 					{{ i18n.baseText('settings.sourceControl.modals.pull.description') }}
-					<n8n-link :to="i18n.baseText('settings.sourceControl.docs.using.pushPull.url')">
+					<flowease-link :to="i18n.baseText('settings.sourceControl.docs.using.pushPull.url')">
 						{{ i18n.baseText('settings.sourceControl.modals.pull.description.learnMore') }}
-					</n8n-link>
-				</n8n-text>
+					</flowease-link>
+				</flowease-text>
 
 				<div v-if="modifiedWorkflowFiles.length > 0" class="mt-l">
 					<ul :class="$style.filesList">
 						<li v-for="file in modifiedWorkflowFiles" :key="file.id">
-							<n8n-link :class="$style.fileLink" new-window :to="`/workflow/${file.id}`">
+							<flowease-link :class="$style.fileLink" new-window :to="`/workflow/${file.id}`">
 								{{ file.name }}
-								<n8n-icon icon="external-link-alt" />
-							</n8n-link>
+								<flowease-icon icon="external-link-alt" />
+							</flowease-link>
 						</li>
 					</ul>
 				</div>
@@ -116,12 +116,12 @@ async function pullWorkfolder() {
 
 		<template #footer>
 			<div :class="$style.footer">
-				<n8n-button type="tertiary" class="mr-2xs" @click="close">
+				<flowease-button type="tertiary" class="mr-2xs" @click="close">
 					{{ i18n.baseText('settings.sourceControl.modals.pull.buttons.cancel') }}
-				</n8n-button>
-				<n8n-button type="primary" @click="pullWorkfolder">
+				</flowease-button>
+				<flowease-button type="primary" @click="pullWorkfolder">
 					{{ i18n.baseText('settings.sourceControl.modals.pull.buttons.save') }}
-				</n8n-button>
+				</flowease-button>
 			</div>
 		</template>
 	</Modal>

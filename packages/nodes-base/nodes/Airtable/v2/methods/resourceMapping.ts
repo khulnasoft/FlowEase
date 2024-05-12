@@ -5,8 +5,8 @@ import type {
 	INodePropertyOptions,
 	ResourceMapperField,
 	ResourceMapperFields,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import { apiRequest } from '../transport';
 
 type AirtableSchema = {

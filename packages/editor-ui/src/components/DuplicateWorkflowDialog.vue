@@ -9,7 +9,7 @@
 	>
 		<template #content>
 			<div :class="$style.content">
-				<n8n-input
+				<flowease-input
 					ref="nameInput"
 					v-model="name"
 					:placeholder="$locale.baseText('duplicateWorkflowDialog.enterWorkflowName')"
@@ -29,13 +29,13 @@
 		</template>
 		<template #footer="{ close }">
 			<div :class="$style.footer">
-				<n8n-button
+				<flowease-button
 					:loading="isSaving"
 					:label="$locale.baseText('duplicateWorkflowDialog.save')"
 					float="right"
 					@click="save"
 				/>
-				<n8n-button
+				<flowease-button
 					type="secondary"
 					:disabled="isSaving"
 					:label="$locale.baseText('duplicateWorkflowDialog.cancel')"

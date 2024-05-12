@@ -5,7 +5,7 @@ import type {
 	IUserResponse,
 	InvitableRoleName,
 } from '@/Interface';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import { makeRestApiRequest } from '@/utils/apiUtils';
 
 export async function loginCurrentUser(

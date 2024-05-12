@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { taskPresend } from '../GenericFunctions';
 import { getAdditionalOptions, getId, showFor } from './utils';
 

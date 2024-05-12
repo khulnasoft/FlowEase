@@ -1,6 +1,6 @@
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'flowease-workflow';
 
-import { NodeOperationError, deepCopy } from 'n8n-workflow';
+import { NodeOperationError, deepCopy } from 'flowease-workflow';
 
 import unset from 'lodash/unset';
 

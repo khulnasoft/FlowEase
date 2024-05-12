@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended';
 import config from '@/config';
-import { N8N_VERSION } from '@/constants';
+import { FLOWEASE_VERSION } from '@/constants';
 import { InternalHooks } from '@/InternalHooks';
 import type { License } from '@/License';
 import type { Telemetry } from '@/telemetry';
@@ -39,10 +39,10 @@ describe('InternalHooks', () => {
 		await internalHooks.onServerStarted();
 
 		expect(telemetry.identify).toHaveBeenCalledWith({
-			version_cli: N8N_VERSION,
+			version_cli: FLOWEASE_VERSION,
 			db_type: config.get('database.type'),
-			n8n_version_notifications_enabled: true,
-			n8n_disable_production_main_process: false,
+			flowease_version_notifications_enabled: true,
+			flowease_disable_production_main_process: false,
 			system_info: {
 				memory: 1024,
 				os: {
@@ -66,8 +66,8 @@ describe('InternalHooks', () => {
 				executions_timeout: -1,
 				executions_timeout_max: 3600,
 			},
-			n8n_deployment_type: 'default',
-			n8n_binary_data_mode: 'default',
+			flowease_deployment_type: 'default',
+			flowease_binary_data_mode: 'default',
 			smtp_set_up: true,
 			ldap_allowed: false,
 			saml_enabled: false,

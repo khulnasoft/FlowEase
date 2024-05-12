@@ -9,8 +9,8 @@ import type {
 	INodeTypeDescription,
 	IWebhookResponseData,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import type {
 	ITypeformAnswer,
@@ -177,7 +177,7 @@ export class TypeformTrigger implements INodeType {
 				const webhookUrl = this.getNodeWebhookUrl('default');
 
 				const formId = this.getNodeParameter('formId') as string;
-				const webhookId = 'n8n-' + Math.random().toString(36).substring(2, 15);
+				const webhookId = 'flowease-' + Math.random().toString(36).substring(2, 15);
 
 				const endpoint = `forms/${formId}/webhooks/${webhookId}`;
 

@@ -8,7 +8,7 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { shuffleArray, sortByCode } from './utils';
 
 export class Sort implements INodeType {

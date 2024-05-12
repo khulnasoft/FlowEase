@@ -15,7 +15,7 @@
     {
       "parameters": {
         "category": "randomData",
-        "randomDataSeed": "n8n",
+        "randomDataSeed": "flowease",
         "randomDataCount": 3
       },
       "id": "0518c1d3-2e6d-40c6-8225-d89ec28ed28d",
@@ -68,8 +68,8 @@
         "message": "={{ $('Edit Fields').item.json.foo }}"
       },
       "id": "4a3d6844-5044-4570-912a-af3f32efa871",
-      "name": "Customer Messenger (n8n training)",
-      "type": "flowease-nodes-base.n8nTrainingCustomerMessenger",
+      "name": "Customer Messenger (flowease training)",
+      "type": "flowease-nodes-base.floweaseTrainingCustomerMessenger",
       "typeVersion": 1,
       "position": [
         1400,
@@ -78,7 +78,7 @@
     }
   ],
   "pinData": {
-    "Customer Messenger (n8n training)": [
+    "Customer Messenger (flowease training)": [
       {
         "json": {
           "output": "Sent message to customer 1:  bar"
@@ -113,7 +113,7 @@
       "main": [
         [
           {
-            "node": "Customer Messenger (n8n training)",
+            "node": "Customer Messenger (flowease training)",
             "type": "main",
             "index": 0
           }

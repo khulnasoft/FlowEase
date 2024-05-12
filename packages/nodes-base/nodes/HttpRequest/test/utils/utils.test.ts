@@ -1,4 +1,4 @@
-import type { IRequestOptions } from 'n8n-workflow';
+import type { IRequestOptions } from 'flowease-workflow';
 import { prepareRequestBody, setAgentOptions } from '../../GenericFunctions';
 import type { BodyParameter, BodyParametersReducer } from '../../GenericFunctions';
 

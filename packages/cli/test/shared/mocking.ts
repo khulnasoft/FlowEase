@@ -1,7 +1,7 @@
 import { Container } from 'typedi';
 import { mock } from 'jest-mock-extended';
 import type { DeepPartial } from 'ts-essentials';
-import { DataSource, EntityManager, type EntityMetadata } from '@n8n/typeorm';
+import { DataSource, EntityManager, type EntityMetadata } from '@flowease/typeorm';
 import type { Class } from 'flowease-core';
 
 export const mockInstance = <T>(

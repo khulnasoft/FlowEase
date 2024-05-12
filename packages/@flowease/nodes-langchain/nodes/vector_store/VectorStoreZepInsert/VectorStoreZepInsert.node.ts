@@ -4,11 +4,11 @@ import {
 	type INodeTypeDescription,
 	type INodeExecutionData,
 	NodeConnectionType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { ZepVectorStore } from '@langchain/community/vectorstores/zep';
 import type { Embeddings } from '@langchain/core/embeddings';
 import type { Document } from '@langchain/core/documents';
-import type { N8nJsonLoader } from '../../../utils/N8nJsonLoader';
+import type { FloweaseJsonLoader } from '../../../utils/FloweaseJsonLoader';
 import { processDocuments } from '../shared/processDocuments';
 
 // This node is deprecated. Use VectorStoreZep instead.
@@ -33,7 +33,7 @@ export class VectorStoreZepInsert implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstorezep/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstorezep/',
 					},
 				],
 			},
@@ -116,7 +116,7 @@ export class VectorStoreZepInsert implements INodeType {
 		};
 
 		const documentInput = (await this.getInputConnectionData(NodeConnectionType.AiDocument, 0)) as
-			| N8nJsonLoader
+			| FloweaseJsonLoader
 			| Array<Document<Record<string, unknown>>>;
 
 		const embeddings = (await this.getInputConnectionData(

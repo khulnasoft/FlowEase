@@ -4,7 +4,7 @@ import type {
 	IDataObject,
 	IHookFunctions,
 	IWebhookFunctions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { beeminderApiRequest, beeminderApiRequestAllItems } from './GenericFunctions';
 

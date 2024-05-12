@@ -7,10 +7,10 @@ import type {
 	INodeProperties,
 	IExecuteSingleFunctions,
 	IHttpRequestOptions,
-	IN8nHttpFullResponse,
+	IFloweaseHttpFullResponse,
 	ITaskDataConnections,
 	INodeExecuteFunctions,
-	IN8nRequestOperations,
+	IFloweaseRequestOperations,
 	INodeCredentialDescription,
 	IExecuteData,
 	INodeTypeDescription,
@@ -23,7 +23,7 @@ import * as Helpers from './Helpers';
 const postReceiveFunction1 = async function (
 	this: IExecuteSingleFunctions,
 	items: INodeExecutionData[],
-	response: IN8nHttpFullResponse,
+	response: IFloweaseHttpFullResponse,
 ): Promise<INodeExecutionData[]> {
 	items.forEach((item) => (item.json1 = { success: true }));
 	return items;
@@ -343,7 +343,7 @@ describe('RoutingNode', () => {
 								type: 'string',
 								routing: {
 									send: {
-										// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+										// eslint-disable-next-line flowease-local-rules/no-interpolation-in-regular-string
 										property: '={{ `value${5+1}A` }}',
 										type: 'query',
 										value: '={{$value.toUpperCase()}}',
@@ -357,7 +357,7 @@ describe('RoutingNode', () => {
 								type: 'string',
 								routing: {
 									send: {
-										// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+										// eslint-disable-next-line flowease-local-rules/no-interpolation-in-regular-string
 										property: '={{ `value${6+1}B` }}',
 										type: 'body',
 										value: "={{$value.split(',')}}",
@@ -728,7 +728,7 @@ describe('RoutingNode', () => {
 					properties?: INodeProperties[];
 					credentials?: INodeCredentialDescription[];
 					requestDefaults?: IHttpRequestOptions;
-					requestOperations?: IN8nRequestOperations;
+					requestOperations?: IFloweaseRequestOperations;
 				};
 				node: {
 					parameters: INodeParameters;

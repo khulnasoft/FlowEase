@@ -56,7 +56,7 @@ describe('RedisService', () => {
 	});
 
 	// NOTE: This test is failing because the mock Redis client does not support streams apparently
-	// eslint-disable-next-line n8n-local-rules/no-skipped-tests
+	// eslint-disable-next-line flowease-local-rules/no-skipped-tests
 	test.skip('should create stream producer and consumer', async () => {
 		const consumer = await redisService.getStreamConsumer();
 		const producer = await redisService.getStreamProducer();

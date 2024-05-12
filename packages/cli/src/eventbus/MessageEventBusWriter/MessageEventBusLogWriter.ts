@@ -6,7 +6,7 @@ import path, { parse } from 'path';
 import { Worker } from 'worker_threads';
 import { createReadStream, existsSync, rmSync } from 'fs';
 import readline from 'readline';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'flowease-workflow';
 import remove from 'lodash/remove';
 import config from '@/config';
 import { getEventMessageObjectByType } from '../EventMessageClasses/Helpers';
@@ -74,7 +74,7 @@ export class MessageEventBusLogWriter {
 			MessageEventBusLogWriter.instance = new MessageEventBusLogWriter();
 			MessageEventBusLogWriter.options = {
 				logFullBasePath: path.join(
-					options?.logBasePath ?? Container.get(InstanceSettings).n8nFolder,
+					options?.logBasePath ?? Container.get(InstanceSettings).floweaseFolder,
 					options?.logBaseName ?? config.getEnv('eventBus.logWriter.logBaseName'),
 				),
 				keepNumberOfFiles:
@@ -214,19 +214,19 @@ export class MessageEventBusLogWriter {
 							if (msg?.eventName && msg.payload?.executionId) {
 								const executionId = msg.payload.executionId as string;
 								switch (msg.eventName) {
-									case 'n8n.workflow.started':
+									case 'flowease.workflow.started':
 										if (!Object.keys(results.unfinishedExecutions).includes(executionId)) {
 											results.unfinishedExecutions[executionId] = [];
 										}
 										results.unfinishedExecutions[executionId] = [msg];
 										break;
-									case 'n8n.workflow.success':
-									case 'n8n.workflow.failed':
-									case 'n8n.workflow.crashed':
+									case 'flowease.workflow.success':
+									case 'flowease.workflow.failed':
+									case 'flowease.workflow.crashed':
 										delete results.unfinishedExecutions[executionId];
 										break;
-									case 'n8n.node.started':
-									case 'n8n.node.finished':
+									case 'flowease.node.started':
+									case 'flowease.node.finished':
 										if (!Object.keys(results.unfinishedExecutions).includes(executionId)) {
 											results.unfinishedExecutions[executionId] = [];
 										}

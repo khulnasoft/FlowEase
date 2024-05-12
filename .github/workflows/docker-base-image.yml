@@ -41,7 +41,7 @@ jobs:
         uses: docker/build-push-action@v5.1.0
         with:
           context: .
-          file: ./docker/images/n8n-base/Dockerfile
+          file: ./docker/images/flowease-base/Dockerfile
           build-args: |
             NODE_VERSION=${{github.event.inputs.node_version}}
           platforms: linux/amd64,linux/arm64

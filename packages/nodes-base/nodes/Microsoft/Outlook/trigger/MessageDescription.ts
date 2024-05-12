@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { messageFields } from '../v2/helpers/utils';
 
 export const properties: INodeProperties[] = [

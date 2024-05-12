@@ -3,7 +3,7 @@ import { mockInstance } from '../../../shared/mocking';
 import { Logger } from '@/Logger';
 import * as DbConfig from '@db/config';
 import type { IrreversibleMigration, ReversibleMigration } from '@/databases/types';
-import type { DataSource } from '@n8n/typeorm';
+import type { DataSource } from '@flowease/typeorm';
 import { mock } from 'jest-mock-extended';
 
 const logger = mockInstance(Logger);

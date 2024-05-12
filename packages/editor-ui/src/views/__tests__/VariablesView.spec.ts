@@ -41,7 +41,7 @@ describe('VariablesView', () => {
 	it('should render loading state', () => {
 		const wrapper = renderComponent({ pinia });
 
-		expect(wrapper.container.querySelectorAll('.n8n-loading')).toHaveLength(3);
+		expect(wrapper.container.querySelectorAll('.flowease-loading')).toHaveLength(3);
 	});
 
 	describe('should render empty state', () => {

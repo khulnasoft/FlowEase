@@ -18,7 +18,7 @@
 				<div :class="$style.subtitle">
 					{{ $locale.baseText('credentialSelectModal.selectAnAppOrServiceToConnectTo') }}
 				</div>
-				<n8n-select
+				<flowease-select
 					ref="select"
 					filterable
 					default-first-option
@@ -31,7 +31,7 @@
 					<template #prefix>
 						<font-awesome-icon icon="search" />
 					</template>
-					<n8n-option
+					<flowease-option
 						v-for="credential in credentialsStore.allCredentialTypes"
 						:key="credential.name"
 						:value="credential.name"
@@ -39,12 +39,12 @@
 						filterable
 						data-test-id="new-credential-type-select-option"
 					/>
-				</n8n-select>
+				</flowease-select>
 			</div>
 		</template>
 		<template #footer>
 			<div :class="$style.footer">
-				<n8n-button
+				<flowease-button
 					:label="$locale.baseText('credentialSelectModal.continue')"
 					float="right"
 					size="large"

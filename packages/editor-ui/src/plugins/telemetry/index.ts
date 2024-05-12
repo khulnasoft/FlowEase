@@ -1,5 +1,5 @@
 import type { Plugin } from 'vue';
-import type { ITelemetrySettings, ITelemetryTrackProperties, IDataObject } from 'n8n-workflow';
+import type { ITelemetrySettings, ITelemetryTrackProperties, IDataObject } from 'flowease-workflow';
 import type { RouteLocation } from 'vue-router';
 
 import type { INodeCreateElement, IUpdateInformation } from '@/Interface';
@@ -10,7 +10,7 @@ import {
 	SLACK_NODE_TYPE,
 	TELEGRAM_NODE_TYPE,
 } from '@/constants';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useNDVStore } from '@/stores/ndv.store';
 import { usePostHog } from '@/stores/posthog.store';
 import { useSettingsStore } from '@/stores/settings.store';
@@ -87,7 +87,7 @@ export class Telemetry {
 		};
 
 		if (settingsStore.isCloudDeployment) {
-			traits.user_cloud_id = settingsStore.settings?.n8nMetadata?.userId ?? '';
+			traits.user_cloud_id = settingsStore.settings?.floweaseMetadata?.userId ?? '';
 		}
 		if (userId) {
 			this.rudderStack.identify(`${instanceId}#${userId}`, traits);
@@ -246,7 +246,7 @@ export class Telemetry {
 			const changeName = changeNameMap[nodeType] || APPEND_ATTRIBUTION_DEFAULT_PATH;
 			if (change.name === changeName) {
 				this.track(
-					'User toggled n8n reference option',
+					'User toggled flowease reference option',
 					{
 						node: nodeType,
 						toValue: change.value,

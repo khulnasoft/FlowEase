@@ -8,12 +8,12 @@ import type {
 	MessageEventBusDestinationSentryOptions,
 	MessageEventBusDestinationSyslogOptions,
 	MessageEventBusDestinationWebhookOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	defaultMessageEventBusDestinationSentryOptions,
 	defaultMessageEventBusDestinationSyslogOptions,
 	defaultMessageEventBusDestinationWebhookOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { User } from '@db/entities/User';
 import { MessageEventBus } from '@/eventbus/MessageEventBus/MessageEventBus';
@@ -46,7 +46,7 @@ const testSyslogDestination: MessageEventBusDestinationSyslogOptions = {
 	protocol: 'udp',
 	label: 'Test Syslog',
 	enabled: false,
-	subscribedEvents: ['n8n.test.message', 'n8n.audit.user.updated'],
+	subscribedEvents: ['flowease.test.message', 'flowease.audit.user.updated'],
 };
 
 const testWebhookDestination: MessageEventBusDestinationWebhookOptions = {
@@ -56,7 +56,7 @@ const testWebhookDestination: MessageEventBusDestinationWebhookOptions = {
 	method: 'POST',
 	label: 'Test Webhook',
 	enabled: false,
-	subscribedEvents: ['n8n.test.message', 'n8n.audit.user.updated'],
+	subscribedEvents: ['flowease.test.message', 'flowease.audit.user.updated'],
 };
 
 const testSentryDestination: MessageEventBusDestinationSentryOptions = {
@@ -65,7 +65,7 @@ const testSentryDestination: MessageEventBusDestinationSentryOptions = {
 	dsn: 'http://localhost:3000',
 	label: 'Test Sentry',
 	enabled: false,
-	subscribedEvents: ['n8n.test.message', 'n8n.audit.user.updated'],
+	subscribedEvents: ['flowease.test.message', 'flowease.audit.user.updated'],
 };
 
 let eventBus: MessageEventBus;
@@ -94,7 +94,7 @@ beforeAll(async () => {
 
 	mockedSyslog.createClient.mockImplementation(() => new syslog.Client());
 
-	config.set('eventBus.logWriter.logBaseName', 'n8n-test-logwriter');
+	config.set('eventBus.logWriter.logBaseName', 'flowease-test-logwriter');
 	config.set('eventBus.logWriter.keepLogCount', 1);
 
 	eventBus = Container.get(MessageEventBus);
@@ -113,7 +113,7 @@ test('should have a running logwriter process', () => {
 
 test('should have logwriter log messages', async () => {
 	const testMessage = new EventMessageGeneric({
-		eventName: 'n8n.test.message' as EventNamesTypes,
+		eventName: 'flowease.test.message' as EventNamesTypes,
 		id: uuid(),
 	});
 	await eventBus.send(testMessage);
@@ -171,10 +171,10 @@ describe('POST /eventbus/destination', () => {
 });
 
 // this test (presumably the mocking) is causing the test suite to randomly fail
-// eslint-disable-next-line n8n-local-rules/no-skipped-tests
+// eslint-disable-next-line flowease-local-rules/no-skipped-tests
 test.skip('should send message to syslog', async () => {
 	const testMessage = new EventMessageGeneric({
-		eventName: 'n8n.test.message' as EventNamesTypes,
+		eventName: 'flowease.test.message' as EventNamesTypes,
 		id: uuid(),
 	});
 
@@ -212,10 +212,10 @@ test.skip('should send message to syslog', async () => {
 	});
 });
 
-// eslint-disable-next-line n8n-local-rules/no-skipped-tests
+// eslint-disable-next-line flowease-local-rules/no-skipped-tests
 test.skip('should confirm send message if there are no subscribers', async () => {
 	const testMessageUnsubscribed = new EventMessageGeneric({
-		eventName: 'n8n.test.unsub' as EventNamesTypes,
+		eventName: 'flowease.test.unsub' as EventNamesTypes,
 		id: uuid(),
 	});
 
@@ -246,7 +246,7 @@ test.skip('should confirm send message if there are no subscribers', async () =>
 
 test('should anonymize audit message to syslog ', async () => {
 	const testAuditMessage = new EventMessageAudit({
-		eventName: 'n8n.audit.user.updated',
+		eventName: 'flowease.audit.user.updated',
 		payload: {
 			_secret: 'secret',
 			public: 'public',
@@ -311,7 +311,7 @@ test('should anonymize audit message to syslog ', async () => {
 
 test('should send message to webhook ', async () => {
 	const testMessage = new EventMessageGeneric({
-		eventName: 'n8n.test.message' as EventNamesTypes,
+		eventName: 'flowease.test.message' as EventNamesTypes,
 		id: uuid(),
 	});
 
@@ -345,7 +345,7 @@ test('should send message to webhook ', async () => {
 
 test('should send message to sentry ', async () => {
 	const testMessage = new EventMessageGeneric({
-		eventName: 'n8n.test.message' as EventNamesTypes,
+		eventName: 'flowease.test.message' as EventNamesTypes,
 		id: uuid(),
 	});
 
@@ -398,29 +398,29 @@ test('DELETE /eventbus/destination delete all destinations by id', async () => {
 
 // These two tests are running very flaky on CI due to the logwriter working in a worker
 // Mocking everything on the other would defeat the purpose of even testing them... so, skipping in CI for now.
-// eslint-disable-next-line n8n-local-rules/no-skipped-tests
+// eslint-disable-next-line flowease-local-rules/no-skipped-tests
 test.skip('should not find unfinished executions in recovery process', async () => {
 	eventBus.logWriter?.putMessage(
 		new EventMessageWorkflow({
-			eventName: 'n8n.workflow.started',
+			eventName: 'flowease.workflow.started',
 			payload: { executionId: '509', isManual: false },
 		}),
 	);
 	eventBus.logWriter?.putMessage(
 		new EventMessageNode({
-			eventName: 'n8n.node.started',
+			eventName: 'flowease.node.started',
 			payload: { executionId: '509', nodeName: 'Set', workflowName: 'test' },
 		}),
 	);
 	eventBus.logWriter?.putMessage(
 		new EventMessageNode({
-			eventName: 'n8n.node.finished',
+			eventName: 'flowease.node.finished',
 			payload: { executionId: '509', nodeName: 'Set', workflowName: 'test' },
 		}),
 	);
 	eventBus.logWriter?.putMessage(
 		new EventMessageWorkflow({
-			eventName: 'n8n.workflow.success',
+			eventName: 'flowease.workflow.success',
 			payload: { executionId: '509', success: true },
 		}),
 	);
@@ -429,17 +429,17 @@ test.skip('should not find unfinished executions in recovery process', async () 
 	expect(Object.keys(unfinishedExecutions)).toHaveLength(0);
 });
 
-// eslint-disable-next-line n8n-local-rules/no-skipped-tests
+// eslint-disable-next-line flowease-local-rules/no-skipped-tests
 test.skip('should not find unfinished executions in recovery process', async () => {
 	eventBus.logWriter?.putMessage(
 		new EventMessageWorkflow({
-			eventName: 'n8n.workflow.started',
+			eventName: 'flowease.workflow.started',
 			payload: { executionId: '510', isManual: false },
 		}),
 	);
 	eventBus.logWriter?.putMessage(
 		new EventMessageNode({
-			eventName: 'n8n.node.started',
+			eventName: 'flowease.node.started',
 			payload: { executionId: '510', nodeName: 'Set', workflowName: 'test' },
 		}),
 	);

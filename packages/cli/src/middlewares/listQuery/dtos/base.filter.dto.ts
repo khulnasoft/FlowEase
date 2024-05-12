@@ -3,7 +3,7 @@
 import { isObjectLiteral } from '@/utils';
 import { plainToInstance, instanceToPlain } from 'class-transformer';
 import { validate } from 'class-validator';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 
 export class BaseFilter {
 	protected static async toFilter(rawFilter: string, Filter: typeof BaseFilter) {

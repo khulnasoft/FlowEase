@@ -76,7 +76,7 @@ describe('telemetry', () => {
 
 			settingsStore.setSettings(
 				merge({}, SETTINGS_STORE_DEFAULT_STATE.settings, {
-					n8nMetadata: {
+					floweaseMetadata: {
 						userId: userCloudId,
 					},
 					deployment: {
@@ -104,7 +104,7 @@ describe('telemetry', () => {
 
 			settingsStore.setSettings(
 				merge({}, SETTINGS_STORE_DEFAULT_STATE.settings, {
-					n8nMetadata: {
+					floweaseMetadata: {
 						userId: userCloudId,
 					},
 					deployment: {

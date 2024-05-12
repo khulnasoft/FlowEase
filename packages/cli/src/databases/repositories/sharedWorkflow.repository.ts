@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
-import { DataSource, Repository, In, Not } from '@n8n/typeorm';
-import type { EntityManager, FindManyOptions, FindOptionsWhere } from '@n8n/typeorm';
+import { DataSource, Repository, In, Not } from '@flowease/typeorm';
+import type { EntityManager, FindManyOptions, FindOptionsWhere } from '@flowease/typeorm';
 import { SharedWorkflow, type WorkflowSharingRole } from '../entities/SharedWorkflow';
 import { type User } from '../entities/User';
 import type { Scope } from '@flowease/permissions';

@@ -1,5 +1,5 @@
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
-import { BINARY_ENCODING, NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'flowease-workflow';
+import { BINARY_ENCODING, NodeOperationError } from 'flowease-workflow';
 
 import type { Sheet2JSONOpts, WorkBook, ParsingOptions } from 'xlsx';
 import { read as xlsxRead, readFile as xlsxReadFile, utils as xlsxUtils } from 'xlsx';

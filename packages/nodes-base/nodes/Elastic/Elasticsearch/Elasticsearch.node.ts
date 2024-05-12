@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { jsonParse } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse } from 'flowease-workflow';
 
 import omit from 'lodash/omit';
 import { elasticsearchApiRequest, elasticsearchApiRequestAllItems } from './GenericFunctions';

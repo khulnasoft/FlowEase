@@ -1,5 +1,5 @@
-import type { IDataObject, INodeProperties } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, INodeProperties } from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import type { IZepConfig } from '@langchain/community/vectorstores/zep';
 import { ZepVectorStore } from '@langchain/community/vectorstores/zep';
 import { createVectorStoreNode } from '../shared/createVectorStoreNode';
@@ -57,7 +57,7 @@ export const VectorStoreZep = createVectorStoreNode({
 		],
 		icon: 'file:zep.png',
 		docsUrl:
-			'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstorezep/',
+			'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstorezep/',
 	},
 	sharedFields: [
 		{

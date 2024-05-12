@@ -6,14 +6,14 @@ import type {
 } from '@/Interface';
 import { getNewWorkflow } from '@/api/workflows';
 import { TEMPLATE_CREDENTIAL_SETUP_EXPERIMENT, VIEWS } from '@/constants';
-import type { useRootStore } from '@/stores/n8nRoot.store';
+import type { useRootStore } from '@/stores/floweaseRoot.store';
 import type { PosthogStore } from '@/stores/posthog.store';
 import type { useWorkflowsStore } from '@/stores/workflows.store';
 import { getFixedNodesList } from '@/utils/nodeViewUtils';
 import type { NodeTypeProvider } from '@/utils/nodeTypes/nodeTypeTransforms';
 import type { TemplateCredentialKey } from '@/utils/templates/templateTransforms';
 import { replaceAllTemplateNodeCredentials } from '@/utils/templates/templateTransforms';
-import type { INodeCredentialsDetails } from 'n8n-workflow';
+import type { INodeCredentialsDetails } from 'flowease-workflow';
 import type { RouteLocationRaw, Router } from 'vue-router';
 import type { TemplatesStore } from '@/stores/templates.store';
 import type { NodeTypesStore } from '@/stores/nodeTypes.store';

@@ -4,7 +4,7 @@ import {
 	type INodeTypeDescription,
 	type ITriggerResponse,
 	NodeConnectionType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class ManualChatTrigger implements INodeType {
 	description: INodeTypeDescription = {
@@ -26,7 +26,7 @@ export class ManualChatTrigger implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/n8n-nodes-langchain.chattrigger/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/core-nodes/flowease-nodes-langchain.chattrigger/',
 					},
 				],
 			},

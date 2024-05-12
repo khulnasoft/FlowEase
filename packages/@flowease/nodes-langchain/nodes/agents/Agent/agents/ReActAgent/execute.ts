@@ -3,7 +3,7 @@ import {
 	type INodeExecutionData,
 	NodeConnectionType,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { AgentExecutor, ChatAgent, ZeroShotAgent } from 'langchain/agents';
 import type { BaseLanguageModel } from 'langchain/base_language';

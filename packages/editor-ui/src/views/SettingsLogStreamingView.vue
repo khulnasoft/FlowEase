@@ -2,9 +2,9 @@
 	<div>
 		<div :class="$style.header">
 			<div class="mb-2xl">
-				<n8n-heading size="2xlarge">
+				<flowease-heading size="2xlarge">
 					{{ $locale.baseText(`settings.log-streaming.heading`) }}
-				</n8n-heading>
+				</flowease-heading>
 				<template v-if="environment !== 'production'">
 					<strong class="ml-m">Disable License ({{ environment }})&nbsp;</strong>
 					<el-switch v-model="disableLicense" size="large" data-test-id="disable-license-toggle" />
@@ -13,9 +13,9 @@
 		</div>
 		<template v-if="isLicensed">
 			<div class="mb-l">
-				<n8n-info-tip theme="info" type="note">
+				<flowease-info-tip theme="info" type="note">
 					<span v-html="$locale.baseText('settings.log-streaming.infoText')"></span>
-				</n8n-info-tip>
+				</flowease-info-tip>
 			</div>
 			<template v-if="storeHasItems()">
 				<el-row
@@ -35,30 +35,30 @@
 					</el-col>
 				</el-row>
 				<div class="mt-m text-right">
-					<n8n-button v-if="canManageLogStreaming" size="large" @click="addDestination">
+					<flowease-button v-if="canManageLogStreaming" size="large" @click="addDestination">
 						{{ $locale.baseText(`settings.log-streaming.add`) }}
-					</n8n-button>
+					</flowease-button>
 				</div>
 			</template>
 			<div v-else data-test-id="action-box-licensed">
-				<n8n-action-box
+				<flowease-action-box
 					:button-text="$locale.baseText(`settings.log-streaming.add`)"
 					@click:button="addDestination"
 				>
 					<template #heading>
 						<span v-html="$locale.baseText(`settings.log-streaming.addFirstTitle`)" />
 					</template>
-				</n8n-action-box>
+				</flowease-action-box>
 			</div>
 		</template>
 		<template v-else>
 			<div v-if="$locale.baseText('settings.log-streaming.infoText')" class="mb-l">
-				<n8n-info-tip theme="info" type="note">
+				<flowease-info-tip theme="info" type="note">
 					<span v-html="$locale.baseText('settings.log-streaming.infoText')"></span>
-				</n8n-info-tip>
+				</flowease-info-tip>
 			</div>
 			<div data-test-id="action-box-unlicensed">
-				<n8n-action-box
+				<flowease-action-box
 					:description="$locale.baseText('settings.log-streaming.actionBox.description')"
 					:button-text="$locale.baseText('settings.log-streaming.actionBox.button')"
 					@click:button="goToUpgrade"
@@ -66,7 +66,7 @@
 					<template #heading>
 						<span v-html="$locale.baseText('settings.log-streaming.actionBox.title')" />
 					</template>
-				</n8n-action-box>
+				</flowease-action-box>
 			</div>
 		</template>
 	</div>
@@ -83,8 +83,8 @@ import { useLogStreamingStore } from '@/stores/logStreaming.store';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useUIStore } from '@/stores/ui.store';
 import { LOG_STREAM_MODAL_KEY, EnterpriseEditionFeature } from '@/constants';
-import type { MessageEventBusDestinationOptions } from 'n8n-workflow';
-import { deepCopy, defaultMessageEventBusDestinationOptions } from 'n8n-workflow';
+import type { MessageEventBusDestinationOptions } from 'flowease-workflow';
+import { deepCopy, defaultMessageEventBusDestinationOptions } from 'flowease-workflow';
 import EventDestinationCard from '@/components/SettingsLogStreaming/EventDestinationCard.ee.vue';
 import { createEventBus } from 'flowease-design-system/utils';
 

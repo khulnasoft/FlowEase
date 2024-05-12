@@ -1,4 +1,4 @@
-import type { ExecutionStatus, IDataObject } from 'n8n-workflow';
+import type { ExecutionStatus, IDataObject } from 'flowease-workflow';
 import type { ExecutionFilterType, ExecutionsQueryFilter } from '@/Interface';
 import { isEmpty } from '@/utils/typesUtils';
 

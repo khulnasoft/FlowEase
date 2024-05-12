@@ -6,7 +6,7 @@ import { faker } from '@faker-js/faker';
 import { STORES, VIEWS } from '@/constants';
 import ExecutionsList from '@/components/executions/global/GlobalExecutionsList.vue';
 import type { IWorkflowDb } from '@/Interface';
-import type { ExecutionSummary } from 'n8n-workflow';
+import type { ExecutionSummary } from 'flowease-workflow';
 import { retry, SETTINGS_STORE_DEFAULT_STATE, waitAllPromises } from '@/__tests__/utils';
 import { createComponentRenderer } from '@/__tests__/render';
 import { waitFor } from '@testing-library/vue';

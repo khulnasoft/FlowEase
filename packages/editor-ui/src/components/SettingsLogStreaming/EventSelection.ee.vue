@@ -14,32 +14,32 @@
 				@change="onCheckboxChecked(group.name, $event)"
 			>
 				<strong>{{ groupLabelName(group.name) }}</strong>
-				<n8n-tooltip
+				<flowease-tooltip
 					v-if="groupLabelInfo(group.name)"
 					placement="top"
 					:popper-class="$style.tooltipPopper"
 					class="ml-xs"
 				>
-					<n8n-icon icon="question-circle" size="small" class="ml-4xs" />
+					<flowease-icon icon="question-circle" size="small" class="ml-4xs" />
 					<template #content>
 						{{ groupLabelInfo(group.name) }}
 					</template>
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</Checkbox>
 			<Checkbox
-				v-if="group.name === 'n8n.audit'"
+				v-if="group.name === 'flowease.audit'"
 				:model-value="logStreamingStore.items[destinationId]?.destination.anonymizeAuditMessages"
 				:disabled="readonly"
 				@update:model-value="onInput"
 				@change="anonymizeAuditMessagesChanged"
 			>
 				{{ $locale.baseText('settings.log-streaming.tab.events.anonymize') }}
-				<n8n-tooltip placement="top" :popper-class="$style.tooltipPopper">
-					<n8n-icon icon="question-circle" size="small" class="ml-4xs" />
+				<flowease-tooltip placement="top" :popper-class="$style.tooltipPopper">
+					<flowease-icon icon="question-circle" size="small" class="ml-4xs" />
 					<template #content>
 						{{ $locale.baseText('settings.log-streaming.tab.events.anonymize.info') }}
 					</template>
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</Checkbox>
 			<!-- </template> -->
 			<ul :class="$style.eventList">
@@ -56,11 +56,11 @@
 						@change="onCheckboxChecked(event.name, $event)"
 					>
 						{{ event.label }}
-						<n8n-tooltip placement="top" :popper-class="$style.tooltipPopper">
+						<flowease-tooltip placement="top" :popper-class="$style.tooltipPopper">
 							<template #content>
 								{{ event.name }}
 							</template>
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</Checkbox>
 				</li>
 			</ul>

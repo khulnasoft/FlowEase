@@ -187,7 +187,7 @@ export class MeController {
 	 */
 	@Post('/api-key')
 	async createAPIKey(req: AuthenticatedRequest) {
-		const apiKey = `n8n_api_${randomBytes(40).toString('hex')}`;
+		const apiKey = `flowease_api_${randomBytes(40).toString('hex')}`;
 
 		await this.userService.update(req.user.id, { apiKey });
 

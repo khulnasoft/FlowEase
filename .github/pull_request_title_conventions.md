@@ -47,12 +47,12 @@ If the prefix is `feat`, `fix` or `perf`, it will appear in the changelog. H
 The scope should specify the place of the commit change as long as the commit clearly addresses one of the following supported scopes. (Otherwise, omit the scope!)
 
 - `API` - changes to the *public* API
-- `core` - changes to the core / private API / backend of n8n
+- `core` - changes to the core / private API / backend of flowease
 - `editor` - changes to the Editor UI
 - `* Node` - changes to a specific node or trigger node (”`*`” to be replaced with the node name, not its display name), e.g.
     - mattermost → Mattermost Node
     - microsoftToDo  → Microsoft To Do Node
-    - n8n → n8n Node
+    - flowease → flowease Node
 
 ### **Summary**
 
@@ -61,7 +61,7 @@ The summary contains succinct description of the change:
 - use the imperative, present tense: "change" not "changed" nor "changes"
 - capitalize the first letter
 - *no* dot (.) at the end
-- do *not* include Linear ticket IDs etc. (e.g. N8N-1234)
+- do *not* include Linear ticket IDs etc. (e.g. FLOWEASE-1234)
 - suffix with “(no-changelog)” for commits / PRs that should not get mentioned in the changelog.
 
 ### **Body (optional)**
@@ -98,7 +98,7 @@ A Breaking Change section should start with the phrase "`BREAKING CHANGE:` " fol
 > 
 > This makes locating breaking changes easier when just skimming through commit messages.
 
-> 💡 The breaking changes must also be added to the [packages/cli/BREAKING-CHANGES.md](https://github.com/khulnasoft/flowease/blob/master/packages/cli/BREAKING-CHANGES.md) file located in the n8n repository.
+> 💡 The breaking changes must also be added to the [packages/cli/BREAKING-CHANGES.md](https://github.com/khulnasoft/flowease/blob/master/packages/cli/BREAKING-CHANGES.md) file located in the flowease repository.
 
 Similarly, a Deprecation section should start with "`DEPRECATED:` " followed by a short description of what is deprecated, a blank line, and a detailed description of the deprecation that also mentions the recommended update path.
 

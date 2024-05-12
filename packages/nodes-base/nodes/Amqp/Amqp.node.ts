@@ -11,8 +11,8 @@ import type {
 	INodeCredentialTestResult,
 	ICredentialsDecrypted,
 	ICredentialDataDecryptedObject,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 export class Amqp implements INodeType {
 	description: INodeTypeDescription = {

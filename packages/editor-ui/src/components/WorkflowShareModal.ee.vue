@@ -10,29 +10,29 @@
 	>
 		<template #content>
 			<div v-if="!isSharingEnabled" :class="$style.container">
-				<n8n-text>
+				<flowease-text>
 					{{
 						$locale.baseText(
 							uiStore.contextBasedTranslationKeys.workflows.sharing.unavailable.description.modal,
 						)
 					}}
-				</n8n-text>
+				</flowease-text>
 			</div>
 			<div v-else-if="isDefaultUser" :class="$style.container">
-				<n8n-text>
+				<flowease-text>
 					{{ $locale.baseText('workflows.shareModal.isDefaultUser.description') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 			<div v-else :class="$style.container">
-				<n8n-info-tip v-if="!workflowPermissions.updateSharing" :bold="false" class="mb-s">
+				<flowease-info-tip v-if="!workflowPermissions.updateSharing" :bold="false" class="mb-s">
 					{{
 						$locale.baseText('workflows.shareModal.info.sharee', {
 							interpolate: { workflowOwnerName },
 						})
 					}}
-				</n8n-info-tip>
+				</flowease-info-tip>
 				<enterprise-edition :features="[EnterpriseEditionFeature.Sharing]" :class="$style.content">
-					<n8n-user-select
+					<flowease-user-select
 						v-if="workflowPermissions.updateSharing"
 						class="mb-s"
 						size="large"
@@ -43,10 +43,10 @@
 						@update:model-value="onAddSharee"
 					>
 						<template #prefix>
-							<n8n-icon icon="search" />
+							<flowease-icon icon="search" />
 						</template>
-					</n8n-user-select>
-					<n8n-users-list
+					</flowease-user-select>
+					<flowease-users-list
 						:actions="[]"
 						:users="sharedWithList"
 						:current-user-id="currentUser.id"
@@ -55,23 +55,23 @@
 						:class="$style.usersList"
 					>
 						<template #actions="{ user }">
-							<n8n-select
+							<flowease-select
 								:class="$style.roleSelect"
 								model-value="editor"
 								size="small"
 								@update:model-value="onRoleAction(user, $event)"
 							>
-								<n8n-option :label="$locale.baseText('workflows.roles.editor')" value="editor" />
-								<n8n-option :class="$style.roleSelectRemoveOption" value="remove">
-									<n8n-text color="danger">{{
+								<flowease-option :label="$locale.baseText('workflows.roles.editor')" value="editor" />
+								<flowease-option :class="$style.roleSelectRemoveOption" value="remove">
+									<flowease-text color="danger">{{
 										$locale.baseText('workflows.shareModal.list.delete')
-									}}</n8n-text>
-								</n8n-option>
-							</n8n-select>
+									}}</flowease-text>
+								</flowease-option>
+							</flowease-select>
 						</template>
-					</n8n-users-list>
+					</flowease-users-list>
 					<template #fallback>
-						<n8n-text>
+						<flowease-text>
 							<i18n-t
 								:keypath="
 									uiStore.contextBasedTranslationKeys.workflows.sharing.unavailable.description
@@ -80,7 +80,7 @@
 							>
 								<template #action />
 							</i18n-t>
-						</n8n-text>
+						</flowease-text>
 					</template>
 				</enterprise-edition>
 			</div>
@@ -88,28 +88,28 @@
 
 		<template #footer>
 			<div v-if="!isSharingEnabled" :class="$style.actionButtons">
-				<n8n-button @click="goToUpgrade">
+				<flowease-button @click="goToUpgrade">
 					{{
 						$locale.baseText(
 							uiStore.contextBasedTranslationKeys.workflows.sharing.unavailable.button,
 						)
 					}}
-				</n8n-button>
+				</flowease-button>
 			</div>
 			<div v-else-if="isDefaultUser" :class="$style.actionButtons">
-				<n8n-button @click="goToUsersSettings">
+				<flowease-button @click="goToUsersSettings">
 					{{ $locale.baseText('workflows.shareModal.isDefaultUser.button') }}
-				</n8n-button>
+				</flowease-button>
 			</div>
 			<enterprise-edition
 				v-else
 				:features="[EnterpriseEditionFeature.Sharing]"
 				:class="$style.actionButtons"
 			>
-				<n8n-text v-show="isDirty" color="text-light" size="small" class="mr-xs">
+				<flowease-text v-show="isDirty" color="text-light" size="small" class="mr-xs">
 					{{ $locale.baseText('workflows.shareModal.changesHint') }}
-				</n8n-text>
-				<n8n-button
+				</flowease-text>
+				<flowease-button
 					v-show="workflowPermissions.updateSharing"
 					:loading="loading"
 					:disabled="!isDirty"
@@ -117,7 +117,7 @@
 					@click="onSave"
 				>
 					{{ $locale.baseText('workflows.shareModal.save') }}
-				</n8n-button>
+				</flowease-button>
 			</enterprise-edition>
 		</template>
 	</Modal>
@@ -147,7 +147,7 @@ import { useUIStore } from '@/stores/ui.store';
 import { useUsersStore } from '@/stores/users.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { useWorkflowsEEStore } from '@/stores/workflows.ee.store';
-import type { ITelemetryTrackProperties } from 'n8n-workflow';
+import type { ITelemetryTrackProperties } from 'flowease-workflow';
 import { useUsageStore } from '@/stores/usage.store';
 import type { BaseTextKey } from '@/plugins/i18n';
 import { isNavigationFailure } from 'vue-router';

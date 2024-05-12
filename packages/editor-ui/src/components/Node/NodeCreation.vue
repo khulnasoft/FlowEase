@@ -111,7 +111,7 @@ function nodeTypeSelected(nodeTypes: string[]) {
 					:shortcut="{ keys: ['Tab'] }"
 					placement="left"
 				>
-					<n8n-icon-button
+					<flowease-icon-button
 						size="xlarge"
 						icon="plus"
 						type="tertiary"
@@ -129,7 +129,7 @@ function nodeTypeSelected(nodeTypes: string[]) {
 						:shortcut="{ keys: ['s'], shiftKey: true }"
 						placement="left"
 					>
-						<n8n-icon-button type="tertiary" :icon="['far', 'note-sticky']" />
+						<flowease-icon-button type="tertiary" :icon="['far', 'note-sticky']" />
 					</KeyboardShortcutTooltip>
 				</div>
 			</div>

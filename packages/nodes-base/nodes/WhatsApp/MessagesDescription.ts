@@ -1,5 +1,5 @@
 import countryCodes from 'currency-codes';
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import {
 	cleanPhoneNumber,
 	componentsRequest,
@@ -789,7 +789,7 @@ export const messageTypeFields: INodeProperties[] = [
 		name: 'mediaPath',
 		type: 'options',
 		default: 'useMediaLink',
-		description: 'Use a link, an ID, or n8n to upload an audio file',
+		description: 'Use a link, an ID, or flowease to upload an audio file',
 		options: [
 			{
 				name: 'Link',
@@ -804,8 +804,8 @@ export const messageTypeFields: INodeProperties[] = [
 			},
 			{
 				// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-				name: 'n8n',
-				value: 'useMedian8n',
+				name: 'flowease',
+				value: 'useMediaflowease',
 				description: 'Use binary data passed into this node',
 			},
 		],
@@ -821,7 +821,7 @@ export const messageTypeFields: INodeProperties[] = [
 		name: 'mediaPath',
 		type: 'options',
 		default: 'useMediaLink',
-		description: 'Use a link, an ID, or n8n to upload a document',
+		description: 'Use a link, an ID, or flowease to upload a document',
 		options: [
 			{
 				name: 'Link',
@@ -836,9 +836,9 @@ export const messageTypeFields: INodeProperties[] = [
 			},
 			{
 				// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-				name: 'n8n',
-				value: 'useMedian8n',
-				description: 'Upload a binary file on the item being processed in n8n',
+				name: 'flowease',
+				value: 'useMediaflowease',
+				description: 'Upload a binary file on the item being processed in flowease',
 			},
 		],
 		displayOptions: {
@@ -853,7 +853,7 @@ export const messageTypeFields: INodeProperties[] = [
 		name: 'mediaPath',
 		type: 'options',
 		default: 'useMediaLink',
-		description: 'Use a link, an ID, or n8n to upload an image',
+		description: 'Use a link, an ID, or flowease to upload an image',
 		options: [
 			{
 				name: 'Link',
@@ -868,9 +868,9 @@ export const messageTypeFields: INodeProperties[] = [
 			},
 			{
 				// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-				name: 'n8n',
-				value: 'useMedian8n',
-				description: 'Upload a binary file on the item being processed in n8n',
+				name: 'flowease',
+				value: 'useMediaflowease',
+				description: 'Upload a binary file on the item being processed in flowease',
 			},
 		],
 		displayOptions: {
@@ -885,7 +885,7 @@ export const messageTypeFields: INodeProperties[] = [
 		name: 'mediaPath',
 		type: 'options',
 		default: 'useMediaLink',
-		description: 'Use a link, an ID, or n8n to upload a video',
+		description: 'Use a link, an ID, or flowease to upload a video',
 		options: [
 			{
 				name: 'Link',
@@ -900,9 +900,9 @@ export const messageTypeFields: INodeProperties[] = [
 			},
 			{
 				// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-				name: 'n8n',
-				value: 'useMedian8n',
-				description: 'Upload a binary file on the item being processed in n8n',
+				name: 'flowease',
+				value: 'useMediaflowease',
+				description: 'Upload a binary file on the item being processed in flowease',
 			},
 		],
 		displayOptions: {
@@ -963,7 +963,7 @@ export const messageTypeFields: INodeProperties[] = [
 			show: {
 				operation: ['send'],
 				messageType: mediaTypes,
-				mediaPath: ['useMedian8n'],
+				mediaPath: ['useMediaflowease'],
 			},
 		},
 		routing: {

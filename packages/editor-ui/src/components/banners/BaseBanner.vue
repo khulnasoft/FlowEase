@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useUIStore } from '@/stores/ui.store';
 import { computed, useSlots } from 'vue';
-import type { BannerName } from 'n8n-workflow';
+import type { BannerName } from 'flowease-workflow';
 
 interface Props {
 	name: BannerName;
@@ -30,7 +30,7 @@ async function onCloseClick() {
 }
 </script>
 <template>
-	<n8n-callout
+	<flowease-callout
 		:theme="props.theme"
 		:icon="props.customIcon"
 		icon-size="medium"
@@ -43,7 +43,7 @@ async function onCloseClick() {
 		<template #trailingContent>
 			<div :class="$style.trailingContent">
 				<slot name="trailingContent" />
-				<n8n-icon
+				<flowease-icon
 					v-if="dismissible"
 					size="small"
 					icon="times"
@@ -54,7 +54,7 @@ async function onCloseClick() {
 				/>
 			</div>
 		</template>
-	</n8n-callout>
+	</flowease-callout>
 </template>
 
 <style lang="scss" module>

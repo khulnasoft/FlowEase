@@ -9,8 +9,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { BINARY_ENCODING, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { BINARY_ENCODING, NodeOperationError } from 'flowease-workflow';
 
 import { file as tmpFile } from 'tmp-promise';
 
@@ -395,7 +395,7 @@ export class Ssh implements INodeType {
 								i,
 							);
 
-							const { path } = await tmpFile({ prefix: 'n8n-ssh-' });
+							const { path } = await tmpFile({ prefix: 'flowease-ssh-' });
 							temporaryFiles.push(path);
 
 							await ssh.getFile(path, parameterPath);
@@ -443,7 +443,7 @@ export class Ssh implements INodeType {
 								uploadData = Buffer.from(binaryData.data, BINARY_ENCODING);
 							}
 
-							const { path } = await tmpFile({ prefix: 'n8n-ssh-' });
+							const { path } = await tmpFile({ prefix: 'flowease-ssh-' });
 							temporaryFiles.push(path);
 							await writeFile(path, uploadData);
 

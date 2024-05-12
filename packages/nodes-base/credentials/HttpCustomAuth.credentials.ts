@@ -1,6 +1,6 @@
 /* eslint-disable flowease-nodes-base/cred-class-field-name-unsuffixed */
 /* eslint-disable flowease-nodes-base/cred-class-name-unsuffixed */
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'flowease-workflow';
 
 export class HttpCustomAuth implements ICredentialType {
 	name = 'httpCustomAuth';

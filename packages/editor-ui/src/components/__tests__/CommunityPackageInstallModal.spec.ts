@@ -11,7 +11,7 @@ const renderComponent = createComponentRenderer(CommunityPackageInstallModal, {
 	},
 	data() {
 		return {
-			packageName: 'n8n-nodes-hello',
+			packageName: 'flowease-nodes-hello',
 		};
 	},
 	pinia: createTestingPinia({

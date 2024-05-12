@@ -7,8 +7,8 @@ import type {
 	INodeTypeDescription,
 	INodeTypeBaseDescription,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { oldVersionNotice } from '../../../utils/descriptions';
 import { generatePairedItemData } from '../../../utils/utilities';

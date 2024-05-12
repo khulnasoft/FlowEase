@@ -14,7 +14,7 @@ import type {
 	ICredentialDataDecryptedObject,
 	ICredentialsDecrypted,
 	IHttpRequestOptions,
-	IN8nHttpFullResponse,
+	IFloweaseHttpFullResponse,
 	INode,
 	INodeExecuteFunctions,
 	INodeExecutionData,
@@ -31,7 +31,7 @@ import type {
 	IDataObject,
 	IExecuteData,
 	IExecuteSingleFunctions,
-	IN8nRequestOperations,
+	IFloweaseRequestOperations,
 	INodeProperties,
 	INodePropertyCollection,
 	NodeParameterValueType,
@@ -282,7 +282,7 @@ export class RoutingNode {
 		executeSingleFunctions: IExecuteSingleFunctions,
 		action: PostReceiveAction,
 		inputData: INodeExecutionData[],
-		responseData: IN8nHttpFullResponse,
+		responseData: IFloweaseHttpFullResponse,
 		parameterValue: string | IDataObject | undefined,
 		itemIndex: number,
 		runIndex: number,
@@ -451,7 +451,7 @@ export class RoutingNode {
 
 	async postProcessResponseData(
 		executeSingleFunctions: IExecuteSingleFunctions,
-		responseData: IN8nHttpFullResponse,
+		responseData: IFloweaseHttpFullResponse,
 		requestData: DeclarativeRestApiSettings.ResultOptions,
 		itemIndex: number,
 		runIndex: number,
@@ -499,8 +499,8 @@ export class RoutingNode {
 		requestData: DeclarativeRestApiSettings.ResultOptions,
 		credentialType?: string,
 		credentialsDecrypted?: ICredentialsDecrypted,
-	): Promise<IN8nHttpFullResponse> {
-		let responseData: IN8nHttpFullResponse;
+	): Promise<IFloweaseHttpFullResponse> {
+		let responseData: IFloweaseHttpFullResponse;
 		requestData.options.returnFullResponse = true;
 		if (credentialType) {
 			responseData = (await executeSingleFunctions.helpers.httpRequestWithAuthentication.call(
@@ -508,11 +508,11 @@ export class RoutingNode {
 				credentialType,
 				requestData.options as IHttpRequestOptions,
 				{ credentialsDecrypted },
-			)) as IN8nHttpFullResponse;
+			)) as IFloweaseHttpFullResponse;
 		} else {
 			responseData = (await executeSingleFunctions.helpers.httpRequest(
 				requestData.options as IHttpRequestOptions,
-			)) as IN8nHttpFullResponse;
+			)) as IFloweaseHttpFullResponse;
 		}
 
 		return responseData;
@@ -524,7 +524,7 @@ export class RoutingNode {
 		itemIndex: number,
 		runIndex: number,
 		credentialType?: string,
-		requestOperations?: IN8nRequestOperations,
+		requestOperations?: IFloweaseRequestOperations,
 		credentialsDecrypted?: ICredentialsDecrypted,
 	): Promise<INodeExecutionData[]> {
 		let responseData: INodeExecutionData[];
@@ -574,14 +574,14 @@ export class RoutingNode {
 
 				// Different predefined pagination types
 				if (requestOperations.pagination.type === 'generic') {
-					let tempResponseData: IN8nHttpFullResponse;
+					let tempResponseData: IFloweaseHttpFullResponse;
 					let tempResponseItems: INodeExecutionData[];
 					let makeAdditionalRequest: boolean;
 					let paginateRequestData: IHttpRequestOptions;
 
 					const additionalKeys = {
 						$request: requestData.options,
-						$response: {} as IN8nHttpFullResponse,
+						$response: {} as IFloweaseHttpFullResponse,
 						$version: this.node.typeVersion,
 					};
 

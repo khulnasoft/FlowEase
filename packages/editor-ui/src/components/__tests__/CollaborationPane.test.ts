@@ -110,7 +110,7 @@ describe('CollaborationPane', () => {
 	it('should always render owner first in the list', async () => {
 		const { getByTestId } = renderComponent();
 		await waitAllPromises();
-		const firstAvatar = getByTestId('user-stack-avatars').querySelector('.n8n-avatar');
+		const firstAvatar = getByTestId('user-stack-avatars').querySelector('.flowease-avatar');
 		// Owner is second in the store bur shourld be rendered first
 		expect(firstAvatar).toHaveAttribute('data-test-id', `user-stack-avatar-${OWNER_USER.id}`);
 	});

@@ -7,8 +7,8 @@ import type {
 	IHttpRequestOptions,
 	INodeExecutionData,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
-import { ApplicationError, deepCopy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ApplicationError, deepCopy } from 'flowease-workflow';
 
 import type { IRequestBody } from './types';
 

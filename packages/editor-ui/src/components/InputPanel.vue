@@ -26,7 +26,7 @@
 	>
 		<template #header>
 			<div :class="$style.titleSection">
-				<n8n-select
+				<flowease-select
 					v-if="parentNodes.length"
 					teleported
 					size="small"
@@ -40,7 +40,7 @@
 					<template #prepend>
 						<span :class="$style.title">{{ $locale.baseText('ndv.input') }}</span>
 					</template>
-					<n8n-option
+					<flowease-option
 						v-for="node of parentNodes"
 						:key="node.name"
 						:value="node.name"
@@ -55,10 +55,10 @@
 						<span v-else>{{
 							$locale.baseText('ndv.input.nodeDistance', { adjustToNumber: node.depth })
 						}}</span>
-					</n8n-option>
-				</n8n-select>
+					</flowease-option>
+				</flowease-select>
 				<span v-else :class="$style.title">{{ $locale.baseText('ndv.input') }}</span>
-				<n8n-radio-buttons
+				<flowease-radio-buttons
 					v-if="isActiveNodeConfig && !readOnly"
 					:options="inputModes"
 					:model-value="inputMode"
@@ -73,7 +73,7 @@
 				-->
 			<component :is="'style'">button.linkRun { display: none }</component>
 			<div :class="$style.mappedNode">
-				<n8n-select
+				<flowease-select
 					:model-value="mappedNode"
 					size="small"
 					teleported
@@ -81,13 +81,13 @@
 					@click.stop
 				>
 					<template #prepend>{{ $locale.baseText('ndv.input.previousNode') }}</template>
-					<n8n-option
+					<flowease-option
 						v-for="nodeName in rootNodesParents"
 						:key="nodeName"
 						:label="nodeName"
 						:value="nodeName"
 					/>
-				</n8n-select>
+				</flowease-select>
 			</div>
 		</template>
 		<template #node-not-run>
@@ -95,10 +95,10 @@
 				v-if="(isActiveNodeConfig && rootNode) || parentNodes.length"
 				:class="$style.noOutputData"
 			>
-				<n8n-text tag="div" :bold="true" color="text-dark" size="large">{{
+				<flowease-text tag="div" :bold="true" color="text-dark" size="large">{{
 					$locale.baseText('ndv.input.noOutputData.title')
-				}}</n8n-text>
-				<n8n-tooltip v-if="!readOnly" :visible="showDraggableHint && showDraggableHintWithDelay">
+				}}</flowease-text>
+				<flowease-tooltip v-if="!readOnly" :visible="showDraggableHint && showDraggableHintWithDelay">
 					<template #content>
 						<div
 							v-html="
@@ -118,19 +118,19 @@
 						data-test-id="execute-previous-node"
 						@execute="onNodeExecute"
 					/>
-				</n8n-tooltip>
-				<n8n-text v-if="!readOnly" tag="div" size="small">
+				</flowease-tooltip>
+				<flowease-text v-if="!readOnly" tag="div" size="small">
 					{{ $locale.baseText('ndv.input.noOutputData.hint') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 			<div v-else :class="$style.notConnected">
 				<div>
 					<WireMeUp />
 				</div>
-				<n8n-text tag="div" :bold="true" color="text-dark" size="large">{{
+				<flowease-text tag="div" :bold="true" color="text-dark" size="large">{{
 					$locale.baseText('ndv.input.notConnected.title')
-				}}</n8n-text>
-				<n8n-text tag="div">
+				}}</flowease-text>
+				<flowease-text tag="div">
 					{{ $locale.baseText('ndv.input.notConnected.message') }}
 					<a
 						href="https://docs.flowease.khulnasoft.com/workflows/connections/"
@@ -139,24 +139,24 @@
 					>
 						{{ $locale.baseText('ndv.input.notConnected.learnMore') }}
 					</a>
-				</n8n-text>
+				</flowease-text>
 			</div>
 		</template>
 
 		<template #no-output-data>
-			<n8n-text tag="div" :bold="true" color="text-dark" size="large">{{
+			<flowease-text tag="div" :bold="true" color="text-dark" size="large">{{
 				$locale.baseText('ndv.input.noOutputData')
-			}}</n8n-text>
+			}}</flowease-text>
 		</template>
 
 		<template #recovered-artificial-output-data>
 			<div :class="$style.recoveredOutputData">
-				<n8n-text tag="div" :bold="true" color="text-dark" size="large">{{
+				<flowease-text tag="div" :bold="true" color="text-dark" size="large">{{
 					$locale.baseText('executionDetails.executionFailed.recoveredNodeTitle')
-				}}</n8n-text>
-				<n8n-text>
+				}}</flowease-text>
+				<flowease-text>
 					{{ $locale.baseText('executionDetails.executionFailed.recoveredNodeMessage') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 		</template>
 	</RunData>
@@ -166,14 +166,14 @@
 import { defineComponent } from 'vue';
 import { mapStores } from 'pinia';
 import type { INodeUi } from '@/Interface';
-import { NodeHelpers, NodeConnectionType } from 'n8n-workflow';
+import { NodeHelpers, NodeConnectionType } from 'flowease-workflow';
 import type {
 	ConnectionTypes,
 	IConnectedNode,
 	INodeOutputConfiguration,
 	INodeTypeDescription,
 	Workflow,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import RunData from './RunData.vue';
 import NodeExecuteButton from './NodeExecuteButton.vue';
 import WireMeUp from './WireMeUp.vue';

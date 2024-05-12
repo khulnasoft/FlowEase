@@ -1,12 +1,12 @@
 /* eslint-disable flowease-nodes-base/node-dirname-against-convention */
-import { NodeConnectionType } from 'n8n-workflow';
+import { NodeConnectionType } from 'flowease-workflow';
 import type {
 	IExecuteFunctions,
 	INodeType,
 	INodeTypeDescription,
 	SupplyData,
 	ILoadOptionsFunctions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { OpenAI, type ClientOptions } from '@langchain/openai';
 import { logWrapper } from '../../../utils/logWrapper';
@@ -43,7 +43,7 @@ export class LmOpenAi implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmopenai/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.lmopenai/',
 					},
 				],
 			},

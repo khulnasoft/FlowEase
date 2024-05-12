@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, IWorkflowDataProxyData } from 'n8n-workflow';
+import type { IExecuteFunctions, IWorkflowDataProxyData } from 'flowease-workflow';
 import { mock } from 'jest-mock-extended';
 import { normalizeItems } from 'flowease-core';
 import type { z } from 'zod';

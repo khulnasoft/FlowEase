@@ -5,8 +5,8 @@ import type {
 	IDataObject,
 	IExecuteFunctions,
 	INodeCredentialTestResult,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { type RedisClientOptions, createClient } from 'redis';
 export type RedisClientType = ReturnType<typeof createClient>;

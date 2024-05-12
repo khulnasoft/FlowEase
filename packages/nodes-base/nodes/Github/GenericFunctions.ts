@@ -6,8 +6,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError, NodeOperationError } from 'flowease-workflow';
 
 /**
  * Make an API request to Github
@@ -24,7 +24,7 @@ export async function githubApiRequest(
 	const options: IRequestOptions = {
 		method,
 		headers: {
-			'User-Agent': 'n8n',
+			'User-Agent': 'flowease',
 		},
 		body,
 		qs: query,

@@ -5,7 +5,7 @@ import {
 	type INodeListSearchItems,
 	type INodeListSearchResult,
 	sleep,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { microsoftApiRequest } from '../transport';
 import { filterSortSearchListItems } from '../helpers/utils';
 

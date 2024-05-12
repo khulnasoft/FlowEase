@@ -1,12 +1,12 @@
 import type { Readable } from 'stream';
 
-import { BINARY_ENCODING } from 'n8n-workflow';
+import { BINARY_ENCODING } from 'flowease-workflow';
 import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class WriteBinaryFile implements INodeType {
 	description: INodeTypeDescription = {

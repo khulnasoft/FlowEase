@@ -1,10 +1,10 @@
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 import type {
 	ICredentialDataDecryptedObject,
 	ICredentialType,
 	IHttpRequestOptions,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class CustomerIoApi implements ICredentialType {
 	name = 'customerIoApi';

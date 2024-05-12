@@ -6,7 +6,7 @@ import type {
 	IHttpRequestMethods,
 	IHttpRequestOptions,
 	INodePropertyOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import get from 'lodash/get';
 

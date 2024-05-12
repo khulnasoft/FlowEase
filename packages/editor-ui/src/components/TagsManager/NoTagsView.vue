@@ -4,15 +4,15 @@
 			<div class="icon">🗄️</div>
 			<div>
 				<div class="mb-s">
-					<n8n-heading size="large">
+					<flowease-heading size="large">
 						{{ $locale.baseText('noTagsView.readyToOrganizeYourWorkflows') }}
-					</n8n-heading>
+					</flowease-heading>
 				</div>
 				<div class="description">
 					{{ $locale.baseText('noTagsView.withWorkflowTagsYouReFree') }}
 				</div>
 			</div>
-			<n8n-button label="Create a tag" size="large" @click="$emit('enableCreate')" />
+			<flowease-button label="Create a tag" size="large" @click="$emit('enableCreate')" />
 		</el-col>
 	</div>
 </template>

@@ -6,7 +6,7 @@ import { validate } from 'class-validator';
 import { rm as fsRm } from 'fs/promises';
 import { generateSshKeyPair, isSourceControlLicensed } from './sourceControlHelper.ee';
 import { Cipher, InstanceSettings } from 'flowease-core';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 import {
 	SOURCE_CONTROL_SSH_FOLDER,
 	SOURCE_CONTROL_GIT_FOLDER,
@@ -34,8 +34,8 @@ export class SourceControlPreferencesService {
 		private readonly logger: Logger,
 		private readonly cipher: Cipher,
 	) {
-		this.sshFolder = path.join(instanceSettings.n8nFolder, SOURCE_CONTROL_SSH_FOLDER);
-		this.gitFolder = path.join(instanceSettings.n8nFolder, SOURCE_CONTROL_GIT_FOLDER);
+		this.sshFolder = path.join(instanceSettings.floweaseFolder, SOURCE_CONTROL_SSH_FOLDER);
+		this.gitFolder = path.join(instanceSettings.floweaseFolder, SOURCE_CONTROL_GIT_FOLDER);
 		this.sshKeyName = path.join(this.sshFolder, SOURCE_CONTROL_SSH_KEY_NAME);
 	}
 
@@ -93,7 +93,7 @@ export class SourceControlPreferencesService {
 	async getPrivateKeyPath() {
 		const dbPrivateKey = await this.getPrivateKeyFromDatabase();
 
-		const tempFilePath = path.join(this.instanceSettings.n8nFolder, 'ssh_private_key_temp');
+		const tempFilePath = path.join(this.instanceSettings.floweaseFolder, 'ssh_private_key_temp');
 
 		await writeFile(tempFilePath, dbPrivateKey);
 

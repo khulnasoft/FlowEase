@@ -4,8 +4,8 @@ import express from 'express';
 import http from 'http';
 import type PCancelable from 'p-cancelable';
 import { WorkflowExecute } from 'flowease-core';
-import type { ExecutionStatus, IExecuteResponsePromiseData, INodeTypes, IRun } from 'n8n-workflow';
-import { Workflow, sleep, ApplicationError } from 'n8n-workflow';
+import type { ExecutionStatus, IExecuteResponsePromiseData, INodeTypes, IRun } from 'flowease-workflow';
+import { Workflow, sleep, ApplicationError } from 'flowease-workflow';
 
 import * as Db from '@/Db';
 import * as ResponseHelper from '@/ResponseHelper';
@@ -14,7 +14,7 @@ import * as WorkflowExecuteAdditionalData from '@/WorkflowExecuteAdditionalData'
 import config from '@/config';
 import type { Job, JobId, JobResponse, WebhookResponse } from '@/Queue';
 import { Queue } from '@/Queue';
-import { N8N_VERSION } from '@/constants';
+import { FLOWEASE_VERSION } from '@/constants';
 import { ExecutionRepository } from '@db/repositories/execution.repository';
 import { WorkflowRepository } from '@db/repositories/workflow.repository';
 import { OwnershipService } from '@/services/ownership.service';
@@ -32,9 +32,9 @@ import { BaseCommand } from './BaseCommand';
 import { MaxStalledCountError } from '@/errors/max-stalled-count.error';
 
 export class Worker extends BaseCommand {
-	static description = '\nStarts a n8n worker';
+	static description = '\nStarts a flowease worker';
 
-	static examples = ['$ n8n worker --concurrency=5'];
+	static examples = ['$ flowease worker --concurrency=5'];
 
 	static flags = {
 		help: Flags.help({ char: 'h' }),
@@ -57,18 +57,18 @@ export class Worker extends BaseCommand {
 	redisSubscriber: RedisServicePubSubSubscriber;
 
 	/**
-	 * Stop n8n in a graceful way.
+	 * Stop flowease in a graceful way.
 	 * Make for example sure that all the webhooks from third party services
 	 * get removed.
 	 */
 	async stopProcess() {
-		this.logger.info('Stopping n8n...');
+		this.logger.info('Stopping flowease...');
 
 		// Stop accepting new jobs
 		await Worker.jobQueue.pause(true);
 
 		try {
-			await this.externalHooks?.run('n8n.stop', []);
+			await this.externalHooks?.run('flowease.stop', []);
 
 			const hardStopTime = Date.now() + this.gracefulShutdownTimeoutInS;
 
@@ -87,7 +87,7 @@ export class Worker extends BaseCommand {
 				await sleep(500);
 			}
 		} catch (error) {
-			await this.exitWithCrash('There was an error shutting down n8n.', error);
+			await this.exitWithCrash('There was an error shutting down flowease.', error);
 		}
 
 		await this.exitSuccessFully();
@@ -235,9 +235,9 @@ export class Worker extends BaseCommand {
 	constructor(argv: string[], cmdConfig: Config) {
 		super(argv, cmdConfig);
 
-		if (!process.env.N8N_ENCRYPTION_KEY) {
+		if (!process.env.FLOWEASE_ENCRYPTION_KEY) {
 			throw new ApplicationError(
-				'Missing encryption key. Worker started without the required N8N_ENCRYPTION_KEY env var. More information: https://docs.flowease.khulnasoft.com/hosting/environment-variables/configuration-methods/#encryption-key',
+				'Missing encryption key. Worker started without the required FLOWEASE_ENCRYPTION_KEY env var. More information: https://docs.flowease.khulnasoft.com/hosting/environment-variables/configuration-methods/#encryption-key',
 			);
 		}
 
@@ -251,12 +251,12 @@ export class Worker extends BaseCommand {
 			this.gracefulShutdownTimeoutInS =
 				parseInt(QUEUE_WORKER_TIMEOUT, 10) || config.default('queue.bull.gracefulShutdownTimeout');
 			this.logger.warn(
-				'QUEUE_WORKER_TIMEOUT has been deprecated. Rename it to N8N_GRACEFUL_SHUTDOWN_TIMEOUT.',
+				'QUEUE_WORKER_TIMEOUT has been deprecated. Rename it to FLOWEASE_GRACEFUL_SHUTDOWN_TIMEOUT.',
 			);
 		}
 		await this.initCrashJournal();
 
-		this.logger.debug('Starting n8n worker...');
+		this.logger.debug('Starting flowease worker...');
 		this.logger.debug(`Queue mode id: ${this.queueModeId}`);
 
 		await super.init();
@@ -278,7 +278,7 @@ export class Worker extends BaseCommand {
 
 		await Container.get(OrchestrationWorkerService).publishToEventLog(
 			new EventMessageGeneric({
-				eventName: 'n8n.worker.started',
+				eventName: 'flowease.worker.started',
 				payload: {
 					workerId: this.queueModeId,
 				},
@@ -463,7 +463,7 @@ export class Worker extends BaseCommand {
 		server.on('error', (error: Error & { code: string }) => {
 			if (error.code === 'EADDRINUSE') {
 				this.logger.error(
-					`n8n's port ${port} is already in use. Do you have the n8n main process running on that port?`,
+					`flowease's port ${port} is already in use. Do you have the flowease main process running on that port?`,
 				);
 				process.exit(1);
 			}
@@ -471,14 +471,14 @@ export class Worker extends BaseCommand {
 
 		await new Promise<void>((resolve) => server.listen(port, () => resolve()));
 		await this.externalHooks?.run('worker.ready');
-		this.logger.info(`\nn8n worker health check via, port ${port}`);
+		this.logger.info(`\nflowease worker health check via, port ${port}`);
 	}
 
 	async run() {
 		const { flags } = await this.parse(Worker);
 
-		this.logger.info('\nn8n worker is now ready');
-		this.logger.info(` * Version: ${N8N_VERSION}`);
+		this.logger.info('\nflowease worker is now ready');
+		this.logger.info(` * Version: ${FLOWEASE_VERSION}`);
 		this.logger.info(` * Concurrency: ${flags.concurrency}`);
 		this.logger.info('');
 

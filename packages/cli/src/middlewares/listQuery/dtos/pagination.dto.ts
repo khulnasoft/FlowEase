@@ -1,5 +1,5 @@
 import { isIntegerString } from '@/utils';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 export class Pagination {
 	static fromString(rawTake: string, rawSkip: string) {

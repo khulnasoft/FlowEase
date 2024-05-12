@@ -26,7 +26,7 @@
 						>
 							<font-awesome-icon :icon="node.expanded ? 'angle-down' : 'angle-up'" />
 						</button>
-						<n8n-tooltip :disabled="!slim" placement="right">
+						<flowease-tooltip :disabled="!slim" placement="right">
 							<template #content>
 								{{ node.label }}
 							</template>
@@ -34,14 +34,14 @@
 								<NodeIcon :node-type="getNodeType(data.node)!" :size="17" />
 								<span v-if="!slim" v-text="node.label" />
 							</span>
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</div>
 				</template>
 			</ElTree>
 		</div>
 		<div :class="$style.runData">
 			<div v-if="selectedRun.length === 0" :class="$style.empty">
-				<n8n-text size="large">
+				<flowease-text size="large">
 					{{
 						$locale.baseText('ndv.output.ai.empty', {
 							interpolate: {
@@ -49,7 +49,7 @@
 							},
 						})
 					}}
-				</n8n-text>
+				</flowease-text>
 			</div>
 			<div
 				v-for="(data, index) in selectedRun"
@@ -65,8 +65,8 @@
 <script lang="ts" setup>
 import type { Ref } from 'vue';
 import { computed, ref, watch } from 'vue';
-import type { ITaskSubRunMetadata, ITaskDataConnections } from 'n8n-workflow';
-import { NodeConnectionType } from 'n8n-workflow';
+import type { ITaskSubRunMetadata, ITaskDataConnections } from 'flowease-workflow';
+import { NodeConnectionType } from 'flowease-workflow';
 import type { IAiData, IAiDataContent, INodeUi } from '@/Interface';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';

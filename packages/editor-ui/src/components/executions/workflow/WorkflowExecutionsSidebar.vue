@@ -5,9 +5,9 @@
 		data-test-id="executions-sidebar"
 	>
 		<div :class="$style.heading">
-			<n8n-heading tag="h2" size="medium" color="text-dark">
+			<flowease-heading tag="h2" size="medium" color="text-dark">
 				{{ $locale.baseText('generic.executions') }}
-			</n8n-heading>
+			</flowease-heading>
 		</div>
 		<div :class="$style.controls">
 			<el-checkbox
@@ -26,16 +26,16 @@
 			@scroll="loadMore(20)"
 		>
 			<div v-if="loading" class="mr-l">
-				<n8n-loading variant="rect" />
+				<flowease-loading variant="rect" />
 			</div>
 			<div
 				v-if="!loading && executions.length === 0"
 				:class="$style.noResultsContainer"
 				data-test-id="execution-list-empty"
 			>
-				<n8n-text color="text-base" size="medium" align="center">
+				<flowease-text color="text-base" size="medium" align="center">
 					{{ $locale.baseText('executionsLandingPage.noResults') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 			<WorkflowExecutionsCard
 				v-else-if="temporaryExecution"
@@ -56,7 +56,7 @@
 				/>
 			</TransitionGroup>
 			<div v-if="loadingMore" class="mr-m">
-				<n8n-loading variant="p" :rows="1" />
+				<flowease-loading variant="p" :rows="1" />
 			</div>
 		</div>
 		<div :class="$style.infoAccordion">
@@ -70,7 +70,7 @@ import WorkflowExecutionsCard from '@/components/executions/workflow/WorkflowExe
 import WorkflowExecutionsInfoAccordion from '@/components/executions/workflow/WorkflowExecutionsInfoAccordion.vue';
 import ExecutionsFilter from '@/components/executions/ExecutionsFilter.vue';
 import { VIEWS } from '@/constants';
-import type { ExecutionSummary } from 'n8n-workflow';
+import type { ExecutionSummary } from 'flowease-workflow';
 import type { Route } from 'vue-router';
 import { defineComponent } from 'vue';
 import type { PropType } from 'vue';

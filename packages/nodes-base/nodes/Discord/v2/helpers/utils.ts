@@ -4,8 +4,8 @@ import type {
 	IExecuteFunctions,
 	INode,
 	INodeExecutionData,
-} from 'n8n-workflow';
-import { jsonParse, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse, NodeOperationError } from 'flowease-workflow';
 import { isEmpty } from 'lodash';
 import FormData from 'form-data';
 import { extension } from 'mime-types';

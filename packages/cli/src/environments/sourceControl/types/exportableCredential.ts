@@ -1,4 +1,4 @@
-import type { ICredentialDataDecryptedObject } from 'n8n-workflow';
+import type { ICredentialDataDecryptedObject } from 'flowease-workflow';
 
 export interface ExportableCredential {
 	id: string;

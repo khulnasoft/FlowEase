@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import type { N8nLocale } from '@/types';
+import type { FloweaseLocale } from '@/types';
 
 export default {
 	'nds.auth.roles.owner': 'Owner',
@@ -23,4 +23,4 @@ export default {
 		'You can style with <a href="https://docs.flowease.khulnasoft.com/workflows/sticky-notes/" target="_blank">Markdown</a>',
 	'tags.showMore': (count: number) => `+${count} more`,
 	'datatable.pageSize': 'Page size',
-} as N8nLocale;
+} as FloweaseLocale;

@@ -1,11 +1,11 @@
 <template>
 	<div :class="['accordion', $style.container]">
 		<div :class="{ [$style.header]: true, [$style.expanded]: expanded }" @click="toggle">
-			<n8n-icon :icon="icon" :color="iconColor" size="small" class="mr-2xs" />
-			<n8n-text :class="$style.headerText" color="text-base" size="small" align="left" bold>
+			<flowease-icon :icon="icon" :color="iconColor" size="small" class="mr-2xs" />
+			<flowease-text :class="$style.headerText" color="text-base" size="small" align="left" bold>
 				<slot name="title"></slot>
-			</n8n-text>
-			<n8n-icon :icon="expanded ? 'chevron-up' : 'chevron-down'" bold />
+			</flowease-text>
+			<flowease-icon :icon="expanded ? 'chevron-up' : 'chevron-down'" bold />
 		</div>
 		<div v-if="expanded" :class="{ [$style.description]: true, [$style.collapsed]: !expanded }">
 			<slot name="content"></slot>

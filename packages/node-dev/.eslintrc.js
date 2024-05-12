@@ -1,10 +1,10 @@
-const sharedOptions = require('@n8n_io/eslint-config/shared');
+const sharedOptions = require('@flowease_io/eslint-config/shared');
 
 /**
  * @type {import('@types/eslint').ESLint.ConfigData}
  */
 module.exports = {
-	extends: ['@n8n_io/eslint-config/base'],
+	extends: ['@flowease_io/eslint-config/base'],
 	...sharedOptions(__dirname),
 	ignorePatterns: [
 		'templates/**', // TODO: remove this
@@ -12,6 +12,6 @@ module.exports = {
 	rules: {
 		'import/order': 'off', // TODO: remove this
 		'@typescript-eslint/ban-ts-comment': ['warn', { 'ts-ignore': true }],
-		'n8n-local-rules/no-plain-errors': 'off',
+		'flowease-local-rules/no-plain-errors': 'off',
 	},
 };

@@ -1,1 +1,1 @@
-export { parserWithMetaData, n8nLanguage } from './expressions';
+export { parserWithMetaData, floweaseLanguage } from './expressions';

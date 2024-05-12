@@ -4,8 +4,8 @@ import type {
 	IDataObject,
 	INodeListSearchItems,
 	INodePropertyOptions,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import { DateTime } from 'luxon';
 
 // tslint:disable-next-line:no-any

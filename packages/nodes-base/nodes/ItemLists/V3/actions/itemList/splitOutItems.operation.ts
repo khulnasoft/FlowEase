@@ -4,8 +4,8 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
-import { deepCopy, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy, NodeOperationError } from 'flowease-workflow';
 
 import get from 'lodash/get';
 import unset from 'lodash/unset';

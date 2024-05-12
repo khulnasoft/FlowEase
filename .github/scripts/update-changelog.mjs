@@ -14,7 +14,7 @@ const versionChangelogFile = resolve(baseDir, `CHANGELOG-${packageJson.version}.
 const changelogStream = conventionalChangelog({
 	preset: 'angular',
 	releaseCount: 1,
-	tagPrefix: 'n8n@',
+	tagPrefix: 'flowease@',
 	transform: (commit, callback) => {
 		callback(null, commit.header.includes('(no-changelog)') ? undefined : commit);
 	},

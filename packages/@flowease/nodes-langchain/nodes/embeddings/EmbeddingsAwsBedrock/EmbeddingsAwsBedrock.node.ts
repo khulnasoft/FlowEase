@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { BedrockEmbeddings } from '@langchain/community/embeddings/bedrock';
 
 import { logWrapper } from '../../../utils/logWrapper';
@@ -37,7 +37,7 @@ export class EmbeddingsAwsBedrock implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsawsbedrock/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.embeddingsawsbedrock/',
 					},
 				],
 			},

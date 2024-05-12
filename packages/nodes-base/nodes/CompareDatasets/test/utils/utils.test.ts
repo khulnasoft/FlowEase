@@ -1,4 +1,4 @@
-import type { INodeExecutionData } from 'n8n-workflow';
+import type { INodeExecutionData } from 'flowease-workflow';
 import { checkInput } from '../../GenericFunctions';
 
 describe('Test Compare Datasets Node utils', () => {

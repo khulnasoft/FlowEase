@@ -1,4 +1,4 @@
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'flowease-workflow';
 import type { WorkflowEntity } from '@db/entities/WorkflowEntity';
 import type { MigrationContext, ReversibleMigration } from '@db/types';
 import { v4 as uuid } from 'uuid';

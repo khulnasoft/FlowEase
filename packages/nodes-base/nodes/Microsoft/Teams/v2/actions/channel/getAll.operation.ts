@@ -1,4 +1,4 @@
-import type { INodeProperties, IExecuteFunctions } from 'n8n-workflow';
+import type { INodeProperties, IExecuteFunctions } from 'flowease-workflow';
 import { microsoftApiRequestAllItems } from '../../transport';
 import { teamRLC } from '../../descriptions';
 import { updateDisplayOptions } from '@utils/utilities';

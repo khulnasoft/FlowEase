@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { datasetRLC, projectRLC, tableRLC } from '../commonDescriptions/RLC.description';
 import * as insert from './insert.operation';
 import * as executeQuery from './executeQuery.operation';

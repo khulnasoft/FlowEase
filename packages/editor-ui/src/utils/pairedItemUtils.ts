@@ -1,4 +1,4 @@
-import type { IPairedItemData, IRunData, ITaskData } from 'n8n-workflow';
+import type { IPairedItemData, IRunData, ITaskData } from 'flowease-workflow';
 import type { IExecutionResponse, TargetItem } from '@/Interface';
 import { isNotNull } from '@/utils/typeGuards';
 

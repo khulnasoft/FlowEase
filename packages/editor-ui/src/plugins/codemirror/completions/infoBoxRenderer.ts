@@ -1,4 +1,4 @@
-import type { DocMetadata, DocMetadataArgument, DocMetadataExample } from 'n8n-workflow';
+import type { DocMetadata, DocMetadataArgument, DocMetadataExample } from 'flowease-workflow';
 import { sanitizeHtml } from '@/utils/htmlUtils';
 import { i18n } from '@/plugins/i18n';
 

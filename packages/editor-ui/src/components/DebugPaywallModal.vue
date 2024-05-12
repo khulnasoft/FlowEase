@@ -13,19 +13,19 @@ const i18n = useI18n();
 <template>
 	<Modal width="500px" :title="props.data.title" :name="props.modalName">
 		<template #content>
-			<n8n-text>
+			<flowease-text>
 				{{ i18n.baseText('executionsList.debug.paywall.content') }}
 				<br />
-				<n8n-link :to="i18n.baseText('executionsList.debug.paywall.link.url')" new-window>
+				<flowease-link :to="i18n.baseText('executionsList.debug.paywall.link.url')" new-window>
 					{{ i18n.baseText('executionsList.debug.paywall.link.text') }}
-				</n8n-link>
-			</n8n-text>
+				</flowease-link>
+			</flowease-text>
 		</template>
 		<template #footer>
 			<div :class="$style.footer">
-				<n8n-button @click="props.data.footerButtonAction">
+				<flowease-button @click="props.data.footerButtonAction">
 					{{ i18n.baseText('generic.seePlans') }}
-				</n8n-button>
+				</flowease-button>
 			</div>
 		</template>
 	</Modal>

@@ -1,5 +1,5 @@
-import type { IDataObject, INodeProperties } from 'n8n-workflow';
-import { jsonParse } from 'n8n-workflow';
+import type { IDataObject, INodeProperties } from 'flowease-workflow';
+import { jsonParse } from 'flowease-workflow';
 
 export const questionsOperations: INodeProperties[] = [
 	{

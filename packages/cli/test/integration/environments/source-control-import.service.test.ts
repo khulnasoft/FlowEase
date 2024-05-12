@@ -1,7 +1,7 @@
 import fsp from 'node:fs/promises';
 import Container from 'typedi';
 import { mock } from 'jest-mock-extended';
-import * as utils from 'n8n-workflow';
+import * as utils from 'flowease-workflow';
 import { Cipher } from 'flowease-core';
 import { nanoid } from 'nanoid';
 import type { InstanceSettings } from 'flowease-core';
@@ -24,7 +24,7 @@ describe('SourceControlImportService', () => {
 			mock(),
 			mock(),
 			mock(),
-			mock<InstanceSettings>({ n8nFolder: '/some-path' }),
+			mock<InstanceSettings>({ floweaseFolder: '/some-path' }),
 		);
 
 		await testDb.init();

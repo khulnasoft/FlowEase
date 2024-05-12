@@ -5,8 +5,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { snakeCase } from 'change-case';
 import { getFileSha, githubApiRequest, githubApiRequestAllItems } from './GenericFunctions';
@@ -411,7 +411,7 @@ export class Github implements INodeType {
 						displayName: 'Link',
 						name: 'url',
 						type: 'string',
-						placeholder: 'e.g. https://github.com/n8n-io',
+						placeholder: 'e.g. https://github.com/khulnasoft',
 						extractValue: {
 							type: 'regex',
 							regex: 'https:\\/\\/github.com\\/([-_0-9a-zA-Z]+)',
@@ -430,7 +430,7 @@ export class Github implements INodeType {
 						displayName: 'By Name',
 						name: 'name',
 						type: 'string',
-						placeholder: 'e.g. n8n-io',
+						placeholder: 'e.g. khulnasoft',
 						validation: [
 							{
 								type: 'regex',
@@ -489,7 +489,7 @@ export class Github implements INodeType {
 						displayName: 'By Name',
 						name: 'name',
 						type: 'string',
-						placeholder: 'e.g. n8n',
+						placeholder: 'e.g. flowease',
 						validation: [
 							{
 								type: 'regex',
@@ -1951,7 +1951,7 @@ export class Github implements INodeType {
 						body.message = this.getNodeParameter('commitMessage', i) as string;
 
 						if (this.getNodeParameter('binaryData', i)) {
-							// Currently internally n8n uses base64 and also Github expects it base64 encoded.
+							// Currently internally flowease uses base64 and also Github expects it base64 encoded.
 							// If that ever changes the data has to get converted here.
 							const binaryPropertyName = this.getNodeParameter('binaryPropertyName', i);
 							const binaryData = this.helpers.assertBinaryData(i, binaryPropertyName);

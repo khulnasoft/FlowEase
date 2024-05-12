@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import N8nNotice from 'flowease-design-system/components/N8nNotice';
+import FloweaseNotice from 'flowease-design-system/components/FloweaseNotice';
 import { formatList } from '@/utils/formatters/listFormatter';
 import { useI18n } from '@/composables/useI18n';
 import type {
@@ -26,11 +26,11 @@ const appNodeCounts = computed(() => {
 </script>
 
 <template>
-	<N8nNotice :class="$style.notice" theme="info">
+	<FloweaseNotice :class="$style.notice" theme="info">
 		<i18n-t tag="span" keypath="templateSetup.instructions" scope="global">
 			<span v-html="appNodeCounts" />
 		</i18n-t>
-	</N8nNotice>
+	</FloweaseNotice>
 </template>
 
 <style lang="scss" module>

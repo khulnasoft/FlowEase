@@ -1,18 +1,18 @@
 <template>
-	<n8n-popover trigger="click" width="304" size="large">
+	<flowease-popover trigger="click" width="304" size="large">
 		<template #reference>
-			<n8n-button
+			<flowease-button
 				icon="filter"
 				type="tertiary"
 				:active="hasFilters"
 				:class="[$style['filter-button'], 'ml-2xs']"
 				data-test-id="resources-list-filters-trigger"
 			>
-				<n8n-badge v-show="filtersLength > 0" theme="primary" class="mr-4xs">
+				<flowease-badge v-show="filtersLength > 0" theme="primary" class="mr-4xs">
 					{{ filtersLength }}
-				</n8n-badge>
+				</flowease-badge>
 				{{ $locale.baseText('forms.resourceFiltersDropdown.filters') }}
-			</n8n-button>
+			</flowease-button>
 		</template>
 		<div :class="$style['filters-dropdown']" data-test-id="resources-list-filters-dropdown">
 			<slot :filters="modelValue" :set-key-value="setKeyValue" />
@@ -21,14 +21,14 @@
 				class="mb-s"
 				:features="[EnterpriseEditionFeature.Sharing]"
 			>
-				<n8n-input-label
+				<flowease-input-label
 					:label="$locale.baseText('forms.resourceFiltersDropdown.ownedBy')"
 					:bold="false"
 					size="small"
 					color="text-base"
 					class="mb-3xs"
 				/>
-				<n8n-user-select
+				<flowease-user-select
 					:users="ownedByUsers"
 					:current-user-id="usersStore.currentUser.id"
 					:model-value="modelValue.ownedBy"
@@ -37,14 +37,14 @@
 				/>
 			</enterprise-edition>
 			<enterprise-edition v-if="shareable" :features="[EnterpriseEditionFeature.Sharing]">
-				<n8n-input-label
+				<flowease-input-label
 					:label="$locale.baseText('forms.resourceFiltersDropdown.sharedWith')"
 					:bold="false"
 					size="small"
 					color="text-base"
 					class="mb-3xs"
 				/>
-				<n8n-user-select
+				<flowease-user-select
 					:users="sharedWithUsers"
 					:current-user-id="usersStore.currentUser.id"
 					:model-value="modelValue.sharedWith"
@@ -53,12 +53,12 @@
 				/>
 			</enterprise-edition>
 			<div v-if="hasFilters" :class="[$style['filters-dropdown-footer'], 'mt-s']">
-				<n8n-link @click="resetFilters">
+				<flowease-link @click="resetFilters">
 					{{ $locale.baseText('forms.resourceFiltersDropdown.reset') }}
-				</n8n-link>
+				</flowease-link>
 			</div>
 		</div>
-	</n8n-popover>
+	</flowease-popover>
 </template>
 
 <script lang="ts">

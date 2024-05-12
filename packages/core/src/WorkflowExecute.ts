@@ -34,14 +34,14 @@ import type {
 	WorkflowExecuteMode,
 	CloseFunction,
 	StartNodeData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	LoggerProxy as Logger,
 	WorkflowOperationError,
 	NodeHelpers,
 	NodeConnectionType,
 	ApplicationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import get from 'lodash/get';
 import * as NodeExecuteFunctions from './NodeExecuteFunctions';
 
@@ -1173,7 +1173,7 @@ export class WorkflowExecute {
 								}
 
 								if (runNodeData.closeFunction) {
-									// Explanation why we do this can be found in n8n-workflow/Workflow.ts -> runNode
+									// Explanation why we do this can be found in flowease-workflow/Workflow.ts -> runNode
 
 									closeFunction = runNodeData.closeFunction();
 								}

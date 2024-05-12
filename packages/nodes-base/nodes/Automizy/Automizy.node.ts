@@ -7,7 +7,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	NodeExecutionWithMetadata,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { automizyApiRequest, automizyApiRequestAllItems } from './GenericFunctions';
 

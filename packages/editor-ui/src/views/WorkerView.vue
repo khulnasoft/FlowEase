@@ -3,7 +3,7 @@
 		v-if="settingsStore.isQueueModeEnabled && settingsStore.isWorkerViewAvailable"
 		data-test-id="worker-view-licensed"
 	/>
-	<n8n-action-box
+	<flowease-action-box
 		v-else
 		data-test-id="worker-view-unlicensed"
 		:class="$style.actionBox"
@@ -20,7 +20,7 @@
 				{{ $locale.baseText('workerList.actionBox.description.link') }}
 			</a>
 		</template>
-	</n8n-action-box>
+	</flowease-action-box>
 </template>
 
 <script setup lang="ts">

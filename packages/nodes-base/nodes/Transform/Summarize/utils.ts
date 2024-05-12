@@ -4,7 +4,7 @@ import {
 	type GenericValue,
 	type IExecuteFunctions,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 type AggregationType =
 	| 'append'

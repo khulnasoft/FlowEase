@@ -6,7 +6,7 @@ import { UserRepository } from '@db/repositories/user.repository';
 import { CredentialsRepository } from '@db/repositories/credentials.repository';
 import { SettingsRepository } from '@db/repositories/settings.repository';
 import { WorkflowRepository } from '@db/repositories/workflow.repository';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 @Service()
 export class ExternalHooks {

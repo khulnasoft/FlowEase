@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 
 export const iconSelector: INodeProperties = {
 	// eslint-disable-next-line flowease-nodes-base/node-param-display-name-wrong-for-dynamic-options

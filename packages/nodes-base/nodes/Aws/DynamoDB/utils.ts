@@ -1,5 +1,5 @@
-import type { IDataObject, INodeExecutionData } from 'n8n-workflow';
-import { deepCopy, assert, ApplicationError } from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData } from 'flowease-workflow';
+import { deepCopy, assert, ApplicationError } from 'flowease-workflow';
 
 import type {
 	AdjustedPutItem,

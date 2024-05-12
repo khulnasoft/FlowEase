@@ -1,5 +1,5 @@
-import type { INodeProperties, IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import { updateDisplayOptions, NodeOperationError } from 'n8n-workflow';
+import type { INodeProperties, IExecuteFunctions, INodeExecutionData } from 'flowease-workflow';
+import { updateDisplayOptions, NodeOperationError } from 'flowease-workflow';
 import FormData from 'form-data';
 import { apiRequest } from '../../transport';
 

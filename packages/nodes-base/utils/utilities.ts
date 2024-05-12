@@ -4,9 +4,9 @@ import type {
 	INodeExecutionData,
 	INodeProperties,
 	IPairedItemData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 
 import { isEqual, isNull, merge } from 'lodash';
 

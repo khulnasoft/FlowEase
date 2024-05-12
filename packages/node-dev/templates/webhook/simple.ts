@@ -4,12 +4,12 @@ import {
 	INodeTypeDescription,
 	INodeType,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class ClassNameReplace implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'DisplayNameReplace',
-		name: 'N8nNameReplace',
+		name: 'FloweaseNameReplace',
 		group: ['trigger'],
 		version: 1,
 		description: 'NodeDescriptionReplace',

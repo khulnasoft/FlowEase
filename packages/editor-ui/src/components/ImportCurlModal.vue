@@ -8,8 +8,8 @@
 	>
 		<template #content>
 			<div :class="$style.container">
-				<N8nInputLabel :label="i18n.baseText('importCurlModal.input.label')" color="text-dark">
-					<N8nInput
+				<FloweaseInputLabel :label="i18n.baseText('importCurlModal.input.label')" color="text-dark">
+					<FloweaseInput
 						ref="inputRef"
 						:model-value="curlCommand"
 						type="textarea"
@@ -18,17 +18,17 @@
 						@update:model-value="onInput"
 						@focus="$event.target.select()"
 					/>
-				</N8nInputLabel>
+				</FloweaseInputLabel>
 			</div>
 		</template>
 		<template #footer>
 			<div :class="$style.modalFooter">
-				<N8nNotice
+				<FloweaseNotice
 					:class="$style.notice"
 					:content="i18n.baseText('ImportCurlModal.notice.content')"
 				/>
 				<div>
-					<N8nButton
+					<FloweaseButton
 						float="right"
 						:label="i18n.baseText('importCurlModal.button.label')"
 						@click="onImport"

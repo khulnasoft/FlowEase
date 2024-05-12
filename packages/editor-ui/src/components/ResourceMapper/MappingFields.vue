@@ -8,7 +8,7 @@ import type {
 	NodePropertyTypes,
 	ResourceMapperField,
 	ResourceMapperValue,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import ParameterInputFull from '@/components/ParameterInputFull.vue';
 import ParameterIssues from '@/components//ParameterIssues.vue';
 import ParameterOptions from '@/components//ParameterOptions.vue';
@@ -285,7 +285,7 @@ defineExpose({
 
 <template>
 	<div class="mt-xs" data-test-id="mapping-fields-container">
-		<n8n-input-label
+		<flowease-input-label
 			:label="valuesLabel"
 			:underline="true"
 			:size="labelSize"
@@ -303,11 +303,11 @@ defineExpose({
 					@update:model-value="onParameterActionSelected"
 				/>
 			</template>
-		</n8n-input-label>
+		</flowease-input-label>
 		<div v-if="orderedFields.length === 0" class="mt-3xs mb-xs">
-			<n8n-text size="small">{{
+			<flowease-text size="small">{{
 				$locale.baseText('fixedCollectionParameter.currentlyNoItemsExist')
-			}}</n8n-text>
+			}}</flowease-text>
 		</div>
 		<div
 			v-for="field in orderedFields"
@@ -322,7 +322,7 @@ defineExpose({
 				v-if="resourceMapperMode === 'add' && field.required"
 				:class="['delete-option', 'mt-5xs', $style.parameterTooltipIcon]"
 			>
-				<n8n-tooltip placement="top">
+				<flowease-tooltip placement="top">
 					<template #content>
 						<span>{{
 							locale.baseText('resourceMapper.mandatoryField.title', {
@@ -331,7 +331,7 @@ defineExpose({
 						}}</span>
 					</template>
 					<font-awesome-icon icon="question-circle" />
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</div>
 			<div
 				v-else-if="
@@ -343,7 +343,7 @@ defineExpose({
 				"
 				:class="['delete-option', 'mt-5xs']"
 			>
-				<n8n-icon-button
+				<flowease-icon-button
 					type="tertiary"
 					text
 					size="mini"
@@ -357,7 +357,7 @@ defineExpose({
 						})
 					"
 					@click="removeField(field.name)"
-				></n8n-icon-button>
+				></flowease-icon-button>
 			</div>
 			<div :class="$style.parameterInput">
 				<ParameterInputFull
@@ -379,7 +379,7 @@ defineExpose({
 			/>
 		</div>
 		<div :class="['add-option', $style.addOption]" data-test-id="add-fields-select">
-			<n8n-select
+			<flowease-select
 				:placeholder="
 					locale.baseText('resourceMapper.addFieldToSend', {
 						interpolate: { fieldWord: singularFieldWordCapitalized },
@@ -390,15 +390,15 @@ defineExpose({
 				:disabled="addFieldOptions.length == 0"
 				@update:model-value="addField"
 			>
-				<n8n-option
+				<flowease-option
 					v-for="item in addFieldOptions"
 					:key="item.value"
 					:label="item.name"
 					:value="item.value"
 					:disabled="item.disabled"
 				>
-				</n8n-option>
-			</n8n-select>
+				</flowease-option>
+			</flowease-select>
 		</div>
 	</div>
 </template>

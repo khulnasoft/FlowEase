@@ -4,7 +4,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	ITriggerResponse,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { watch } from 'chokidar';
 

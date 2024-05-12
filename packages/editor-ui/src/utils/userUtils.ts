@@ -72,7 +72,7 @@ import type {
 } from '@/Interface';
 
 /*
-	Utility functions used to handle users in n8n
+	Utility functions used to handle users in flowease
 */
 
 function isPersonalizationSurveyV2OrLater(

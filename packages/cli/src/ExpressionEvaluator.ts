@@ -1,5 +1,5 @@
 import config from '@/config';
-import { ErrorReporterProxy, ExpressionEvaluatorProxy } from 'n8n-workflow';
+import { ErrorReporterProxy, ExpressionEvaluatorProxy } from 'flowease-workflow';
 
 export const initExpressionEvaluator = () => {
 	ExpressionEvaluatorProxy.setEvaluator(config.getEnv('expression.evaluator'));

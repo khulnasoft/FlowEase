@@ -6,7 +6,7 @@ import type {
 	IOAuth2Options,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { snakeCase } from 'change-case';
 

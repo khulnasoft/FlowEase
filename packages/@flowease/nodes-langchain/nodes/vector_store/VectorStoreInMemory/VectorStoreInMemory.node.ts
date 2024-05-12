@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { createVectorStoreNode } from '../shared/createVectorStoreNode';
 import { MemoryVectorStoreManager } from '../shared/MemoryVectorStoreManager';
 
@@ -26,7 +26,7 @@ export const VectorStoreInMemory = createVectorStoreNode({
 		description: 'Work with your data in In-Memory Vector Store',
 		icon: 'fa:database',
 		docsUrl:
-			'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.vectorstoreinmemory/',
+			'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.vectorstoreinmemory/',
 	},
 	sharedFields: [
 		{

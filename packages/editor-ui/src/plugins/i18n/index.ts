@@ -2,12 +2,12 @@ import type { Plugin } from 'vue';
 import axios from 'axios';
 import { createI18n } from 'vue-i18n';
 import { locale } from 'flowease-design-system';
-import type { INodeProperties, INodePropertyCollection, INodePropertyOptions } from 'n8n-workflow';
+import type { INodeProperties, INodePropertyCollection, INodePropertyOptions } from 'flowease-workflow';
 
 import type { INodeTranslationHeaders } from '@/Interface';
 import { useUIStore } from '@/stores/ui.store';
 import { useNDVStore } from '@/stores/ndv.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import englishBaseText from './locales/en.json';
 import {
 	deriveMiddleKey,
@@ -555,7 +555,7 @@ async function setLanguage(language: string) {
 	axios.defaults.headers.common['Accept-Language'] = language;
 	document!.querySelector('html')!.setAttribute('lang', language);
 
-	// update n8n design system and element ui
+	// update flowease design system and element ui
 	await locale.use(language);
 
 	return language;

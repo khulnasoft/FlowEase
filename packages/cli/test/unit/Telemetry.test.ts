@@ -32,14 +32,14 @@ describe('Telemetry', () => {
 		jest.useFakeTimers();
 		jest.setSystemTime(testDateTime);
 		config.set('diagnostics.enabled', true);
-		config.set('deployment.type', 'n8n-testing');
+		config.set('deployment.type', 'flowease-testing');
 	});
 
 	afterAll(async () => {
 		jest.clearAllTimers();
 		jest.useRealTimers();
 		startPulseSpy.mockRestore();
-		await telemetry.trackN8nStop();
+		await telemetry.trackFloweaseStop();
 	});
 
 	beforeEach(async () => {
@@ -53,12 +53,12 @@ describe('Telemetry', () => {
 	});
 
 	afterEach(async () => {
-		await telemetry.trackN8nStop();
+		await telemetry.trackFloweaseStop();
 	});
 
-	describe('trackN8nStop', () => {
+	describe('trackFloweaseStop', () => {
 		test('should call track method', async () => {
-			await telemetry.trackN8nStop();
+			await telemetry.trackFloweaseStop();
 			expect(spyTrack).toHaveBeenCalledTimes(1);
 		});
 	});
@@ -175,7 +175,7 @@ describe('Telemetry', () => {
 			expect(execBuffer['1'].prod_success?.count).toBe(1);
 			expect(execBuffer['1'].prod_success?.first).toEqual(execTime1);
 
-			// successful execution n8n node
+			// successful execution flowease node
 			payload.error_node_type = 'flowease-nodes-base.merge';
 			payload.workflow_id = '2';
 
@@ -245,7 +245,7 @@ describe('Telemetry', () => {
 			expect(execBuffer['1'].prod_success?.first).toEqual(execTime1);
 			expect(execBuffer['2'].prod_success?.first).toEqual(execTime1);
 
-			// failed execution n8n node
+			// failed execution flowease node
 			payload.success = false;
 			payload.error_node_type = 'flowease-nodes-base.merge';
 			payload.is_manual = true;

@@ -1,6 +1,6 @@
 import config from '@/config';
 import { BinaryDataService } from 'flowease-core';
-import type { ExecutionStatus } from 'n8n-workflow';
+import type { ExecutionStatus } from 'flowease-workflow';
 import Container from 'typedi';
 
 import * as testDb from './shared/testDb';

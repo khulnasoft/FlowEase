@@ -5,11 +5,11 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { TextSplitter } from 'langchain/text_splitter';
 import { logWrapper } from '../../../utils/logWrapper';
-import { N8nJsonLoader } from '../../../utils/N8nJsonLoader';
+import { FloweaseJsonLoader } from '../../../utils/FloweaseJsonLoader';
 import { getConnectionHintNoticeField, metadataFilterField } from '../../../utils/sharedFields';
 
 export class DocumentJsonInputLoader implements INodeType {
@@ -34,7 +34,7 @@ export class DocumentJsonInputLoader implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentdefaultdataloader/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.documentdefaultdataloader/',
 					},
 				],
 			},
@@ -86,7 +86,7 @@ export class DocumentJsonInputLoader implements INodeType {
 			0,
 		)) as TextSplitter | undefined;
 
-		const processor = new N8nJsonLoader(this, undefined, textSplitter);
+		const processor = new FloweaseJsonLoader(this, undefined, textSplitter);
 
 		return {
 			response: logWrapper(processor, this),

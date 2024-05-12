@@ -26,7 +26,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build relevant packages
-        run: pnpm --filter @flowease/client-oauth2 --filter @flowease/imap --filter n8n-workflow --filter flowease-core --filter flowease-nodes-base --filter @flowease/flowease-nodes-langchain build
+        run: pnpm --filter @flowease/client-oauth2 --filter @flowease/imap --filter flowease-workflow --filter flowease-core --filter flowease-nodes-base --filter @flowease/flowease-nodes-langchain build
 
       - run: npm install --prefix=.github/scripts --no-package-lock
 

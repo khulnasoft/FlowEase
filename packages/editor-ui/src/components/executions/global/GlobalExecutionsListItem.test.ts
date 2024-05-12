@@ -16,7 +16,7 @@ vi.mock('vue-router', async () => {
 
 const renderComponent = createComponentRenderer(GlobalExecutionsListItem, {
 	global: {
-		stubs: ['font-awesome-icon', 'n8n-tooltip', 'n8n-button', 'i18n-t'],
+		stubs: ['font-awesome-icon', 'flowease-tooltip', 'flowease-button', 'i18n-t'],
 	},
 });
 

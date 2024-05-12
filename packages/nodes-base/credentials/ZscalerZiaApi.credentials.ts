@@ -1,4 +1,4 @@
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 import type {
 	IAuthenticateGeneric,
 	ICredentialDataDecryptedObject,
@@ -6,7 +6,7 @@ import type {
 	ICredentialType,
 	IHttpRequestHelper,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class ZscalerZiaApi implements ICredentialType {
 	name = 'zscalerZiaApi';

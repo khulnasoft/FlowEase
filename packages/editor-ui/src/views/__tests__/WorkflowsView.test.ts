@@ -68,17 +68,17 @@ describe('WorkflowsView', () => {
 			pinia,
 		});
 
-		expect(container.querySelectorAll('.n8n-loading')).toHaveLength(3);
+		expect(container.querySelectorAll('.flowease-loading')).toHaveLength(3);
 		expect(queryByTestId('resources-list')).not.toBeInTheDocument();
 
 		await waitFor(() => {
-			expect(container.querySelectorAll('.n8n-loading')).toHaveLength(0);
+			expect(container.querySelectorAll('.flowease-loading')).toHaveLength(0);
 			// There are 5 workflows defined in server fixtures
 			expect(getAllByTestId('resources-list-item')).toHaveLength(5);
 		});
 
 		await userEvent.click(
-			getAllByTestId('resources-list-item')[0].querySelector('.n8n-tag') as HTMLElement,
+			getAllByTestId('resources-list-item')[0].querySelector('.flowease-tag') as HTMLElement,
 		);
 		await waitFor(() => {
 			expect(getAllByTestId('resources-list-item').length).toBeLessThan(5);
@@ -90,7 +90,7 @@ describe('WorkflowsView', () => {
 		});
 
 		await userEvent.click(
-			getAllByTestId('resources-list-item')[3].querySelector('.n8n-tag') as HTMLElement,
+			getAllByTestId('resources-list-item')[3].querySelector('.flowease-tag') as HTMLElement,
 		);
 		await waitFor(() => {
 			expect(getAllByTestId('resources-list-item').length).toBeLessThan(5);

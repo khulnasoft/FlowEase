@@ -5,7 +5,7 @@ import {
 	PLACEHOLDER_FILLED_AT_EXECUTION_TIME,
 } from '@/constants';
 
-import { NodeHelpers, NodeConnectionType, ExpressionEvaluatorProxy } from 'n8n-workflow';
+import { NodeHelpers, NodeConnectionType, ExpressionEvaluatorProxy } from 'flowease-workflow';
 import type {
 	INodeProperties,
 	INodeCredentialDescription,
@@ -26,7 +26,7 @@ import type {
 	INodeCredentialsDetails,
 	INodeParameters,
 	ITaskData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type {
 	ICredentialsResponse,
@@ -48,7 +48,7 @@ import { EnableNodeToggleCommand } from '@/models/history';
 import { useTelemetry } from './useTelemetry';
 import { getCredentialPermissions } from '@/permissions';
 import { hasPermission } from '@/rbac/permissions';
-import type { N8nPlusEndpoint } from '@/plugins/jsplumb/N8nPlusEndpointType';
+import type { FloweasePlusEndpoint } from '@/plugins/jsplumb/FloweasePlusEndpointType';
 import * as NodeViewUtils from '@/utils/nodeViewUtils';
 import { useCanvasStore } from '@/stores/canvas.store';
 
@@ -768,11 +768,11 @@ export function useNodeHelpers() {
 							const output = outputMap[sourceOutputIndex][NODE_OUTPUT_DEFAULT_KEY][0];
 
 							if (output && output.total > 0) {
-								(endpoint.endpoint as N8nPlusEndpoint).setSuccessOutput(
+								(endpoint.endpoint as FloweasePlusEndpoint).setSuccessOutput(
 									NodeViewUtils.getRunItemsLabel(output),
 								);
 							} else {
-								(endpoint.endpoint as N8nPlusEndpoint).clearSuccessOutput();
+								(endpoint.endpoint as FloweasePlusEndpoint).clearSuccessOutput();
 							}
 						}
 					},

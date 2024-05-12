@@ -8,7 +8,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { IExpenseDocument } from './GenericFunctions';
 import { awsApiRequestREST, simplify, validateCredentials } from './GenericFunctions';

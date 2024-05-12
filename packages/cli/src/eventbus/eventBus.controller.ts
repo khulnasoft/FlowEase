@@ -1,6 +1,6 @@
 import express from 'express';
-import type { IRunExecutionData } from 'n8n-workflow';
-import { EventMessageTypeNames } from 'n8n-workflow';
+import type { IRunExecutionData } from 'flowease-workflow';
+import { EventMessageTypeNames } from 'flowease-workflow';
 
 import { RestController, Get, Post, GlobalScope } from '@/decorators';
 import { BadRequestError } from '@/errors/response-errors/bad-request.error';

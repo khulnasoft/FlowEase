@@ -9,24 +9,24 @@
 		width="460px"
 	>
 		<template #header>
-			<n8n-heading tag="h2" size="xlarge" color="text-dark">{{ title }}</n8n-heading>
+			<flowease-heading tag="h2" size="xlarge" color="text-dark">{{ title }}</flowease-heading>
 		</template>
 		<template #content>
 			<div :class="$style.description">
-				<n8n-text size="medium" color="text-base">{{ description }}</n8n-text>
+				<flowease-text size="medium" color="text-base">{{ description }}</flowease-text>
 			</div>
 			<div @keyup.enter="send">
-				<n8n-input v-model="email" placeholder="Your email address" />
+				<flowease-input v-model="email" placeholder="Your email address" />
 			</div>
 			<div :class="$style.disclaimer">
-				<n8n-text size="small" color="text-base"
-					>David from our product team will get in touch personally</n8n-text
+				<flowease-text size="small" color="text-base"
+					>David from our product team will get in touch personally</flowease-text
 				>
 			</div>
 		</template>
 		<template #footer>
 			<div :class="$style.footer">
-				<n8n-button label="Send" float="right" :disabled="!isEmailValid" @click="send" />
+				<flowease-button label="Send" float="right" :disabled="!isEmailValid" @click="send" />
 			</div>
 		</template>
 	</Modal>
@@ -35,11 +35,11 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapStores } from 'pinia';
-import type { IN8nPromptResponse } from '@/Interface';
+import type { IFloweasePromptResponse } from '@/Interface';
 import { VALID_EMAIL_REGEX } from '@/constants';
 import Modal from '@/components/Modal.vue';
 import { useSettingsStore } from '@/stores/settings.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { createEventBus } from 'flowease-design-system/utils';
 import { useToast } from '@/composables/useToast';
 
@@ -72,7 +72,7 @@ export default defineComponent({
 				return this.settingsStore.promptsData.message;
 			}
 
-			return 'Your experience with n8n can help us improve — for you and our entire community.';
+			return 'Your experience with flowease can help us improve — for you and our entire community.';
 		},
 		isEmailValid(): boolean {
 			return VALID_EMAIL_REGEX.test(String(this.email).toLowerCase());
@@ -91,7 +91,7 @@ export default defineComponent({
 			if (this.isEmailValid) {
 				const response = (await this.settingsStore.submitContactInfo(
 					this.email,
-				)) as IN8nPromptResponse;
+				)) as IFloweasePromptResponse;
 
 				if (response.updated) {
 					this.$telemetry.track('User closed email modal', {
@@ -100,7 +100,7 @@ export default defineComponent({
 					});
 					this.showMessage({
 						title: 'Thanks!',
-						message: "It's people like you that help make n8n better",
+						message: "It's people like you that help make flowease better",
 						type: 'success',
 					});
 				}

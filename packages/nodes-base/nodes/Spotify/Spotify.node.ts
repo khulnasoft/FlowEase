@@ -5,7 +5,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { spotifyApiRequest, spotifyApiRequestAllItems } from './GenericFunctions';
 

@@ -5,7 +5,7 @@ import type {
 	IDataObject,
 	IPollFunctions,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import moment from 'moment-timezone';
 import * as jwt from 'jsonwebtoken';

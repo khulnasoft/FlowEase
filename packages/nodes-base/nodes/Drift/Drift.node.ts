@@ -4,7 +4,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { driftApiRequest } from './GenericFunctions';
 import { contactFields, contactOperations } from './ContactDescription';
 import type { IContact } from './ContactInterface';

@@ -56,7 +56,7 @@ export async function saveManualTriggerWorkflow() {
 	return await Container.get(WorkflowRepository).save(details);
 }
 
-export const MOCK_09990_N8N_VERSION = {
+export const MOCK_09990_FLOWEASE_VERSION = {
 	name: '0.999.0',
 	nodes: [
 		{
@@ -71,20 +71,20 @@ export const MOCK_09990_N8N_VERSION = {
 	createdAt: '2022-11-11T11:11:11.111Z',
 	description:
 		'Includes <strong>new nodes</strong>, <strong>node enhancements</strong>, <strong>core functionality</strong> and <strong>bug fixes</strong>',
-	documentationUrl: 'https://docs.flowease.khulnasoft.com/reference/release-notes/#n8n09990',
+	documentationUrl: 'https://docs.flowease.khulnasoft.com/reference/release-notes/#flowease09990',
 	hasBreakingChange: false,
 	hasSecurityFix: false,
 	hasSecurityIssue: false,
 	securityIssueFixVersion: null,
 };
 
-export const MOCK_01110_N8N_VERSION = {
+export const MOCK_01110_FLOWEASE_VERSION = {
 	name: '0.111.0',
 	nodes: [],
 	createdAt: '2022-01-01T00:00:00.000Z',
 	description:
 		'Includes <strong>new nodes</strong>, <strong>node enhancements</strong>, <strong>core functionality</strong> and <strong>bug fixes</strong>',
-	documentationUrl: 'https://docs.flowease.khulnasoft.com/reference/release-notes/#n8n01110',
+	documentationUrl: 'https://docs.flowease.khulnasoft.com/reference/release-notes/#flowease01110',
 	hasBreakingChange: false,
 	hasSecurityFix: false,
 	hasSecurityIssue: false,
@@ -95,7 +95,7 @@ export const MOCK_PACKAGE: InstalledPackages[] = [
 	{
 		createdAt: new Date(),
 		updatedAt: new Date(),
-		packageName: 'n8n-nodes-test',
+		packageName: 'flowease-nodes-test',
 		installedVersion: '1.1.2',
 		authorName: 'test',
 		authorEmail: 'test@test.com',
@@ -110,22 +110,22 @@ export const MOCK_PACKAGE: InstalledPackages[] = [
 	},
 ];
 
-export function simulateOutdatedInstanceOnce(versionName = MOCK_01110_N8N_VERSION.name) {
+export function simulateOutdatedInstanceOnce(versionName = MOCK_01110_FLOWEASE_VERSION.name) {
 	const baseUrl = config.getEnv('versionNotifications.endpoint') + '/';
 
 	jest
-		.spyOn(constants, 'getN8nPackageJson')
-		.mockReturnValueOnce({ name: 'n8n', version: versionName });
+		.spyOn(constants, 'getFloweasePackageJson')
+		.mockReturnValueOnce({ name: 'flowease', version: versionName });
 
-	nock(baseUrl).get(versionName).reply(200, [MOCK_01110_N8N_VERSION, MOCK_09990_N8N_VERSION]);
+	nock(baseUrl).get(versionName).reply(200, [MOCK_01110_FLOWEASE_VERSION, MOCK_09990_FLOWEASE_VERSION]);
 }
 
-export function simulateUpToDateInstance(versionName = MOCK_09990_N8N_VERSION.name) {
+export function simulateUpToDateInstance(versionName = MOCK_09990_FLOWEASE_VERSION.name) {
 	const baseUrl = config.getEnv('versionNotifications.endpoint') + '/';
 
 	jest
-		.spyOn(constants, 'getN8nPackageJson')
-		.mockReturnValueOnce({ name: 'n8n', version: versionName });
+		.spyOn(constants, 'getFloweasePackageJson')
+		.mockReturnValueOnce({ name: 'flowease', version: versionName });
 
-	nock(baseUrl).persist().get(versionName).reply(200, [MOCK_09990_N8N_VERSION]);
+	nock(baseUrl).persist().get(versionName).reply(200, [MOCK_09990_FLOWEASE_VERSION]);
 }

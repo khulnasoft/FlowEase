@@ -17,22 +17,22 @@ import {
 } from '@/constants';
 import type {
 	ILdapConfig,
-	IN8nPromptResponse,
-	IN8nPrompts,
-	IN8nValueSurveyData,
+	IFloweasePromptResponse,
+	IFloweasePrompts,
+	IFloweaseValueSurveyData,
 	ISettingsState,
 } from '@/Interface';
 import { UserManagementAuthenticationMethod } from '@/Interface';
 import type {
 	IDataObject,
 	LogLevel,
-	IN8nUISettings,
+	IFloweaseUISettings,
 	ITelemetrySettings,
 	WorkflowSettings,
-} from 'n8n-workflow';
-import { ExpressionEvaluatorProxy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ExpressionEvaluatorProxy } from 'flowease-workflow';
 import { defineStore } from 'pinia';
-import { useRootStore } from './n8nRoot.store';
+import { useRootStore } from './floweaseRoot.store';
 import { useUIStore } from './ui.store';
 import { useUsersStore } from './users.store';
 import { useVersionsStore } from './versions.store';
@@ -44,8 +44,8 @@ import { i18n } from '@/plugins/i18n';
 export const useSettingsStore = defineStore(STORES.SETTINGS, {
 	state: (): ISettingsState => ({
 		initialized: false,
-		settings: {} as IN8nUISettings,
-		promptsData: {} as IN8nPrompts,
+		settings: {} as IFloweaseUISettings,
+		promptsData: {} as IFloweasePrompts,
 		userManagement: {
 			quota: -1,
 			showSetupOnFirstLoad: false,
@@ -165,7 +165,7 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, {
 		templatesHost(): string {
 			return this.settings.templates.host;
 		},
-		pushBackend(): IN8nUISettings['pushBackend'] {
+		pushBackend(): IFloweaseUISettings['pushBackend'] {
 			return this.settings.pushBackend;
 		},
 		isCommunityNodesFeatureEnabled(): boolean {
@@ -230,7 +230,7 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, {
 				throw e;
 			}
 		},
-		setSettings(settings: IN8nUISettings): void {
+		setSettings(settings: IFloweaseUISettings): void {
 			this.settings = settings;
 			this.userManagement = settings.userManagement;
 			if (this.userManagement) {
@@ -291,7 +291,7 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, {
 			rootStore.setVersionCli(settings.versionCli);
 			rootStore.setInstanceId(settings.instanceId);
 			rootStore.setOauthCallbackUrls(settings.oauthCallbackUrls);
-			rootStore.setN8nMetadata(settings.n8nMetadata || {});
+			rootStore.setFloweaseMetadata(settings.floweaseMetadata || {});
 			rootStore.setDefaultLocale(settings.defaultLocale);
 			rootStore.setIsNpmAvailable(settings.isNpmAvailable);
 			rootStore.setBinaryDataMode(settings.binaryDataMode);
@@ -310,7 +310,7 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, {
 				},
 			};
 		},
-		setPromptsData(promptsData: IN8nPrompts): void {
+		setPromptsData(promptsData: IFloweasePrompts): void {
 			this.promptsData = promptsData;
 		},
 		setAllowedModules(allowedModules: { builtIn?: string[]; external?: string[] }): void {
@@ -323,7 +323,7 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, {
 
 			const uiStore = useUIStore();
 			const usersStore = useUsersStore();
-			const promptsData: IN8nPrompts = await getPromptsData(
+			const promptsData: IFloweasePrompts = await getPromptsData(
 				this.settings.instanceId,
 				usersStore.currentUserId || '',
 			);
@@ -336,7 +336,7 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, {
 
 			this.setPromptsData(promptsData);
 		},
-		async submitContactInfo(email: string): Promise<IN8nPromptResponse | undefined> {
+		async submitContactInfo(email: string): Promise<IFloweasePromptResponse | undefined> {
 			try {
 				const usersStore = useUsersStore();
 				return await submitContactInfo(
@@ -348,7 +348,7 @@ export const useSettingsStore = defineStore(STORES.SETTINGS, {
 				return;
 			}
 		},
-		async submitValueSurvey(params: IN8nValueSurveyData): Promise<IN8nPromptResponse | undefined> {
+		async submitValueSurvey(params: IFloweaseValueSurveyData): Promise<IFloweasePromptResponse | undefined> {
 			try {
 				const usersStore = useUsersStore();
 				return await submitValueSurvey(

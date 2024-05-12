@@ -1,5 +1,5 @@
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
-import type { IWebhookFunctions, INodeExecutionData, IDataObject } from 'n8n-workflow';
+import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
+import type { IWebhookFunctions, INodeExecutionData, IDataObject } from 'flowease-workflow';
 
 type WebhookParameters = {
 	httpMethod: string;

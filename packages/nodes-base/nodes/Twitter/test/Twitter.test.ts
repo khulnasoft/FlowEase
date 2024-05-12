@@ -64,7 +64,7 @@ const searchResult = {
 };
 
 const meResult = {
-	data: { id: '1285192200213626880', name: 'Integration-n8n', username: 'IntegrationN8n' },
+	data: { id: '1285192200213626880', name: 'Integration-flowease', username: 'IntegrationFlowease' },
 };
 describe('Test Twitter Request Node', () => {
 	beforeAll(() => {

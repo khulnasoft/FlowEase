@@ -8,7 +8,7 @@
 				:shortcut="{ keys: ['s'], metaKey: true }"
 				placement="bottom"
 			>
-				<n8n-button
+				<flowease-button
 					:label="saveButtonLabel"
 					:loading="isSaving"
 					:disabled="disabled"
@@ -16,7 +16,7 @@
 					:type="type"
 				/>
 			</KeyboardShortcutTooltip>
-			<n8n-button
+			<flowease-button
 				v-else
 				:label="saveButtonLabel"
 				:loading="isSaving"

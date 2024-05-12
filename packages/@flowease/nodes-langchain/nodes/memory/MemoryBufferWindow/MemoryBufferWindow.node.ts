@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { BufferWindowMemoryInput } from 'langchain/memory';
 import { BufferWindowMemory } from 'langchain/memory';
 import { logWrapper } from '../../../utils/logWrapper';
@@ -73,7 +73,7 @@ export class MemoryBufferWindow implements INodeType {
 		icon: 'fa:database',
 		group: ['transform'],
 		version: [1, 1.1, 1.2],
-		description: 'Stores in n8n memory, so no credentials required',
+		description: 'Stores in flowease memory, so no credentials required',
 		defaults: {
 			name: 'Window Buffer Memory',
 		},
@@ -85,7 +85,7 @@ export class MemoryBufferWindow implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memorybufferwindow/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.memorybufferwindow/',
 					},
 				],
 			},

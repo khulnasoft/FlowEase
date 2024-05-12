@@ -1,4 +1,4 @@
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
 
 export const nodeTypeTwitterV1 = {
 	displayName: 'X (Formerly Twitter)',
@@ -484,7 +484,7 @@ export const nodeTypeTwitterV2 = {
 					name: 'username',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. n8n',
+					placeholder: 'e.g. flowease',
 					url: '',
 				},
 				{
@@ -584,7 +584,7 @@ export const nodeTypeTwitterV2 = {
 					name: 'username',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. n8n',
+					placeholder: 'e.g. flowease',
 					url: '',
 				},
 				{
@@ -688,7 +688,7 @@ export const nodeTypeTwitterV2 = {
 							name: 'url',
 							type: 'string',
 							validation: [],
-							placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+							placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 							url: '',
 						},
 					],
@@ -713,7 +713,7 @@ export const nodeTypeTwitterV2 = {
 							name: 'url',
 							type: 'string',
 							validation: [],
-							placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+							placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 							url: '',
 						},
 					],
@@ -756,7 +756,7 @@ export const nodeTypeTwitterV2 = {
 					name: 'url',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+					placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 					url: '',
 				},
 			],
@@ -783,7 +783,7 @@ export const nodeTypeTwitterV2 = {
 					name: 'url',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+					placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 					url: '',
 				},
 			],
@@ -908,7 +908,7 @@ export const nodeTypeTwitterV2 = {
 					name: 'url',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+					placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 					url: '',
 				},
 			],
@@ -947,7 +947,7 @@ export const nodeTypeTwitterV2 = {
 					name: 'username',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. n8n',
+					placeholder: 'e.g. flowease',
 					url: '',
 				},
 				{
@@ -2805,12 +2805,12 @@ export const nodeTypeTelegramV1 = {
 			default: {},
 			options: [
 				{
-					displayName: 'Append n8n Attribution',
+					displayName: 'Append flowease Attribution',
 					name: 'appendAttribution',
 					type: 'boolean',
 					default: true,
 					description:
-						'Whether to include the phrase “This message was sent automatically with n8n” to the end of the message',
+						'Whether to include the phrase “This message was sent automatically with flowease” to the end of the message',
 					displayOptions: { show: { '/operation': ['sendMessage'] } },
 				},
 				{
@@ -3996,12 +3996,12 @@ export const nodeTypeTelegramV1_1 = {
 			default: {},
 			options: [
 				{
-					displayName: 'Append n8n Attribution',
+					displayName: 'Append flowease Attribution',
 					name: 'appendAttribution',
 					type: 'boolean',
 					default: true,
 					description:
-						'Whether to include the phrase “This message was sent automatically with n8n” to the end of the message',
+						'Whether to include the phrase “This message was sent automatically with flowease” to the end of the message',
 					displayOptions: { show: { '/operation': ['sendMessage'] } },
 				},
 				{

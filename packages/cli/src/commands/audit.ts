@@ -1,6 +1,6 @@
 import { Container } from 'typedi';
 import { Flags } from '@oclif/core';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 import { SecurityAuditService } from '@/security-audit/SecurityAudit.service';
 import { RISK_CATEGORIES } from '@/security-audit/constants';
@@ -10,12 +10,12 @@ import { BaseCommand } from './BaseCommand';
 import { InternalHooks } from '@/InternalHooks';
 
 export class SecurityAudit extends BaseCommand {
-	static description = 'Generate a security audit report for this n8n instance';
+	static description = 'Generate a security audit report for this flowease instance';
 
 	static examples = [
-		'$ n8n audit',
-		'$ n8n audit --categories=database,credentials',
-		'$ n8n audit --days-abandoned-workflow=10',
+		'$ flowease audit',
+		'$ flowease audit --categories=database,credentials',
+		'$ flowease audit --days-abandoned-workflow=10',
 	];
 
 	static flags = {

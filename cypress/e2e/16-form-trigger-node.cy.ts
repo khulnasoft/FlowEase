@@ -4,7 +4,7 @@ import { getVisibleSelect } from '../utils';
 const workflowPage = new WorkflowPage();
 const ndv = new NDV();
 
-describe('n8n Form Trigger', () => {
+describe('flowease Form Trigger', () => {
 	beforeEach(() => {
 		workflowPage.actions.visit();
 	});
@@ -16,11 +16,11 @@ describe('n8n Form Trigger', () => {
 		ndv.getters.parameterInput('formDescription').type('Test Form Description');
 		ndv.getters.parameterInput('fieldLabel').type('Test Field 1');
 		ndv.getters.backToCanvas().click();
-		workflowPage.getters.nodeIssuesByName('n8n Form Trigger').should('not.exist');
+		workflowPage.getters.nodeIssuesByName('flowease Form Trigger').should('not.exist');
 	});
 
 	it('should fill up form fields', () => {
-		workflowPage.actions.addInitialNodeToCanvas('n8n Form Trigger');
+		workflowPage.actions.addInitialNodeToCanvas('flowease Form Trigger');
 		workflowPage.getters.canvasNodes().first().dblclick();
 		ndv.getters.parameterInput('formTitle').type('Test Form');
 		ndv.getters.parameterInput('formDescription').type('Test Form Description');
@@ -96,6 +96,6 @@ describe('n8n Form Trigger', () => {
 			.type('Your test form was successfully submitted');
 
 		ndv.getters.backToCanvas().click();
-		workflowPage.getters.nodeIssuesByName('n8n Form Trigger').should('not.exist');
+		workflowPage.getters.nodeIssuesByName('flowease Form Trigger').should('not.exist');
 	});
 });

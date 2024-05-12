@@ -162,8 +162,8 @@ describe('Node Creator', () => {
 		nodeCreatorFeature.getters.getCreatorItem('Manually').click();
 
 		nodeCreatorFeature.actions.openNodeCreator();
-		nodeCreatorFeature.getters.searchBar().find('input').clear().type('n8n');
-		nodeCreatorFeature.getters.getCreatorItem('n8n').click();
+		nodeCreatorFeature.getters.searchBar().find('input').clear().type('flowease');
+		nodeCreatorFeature.getters.getCreatorItem('flowease').click();
 
 		nodeCreatorFeature.getters
 			.getCategoryItem('Actions')
@@ -191,8 +191,8 @@ describe('Node Creator', () => {
 			.searchBar()
 			.find('input')
 			.clear()
-			.type('Customer Datastore (n8n training)');
-		nodeCreatorFeature.getters.getCreatorItem('Customer Datastore (n8n training)').click();
+			.type('Customer Datastore (flowease training)');
+		nodeCreatorFeature.getters.getCreatorItem('Customer Datastore (flowease training)').click();
 
 		cy.getByTestId('actions-panel-no-triggers-callout').should('be.visible');
 		nodeCreatorFeature.getters.getCreatorItem('On a Schedule').should('be.visible');
@@ -205,8 +205,8 @@ describe('Node Creator', () => {
 			.searchBar()
 			.find('input')
 			.clear()
-			.type('Customer Datastore (n8n training)');
-		nodeCreatorFeature.getters.getCreatorItem('Customer Datastore (n8n training)').click();
+			.type('Customer Datastore (flowease training)');
+		nodeCreatorFeature.getters.getCreatorItem('Customer Datastore (flowease training)').click();
 
 		cy.getByTestId('actions-panel-activation-callout').should('be.visible');
 		nodeCreatorFeature.getters.activeSubcategory().find('button').click();
@@ -226,8 +226,8 @@ describe('Node Creator', () => {
 			.searchBar()
 			.find('input')
 			.clear()
-			.type('Customer Datastore (n8n training)');
-		nodeCreatorFeature.getters.getCreatorItem('Customer Datastore (n8n training)').click();
+			.type('Customer Datastore (flowease training)');
+		nodeCreatorFeature.getters.getCreatorItem('Customer Datastore (flowease training)').click();
 		nodeCreatorFeature.getters.getCreatorItem('Get All People').click();
 		NDVModal.actions.close();
 
@@ -245,8 +245,8 @@ describe('Node Creator', () => {
 			.searchBar()
 			.find('input')
 			.clear()
-			.type('Customer Datastore (n8n training)');
-		nodeCreatorFeature.getters.getCreatorItem('Customer Datastore (n8n training)').click();
+			.type('Customer Datastore (flowease training)');
+		nodeCreatorFeature.getters.getCreatorItem('Customer Datastore (flowease training)').click();
 
 		cy.getByTestId('actions-panel-activation-callout').should('not.exist');
 	});
@@ -258,8 +258,8 @@ describe('Node Creator', () => {
 			.searchBar()
 			.find('input')
 			.clear()
-			.type('Customer Datastore (n8n training)');
-		nodeCreatorFeature.getters.getCreatorItem('Customer Datastore (n8n training)').click();
+			.type('Customer Datastore (flowease training)');
+		nodeCreatorFeature.getters.getCreatorItem('Customer Datastore (flowease training)').click();
 
 		nodeCreatorFeature.getters.searchBar().find('input').clear().type('Non existent action name');
 
@@ -291,8 +291,8 @@ describe('Node Creator', () => {
 		sourcesWithAppend.forEach((source) => {
 			it(`should append manual trigger when source is ${source.name}`, () => {
 				source.handler();
-				nodeCreatorFeature.getters.searchBar().find('input').clear().type('n8n');
-				nodeCreatorFeature.getters.getCreatorItem('n8n').click();
+				nodeCreatorFeature.getters.searchBar().find('input').clear().type('flowease');
+				nodeCreatorFeature.getters.getCreatorItem('flowease').click();
 				nodeCreatorFeature.getters.getCategoryItem('Actions').click();
 				nodeCreatorFeature.getters.getCreatorItem('Create a credential').click();
 				NDVModal.actions.close();
@@ -303,21 +303,21 @@ describe('Node Creator', () => {
 		// @TODO FIX ADDING 2 NODES IN ONE GO
 		it('should not append manual trigger when source is canvas related', () => {
 			nodeCreatorFeature.getters.canvasAddButton().click();
-			nodeCreatorFeature.getters.searchBar().find('input').clear().type('n8n');
-			nodeCreatorFeature.getters.getCreatorItem('n8n').click();
+			nodeCreatorFeature.getters.searchBar().find('input').clear().type('flowease');
+			nodeCreatorFeature.getters.getCreatorItem('flowease').click();
 			nodeCreatorFeature.getters.getCategoryItem('Actions').click();
 			nodeCreatorFeature.getters.getCreatorItem('Create a credential').click();
 			NDVModal.actions.close();
 			WorkflowPage.actions.deleteNode('When clicking "Test workflow"');
-			WorkflowPage.getters.canvasNodePlusEndpointByName('n8n').click();
-			nodeCreatorFeature.getters.searchBar().find('input').clear().type('n8n');
-			nodeCreatorFeature.getters.getCreatorItem('n8n').click();
+			WorkflowPage.getters.canvasNodePlusEndpointByName('flowease').click();
+			nodeCreatorFeature.getters.searchBar().find('input').clear().type('flowease');
+			nodeCreatorFeature.getters.getCreatorItem('flowease').click();
 			nodeCreatorFeature.getters.getCategoryItem('Actions').click();
 			nodeCreatorFeature.getters.getCreatorItem('Create a credential').click();
 			NDVModal.actions.close();
 			WorkflowPage.getters.canvasNodes().should('have.length', 2);
 			WorkflowPage.actions.zoomToFit();
-			WorkflowPage.actions.addNodeBetweenNodes('n8n', 'n8n1', 'Summarize');
+			WorkflowPage.actions.addNodeBetweenNodes('flowease', 'flowease1', 'Summarize');
 			WorkflowPage.getters.canvasNodes().should('have.length', 3);
 		});
 	});

@@ -13,7 +13,7 @@ import type {
 	JsonObject,
 	IRequestOptions,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import {
 	BINARY_ENCODING,
@@ -22,7 +22,7 @@ import {
 	jsonParse,
 	removeCircularRefs,
 	sleep,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import set from 'lodash/set';
 import type { BodyParameter, IAuthDataSanitizeKeys } from '../GenericFunctions';
@@ -415,7 +415,7 @@ export class HttpRequestV3 implements INodeType {
 						},
 						{
 							// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-							name: 'n8n Binary File',
+							name: 'flowease Binary File',
 							value: 'binaryData',
 						},
 						{
@@ -545,7 +545,7 @@ export class HttpRequestV3 implements INodeType {
 									options: [
 										{
 											// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-											name: 'n8n Binary File',
+											name: 'flowease Binary File',
 											value: 'formBinaryData',
 										},
 										{
@@ -1010,7 +1010,7 @@ export class HttpRequestV3 implements INodeType {
 										},
 										{
 											displayName:
-												'Use the $response variables to access the data of the previous response. <a href="https://docs.flowease.khulnasoft.com/code/builtin/http-node-variables/?utm_source=n8n_app&utm_medium=node_settings_modal-credential_link&utm_campaign=flowease-nodes-base.httpRequest" target="_blank">More info</a>',
+												'Use the $response variables to access the data of the previous response. <a href="https://docs.flowease.khulnasoft.com/code/builtin/http-node-variables/?utm_source=flowease_app&utm_medium=node_settings_modal-credential_link&utm_campaign=flowease-nodes-base.httpRequest" target="_blank">More info</a>',
 											name: 'webhookNotice',
 											displayOptions: {
 												hide: {

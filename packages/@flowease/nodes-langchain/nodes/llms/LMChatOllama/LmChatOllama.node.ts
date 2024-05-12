@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { ChatOllamaInput } from '@langchain/community/chat_models/ollama';
 import { ChatOllama } from '@langchain/community/chat_models/ollama';
@@ -33,7 +33,7 @@ export class LmChatOllama implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.lmchatollama/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.lmchatollama/',
 					},
 				],
 			},

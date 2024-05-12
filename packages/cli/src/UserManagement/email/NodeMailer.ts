@@ -3,7 +3,7 @@ import type { Transporter } from 'nodemailer';
 import { createTransport } from 'nodemailer';
 import type SMTPConnection from 'nodemailer/lib/smtp-connection';
 import { Service } from 'typedi';
-import { ErrorReporterProxy as ErrorReporter } from 'n8n-workflow';
+import { ErrorReporterProxy as ErrorReporter } from 'flowease-workflow';
 import config from '@/config';
 import type { MailData, SendEmailResult } from './Interfaces';
 import { Logger } from '@/Logger';
@@ -60,9 +60,9 @@ export class NodeMailer {
 			await this.transport?.verify();
 		} catch (error) {
 			const message: string[] = [];
-			if (!host) message.push('SMTP host not defined (N8N_SMTP_HOST).');
-			if (!user) message.push('SMTP user not defined (N8N_SMTP_USER).');
-			if (!pass) message.push('SMTP pass not defined (N8N_SMTP_PASS).');
+			if (!host) message.push('SMTP host not defined (FLOWEASE_SMTP_HOST).');
+			if (!user) message.push('SMTP user not defined (FLOWEASE_SMTP_USER).');
+			if (!pass) message.push('SMTP pass not defined (FLOWEASE_SMTP_PASS).');
 			throw message.length ? new Error(message.join(' '), { cause: error }) : error;
 		}
 	}

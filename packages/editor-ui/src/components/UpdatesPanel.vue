@@ -35,12 +35,12 @@
 					{{ $locale.baseText('updatesPanel.behindTheLatest') }}
 				</p>
 
-				<n8n-link v-if="infoUrl" :to="infoUrl" :bold="true">
+				<flowease-link v-if="infoUrl" :to="infoUrl" :bold="true">
 					<font-awesome-icon icon="info-circle" class="mr-2xs" />
 					<span>
-						{{ $locale.baseText('updatesPanel.howToUpdateYourN8nVersion') }}
+						{{ $locale.baseText('updatesPanel.howToUpdateYourFloweaseVersion') }}
 					</span>
-				</n8n-link>
+				</flowease-link>
 			</section>
 			<section :class="$style.versions">
 				<div v-for="version in nextVersions" :key="version.name" :class="$style['versions-card']">

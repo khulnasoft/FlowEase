@@ -2,36 +2,36 @@
 	<div :class="$style.container">
 		<el-row v-if="currentCredential">
 			<el-col :span="8" :class="$style.label">
-				<n8n-text :compact="true" :bold="true">
+				<flowease-text :compact="true" :bold="true">
 					{{ $locale.baseText('credentialEdit.credentialInfo.created') }}
-				</n8n-text>
+				</flowease-text>
 			</el-col>
 			<el-col :span="16" :class="$style.valueLabel">
-				<n8n-text :compact="true"
+				<flowease-text :compact="true"
 					><TimeAgo :date="currentCredential.createdAt" :capitalize="true"
-				/></n8n-text>
+				/></flowease-text>
 			</el-col>
 		</el-row>
 		<el-row v-if="currentCredential">
 			<el-col :span="8" :class="$style.label">
-				<n8n-text :compact="true" :bold="true">
+				<flowease-text :compact="true" :bold="true">
 					{{ $locale.baseText('credentialEdit.credentialInfo.lastModified') }}
-				</n8n-text>
+				</flowease-text>
 			</el-col>
 			<el-col :span="16" :class="$style.valueLabel">
-				<n8n-text :compact="true"
+				<flowease-text :compact="true"
 					><TimeAgo :date="currentCredential.updatedAt" :capitalize="true"
-				/></n8n-text>
+				/></flowease-text>
 			</el-col>
 		</el-row>
 		<el-row v-if="currentCredential">
 			<el-col :span="8" :class="$style.label">
-				<n8n-text :compact="true" :bold="true">
+				<flowease-text :compact="true" :bold="true">
 					{{ $locale.baseText('credentialEdit.credentialInfo.id') }}
-				</n8n-text>
+				</flowease-text>
 			</el-col>
 			<el-col :span="16" :class="$style.valueLabel">
-				<n8n-text :compact="true">{{ currentCredential.id }}</n8n-text>
+				<flowease-text :compact="true">{{ currentCredential.id }}</flowease-text>
 			</el-col>
 		</el-row>
 	</div>
@@ -41,7 +41,7 @@
 import { defineComponent } from 'vue';
 
 import TimeAgo from '../TimeAgo.vue';
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
 
 export default defineComponent({
 	name: 'CredentialInfo',

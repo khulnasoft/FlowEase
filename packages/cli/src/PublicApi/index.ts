@@ -25,7 +25,7 @@ async function createApiRouter(
 	handlersDirectory: string,
 	publicApiEndpoint: string,
 ): Promise<Router> {
-	const n8nPath = config.getEnv('path');
+	const floweasePath = config.getEnv('path');
 	const swaggerDocument = YAML.load(openApiSpecPath) as JsonObject;
 	// add the server depending on the config so the user can interact with the API
 	// from the Swagger UI
@@ -46,8 +46,8 @@ async function createApiRouter(
 			serveFiles(swaggerDocument),
 			setup(swaggerDocument, {
 				customCss: swaggerThemeCss,
-				customSiteTitle: 'n8n Public API UI',
-				customfavIcon: `${n8nPath}favicon.ico`,
+				customSiteTitle: 'flowease Public API UI',
+				customfavIcon: `${floweasePath}favicon.ico`,
 			}),
 		);
 	}

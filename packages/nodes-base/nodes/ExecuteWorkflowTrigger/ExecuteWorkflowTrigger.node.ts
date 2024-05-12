@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, INodeType, INodeTypeDescription } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeType, INodeTypeDescription } from 'flowease-workflow';
 
 export class ExecuteWorkflowTrigger implements INodeType {
 	description: INodeTypeDescription = {
@@ -8,7 +8,7 @@ export class ExecuteWorkflowTrigger implements INodeType {
 		group: ['trigger'],
 		version: 1,
 		description:
-			'Helpers for calling other n8n workflows. Used for designing modular, microservice-like workflows.',
+			'Helpers for calling other flowease workflows. Used for designing modular, microservice-like workflows.',
 		eventTriggerDescription: '',
 		maxNodes: 1,
 		defaults: {

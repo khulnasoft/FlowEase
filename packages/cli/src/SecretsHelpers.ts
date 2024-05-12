@@ -1,4 +1,4 @@
-import type { SecretsHelpersBase } from 'n8n-workflow';
+import type { SecretsHelpersBase } from 'flowease-workflow';
 import { Service } from 'typedi';
 import { ExternalSecretsManager } from './ExternalSecrets/ExternalSecretsManager.ee';
 

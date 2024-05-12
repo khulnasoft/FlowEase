@@ -1,10 +1,10 @@
-const sharedOptions = require('@n8n_io/eslint-config/shared');
+const sharedOptions = require('@flowease_io/eslint-config/shared');
 
 /**
  * @type {import('@types/eslint').ESLint.ConfigData}
  */
 module.exports = {
-	extends: ['@n8n_io/eslint-config/node'],
+	extends: ['@flowease_io/eslint-config/node'],
 
 	...sharedOptions(__dirname),
 
@@ -19,7 +19,7 @@ module.exports = {
 	],
 
 	rules: {
-		'n8n-local-rules/no-dynamic-import-template': 'error',
+		'flowease-local-rules/no-dynamic-import-template': 'error',
 		complexity: 'error',
 
 		// TODO: Remove this

@@ -24,7 +24,7 @@
 					/>
 				</div>
 				<div :class="$style.credActions">
-					<n8n-icon-button
+					<flowease-icon-button
 						v-if="currentCredential && credentialPermissions.delete"
 						:title="$locale.baseText('credentialEdit.credentialEdit.delete')"
 						icon="trash"
@@ -53,12 +53,12 @@
 		<template #content>
 			<div :class="$style.container" data-test-id="credential-edit-dialog">
 				<div :class="$style.sidebar">
-					<n8n-menu
+					<flowease-menu
 						mode="tabs"
 						:items="sidebarItems"
 						:transparent-background="true"
 						@select="onTabSelect"
-					></n8n-menu>
+					></flowease-menu>
 				</div>
 				<div v-if="activeTab === 'connection'" ref="content" :class="$style.mainContent">
 					<CredentialConfig
@@ -128,8 +128,8 @@ import type {
 	INodeTypeDescription,
 	ITelemetryTrackProperties,
 	IDataObject,
-} from 'n8n-workflow';
-import { NodeHelpers } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeHelpers } from 'flowease-workflow';
 import CredentialIcon from '@/components/CredentialIcon.vue';
 
 import { useToast } from '@/composables/useToast';
@@ -1048,7 +1048,7 @@ export default defineComponent({
 			};
 
 			const receiveMessage = (event: MessageEvent) => {
-				// // TODO: Add check that it came from n8n
+				// // TODO: Add check that it came from flowease
 				// if (event.origin !== 'http://example.org:8080') {
 				// 	return;
 				// }

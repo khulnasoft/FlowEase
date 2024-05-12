@@ -3,7 +3,7 @@ import type {
 	IDataObject,
 	ILoadOptionsFunctions,
 	INodeListSearchResult,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import mysql2 from 'mysql2/promise';
 
 export async function createConnection(

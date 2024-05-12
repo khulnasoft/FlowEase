@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 
 export const tweetOperations: INodeProperties[] = [
 	{
@@ -118,7 +118,7 @@ export const tweetFields: INodeProperties[] = [
 						name: 'url',
 						type: 'string',
 						validation: [],
-						placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+						placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 						url: '',
 					},
 				],
@@ -144,7 +144,7 @@ export const tweetFields: INodeProperties[] = [
 						name: 'url',
 						type: 'string',
 						validation: [],
-						placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+						placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 						url: '',
 					},
 				],
@@ -204,7 +204,7 @@ export const tweetFields: INodeProperties[] = [
 				name: 'url',
 				type: 'string',
 				validation: [],
-				placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+				placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 				url: '',
 			},
 		],
@@ -240,7 +240,7 @@ export const tweetFields: INodeProperties[] = [
 				name: 'url',
 				type: 'string',
 				validation: [],
-				placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+				placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 				url: '',
 			},
 		],
@@ -471,7 +471,7 @@ export const tweetFields: INodeProperties[] = [
 				name: 'url',
 				type: 'string',
 				validation: [],
-				placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+				placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 				url: '',
 			},
 		],

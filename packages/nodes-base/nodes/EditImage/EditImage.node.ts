@@ -9,8 +9,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 import gm from 'gm';
 import { file } from 'tmp-promise';
 import getSystemFonts from 'get-system-fonts';

@@ -1,5 +1,5 @@
 <template>
-	<n8n-node-creator-node
+	<flowease-node-creator-node
 		draggable
 		:class="$style.action"
 		:title="action.displayName"
@@ -17,7 +17,7 @@
 		<template #icon>
 			<NodeIcon :node-type="action" />
 		</template>
-	</n8n-node-creator-node>
+	</flowease-node-creator-node>
 </template>
 
 <script setup lang="ts">

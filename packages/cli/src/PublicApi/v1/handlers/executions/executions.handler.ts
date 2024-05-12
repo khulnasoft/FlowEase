@@ -1,6 +1,6 @@
 import type express from 'express';
 import { Container } from 'typedi';
-import { replaceCircularReferences } from 'n8n-workflow';
+import { replaceCircularReferences } from 'flowease-workflow';
 
 import { ActiveExecutions } from '@/ActiveExecutions';
 import { authorize, validCursor } from '../../shared/middlewares/global.middleware';

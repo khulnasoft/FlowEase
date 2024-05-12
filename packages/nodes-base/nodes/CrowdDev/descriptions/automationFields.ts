@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { automationPresend } from '../GenericFunctions';
 import { mapWith, showFor } from './utils';
 

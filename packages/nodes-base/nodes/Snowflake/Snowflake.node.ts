@@ -4,7 +4,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import snowflake from 'snowflake-sdk';
 import { connect, destroy, execute } from './GenericFunctions';

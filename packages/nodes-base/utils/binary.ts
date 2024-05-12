@@ -1,5 +1,5 @@
-import type { IBinaryData, IDataObject, IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import { NodeOperationError, BINARY_ENCODING } from 'n8n-workflow';
+import type { IBinaryData, IDataObject, IExecuteFunctions, INodeExecutionData } from 'flowease-workflow';
+import { NodeOperationError, BINARY_ENCODING } from 'flowease-workflow';
 import type { WorkBook, WritingOptions } from 'xlsx';
 import { utils as xlsxUtils, write as xlsxWrite } from 'xlsx';
 

@@ -25,14 +25,14 @@ import type {
 	ExecutionError,
 	EventNamesAiNodesType,
 	CallbackManager,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	ApplicationError,
 	ErrorReporterProxy as ErrorReporter,
 	NodeOperationError,
 	Workflow,
 	WorkflowHooks,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { Container } from 'typedi';
 import config from '@/config';

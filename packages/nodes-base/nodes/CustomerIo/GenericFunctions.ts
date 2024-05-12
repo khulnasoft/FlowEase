@@ -5,7 +5,7 @@ import type {
 	IDataObject,
 	IHttpRequestMethods,
 	IHttpRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import get from 'lodash/get';
 

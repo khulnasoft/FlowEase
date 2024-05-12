@@ -1,4 +1,4 @@
-import type { ILoadOptionsFunctions, INodePropertyOptions } from 'n8n-workflow';
+import type { ILoadOptionsFunctions, INodePropertyOptions } from 'flowease-workflow';
 
 import { getTableSchema } from '../helpers/utils';
 import { configurePostgres } from '../transport';

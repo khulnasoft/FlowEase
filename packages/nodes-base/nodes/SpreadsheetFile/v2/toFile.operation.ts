@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'flowease-workflow';
 
 import { toFileOptions, toFileProperties } from '../description';
 import { generatePairedItemData } from '@utils/utilities';

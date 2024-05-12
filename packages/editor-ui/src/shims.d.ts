@@ -20,7 +20,7 @@ declare global {
 	interface Window {
 		BASE_PATH: string;
 		REST_ENDPOINT: string;
-		n8nExternalHooks?: PartialDeep<ExternalHooks>;
+		floweaseExternalHooks?: PartialDeep<ExternalHooks>;
 	}
 
 	namespace JSX {

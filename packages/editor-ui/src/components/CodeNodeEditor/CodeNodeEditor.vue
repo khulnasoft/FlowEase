@@ -60,12 +60,12 @@ import type { ViewUpdate } from '@codemirror/view';
 import { EditorView } from '@codemirror/view';
 import { javascript } from '@codemirror/lang-javascript';
 import { python } from '@codemirror/lang-python';
-import type { CodeExecutionMode, CodeNodeEditorLanguage } from 'n8n-workflow';
-import { CODE_EXECUTION_MODES, CODE_LANGUAGES } from 'n8n-workflow';
+import type { CodeExecutionMode, CodeNodeEditorLanguage } from 'flowease-workflow';
+import { CODE_EXECUTION_MODES, CODE_LANGUAGES } from 'flowease-workflow';
 
 import { ASK_AI_EXPERIMENT, CODE_NODE_TYPE } from '@/constants';
 import { codeNodeEditorEventBus } from '@/event-bus';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { usePostHog } from '@/stores/posthog.store';
 
 import { readOnlyEditorExtensions, writableEditorExtensions } from './baseExtensions';

@@ -6,7 +6,7 @@ import {
 	type INodeTypeDescription,
 	type SupplyData,
 	NodeConnectionType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { BufferMemory } from 'langchain/memory';
 import type { RedisChatMessageHistoryInput } from '@langchain/redis';
 import { RedisChatMessageHistory } from '@langchain/redis';
@@ -42,7 +42,7 @@ export class MemoryRedisChat implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.memoryredischat/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.memoryredischat/',
 					},
 				],
 			},

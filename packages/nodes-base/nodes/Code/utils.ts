@@ -1,4 +1,4 @@
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 
 export function isObject(maybe: unknown): maybe is { [key: string]: unknown } {
 	return (

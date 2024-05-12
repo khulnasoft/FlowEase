@@ -6,10 +6,10 @@ import path from 'path';
 
 import type {
 	ICredentialType,
-	IN8nUISettings,
+	IFloweaseUISettings,
 	INodeTypeBaseDescription,
 	ITelemetrySettings,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { InstanceSettings } from 'flowease-core';
 
 import config from '@/config';
@@ -34,7 +34,7 @@ import { InternalHooks } from '@/InternalHooks';
 
 @Service()
 export class FrontendService {
-	settings: IN8nUISettings;
+	settings: IFloweaseUISettings;
 
 	private communityPackagesService?: CommunityPackagesService;
 
@@ -83,7 +83,7 @@ export class FrontendService {
 		}
 
 		this.settings = {
-			previewMode: process.env.N8N_PREVIEW_MODE === 'true',
+			previewMode: process.env.FLOWEASE_PREVIEW_MODE === 'true',
 			endpointForm: config.getEnv('endpoints.form'),
 			endpointFormTest: config.getEnv('endpoints.formTest'),
 			endpointFormWaiting: config.getEnv('endpoints.formWaiting'),
@@ -227,7 +227,7 @@ export class FrontendService {
 		this.writeStaticJSON('credentials', credentials);
 	}
 
-	getSettings(pushRef?: string): IN8nUISettings {
+	getSettings(pushRef?: string): IFloweaseUISettings {
 		void this.internalHooks.onFrontendSettingsAPI(pushRef);
 
 		const restEndpoint = config.getEnv('endpoints.rest');

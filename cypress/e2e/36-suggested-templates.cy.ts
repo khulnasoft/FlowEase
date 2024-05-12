@@ -26,7 +26,7 @@ describe('Suggested templates - Should render', () => {
 	});
 
 	beforeEach(() => {
-		localStorage.removeItem('SHOW_N8N_SUGGESTED_TEMPLATES');
+		localStorage.removeItem('SHOW_FLOWEASE_SUGGESTED_TEMPLATES');
 		cy.intercept('GET', '/rest/settings', (req) => {
 			req.on('response', (res) => {
 				res.send({
@@ -74,7 +74,7 @@ describe('Suggested templates - Should render', () => {
 
 describe('Suggested templates - Should not render', () => {
 	beforeEach(() => {
-		localStorage.removeItem('SHOW_N8N_SUGGESTED_TEMPLATES');
+		localStorage.removeItem('SHOW_FLOWEASE_SUGGESTED_TEMPLATES');
 		cy.visit(WorkflowsListPage.url);
 	});
 

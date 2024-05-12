@@ -7,8 +7,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { zendeskApiRequest, zendeskApiRequestAllItems } from './GenericFunctions';
 import { conditionFields } from './ConditionDescription';
@@ -361,7 +361,7 @@ export class ZendeskTrigger implements INodeType {
 
 					const bodyTrigger: IDataObject = {
 						trigger: {
-							title: `n8n-webhook:${urlParts.pathname}`,
+							title: `flowease-webhook:${urlParts.pathname}`,
 							conditions: {
 								all: resultAll,
 								any: resultAny,
@@ -377,7 +377,7 @@ export class ZendeskTrigger implements INodeType {
 
 					const bodyTarget: IDataObject = {
 						webhook: {
-							name: 'n8n webhook',
+							name: 'flowease webhook',
 							endpoint: webhookUrl,
 							http_method: 'POST',
 							status: 'active',

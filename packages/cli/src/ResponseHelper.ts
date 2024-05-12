@@ -5,7 +5,7 @@ import {
 	ErrorReporterProxy as ErrorReporter,
 	FORM_TRIGGER_PATH_IDENTIFIER,
 	NodeApiError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { Readable } from 'node:stream';
 
 import { inDevelopment } from '@/constants';

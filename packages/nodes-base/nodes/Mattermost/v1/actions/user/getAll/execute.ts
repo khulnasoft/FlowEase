@@ -1,5 +1,5 @@
-import type { IExecuteFunctions, IDataObject, INodeExecutionData } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions, IDataObject, INodeExecutionData } from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { snakeCase } from 'change-case';
 import { apiRequest, apiRequestAllItems } from '../../../transport';

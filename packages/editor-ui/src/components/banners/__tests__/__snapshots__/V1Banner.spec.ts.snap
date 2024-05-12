@@ -2,7 +2,7 @@
 
 exports[`V1 Banner > should render banner 1`] = `
 <div>
-  <n8n-callout
+  <flowease-callout
     class="v1container"
     data-test-id="banners-V1"
     icon="info-circle"
@@ -15,7 +15,7 @@ exports[`V1 Banner > should render banner 1`] = `
     >
       
       <span>
-        n8n has been updated to version 1, introducing some breaking changes. Please consult the 
+        flowease has been updated to version 1, introducing some breaking changes. Please consult the 
         <a
           href="https://docs.flowease.khulnasoft.com/1-0-migration-checklist"
           target="_blank"
@@ -27,13 +27,13 @@ exports[`V1 Banner > should render banner 1`] = `
       <!--v-if-->
       
     </div>
-  </n8n-callout>
+  </flowease-callout>
 </div>
 `;
 
 exports[`V1 Banner > should render banner with dismiss call if user is owner 1`] = `
 <div>
-  <n8n-callout
+  <flowease-callout
     class="v1container"
     data-test-id="banners-V1"
     icon="info-circle"
@@ -46,7 +46,7 @@ exports[`V1 Banner > should render banner with dismiss call if user is owner 1`]
     >
       
       <span>
-        n8n has been updated to version 1, introducing some breaking changes. Please consult the 
+        flowease has been updated to version 1, introducing some breaking changes. Please consult the 
         <a
           href="https://docs.flowease.khulnasoft.com/1-0-migration-checklist"
           target="_blank"
@@ -65,6 +65,6 @@ exports[`V1 Banner > should render banner with dismiss call if user is owner 1`]
       </a>
       
     </div>
-  </n8n-callout>
+  </flowease-callout>
 </div>
 `;

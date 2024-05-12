@@ -1,4 +1,4 @@
-# [1.41.0](https://github.com/khulnasoft/flowease/compare/n8n@1.40.0...n8n@1.41.0) (2024-05-08)
+# [1.41.0](https://github.com/khulnasoft/flowease/compare/flowease@1.40.0...flowease@1.41.0) (2024-05-08)
 
 
 ### Bug Fixes
@@ -13,7 +13,7 @@
 * **editor:** Show MFA section to instance owner, even when external auth is enabled ([#9301](https://github.com/khulnasoft/flowease/issues/9301)) ([b65e0e2](https://github.com/khulnasoft/flowease/commit/b65e0e28114f576f89e271ab8ffdb8550e1be60f))
 * **Gmail Node:** Remove duplicate options when creating drafts ([#9299](https://github.com/khulnasoft/flowease/issues/9299)) ([bfb0eb7](https://github.com/khulnasoft/flowease/commit/bfb0eb7a06f219424486a55256ecca46c14a85ba))
 * **Linear Node:** Fix issue with data not always being returned ([#9273](https://github.com/khulnasoft/flowease/issues/9273)) ([435272b](https://github.com/khulnasoft/flowease/commit/435272b568826edf899dbaba9d10077fbe134ea6))
-* **n8n Form Trigger Node:** Fix missing options when using respond to webhook ([#9282](https://github.com/khulnasoft/flowease/issues/9282)) ([6ab3781](https://github.com/khulnasoft/flowease/commit/6ab378157041abfc918ae1d9408821f8fd5cfb34))
+* **flowease Form Trigger Node:** Fix missing options when using respond to webhook ([#9282](https://github.com/khulnasoft/flowease/issues/9282)) ([6ab3781](https://github.com/khulnasoft/flowease/commit/6ab378157041abfc918ae1d9408821f8fd5cfb34))
 * **Pipedrive Node:** Improve type-safety in custom-property handling ([#9319](https://github.com/khulnasoft/flowease/issues/9319)) ([c8895c5](https://github.com/khulnasoft/flowease/commit/c8895c540e5c8edfb576960a5ba4ec9ac4426d5b))
 * **Read PDF Node:** Disable JS evaluation from PDFs ([#9336](https://github.com/khulnasoft/flowease/issues/9336)) ([c4bf5b2](https://github.com/khulnasoft/flowease/commit/c4bf5b2b9285402ae09960eb64a5d6f20356eeaf))
 
@@ -29,7 +29,7 @@
 
 
 
-# [1.40.0](https://github.com/khulnasoft/flowease/compare/n8n@1.39.0...n8n@1.40.0) (2024-05-02)
+# [1.40.0](https://github.com/khulnasoft/flowease/compare/flowease@1.39.0...flowease@1.40.0) (2024-05-02)
 
 
 ### Bug Fixes
@@ -47,7 +47,7 @@
 * **Google BigQuery Node:** Better error messages, transform timestamps ([#9255](https://github.com/khulnasoft/flowease/issues/9255)) ([7ff24f1](https://github.com/khulnasoft/flowease/commit/7ff24f134b706d0b5b7d7c13d3e69bd1a0f4c5b8))
 * **Google Drive Node:** Create from text operation ([#9185](https://github.com/khulnasoft/flowease/issues/9185)) ([d9e7494](https://github.com/khulnasoft/flowease/commit/d9e74949c4db7282c3ab42bd6825aa5acc042400))
 * **Jira Trigger Node:** Update credentials UI ([#9198](https://github.com/khulnasoft/flowease/issues/9198)) ([ed98ca2](https://github.com/khulnasoft/flowease/commit/ed98ca2fb77fc81362e6480ee6a12a64915418f9))
-* **LangChain Code Node:** Fix execution of custom n8n tools called via LC code node ([#9265](https://github.com/khulnasoft/flowease/issues/9265)) ([741e829](https://github.com/khulnasoft/flowease/commit/741e8299d64cd774cc35ea312433f50d865f1318))
+* **LangChain Code Node:** Fix execution of custom flowease tools called via LC code node ([#9265](https://github.com/khulnasoft/flowease/issues/9265)) ([741e829](https://github.com/khulnasoft/flowease/commit/741e8299d64cd774cc35ea312433f50d865f1318))
 * **LangChain Code Node:** Fix resolution of scoped langchain modules ([#9258](https://github.com/khulnasoft/flowease/issues/9258)) ([445c05d](https://github.com/khulnasoft/flowease/commit/445c05dca46225e195ab122cf77d6d1088460e20))
 * **MySQL Node:** Query to statements splitting fix ([#9207](https://github.com/khulnasoft/flowease/issues/9207)) ([dc84452](https://github.com/khulnasoft/flowease/commit/dc844528f4554ae41037e2c25542237a74d86f3f))
 
@@ -73,7 +73,7 @@
 
 
 
-# [1.39.0](https://github.com/khulnasoft/flowease/compare/n8n@1.38.0...n8n@1.39.0) (2024-04-24)
+# [1.39.0](https://github.com/khulnasoft/flowease/compare/flowease@1.38.0...flowease@1.39.0) (2024-04-24)
 
 
 ### Bug Fixes
@@ -99,13 +99,13 @@
 * Add WhatsApp Business Trigger Node ([#8840](https://github.com/khulnasoft/flowease/issues/8840)) ([23a2dd0](https://github.com/khulnasoft/flowease/commit/23a2dd08b6e5391b61b73bdd4496cdb2f6fa9205))
 * **core:** Setup helmet.js for setting security headers ([#9027](https://github.com/khulnasoft/flowease/issues/9027)) ([0ed4671](https://github.com/khulnasoft/flowease/commit/0ed46711f426f7edf5fa7833673b6b07348a3bd7))
 * **core:** Upgrade mysql2 to address CVE-2024-21507, CVE-2024-21508, and CVE-2024-21509 ([#9154](https://github.com/khulnasoft/flowease/issues/9154)) ([9bd8e10](https://github.com/khulnasoft/flowease/commit/9bd8e10b356ab965bfee5d13bf339f057bcfdb14))
-* **n8n Form Trigger Node:** Option to remove attribution ([#9162](https://github.com/khulnasoft/flowease/issues/9162)) ([699fd70](https://github.com/khulnasoft/flowease/commit/699fd70c2427397455939391f95a5cd65521afb3))
+* **flowease Form Trigger Node:** Option to remove attribution ([#9162](https://github.com/khulnasoft/flowease/issues/9162)) ([699fd70](https://github.com/khulnasoft/flowease/commit/699fd70c2427397455939391f95a5cd65521afb3))
 * **Webhook Node:** Setting to enable multiple outputs/methods ([#9086](https://github.com/khulnasoft/flowease/issues/9086)) ([2bf0a39](https://github.com/khulnasoft/flowease/commit/2bf0a3933e0d7da46be73b8671e72e69d7d472df))
 * **Zammad Node:** Add more options to the Organizations endpoint  ([#9180](https://github.com/khulnasoft/flowease/issues/9180)) ([15c88d6](https://github.com/khulnasoft/flowease/commit/15c88d6839fb0b59fe5112b846ba61a29e9e3e45))
 
 
 
-# [1.38.0](https://github.com/khulnasoft/flowease/compare/n8n@1.37.0...n8n@1.38.0) (2024-04-17)
+# [1.38.0](https://github.com/khulnasoft/flowease/compare/flowease@1.37.0...flowease@1.38.0) (2024-04-17)
 
 
 ### Bug Fixes
@@ -131,7 +131,7 @@
 
 
 
-# [1.37.0](https://github.com/khulnasoft/flowease/compare/n8n@1.36.0...n8n@1.37.0) (2024-04-10)
+# [1.37.0](https://github.com/khulnasoft/flowease/compare/flowease@1.36.0...flowease@1.37.0) (2024-04-10)
 
 
 ### Bug Fixes
@@ -180,7 +180,7 @@
 
 
 
-# [1.36.0](https://github.com/khulnasoft/flowease/compare/n8n@1.35.0...n8n@1.36.0) (2024-04-03)
+# [1.36.0](https://github.com/khulnasoft/flowease/compare/flowease@1.35.0...flowease@1.36.0) (2024-04-03)
 
 
 ### Bug Fixes
@@ -205,7 +205,7 @@
 
 
 
-# [1.35.0](https://github.com/khulnasoft/flowease/compare/n8n@1.33.0...n8n@1.35.0) (2024-03-27)
+# [1.35.0](https://github.com/khulnasoft/flowease/compare/flowease@1.33.0...flowease@1.35.0) (2024-03-27)
 
 
 ### Bug Fixes
@@ -245,7 +245,7 @@
 * **core:** Add support for SQLite connection pooling ([#8722](https://github.com/khulnasoft/flowease/issues/8722)) ([c4c319d](https://github.com/khulnasoft/flowease/commit/c4c319d7cfb30772cca248a0039fd8e2b1c99eb7))
 * **editor:** Add missing extension methods for expressions ([#8845](https://github.com/khulnasoft/flowease/issues/8845)) ([5e84c2a](https://github.com/khulnasoft/flowease/commit/5e84c2ab89c7d0e4365b32b1c94a9c10cea56cb9))
 * **editor:** Add type information to autocomplete dropdown ([#8843](https://github.com/khulnasoft/flowease/issues/8843)) ([d7bfd45](https://github.com/khulnasoft/flowease/commit/d7bfd45333cc9780ae5f1424f33de2093bd1a2f9))
-* **editor:** Block the frontend when trying to access n8n from another host over http ([#8906](https://github.com/khulnasoft/flowease/issues/8906)) ([669bd83](https://github.com/khulnasoft/flowease/commit/669bd830e9b1b0f986d8a8b4525d0bdc3e3c0bd7))
+* **editor:** Block the frontend when trying to access flowease from another host over http ([#8906](https://github.com/khulnasoft/flowease/issues/8906)) ([669bd83](https://github.com/khulnasoft/flowease/commit/669bd830e9b1b0f986d8a8b4525d0bdc3e3c0bd7))
 * **editor:** Refactor expression editors and mixins to composition API ([#8894](https://github.com/khulnasoft/flowease/issues/8894)) ([0c179e4](https://github.com/khulnasoft/flowease/commit/0c179e4e511e4e6075d390afc025c93630ef3241))
 * **editor:** Release `@flowease/chat@0.9.1` ([#8918](https://github.com/khulnasoft/flowease/issues/8918)) ([e0c303c](https://github.com/khulnasoft/flowease/commit/e0c303c6c10145a2ef72daaf4142315cf65c839a))
 * **editor:** Show tip when user can type dot after an expression ([#8931](https://github.com/khulnasoft/flowease/issues/8931)) ([160dfd3](https://github.com/khulnasoft/flowease/commit/160dfd383d79fc44be79e5a071dc5f6c6b67469b))
@@ -254,7 +254,7 @@
 
 
 
-## [1.34.2](https://github.com/khulnasoft/flowease/compare/n8n@1.34.1...n8n@1.34.2) (2024-03-26)
+## [1.34.2](https://github.com/khulnasoft/flowease/compare/flowease@1.34.1...flowease@1.34.2) (2024-03-26)
 
 
 ### Bug Fixes
@@ -264,7 +264,7 @@
 
 
 
-## [1.34.1](https://github.com/khulnasoft/flowease/compare/n8n@1.34.0...n8n@1.34.1) (2024-03-25)
+## [1.34.1](https://github.com/khulnasoft/flowease/compare/flowease@1.34.0...flowease@1.34.1) (2024-03-25)
 
 
 ### Bug Fixes
@@ -279,7 +279,7 @@
 
 
 
-# [1.34.0](https://github.com/khulnasoft/flowease/compare/n8n@1.33.0...n8n@1.34.0) (2024-03-20)
+# [1.34.0](https://github.com/khulnasoft/flowease/compare/flowease@1.33.0...flowease@1.34.0) (2024-03-20)
 
 
 ### Bug Fixes
@@ -306,11 +306,11 @@
 * **core:** Add support for SQLite connection pooling ([#8722](https://github.com/khulnasoft/flowease/issues/8722)) ([c4c319d](https://github.com/khulnasoft/flowease/commit/c4c319d7cfb30772cca248a0039fd8e2b1c99eb7))
 * **editor:** Add missing extension methods for expressions ([#8845](https://github.com/khulnasoft/flowease/issues/8845)) ([5e84c2a](https://github.com/khulnasoft/flowease/commit/5e84c2ab89c7d0e4365b32b1c94a9c10cea56cb9))
 * **editor:** Add type information to autocomplete dropdown ([#8843](https://github.com/khulnasoft/flowease/issues/8843)) ([d7bfd45](https://github.com/khulnasoft/flowease/commit/d7bfd45333cc9780ae5f1424f33de2093bd1a2f9))
-* **editor:** Block the frontend when trying to access n8n from another host over http ([#8906](https://github.com/khulnasoft/flowease/issues/8906)) ([669bd83](https://github.com/khulnasoft/flowease/commit/669bd830e9b1b0f986d8a8b4525d0bdc3e3c0bd7))
+* **editor:** Block the frontend when trying to access flowease from another host over http ([#8906](https://github.com/khulnasoft/flowease/issues/8906)) ([669bd83](https://github.com/khulnasoft/flowease/commit/669bd830e9b1b0f986d8a8b4525d0bdc3e3c0bd7))
 * **editor:** Refactor expression editors and mixins to composition API ([#8894](https://github.com/khulnasoft/flowease/issues/8894)) ([0c179e4](https://github.com/khulnasoft/flowease/commit/0c179e4e511e4e6075d390afc025c93630ef3241))
 * **editor:** Release `@flowease/chat@0.9.1` ([#8918](https://github.com/khulnasoft/flowease/issues/8918)) ([e0c303c](https://github.com/khulnasoft/flowease/commit/e0c303c6c10145a2ef72daaf4142315cf65c839a))
 
-# [1.33.0](https://github.com/khulnasoft/flowease/compare/n8n@1.32.0...n8n@1.33.0) (2024-03-13)
+# [1.33.0](https://github.com/khulnasoft/flowease/compare/flowease@1.32.0...flowease@1.33.0) (2024-03-13)
 
 
 ### Bug Fixes
@@ -340,7 +340,7 @@
 
 
 
-# [1.32.0](https://github.com/khulnasoft/flowease/compare/n8n@1.31.0...n8n@1.32.0) (2024-03-06)
+# [1.32.0](https://github.com/khulnasoft/flowease/compare/flowease@1.31.0...flowease@1.32.0) (2024-03-06)
 
 
 ### Bug Fixes
@@ -355,7 +355,7 @@
 * **editor:** Upgrade sanitize-html to address CVE-2024-21501 ([#8816](https://github.com/khulnasoft/flowease/issues/8816)) ([a3e9e3d](https://github.com/khulnasoft/flowease/commit/a3e9e3db62f9794fe4b3ae414a2d252edb6196aa))
 * **Google Drive Node:** Add supportsAllDrives: true to update and download ([#8786](https://github.com/khulnasoft/flowease/issues/8786)) ([11a5331](https://github.com/khulnasoft/flowease/commit/11a5331e038fc383e454230dd9996015d7ce9b16))
 * **HubSpot Node:** Include properties for contact and deal in getAll operation ([#8772](https://github.com/khulnasoft/flowease/issues/8772)) ([08e2b06](https://github.com/khulnasoft/flowease/commit/08e2b068fb241b3e44eebbc8d6053603d977ca32))
-* **n8n Form Trigger Node:** Do not open pop up when data is pinned in trigger ([#8781](https://github.com/khulnasoft/flowease/issues/8781)) ([0481e6e](https://github.com/khulnasoft/flowease/commit/0481e6e6e7259cef5f4ac1c88dd0b45ef402f166))
+* **flowease Form Trigger Node:** Do not open pop up when data is pinned in trigger ([#8781](https://github.com/khulnasoft/flowease/issues/8781)) ([0481e6e](https://github.com/khulnasoft/flowease/commit/0481e6e6e7259cef5f4ac1c88dd0b45ef402f166))
 * **OpenAI Node:** Message text operation parameters case fix ([#8804](https://github.com/khulnasoft/flowease/issues/8804)) ([e38e96b](https://github.com/khulnasoft/flowease/commit/e38e96bbec4a5f355ab0a8bb87bad3787032e9c5))
 * Simplify Structured Output Parser wrapping and fix auto-fixing output parser ([#8778](https://github.com/khulnasoft/flowease/issues/8778)) ([7d82dc1](https://github.com/khulnasoft/flowease/commit/7d82dc1ea8c86c2a3575c3629b29af3cfb709f44))
 * **TheHive 5 Node:** The Hive - Custom fields are no longer working ([#8780](https://github.com/khulnasoft/flowease/issues/8780)) ([961d6b9](https://github.com/khulnasoft/flowease/commit/961d6b9266344e221e21a771546b49c0c13ea80c))
@@ -376,7 +376,7 @@
 
 
 
-# [1.31.0](https://github.com/khulnasoft/flowease/compare/n8n@1.30.0...n8n@1.31.0) (2024-02-28)
+# [1.31.0](https://github.com/khulnasoft/flowease/compare/flowease@1.30.0...flowease@1.31.0) (2024-02-28)
 
 
 ### Bug Fixes
@@ -409,7 +409,7 @@
 
 
 
-# [1.30.0](https://github.com/khulnasoft/flowease/compare/n8n@1.29.0...n8n@1.30.0) (2024-02-21)
+# [1.30.0](https://github.com/khulnasoft/flowease/compare/flowease@1.29.0...flowease@1.30.0) (2024-02-21)
 
 
 ### Bug Fixes
@@ -424,7 +424,7 @@
 * **editor:** Fix SQL editors not always re-rendering when query changes ([#8621](https://github.com/khulnasoft/flowease/issues/8621)) ([8e9d310](https://github.com/khulnasoft/flowease/commit/8e9d3106a5792a182753e4030c135893f8bad27e))
 * **editor:** Fix unnecessary execution of nodes when there is pin data ([#8567](https://github.com/khulnasoft/flowease/issues/8567)) ([46fe544](https://github.com/khulnasoft/flowease/commit/46fe544b9a38ea81093d846917af970141b8c86a))
 * **editor:** Handle drag-n-dropping from other nodes in assignment component ([#8661](https://github.com/khulnasoft/flowease/issues/8661)) ([c943a51](https://github.com/khulnasoft/flowease/commit/c943a51a28953c2ecd0f3ae4849fd8a0de187bfc))
-* **editor:** Send protocol and n8n version in templates destination parameter, stop redirecting template preview page to website ([#8691](https://github.com/khulnasoft/flowease/issues/8691)) ([a573146](https://github.com/khulnasoft/flowease/commit/a57314613586841c14e86f009bf42793545c33f8))
+* **editor:** Send protocol and flowease version in templates destination parameter, stop redirecting template preview page to website ([#8691](https://github.com/khulnasoft/flowease/issues/8691)) ([a573146](https://github.com/khulnasoft/flowease/commit/a57314613586841c14e86f009bf42793545c33f8))
 * **editor:** Use proper composable for localization ([#8660](https://github.com/khulnasoft/flowease/issues/8660)) ([9c0fe41](https://github.com/khulnasoft/flowease/commit/9c0fe413d9beb669b8b9807f98569f46a1682855))
 * **editor:** Wrap expressions in resource locator component ([#8673](https://github.com/khulnasoft/flowease/issues/8673)) ([e2f2fc9](https://github.com/khulnasoft/flowease/commit/e2f2fc910df5ee06fa0b57b85689b5674b6774ba))
 * **Extract From File Node:** Make binary data work with any backend  ([#8647](https://github.com/khulnasoft/flowease/issues/8647)) ([d33d953](https://github.com/khulnasoft/flowease/commit/d33d953497d25a50f17c71f7ecc7b9cc6332816e))
@@ -447,7 +447,7 @@
 
 
 
-# [1.29.0](https://github.com/khulnasoft/flowease/compare/n8n@1.28.0...n8n@1.29.0) (2024-02-15)
+# [1.29.0](https://github.com/khulnasoft/flowease/compare/flowease@1.28.0...flowease@1.29.0) (2024-02-15)
 
 
 ### Bug Fixes
@@ -455,7 +455,7 @@
 * **core:** Custom workflow tool tweaks  ([#8561](https://github.com/khulnasoft/flowease/issues/8561)) ([ccc0ad5](https://github.com/khulnasoft/flowease/commit/ccc0ad5009b2d547accfc34a9c0917114fd19c81))
 * **core:** Give better error message if `executions.process` is still used in the configs ([#8618](https://github.com/khulnasoft/flowease/issues/8618)) ([cd8ca84](https://github.com/khulnasoft/flowease/commit/cd8ca8412d02090af07d8657283b7637178c975c))
 * **core:** Improve the startup error when EXECUTIONS_PROCESS is set ([#8630](https://github.com/khulnasoft/flowease/issues/8630)) ([a2a3ca1](https://github.com/khulnasoft/flowease/commit/a2a3ca160f253b3b09f83bdc6dec11987971e464))
-* **core:** Upgrade `@n8n/typeorm` to address postgres timestamp issues ([#8627](https://github.com/khulnasoft/flowease/issues/8627)) ([68498cb](https://github.com/khulnasoft/flowease/commit/68498cb72a16d587c4b24f9fe5e8ac2450cd78b9))
+* **core:** Upgrade `@flowease/typeorm` to address postgres timestamp issues ([#8627](https://github.com/khulnasoft/flowease/issues/8627)) ([68498cb](https://github.com/khulnasoft/flowease/commit/68498cb72a16d587c4b24f9fe5e8ac2450cd78b9))
 * **core:** Upgrade rudderstack sdk to address npm postInstall issues ([#8568](https://github.com/khulnasoft/flowease/issues/8568)) ([5750e8e](https://github.com/khulnasoft/flowease/commit/5750e8e88ed59b40d5115416c8afe227cb64c70e))
 * **editor:** Debounce expression changes ([#8629](https://github.com/khulnasoft/flowease/issues/8629)) ([9c7e026](https://github.com/khulnasoft/flowease/commit/9c7e0266ee1c2112649772ca553bff429dcabc2d))
 * **Execute Workflow Node:** Passing the workflow that is supposed to be executed as a paramter ([#8614](https://github.com/khulnasoft/flowease/issues/8614)) ([b54488a](https://github.com/khulnasoft/flowease/commit/b54488ada53a9941f5fd4d3cab8d39bd81b22f4a))
@@ -479,7 +479,7 @@
 * Add telemetry event when users click on templates link ([#8625](https://github.com/khulnasoft/flowease/issues/8625)) ([bf4f896](https://github.com/khulnasoft/flowease/commit/bf4f896373acb2530a8f322cd612a3de616d6d15))
 * **API:** Add tag support to public API ([#8588](https://github.com/khulnasoft/flowease/issues/8588)) ([a743a40](https://github.com/khulnasoft/flowease/commit/a743a4037674ccb68a311daa5511cb48de6c9bfa))
 * **Convert to File Node:** Operation to convert a string in a plain text file, option to format JSON when creating file ([#8620](https://github.com/khulnasoft/flowease/issues/8620)) ([d18cba3](https://github.com/khulnasoft/flowease/commit/d18cba37a4a690cb3b4cd4259d27aedaa97193e4))
-* **core:** Migrate to n8n's typeorm fork ([#8590](https://github.com/khulnasoft/flowease/issues/8590)) ([8e392cf](https://github.com/khulnasoft/flowease/commit/8e392cfc1dd103a00b3a0e7c186cbfad989a5080))
+* **core:** Migrate to flowease's typeorm fork ([#8590](https://github.com/khulnasoft/flowease/issues/8590)) ([8e392cf](https://github.com/khulnasoft/flowease/commit/8e392cfc1dd103a00b3a0e7c186cbfad989a5080))
 * **editor:** Use website as the main templates repository ([#8591](https://github.com/khulnasoft/flowease/issues/8591)) ([79b09fd](https://github.com/khulnasoft/flowease/commit/79b09fdf84860eee4c80e0c7eb7e320f6e05eabb))
 * **HTML Extract Node:** Better text extraction, option to specify selectors to skip, option to clean up text data ([#8586](https://github.com/khulnasoft/flowease/issues/8586)) ([32281d1](https://github.com/khulnasoft/flowease/commit/32281d12d775281e4b8e419d76e46ca9e3b47267))
 * **OpenAI Node:** Overhaul ([#8335](https://github.com/khulnasoft/flowease/issues/8335)) ([941278d](https://github.com/khulnasoft/flowease/commit/941278db6880ae3734a7a37aa03d7e6106ee5009))
@@ -487,7 +487,7 @@
 
 
 
-# [1.28.0](https://github.com/khulnasoft/flowease/compare/n8n@1.27.0...n8n@1.28.0) (2024-02-07)
+# [1.28.0](https://github.com/khulnasoft/flowease/compare/flowease@1.27.0...flowease@1.28.0) (2024-02-07)
 
 
 ### Bug Fixes
@@ -522,7 +522,7 @@
 
 
 
-# [1.27.0](https://github.com/khulnasoft/flowease/compare/n8n@1.26.0...n8n@1.27.0) (2024-01-31)
+# [1.27.0](https://github.com/khulnasoft/flowease/compare/flowease@1.26.0...flowease@1.27.0) (2024-01-31)
 
 
 ### Bug Fixes
@@ -534,7 +534,7 @@
 * **core:** Handle possibly invalid `updatedAt` timestamps in source-control ([#8485](https://github.com/khulnasoft/flowease/issues/8485)) ([033fd34](https://github.com/khulnasoft/flowease/commit/033fd344b5a09a7b9c0b941279da1744e182cc57))
 * **core:** Handle zero execution statistics on metrics collection during license renewal ([#8463](https://github.com/khulnasoft/flowease/issues/8463)) ([db48bdd](https://github.com/khulnasoft/flowease/commit/db48bdd6d1110bfccc371ca490281c021227991f))
 * **core:** Improve handling of wrapped errors ([#8510](https://github.com/khulnasoft/flowease/issues/8510)) ([670af16](https://github.com/khulnasoft/flowease/commit/670af167e6f2c0e4e45bcc7e0998a371d651f89d))
-* **core:** Point users to the official documentation when they use `n8n --help` ([#8440](https://github.com/khulnasoft/flowease/issues/8440)) ([9f11eba](https://github.com/khulnasoft/flowease/commit/9f11eba0a4f726cc150b05c0f4b528bf25513e6f))
+* **core:** Point users to the official documentation when they use `flowease --help` ([#8440](https://github.com/khulnasoft/flowease/issues/8440)) ([9f11eba](https://github.com/khulnasoft/flowease/commit/9f11eba0a4f726cc150b05c0f4b528bf25513e6f))
 * **core:** Prevent calling internal hook email event if emailing is disabled ([#8462](https://github.com/khulnasoft/flowease/issues/8462)) ([9e93980](https://github.com/khulnasoft/flowease/commit/9e939809575592622f6bdca112da1905ac9205ef))
 * **editor:** Disable expression editor modal opening on readonly field ([#8457](https://github.com/khulnasoft/flowease/issues/8457)) ([eb27ed0](https://github.com/khulnasoft/flowease/commit/eb27ed068ba21bbf4302686f0f0c0168e91c03f6))
 * **editor:** Fix workflows filter resetting ([#8411](https://github.com/khulnasoft/flowease/issues/8411)) ([ad4b298](https://github.com/khulnasoft/flowease/commit/ad4b298be34915718b0415322e328a1b46ef5842))
@@ -563,7 +563,7 @@
 
 
 
-# [1.26.0](https://github.com/khulnasoft/flowease/compare/n8n@1.25.0...n8n@1.26.0) (2024-01-24)
+# [1.26.0](https://github.com/khulnasoft/flowease/compare/flowease@1.25.0...flowease@1.26.0) (2024-01-24)
 
 
 ### Bug Fixes
@@ -610,7 +610,7 @@
 
 
 
-# [1.25.0](https://github.com/khulnasoft/flowease/compare/n8n@1.24.0...n8n@1.25.0) (2024-01-17)
+# [1.25.0](https://github.com/khulnasoft/flowease/compare/flowease@1.24.0...flowease@1.25.0) (2024-01-17)
 
 
 ### Bug Fixes
@@ -651,7 +651,7 @@
 
 
 
-# [1.24.0](https://github.com/khulnasoft/flowease/compare/n8n@1.23.0...n8n@1.24.0) (2024-01-10)
+# [1.24.0](https://github.com/khulnasoft/flowease/compare/flowease@1.23.0...flowease@1.24.0) (2024-01-10)
 
 
 ### Bug Fixes
@@ -701,7 +701,7 @@
 
 
 
-# [1.23.0](https://github.com/khulnasoft/flowease/compare/n8n@1.22.0...n8n@1.23.0) (2024-01-03)
+# [1.23.0](https://github.com/khulnasoft/flowease/compare/flowease@1.22.0...flowease@1.23.0) (2024-01-03)
 
 
 ### Bug Fixes
@@ -745,7 +745,7 @@
 
 
 
-# [1.22.0](https://github.com/khulnasoft/flowease/compare/n8n@1.21.0...n8n@1.22.0) (2023-12-21)
+# [1.22.0](https://github.com/khulnasoft/flowease/compare/flowease@1.21.0...flowease@1.22.0) (2023-12-21)
 
 
 ### Bug Fixes
@@ -779,7 +779,7 @@
 
 * Add config option to prefer GET request over LIST when using Hashicorp Vault ([#8049](https://github.com/khulnasoft/flowease/issues/8049)) ([439a22d](https://github.com/khulnasoft/flowease/commit/439a22d68f7bf32f281b1078b71607307640a09b))
 * Add option to `returnIntermediateSteps` for AI agents ([#8113](https://github.com/khulnasoft/flowease/issues/8113)) ([7806a65](https://github.com/khulnasoft/flowease/commit/7806a65229878a473f5526bad0b94614e8bfa8aa))
-* **core:** Add N8N_GRACEFUL_SHUTDOWN_TIMEOUT env var ([#8068](https://github.com/khulnasoft/flowease/issues/8068)) ([614f488](https://github.com/khulnasoft/flowease/commit/614f48838626e2af8e3f2e76ee4a144af2d40f72))
+* **core:** Add FLOWEASE_GRACEFUL_SHUTDOWN_TIMEOUT env var ([#8068](https://github.com/khulnasoft/flowease/issues/8068)) ([614f488](https://github.com/khulnasoft/flowease/commit/614f48838626e2af8e3f2e76ee4a144af2d40f72))
 * **editor:** Add lead enrichment suggestions to workflow list ([#8042](https://github.com/khulnasoft/flowease/issues/8042)) ([36a923c](https://github.com/khulnasoft/flowease/commit/36a923cf7bd4d42b8f8decbf01255c41d6dc1671)), closes [-update-workflows-list-page-to-show-fake-door-templates#comment-b6644c99](https://github.com/-update-workflows-list-page-to-show-fake-door-templates/issues/comment-b6644c99)
 * **editor:** Finalize workers view ([#8052](https://github.com/khulnasoft/flowease/issues/8052)) ([edfa784](https://github.com/khulnasoft/flowease/commit/edfa78414d6bce901becc05e9d860f2521139688))
 * **editor:** Gracefully ignore invalid payloads in postMessage handler ([#8096](https://github.com/khulnasoft/flowease/issues/8096)) ([9d22c7a](https://github.com/khulnasoft/flowease/commit/9d22c7a2782a1908f81bcf80260cd91cb296e239))
@@ -794,7 +794,7 @@
 
 
 
-# [1.21.0](https://github.com/khulnasoft/flowease/compare/n8n@1.20.0...n8n@1.21.0) (2023-12-13)
+# [1.21.0](https://github.com/khulnasoft/flowease/compare/flowease@1.20.0...flowease@1.21.0) (2023-12-13)
 
 
 ### Bug Fixes
@@ -833,11 +833,11 @@
 * **Google Ads Node:** Update to support v15 ([#7962](https://github.com/khulnasoft/flowease/issues/7962)) ([7f01269](https://github.com/khulnasoft/flowease/commit/7f0126915aae514a0ab515a4baf5582da2aeb1e3))
 * Introduce advanced permissions ([#7844](https://github.com/khulnasoft/flowease/issues/7844)) ([dbd62a4](https://github.com/khulnasoft/flowease/commit/dbd62a4992ab8aca59e3cb50d3d970454e462238))
 * **Local File Trigger Node:** Add polling option typically good to watch network files/folders ([#7942](https://github.com/khulnasoft/flowease/issues/7942)) ([2fbdfec](https://github.com/khulnasoft/flowease/commit/2fbdfec0c0a3f5da64764e7821e84db30b664e49))
-* **n8n Form Trigger Node:** Improvements ([#7571](https://github.com/khulnasoft/flowease/issues/7571)) ([953a58f](https://github.com/khulnasoft/flowease/commit/953a58f18bfdd36fa8b526ca6213631aacab49cb))
+* **flowease Form Trigger Node:** Improvements ([#7571](https://github.com/khulnasoft/flowease/issues/7571)) ([953a58f](https://github.com/khulnasoft/flowease/commit/953a58f18bfdd36fa8b526ca6213631aacab49cb))
 
 
 
-# [1.20.0](https://github.com/khulnasoft/flowease/compare/n8n@1.19.0...n8n@1.20.0) (2023-12-06)
+# [1.20.0](https://github.com/khulnasoft/flowease/compare/flowease@1.19.0...flowease@1.20.0) (2023-12-06)
 
 
 ### Bug Fixes
@@ -869,12 +869,12 @@
 
 
 
-# [1.19.0](https://github.com/khulnasoft/flowease/compare/n8n@1.18.0...n8n@1.19.0) (2023-11-29)
+# [1.19.0](https://github.com/khulnasoft/flowease/compare/flowease@1.18.0...flowease@1.19.0) (2023-11-29)
 
 
 ### Bug Fixes
 
-* **core:** Ensure member and admin cannot be promoted to owner ([#7830](https://github.com/khulnasoft/flowease/issues/7830)) ([9b87a59](https://github.com/khulnasoft/flowease/commit/9b87a596ca4aec462faedcca1ba4655b168bc3bc)), closes [/linear.app/n8n/issue/PAY-985/add-user-role-modification-endpoint#comment-62355f6](https://github.com//linear.app/n8n/issue/PAY-985/add-user-role-modification-endpoint/issues/comment-62355f6)
+* **core:** Ensure member and admin cannot be promoted to owner ([#7830](https://github.com/khulnasoft/flowease/issues/7830)) ([9b87a59](https://github.com/khulnasoft/flowease/commit/9b87a596ca4aec462faedcca1ba4655b168bc3bc)), closes [/linear.app/flowease/issue/PAY-985/add-user-role-modification-endpoint#comment-62355f6](https://github.com//linear.app/flowease/issue/PAY-985/add-user-role-modification-endpoint/issues/comment-62355f6)
 * **core:** Prevent error messages due to statistics about data loading ([#7824](https://github.com/khulnasoft/flowease/issues/7824)) ([847f6ac](https://github.com/khulnasoft/flowease/commit/847f6ac771316eea270d2e83adac5d8a6483475a))
 * **core:** Tighten checks for multi-main setup usage ([#7788](https://github.com/khulnasoft/flowease/issues/7788)) ([fdb2c18](https://github.com/khulnasoft/flowease/commit/fdb2c18ecc49d1e8759e809d2e2c2e4aa17009da))
 * **core:** Use AbortController to notify nodes to abort execution ([#6141](https://github.com/khulnasoft/flowease/issues/6141)) ([d2c18c5](https://github.com/khulnasoft/flowease/commit/d2c18c57274cac02e70cf1cc9e533a6ca98f0ec6))
@@ -910,7 +910,7 @@
 
 
 
-# [1.18.0](https://github.com/khulnasoft/flowease/compare/n8n@1.17.0...n8n@1.18.0) (2023-11-22)
+# [1.18.0](https://github.com/khulnasoft/flowease/compare/flowease@1.17.0...flowease@1.18.0) (2023-11-22)
 
 
 ### Bug Fixes
@@ -941,7 +941,7 @@
 
 
 
-# [1.17.0](https://github.com/khulnasoft/flowease/compare/n8n@1.16.0...n8n@1.17.0) (2023-11-15)
+# [1.17.0](https://github.com/khulnasoft/flowease/compare/flowease@1.16.0...flowease@1.17.0) (2023-11-15)
 
 
 ### Bug Fixes
@@ -985,7 +985,7 @@
 
 
 
-# [1.16.0](https://github.com/khulnasoft/flowease/compare/n8n@1.15.1...n8n@1.16.0) (2023-11-08)
+# [1.16.0](https://github.com/khulnasoft/flowease/compare/flowease@1.15.1...flowease@1.16.0) (2023-11-08)
 
 
 ### Bug Fixes
@@ -1020,7 +1020,7 @@
 
 
 
-## [1.15.1](https://github.com/khulnasoft/flowease/compare/n8n@1.14.0...n8n@1.15.1) (2023-11-02)
+## [1.15.1](https://github.com/khulnasoft/flowease/compare/flowease@1.14.0...flowease@1.15.1) (2023-11-02)
 
 
 ### Bug Fixes
@@ -1051,12 +1051,12 @@
 * **editor:** Implement the `UserStack` design system component ([#7559](https://github.com/khulnasoft/flowease/issues/7559)) ([ce14f62](https://github.com/khulnasoft/flowease/commit/ce14f6266b30caadb477b08d4257b82c769a74c3))
 * **HTTP Request Node:** Add pagination support ([#5993](https://github.com/khulnasoft/flowease/issues/5993)) ([cc2bd2e](https://github.com/khulnasoft/flowease/commit/cc2bd2e19c8b75320b236de215d389220fbe24ae))
 * **HTTP Request Node:** Update icon and default color ([#7572](https://github.com/khulnasoft/flowease/issues/7572)) ([ff279ab](https://github.com/khulnasoft/flowease/commit/ff279ab4112435c341b84081d68b976ff03bf261))
-* **n8n Form Trigger Node:** Add text area and password input types ([#7474](https://github.com/khulnasoft/flowease/issues/7474)) ([b72040a](https://github.com/khulnasoft/flowease/commit/b72040aa5423aa6cb16dea2e7c6ea6439376b653))
+* **flowease Form Trigger Node:** Add text area and password input types ([#7474](https://github.com/khulnasoft/flowease/issues/7474)) ([b72040a](https://github.com/khulnasoft/flowease/commit/b72040aa5423aa6cb16dea2e7c6ea6439376b653))
 * **editor:** Dark mode is here! You can change it under personal settings.([#6980](https://github.com/khulnasoft/flowease/pull/6980)) ([0746783](https://github.com/khulnasoft/flowease/commit/0746783e027ebe6715588a68db399a34e0211a96))
 
 
 
-# [1.15.0](https://github.com/khulnasoft/flowease/compare/n8n@1.14.0...n8n@1.15.0) (2023-11-02)
+# [1.15.0](https://github.com/khulnasoft/flowease/compare/flowease@1.14.0...flowease@1.15.0) (2023-11-02)
 
 
 ### Bug Fixes
@@ -1087,12 +1087,12 @@
 * **editor:** Implement the `UserStack` design system component ([#7559](https://github.com/khulnasoft/flowease/issues/7559)) ([ce14f62](https://github.com/khulnasoft/flowease/commit/ce14f6266b30caadb477b08d4257b82c769a74c3))
 * **HTTP Request Node:** Add pagination support ([#5993](https://github.com/khulnasoft/flowease/issues/5993)) ([cc2bd2e](https://github.com/khulnasoft/flowease/commit/cc2bd2e19c8b75320b236de215d389220fbe24ae))
 * **HTTP Request Node:** Update icon and default color ([#7572](https://github.com/khulnasoft/flowease/issues/7572)) ([ff279ab](https://github.com/khulnasoft/flowease/commit/ff279ab4112435c341b84081d68b976ff03bf261))
-* **n8n Form Trigger Node:** Add text area and password input types ([#7474](https://github.com/khulnasoft/flowease/issues/7474)) ([b72040a](https://github.com/khulnasoft/flowease/commit/b72040aa5423aa6cb16dea2e7c6ea6439376b653))
+* **flowease Form Trigger Node:** Add text area and password input types ([#7474](https://github.com/khulnasoft/flowease/issues/7474)) ([b72040a](https://github.com/khulnasoft/flowease/commit/b72040aa5423aa6cb16dea2e7c6ea6439376b653))
 * * **editor:** Dark mode is here! You can change it under personal settings.([#6980](https://github.com/khulnasoft/flowease/pull/6980)) ([0746783](https://github.com/khulnasoft/flowease/commit/0746783e027ebe6715588a68db399a34e0211a96))
 
 
 
-# [1.14.0](https://github.com/khulnasoft/flowease/compare/n8n@1.13.0...n8n@1.14.0) (2023-10-25)
+# [1.14.0](https://github.com/khulnasoft/flowease/compare/flowease@1.13.0...flowease@1.14.0) (2023-10-25)
 
 
 ### Features
@@ -1101,7 +1101,7 @@
 
 
 
-# [1.13.0](https://github.com/khulnasoft/flowease/compare/n8n@1.12.0...n8n@1.13.0) (2023-10-25)
+# [1.13.0](https://github.com/khulnasoft/flowease/compare/flowease@1.12.0...flowease@1.13.0) (2023-10-25)
 
 
 ### Bug Fixes
@@ -1134,7 +1134,7 @@
 
 
 
-# [1.12.0](https://github.com/khulnasoft/flowease/compare/n8n@1.11.0...n8n@1.12.0) (2023-10-18)
+# [1.12.0](https://github.com/khulnasoft/flowease/compare/flowease@1.11.0...flowease@1.12.0) (2023-10-18)
 
 
 ### Bug Fixes
@@ -1159,12 +1159,12 @@
 * **core:** Make executions pruning interval configurable ([#7439](https://github.com/khulnasoft/flowease/issues/7439)) ([40707fa](https://github.com/khulnasoft/flowease/commit/40707fa6926776aa806221df8edee05ee7e9f3ed))
 * **Google Calendar Trigger Node:** Add support for cancelled events ([#7436](https://github.com/khulnasoft/flowease/issues/7436)) ([9d241a0](https://github.com/khulnasoft/flowease/commit/9d241a0d6dbfd990920708c718ff3de83c9b5883))
 * **HubSpot Trigger Node:** Add support for ticket related events ([#7156](https://github.com/khulnasoft/flowease/issues/7156)) ([57c6093](https://github.com/khulnasoft/flowease/commit/57c609384af7c583c213c639add7170e0bbb24fd))
-* **n8n Form Trigger Node:** New node ([#7130](https://github.com/khulnasoft/flowease/issues/7130)) ([3ddc176](https://github.com/khulnasoft/flowease/commit/3ddc176dfa2d3d99a328a29a3a8613e35ff456a0))
+* **flowease Form Trigger Node:** New node ([#7130](https://github.com/khulnasoft/flowease/issues/7130)) ([3ddc176](https://github.com/khulnasoft/flowease/commit/3ddc176dfa2d3d99a328a29a3a8613e35ff456a0))
 * **Spreadsheet File Node:** Improve CSV parsing ([#7448](https://github.com/khulnasoft/flowease/issues/7448)) ([79f23fb](https://github.com/khulnasoft/flowease/commit/79f23fb93979aa1ef3a9bbf7049b93d1e6a0e95a))
 
 
 
-# [1.11.0](https://github.com/khulnasoft/flowease/compare/n8n@1.10.0...n8n@1.11.0) (2023-10-11)
+# [1.11.0](https://github.com/khulnasoft/flowease/compare/flowease@1.10.0...flowease@1.11.0) (2023-10-11)
 
 
 ### Bug Fixes
@@ -1174,7 +1174,7 @@
 * **core:** Fix error on missing paired item data ([#7399](https://github.com/khulnasoft/flowease/issues/7399)) ([47e8953](https://github.com/khulnasoft/flowease/commit/47e8953ec9cccaddc603aff4c6e6fce88258e6d0))
 * **core:** Missing pairing info ([#7326](https://github.com/khulnasoft/flowease/issues/7326)) ([e2c3c7a](https://github.com/khulnasoft/flowease/commit/e2c3c7acebdae2014b32620277fce70d0db85dd0))
 * **core:** Prevent object deletion request on no prefix match ([#7366](https://github.com/khulnasoft/flowease/issues/7366)) ([63e11e4](https://github.com/khulnasoft/flowease/commit/63e11e4be93a50fe753d84771dbc72ead38fdc0e))
-* **editor:** Fix completions for `.json` on quoted node name in Code node ([#7382](https://github.com/khulnasoft/flowease/issues/7382)) ([86e7ec7](https://github.com/khulnasoft/flowease/commit/86e7ec796acd9d8fbe8e42a5beba687cd6133a2f)), closes [/linear.app/n8n/issue/PAY-635/autocomplete-only-supports-3-levels-of-children#comment-234f738](https://github.com//linear.app/n8n/issue/PAY-635/autocomplete-only-supports-3-levels-of-children/issues/comment-234f738)
+* **editor:** Fix completions for `.json` on quoted node name in Code node ([#7382](https://github.com/khulnasoft/flowease/issues/7382)) ([86e7ec7](https://github.com/khulnasoft/flowease/commit/86e7ec796acd9d8fbe8e42a5beba687cd6133a2f)), closes [/linear.app/flowease/issue/PAY-635/autocomplete-only-supports-3-levels-of-children#comment-234f738](https://github.com//linear.app/flowease/issue/PAY-635/autocomplete-only-supports-3-levels-of-children/issues/comment-234f738)
 * **editor:** Implement canvas zoom UX improvements ([#7376](https://github.com/khulnasoft/flowease/issues/7376)) ([7e06b31](https://github.com/khulnasoft/flowease/commit/7e06b31a5f3de8f073e7ef42be24e04899091486))
 * **editor:** Make workflow history button available only for dev builds ([#7392](https://github.com/khulnasoft/flowease/issues/7392)) ([7ed466d](https://github.com/khulnasoft/flowease/commit/7ed466db7faa9af88e54276bc6cb9a6dc9e80493))
 * **editor:** Remove excess margin below run data editor ([#7372](https://github.com/khulnasoft/flowease/issues/7372)) ([3fa2764](https://github.com/khulnasoft/flowease/commit/3fa27647d8e8a39812d9802d4c0954b3135db847))
@@ -1203,7 +1203,7 @@
 
 
 
-# [1.10.0](https://github.com/khulnasoft/flowease/compare/n8n@1.9.0...n8n@1.10.0) (2023-10-05)
+# [1.10.0](https://github.com/khulnasoft/flowease/compare/flowease@1.9.0...flowease@1.10.0) (2023-10-05)
 
 
 ### Bug Fixes
@@ -1226,13 +1226,13 @@
 
 ### Features
 
-* **core:** Add "Sent by n8n" attribution ([#7183](https://github.com/khulnasoft/flowease/issues/7183)) ([8f9fe62](https://github.com/khulnasoft/flowease/commit/8f9fe6269b5608346b0ac3612aa2e3af4a7baae1))
+* **core:** Add "Sent by flowease" attribution ([#7183](https://github.com/khulnasoft/flowease/issues/7183)) ([8f9fe62](https://github.com/khulnasoft/flowease/commit/8f9fe6269b5608346b0ac3612aa2e3af4a7baae1))
 * **core:** Add support for building LLM applications ([#7235](https://github.com/khulnasoft/flowease/issues/7235)) ([00a4b8b](https://github.com/khulnasoft/flowease/commit/00a4b8b0c62883f2a36559a939f9c32c5d1c048e)), closes [#7246](https://github.com/khulnasoft/flowease/issues/7246) [#7137](https://github.com/khulnasoft/flowease/issues/7137)
 * Workflow History pruning and prune time settings ([#7343](https://github.com/khulnasoft/flowease/issues/7343)) ([0adc533](https://github.com/khulnasoft/flowease/commit/0adc53371969ac3f759d06d9fbb095267fffe95e))
 
 
 
-# [1.9.0](https://github.com/khulnasoft/flowease/compare/n8n@1.8.0...n8n@1.9.0) (2023-09-28)
+# [1.9.0](https://github.com/khulnasoft/flowease/compare/flowease@1.8.0...flowease@1.9.0) (2023-09-28)
 
 
 ### Bug Fixes
@@ -1244,7 +1244,7 @@
 * **core:** Handle filename* with quotes in Content-Disposition header ([#7229](https://github.com/khulnasoft/flowease/issues/7229)) ([67b985f](https://github.com/khulnasoft/flowease/commit/67b985fe89cc45e40f66b38bd2e0c310a4b3504c))
 * **core:** Make DNS resolution order configurable ([#7272](https://github.com/khulnasoft/flowease/issues/7272)) ([5b3121c](https://github.com/khulnasoft/flowease/commit/5b3121c415ec96535eae4ed2adc28461311b6c6e))
 * **core:** Make senderId required for all command messages ([#7252](https://github.com/khulnasoft/flowease/issues/7252)) ([4b01428](https://github.com/khulnasoft/flowease/commit/4b014286cf66e5f9b660fc145274be7caccbf34c))
-* **core:** Prevent executions from displaying Running status incorrectly ([#7261](https://github.com/khulnasoft/flowease/issues/7261)) ([861cac5](https://github.com/khulnasoft/flowease/commit/861cac5257f5e0d3cc2a010f09481ab93b8241e6)), closes [/linear.app/n8n/issue/HELP-338/large-number-of-long-running-executions-for-nadjalemlist#comment-18d1fc96](https://github.com//linear.app/n8n/issue/HELP-338/large-number-of-long-running-executions-for-nadjalemlist/issues/comment-18d1fc96)
+* **core:** Prevent executions from displaying Running status incorrectly ([#7261](https://github.com/khulnasoft/flowease/issues/7261)) ([861cac5](https://github.com/khulnasoft/flowease/commit/861cac5257f5e0d3cc2a010f09481ab93b8241e6)), closes [/linear.app/flowease/issue/HELP-338/large-number-of-long-running-executions-for-nadjalemlist#comment-18d1fc96](https://github.com//linear.app/flowease/issue/HELP-338/large-number-of-long-running-executions-for-nadjalemlist/issues/comment-18d1fc96)
 * **core:** Use consistent timezone-aware timestamps in postgres ([#6948](https://github.com/khulnasoft/flowease/issues/6948)) ([0132514](https://github.com/khulnasoft/flowease/commit/0132514f8b7005a895880bab9f547484e2e90710)), closes [#2178](https://github.com/khulnasoft/flowease/issues/2178) [#2810](https://github.com/khulnasoft/flowease/issues/2810) [#3855](https://github.com/khulnasoft/flowease/issues/3855) [#2813](https://github.com/khulnasoft/flowease/issues/2813)
 * **editor:** Add debug feature docs link ([#7240](https://github.com/khulnasoft/flowease/issues/7240)) ([4614e1e](https://github.com/khulnasoft/flowease/commit/4614e1e1c90f1c7630ccc58e8400380afedba585))
 * **editor:** Fix SQL editor issue ([#7236](https://github.com/khulnasoft/flowease/issues/7236)) ([647fc6c](https://github.com/khulnasoft/flowease/commit/647fc6c555702bb3222871fb50f8916c6d2ae3f3))
@@ -1273,7 +1273,7 @@
 
 
 
-# [1.8.0](https://github.com/khulnasoft/flowease/compare/n8n@1.7.0...n8n@1.8.0) (2023-09-20)
+# [1.8.0](https://github.com/khulnasoft/flowease/compare/flowease@1.7.0...flowease@1.8.0) (2023-09-20)
 
 
 ### Bug Fixes
@@ -1300,7 +1300,7 @@
 
 
 
-# [1.7.0](https://github.com/khulnasoft/flowease/compare/n8n@1.6.0...n8n@1.7.0) (2023-09-13)
+# [1.7.0](https://github.com/khulnasoft/flowease/compare/flowease@1.6.0...flowease@1.7.0) (2023-09-13)
 
 
 ### Bug Fixes
@@ -1326,7 +1326,7 @@
 
 
 
-# [1.6.0](https://github.com/khulnasoft/flowease/compare/n8n@1.5.1...n8n@1.6.0) (2023-09-06)
+# [1.6.0](https://github.com/khulnasoft/flowease/compare/flowease@1.5.1...flowease@1.6.0) (2023-09-06)
 
 
 ### Bug Fixes
@@ -1351,7 +1351,7 @@
 
 
 
-## [1.5.1](https://github.com/khulnasoft/flowease/compare/n8n@1.5.0...n8n@1.5.1) (2023-08-31)
+## [1.5.1](https://github.com/khulnasoft/flowease/compare/flowease@1.5.0...flowease@1.5.1) (2023-08-31)
 
 
 ### Features
@@ -1360,7 +1360,7 @@
 
 
 
-# [1.5.0](https://github.com/khulnasoft/flowease/compare/n8n@1.4.0...n8n@1.5.0) (2023-08-31)
+# [1.5.0](https://github.com/khulnasoft/flowease/compare/flowease@1.4.0...flowease@1.5.0) (2023-08-31)
 
 
 ### Bug Fixes
@@ -1389,7 +1389,7 @@
 
 
 
-# [1.4.0](https://github.com/khulnasoft/flowease/compare/n8n@1.3.0...n8n@1.4.0) (2023-08-23)
+# [1.4.0](https://github.com/khulnasoft/flowease/compare/flowease@1.3.0...flowease@1.4.0) (2023-08-23)
 
 
 ### Bug Fixes
@@ -1423,7 +1423,7 @@
 
 
 
-# [1.3.0](https://github.com/khulnasoft/flowease/compare/n8n@1.2.0...n8n@1.3.0) (2023-08-16)
+# [1.3.0](https://github.com/khulnasoft/flowease/compare/flowease@1.2.0...flowease@1.3.0) (2023-08-16)
 
 
 ### Bug Fixes
@@ -1454,7 +1454,7 @@
 
 
 
-# [1.2.0](https://github.com/khulnasoft/flowease/compare/n8n@1.1.0...n8n@1.2.0) (2023-08-09)
+# [1.2.0](https://github.com/khulnasoft/flowease/compare/flowease@1.1.0...flowease@1.2.0) (2023-08-09)
 
 
 ### Bug Fixes
@@ -1529,7 +1529,7 @@
 
 
 
-# [1.1.0](https://github.com/khulnasoft/flowease/compare/n8n@1.0.1...n8n@1.1.0) (2023-07-26)
+# [1.1.0](https://github.com/khulnasoft/flowease/compare/flowease@1.0.1...flowease@1.1.0) (2023-07-26)
 
 
 ### Bug Fixes
@@ -1592,7 +1592,7 @@
 * **Postgres Node:** Upsert does not fetch columns when schema other then public ([#6643](https://github.com/khulnasoft/flowease/issues/6643)) ([aaa9ee3](https://github.com/khulnasoft/flowease/commit/aaa9ee3949529a745e3b624716da1549ed571604))
 * **Salesforce Node:** Fix typo for adding a contact to a campaign ([#6598](https://github.com/khulnasoft/flowease/issues/6598)) ([7ffe3cb](https://github.com/khulnasoft/flowease/commit/7ffe3cb36adeecaca6cc6ddf067a701ee55c18d1))
 * **Sendy Node:** Fix issue with brand id not being sent ([#6530](https://github.com/khulnasoft/flowease/issues/6530)) ([2e8dfb8](https://github.com/khulnasoft/flowease/commit/2e8dfb86d4636781b319d6190e8be12e7661ee16))
-* Stop n8n from complaining about credentials when saving a new workflow form a template ([#6671](https://github.com/khulnasoft/flowease/issues/6671)) ([486d16b](https://github.com/khulnasoft/flowease/commit/486d16bcdb6be12dd85f4af5f7de878d9d178fd6))
+* Stop flowease from complaining about credentials when saving a new workflow form a template ([#6671](https://github.com/khulnasoft/flowease/issues/6671)) ([486d16b](https://github.com/khulnasoft/flowease/commit/486d16bcdb6be12dd85f4af5f7de878d9d178fd6))
 * **Strapi Node:** Fix issue with pagination ([#4991](https://github.com/khulnasoft/flowease/issues/4991)) ([54444fa](https://github.com/khulnasoft/flowease/commit/54444fa388da12d75553e66e53a8cf6f8a99b6fc))
 * **Telegram Trigger Node:** Add guard to 'include' call on null or undefined ([#6730](https://github.com/khulnasoft/flowease/issues/6730)) ([533b0ba](https://github.com/khulnasoft/flowease/commit/533b0bac13d275753fee329bb4abe0c7aae5b48b))
 * **XML Node:** Fix issue with not returning valid data ([#6565](https://github.com/khulnasoft/flowease/issues/6565)) ([cdd215f](https://github.com/khulnasoft/flowease/commit/cdd215f642b47413c05f229e641074d0d4048f68))
@@ -1636,7 +1636,7 @@
 
 
 
-## [1.0.1](https://github.com/khulnasoft/flowease/compare/n8n@1.0.0...n8n@1.0.1) (2023-07-05)
+## [1.0.1](https://github.com/khulnasoft/flowease/compare/flowease@1.0.0...flowease@1.0.1) (2023-07-05)
 
 
 ### Bug Fixes
@@ -1658,7 +1658,7 @@
 
 
 
-# [1.0.0](https://github.com/khulnasoft/flowease/compare/n8n@0.234.0...n8n@1.0.0) (2023-06-27)
+# [1.0.0](https://github.com/khulnasoft/flowease/compare/flowease@0.234.0...flowease@1.0.0) (2023-06-27)
 
 
 ### ⚠️ BREAKING CHANGES
@@ -1667,10 +1667,10 @@
 * **core** Drop support for deprecated `WEBHOOK_TUNNEL_URL` env variable ([#6363](https://github.com/khulnasoft/flowease/pull/6363))
 * **core** Execution mode defaults to `main` now, instead of `own` ([#6363](https://github.com/khulnasoft/flowease/pull/6363))
 * **core** Default push backend is `websocket` now, instead of `sse` ([#6363](https://github.com/khulnasoft/flowease/pull/6363))
-* **core** Stop loading custom/community nodes from n8n's `node_modules` folder ([#6396](https://github.com/khulnasoft/flowease/pull/6396)) ([a45a2c8](https://github.com/khulnasoft/flowease/commit/a45a2c8c41eb7ffb2d62d5a8877c34eb45799fa9))
+* **core** Stop loading custom/community nodes from flowease's `node_modules` folder ([#6396](https://github.com/khulnasoft/flowease/pull/6396)) ([a45a2c8](https://github.com/khulnasoft/flowease/commit/a45a2c8c41eb7ffb2d62d5a8877c34eb45799fa9))
 * **core** User management is mandatory now. basic-auth, external-jwt-auth, and no-auth options are removed ([#6362](https://github.com/khulnasoft/flowease/pull/6362)) ([8c008f5](https://github.com/khulnasoft/flowease/commit/8c008f5d2217030e93d79e2baca0f2965d4d643e))
 * **core** Allow syntax errors and expression errors to fail executions ([#6352](https://github.com/khulnasoft/flowease/pull/6352)) ([1197811](https://github.com/khulnasoft/flowease/commit/1197811a1e3bc4ad7464d53d7e4860d0e62335a3))
-* **core** Drop support for `request` library and `N8N_USE_DEPRECATED_REQUEST_LIB` env variable ([#6413](https://github.com/khulnasoft/flowease/pull/6413)) ([632ea27](https://github.com/khulnasoft/flowease/commit/632ea275b7fa352d4af23339208bed66bb948da8))
+* **core** Drop support for `request` library and `FLOWEASE_USE_DEPRECATED_REQUEST_LIB` env variable ([#6413](https://github.com/khulnasoft/flowease/pull/6413)) ([632ea27](https://github.com/khulnasoft/flowease/commit/632ea275b7fa352d4af23339208bed66bb948da8))
 * **core** Make date extensions outputs match inputs ([#6435](https://github.com/khulnasoft/flowease/pull/6435)) ([85372aa](https://github.com/khulnasoft/flowease/commit/85372aabdfc52493504d4723ee1829e2ea15151d))
 * **core** Drop support for `executeSingle` method on nodes ([#4853](https://github.com/khulnasoft/flowease/pull/4853)) ([9194d8b](https://github.com/khulnasoft/flowease/commit/9194d8bb0ecf81e52d47ddfc4b75dc4e0efd492d))
 * **core** Change data processing for multi-input-nodes ([#4238](https://github.com/khulnasoft/flowease/pull/4238)) ([b8458a5](https://github.com/khulnasoft/flowease/commit/b8458a53f66b79903f0fdb168f6febdefb36d13a))
@@ -1697,7 +1697,7 @@
 
 
 
-# [0.236.0](https://github.com/khulnasoft/flowease/compare/n8n@0.235.0...n8n@0.236.0) (2023-07-05)
+# [0.236.0](https://github.com/khulnasoft/flowease/compare/flowease@0.235.0...flowease@0.236.0) (2023-07-05)
 
 
 ### Bug Fixes
@@ -1726,7 +1726,7 @@
 
 
 
-# [0.235.0](https://github.com/khulnasoft/flowease/compare/n8n@0.234.0...n8n@0.235.0) (2023-06-28)
+# [0.235.0](https://github.com/khulnasoft/flowease/compare/flowease@0.234.0...flowease@0.235.0) (2023-06-28)
 
 
 ### Bug Fixes
@@ -1755,7 +1755,7 @@
 
 
 
-# [0.234.0](https://github.com/khulnasoft/flowease/compare/n8n@0.233.0...n8n@0.234.0) (2023-06-22)
+# [0.234.0](https://github.com/khulnasoft/flowease/compare/flowease@0.233.0...flowease@0.234.0) (2023-06-22)
 
 
 ### Bug Fixes
@@ -1798,7 +1798,7 @@
 
 
 
-# [0.233.0](https://github.com/khulnasoft/flowease/compare/n8n@0.232.0...n8n@0.233.0) (2023-06-14)
+# [0.233.0](https://github.com/khulnasoft/flowease/compare/flowease@0.232.0...flowease@0.233.0) (2023-06-14)
 
 
 ### Bug Fixes
@@ -1811,7 +1811,7 @@
 
 
 
-# [0.232.0](https://github.com/khulnasoft/flowease/compare/n8n@0.231.0...n8n@0.232.0) (2023-06-07)
+# [0.232.0](https://github.com/khulnasoft/flowease/compare/flowease@0.231.0...flowease@0.232.0) (2023-06-07)
 
 
 ### Bug Fixes
@@ -1842,7 +1842,7 @@
 * Version control mvp ([#6271](https://github.com/khulnasoft/flowease/issues/6271)) ([1b32141](https://github.com/khulnasoft/flowease/commit/1b321416c0ba5371e0016398ae660ce298b8cdd6))
 
 
-# [0.231.0](https://github.com/khulnasoft/flowease/compare/n8n@0.230.0...n8n@0.231.0) (2023-05-31)
+# [0.231.0](https://github.com/khulnasoft/flowease/compare/flowease@0.230.0...flowease@0.231.0) (2023-05-31)
 
 
 ### Bug Fixes
@@ -1866,7 +1866,7 @@
 
 
 
-# [0.230.0](https://github.com/khulnasoft/flowease/compare/n8n@0.229.0...n8n@0.230.0) (2023-05-24)
+# [0.230.0](https://github.com/khulnasoft/flowease/compare/flowease@0.229.0...flowease@0.230.0) (2023-05-24)
 
 
 ### Bug Fixes
@@ -1903,7 +1903,7 @@
 
 
 
-# [0.229.0](https://github.com/khulnasoft/flowease/compare/n8n@0.228.0...n8n@0.229.0) (2023-05-17)
+# [0.229.0](https://github.com/khulnasoft/flowease/compare/flowease@0.228.0...flowease@0.229.0) (2023-05-17)
 
 
 ### Bug Fixes
@@ -1927,7 +1927,7 @@
 
 
 
-# [0.228.0](https://github.com/khulnasoft/flowease/compare/n8n@0.227.0...n8n@0.228.0) (2023-05-11)
+# [0.228.0](https://github.com/khulnasoft/flowease/compare/flowease@0.227.0...flowease@0.228.0) (2023-05-11)
 
 
 ### Bug Fixes
@@ -1967,7 +1967,7 @@
 
 
 
-# [0.227.0](https://github.com/khulnasoft/flowease/compare/n8n@0.226.0...n8n@0.227.0) (2023-05-03)
+# [0.227.0](https://github.com/khulnasoft/flowease/compare/flowease@0.226.0...flowease@0.227.0) (2023-05-03)
 
 
 ### Bug Fixes
@@ -2021,7 +2021,7 @@
 
 
 
-## [0.226.2](https://github.com/khulnasoft/flowease/compare/n8n@0.226.1...n8n@0.226.2) (2023-05-03)
+## [0.226.2](https://github.com/khulnasoft/flowease/compare/flowease@0.226.1...flowease@0.226.2) (2023-05-03)
 
 
 ### Bug Fixes
@@ -2030,7 +2030,7 @@
 
 
 
-## [0.226.1](https://github.com/khulnasoft/flowease/compare/n8n@0.226.0...n8n@0.226.1) (2023-05-02)
+## [0.226.1](https://github.com/khulnasoft/flowease/compare/flowease@0.226.0...flowease@0.226.1) (2023-05-02)
 
 
 ### Bug Fixes
@@ -2063,7 +2063,7 @@
 
 
 
-# [0.226.0](https://github.com/khulnasoft/flowease/compare/n8n@0.225.0...n8n@0.226.0) (2023-04-26)
+# [0.226.0](https://github.com/khulnasoft/flowease/compare/flowease@0.225.0...flowease@0.226.0) (2023-04-26)
 
 
 ### Bug Fixes
@@ -2098,7 +2098,7 @@
 
 
 
-## [0.225.2](https://github.com/khulnasoft/flowease/compare/n8n@0.225.1...n8n@0.225.2) (2023-04-25)
+## [0.225.2](https://github.com/khulnasoft/flowease/compare/flowease@0.225.1...flowease@0.225.2) (2023-04-25)
 
 
 ### Bug Fixes
@@ -2108,7 +2108,7 @@
 
 
 
-# [0.224.4](https://github.com/khulnasoft/flowease/compare/n8n@0.224.2...n8n@0.224.4) (2023-04-24)
+# [0.224.4](https://github.com/khulnasoft/flowease/compare/flowease@0.224.2...flowease@0.224.4) (2023-04-24)
 
 
 ### Bug Fixes
@@ -2118,7 +2118,7 @@
 
 
 
-## [0.225.1](https://github.com/khulnasoft/flowease/compare/n8n@0.225.0...n8n@0.225.1) (2023-04-20)
+## [0.225.1](https://github.com/khulnasoft/flowease/compare/flowease@0.225.0...flowease@0.225.1) (2023-04-20)
 
 
 ### Bug Fixes
@@ -2130,7 +2130,7 @@
 
 
 
-## [0.224.2](https://github.com/khulnasoft/flowease/compare/n8n@0.224.1...n8n@0.224.2) (2023-04-20)
+## [0.224.2](https://github.com/khulnasoft/flowease/compare/flowease@0.224.1...flowease@0.224.2) (2023-04-20)
 
 
 ### Bug Fixes
@@ -2146,7 +2146,7 @@
 
 
 
-# [0.225.0](https://github.com/khulnasoft/flowease/compare/n8n@0.224.0...n8n@0.225.0) (2023-04-19)
+# [0.225.0](https://github.com/khulnasoft/flowease/compare/flowease@0.224.0...flowease@0.225.0) (2023-04-19)
 
 
 ### Bug Fixes
@@ -2162,7 +2162,7 @@
 * **editor:** Fix moving canvas on middle click preventing lasso selection ([#5996](https://github.com/khulnasoft/flowease/issues/5996)) ([3c2a569](https://github.com/khulnasoft/flowease/commit/3c2a56928b46425822795cf1594133a538f47c21))
 * **editor:** Make sure to redirect to blank canvas after personalisation modal ([#5980](https://github.com/khulnasoft/flowease/issues/5980)) ([7c474d3](https://github.com/khulnasoft/flowease/commit/7c474d3c92ecca8e44e8eea76ada69aa7e8f5987))
 * **editor:** Only treat as CTRL pressed by default on touch devices for MouseEvent ([#5968](https://github.com/khulnasoft/flowease/issues/5968)) ([536d810](https://github.com/khulnasoft/flowease/commit/536d8109b02d1a0f771055c36ff0f45dae08281e))
-* **editor:** Fix n8n-checkbox alignment ([#6004](https://github.com/khulnasoft/flowease/issues/6004)) ([f544826](https://github.com/khulnasoft/flowease/commit/f5448269ee9277f19b0943035d23ad0df1dcde67))
+* **editor:** Fix flowease-checkbox alignment ([#6004](https://github.com/khulnasoft/flowease/issues/6004)) ([f544826](https://github.com/khulnasoft/flowease/commit/f5448269ee9277f19b0943035d23ad0df1dcde67))
 * **Code Node:** Handle user code returning `null` and `undefined` ([#5989](https://github.com/khulnasoft/flowease/issues/5989)) ([a3664de](https://github.com/khulnasoft/flowease/commit/a3664de3556f9f8159ed310a289ec12a4cd2c5c5))
 * **Github Trigger Node:** Remove content_reference event ([#5830](https://github.com/khulnasoft/flowease/issues/5830)) ([d288a91](https://github.com/khulnasoft/flowease/commit/d288a918f17dad2d0e32cf2d66f94037c77679b3))
 * **Google Sheets Trigger Node:** Return actual error message ([ba5b4eb](https://github.com/khulnasoft/flowease/commit/ba5b4eb42fa1b609ddbe726d3e8655c1f9d28a2e))
@@ -2183,7 +2183,7 @@
 
 
 
-## [0.224.1](https://github.com/khulnasoft/flowease/compare/n8n@0.224.0...n8n@0.224.1) (2023-04-14)
+## [0.224.1](https://github.com/khulnasoft/flowease/compare/flowease@0.224.0...flowease@0.224.1) (2023-04-14)
 
 
 ### Bug Fixes
@@ -2193,7 +2193,7 @@
 
 
 
-# [0.224.0](https://github.com/khulnasoft/flowease/compare/n8n@0.223.0...n8n@0.224.0) (2023-04-12)
+# [0.224.0](https://github.com/khulnasoft/flowease/compare/flowease@0.223.0...flowease@0.224.0) (2023-04-12)
 
 
 ### Bug Fixes
@@ -2216,7 +2216,7 @@
 
 
 
-## [0.222.2](https://github.com/khulnasoft/flowease/compare/n8n@0.222.1...n8n@0.222.2) (2023-04-11)
+## [0.222.2](https://github.com/khulnasoft/flowease/compare/flowease@0.222.1...flowease@0.222.2) (2023-04-11)
 
 
 ### Bug Fixes
@@ -2226,7 +2226,7 @@
 
 
 
-## [0.221.3](https://github.com/khulnasoft/flowease/compare/n8n@0.221.2...n8n@0.221.3) (2023-04-11)
+## [0.221.3](https://github.com/khulnasoft/flowease/compare/flowease@0.221.2...flowease@0.221.3) (2023-04-11)
 
 
 ### Bug Fixes
@@ -2236,7 +2236,7 @@
 
 
 
-# [0.223.0](https://github.com/khulnasoft/flowease/compare/n8n@0.222.1...n8n@0.223.0) (2023-04-05)
+# [0.223.0](https://github.com/khulnasoft/flowease/compare/flowease@0.222.1...flowease@0.223.0) (2023-04-05)
 
 
 ### Bug Fixes
@@ -2306,7 +2306,7 @@
 
 
 
-## [0.222.1](https://github.com/khulnasoft/flowease/compare/n8n@0.222.0...n8n@0.222.1) (2023-04-04)
+## [0.222.1](https://github.com/khulnasoft/flowease/compare/flowease@0.222.0...flowease@0.222.1) (2023-04-04)
 
 
 ### Bug Fixes
@@ -2329,7 +2329,7 @@
 
 
 
-# [0.222.0](https://github.com/khulnasoft/flowease/compare/n8n@0.221.2...n8n@0.222.0) (2023-03-30)
+# [0.222.0](https://github.com/khulnasoft/flowease/compare/flowease@0.221.2...flowease@0.222.0) (2023-03-30)
 
 
 ### Bug Fixes
@@ -2378,7 +2378,7 @@
 
 
 
-## [0.221.2](https://github.com/khulnasoft/flowease/compare/n8n@0.221.1...n8n@0.221.2) (2023-03-24)
+## [0.221.2](https://github.com/khulnasoft/flowease/compare/flowease@0.221.1...flowease@0.221.2) (2023-03-24)
 
 
 ### Bug Fixes
@@ -2387,7 +2387,7 @@
 
 
 
-## [0.221.1](https://github.com/khulnasoft/flowease/compare/n8n@0.221.0...n8n@0.221.1) (2023-03-23)
+## [0.221.1](https://github.com/khulnasoft/flowease/compare/flowease@0.221.0...flowease@0.221.1) (2023-03-23)
 
 
 ### Bug Fixes
@@ -2396,7 +2396,7 @@
 
 
 
-# [0.221.0](https://github.com/khulnasoft/flowease/compare/n8n@0.220.0...n8n@0.221.0) (2023-03-23)
+# [0.221.0](https://github.com/khulnasoft/flowease/compare/flowease@0.220.0...flowease@0.221.0) (2023-03-23)
 
 
 ### Bug Fixes
@@ -2423,7 +2423,7 @@
 
 
 
-## [0.220.1](https://github.com/khulnasoft/flowease/compare/n8n@0.220.0...n8n@0.220.1) (2023-03-22)
+## [0.220.1](https://github.com/khulnasoft/flowease/compare/flowease@0.220.0...flowease@0.220.1) (2023-03-22)
 
 
 ### Bug Fixes
@@ -2432,7 +2432,7 @@
 
 
 
-# [0.220.0](https://github.com/khulnasoft/flowease/compare/n8n@0.219.1...n8n@0.220.0) (2023-03-16)
+# [0.220.0](https://github.com/khulnasoft/flowease/compare/flowease@0.219.1...flowease@0.220.0) (2023-03-16)
 
 
 ### Bug Fixes
@@ -2457,7 +2457,7 @@
 
 
 
-## [0.215.4](https://github.com/khulnasoft/flowease/compare/n8n@0.215.3...n8n@0.215.4) (2023-03-14)
+## [0.215.4](https://github.com/khulnasoft/flowease/compare/flowease@0.215.3...flowease@0.215.4) (2023-03-14)
 
 
 ### Bug Fixes
@@ -2466,7 +2466,7 @@
 
 
 
-## [0.214.5](https://github.com/khulnasoft/flowease/compare/n8n@0.214.4...n8n@0.214.5) (2023-03-14)
+## [0.214.5](https://github.com/khulnasoft/flowease/compare/flowease@0.214.4...flowease@0.214.5) (2023-03-14)
 
 
 ### Bug Fixes
@@ -2475,7 +2475,7 @@
 
 
 
-## [0.219.1](https://github.com/khulnasoft/flowease/compare/n8n@0.219.0...n8n@0.219.1) (2023-03-10)
+## [0.219.1](https://github.com/khulnasoft/flowease/compare/flowease@0.219.0...flowease@0.219.1) (2023-03-10)
 
 
 ### Bug Fixes
@@ -2484,7 +2484,7 @@
 
 
 
-# [0.219.0](https://github.com/khulnasoft/flowease/compare/n8n@0.218.0...n8n@0.219.0) (2023-03-09)
+# [0.219.0](https://github.com/khulnasoft/flowease/compare/flowease@0.218.0...flowease@0.219.0) (2023-03-09)
 
 
 ### Bug Fixes
@@ -2517,7 +2517,7 @@
 
 
 
-## [0.217.1](https://github.com/khulnasoft/flowease/compare/n8n@0.217.0...n8n@0.217.1) (2023-02-24)
+## [0.217.1](https://github.com/khulnasoft/flowease/compare/flowease@0.217.0...flowease@0.217.1) (2023-02-24)
 
 
 ### Bug Fixes
@@ -2526,7 +2526,7 @@
 
 
 
-# [0.218.0](https://github.com/khulnasoft/flowease/compare/n8n@0.217.2...n8n@0.218.0) (2023-03-02)
+# [0.218.0](https://github.com/khulnasoft/flowease/compare/flowease@0.217.2...flowease@0.218.0) (2023-03-02)
 
 
 ### Bug Fixes
@@ -2557,7 +2557,7 @@
 
 
 
-## [0.217.2](https://github.com/khulnasoft/flowease/compare/n8n@0.217.1...n8n@0.217.2) (2023-02-27)
+## [0.217.2](https://github.com/khulnasoft/flowease/compare/flowease@0.217.1...flowease@0.217.2) (2023-02-27)
 
 
 ### Bug Fixes
@@ -2568,7 +2568,7 @@
 
 
 
-## [0.217.1](https://github.com/khulnasoft/flowease/compare/n8n@0.217.0...n8n@0.217.1) (2023-02-24)
+## [0.217.1](https://github.com/khulnasoft/flowease/compare/flowease@0.217.0...flowease@0.217.1) (2023-02-24)
 
 
 ### Bug Fixes
@@ -2577,7 +2577,7 @@
 
 
 
-# [0.217.0](https://github.com/khulnasoft/flowease/compare/n8n@0.216.1...n8n@0.217.0) (2023-02-23)
+# [0.217.0](https://github.com/khulnasoft/flowease/compare/flowease@0.216.1...flowease@0.217.0) (2023-02-23)
 
 
 ### Bug Fixes
@@ -2597,7 +2597,7 @@
 * **editor:** Fix unexpected date rendering on front-end ([#5528](https://github.com/khulnasoft/flowease/issues/5528)) ([684d717](https://github.com/khulnasoft/flowease/commit/684d71752064e25143e09666e539b91b3dcd5f71))
 * **editor:** Remove 'crashed' status from filter ([#5524](https://github.com/khulnasoft/flowease/issues/5524)) ([7c517cb](https://github.com/khulnasoft/flowease/commit/7c517cb5300481908dd653426089a6a9291e79ca))
 * fix typo in error messages when a property does not exist ([#4310](https://github.com/khulnasoft/flowease/issues/4310)) ([3af3db1](https://github.com/khulnasoft/flowease/commit/3af3db160b5798fe948159b6f3dd48ec743512e7))
-* Fixes an issue when saving an active workflow without triggers would cause n8n to be stuck ([#5513](https://github.com/khulnasoft/flowease/issues/5513)) ([75a094a](https://github.com/khulnasoft/flowease/commit/75a094a8c03afc40b7872cd2115d82e69455286e))
+* Fixes an issue when saving an active workflow without triggers would cause flowease to be stuck ([#5513](https://github.com/khulnasoft/flowease/issues/5513)) ([75a094a](https://github.com/khulnasoft/flowease/commit/75a094a8c03afc40b7872cd2115d82e69455286e))
 * **Google Calendar Node:** Fix incorrect labels for start and end times when getting all events ([#5529](https://github.com/khulnasoft/flowease/issues/5529)) ([f965469](https://github.com/khulnasoft/flowease/commit/f965469e13a45d3a7b796dfd6be44573bf8b13d0))
 * **Postgres Node:** Fix for tables containing field named json ([5d74a2f](https://github.com/khulnasoft/flowease/commit/5d74a2f89a31ee1a386a52d0d71858f73d734e31))
 * **S3 Node:** Fix issue with get many buckets not outputting data ([#5514](https://github.com/khulnasoft/flowease/issues/5514)) ([1c47677](https://github.com/khulnasoft/flowease/commit/1c476770a778b7d034924db847a8757c383bd281))
@@ -2617,7 +2617,7 @@
 
 
 
-## [0.216.2](https://github.com/khulnasoft/flowease/compare/n8n@0.216.1...n8n@0.216.2) (2023-02-23)
+## [0.216.2](https://github.com/khulnasoft/flowease/compare/flowease@0.216.1...flowease@0.216.2) (2023-02-23)
 
 
 ### Bug Fixes
@@ -2626,7 +2626,7 @@
 
 
 
-## [0.215.3](https://github.com/khulnasoft/flowease/compare/n8n@0.215.2...n8n@0.215.3) (2023-02-23)
+## [0.215.3](https://github.com/khulnasoft/flowease/compare/flowease@0.215.2...flowease@0.215.3) (2023-02-23)
 
 
 ### Bug Fixes
@@ -2639,7 +2639,7 @@
 
 
 
-## [0.214.4](https://github.com/khulnasoft/flowease/compare/n8n@0.214.3...n8n@0.214.4) (2023-02-23)
+## [0.214.4](https://github.com/khulnasoft/flowease/compare/flowease@0.214.3...flowease@0.214.4) (2023-02-23)
 
 
 ### Bug Fixes
@@ -2652,7 +2652,7 @@
 
 
 
-## [0.216.1](https://github.com/khulnasoft/flowease/compare/n8n@0.216.0...n8n@0.216.1) (2023-02-21)
+## [0.216.1](https://github.com/khulnasoft/flowease/compare/flowease@0.216.0...flowease@0.216.1) (2023-02-21)
 
 
 ### Bug Fixes
@@ -2664,7 +2664,7 @@
 
 
 
-# [0.216.0](https://github.com/khulnasoft/flowease/compare/n8n@0.215.2...n8n@0.216.0) (2023-02-16)
+# [0.216.0](https://github.com/khulnasoft/flowease/compare/flowease@0.215.2...flowease@0.216.0) (2023-02-16)
 
 
 ### Bug Fixes
@@ -2689,7 +2689,7 @@
 
 
 
-## [0.215.2](https://github.com/khulnasoft/flowease/compare/n8n@0.215.1...n8n@0.215.2) (2023-02-14)
+## [0.215.2](https://github.com/khulnasoft/flowease/compare/flowease@0.215.1...flowease@0.215.2) (2023-02-14)
 
 
 ### Bug Fixes
@@ -2698,7 +2698,7 @@
 
 
 
-## [0.215.1](https://github.com/khulnasoft/flowease/compare/n8n@0.215.0...n8n@0.215.1) (2023-02-11)
+## [0.215.1](https://github.com/khulnasoft/flowease/compare/flowease@0.215.0...flowease@0.215.1) (2023-02-11)
 
 
 ### Bug Fixes
@@ -2708,7 +2708,7 @@
 
 
 
-# [0.215.0](https://github.com/khulnasoft/flowease/compare/n8n@0.214.3...n8n@0.215.0) (2023-02-10)
+# [0.215.0](https://github.com/khulnasoft/flowease/compare/flowease@0.214.3...flowease@0.215.0) (2023-02-10)
 
 
 ### Bug Fixes
@@ -2735,12 +2735,12 @@
 
 
 
-## [0.214.3](https://github.com/khulnasoft/flowease/compare/n8n@0.214.2...n8n@0.214.3) (2023-02-09)
+## [0.214.3](https://github.com/khulnasoft/flowease/compare/flowease@0.214.2...flowease@0.214.3) (2023-02-09)
 
 * **editor:** Prevent creation of input connections for nodes without input slot ([#5425](https://github.com/khulnasoft/flowease/issues/5425)) ([b57ec1d](https://github.com/khulnasoft/flowease/commit/b57ec1d6abbae9e23ae5f473d70674aa14701bce))
 
 
-## [0.214.2](https://github.com/khulnasoft/flowease/compare/n8n@0.214.1...n8n@0.214.2) (2023-02-06)
+## [0.214.2](https://github.com/khulnasoft/flowease/compare/flowease@0.214.1...flowease@0.214.2) (2023-02-06)
 
 
 ### Bug Fixes
@@ -2750,7 +2750,7 @@
 * **editor:** Fix resolvable highlighting for HTML editor ([#5379](https://github.com/khulnasoft/flowease/issues/5379)) ([31130d5](https://github.com/khulnasoft/flowease/commit/31130d5257f253d9be21fe62d668231e27ecbd52))
 
 
-## [0.214.1](https://github.com/khulnasoft/flowease/compare/n8n@0.214.0...n8n@0.214.1) (2023-02-06)
+## [0.214.1](https://github.com/khulnasoft/flowease/compare/flowease@0.214.0...flowease@0.214.1) (2023-02-06)
 
 
 ### Bug Fixes
@@ -2766,7 +2766,7 @@
 
 
 
-# [0.214.0](https://github.com/khulnasoft/flowease/compare/n8n@0.213.0...n8n@0.214.0) (2023-02-03)
+# [0.214.0](https://github.com/khulnasoft/flowease/compare/flowease@0.213.0...flowease@0.214.0) (2023-02-03)
 
 
 ### Bug Fixes
@@ -2787,7 +2787,7 @@
 * **Invoice Ninja Node:** Fix line items not being correctly set for quotes and invoices ([#5304](https://github.com/khulnasoft/flowease/issues/5304)) ([3b5e1d1](https://github.com/khulnasoft/flowease/commit/3b5e1d127fe049934a0a32310ed408cd129b2d7d))
 * **Linear Node:** Fix pagination issue for get all issues ([#5324](https://github.com/khulnasoft/flowease/issues/5324)) ([f9ecc34](https://github.com/khulnasoft/flowease/commit/f9ecc34b10544e787f7034e89068aa6c9356fa04))
 * **Mailchimp Trigger Node:** Fix webhook recreation ([#5328](https://github.com/khulnasoft/flowease/issues/5328)) ([8f5f1c3](https://github.com/khulnasoft/flowease/commit/8f5f1c3aa520576215e16a8cc1a8beadae5f142a))
-* Prevent unnecessarily touching updatedAt when n8n starts ([#5340](https://github.com/khulnasoft/flowease/issues/5340)) ([b5154d9](https://github.com/khulnasoft/flowease/commit/b5154d9be5e3adccbdcbb0ad748ed869ba75d4cc))
+* Prevent unnecessarily touching updatedAt when flowease starts ([#5340](https://github.com/khulnasoft/flowease/issues/5340)) ([b5154d9](https://github.com/khulnasoft/flowease/commit/b5154d9be5e3adccbdcbb0ad748ed869ba75d4cc))
 * **Schedule Trigger Node:** Change scheduler behaviour for intervals days and hours ([#5133](https://github.com/khulnasoft/flowease/issues/5133)) ([78bbe2b](https://github.com/khulnasoft/flowease/commit/78bbe2ba27990127b1b6a6333361f35e2d3e7a65))
 * **Set Node:** Fix behaviour when selecting continueOnFail & PairedItem ([#5257](https://github.com/khulnasoft/flowease/issues/5257)) ([a8637a0](https://github.com/khulnasoft/flowease/commit/a8637a0bc6ac19859ce1ff468d0404ac73bc70bb))
 
@@ -2814,7 +2814,7 @@
 
 
 
-# [0.213.0](https://github.com/khulnasoft/flowease/compare/n8n@0.212.1...n8n@0.213.0) (2023-01-27)
+# [0.213.0](https://github.com/khulnasoft/flowease/compare/flowease@0.212.1...flowease@0.213.0) (2023-01-27)
 
 
 ### Bug Fixes
@@ -2847,7 +2847,7 @@
 
 
 
-## [0.212.1](https://github.com/khulnasoft/flowease/compare/n8n@0.212.0...n8n@0.212.1) (2023-01-23)
+## [0.212.1](https://github.com/khulnasoft/flowease/compare/flowease@0.212.0...flowease@0.212.1) (2023-01-23)
 
 ### Bug Fixes
 
@@ -2866,7 +2866,7 @@
 
 - **Google Analytics Node:** Overhaul for google analytics node ([736e700](https://github.com/khulnasoft/flowease/commit/736e700902d333df55abff86c15c688de15c9bde))
 
-# [0.212.0](https://github.com/khulnasoft/flowease/compare/n8n@0.211.2...n8n@0.212.0) (2023-01-19)
+# [0.212.0](https://github.com/khulnasoft/flowease/compare/flowease@0.211.2...flowease@0.212.0) (2023-01-19)
 
 ### Bug Fixes
 
@@ -2879,10 +2879,10 @@
 
 ### Features
 
-- **core:** Add Prometheus metrics for n8n events and api invocations (experimental) ([#5177](https://github.com/khulnasoft/flowease/issues/5177)) ([9b032d6](https://github.com/khulnasoft/flowease/commit/9b032d68bc8a7a45aae73e9442315e872902d50a)), closes [#5187](https://github.com/khulnasoft/flowease/issues/5187)
+- **core:** Add Prometheus metrics for flowease events and api invocations (experimental) ([#5177](https://github.com/khulnasoft/flowease/issues/5177)) ([9b032d6](https://github.com/khulnasoft/flowease/commit/9b032d68bc8a7a45aae73e9442315e872902d50a)), closes [#5187](https://github.com/khulnasoft/flowease/issues/5187)
 - **Item Lists Node:** Table tranformation ([5426690](https://github.com/khulnasoft/flowease/commit/5426690791ead70085681ef31f229fbe15c7d656))
 
-## [0.211.2](https://github.com/khulnasoft/flowease/compare/n8n@0.211.1...n8n@0.211.2) (2023-01-17)
+## [0.211.2](https://github.com/khulnasoft/flowease/compare/flowease@0.211.1...flowease@0.211.2) (2023-01-17)
 
 ### Bug Fixes
 
@@ -2892,7 +2892,7 @@
 
 - (Google Sheets Trigger Node): Trigger for Google Sheets ([e839a81](https://github.com/khulnasoft/flowease/commit/e839a81cc5f31eb622915749f9e598f248e407d7))
 
-## [0.211.1](https://github.com/khulnasoft/flowease/compare/n8n@0.211.0...n8n@0.211.1) (2023-01-16)
+## [0.211.1](https://github.com/khulnasoft/flowease/compare/flowease@0.211.0...flowease@0.211.1) (2023-01-16)
 
 ### Bug Fixes
 
@@ -2907,7 +2907,7 @@
 - **Google Ads Node:** Update api version to v11 ([#4427](https://github.com/khulnasoft/flowease/issues/4427)) ([dfff982](https://github.com/khulnasoft/flowease/commit/dfff982662b7cee5c0203764a59d2355a02a9030))
 - **Google Drive Trigger Node:** Use resource locator component ([#5148](https://github.com/khulnasoft/flowease/issues/5148)) ([9958c32](https://github.com/khulnasoft/flowease/commit/9958c324dbf88f25efd34433ce51af9e3aa44ae3))
 
-# [0.211.0](https://github.com/khulnasoft/flowease/compare/n8n@0.210.2...n8n@0.211.0) (2023-01-13)
+# [0.211.0](https://github.com/khulnasoft/flowease/compare/flowease@0.210.2...flowease@0.211.0) (2023-01-13)
 
 ### Bug Fixes
 
@@ -2939,7 +2939,7 @@
 - **editor:** Update callout component design ([#5126](https://github.com/khulnasoft/flowease/issues/5126)) ([d2d481f](https://github.com/khulnasoft/flowease/commit/d2d481f12e1777a60ee5411c8cdac50b1dfc3ee3))
 - Expression extension framework ([#4372](https://github.com/khulnasoft/flowease/issues/4372)) ([3d05acf](https://github.com/khulnasoft/flowease/commit/3d05acf3130cce2c5b5155d91faa22b707ce2373)), closes [#4045](https://github.com/khulnasoft/flowease/issues/4045) [#4044](https://github.com/khulnasoft/flowease/issues/4044) [#4046](https://github.com/khulnasoft/flowease/issues/4046)
 
-## [0.210.2](https://github.com/khulnasoft/flowease/compare/n8n@0.210.1...n8n@0.210.2) (2023-01-09)
+## [0.210.2](https://github.com/khulnasoft/flowease/compare/flowease@0.210.1...flowease@0.210.2) (2023-01-09)
 
 ### Bug Fixes
 
@@ -2956,7 +2956,7 @@
 
 - **editor:** Introduce proxy completions to expressions ([#5075](https://github.com/khulnasoft/flowease/issues/5075)) ([f4140d0](https://github.com/khulnasoft/flowease/commit/f4140d011fa3b748a89122cd41c9628dd5313efd))
 
-## [0.210.1](https://github.com/khulnasoft/flowease/compare/n8n@0.210.0...n8n@0.210.1) (2023-01-05)
+## [0.210.1](https://github.com/khulnasoft/flowease/compare/flowease@0.210.0...flowease@0.210.1) (2023-01-05)
 
 ### Bug Fixes
 
@@ -2967,7 +2967,7 @@
 
 - Add user management invite links without SMTP set up ([#5084](https://github.com/khulnasoft/flowease/issues/5084)) ([2327563](https://github.com/khulnasoft/flowease/commit/2327563c441634bc6c127f2fe58792657fa7d114)), closes [#5079](https://github.com/khulnasoft/flowease/issues/5079) [#5085](https://github.com/khulnasoft/flowease/issues/5085)
 
-# [0.210.0](https://github.com/khulnasoft/flowease/compare/n8n@0.209.4...n8n@0.210.0) (2023-01-05)
+# [0.210.0](https://github.com/khulnasoft/flowease/compare/flowease@0.209.4...flowease@0.210.0) (2023-01-05)
 
 ### Bug Fixes
 
@@ -2998,7 +2998,7 @@
 - Lazy-load public-api dependencies to reduce baseline memory usage ([#5049](https://github.com/khulnasoft/flowease/issues/5049)) ([a455cce](https://github.com/khulnasoft/flowease/commit/a455cce7e6cc511360a9d6f9113b5a6d18e06dba))
 - Lazy-load queue-mode and analytics dependencies ([#5061](https://github.com/khulnasoft/flowease/issues/5061)) ([b828cb3](https://github.com/khulnasoft/flowease/commit/b828cb31d621f20b6c9612a2ac79f48e6337e528))
 
-## [0.209.4](https://github.com/khulnasoft/flowease/compare/n8n@0.209.3...n8n@0.209.4) (2022-12-28)
+## [0.209.4](https://github.com/khulnasoft/flowease/compare/flowease@0.209.3...flowease@0.209.4) (2022-12-28)
 
 ### Bug Fixes
 
@@ -3012,7 +3012,7 @@
 
 - **editor:** Switch to expression on `=` input ([#5044](https://github.com/khulnasoft/flowease/issues/5044)) ([16bd761](https://github.com/khulnasoft/flowease/commit/16bd7610fc337fa5ba9b0088b91396bb13570bcb))
 
-## [0.209.3](https://github.com/khulnasoft/flowease/compare/n8n@0.209.2...n8n@0.209.3) (2022-12-27)
+## [0.209.3](https://github.com/khulnasoft/flowease/compare/flowease@0.209.2...flowease@0.209.3) (2022-12-27)
 
 ### Bug Fixes
 
@@ -3027,7 +3027,7 @@
 - **core:** Implement webhook-only manual execution ([#4960](https://github.com/khulnasoft/flowease/issues/4960)) ([d113977](https://github.com/khulnasoft/flowease/commit/d113977b10ffe1db879e7fa0807da8147e52ca5d))
 - **editor:** Improve UX for brace completion from selection ([#5024](https://github.com/khulnasoft/flowease/issues/5024)) ([52077e2](https://github.com/khulnasoft/flowease/commit/52077e2c45fca3d5830a39ca3416b073f783fbf5))
 
-## [0.209.2](https://github.com/khulnasoft/flowease/compare/n8n@0.209.1...n8n@0.209.2) (2022-12-23)
+## [0.209.2](https://github.com/khulnasoft/flowease/compare/flowease@0.209.1...flowease@0.209.2) (2022-12-23)
 
 ### Bug Fixes
 
@@ -3038,7 +3038,7 @@
 
 - Improve workflows list performance ([#5021](https://github.com/khulnasoft/flowease/issues/5021)) ([bb0eeda](https://github.com/khulnasoft/flowease/commit/bb0eedada9afcae589c968ffcb583fae7b6e1959))
 
-## [0.209.1](https://github.com/khulnasoft/flowease/compare/n8n@0.209.0...n8n@0.209.1) (2022-12-22)
+## [0.209.1](https://github.com/khulnasoft/flowease/compare/flowease@0.209.0...flowease@0.209.1) (2022-12-22)
 
 ### Bug Fixes
 
@@ -3050,7 +3050,7 @@
 - Restore missing tags in workflow retrieve ([#5004](https://github.com/khulnasoft/flowease/issues/5004)) ([87d8865](https://github.com/khulnasoft/flowease/commit/87d8865ad38e1e5b4a3bca7d807536975116ba82))
 - Show trigger actions again in nodes panel ([#5016](https://github.com/khulnasoft/flowease/issues/5016)) ([e7cb190](https://github.com/khulnasoft/flowease/commit/e7cb1907cdf90e9497c24f39f3e9b53e5470762c)), closes [#4976](https://github.com/khulnasoft/flowease/issues/4976)
 
-# [0.209.0](https://github.com/khulnasoft/flowease/compare/n8n@0.208.1...n8n@0.209.0) (2022-12-21)
+# [0.209.0](https://github.com/khulnasoft/flowease/compare/flowease@0.208.1...flowease@0.209.0) (2022-12-21)
 
 ### Bug Fixes
 
@@ -3069,7 +3069,7 @@
 - **editor:** Add usage and plan pages ([#4819](https://github.com/khulnasoft/flowease/issues/4819)) ([0da338f](https://github.com/khulnasoft/flowease/commit/0da338f9b5f850b25e97383ae1f4cec8d0e4c17b)), closes [#4793](https://github.com/khulnasoft/flowease/issues/4793) [#4842](https://github.com/khulnasoft/flowease/issues/4842) [#4866](https://github.com/khulnasoft/flowease/issues/4866) [#4875](https://github.com/khulnasoft/flowease/issues/4875) [#4958](https://github.com/khulnasoft/flowease/issues/4958) [#4979](https://github.com/khulnasoft/flowease/issues/4979)
 - Update mapping pill for table/json views ([#4965](https://github.com/khulnasoft/flowease/issues/4965)) ([343f53b](https://github.com/khulnasoft/flowease/commit/343f53bf5393e86eb850d07de85b762476294656))
 
-## [0.208.1](https://github.com/khulnasoft/flowease/compare/n8n@0.208.0...n8n@0.208.1) (2022-12-19)
+## [0.208.1](https://github.com/khulnasoft/flowease/compare/flowease@0.208.0...flowease@0.208.1) (2022-12-19)
 
 ### Bug Fixes
 
@@ -3078,7 +3078,7 @@
 - **editor:** Fix for wrong execution data displayed in executions preview ([#4966](https://github.com/khulnasoft/flowease/issues/4966)) ([bfc8e68](https://github.com/khulnasoft/flowease/commit/bfc8e68b37f77bd1a8259ca8162269451aca4f28))
 - Pick up credential test functions from versioned nodes as well ([#4962](https://github.com/khulnasoft/flowease/issues/4962)) ([2797c08](https://github.com/khulnasoft/flowease/commit/2797c085e51548a29b83dd6ce057ac71bde9ed0c))
 
-# [0.208.0](https://github.com/khulnasoft/flowease/compare/n8n@0.207.1...n8n@0.208.0) (2022-12-16)
+# [0.208.0](https://github.com/khulnasoft/flowease/compare/flowease@0.207.1...flowease@0.208.0) (2022-12-16)
 
 ### Bug Fixes
 
@@ -3104,7 +3104,7 @@
 - Set all resources view as default subview ([#4919](https://github.com/khulnasoft/flowease/issues/4919)) ([bcde07e](https://github.com/khulnasoft/flowease/commit/bcde07e03288729ed185d1508cd73efebd82dec0))
 - Update workflow overwriting message ([#4917](https://github.com/khulnasoft/flowease/issues/4917)) ([2964458](https://github.com/khulnasoft/flowease/commit/2964458191a02046a1806bd413e67ebf1308c2f8))
 
-## [0.207.1](https://github.com/khulnasoft/flowease/compare/n8n@0.207.0...n8n@0.207.1) (2022-12-13)
+## [0.207.1](https://github.com/khulnasoft/flowease/compare/flowease@0.207.0...flowease@0.207.1) (2022-12-13)
 
 ### Bug Fixes
 
@@ -3112,7 +3112,7 @@
 - **editor:** Schema view render empty data ([#4902](https://github.com/khulnasoft/flowease/issues/4902)) ([0b6d470](https://github.com/khulnasoft/flowease/commit/0b6d47086a27117ceb0a1da107e5fcfbe11e0cd4))
 - Ensure parent directory exists before copying over the icons to generated static directory ([#4865](https://github.com/khulnasoft/flowease/issues/4865)) ([91e9a88](https://github.com/khulnasoft/flowease/commit/91e9a88e3a83530e1dce2e72b8796da24775dcf2))
 
-# [0.207.0](https://github.com/khulnasoft/flowease/compare/n8n@0.206.1...n8n@0.207.0) (2022-12-12)
+# [0.207.0](https://github.com/khulnasoft/flowease/compare/flowease@0.206.1...flowease@0.207.0) (2022-12-12)
 
 ### Bug Fixes
 
@@ -3138,7 +3138,7 @@
 - Handle sharing features when user skips owner setup ([#4850](https://github.com/khulnasoft/flowease/issues/4850)) ([6f1b78d](https://github.com/khulnasoft/flowease/commit/6f1b78df9877666212d9b01818155e30c2caba0f))
 - Update credential test error message for sharees ([#4864](https://github.com/khulnasoft/flowease/issues/4864)) ([4765d76](https://github.com/khulnasoft/flowease/commit/4765d767e361608a6349d08f7116dedc2a0e7e35))
 
-## [0.206.1](https://github.com/khulnasoft/flowease/compare/n8n@0.206.0...n8n@0.206.1) (2022-12-07)
+## [0.206.1](https://github.com/khulnasoft/flowease/compare/flowease@0.206.0...flowease@0.206.1) (2022-12-07)
 
 ### Bug Fixes
 
@@ -3146,11 +3146,11 @@
 - **editor:** Schema unit test stub fontawesome icon ([#4840](https://github.com/khulnasoft/flowease/issues/4840)) ([1e4ca1f](https://github.com/khulnasoft/flowease/commit/1e4ca1f0d0c89386470db7f6ce265a1339c79562))
 - Remove unnecessary console message ([#4848](https://github.com/khulnasoft/flowease/issues/4848)) ([2ad62bc](https://github.com/khulnasoft/flowease/commit/2ad62bcd442c4595daef4d02119122d9c37ab43d))
 
-# [0.206.0](https://github.com/khulnasoft/flowease/compare/n8n@0.205.0...n8n@0.206.0) (2022-12-06)
+# [0.206.0](https://github.com/khulnasoft/flowease/compare/flowease@0.205.0...flowease@0.206.0) (2022-12-06)
 
 ### Bug Fixes
 
-- **Code Node:** Restore `pairedItem` to required n8n item keys ([#4821](https://github.com/khulnasoft/flowease/issues/4821)) ([915f144](https://github.com/khulnasoft/flowease/commit/915f1445c26d834e3d43602f901a198931a107e1))
+- **Code Node:** Restore `pairedItem` to required flowease item keys ([#4821](https://github.com/khulnasoft/flowease/issues/4821)) ([915f144](https://github.com/khulnasoft/flowease/commit/915f1445c26d834e3d43602f901a198931a107e1))
 - **core:** Fix linter error ([#4808](https://github.com/khulnasoft/flowease/issues/4808)) ([3bb3809](https://github.com/khulnasoft/flowease/commit/3bb3809eecd1b660c0d05c26164b9ccc90a37008))
 - **core:** Fix partial execution with pinned data on child node run ([#4764](https://github.com/khulnasoft/flowease/issues/4764)) ([5d75e6c](https://github.com/khulnasoft/flowease/commit/5d75e6ceb3bf7d88229b4e71dda3250086aceb05))
 - **core:** OAuth2 scopes does not save ([7aefed4](https://github.com/khulnasoft/flowease/commit/7aefed46dcdb5d795fe9755c9fc64f445136bc17))
@@ -3171,7 +3171,7 @@
 - Fix checkbox line height and make checkbox label clickable ([#4818](https://github.com/khulnasoft/flowease/issues/4818)) ([1b7952a](https://github.com/khulnasoft/flowease/commit/1b7952a516a5c5dfe1f79e25f811fc044a5e4962))
 - **KoBoToolbox Node:** Add support for Media file API ([#4578](https://github.com/khulnasoft/flowease/issues/4578)) ([37e580e](https://github.com/khulnasoft/flowease/commit/37e580eb0628a651ecbc8faa3ad447cd0177d7cf))
 
-# [0.205.0](https://github.com/khulnasoft/flowease/compare/n8n@0.204.0...n8n@0.205.0) (2022-12-02)
+# [0.205.0](https://github.com/khulnasoft/flowease/compare/flowease@0.204.0...flowease@0.205.0) (2022-12-02)
 
 ### Bug Fixes
 
@@ -3201,7 +3201,7 @@
 - **Postmark Trigger Node:** Update credentials so they can be used with the HTTP Request Node ([#4790](https://github.com/khulnasoft/flowease/issues/4790)) ([0c759dc](https://github.com/khulnasoft/flowease/commit/0c759dc548c058372fde5d117ea34489f7a6a2d9))
 - **Todoist Node:** Update to use latest api version ([#4650](https://github.com/khulnasoft/flowease/issues/4650)) ([09a48c5](https://github.com/khulnasoft/flowease/commit/09a48c51b64aaf31888e98b7f2711140e9818bed))
 
-# [0.204.0](https://github.com/khulnasoft/flowease/compare/n8n@0.203.1...n8n@0.204.0) (2022-11-24)
+# [0.204.0](https://github.com/khulnasoft/flowease/compare/flowease@0.203.1...flowease@0.204.0) (2022-11-24)
 
 ### Bug Fixes
 
@@ -3213,7 +3213,7 @@
 - **editor:** Fix missing resource locator component ([#4649](https://github.com/khulnasoft/flowease/issues/4649)) ([44182f2](https://github.com/khulnasoft/flowease/commit/44182f23a5e62c53209b3fa19edd1727586551ff))
 - **editor:** Prevent node-creator tabs from showing when toggled by CanvasAddButton ([#4661](https://github.com/khulnasoft/flowease/issues/4661)) ([60746dc](https://github.com/khulnasoft/flowease/commit/60746dc92ee1b6c33015e2a6a0d34bc981aa1dd5))
 - **editor:** Table view column limit tooltip ([#4655](https://github.com/khulnasoft/flowease/issues/4655)) ([3ac9ba3](https://github.com/khulnasoft/flowease/commit/3ac9ba3491c0dc1de283bc4285a243e02747f971))
-- Fix broken n8n-info-tip slots ([#4665](https://github.com/khulnasoft/flowease/issues/4665)) ([6c99223](https://github.com/khulnasoft/flowease/commit/6c992233a053db1ea235f785a52a754c1e694555))
+- Fix broken flowease-info-tip slots ([#4665](https://github.com/khulnasoft/flowease/issues/4665)) ([6c99223](https://github.com/khulnasoft/flowease/commit/6c992233a053db1ea235f785a52a754c1e694555))
 - **IF Node:** Fix "Is Empty" and "Is Not Empty" operation fails for date objects ([#4670](https://github.com/khulnasoft/flowease/issues/4670)) ([753f4c9](https://github.com/khulnasoft/flowease/commit/753f4c9a7d34c8d3329d4dc024fcf272f6f47ff3))
 - Remove redundant await in node's api request functions without try/catch ([#4639](https://github.com/khulnasoft/flowease/issues/4639)) ([67983e8](https://github.com/khulnasoft/flowease/commit/67983e8f945397d3fb0be55fdeb47609be92b2cb))
 - **Schedule Trigger Node:** Fixes inconsitent behavior with cron and weekly intervals ([#4558](https://github.com/khulnasoft/flowease/issues/4558)) ([2fb8ed8](https://github.com/khulnasoft/flowease/commit/2fb8ed825b18118fc0783e95d1551ee2ce8c3a38))
@@ -3224,7 +3224,7 @@
 - Add credentials E2E test suite and page object ([#4596](https://github.com/khulnasoft/flowease/issues/4596)) ([b5b44d1](https://github.com/khulnasoft/flowease/commit/b5b44d1b598e67ef7e735d7cdfb5233ca72caca6))
 - Add save confirmation modal when leaving sharing modal ([#4683](https://github.com/khulnasoft/flowease/issues/4683)) ([173badc](https://github.com/khulnasoft/flowease/commit/173badc4e099ebb818686dc5a25c2192c138bcd9))
 - Add share button to workflows list ([#4681](https://github.com/khulnasoft/flowease/issues/4681)) ([a356d7b](https://github.com/khulnasoft/flowease/commit/a356d7bdbadd5a4c69c61c5a5a30e75e9765e3d2))
-- **core:** Add license support to n8n ([#4566](https://github.com/khulnasoft/flowease/issues/4566)) ([30e5d3d](https://github.com/khulnasoft/flowease/commit/30e5d3d04c3457780875cc36637c8c1ea14ec783))
+- **core:** Add license support to flowease ([#4566](https://github.com/khulnasoft/flowease/issues/4566)) ([30e5d3d](https://github.com/khulnasoft/flowease/commit/30e5d3d04c3457780875cc36637c8c1ea14ec783))
 - **core:** Lazy-load nodes and credentials to reduce baseline memory usage ([#4577](https://github.com/khulnasoft/flowease/issues/4577)) ([b6c57e1](https://github.com/khulnasoft/flowease/commit/b6c57e19fc5683dd7fb9eabb60ec4e89359c59eb))
 - **editor:** Add workflows list status filter ([#4690](https://github.com/khulnasoft/flowease/issues/4690)) ([5364e7f](https://github.com/khulnasoft/flowease/commit/5364e7fc9250421b799adc28b3e47dc75819ec7d))
 - Show delete button based on workflow permissions ([#4686](https://github.com/khulnasoft/flowease/issues/4686)) ([4f64e26](https://github.com/khulnasoft/flowease/commit/4f64e26a83c7e62c98d93c38bf3dcb6cdfaadb58))
@@ -3234,15 +3234,15 @@
 
 ### Performance Improvements
 
-- **Code Node:** Improve n8n item key validation performance ([#4669](https://github.com/khulnasoft/flowease/issues/4669)) ([740513b](https://github.com/khulnasoft/flowease/commit/740513b42440b8760cd488659e92abe9951462b0))
+- **Code Node:** Improve flowease item key validation performance ([#4669](https://github.com/khulnasoft/flowease/issues/4669)) ([740513b](https://github.com/khulnasoft/flowease/commit/740513b42440b8760cd488659e92abe9951462b0))
 
-## [0.203.1](https://github.com/khulnasoft/flowease/compare/n8n@0.203.0...n8n@0.203.1) (2022-11-18)
+## [0.203.1](https://github.com/khulnasoft/flowease/compare/flowease@0.203.0...flowease@0.203.1) (2022-11-18)
 
 ### Bug Fixes
 
 - **Google Sheets Node:** Versioning fix ([4e66672](https://github.com/khulnasoft/flowease/commit/4e66672df225e67297981b7ee3408e5849db418a))
 
-# [0.203.0](https://github.com/khulnasoft/flowease/compare/n8n@0.202.1...n8n@0.203.0) (2022-11-17)
+# [0.203.0](https://github.com/khulnasoft/flowease/compare/flowease@0.202.1...flowease@0.203.0) (2022-11-17)
 
 ### Bug Fixes
 
@@ -3270,13 +3270,13 @@
 - **Google Sheets Node:** Overhaul of node ([d96d6f1](https://github.com/khulnasoft/flowease/commit/d96d6f11dbe2f1c75ff572baa4906fb628a2eb5c))
 - **Notion (Beta) Node:** Use resource locator component for database and page parameters ([#4340](https://github.com/khulnasoft/flowease/issues/4340)) ([277b6b7](https://github.com/khulnasoft/flowease/commit/277b6b73c37187f524474364c3b58adbc15486e0))
 
-## [0.202.1](https://github.com/khulnasoft/flowease/compare/n8n@0.202.0...n8n@0.202.1) (2022-11-10)
+## [0.202.1](https://github.com/khulnasoft/flowease/compare/flowease@0.202.0...flowease@0.202.1) (2022-11-10)
 
 ### Bug Fixes
 
 - Disable some error tracking ([#4579](https://github.com/khulnasoft/flowease/issues/4579)) ([b2201d0](https://github.com/khulnasoft/flowease/commit/b2201d0c77cf024e39f6569e7806871d38408201))
 
-# [0.202.0](https://github.com/khulnasoft/flowease/compare/n8n@0.201.0...n8n@0.202.0) (2022-11-10)
+# [0.202.0](https://github.com/khulnasoft/flowease/compare/flowease@0.201.0...flowease@0.202.0) (2022-11-10)
 
 ### Bug Fixes
 
@@ -3312,7 +3312,7 @@
 - **editor:** Add support for notice credentials properties ([#4557](https://github.com/khulnasoft/flowease/issues/4557)) ([de96def](https://github.com/khulnasoft/flowease/commit/de96def372d63df27c3433bca4fae6f75c874e8e))
 - Switch from npm to pnpm ([#4429](https://github.com/khulnasoft/flowease/issues/4429)) ([7367773](https://github.com/khulnasoft/flowease/commit/736777385c54d5b20174c9c1fda38bb31fbf14b4))
 
-# [0.201.0](https://github.com/khulnasoft/flowease/compare/n8n@0.200.1...n8n@0.201.0) (2022-11-02)
+# [0.201.0](https://github.com/khulnasoft/flowease/compare/flowease@0.200.1...flowease@0.201.0) (2022-11-02)
 
 ### Bug Fixes
 
@@ -3335,7 +3335,7 @@
 
 - **editor:** Improve array intersection utility function ([#4503](https://github.com/khulnasoft/flowease/issues/4503)) ([b0df810](https://github.com/khulnasoft/flowease/commit/b0df8107458e3f6cbfccfc21a717e4085c4ab3d5))
 
-## [0.200.1](https://github.com/khulnasoft/flowease/compare/n8n@0.200.0...n8n@0.200.1) (2022-10-28)
+## [0.200.1](https://github.com/khulnasoft/flowease/compare/flowease@0.200.0...flowease@0.200.1) (2022-10-28)
 
 ### Bug Fixes
 
@@ -3346,7 +3346,7 @@
 - **editor:** Redirect old path /workflow ([#4469](https://github.com/khulnasoft/flowease/issues/4469)) ([7620d93](https://github.com/khulnasoft/flowease/commit/7620d93eda525c528823c20e83883ad10020bd76))
 - **editor:** Remove filter that prevented showing running executions ([#4470](https://github.com/khulnasoft/flowease/issues/4470)) ([658e886](https://github.com/khulnasoft/flowease/commit/658e886861acb5897e9e87cf4d66cee9b6a6003a))
 
-# [0.200.0](https://github.com/khulnasoft/flowease/compare/n8n@0.199.0...n8n@0.200.0) (2022-10-27)
+# [0.200.0](https://github.com/khulnasoft/flowease/compare/flowease@0.199.0...flowease@0.200.0) (2022-10-27)
 
 ### Bug Fixes
 
@@ -3376,7 +3376,7 @@
 - **HTTP Request Node:** Add option for raw json header & query ([#4408](https://github.com/khulnasoft/flowease/issues/4408)) ([8f25da5](https://github.com/khulnasoft/flowease/commit/8f25da52b1c2d228018df8186985a2b067bd2123))
 - **Write Binary File Node:** Add option to append to a file ([#4386](https://github.com/khulnasoft/flowease/issues/4386)) ([4b13b33](https://github.com/khulnasoft/flowease/commit/4b13b3398dce5338f46c80867d6e4c8c685f6c22))
 
-# [0.199.0](https://github.com/khulnasoft/flowease/compare/n8n@0.198.2...n8n@0.199.0) (2022-10-21)
+# [0.199.0](https://github.com/khulnasoft/flowease/compare/flowease@0.198.2...flowease@0.199.0) (2022-10-21)
 
 ### Bug Fixes
 
@@ -3392,7 +3392,7 @@
 - **Elasticsearch Node:** Fix pagination issue ([a02e92d](https://github.com/khulnasoft/flowease/commit/a02e92d664b2896ee1abd30c761e25e96f4f44e3))
 - **Google Drive Node:** Fix drive hint typo in resource locator ([#4387](https://github.com/khulnasoft/flowease/issues/4387)) ([4ce0fed](https://github.com/khulnasoft/flowease/commit/4ce0fed0ab2d464d9fa4051fed070f86a64fef57))
 - **HTTP Request Node:** Avoid error when response doesn't include content-type ([#4365](https://github.com/khulnasoft/flowease/issues/4365)) ([61b9909](https://github.com/khulnasoft/flowease/commit/61b9909ac3925d51eb767542b70c82e57905b392))
-- **n8n Node:** Fix resource locator not returning all items ([#4248](https://github.com/khulnasoft/flowease/issues/4248)) ([ed4dcbb](https://github.com/khulnasoft/flowease/commit/ed4dcbb5ddf3ded5ec9faa16badc128a0fcecf26))
+- **flowease Node:** Fix resource locator not returning all items ([#4248](https://github.com/khulnasoft/flowease/issues/4248)) ([ed4dcbb](https://github.com/khulnasoft/flowease/commit/ed4dcbb5ddf3ded5ec9faa16badc128a0fcecf26))
 - **Shedule Node:** Fixes multiple intervals, fixes week interval ([#4376](https://github.com/khulnasoft/flowease/issues/4376)) ([971c2c0](https://github.com/khulnasoft/flowease/commit/971c2c0aed0a2402fa6eb6217ddc914d1fade68b))
 
 ### Features
@@ -3412,13 +3412,13 @@
 
 - update deepCopy ([#4364](https://github.com/khulnasoft/flowease/issues/4364)) ([1aa21ed](https://github.com/khulnasoft/flowease/commit/1aa21ed3df28684bad1696fd7f9349295d5b6219))
 
-## [0.198.2](https://github.com/khulnasoft/flowease/compare/n8n@0.198.1...n8n@0.198.2) (2022-10-14)
+## [0.198.2](https://github.com/khulnasoft/flowease/compare/flowease@0.198.1...flowease@0.198.2) (2022-10-14)
 
 ### Bug Fixes
 
 - **editor:** Fix bug where one cannot scroll down parameters ([#4348](https://github.com/khulnasoft/flowease/issues/4348)) ([7a76c2a](https://github.com/khulnasoft/flowease/commit/7a76c2a35dac65048ab123932a54bc420e1d5a5c))
 
-## [0.198.1](https://github.com/khulnasoft/flowease/compare/n8n@0.198.0...n8n@0.198.1) (2022-10-14)
+## [0.198.1](https://github.com/khulnasoft/flowease/compare/flowease@0.198.0...flowease@0.198.1) (2022-10-14)
 
 ### Bug Fixes
 
@@ -3427,13 +3427,13 @@
 - **editor:** Fix `BASE_PATH` for Vite dev mode ([#4342](https://github.com/khulnasoft/flowease/issues/4342)) ([24288a5](https://github.com/khulnasoft/flowease/commit/24288a554d445f4fc12ad278e0736cd1e494f6ea))
 - **editor:** Fix data pinning success source ([#4339](https://github.com/khulnasoft/flowease/issues/4339)) ([763d2fd](https://github.com/khulnasoft/flowease/commit/763d2fd24b0784aa28fc182be8b578537a6fb9a7))
 
-# [0.198.0](https://github.com/khulnasoft/flowease/compare/n8n@0.197.1...n8n@0.198.0) (2022-10-14)
+# [0.198.0](https://github.com/khulnasoft/flowease/compare/flowease@0.197.1...flowease@0.198.0) (2022-10-14)
 
 ### Bug Fixes
 
 - **Box Node:** Fix issue with create folder operation showing extra items ([#4309](https://github.com/khulnasoft/flowease/issues/4309)) ([28bea7e](https://github.com/khulnasoft/flowease/commit/28bea7e109ac487014d16773414b53ddd5b0a631))
 - **core, editor:** Prevent overlapping `runData` and `pinData` ([#4323](https://github.com/khulnasoft/flowease/issues/4323)) ([cd74c3e](https://github.com/khulnasoft/flowease/commit/cd74c3ebaea57a3894e12774ecb043184538b811))
-- **core:** Expression evaluation of process should respect `N8N_BLOCK_ENV_ACCESS_IN_NODE` ([#4338](https://github.com/khulnasoft/flowease/issues/4338)) ([5df09bb](https://github.com/khulnasoft/flowease/commit/5df09bb31cb4b463007fc829073b66d1dce85fec))
+- **core:** Expression evaluation of process should respect `FLOWEASE_BLOCK_ENV_ACCESS_IN_NODE` ([#4338](https://github.com/khulnasoft/flowease/issues/4338)) ([5df09bb](https://github.com/khulnasoft/flowease/commit/5df09bb31cb4b463007fc829073b66d1dce85fec))
 - **editor-ui:** Fix axios baseUrl when hosted under a subfolder ([#4336](https://github.com/khulnasoft/flowease/issues/4336)) ([c2e9a03](https://github.com/khulnasoft/flowease/commit/c2e9a03ac54443f4fe65651edbce74ad95e8ca7d))
 - **editor:** Change horizontal scrollbar rendering in various places ([#4282](https://github.com/khulnasoft/flowease/issues/4282)) ([fdbc11a](https://github.com/khulnasoft/flowease/commit/fdbc11a288f9fe9aac36017366b5817a05f4fbbf))
 - **editor:** Disable trigger node execution pinning toolip for schedule nodes ([#4334](https://github.com/khulnasoft/flowease/issues/4334)) ([d4b74bd](https://github.com/khulnasoft/flowease/commit/d4b74bd66a4929517c0a66665443bf4059a74932))
@@ -3445,14 +3445,14 @@
 - **SeaTable Node:** Fix link items not showing in response ([#4170](https://github.com/khulnasoft/flowease/issues/4170)) ([69684fc](https://github.com/khulnasoft/flowease/commit/69684fc4f761f970a740b68865304a17257ed20c))
 - **Zoom Node:** Fix issue with missing output items ([#4315](https://github.com/khulnasoft/flowease/issues/4315)) ([a82fd3f](https://github.com/khulnasoft/flowease/commit/a82fd3f33ff81d2b996e2975c5fd95c8abe84467))
 
-- feat(Merge Node)!: Node tweaks n8n-4939 (#4321) ([6a37071](https://github.com/khulnasoft/flowease/commit/6a37071350fee9ab861c34f4667709065f03f11a)), closes [#4321](https://github.com/khulnasoft/flowease/issues/4321)
+- feat(Merge Node)!: Node tweaks flowease-4939 (#4321) ([6a37071](https://github.com/khulnasoft/flowease/commit/6a37071350fee9ab861c34f4667709065f03f11a)), closes [#4321](https://github.com/khulnasoft/flowease/issues/4321)
 
 ### Features
 
 - **Citrix Node:** Add certificate install operation ([#4308](https://github.com/khulnasoft/flowease/issues/4308)) ([bbb8c56](https://github.com/khulnasoft/flowease/commit/bbb8c56b0e9b2c146ae17d956a09759ecded47f5))
 - **Code Node:** Create Code node ([#3965](https://github.com/khulnasoft/flowease/issues/3965)) ([1db4fa2](https://github.com/khulnasoft/flowease/commit/1db4fa2bf87f02ccced4774eb547646c611cad40)), closes [#3930](https://github.com/khulnasoft/flowease/issues/3930) [#4192](https://github.com/khulnasoft/flowease/issues/4192) [#4220](https://github.com/khulnasoft/flowease/issues/4220)
 - **editor:** Update expressions display ([#4171](https://github.com/khulnasoft/flowease/issues/4171)) ([6b53849](https://github.com/khulnasoft/flowease/commit/6b538494cea62aa8c5b104b244f61e07baa58f18)), closes [#4149](https://github.com/khulnasoft/flowease/issues/4149)
-- **editor:** Updated n8n-menu component ([#4290](https://github.com/khulnasoft/flowease/issues/4290)) ([6af3ba7](https://github.com/khulnasoft/flowease/commit/6af3ba75dc90a511395674e9f64e5032e133952b)), closes [#4060](https://github.com/khulnasoft/flowease/issues/4060)
+- **editor:** Updated flowease-menu component ([#4290](https://github.com/khulnasoft/flowease/issues/4290)) ([6af3ba7](https://github.com/khulnasoft/flowease/commit/6af3ba75dc90a511395674e9f64e5032e133952b)), closes [#4060](https://github.com/khulnasoft/flowease/issues/4060)
 - **Kafka Node:** Add key option for messages ([#4210](https://github.com/khulnasoft/flowease/issues/4210)) ([1811c54](https://github.com/khulnasoft/flowease/commit/1811c54917e5940a3f170761c94096845319db28))
 - **MySql Node:** Use resource locator component for table parameter ([#4313](https://github.com/khulnasoft/flowease/issues/4313)) ([9a06c6d](https://github.com/khulnasoft/flowease/commit/9a06c6df251d5502b9f27320b49458cfb1ee3d57))
 - **Venafi TLS Protect Cloud Trigger Node:** Add Venafi TLS Protect Cloud Trigger ([#4288](https://github.com/khulnasoft/flowease/issues/4288)) ([7a2e5bd](https://github.com/khulnasoft/flowease/commit/7a2e5bde90976d5682f3bd3a6896da920ec3ea37))
@@ -3468,13 +3468,13 @@
 Merge node: 'Combine' operation was added with 'Combine Mode' option, operations 'Merge By Fields', 'Merge By Position' and 'Multiplex' placed under 'Combine Mode' option.
 To update -go to the workflows that use the Merge node, select 'Combine' operation and then choose an option from 'Combination Mode' that matches an operation that was previously used. If you want to continue even on error, you can set "Continue on Fail" to true.
 
-## [0.197.1](https://github.com/khulnasoft/flowease/compare/n8n@0.197.0...n8n@0.197.1) (2022-10-10)
+## [0.197.1](https://github.com/khulnasoft/flowease/compare/flowease@0.197.0...flowease@0.197.1) (2022-10-10)
 
 ### Bug Fixes
 
 - **editor:** Fix resource locator width for trigger nodes ([#4302](https://github.com/khulnasoft/flowease/issues/4302)) ([845d1f8](https://github.com/khulnasoft/flowease/commit/845d1f8bd9763e9b886ac70c7ccbd37ff1c24b43))
 
-# [0.197.0](https://github.com/khulnasoft/flowease/compare/n8n@0.196.0...n8n@0.197.0) (2022-10-10)
+# [0.197.0](https://github.com/khulnasoft/flowease/compare/flowease@0.196.0...flowease@0.197.0) (2022-10-10)
 
 ### Bug Fixes
 
@@ -3502,7 +3502,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 
 - **tooling:** Upgrade to TypeScript 4.8 ([#4207](https://github.com/khulnasoft/flowease/issues/4207)) ([9089dbe](https://github.com/khulnasoft/flowease/commit/9089dbe94220f1789d2cea74608352a070e09bac))
 
-# [0.196.0](https://github.com/khulnasoft/flowease/compare/n8n@0.195.5...n8n@0.196.0) (2022-09-30)
+# [0.196.0](https://github.com/khulnasoft/flowease/compare/flowease@0.195.5...flowease@0.196.0) (2022-09-30)
 
 ### Bug Fixes
 
@@ -3540,20 +3540,20 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **editor:** Update ResourceLocator error text ([#4242](https://github.com/khulnasoft/flowease/issues/4242)) ([b0397f0](https://github.com/khulnasoft/flowease/commit/b0397f0262f8a921a0552179ca95cba5f03295ce))
 - **editor:** Main navigation redesign ([#4144](https://github.com/khulnasoft/flowease/issues/4144)) ([3db53a1](https://github.com/khulnasoft/flowease/commit/3db53a193418db2554e00d7499457d7f400663e1)), closes [#4060](https://github.com/khulnasoft/flowease/issues/4060)
 - **HTTP Request Node:** Redesign and add the ability to import cURL commands ([#3860](https://github.com/khulnasoft/flowease/issues/3860)) ([f37d6ba](https://github.com/khulnasoft/flowease/commit/f37d6ba03bcac82a50b2e9ee60c29d6a1a4be911))
-- **editor:** Migrate editor-ui to Vite.js and various DX improvements (N8N-2277) ([#4061](https://github.com/khulnasoft/flowease/issues/4061)) ([27e2ce0](https://github.com/khulnasoft/flowease/commit/27e2ce047060ca8bfdef43cb7fe50b58c9508375)), closes [#4069](https://github.com/khulnasoft/flowease/issues/4069)
-- **n8n Api node:** Add core node for consuming the n8n API ([#4076](https://github.com/khulnasoft/flowease/issues/4076)) ([929315f](https://github.com/khulnasoft/flowease/commit/929315f9e4b56d975783b7d069bdb163218aa7d5))
+- **editor:** Migrate editor-ui to Vite.js and various DX improvements (FLOWEASE-2277) ([#4061](https://github.com/khulnasoft/flowease/issues/4061)) ([27e2ce0](https://github.com/khulnasoft/flowease/commit/27e2ce047060ca8bfdef43cb7fe50b58c9508375)), closes [#4069](https://github.com/khulnasoft/flowease/issues/4069)
+- **flowease Api node:** Add core node for consuming the flowease API ([#4076](https://github.com/khulnasoft/flowease/issues/4076)) ([929315f](https://github.com/khulnasoft/flowease/commit/929315f9e4b56d975783b7d069bdb163218aa7d5))
 - **RabbitMQ Trigger Node:** Automatically reconnect on disconnect ([#4019](https://github.com/khulnasoft/flowease/issues/4019)) ([23bd71b](https://github.com/khulnasoft/flowease/commit/23bd71b82aafb4d894091a115a168a049c5f594c))
 - **core:** Share unshared credentials with owner on reset ([#4216](https://github.com/khulnasoft/flowease/issues/4216)) ([3b7de6d](https://github.com/khulnasoft/flowease/commit/3b7de6db725cffbd5ee9f06aee00029d984fe7b8))
 - **Slack Node:** Add operation get many for user resource ([#3150](https://github.com/khulnasoft/flowease/issues/3150)) ([2714b4c](https://github.com/khulnasoft/flowease/commit/2714b4ced786212906f79c11fae28819aae420e4))
 - **WhatsApp Business node:** Add WhatsApp node ([#3659](https://github.com/khulnasoft/flowease/issues/3659)) ([f63710a](https://github.com/khulnasoft/flowease/commit/f63710a8923bd742f3259822870f3a2f0b7e04aa))
 
-## [0.195.5](https://github.com/khulnasoft/flowease/compare/n8n@0.195.4...n8n@0.195.5) (2022-09-23)
+## [0.195.5](https://github.com/khulnasoft/flowease/compare/flowease@0.195.4...flowease@0.195.5) (2022-09-23)
 
 ### Bug Fixes
 
 - **editor:** Fix extract value logic for expressions ([#4178](https://github.com/khulnasoft/flowease/issues/4178)) ([46f9562](https://github.com/khulnasoft/flowease/commit/46f95622e38e0327c01927bc41f4ea3c413db466))
 
-## [0.195.4](https://github.com/khulnasoft/flowease/compare/n8n@0.195.3...n8n@0.195.4) (2022-09-22)
+## [0.195.4](https://github.com/khulnasoft/flowease/compare/flowease@0.195.3...flowease@0.195.4) (2022-09-22)
 
 ### Bug Fixes
 
@@ -3563,31 +3563,31 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 
 - **editor-ui:** Resizable main panel ([#3980](https://github.com/khulnasoft/flowease/issues/3980)) ([d01f7d4](https://github.com/khulnasoft/flowease/commit/d01f7d4d93366054075fdfcadfdff5cf03913472)), closes [#3930](https://github.com/khulnasoft/flowease/issues/3930)
 
-## [0.195.3](https://github.com/khulnasoft/flowease/compare/n8n@0.195.2...n8n@0.195.3) (2022-09-22)
+## [0.195.3](https://github.com/khulnasoft/flowease/compare/flowease@0.195.2...flowease@0.195.3) (2022-09-22)
 
 ### Bug Fixes
 
 - **editor:** Fix expressions bug with numbers and booleans ([#4169](https://github.com/khulnasoft/flowease/issues/4169)) ([19d08e6](https://github.com/khulnasoft/flowease/commit/19d08e641896fa9b1c9edf04505eac213e1de71a))
 - **MSSQL Node:** Support tdsVersion option ([89d2d10](https://github.com/khulnasoft/flowease/commit/89d2d10c520482f47ddd755e76b0bdf3d45e6008))
 
-## [0.195.2](https://github.com/khulnasoft/flowease/compare/n8n@0.195.1...n8n@0.195.2) (2022-09-22)
+## [0.195.2](https://github.com/khulnasoft/flowease/compare/flowease@0.195.1...flowease@0.195.2) (2022-09-22)
 
 ### Bug Fixes
 
 - **core:** Fix mysql migration ([#4166](https://github.com/khulnasoft/flowease/issues/4166)) ([0aeb55d](https://github.com/khulnasoft/flowease/commit/0aeb55dcfd6c107c67e4c974e3371e29e188310b))
 
-## [0.195.1](https://github.com/khulnasoft/flowease/compare/n8n@0.195.0...n8n@0.195.1) (2022-09-21)
+## [0.195.1](https://github.com/khulnasoft/flowease/compare/flowease@0.195.0...flowease@0.195.1) (2022-09-21)
 
 ### Bug Fixes
 
 - **core:** Fix postgres migration ([#4164](https://github.com/khulnasoft/flowease/issues/4164)) ([2598ec8](https://github.com/khulnasoft/flowease/commit/2598ec8a3e7a7d4e444cd4767d5944fa691dd9e1))
 
-# [0.195.0](https://github.com/khulnasoft/flowease/compare/n8n@0.194.0...n8n@0.195.0) (2022-09-21)
+# [0.195.0](https://github.com/khulnasoft/flowease/compare/flowease@0.194.0...flowease@0.195.0) (2022-09-21)
 
 ### Bug Fixes
 
 - **Box Node:** Fix issue with response data not being returned ([#4147](https://github.com/khulnasoft/flowease/issues/4147)) ([3cfc5b5](https://github.com/khulnasoft/flowease/commit/3cfc5b55abe6aba3b68ae27846cd18e3ec79b518))
-- **cli:** Fix issue with n8n crashing when error in poll method ([#4008](https://github.com/khulnasoft/flowease/issues/4008)) ([6c41b29](https://github.com/khulnasoft/flowease/commit/6c41b29ad2c1fffc5710d06250037e2a278b9b4a))
+- **cli:** Fix issue with flowease crashing when error in poll method ([#4008](https://github.com/khulnasoft/flowease/issues/4008)) ([6c41b29](https://github.com/khulnasoft/flowease/commit/6c41b29ad2c1fffc5710d06250037e2a278b9b4a))
 - **editor:** Fix broken output panel for wait node executions ([#4156](https://github.com/khulnasoft/flowease/issues/4156)) ([40ebbea](https://github.com/khulnasoft/flowease/commit/40ebbeaefc3a8c0e730468cd8171590dc823106c))
 - **core:** Prevent calls to constructor to forbid arbitrary code execution ([#4139](https://github.com/khulnasoft/flowease/issues/4139)) ([a8030db](https://github.com/khulnasoft/flowease/commit/a8030dbda5b17ee158ac7ef7f586f212698252f7))
 - **HTTP Node:** Fix instance crashing when batching enabled ([#3902](https://github.com/khulnasoft/flowease/issues/3902)) ([0ab89ad](https://github.com/khulnasoft/flowease/commit/0ab89ad5d66c1082ec2464813a9622431fa7f230))
@@ -3603,12 +3603,12 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 
 - **ci:** Cache npm dependencies ([#4138](https://github.com/khulnasoft/flowease/issues/4138)) ([1bdc102](https://github.com/khulnasoft/flowease/commit/1bdc102892e77f2723ffed383874092cf4e07810))
 
-# [0.194.0](https://github.com/khulnasoft/flowease/compare/n8n@0.193.5...n8n@0.194.0) (2022-09-15)
+# [0.194.0](https://github.com/khulnasoft/flowease/compare/flowease@0.193.5...flowease@0.194.0) (2022-09-15)
 
 ### Bug Fixes
 
 - AWS credential testing issue ([#4107](https://github.com/khulnasoft/flowease/issues/4107)) ([5130529](https://github.com/khulnasoft/flowease/commit/51305290663dc4bc05cdbb075d685673217081f9))
-- **cli,core:** Address Dependabot warnings [N8N-4121] ([#3883](https://github.com/khulnasoft/flowease/issues/3883)) ([461848f](https://github.com/khulnasoft/flowease/commit/461848fcc4a33b0adf9958bebb2557bfa15100d6))
+- **cli,core:** Address Dependabot warnings [FLOWEASE-4121] ([#3883](https://github.com/khulnasoft/flowease/issues/3883)) ([461848f](https://github.com/khulnasoft/flowease/commit/461848fcc4a33b0adf9958bebb2557bfa15100d6))
 - **cli:** Avoid scanning unnecessary directories on windows ([#4082](https://github.com/khulnasoft/flowease/issues/4082)) ([84b56eb](https://github.com/khulnasoft/flowease/commit/84b56eb48e727389189c517598aadadd6f2ccf23)), closes [#4007](https://github.com/khulnasoft/flowease/issues/4007)
 - **cli:** Load nodes and credentials on windows using the correct file-path ([#4084](https://github.com/khulnasoft/flowease/issues/4084)) ([b6c1187](https://github.com/khulnasoft/flowease/commit/b6c1187922ab6552e303c98341c5732ffa96c55f))
 - **cli:** Password reset should trigger internal and external hooks ([#4066](https://github.com/khulnasoft/flowease/issues/4066)) ([12507d3](https://github.com/khulnasoft/flowease/commit/12507d39d68a2961c6e567b6b7d83759010918b0))
@@ -3639,7 +3639,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **Merge Node:** Overhaul of merge node ([f1a5697](https://github.com/khulnasoft/flowease/commit/f1a569791d5289ced8ac78d97452f6ad5bf8d1b8))
 - **typescript:** Setup Typescript incremental builds ([#3876](https://github.com/khulnasoft/flowease/issues/3876)) ([799676b](https://github.com/khulnasoft/flowease/commit/799676b24d9ba5628dc875de1c0bbcf7e51a51cc))
 
-## [0.193.5](https://github.com/khulnasoft/flowease/compare/n8n@0.193.4...n8n@0.193.5) (2022-09-07)
+## [0.193.5](https://github.com/khulnasoft/flowease/compare/flowease@0.193.4...flowease@0.193.5) (2022-09-07)
 
 ### Bug Fixes
 
@@ -3648,7 +3648,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **editor:** Wrong popup title when "Click To Copy" on OAuth2 Redirect Url credentials ([#4043](https://github.com/khulnasoft/flowease/issues/4043)) ([0acac35](https://github.com/khulnasoft/flowease/commit/0acac355e1bfff326d3bb575d5b21f0004a0c792))
 - **Gmail Node:** Fix node and improve helper so to avoid double wrapping in json key ([#4052](https://github.com/khulnasoft/flowease/issues/4052)) ([fbd044b](https://github.com/khulnasoft/flowease/commit/fbd044bf874f270c9f9e7cda9aaecdc235ddc677))
 
-## [0.193.4](https://github.com/khulnasoft/flowease/compare/n8n@0.193.3...n8n@0.193.4) (2022-09-06)
+## [0.193.4](https://github.com/khulnasoft/flowease/compare/flowease@0.193.3...flowease@0.193.4) (2022-09-06)
 
 ### Bug Fixes
 
@@ -3658,7 +3658,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **cli:** Include "auth-excluded" endpoints on the history middleware as well ([#4028](https://github.com/khulnasoft/flowease/issues/4028)) ([d554128](https://github.com/khulnasoft/flowease/commit/d55412845784fda4d42a1dcaca60515ad10d2aa0))
 - **core:** Fix MySQL migration issue with table prefix ([#4013](https://github.com/khulnasoft/flowease/issues/4013)) ([fc6484b](https://github.com/khulnasoft/flowease/commit/fc6484ba4d48363fd846d5c800a25a207082f58d))
 - Correct all the spelling typos ([#3960](https://github.com/khulnasoft/flowease/issues/3960)) ([49c85a1](https://github.com/khulnasoft/flowease/commit/49c85a1df8417918797c3fe6db46f35f9fe86bdf))
-- Fix n8n-square-button import. ([#4024](https://github.com/khulnasoft/flowease/issues/4024)) ([bbd967b](https://github.com/khulnasoft/flowease/commit/bbd967bbdfb744874eeae5aced7ce122039b59d5))
+- Fix flowease-square-button import. ([#4024](https://github.com/khulnasoft/flowease/issues/4024)) ([bbd967b](https://github.com/khulnasoft/flowease/commit/bbd967bbdfb744874eeae5aced7ce122039b59d5))
 - **GitHub Node:** Fix binary data not being returned ([#4017](https://github.com/khulnasoft/flowease/issues/4017)) ([5753110](https://github.com/khulnasoft/flowease/commit/575311040261be2982a3c7107bf1ea8b7b63fbb5))
 - **GraphQL Node:** Fix issue with return items ([#4016](https://github.com/khulnasoft/flowease/issues/4016)) ([6216132](https://github.com/khulnasoft/flowease/commit/6216132ae2f3b908aacf266f4a34143bb8a74f0a))
 - **Postgres Node:** Fix ssue with postgres insert and paired item ([#4020](https://github.com/khulnasoft/flowease/issues/4020)) ([9314086](https://github.com/khulnasoft/flowease/commit/9314086b6a84ce0f24992827ab316dee4709d118))
@@ -3674,7 +3674,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **cli:** Add external hooks for when members are added or deleted ([#3988](https://github.com/khulnasoft/flowease/issues/3988)) ([6be9997](https://github.com/khulnasoft/flowease/commit/6be999714f62f22ec5d8ab82f91f7fc5a2b55c4d))
 - **editor:** Use i18n component instead od v-html for localization ([287533e](https://github.com/khulnasoft/flowease/commit/287533e6c819329dc84f2e23a33faed66181d07a))
 
-## [0.193.3](https://github.com/khulnasoft/flowease/compare/n8n@0.193.2...n8n@0.193.3) (2022-09-01)
+## [0.193.3](https://github.com/khulnasoft/flowease/compare/flowease@0.193.2...flowease@0.193.3) (2022-09-01)
 
 ### Bug Fixes
 
@@ -3687,21 +3687,21 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **nodes:** Add database and non http credentials test ([d82e879](https://github.com/khulnasoft/flowease/commit/d82e87979dc0fe47e264b0e7bb46c325157d9603))
 - **Mongo DB Node:** Add MongoDB credential testing and two operations ([#3901](https://github.com/khulnasoft/flowease/issues/3901)) ([b5511e5](https://github.com/khulnasoft/flowease/commit/b5511e5ac7745c6b4a20aa49d2633f2f91bdbb7b))
 
-## [0.193.2](https://github.com/khulnasoft/flowease/compare/n8n@0.193.1...n8n@0.193.2) (2022-09-01)
+## [0.193.2](https://github.com/khulnasoft/flowease/compare/flowease@0.193.1...flowease@0.193.2) (2022-09-01)
 
 ### Bug Fixes
 
-- **docker:** n8n docker image needs su-exec ([#3993](https://github.com/khulnasoft/flowease/issues/3993)) ([aec2489](https://github.com/khulnasoft/flowease/commit/aec2489aefb8fca522302bdcaa002fa62393b70a))
+- **docker:** flowease docker image needs su-exec ([#3993](https://github.com/khulnasoft/flowease/issues/3993)) ([aec2489](https://github.com/khulnasoft/flowease/commit/aec2489aefb8fca522302bdcaa002fa62393b70a))
 - **docker:** Revert docker `USER` and `WORKDIR` changes ([#3992](https://github.com/khulnasoft/flowease/issues/3992)) ([34a99fd](https://github.com/khulnasoft/flowease/commit/34a99fd089a754170ed4f2b9bdc02fc951d7e9bc))
 - **core:** Fix OAuth2 issues ([#3391](https://github.com/khulnasoft/flowease/pull/3991))
 
-## [0.193.1](https://github.com/khulnasoft/flowease/compare/n8n@0.193.0...n8n@0.193.1) (2022-08-31)
+## [0.193.1](https://github.com/khulnasoft/flowease/compare/flowease@0.193.0...flowease@0.193.1) (2022-08-31)
 
 ### Bug Fixes
 
 - **editor:** Fix bug where col headers don't show ([#3985](https://github.com/khulnasoft/flowease/issues/3985)) ([bee3840](https://github.com/khulnasoft/flowease/commit/bee38400505b8862a4e1e5bf28b18088ff8ced8f))
 
-# [0.193.0](https://github.com/khulnasoft/flowease/compare/n8n@0.192.2...n8n@0.193.0) (2022-08-31)
+# [0.193.0](https://github.com/khulnasoft/flowease/compare/flowease@0.192.2...flowease@0.193.0) (2022-08-31)
 
 ### Bug Fixes
 
@@ -3718,20 +3718,20 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **editor:** Limit when to show mapping tooltip ([#3976](https://github.com/khulnasoft/flowease/issues/3976)) ([8fc9f07](https://github.com/khulnasoft/flowease/commit/8fc9f07f39edf8944214200dd787b2d0c9b6caff))
 - **HighLevel Node:** Add HighLevel node ([c2e97a8](https://github.com/khulnasoft/flowease/commit/c2e97a89f923bbebe0a6d882e86d792fcda3116d))
 
-## [0.192.2](https://github.com/khulnasoft/flowease/compare/n8n@0.192.1...n8n@0.192.2) (2022-08-25)
+## [0.192.2](https://github.com/khulnasoft/flowease/compare/flowease@0.192.1...flowease@0.192.2) (2022-08-25)
 
 ### Bug Fixes
 
 - **editor:** Fix feature flag check when PH is unavailable ([#3944](https://github.com/khulnasoft/flowease/issues/3944)) ([93c26da](https://github.com/khulnasoft/flowease/commit/93c26dac286e8fa984cb6fb6fecd6167fc4143f3))
 - **editor:** fix mapping bug when val is null ([#3942](https://github.com/khulnasoft/flowease/issues/3942)) ([a21dbdc](https://github.com/khulnasoft/flowease/commit/a21dbdc45b6f434f7ecd8b541bb32d397fd95c89))
 
-## [0.192.1](https://github.com/khulnasoft/flowease/compare/n8n@0.192.0...n8n@0.192.1) (2022-08-25)
+## [0.192.1](https://github.com/khulnasoft/flowease/compare/flowease@0.192.0...flowease@0.192.1) (2022-08-25)
 
 ### Bug Fixes
 
 - **cli:** Account for non-array in pindata migration ([#3938](https://github.com/khulnasoft/flowease/issues/3938)) ([f052187](https://github.com/khulnasoft/flowease/commit/f0521873e1acf8c6491b75f37be1dd824bb355bc))
 
-# [0.192.0](https://github.com/khulnasoft/flowease/compare/n8n@0.191.1...n8n@0.192.0) (2022-08-24)
+# [0.192.0](https://github.com/khulnasoft/flowease/compare/flowease@0.191.1...flowease@0.192.0) (2022-08-24)
 
 ### Bug Fixes
 
@@ -3748,17 +3748,17 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 
 - **cli:** Notify external hooks about user profile and password changes ([#3919](https://github.com/khulnasoft/flowease/issues/3919)) ([7d74dda](https://github.com/khulnasoft/flowease/commit/7d74ddab29e05a81962fd80469248e8cee8bf9bf))
 - **core, editor:** Support `pairedItem` for pinned data ([#3843](https://github.com/khulnasoft/flowease/issues/3843)) ([b1e7152](https://github.com/khulnasoft/flowease/commit/b1e715299d8a78188fad413392babdea7d044049))
-- **core:** Add command to scripts for easy launch n8n with tunnel ([725a567](https://github.com/khulnasoft/flowease/commit/725a567f07c08767f58d4ceb88386a9be694bfd2))
+- **core:** Add command to scripts for easy launch flowease with tunnel ([725a567](https://github.com/khulnasoft/flowease/commit/725a567f07c08767f58d4ceb88386a9be694bfd2))
 - **editor, core:** Integrate PostHog ([#3865](https://github.com/khulnasoft/flowease/issues/3865)) ([43e054f](https://github.com/khulnasoft/flowease/commit/43e054f5abae87b989ffe391a251961a2bc05542))
 - **editor:** Map expressions from input table ([#3864](https://github.com/khulnasoft/flowease/issues/3864)) ([ce076dc](https://github.com/khulnasoft/flowease/commit/ce076dca48847562067c5149ecdd529fcc014e3f))
 
-## [0.191.1](https://github.com/khulnasoft/flowease/compare/n8n@0.191.0...n8n@0.191.1) (2022-08-19)
+## [0.191.1](https://github.com/khulnasoft/flowease/compare/flowease@0.191.0...flowease@0.191.1) (2022-08-19)
 
 ### Bug Fixes
 
 - **editor:** Fix issue with disappearing connections after rename ([#3899](https://github.com/khulnasoft/flowease/issues/3899)) ([ad0c214](https://github.com/khulnasoft/flowease/commit/ad0c214f8ec2088ff30f408fe5ec51216468cdff))
 
-# [0.191.0](https://github.com/khulnasoft/flowease/compare/n8n@0.190.0...n8n@0.191.0) (2022-08-17)
+# [0.191.0](https://github.com/khulnasoft/flowease/compare/flowease@0.190.0...flowease@0.191.0) (2022-08-17)
 
 ### Bug Fixes
 
@@ -3773,7 +3773,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **cli:** Enable community nodes based on npm availability ([#3871](https://github.com/khulnasoft/flowease/issues/3871)) ([936264b](https://github.com/khulnasoft/flowease/commit/936264b3c6506cdc25b9ad55a23b314b2582275b))
 - **editor:** Added animated tooltips to draggable columns in input panel ([054cc01](https://github.com/khulnasoft/flowease/commit/054cc010edfc9f0f5cc72ac94f26afe52a66a192))
 
-# [0.190.0](https://github.com/khulnasoft/flowease/compare/n8n@0.189.1...n8n@0.190.0) (2022-08-10)
+# [0.190.0](https://github.com/khulnasoft/flowease/compare/flowease@0.189.1...flowease@0.190.0) (2022-08-10)
 
 ### Bug Fixes
 
@@ -3786,13 +3786,13 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 
 - Synchronize default VSCode settings ([#3833](https://github.com/khulnasoft/flowease/issues/3833)) ([11461fd](https://github.com/khulnasoft/flowease/commit/11461fda5fae10077ea9804b5cc9581074107005))
 
-## [0.189.1](https://github.com/khulnasoft/flowease/compare/n8n@0.189.0...n8n@0.189.1) (2022-08-05)
+## [0.189.1](https://github.com/khulnasoft/flowease/compare/flowease@0.189.0...flowease@0.189.1) (2022-08-05)
 
 ### Bug Fixes
 
 - Fix issue with MySQL/MariaDB migration ([#3832](https://github.com/khulnasoft/flowease/issues/3832))
 
-# [0.189.0](https://github.com/khulnasoft/flowease/compare/n8n@0.188.0...n8n@0.189.0) (2022-08-03)
+# [0.189.0](https://github.com/khulnasoft/flowease/compare/flowease@0.188.0...flowease@0.189.0) (2022-08-03)
 
 ### Bug Fixes
 
@@ -3805,7 +3805,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **SendInBlue Node:** Add SendInBlue Regular + Trigger Node ([#3746](https://github.com/khulnasoft/flowease/issues/3746)) ([74cedd9](https://github.com/khulnasoft/flowease/commit/74cedd94a82f0c053a24b6e925d9e3bcadcebfbc))
 - Support community nodes on Windows ([#3823](https://github.com/khulnasoft/flowease/issues/3823)) ([e8eda74](https://github.com/khulnasoft/flowease/commit/e8eda7470a17deec1f5eab8cded6e74a8e3aee39))
 
-# [0.188.0](https://github.com/khulnasoft/flowease/compare/n8n@0.187.2...n8n@0.188.0) (2022-07-27)
+# [0.188.0](https://github.com/khulnasoft/flowease/compare/flowease@0.187.2...flowease@0.188.0) (2022-07-27)
 
 ### Bug Fixes
 
@@ -3827,7 +3827,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **Kafka Trigger Node:** Add additional options ([#3600](https://github.com/khulnasoft/flowease/issues/3600)) ([3496a39](https://github.com/khulnasoft/flowease/commit/3496a39788b654b46485955ba5cce5e5865babc7))
 - **Metabase Node:** Add Metabase Node ([#3033](https://github.com/khulnasoft/flowease/issues/3033)) ([81b5828](https://github.com/khulnasoft/flowease/commit/81b58285588f142c0b1cc148f0092c462eefdd73))
 
-## [0.187.2](https://github.com/khulnasoft/flowease/compare/n8n@0.187.1...n8n@0.187.2) (2022-07-21)
+## [0.187.2](https://github.com/khulnasoft/flowease/compare/flowease@0.187.1...flowease@0.187.2) (2022-07-21)
 
 ### Bug Fixes
 
@@ -3836,13 +3836,13 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **editor:** Fix problems with credentials modal if no node is opened ([#3749](https://github.com/khulnasoft/flowease/issues/3749)) ([5efe4a4](https://github.com/khulnasoft/flowease/commit/5efe4a4c54211f1d395202c420403be3cc7e4446))
 - **NocoDB Node:** Fix authentication issue ([#3750](https://github.com/khulnasoft/flowease/issues/3750)) ([e65016c](https://github.com/khulnasoft/flowease/commit/e65016c861176a7b17f23c5fbf3c0a3fcc1e5e1d))
 
-## [0.187.1](https://github.com/khulnasoft/flowease/compare/n8n@0.187.0...n8n@0.187.1) (2022-07-20)
+## [0.187.1](https://github.com/khulnasoft/flowease/compare/flowease@0.187.0...flowease@0.187.1) (2022-07-20)
 
 ### Bug Fixes
 
 - **editor:** Fix issue that new nodes did not get automatically displayed in all connected browsers ([#3745](https://github.com/khulnasoft/flowease/issues/3745)) ([34a9bee](https://github.com/khulnasoft/flowease/commit/34a9beefa5b0f169f38ca48d3444af8f160c85a2))
 
-# [0.187.0](https://github.com/khulnasoft/flowease/compare/n8n@0.186.1...n8n@0.187.0) (2022-07-20)
+# [0.187.0](https://github.com/khulnasoft/flowease/compare/flowease@0.186.1...flowease@0.187.0) (2022-07-20)
 
 ### Bug Fixes
 
@@ -3867,13 +3867,13 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **Notion Node:** Allow to ignore Notion URL properties if empty ([#3564](https://github.com/khulnasoft/flowease/issues/3564)) ([6cb9aef](https://github.com/khulnasoft/flowease/commit/6cb9aefb0b3e4d17382042371a20e63f23641581))
 - **Shopify Node:** Add OAuth support ([#3389](https://github.com/khulnasoft/flowease/issues/3389)) ([945e25a](https://github.com/khulnasoft/flowease/commit/945e25a77cf9ba33bc3e4b70053319ea86230cf7))
 
-## [0.186.1](https://github.com/khulnasoft/flowease/compare/n8n@0.186.0...n8n@0.186.1) (2022-07-14)
+## [0.186.1](https://github.com/khulnasoft/flowease/compare/flowease@0.186.0...flowease@0.186.1) (2022-07-14)
 
 ### Bug Fixes
 
 - **Airtable Node:** Fix authentication issue ([#3709](https://github.com/khulnasoft/flowease/issues/3709)) ([33d8042](https://github.com/khulnasoft/flowease/commit/33d804284ae02140749ab94eecfca1699e13afee))
 
-# [0.186.0](https://github.com/khulnasoft/flowease/compare/n8n@0.185.0...n8n@0.186.0) (2022-07-13)
+# [0.186.0](https://github.com/khulnasoft/flowease/compare/flowease@0.185.0...flowease@0.186.0) (2022-07-13)
 
 ### Bug Fixes
 
@@ -3897,7 +3897,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **SpreadsheetFile Node:** Allow skipping headers when writing spreadsheets ([#3234](https://github.com/khulnasoft/flowease/issues/3234)) ([dbfb8d5](https://github.com/khulnasoft/flowease/commit/dbfb8d56dc6290837701dea5957d4e73db418892))
 - Updated multiple credentials with tests and allow to be used on HTTP Request Node ([#3670](https://github.com/khulnasoft/flowease/issues/3670)) ([d5d4dd3](https://github.com/khulnasoft/flowease/commit/d5d4dd38450b788ee0ce3ed8ad0eb714c86977d2))
 
-# [0.185.0](https://github.com/khulnasoft/flowease/compare/n8n@0.184.0...n8n@0.185.0) (2022-07-05)
+# [0.185.0](https://github.com/khulnasoft/flowease/compare/flowease@0.184.0...flowease@0.185.0) (2022-07-05)
 
 ### Bug Fixes
 
@@ -3917,7 +3917,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **Webflow Trigger Node:** Reduce chance of webhook duplication and add credential test ([#3594](https://github.com/khulnasoft/flowease/issues/3594)) ([224e008](https://github.com/khulnasoft/flowease/commit/224e008fb64dabef99998508eb4385e1b872c5ad))
 - **Wordpress Node:** Add post template option ([#3139](https://github.com/khulnasoft/flowease/issues/3139)) ([02bc3da](https://github.com/khulnasoft/flowease/commit/02bc3da78545de4771edf6fdc68720b0e7d596b9))
 
-# [0.184.0](https://github.com/khulnasoft/flowease/compare/n8n@0.183.0...n8n@0.184.0) (2022-06-29)
+# [0.184.0](https://github.com/khulnasoft/flowease/compare/flowease@0.183.0...flowease@0.184.0) (2022-06-29)
 
 ### Bug Fixes
 
@@ -3939,7 +3939,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **core:** Give access to getBinaryDataBuffer in preSend method ([#3588](https://github.com/khulnasoft/flowease/issues/3588)) ([522b31a](https://github.com/khulnasoft/flowease/commit/522b31a47b4f4e9990e07dcc504ef2821a1fd0a5))
 - Migrated to npm release of riot-tmpl fork ([#3581](https://github.com/khulnasoft/flowease/issues/3581)) ([891844e](https://github.com/khulnasoft/flowease/commit/891844ea8b3248195355f736d7331fd967ee99e1))
 
-# [0.183.0](https://github.com/khulnasoft/flowease/compare/n8n@0.182.1...n8n@0.183.0) (2022-06-21)
+# [0.183.0](https://github.com/khulnasoft/flowease/compare/flowease@0.182.1...flowease@0.183.0) (2022-06-21)
 
 ### Bug Fixes
 
@@ -3956,13 +3956,13 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **Todoist Node:** Make it possible to move tasks between sections ([#3074](https://github.com/khulnasoft/flowease/issues/3074)) ([049e454](https://github.com/khulnasoft/flowease/commit/049e4544d9ccc0acce2a596aced06ec86992e09a))
 - **Twake Node:** Update icon, add cred test and custom operation support ([#3431](https://github.com/khulnasoft/flowease/issues/3431)) ([6d64e84](https://github.com/khulnasoft/flowease/commit/6d64e84f5e19d5f6d83ccc0a55cdcbd256e5804f))
 
-## [0.182.1](https://github.com/khulnasoft/flowease/compare/n8n@0.182.0...n8n@0.182.1) (2022-06-16)
+## [0.182.1](https://github.com/khulnasoft/flowease/compare/flowease@0.182.0...flowease@0.182.1) (2022-06-16)
 
 ### Bug Fixes
 
 - **core:** Fix issue with restarting waiting executions ([#3531](https://github.com/khulnasoft/flowease/issues/3531)) ([c9273bc](https://github.com/khulnasoft/flowease/commit/c9273bcd3862217b4918ac8abb37fae9c2e64622))
 
-# [0.182.0](https://github.com/khulnasoft/flowease/compare/n8n@0.181.2...n8n@0.182.0) (2022-06-14)
+# [0.182.0](https://github.com/khulnasoft/flowease/compare/flowease@0.181.2...flowease@0.182.0) (2022-06-14)
 
 ### Bug Fixes
 
@@ -3980,20 +3980,20 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **Twilio Node:** Add ability to make a voice call using TTS ([#3467](https://github.com/khulnasoft/flowease/issues/3467)) ([eff97e8](https://github.com/khulnasoft/flowease/commit/eff97e8d67cd3f0342bbb9648503b351f4691f46))
 - **Wise Node:** Add Support to download statements as JSON, CSV or PDF ([#3468](https://github.com/khulnasoft/flowease/issues/3468)) ([51663c1](https://github.com/khulnasoft/flowease/commit/51663c1fcbe879e29790af942b73318e95065d8f))
 
-## [0.181.2](https://github.com/khulnasoft/flowease/compare/n8n@0.181.1...n8n@0.181.2) (2022-06-09)
+## [0.181.2](https://github.com/khulnasoft/flowease/compare/flowease@0.181.1...flowease@0.181.2) (2022-06-09)
 
 ### Bug Fixes
 
 - **core:** Fix issue when a node does not return data ([5eea3cd](https://github.com/khulnasoft/flowease/commit/5eea3cd6d0b59963dc7c7a9e1ca597137cf3ce98))
 
-## [0.181.1](https://github.com/khulnasoft/flowease/compare/n8n@0.181.0...n8n@0.181.1) (2022-06-09)
+## [0.181.1](https://github.com/khulnasoft/flowease/compare/flowease@0.181.0...flowease@0.181.1) (2022-06-09)
 
 ### Bug Fixes
 
 - **core:** Fix another possible issue with multi input nodes ([e88fab5](https://github.com/khulnasoft/flowease/commit/e88fab5ee2b82665c3d68c52894a5479ce6eccf6))
 - **core:** Fix issue with multi input nodes ([f79675d](https://github.com/khulnasoft/flowease/commit/f79675d5c7876875065fc29504eb0590678d67d3))
 
-# [0.181.0](https://github.com/khulnasoft/flowease/compare/n8n@0.180.0...n8n@0.181.0) (2022-06-08)
+# [0.181.0](https://github.com/khulnasoft/flowease/compare/flowease@0.180.0...flowease@0.181.0) (2022-06-08)
 
 ### Bug Fixes
 
@@ -4001,10 +4001,10 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 
 ### Features
 
-- Add n8n Public API ([#3064](https://github.com/khulnasoft/flowease/issues/3064)) ([a18081d](https://github.com/khulnasoft/flowease/commit/a18081d749c51d497645d43614fdccb220344607))
+- Add flowease Public API ([#3064](https://github.com/khulnasoft/flowease/issues/3064)) ([a18081d](https://github.com/khulnasoft/flowease/commit/a18081d749c51d497645d43614fdccb220344607))
 - **core:** Make it possible to block access to environment variables ([ddb3baa](https://github.com/khulnasoft/flowease/commit/ddb3baa4eddeb85e2f7abe4465ac4ff4058e1ece))
 
-# [0.180.0](https://github.com/khulnasoft/flowease/compare/n8n@0.179.0...n8n@0.180.0) (2022-06-07)
+# [0.180.0](https://github.com/khulnasoft/flowease/compare/flowease@0.179.0...flowease@0.180.0) (2022-06-07)
 
 ### Bug Fixes
 
@@ -4027,7 +4027,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **GitHub Node:**: Add Organization -> Get All operation ([#3247](https://github.com/khulnasoft/flowease/pull/3247))
 - **QuickBooks Node:** Add optional Tax item field ([#3404](https://github.com/khulnasoft/flowease/issues/3404)) ([c341b45](https://github.com/khulnasoft/flowease/commit/c341b45396c7282da087046ade16265c99c8d9dd))
 
-# [0.179.0](https://github.com/khulnasoft/flowease/compare/n8n@0.178.2...n8n@0.179.0) (2022-05-30)
+# [0.179.0](https://github.com/khulnasoft/flowease/compare/flowease@0.178.2...flowease@0.179.0) (2022-05-30)
 
 ### Bug Fixes
 
@@ -4050,19 +4050,19 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **ServiceNow Node:** Add attachment functionality ([#3137](https://github.com/khulnasoft/flowease/issues/3137)) ([c38f6af](https://github.com/khulnasoft/flowease/commit/c38f6af4993cd695888ff18b3f95e0d900e65711))
 - **Todoist Node:** Add support for specifying the parent task when adding and listing tasks ([#3161](https://github.com/khulnasoft/flowease/issues/3161)) ([dc77594](https://github.com/khulnasoft/flowease/commit/dc77594a1eaec73fa34ed09c52d108482002ffff))
 
-## [0.178.2](https://github.com/khulnasoft/flowease/compare/n8n@0.178.1...n8n@0.178.2) (2022-05-25)
+## [0.178.2](https://github.com/khulnasoft/flowease/compare/flowease@0.178.1...flowease@0.178.2) (2022-05-25)
 
 ### Bug Fixes
 
 - **editor:** Fix parameter loading bug ([#3374](https://github.com/khulnasoft/flowease/issues/3374)) ([c7c2061](https://github.com/khulnasoft/flowease/commit/c7c2061590493a1b24a8ab4e2615d6d9eb2641e1))
 
-## [0.178.1](https://github.com/khulnasoft/flowease/compare/n8n@0.178.0...n8n@0.178.1) (2022-05-24)
+## [0.178.1](https://github.com/khulnasoft/flowease/compare/flowease@0.178.0...flowease@0.178.1) (2022-05-24)
 
 ### Bug Fixes
 
 - **editor:** Fix problem with HTTP Request Node 1 credentials to be set ([#3371](https://github.com/khulnasoft/flowease/issues/3371)) ([c5fc3bc](https://github.com/khulnasoft/flowease/commit/c5fc3bc45e80eec47f4c06b950ab8b3ddaf66f2f))
 
-# [0.178.0](https://github.com/khulnasoft/flowease/compare/n8n@0.177.0...n8n@0.178.0) (2022-05-24)
+# [0.178.0](https://github.com/khulnasoft/flowease/compare/flowease@0.177.0...flowease@0.178.0) (2022-05-24)
 
 ### Bug Fixes
 
@@ -4076,7 +4076,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **editor:** Add input panel to NDV ([#3204](https://github.com/khulnasoft/flowease/issues/3204)) ([3af0abd](https://github.com/khulnasoft/flowease/commit/3af0abd9e066a721ac873f255eeb9311ebe6dd27))
 - **Salesforce Node:** Add country field ([#3314](https://github.com/khulnasoft/flowease/issues/3314)) ([90a1bc1](https://github.com/khulnasoft/flowease/commit/90a1bc120bc2e291432c977768929da773dcb96e))
 
-# [0.177.0](https://github.com/khulnasoft/flowease/compare/n8n@0.176.0...n8n@0.177.0) (2022-05-16)
+# [0.177.0](https://github.com/khulnasoft/flowease/compare/flowease@0.176.0...flowease@0.177.0) (2022-05-16)
 
 ### Bug Fixes
 
@@ -4092,11 +4092,11 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 ### Features
 
 - **core:** Automatically convert Luxon Dates to string ([#3266](https://github.com/khulnasoft/flowease/issues/3266)) ([3fcee14](https://github.com/khulnasoft/flowease/commit/3fcee14bf5c61ec11fc1d4f30256f5ceba09e7f4))
-- **editor:** Improve n8n welcome experience ([#3289](https://github.com/khulnasoft/flowease/issues/3289)) ([35f2ce2](https://github.com/khulnasoft/flowease/commit/35f2ce2359bb84437ad6fc68a7115081daeb46fe))
+- **editor:** Improve flowease welcome experience ([#3289](https://github.com/khulnasoft/flowease/issues/3289)) ([35f2ce2](https://github.com/khulnasoft/flowease/commit/35f2ce2359bb84437ad6fc68a7115081daeb46fe))
 - **Google Drive Node:** Add Shared Drive support for operations upload, delete and share ([#3294](https://github.com/khulnasoft/flowease/issues/3294)) ([03cdb1f](https://github.com/khulnasoft/flowease/commit/03cdb1fea4fa4967eaafa861f3a9ff4ff7ca625a))
 - **Microsoft OneDrive Node:** Add rename option for files and folders ([#3224](https://github.com/khulnasoft/flowease/issues/3224)) ([50246d1](https://github.com/khulnasoft/flowease/commit/50246d174a274fc9ba3dea44fc83c3605b4db691))
 
-# [0.176.0](https://github.com/khulnasoft/flowease/compare/n8n@0.175.1...n8n@0.176.0) (2022-05-10)
+# [0.176.0](https://github.com/khulnasoft/flowease/compare/flowease@0.175.1...flowease@0.176.0) (2022-05-10)
 
 ### Bug Fixes
 
@@ -4110,13 +4110,13 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **Pushover Node:** Add 'HTML Formatting' option and credential test ([#3082](https://github.com/khulnasoft/flowease/issues/3082)) ([b3dc6d9](https://github.com/khulnasoft/flowease/commit/b3dc6d9d9c640f1e0f04cb56d0fabe2aafb948b6))
 - **UProc Node:** Add new tools ([#3104](https://github.com/khulnasoft/flowease/issues/3104)) ([ff2bf11](https://github.com/khulnasoft/flowease/commit/ff2bf1112f07b7c3fd75f60e8faefdef4e2a02af))
 
-## [0.175.1](https://github.com/khulnasoft/flowease/compare/n8n@0.175.0...n8n@0.175.1) (2022-05-03)
+## [0.175.1](https://github.com/khulnasoft/flowease/compare/flowease@0.175.0...flowease@0.175.1) (2022-05-03)
 
 ### Bug Fixes
 
 - **editor:** Fix bug with node version ([ed56481](https://github.com/khulnasoft/flowease/commit/ed564812435a279760a32e76f3935f492f84f487))
 
-# [0.175.0](https://github.com/khulnasoft/flowease/compare/n8n@0.174.0...n8n@0.175.0) (2022-05-02)
+# [0.175.0](https://github.com/khulnasoft/flowease/compare/flowease@0.174.0...flowease@0.175.0) (2022-05-02)
 
 ### Bug Fixes
 
@@ -4134,7 +4134,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **Microsoft Dynamics CRM Node:** Add support for other regions than North America ([#3157](https://github.com/khulnasoft/flowease/issues/3157)) ([4bdd607](https://github.com/khulnasoft/flowease/commit/4bdd607fdf00f6c2155c9b3e3c9e74ac50e317f4))
 - **Telegram Node:** Allow querying chat administrators ([#3226](https://github.com/khulnasoft/flowease/issues/3226)) ([c02d259](https://github.com/khulnasoft/flowease/commit/c02d259453f2f5b444569f4c1e06fbfc95cd3305)), closes [#3157](https://github.com/khulnasoft/flowease/issues/3157)
 
-# [0.174.0](https://github.com/khulnasoft/flowease/compare/n8n@0.173.1...n8n@0.174.0) (2022-04-25)
+# [0.174.0](https://github.com/khulnasoft/flowease/compare/flowease@0.173.1...flowease@0.174.0) (2022-04-25)
 
 ### Bug Fixes
 
@@ -4150,13 +4150,13 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **Microsoft Teams Node:** Enhancements and cleanup ([#2940](https://github.com/khulnasoft/flowease/issues/2940)) ([d446f9e](https://github.com/khulnasoft/flowease/commit/d446f9e28176e6ae2875d526cf4b6ac769dc750c))
 - **MongoDB Node:** Allow parsing dates using dot notation ([#2487](https://github.com/khulnasoft/flowease/issues/2487)) ([83998a1](https://github.com/khulnasoft/flowease/commit/83998a15b0b4bea94aa07984136bdc56523d4f89))
 
-# [0.173.1](https://github.com/khulnasoft/flowease/compare/n8n@0.173.0...n8n@0.173.1) (2022-04-19)
+# [0.173.1](https://github.com/khulnasoft/flowease/compare/flowease@0.173.0...flowease@0.173.1) (2022-04-19)
 
 ### Bug Fixes
 
 - **Discord Node:** Fix icon name
 
-# [0.173.0](https://github.com/khulnasoft/flowease/compare/n8n@0.172.0...n8n@0.173.0) (2022-04-19)
+# [0.173.0](https://github.com/khulnasoft/flowease/compare/flowease@0.172.0...flowease@0.173.0) (2022-04-19)
 
 ### Bug Fixes
 
@@ -4179,7 +4179,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **PagerDuty Node:** Add support for additional details in incidents ([#3140](https://github.com/khulnasoft/flowease/issues/3140)) ([6ca7454](https://github.com/khulnasoft/flowease/commit/6ca74540782623ac2301550b62f3382e88b8ed83)), closes [#3094](https://github.com/khulnasoft/flowease/issues/3094) [#3105](https://github.com/khulnasoft/flowease/issues/3105) [#3112](https://github.com/khulnasoft/flowease/issues/3112) [#3078](https://github.com/khulnasoft/flowease/issues/3078) [#3133](https://github.com/khulnasoft/flowease/issues/3133) [#2918](https://github.com/khulnasoft/flowease/issues/2918)
 - **Slack Node:** Add blocks to slack message update ([#2182](https://github.com/khulnasoft/flowease/issues/2182)) ([b5b6000](https://github.com/khulnasoft/flowease/commit/b5b60008d680cd843a418390d451743fc13cac9c)), closes [#1728](https://github.com/khulnasoft/flowease/issues/1728)
 
-# [0.172.0](https://github.com/khulnasoft/flowease/compare/n8n@0.171.1...n8n@0.172.0) (2022-04-11)
+# [0.172.0](https://github.com/khulnasoft/flowease/compare/flowease@0.171.1...flowease@0.172.0) (2022-04-11)
 
 ### Bug Fixes
 
@@ -4193,7 +4193,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **Magento 2 Node:** Add credential tests ([#3086](https://github.com/khulnasoft/flowease/issues/3086)) ([a11b00a](https://github.com/khulnasoft/flowease/commit/a11b00a0374359f0ba8fe91a1df402f32de61b15))
 - **PayPal Node:** Add auth test, fix typo and update API URL ([#3084](https://github.com/khulnasoft/flowease/issues/3084)) ([c7a037e](https://github.com/khulnasoft/flowease/commit/c7a037e9feed94b641e6aab92301c8a647a2934c)), closes [PR#2568](https://github.com/PR/issues/2568)
 
-## [0.171.1](https://github.com/khulnasoft/flowease/compare/n8n@0.171.0...n8n@0.171.1) (2022-04-06)
+## [0.171.1](https://github.com/khulnasoft/flowease/compare/flowease@0.171.0...flowease@0.171.1) (2022-04-06)
 
 ### Bug Fixes
 
@@ -4201,7 +4201,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **core:** Fix issue with falsely skip authorizing ([#3087](https://github.com/khulnasoft/flowease/issues/3087)) ([358a683](https://github.com/khulnasoft/flowease/commit/358a683f381aa8eb7edd4886d6bdfe7ada61ec35))
 - **WooCommerce Node:** Fix pagination issue with "Get All" operation ([#2529](https://github.com/khulnasoft/flowease/issues/2529)) ([c2a5e0d](https://github.com/khulnasoft/flowease/commit/c2a5e0d1b6a89cb7397b93bbb0f0be9be0df9c86))
 
-# [0.171.0](https://github.com/khulnasoft/flowease/compare/n8n@0.170.0...n8n@0.171.0) (2022-04-03)
+# [0.171.0](https://github.com/khulnasoft/flowease/compare/flowease@0.170.0...flowease@0.171.0) (2022-04-03)
 
 ### Bug Fixes
 
@@ -4222,7 +4222,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **ServiceNow Node:** Add basicAuth support and fix getColumns loadOptions ([#2712](https://github.com/khulnasoft/flowease/issues/2712)) ([2c72584](https://github.com/khulnasoft/flowease/commit/2c72584b55521b437baa20ddad7c919807fd9f8f)), closes [#2741](https://github.com/khulnasoft/flowease/issues/2741) [#3075](https://github.com/khulnasoft/flowease/issues/3075) [#3000](https://github.com/khulnasoft/flowease/issues/3000) [#3065](https://github.com/khulnasoft/flowease/issues/3065) [#2741](https://github.com/khulnasoft/flowease/issues/2741) [#3075](https://github.com/khulnasoft/flowease/issues/3075) [#3071](https://github.com/khulnasoft/flowease/issues/3071) [#3001](https://github.com/khulnasoft/flowease/issues/3001) [#2635](https://github.com/khulnasoft/flowease/issues/2635) [#3080](https://github.com/khulnasoft/flowease/issues/3080) [#3061](https://github.com/khulnasoft/flowease/issues/3061) [#3081](https://github.com/khulnasoft/flowease/issues/3081) [#2582](https://github.com/khulnasoft/flowease/issues/2582) [#2212](https://github.com/khulnasoft/flowease/issues/2212)
 - **Strava Node:** Add "Get Streams" operation ([#2582](https://github.com/khulnasoft/flowease/issues/2582)) ([6bbb4df](https://github.com/khulnasoft/flowease/commit/6bbb4df05925362404f844a23a695f186d27b72e))
 
-# [0.170.0](https://github.com/khulnasoft/flowease/compare/n8n@0.169.0...n8n@0.170.0) (2022-03-27)
+# [0.170.0](https://github.com/khulnasoft/flowease/compare/flowease@0.169.0...flowease@0.170.0) (2022-03-27)
 
 ### Bug Fixes
 
@@ -4241,7 +4241,7 @@ To update -go to the workflows that use the Merge node, select 'Combine' operati
 - **Reddit Node:** Add possibility to query saved posts ([#3034](https://github.com/khulnasoft/flowease/issues/3034)) ([5ba4c27](https://github.com/khulnasoft/flowease/commit/5ba4c27d8c417964187af89a15d5dd4ce9f3271a))
 - **Zendesk Node:** Add ticket status "On-hold" ([2b20a46](https://github.com/khulnasoft/flowease/commit/2b20a460915655791647d62b48dde97dad3b2fd3))
 
-# [0.169.0](https://github.com/khulnasoft/flowease/compare/n8n@0.168.2...n8n@0.169.0) (2022-03-20)
+# [0.169.0](https://github.com/khulnasoft/flowease/compare/flowease@0.168.2...flowease@0.169.0) (2022-03-20)
 
 ### License change
 
@@ -4261,19 +4261,19 @@ From [Apache 2.0 with Commons Clause](https://github.com/khulnasoft/flowease/blo
 - **Mailjet Node:** Add credential tests and support for sandbox, JSON parameters & variables ([#2987](https://github.com/khulnasoft/flowease/issues/2987)) ([d2756de](https://github.com/khulnasoft/flowease/commit/d2756de090f2628f9025ba2f4436870e67576367))
 - **Mattermost Node:** Add support for Channel Search ([#2687](https://github.com/khulnasoft/flowease/issues/2687)) ([1b993e4](https://github.com/khulnasoft/flowease/commit/1b993e402297ac400c5167d1bcfa78e9a73c07df))
 
-## [0.168.2](https://github.com/khulnasoft/flowease/compare/n8n@0.168.1...n8n@0.168.2) (2022-03-16)
+## [0.168.2](https://github.com/khulnasoft/flowease/compare/flowease@0.168.1...flowease@0.168.2) (2022-03-16)
 
 ### Bug Fixes
 
-- Fix issue with n8n not authenticating oauth requests ([#2998](https://github.com/khulnasoft/flowease/issues/2998))
+- Fix issue with flowease not authenticating oauth requests ([#2998](https://github.com/khulnasoft/flowease/issues/2998))
 
-## [0.168.1](https://github.com/khulnasoft/flowease/compare/n8n@0.168.0...n8n@0.168.1) (2022-03-15)
+## [0.168.1](https://github.com/khulnasoft/flowease/compare/flowease@0.168.0...flowease@0.168.1) (2022-03-15)
 
 ### Bug Fixes
 
 - Add missing email templates
 
-# [0.168.0](https://github.com/khulnasoft/flowease/compare/n8n@0.167.0...n8n@0.168.0) (2022-03-14)
+# [0.168.0](https://github.com/khulnasoft/flowease/compare/flowease@0.167.0...flowease@0.168.0) (2022-03-14)
 
 ### Features
 

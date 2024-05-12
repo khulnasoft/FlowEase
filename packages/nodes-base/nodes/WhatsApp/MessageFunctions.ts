@@ -3,11 +3,11 @@ import type {
 	IDataObject,
 	IExecuteSingleFunctions,
 	IHttpRequestOptions,
-	IN8nHttpFullResponse,
+	IFloweaseHttpFullResponse,
 	INodeExecutionData,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import { getUploadFormData } from './MediaFunctions';
 
@@ -188,7 +188,7 @@ export async function cleanPhoneNumber(
 export async function sendErrorPostReceive(
 	this: IExecuteSingleFunctions,
 	data: INodeExecutionData[],
-	response: IN8nHttpFullResponse,
+	response: IFloweaseHttpFullResponse,
 ): Promise<INodeExecutionData[]> {
 	if (response.statusCode === 500) {
 		throw new NodeApiError(

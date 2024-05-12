@@ -1,5 +1,5 @@
 import { Container } from 'typedi';
-import type { ExecutionStatus, IRun, IWorkflowBase } from 'n8n-workflow';
+import type { ExecutionStatus, IRun, IWorkflowBase } from 'flowease-workflow';
 import type { ExecutionPayload, IExecutionDb } from '@/Interfaces';
 import pick from 'lodash/pick';
 import { isWorkflowIdValid } from '@/utils';

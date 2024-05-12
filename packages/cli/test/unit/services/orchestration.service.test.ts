@@ -13,7 +13,7 @@ import { Logger } from '@/Logger';
 import { Push } from '@/push';
 import { ActiveWorkflowManager } from '@/ActiveWorkflowManager';
 import { mockInstance } from '../../shared/mocking';
-import type { WorkflowActivateMode } from 'n8n-workflow';
+import type { WorkflowActivateMode } from 'flowease-workflow';
 
 const os = Container.get(OrchestrationService);
 const handler = Container.get(OrchestrationHandlerMainService);

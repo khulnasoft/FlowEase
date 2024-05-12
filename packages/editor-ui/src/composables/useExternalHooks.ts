@@ -1,4 +1,4 @@
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import type {
 	ExternalHooks,
 	ExternalHooksKey,
@@ -11,7 +11,7 @@ export async function runExternalHook<T extends ExternalHooksKey>(
 	eventName: T,
 	metadata?: ExtractExternalHooksMethodPayloadFromKey<T>,
 ) {
-	if (!window.n8nExternalHooks) {
+	if (!window.floweaseExternalHooks) {
 		return;
 	}
 
@@ -22,7 +22,7 @@ export async function runExternalHook<T extends ExternalHooksKey>(
 		keyof ExternalHooks[keyof ExternalHooks],
 	];
 
-	const context = window.n8nExternalHooks[resource] as ExternalHooksGenericContext;
+	const context = window.floweaseExternalHooks[resource] as ExternalHooksGenericContext;
 	if (context?.[operator]) {
 		const hookMethods = context[operator];
 

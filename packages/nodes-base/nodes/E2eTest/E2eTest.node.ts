@@ -7,7 +7,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	ResourceMapperFields,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { remoteOptions, resourceMapperFields, returnData, searchOptions } from './mock';
 
 export class E2eTest implements INodeType {

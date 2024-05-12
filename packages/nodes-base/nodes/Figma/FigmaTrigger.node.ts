@@ -6,7 +6,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { snakeCase } from 'change-case';
 import { figmaApiRequest } from './GenericFunctions';
@@ -126,7 +126,7 @@ export class FigmaTrigger implements INodeType {
 				const body: IDataObject = {
 					event_type: snakeCase(triggerOn).toUpperCase(),
 					team_id: teamId,
-					description: `n8n-webhook:${webhookUrl}`,
+					description: `flowease-webhook:${webhookUrl}`,
 					endpoint: webhookUrl,
 					passcode: randomBytes(10).toString('hex'),
 				};

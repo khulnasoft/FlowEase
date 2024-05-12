@@ -9,8 +9,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { BINARY_ENCODING, deepCopy, jsonParse, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { BINARY_ENCODING, deepCopy, jsonParse, NodeOperationError } from 'flowease-workflow';
 
 import iconv from 'iconv-lite';
 

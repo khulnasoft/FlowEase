@@ -1,6 +1,6 @@
 import { Command, Flags } from '@oclif/core';
-import type { DataSourceOptions as ConnectionOptions } from '@n8n/typeorm';
-import { DataSource as Connection } from '@n8n/typeorm';
+import type { DataSourceOptions as ConnectionOptions } from '@flowease/typeorm';
+import { DataSource as Connection } from '@flowease/typeorm';
 import { Container } from 'typedi';
 import { Logger } from '@/Logger';
 import { setSchema } from '@/Db';
@@ -44,7 +44,7 @@ export async function main(
 export class DbRevertMigrationCommand extends Command {
 	static description = 'Revert last database migration';
 
-	static examples = ['$ n8n db:revert'];
+	static examples = ['$ flowease db:revert'];
 
 	static flags = {
 		help: Flags.help({ char: 'h' }),

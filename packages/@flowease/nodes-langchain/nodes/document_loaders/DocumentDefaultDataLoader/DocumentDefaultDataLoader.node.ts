@@ -5,11 +5,11 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { TextSplitter } from 'langchain/text_splitter';
 import { logWrapper } from '../../../utils/logWrapper';
-import { N8nBinaryLoader } from '../../../utils/N8nBinaryLoader';
+import { FloweaseBinaryLoader } from '../../../utils/FloweaseBinaryLoader';
 import { metadataFilterField } from '../../../utils/sharedFields';
 
 // Dependencies needed underneath the hood for the loaders. We add them
@@ -18,7 +18,7 @@ import { metadataFilterField } from '../../../utils/sharedFields';
 import 'mammoth'; // for docx
 import 'epub2'; // for epub
 import 'pdf-parse'; // for pdf
-import { N8nJsonLoader } from '../../../utils/N8nJsonLoader';
+import { FloweaseJsonLoader } from '../../../utils/FloweaseJsonLoader';
 
 export class DocumentDefaultDataLoader implements INodeType {
 	description: INodeTypeDescription = {
@@ -39,7 +39,7 @@ export class DocumentDefaultDataLoader implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.documentdefaultdataloader/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.documentdefaultdataloader/',
 					},
 				],
 			},
@@ -266,8 +266,8 @@ export class DocumentDefaultDataLoader implements INodeType {
 
 		const processor =
 			dataType === 'binary'
-				? new N8nBinaryLoader(this, 'options.', binaryDataKey, textSplitter)
-				: new N8nJsonLoader(this, 'options.', textSplitter);
+				? new FloweaseBinaryLoader(this, 'options.', binaryDataKey, textSplitter)
+				: new FloweaseJsonLoader(this, 'options.', textSplitter);
 
 		return {
 			response: logWrapper(processor, this),

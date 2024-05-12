@@ -41,9 +41,9 @@
 				<font-awesome-icon icon="exclamation-triangle" />
 			</p>
 			<div class="missingNodeTitleContainer mt-s mb-xs">
-				<n8n-text size="large" color="text-dark" bold>
+				<flowease-text size="large" color="text-dark" bold>
 					{{ $locale.baseText('nodeSettings.communityNodeUnknown.title') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 			<div v-if="isCommunityNode" :class="$style.descriptionContainer">
 				<div class="mb-l">
@@ -61,12 +61,12 @@
 						</template>
 					</i18n-t>
 				</div>
-				<n8n-link
+				<flowease-link
 					:to="COMMUNITY_NODES_INSTALLATION_DOCS_URL"
 					@click="onMissingNodeLearnMoreLinkClick"
 				>
 					{{ $locale.baseText('nodeSettings.communityNodeUnknown.installLink.text') }}
-				</n8n-link>
+				</flowease-link>
 			</div>
 			<i18n-t v-else keypath="nodeSettings.nodeTypeUnknown.description" tag="span">
 				<template #action>
@@ -79,7 +79,7 @@
 			</i18n-t>
 		</div>
 		<div v-if="node && nodeValid" class="node-parameters-wrapper" data-test-id="node-parameters">
-			<n8n-notice
+			<flowease-notice
 				v-if="hasForeignCredential"
 				:content="
 					$locale.baseText('nodeSettings.hasForeignCredential', {
@@ -113,9 +113,9 @@
 					/>
 				</ParameterInputList>
 				<div v-if="parametersNoneSetting.length === 0" class="no-parameters">
-					<n8n-text>
+					<flowease-text>
 						{{ $locale.baseText('nodeSettings.thisNodeDoesNotHaveAnyParameters') }}
-					</n8n-text>
+					</flowease-text>
 				</div>
 
 				<div
@@ -123,7 +123,7 @@
 					class="parameter-item parameter-notice"
 					data-test-id="node-parameters-http-notice"
 				>
-					<n8n-notice
+					<flowease-notice
 						:content="
 							$locale.baseText('nodeSettings.useTheHttpRequestNode', {
 								interpolate: { nodeTypeDisplayName: nodeType.displayName },
@@ -172,7 +172,7 @@
 			@switch-selected-node="onSwitchSelectedNode"
 			@open-connection-node-creator="onOpenConnectionNodeCreator"
 		/>
-		<n8n-block-ui :show="blockUI" />
+		<flowease-block-ui :show="blockUI" />
 	</div>
 </template>
 
@@ -186,7 +186,7 @@ import type {
 	INodeProperties,
 	NodeParameterValue,
 	ConnectionTypes,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	NodeHelpers,
 	NodeConnectionType,
@@ -195,7 +195,7 @@ import {
 	isINodePropertiesList,
 	isINodePropertyOptionsList,
 	displayParameter,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type {
 	INodeUi,
 	INodeUpdatePropertiesInformation,

@@ -183,7 +183,7 @@ export class WorkflowsController {
 		}
 		if (!/^http[s]?:\/\/.*\.json$/i.exec(req.query.url)) {
 			throw new BadRequestError(
-				'The parameter "url" is not valid! It does not seem to be a URL pointing to a n8n workflow JSON file.',
+				'The parameter "url" is not valid! It does not seem to be a URL pointing to a flowease workflow JSON file.',
 			);
 		}
 		let workflowData: IWorkflowResponse | undefined;
@@ -194,7 +194,7 @@ export class WorkflowsController {
 			throw new BadRequestError('The URL does not point to valid JSON file!');
 		}
 
-		// Do a very basic check if it is really a n8n-workflow-json
+		// Do a very basic check if it is really a flowease-workflow-json
 		if (
 			workflowData?.nodes === undefined ||
 			!Array.isArray(workflowData.nodes) ||
@@ -203,7 +203,7 @@ export class WorkflowsController {
 			Array.isArray(workflowData.connections)
 		) {
 			throw new BadRequestError(
-				'The data in the file does not seem to be a n8n workflow JSON file!',
+				'The data in the file does not seem to be a flowease workflow JSON file!',
 			);
 		}
 

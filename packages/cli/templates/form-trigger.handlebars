@@ -59,14 +59,14 @@
 				margin-bottom: 16px;
 			}
 
-			.n8n-link a {
+			.flowease-link a {
 				color: #7e8186;
 				font-weight: 600;
 				font-size: 12px;
 				text-decoration: none;
 			}
 
-			.n8n-link svg {
+			.flowease-link svg {
 				display: inline-block;
 				vertical-align: middle;
 			}
@@ -241,7 +241,7 @@
 				{{/if}}
 
 				{{#if validForm}}
-					<form class='card' action='#' method='POST' name='n8n-form' id='n8n-form' novalidate>
+					<form class='card' action='#' method='POST' name='flowease-form' id='flowease-form' novalidate>
 						<div class='form-header'>
 							<h1>{{formTitle}}</h1>
 							<p>{{formDescription}} </p>
@@ -335,7 +335,7 @@
 							{{else}}
 								<h1>Problem loading form</h1>
 								<p>
-									This usually occurs if the n8n workflow serving this form is deactivated or no
+									This usually occurs if the flowease workflow serving this form is deactivated or no
 									longer exist
 								</p>
 							{{/if}}
@@ -355,8 +355,8 @@
 				</div>
 
 				{{#if appendAttribution}}
-					<div class='n8n-link'>
-						<a href={{n8nWebsiteLink}} target='_blank'>
+					<div class='flowease-link'>
+						<a href={{floweaseWebsiteLink}} target='_blank'>
 							Form automated with
 							<svg
 								width='73'
@@ -442,7 +442,7 @@
 				}
 			}
 
-			const form = document.querySelector('#n8n-form');
+			const form = document.querySelector('#flowease-form');
 
 			const requiredInputs = document.querySelectorAll('.form-required');
 

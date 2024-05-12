@@ -4,7 +4,7 @@ import callsites from 'callsites';
 import { inspect } from 'util';
 import { basename } from 'path';
 
-import { LoggerProxy, type IDataObject, LOG_LEVELS } from 'n8n-workflow';
+import { LoggerProxy, type IDataObject, LOG_LEVELS } from 'flowease-workflow';
 
 import config from '@/config';
 

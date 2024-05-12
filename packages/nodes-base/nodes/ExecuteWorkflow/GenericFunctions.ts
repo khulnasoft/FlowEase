@@ -1,6 +1,6 @@
 import { readFile as fsReadFile } from 'fs/promises';
-import { NodeOperationError, jsonParse } from 'n8n-workflow';
-import type { IExecuteFunctions, IExecuteWorkflowInfo, IRequestOptions } from 'n8n-workflow';
+import { NodeOperationError, jsonParse } from 'flowease-workflow';
+import type { IExecuteFunctions, IExecuteWorkflowInfo, IRequestOptions } from 'flowease-workflow';
 
 export async function getWorkflowInfo(this: IExecuteFunctions, source: string, itemIndex = 0) {
 	const workflowInfo: IExecuteWorkflowInfo = {};

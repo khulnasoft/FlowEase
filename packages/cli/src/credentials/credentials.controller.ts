@@ -1,4 +1,4 @@
-import { deepCopy } from 'n8n-workflow';
+import { deepCopy } from 'flowease-workflow';
 import config from '@/config';
 import { CredentialsService } from './credentials.service';
 import { CredentialRequest, ListQuery } from '@/requests';

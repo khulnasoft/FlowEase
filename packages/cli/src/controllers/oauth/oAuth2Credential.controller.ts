@@ -7,7 +7,7 @@ import * as qs from 'querystring';
 import omit from 'lodash/omit';
 import set from 'lodash/set';
 import split from 'lodash/split';
-import { ApplicationError, jsonParse, jsonStringify } from 'n8n-workflow';
+import { ApplicationError, jsonParse, jsonStringify } from 'flowease-workflow';
 import { Get, RestController } from '@/decorators';
 import { OAuthRequest } from '@/requests';
 import { AbstractOAuthController } from './abstractOAuth.controller';

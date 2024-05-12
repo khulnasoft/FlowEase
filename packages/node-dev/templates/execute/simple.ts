@@ -3,12 +3,12 @@ import {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class ClassNameReplace implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'DisplayNameReplace',
-		name: 'N8nNameReplace',
+		name: 'FloweaseNameReplace',
 		group: ['transform'],
 		version: 1,
 		description: 'NodeDescriptionReplace',

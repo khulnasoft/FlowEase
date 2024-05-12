@@ -1,4 +1,4 @@
-import type { IExecuteFunctions } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'flowease-workflow';
 import nock from 'nock';
 import * as transport from '../transport/requestApi';
 

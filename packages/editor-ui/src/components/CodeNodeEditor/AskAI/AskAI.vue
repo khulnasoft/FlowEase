@@ -3,8 +3,8 @@ import { ref, computed, onMounted } from 'vue';
 import { snakeCase } from 'lodash-es';
 import { useSessionStorage } from '@vueuse/core';
 
-import { N8nButton, N8nInput, N8nTooltip } from 'flowease-design-system/components';
-import type { CodeExecutionMode, INodeExecutionData } from 'n8n-workflow';
+import { FloweaseButton, FloweaseInput, FloweaseTooltip } from 'flowease-design-system/components';
+import type { CodeExecutionMode, INodeExecutionData } from 'flowease-workflow';
 
 import type { BaseTextKey } from '@/plugins/i18n';
 import type { INodeUi, Schema } from '@/Interface';
@@ -16,7 +16,7 @@ import { useMessage } from '@/composables/useMessage';
 import { useToast } from '@/composables/useToast';
 import { useNDVStore } from '@/stores/ndv.store';
 import { usePostHog } from '@/stores/posthog.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { executionDataToJson } from '@/utils/nodeTypesUtils';
 import {
@@ -169,7 +169,7 @@ async function onSubmit() {
 				pushRef: useRootStore().pushRef,
 			},
 			model,
-			n8nVersion: version,
+			floweaseVersion: version,
 		});
 
 		stopLoading();
@@ -253,12 +253,12 @@ onMounted(() => {
 					v-text="`${prompt.length} / ${ASK_AI_MAX_PROMPT_LENGTH}`"
 				/>
 				<a href="https://docs.flowease.khulnasoft.com/code-examples/ai-code" target="_blank" :class="$style.help">
-					<n8n-icon icon="question-circle" color="text-light" size="large" />{{
+					<flowease-icon icon="question-circle" color="text-light" size="large" />{{
 						i18n.baseText('codeNodeEditor.askAi.help')
 					}}
 				</a>
 			</div>
-			<N8nInput
+			<FloweaseInput
 				v-model="prompt"
 				:class="$style.input"
 				type="textarea"
@@ -274,18 +274,18 @@ onMounted(() => {
 				<transition name="text-fade-in-out" mode="out-in">
 					<div :key="loadingPhraseIndex" v-text="loadingString" />
 				</transition>
-				<n8n-circle-loader :radius="8" :progress="loaderProgress" :stroke-width="3" />
+				<flowease-circle-loader :radius="8" :progress="loaderProgress" :stroke-width="3" />
 			</div>
-			<N8nTooltip v-else :disabled="isSubmitEnabled">
+			<FloweaseTooltip v-else :disabled="isSubmitEnabled">
 				<div>
-					<N8nButton
+					<FloweaseButton
 						:disabled="!isSubmitEnabled"
 						size="small"
 						data-test-id="ask-ai-cta"
 						@click="onSubmit"
 					>
 						{{ i18n.baseText('codeNodeEditor.askAi.generateCode') }}
-					</N8nButton>
+					</FloweaseButton>
 				</div>
 				<template #content>
 					<span
@@ -313,7 +313,7 @@ onMounted(() => {
 						"
 					/>
 				</template>
-			</N8nTooltip>
+			</FloweaseTooltip>
 		</div>
 	</div>
 </template>

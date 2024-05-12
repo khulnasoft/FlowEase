@@ -1,6 +1,6 @@
 import { AbstractEventMessage, isEventMessageOptionsWithType } from './AbstractEventMessage';
-import type { JsonObject } from 'n8n-workflow';
-import { EventMessageTypeNames } from 'n8n-workflow';
+import type { JsonObject } from 'flowease-workflow';
+import { EventMessageTypeNames } from 'flowease-workflow';
 import type { AbstractEventMessageOptions } from './AbstractEventMessageOptions';
 import type { AbstractEventPayload } from './AbstractEventPayload';
 import type { EventNamesNodeType } from '.';

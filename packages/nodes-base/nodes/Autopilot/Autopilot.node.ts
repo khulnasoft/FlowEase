@@ -7,7 +7,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { autopilotApiRequest, autopilotApiRequestAllItems } from './GenericFunctions';
 

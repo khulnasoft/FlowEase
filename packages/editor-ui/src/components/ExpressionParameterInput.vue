@@ -11,7 +11,7 @@ import { createExpressionTelemetryPayload } from '@/utils/telemetryUtils';
 import { useTelemetry } from '@/composables/useTelemetry';
 import type { Segment } from '@/types/expressions';
 import { createEventBus, type EventBus } from 'flowease-design-system/utils';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import type { EditorState, SelectionRange } from '@codemirror/state';
 
 const isFocused = ref(false);
@@ -146,7 +146,7 @@ defineExpose({ focus });
 				@update:model-value="onValueChange"
 				@update:selection="onSelectionChange"
 			/>
-			<n8n-button
+			<flowease-button
 				v-if="!isDragging"
 				square
 				outline

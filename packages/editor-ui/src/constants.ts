@@ -1,5 +1,5 @@
 import type { NodeCreatorOpenSource } from './Interface';
-import { NodeConnectionType } from 'n8n-workflow';
+import { NodeConnectionType } from 'flowease-workflow';
 
 export const MAX_WORKFLOW_SIZE = 1024 * 1024 * 16; // Workflow size limit in bytes
 export const MAX_EXPECTED_REQUEST_SIZE = 2048; // Expected maximum workflow request metadata (i.e. headers) size in bytes
@@ -74,7 +74,7 @@ export const BREAKPOINT_MD = 992;
 export const BREAKPOINT_LG = 1200;
 export const BREAKPOINT_XL = 1920;
 
-export const N8N_IO_BASE_URL = 'https://api.flowease.khulnasoft.com/api/';
+export const FLOWEASE_IO_BASE_URL = 'https://api.flowease.khulnasoft.com/api/';
 export const DOCS_DOMAIN = 'docs.flowease.khulnasoft.com';
 export const BUILTIN_NODES_DOCS_URL = `https://${DOCS_DOMAIN}/integrations/builtin/`;
 export const BUILTIN_CREDENTIALS_DOCS_URL = `https://${DOCS_DOMAIN}/integrations/builtin/credentials/`;
@@ -84,17 +84,17 @@ export const MFA_DOCS_URL = `https://${DOCS_DOMAIN}/user-management/two-factor-a
 export const NPM_COMMUNITY_NODE_SEARCH_API_URL = 'https://api.npms.io/v2/';
 export const NPM_PACKAGE_DOCS_BASE_URL = 'https://www.npmjs.com/package/';
 export const NPM_KEYWORD_SEARCH_URL =
-	'https://www.npmjs.com/search?q=keywords%3An8n-community-node-package';
-export const N8N_QUEUE_MODE_DOCS_URL = `https://${DOCS_DOMAIN}/hosting/scaling/queue-mode/`;
+	'https://www.npmjs.com/search?q=keywords%3Aflowease-community-node-package';
+export const FLOWEASE_QUEUE_MODE_DOCS_URL = `https://${DOCS_DOMAIN}/hosting/scaling/queue-mode/`;
 export const COMMUNITY_NODES_INSTALLATION_DOCS_URL = `https://${DOCS_DOMAIN}/integrations/community-nodes/installation/gui-install/`;
 export const COMMUNITY_NODES_MANUAL_INSTALLATION_DOCS_URL = `https://${DOCS_DOMAIN}/integrations/community-nodes/installation/manual-install/`;
 export const COMMUNITY_NODES_NPM_INSTALLATION_URL =
 	'https://docs.npmjs.com/downloading-and-installing-node-js-and-npm';
 export const COMMUNITY_NODES_RISKS_DOCS_URL = `https://${DOCS_DOMAIN}/integrations/community-nodes/risks/`;
 export const COMMUNITY_NODES_BLOCKLIST_DOCS_URL = `https://${DOCS_DOMAIN}/integrations/community-nodes/blocklist/`;
-export const CUSTOM_NODES_DOCS_URL = `https://${DOCS_DOMAIN}/integrations/creating-nodes/code/create-n8n-nodes-module/`;
+export const CUSTOM_NODES_DOCS_URL = `https://${DOCS_DOMAIN}/integrations/creating-nodes/code/create-flowease-nodes-module/`;
 export const EXPRESSIONS_DOCS_URL = `https://${DOCS_DOMAIN}/code-examples/expressions/`;
-export const N8N_PRICING_PAGE_URL = 'https://flowease.khulnasoft.com/pricing';
+export const FLOWEASE_PRICING_PAGE_URL = 'https://flowease.khulnasoft.com/pricing';
 
 export const NODE_INSERT_SPACER_BETWEEN_INPUT_GROUPS = false;
 export const NODE_MIN_INPUT_ITEMS_COUNT = 4;
@@ -138,7 +138,7 @@ export const OPEN_AI_ASSISTANT_NODE_TYPE = '@flowease/flowease-nodes-langchain.o
 export const BASIC_CHAIN_NODE_TYPE = '@flowease/flowease-nodes-langchain.chainLlm';
 export const QA_CHAIN_NODE_TYPE = '@flowease/flowease-nodes-langchain.chainRetrievalQa';
 export const MICROSOFT_TEAMS_NODE_TYPE = 'flowease-nodes-base.microsoftTeams';
-export const N8N_NODE_TYPE = 'flowease-nodes-base.n8n';
+export const FLOWEASE_NODE_TYPE = 'flowease-nodes-base.flowease';
 export const NO_OP_NODE_TYPE = 'flowease-nodes-base.noOp';
 export const STICKY_NODE_TYPE = 'flowease-nodes-base.stickyNote';
 export const NOTION_TRIGGER_NODE_TYPE = 'flowease-nodes-base.notionTrigger';
@@ -187,7 +187,7 @@ export const CHAIN_SUMMARIZATION_LANGCHAIN_NODE_TYPE =
 export const SIMULATE_NODE_TYPE = 'flowease-nodes-base.simulate';
 export const SIMULATE_TRIGGER_NODE_TYPE = 'flowease-nodes-base.simulateTrigger';
 
-export const CREDENTIAL_ONLY_NODE_PREFIX = 'n8n-creds-base';
+export const CREDENTIAL_ONLY_NODE_PREFIX = 'flowease-creds-base';
 export const CREDENTIAL_ONLY_HTTP_NODE_VERSION = 4.1;
 
 export const EXECUTABLE_TRIGGER_NODE_TYPES = [
@@ -260,7 +260,7 @@ export const AI_CATEGORY_DOCUMENT_LOADERS = 'Document Loaders';
 export const AI_CATEGORY_TEXT_SPLITTERS = 'Text Splitters';
 export const AI_UNCATEGORIZED_CATEGORY = 'Miscellaneous';
 
-export const REQUEST_NODE_FORM_URL = 'https://n8n-community.typeform.com/to/K1fBVTZ3';
+export const REQUEST_NODE_FORM_URL = 'https://flowease-community.typeform.com/to/K1fBVTZ3';
 
 // Node Connection Types
 export const NODE_CONNECTION_TYPE_ALLOW_MULTIPLE: NodeConnectionType[] = [
@@ -270,7 +270,7 @@ export const NODE_CONNECTION_TYPE_ALLOW_MULTIPLE: NodeConnectionType[] = [
 ];
 
 // General
-export const INSTANCE_ID_HEADER = 'n8n-instance-id';
+export const INSTANCE_ID_HEADER = 'flowease-instance-id';
 export const WAIT_TIME_UNLIMITED = '3000-01-01T00:00:00.000Z';
 
 /** PERSONALIZATION SURVEY */
@@ -396,17 +396,17 @@ export const MODAL_CONFIRM = 'confirm';
 
 export const VALID_EMAIL_REGEX =
 	/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-export const LOCAL_STORAGE_ACTIVATION_FLAG = 'N8N_HIDE_ACTIVATION_ALERT';
-export const LOCAL_STORAGE_PIN_DATA_DISCOVERY_NDV_FLAG = 'N8N_PIN_DATA_DISCOVERY_NDV';
-export const LOCAL_STORAGE_PIN_DATA_DISCOVERY_CANVAS_FLAG = 'N8N_PIN_DATA_DISCOVERY_CANVAS';
-export const LOCAL_STORAGE_MAPPING_IS_ONBOARDED = 'N8N_MAPPING_ONBOARDED';
-export const LOCAL_STORAGE_AUTOCOMPLETE_IS_ONBOARDED = 'N8N_AUTOCOMPLETE_ONBOARDED';
-export const LOCAL_STORAGE_TABLE_HOVER_IS_ONBOARDED = 'N8N_TABLE_HOVER_ONBOARDED';
-export const LOCAL_STORAGE_MAIN_PANEL_RELATIVE_WIDTH = 'N8N_MAIN_PANEL_RELATIVE_WIDTH';
-export const LOCAL_STORAGE_ACTIVE_MODAL = 'N8N_ACTIVE_MODAL';
-export const LOCAL_STORAGE_THEME = 'N8N_THEME';
-export const LOCAL_STORAGE_EXPERIMENT_OVERRIDES = 'N8N_EXPERIMENT_OVERRIDES';
-export const BASE_NODE_SURVEY_URL = 'https://n8n-community.typeform.com/to/BvmzxqYv#nodename=';
+export const LOCAL_STORAGE_ACTIVATION_FLAG = 'FLOWEASE_HIDE_ACTIVATION_ALERT';
+export const LOCAL_STORAGE_PIN_DATA_DISCOVERY_NDV_FLAG = 'FLOWEASE_PIN_DATA_DISCOVERY_NDV';
+export const LOCAL_STORAGE_PIN_DATA_DISCOVERY_CANVAS_FLAG = 'FLOWEASE_PIN_DATA_DISCOVERY_CANVAS';
+export const LOCAL_STORAGE_MAPPING_IS_ONBOARDED = 'FLOWEASE_MAPPING_ONBOARDED';
+export const LOCAL_STORAGE_AUTOCOMPLETE_IS_ONBOARDED = 'FLOWEASE_AUTOCOMPLETE_ONBOARDED';
+export const LOCAL_STORAGE_TABLE_HOVER_IS_ONBOARDED = 'FLOWEASE_TABLE_HOVER_ONBOARDED';
+export const LOCAL_STORAGE_MAIN_PANEL_RELATIVE_WIDTH = 'FLOWEASE_MAIN_PANEL_RELATIVE_WIDTH';
+export const LOCAL_STORAGE_ACTIVE_MODAL = 'FLOWEASE_ACTIVE_MODAL';
+export const LOCAL_STORAGE_THEME = 'FLOWEASE_THEME';
+export const LOCAL_STORAGE_EXPERIMENT_OVERRIDES = 'FLOWEASE_EXPERIMENT_OVERRIDES';
+export const BASE_NODE_SURVEY_URL = 'https://flowease-community.typeform.com/to/BvmzxqYv#nodename=';
 
 export const HIRING_BANNER = `
                                                                     //////
@@ -427,7 +427,7 @@ export const HIRING_BANNER = `
                                                         ///////////
                                                           //////
 
-Love n8n? Help us build the future of automation! https://flowease.khulnasoft.com/careers?utm_source=n8n_user&utm_medium=console_output
+Love flowease? Help us build the future of automation! https://flowease.khulnasoft.com/careers?utm_source=flowease_user&utm_medium=console_output
 `;
 
 export const TEMPLATES_NODES_FILTER = ['flowease-nodes-base.start', 'flowease-nodes-base.respondToWebhook'];
@@ -622,9 +622,9 @@ export const enum SignInType {
 	EMAIL = 'email',
 }
 
-export const N8N_SALES_EMAIL = 'sales@flowease.khulnasoft.com';
+export const FLOWEASE_SALES_EMAIL = 'sales@flowease.khulnasoft.com';
 
-export const N8N_CONTACT_EMAIL = 'contact@flowease.khulnasoft.com';
+export const FLOWEASE_CONTACT_EMAIL = 'contact@flowease.khulnasoft.com';
 
 export const EXPRESSION_EDITOR_PARSER_TIMEOUT = 15_000; // ms
 
@@ -702,13 +702,13 @@ export const ALLOWED_HTML_TAGS = [
 	'mark',
 ];
 
-export const CLOUD_CHANGE_PLAN_PAGE = window.location.host.includes('stage-app.n8n.cloud')
-	? 'https://stage-app.n8n.cloud/account/change-plan'
-	: 'https://app.n8n.cloud/account/change-plan';
+export const CLOUD_CHANGE_PLAN_PAGE = window.location.host.includes('stage-app.flowease.cloud')
+	? 'https://stage-app.flowease.cloud/account/change-plan'
+	: 'https://app.flowease.cloud/account/change-plan';
 
-export const CLOUD_BASE_URL_STAGING = 'https://stage-api.n8n.cloud';
+export const CLOUD_BASE_URL_STAGING = 'https://stage-api.flowease.cloud';
 
-export const CLOUD_BASE_URL_PRODUCTION = 'https://api.n8n.cloud';
+export const CLOUD_BASE_URL_PRODUCTION = 'https://api.flowease.cloud';
 
 export const CLOUD_TRIAL_CHECK_INTERVAL = 5000;
 
@@ -739,7 +739,7 @@ export const TIME = {
 	DAY: 24 * 60 * 60 * 1000,
 };
 
-export const SUGGESTED_TEMPLATES_FLAG = 'SHOW_N8N_SUGGESTED_TEMPLATES';
+export const SUGGESTED_TEMPLATES_FLAG = 'SHOW_FLOWEASE_SUGGESTED_TEMPLATES';
 
 /**
  * Mouse button codes
@@ -782,7 +782,7 @@ export const TEMPLATES_URLS = {
 	DEFAULT_API_HOST: 'https://api.flowease.khulnasoft.com/api/',
 	BASE_WEBSITE_URL: 'https://flowease.khulnasoft.com/workflows',
 	UTM_QUERY: {
-		utm_source: 'n8n_app',
+		utm_source: 'flowease_app',
 		utm_medium: 'template_library',
 	},
 };
@@ -797,7 +797,7 @@ export const ROLE = {
 export const INSECURE_CONNECTION_WARNING = `
 <body style="margin-top: 20px; font-family: 'Open Sans', sans-serif; text-align: center;">
 <h1 style="font-size: 40px">&#x1F6AB;</h1>
-<h2>Your n8n server is configured to use a secure cookie, <br/>however you are visiting this via an insecure URL
+<h2>Your flowease server is configured to use a secure cookie, <br/>however you are visiting this via an insecure URL
 </h2>
 <br/>
 <div style="font-size: 18px; max-width: 640px; text-align: left; margin: 10px auto">
@@ -805,14 +805,14 @@ export const INSECURE_CONNECTION_WARNING = `
 	<ul>
 		<li>Setup TLS/HTTPS (<strong>recommended</strong>), or</li>
 		<li>If you are running this locally, try using <a href="http://localhost:5678">localhost</a> instead</li>
-		<li>If you prefer to disable this security feature (<strong>not recommended</strong>), set the environment variable <code>N8N_SECURE_COOKIE</code> to <code>false</code></li>
+		<li>If you prefer to disable this security feature (<strong>not recommended</strong>), set the environment variable <code>FLOWEASE_SECURE_COOKIE</code> to <code>false</code></li>
 	</ul>
 </div>
 </body>`;
 
 export const AI_ASSISTANT_EXPERIMENT_URLS = {
 	FEEDBACK_FORM: 'https://chat.arro.co/to4639rATEMV',
-	SIGN_UP: 'https://adore.app.n8n.cloud/form/4704cce3-4cef-4dc8-b67f-8a510c5d561a',
+	SIGN_UP: 'https://adore.app.flowease.cloud/form/4704cce3-4cef-4dc8-b67f-8a510c5d561a',
 };
 
-export const AI_ASSISTANT_LOCAL_STORAGE_KEY = 'N8N_AI_ASSISTANT_EXPERIMENT';
+export const AI_ASSISTANT_LOCAL_STORAGE_KEY = 'FLOWEASE_AI_ASSISTANT_EXPERIMENT';

@@ -177,7 +177,7 @@
     },
     {
       "parameters": {
-        "jsCode": "return {\n  data: `<html>\n<head>\n\t<title>My Page</title>\t\n</head>\n<body>\n\t<h1>My Page</h1>\n\t<p>Hello World</p>\n\t<div class=\"content\">\n\t\t<p>Another paragraph\\n</p>\n\t\t<p>Yet \\r\\n\\r\\n\\t\\t\\t\\t\\t\\t\\another paragraph\\n</p>\n\t\t<p>And\\one more\\n</p>\n\t</div>\n\t<img src=\"https://flowease.khulnasoft.com/n8n-logo.png\" alt=\"flowease.khulnasoft.com logo\" />\n\t<a href=\"https://flowease.khulnasoft.com\">flowease.khulnasoft.com</a>\n    <input id=\"text-id\" type=\"text\" value=\"n8n\" />\n</body>\n</html>`\n};"
+        "jsCode": "return {\n  data: `<html>\n<head>\n\t<title>My Page</title>\t\n</head>\n<body>\n\t<h1>My Page</h1>\n\t<p>Hello World</p>\n\t<div class=\"content\">\n\t\t<p>Another paragraph\\n</p>\n\t\t<p>Yet \\r\\n\\r\\n\\t\\t\\t\\t\\t\\t\\another paragraph\\n</p>\n\t\t<p>And\\one more\\n</p>\n\t</div>\n\t<img src=\"https://flowease.khulnasoft.com/flowease-logo.png\" alt=\"flowease.khulnasoft.com logo\" />\n\t<a href=\"https://flowease.khulnasoft.com\">flowease.khulnasoft.com</a>\n    <input id=\"text-id\" type=\"text\" value=\"flowease\" />\n</body>\n</html>`\n};"
       },
       "id": "ed46f03d-6cde-4225-beab-fdbe82bf095f",
       "name": "Code",
@@ -279,14 +279,14 @@
     "No Operation, do nothing": [
       {
         "json": {
-          "data": "MY PAGEHello WorldAnother paragraphYet another paragraphAndone moreflowease.khulnasoft.com logo [https://flowease.khulnasoft.com/n8n-logo.png] flowease.khulnasoft.com [https://flowease.khulnasoft.com]"
+          "data": "MY PAGEHello WorldAnother paragraphYet another paragraphAndone moreflowease.khulnasoft.com logo [https://flowease.khulnasoft.com/flowease-logo.png] flowease.khulnasoft.com [https://flowease.khulnasoft.com]"
         }
       }
     ],
     "No Operation, do nothing5": [
       {
         "json": {
-          "data": "MY PAGE\n\nHello World\n\nAnother paragraph\n\nYet another paragraph\n\nAndone more\n\nflowease.khulnasoft.com logo [https://flowease.khulnasoft.com/n8n-logo.png] flowease.khulnasoft.com [https://flowease.khulnasoft.com]"
+          "data": "MY PAGE\n\nHello World\n\nAnother paragraph\n\nYet another paragraph\n\nAndone more\n\nflowease.khulnasoft.com logo [https://flowease.khulnasoft.com/flowease-logo.png] flowease.khulnasoft.com [https://flowease.khulnasoft.com]"
         }
       }
     ],
@@ -312,14 +312,14 @@
     "No Operation, do nothing3": [
       {
         "json": {
-          "data": "\n\t<h1>My Page</h1>\n\t<p>Hello World</p>\n\t<div class=\"content\">\n\t\t<p>Another paragraph\n</p>\n\t\t<p>Yet \n\n\t\t\t\t\t\tanother paragraph\n</p>\n\t\t<p>Andone more\n</p>\n\t</div>\n\t<img src=\"https://flowease.khulnasoft.com/n8n-logo.png\" alt=\"flowease.khulnasoft.com logo\">\n\t<a href=\"https://flowease.khulnasoft.com\">flowease.khulnasoft.com</a>\n    <input id=\"text-id\" type=\"text\" value=\"n8n\">\n\n"
+          "data": "\n\t<h1>My Page</h1>\n\t<p>Hello World</p>\n\t<div class=\"content\">\n\t\t<p>Another paragraph\n</p>\n\t\t<p>Yet \n\n\t\t\t\t\t\tanother paragraph\n</p>\n\t\t<p>Andone more\n</p>\n\t</div>\n\t<img src=\"https://flowease.khulnasoft.com/flowease-logo.png\" alt=\"flowease.khulnasoft.com logo\">\n\t<a href=\"https://flowease.khulnasoft.com\">flowease.khulnasoft.com</a>\n    <input id=\"text-id\" type=\"text\" value=\"flowease\">\n\n"
         }
       }
     ],
     "No Operation, do nothing6": [
       {
         "json": {
-          "data": "n8n"
+          "data": "flowease"
         }
       }
     ]

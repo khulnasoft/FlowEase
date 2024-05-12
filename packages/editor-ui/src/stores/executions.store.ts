@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
-import type { ExecutionStatus, IDataObject, ExecutionSummary } from 'n8n-workflow';
+import type { ExecutionStatus, IDataObject, ExecutionSummary } from 'flowease-workflow';
 import type {
 	ExecutionFilterType,
 	ExecutionsQueryFilter,
@@ -10,7 +10,7 @@ import type {
 	IExecutionsListResponse,
 	IExecutionsStopData,
 } from '@/Interface';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { makeRestApiRequest, unflattenExecutionData } from '@/utils/apiUtils';
 import { executionFilterToQueryFilter, getDefaultExecutionFilters } from '@/utils/executionUtils';
 

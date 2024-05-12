@@ -2,10 +2,10 @@
 
 # flowease-editor-ui
 
-The UI to create and update n8n workflows
+The UI to create and update flowease workflows
 
 ```
-npm install n8n -g
+npm install flowease -g
 ```
 
 ## Project setup
@@ -56,7 +56,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## License
 
-n8n is [fair-code](https://faircode.io) distributed under the [**Sustainable Use License**](https://github.com/khulnasoft/flowease/blob/master/packages/cli/LICENSE.md).
+flowease is [fair-code](https://faircode.io) distributed under the [**Sustainable Use License**](https://github.com/khulnasoft/flowease/blob/master/packages/cli/LICENSE.md).
 
 Proprietary licenses are available for enterprise customers. [Get in touch](mailto:license@flowease.khulnasoft.com)
 

@@ -1,15 +1,15 @@
-const sharedOptions = require('@n8n_io/eslint-config/shared');
+const sharedOptions = require('@flowease_io/eslint-config/shared');
 
 /**
  * @type {import('@types/eslint').ESLint.ConfigData}
  */
 module.exports = {
-	extends: ['@n8n_io/eslint-config/frontend'],
+	extends: ['@flowease_io/eslint-config/frontend'],
 
 	...sharedOptions(__dirname, 'frontend'),
 
 	rules: {
-		'n8n-local-rules/dangerously-use-html-string-missing': 'error',
+		'flowease-local-rules/dangerously-use-html-string-missing': 'error',
 
 		// TODO: Remove these
 		'id-denylist': 'warn',

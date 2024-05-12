@@ -10,7 +10,7 @@
 		data-test-id="ndv"
 		:data-has-output-connection="hasOutputConnection"
 	>
-		<n8n-tooltip
+		<flowease-tooltip
 			placement="bottom-start"
 			:visible="showTriggerWaitingWarning"
 			:disabled="!showTriggerWaitingWarning"
@@ -21,12 +21,12 @@
 				</div>
 			</template>
 			<div :class="$style.backToCanvas" data-test-id="back-to-canvas" @click="close">
-				<n8n-icon icon="arrow-left" color="text-xlight" size="medium" />
-				<n8n-text color="text-xlight" size="medium" :bold="true">
+				<flowease-icon icon="arrow-left" color="text-xlight" size="medium" />
+				<flowease-text color="text-xlight" size="medium" :bold="true">
 					{{ $locale.baseText('ndv.backToCanvas') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
-		</n8n-tooltip>
+		</flowease-tooltip>
 
 		<div
 			v-if="activeNode"
@@ -147,8 +147,8 @@ import type {
 	IRunExecutionData,
 	Workflow,
 	ConnectionTypes,
-} from 'n8n-workflow';
-import { jsonParse, NodeHelpers, NodeConnectionType } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse, NodeHelpers, NodeConnectionType } from 'flowease-workflow';
 import type { IExecutionResponse, INodeUi, IUpdateInformation, TargetItem } from '@/Interface';
 
 import NodeSettings from '@/components/NodeSettings.vue';

@@ -11,7 +11,7 @@ import type {
 	WorkflowOperationError,
 	Workflow,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { IWorkflowExecutionDataProcess } from '@/Interfaces';
 import type { WorkflowEntity } from '@db/entities/WorkflowEntity';

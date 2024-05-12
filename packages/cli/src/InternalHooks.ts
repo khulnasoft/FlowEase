@@ -10,12 +10,12 @@ import type {
 	ITelemetryTrackProperties,
 	IWorkflowBase,
 	WorkflowExecuteMode,
-} from 'n8n-workflow';
-import { TelemetryHelpers } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { TelemetryHelpers } from 'flowease-workflow';
 import { InstanceSettings } from 'flowease-core';
 
 import config from '@/config';
-import { N8N_VERSION } from '@/constants';
+import { FLOWEASE_VERSION } from '@/constants';
 import type { AuthProviderType } from '@db/entities/AuthIdentity';
 import type { GlobalRole, User } from '@db/entities/User';
 import type { ExecutionMetadata } from '@db/entities/ExecutionMetadata';
@@ -87,10 +87,10 @@ export class InternalHooks {
 		const authenticationMethod = config.getEnv('userManagement.authenticationMethod');
 
 		const info = {
-			version_cli: N8N_VERSION,
+			version_cli: FLOWEASE_VERSION,
 			db_type: config.getEnv('database.type'),
-			n8n_version_notifications_enabled: config.getEnv('versionNotifications.enabled'),
-			n8n_disable_production_main_process: config.getEnv(
+			flowease_version_notifications_enabled: config.getEnv('versionNotifications.enabled'),
+			flowease_disable_production_main_process: config.getEnv(
 				'endpoints.disableProductionWebhooksOnMainProcess',
 			),
 			system_info: {
@@ -118,8 +118,8 @@ export class InternalHooks {
 				executions_data_prune: config.getEnv('executions.pruneData'),
 				executions_data_max_age: config.getEnv('executions.pruneDataMaxAge'),
 			},
-			n8n_deployment_type: config.getEnv('deployment.type'),
-			n8n_binary_data_mode: binaryDataConfig.mode,
+			flowease_deployment_type: config.getEnv('deployment.type'),
+			flowease_binary_data_mode: binaryDataConfig.mode,
 			smtp_set_up: config.getEnv('userManagement.emails.mode') === 'smtp',
 			ldap_allowed: authenticationMethod === 'ldap',
 			saml_enabled: authenticationMethod === 'saml',
@@ -168,7 +168,7 @@ export class InternalHooks {
 		const { nodeGraph } = TelemetryHelpers.generateNodesGraph(workflow, this.nodeTypes);
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.workflow.created',
+				eventName: 'flowease.audit.workflow.created',
 				payload: {
 					...userToPayload(user),
 					workflowId: workflow.id,
@@ -187,7 +187,7 @@ export class InternalHooks {
 	async onWorkflowDeleted(user: User, workflowId: string, publicApi: boolean): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.workflow.deleted',
+				eventName: 'flowease.audit.workflow.deleted',
 				payload: {
 					...userToPayload(user),
 					workflowId,
@@ -223,7 +223,7 @@ export class InternalHooks {
 
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.workflow.updated',
+				eventName: 'flowease.audit.workflow.updated',
 				payload: {
 					...userToPayload(user),
 					workflowId: workflow.id,
@@ -236,7 +236,7 @@ export class InternalHooks {
 				node_graph_string: JSON.stringify(nodeGraph),
 				notes_count_overlapping: overlappingCount,
 				notes_count_non_overlapping: notesCount - overlappingCount,
-				version_cli: N8N_VERSION,
+				version_cli: FLOWEASE_VERSION,
 				num_tags: workflow.tags?.length ?? 0,
 				public_api: publicApi,
 				sharing_role: userRole,
@@ -251,7 +251,7 @@ export class InternalHooks {
 	): Promise<void> {
 		const nodeInWorkflow = workflow.nodes.find((node) => node.name === nodeName);
 		void this.eventBus.sendNodeEvent({
-			eventName: 'n8n.node.started',
+			eventName: 'flowease.node.started',
 			payload: {
 				executionId,
 				nodeName,
@@ -269,7 +269,7 @@ export class InternalHooks {
 	): Promise<void> {
 		const nodeInWorkflow = workflow.nodes.find((node) => node.name === nodeName);
 		void this.eventBus.sendNodeEvent({
-			eventName: 'n8n.node.finished',
+			eventName: 'flowease.node.finished',
 			payload: {
 				executionId,
 				nodeName,
@@ -305,7 +305,7 @@ export class InternalHooks {
 			};
 		}
 		void this.eventBus.sendWorkflowEvent({
-			eventName: 'n8n.workflow.started',
+			eventName: 'flowease.workflow.started',
 			payload,
 		});
 	}
@@ -327,7 +327,7 @@ export class InternalHooks {
 
 		void Promise.all([
 			this.eventBus.sendWorkflowEvent({
-				eventName: 'n8n.workflow.crashed',
+				eventName: 'flowease.workflow.crashed',
 				payload: {
 					executionId,
 					isManual: executionMode === 'manual',
@@ -360,7 +360,7 @@ export class InternalHooks {
 		const telemetryProperties: IExecutionTrackProperties = {
 			workflow_id: workflow.id,
 			is_manual: false,
-			version_cli: N8N_VERSION,
+			version_cli: FLOWEASE_VERSION,
 			success: false,
 		};
 
@@ -491,12 +491,12 @@ export class InternalHooks {
 		let event;
 		if (telemetryProperties.success) {
 			event = this.eventBus.sendWorkflowEvent({
-				eventName: 'n8n.workflow.success',
+				eventName: 'flowease.workflow.success',
 				payload: sharedEventPayload,
 			});
 		} else {
 			event = this.eventBus.sendWorkflowEvent({
-				eventName: 'n8n.workflow.failed',
+				eventName: 'flowease.workflow.failed',
 				payload: {
 					...sharedEventPayload,
 					lastNodeExecuted: runData?.data.resultData.lastNodeExecuted,
@@ -522,14 +522,14 @@ export class InternalHooks {
 		return await this.telemetry.track('User updated workflow sharing', properties);
 	}
 
-	async onN8nStop(): Promise<void> {
+	async onFloweaseStop(): Promise<void> {
 		const timeoutPromise = new Promise<void>((resolve) => {
 			setTimeout(() => {
 				resolve();
 			}, 3000);
 		});
 
-		return await Promise.race([timeoutPromise, this.telemetry.trackN8nStop()]);
+		return await Promise.race([timeoutPromise, this.telemetry.trackFloweaseStop()]);
 	}
 
 	async onUserDeletion(userDeletionData: {
@@ -539,7 +539,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.deleted',
+				eventName: 'flowease.audit.user.deleted',
 				payload: {
 					...userToPayload(userDeletionData.user),
 				},
@@ -561,7 +561,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.invited',
+				eventName: 'flowease.audit.user.invited',
 				payload: {
 					...userToPayload(userInviteData.user),
 					targetUserId: userInviteData.target_user_id,
@@ -596,7 +596,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.reinvited',
+				eventName: 'flowease.audit.user.reinvited',
 				payload: {
 					...userToPayload(userReinviteData.user),
 					targetUserId: userReinviteData.target_user_id,
@@ -655,7 +655,7 @@ export class InternalHooks {
 	async onUserUpdate(userUpdateData: { user: User; fields_changed: string[] }): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.updated',
+				eventName: 'flowease.audit.user.updated',
 				payload: {
 					...userToPayload(userUpdateData.user),
 					fieldsChanged: userUpdateData.fields_changed,
@@ -674,7 +674,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.invitation.accepted',
+				eventName: 'flowease.audit.user.invitation.accepted',
 				payload: {
 					invitee: {
 						...userToPayload(userInviteClickData.invitee),
@@ -693,7 +693,7 @@ export class InternalHooks {
 	async onUserPasswordResetEmailClick(userPasswordResetData: { user: User }): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.reset',
+				eventName: 'flowease.audit.user.reset',
 				payload: {
 					...userToPayload(userPasswordResetData.user),
 				},
@@ -732,7 +732,7 @@ export class InternalHooks {
 	async onApiKeyDeleted(apiKeyDeletedData: { user: User; public_api: boolean }): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.api.deleted',
+				eventName: 'flowease.audit.user.api.deleted',
 				payload: {
 					...userToPayload(apiKeyDeletedData.user),
 				},
@@ -747,7 +747,7 @@ export class InternalHooks {
 	async onApiKeyCreated(apiKeyCreatedData: { user: User; public_api: boolean }): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.api.created',
+				eventName: 'flowease.audit.user.api.created',
 				payload: {
 					...userToPayload(apiKeyCreatedData.user),
 				},
@@ -762,7 +762,7 @@ export class InternalHooks {
 	async onUserPasswordResetRequestClick(userPasswordResetData: { user: User }): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.reset.requested',
+				eventName: 'flowease.audit.user.reset.requested',
 				payload: {
 					...userToPayload(userPasswordResetData.user),
 				},
@@ -786,7 +786,7 @@ export class InternalHooks {
 	): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.signedup',
+				eventName: 'flowease.audit.user.signedup',
 				payload: {
 					...userToPayload(user),
 				},
@@ -810,7 +810,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.email.failed',
+				eventName: 'flowease.audit.user.email.failed',
 				payload: {
 					messageType: failedEmailData.message_type,
 					...userToPayload(failedEmailData.user),
@@ -828,7 +828,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.login.success',
+				eventName: 'flowease.audit.user.login.success',
 				payload: {
 					authenticationMethod: userLoginData.authenticationMethod,
 					...userToPayload(userLoginData.user),
@@ -844,7 +844,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.login.failed',
+				eventName: 'flowease.audit.user.login.failed',
 				payload: {
 					authenticationMethod: userLoginData.authenticationMethod,
 					user: userLoginData.user,
@@ -867,7 +867,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.credentials.created',
+				eventName: 'flowease.audit.user.credentials.created',
 				payload: {
 					...userToPayload(userCreatedCredentialsData.user),
 					credentialName: userCreatedCredentialsData.credential_name,
@@ -895,7 +895,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.credentials.shared',
+				eventName: 'flowease.audit.user.credentials.shared',
 				payload: {
 					...userToPayload(userSharedCredentialsData.user),
 					credentialName: userSharedCredentialsData.credential_name,
@@ -926,7 +926,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.credentials.updated',
+				eventName: 'flowease.audit.user.credentials.updated',
 				payload: {
 					...userToPayload(userUpdatedCredentialsData.user),
 					credentialName: userUpdatedCredentialsData.credential_name,
@@ -950,7 +950,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.user.credentials.deleted',
+				eventName: 'flowease.audit.user.credentials.deleted',
 				payload: {
 					...userToPayload(userUpdatedCredentialsData.user),
 					credentialName: userUpdatedCredentialsData.credential_name,
@@ -984,7 +984,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.package.installed',
+				eventName: 'flowease.audit.package.installed',
 				payload: {
 					...userToPayload(installationData.user),
 					inputString: installationData.input_string,
@@ -1022,7 +1022,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.package.updated',
+				eventName: 'flowease.audit.package.updated',
 				payload: {
 					...userToPayload(updateData.user),
 					packageName: updateData.package_name,
@@ -1055,7 +1055,7 @@ export class InternalHooks {
 	}): Promise<void> {
 		void Promise.all([
 			this.eventBus.sendAuditEvent({
-				eventName: 'n8n.audit.package.deleted',
+				eventName: 'flowease.audit.package.deleted',
 				payload: {
 					...userToPayload(deleteData.user),
 					packageName: deleteData.package_name,

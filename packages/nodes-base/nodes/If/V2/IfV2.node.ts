@@ -5,7 +5,7 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class IfV2 implements INodeType {
 	description: INodeTypeDescription;

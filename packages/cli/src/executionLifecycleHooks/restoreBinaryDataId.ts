@@ -1,6 +1,6 @@
 import Container from 'typedi';
 import { BinaryDataService } from 'flowease-core';
-import type { IRun, WorkflowExecuteMode } from 'n8n-workflow';
+import type { IRun, WorkflowExecuteMode } from 'flowease-workflow';
 import type { BinaryData } from 'flowease-core';
 import config from '@/config';
 import { Logger } from '@/Logger';

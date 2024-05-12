@@ -4,7 +4,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	INodeTypeBaseDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { listSearch } from './methods';
 import { router } from './actions/router';

@@ -1,9 +1,9 @@
 import * as fs from 'fs';
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
-import { BINARY_ENCODING, NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData } from 'flowease-workflow';
+import { BINARY_ENCODING, NodeOperationError } from 'flowease-workflow';
 import * as temp from 'temp';
 import * as sqlite3 from 'sqlite3';
-import { DataSource } from '@n8n/typeorm';
+import { DataSource } from '@flowease/typeorm';
 
 export async function getSqliteDataSource(
 	this: IExecuteFunctions,

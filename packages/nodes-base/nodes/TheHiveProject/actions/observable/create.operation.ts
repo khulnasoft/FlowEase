@@ -4,7 +4,7 @@ import {
 	type IExecuteFunctions,
 	type INodeExecutionData,
 	type INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import FormData from 'form-data';
 import { theHiveApiRequest } from '../../transport';
 

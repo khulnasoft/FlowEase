@@ -8,8 +8,8 @@ import type {
 	INodePropertyOptions,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import { capitalCase } from 'change-case';
 
@@ -49,7 +49,7 @@ export async function quickBooksApiRequest(
 
 	const options: IRequestOptions = {
 		headers: {
-			'user-agent': 'n8n',
+			'user-agent': 'flowease',
 		},
 		method,
 		uri: `${credentials.environment === 'sandbox' ? sandboxUrl : productionUrl}${endpoint}`,

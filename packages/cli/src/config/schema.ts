@@ -2,7 +2,7 @@ import path from 'path';
 import convict from 'convict';
 import { Container } from 'typedi';
 import { InstanceSettings } from 'flowease-core';
-import { LOG_LEVELS, jsonParse } from 'n8n-workflow';
+import { LOG_LEVELS, jsonParse } from 'flowease-workflow';
 import { ensureStringArray } from './utils';
 
 convict.addFormat({
@@ -58,7 +58,7 @@ export const schema = {
 			database: {
 				doc: 'PostgresDB Database',
 				format: String,
-				default: 'n8n',
+				default: 'flowease',
 				env: 'DB_POSTGRESDB_DATABASE',
 			},
 			host: {
@@ -135,7 +135,7 @@ export const schema = {
 			database: {
 				doc: '[DEPRECATED] MySQL Database',
 				format: String,
-				default: 'n8n',
+				default: 'flowease',
 				env: 'DB_MYSQLDB_DATABASE',
 			},
 			host: {
@@ -229,13 +229,13 @@ export const schema = {
 			doc: 'Show onboarding flow in new workflow',
 			format: Boolean,
 			default: false,
-			env: 'N8N_ONBOARDING_FLOW_DISABLED',
+			env: 'FLOWEASE_ONBOARDING_FLOW_DISABLED',
 		},
 		callerPolicyDefaultOption: {
 			doc: 'Default option for which workflows may call the current workflow',
 			format: ['any', 'none', 'workflowsFromAList', 'workflowsFromSameOwner'] as const,
 			default: 'workflowsFromSameOwner',
-			env: 'N8N_WORKFLOW_CALLER_POLICY_DEFAULT_OPTION',
+			env: 'FLOWEASE_WORKFLOW_CALLER_POLICY_DEFAULT_OPTION',
 		},
 	},
 
@@ -443,7 +443,7 @@ export const schema = {
 				env: 'QUEUE_RECOVERY_INTERVAL',
 			},
 			gracefulShutdownTimeout: {
-				doc: '[DEPRECATED] (Use N8N_GRACEFUL_SHUTDOWN_TIMEOUT instead) How long should n8n wait for running executions before exiting worker process (seconds)',
+				doc: '[DEPRECATED] (Use FLOWEASE_GRACEFUL_SHUTDOWN_TIMEOUT instead) How long should flowease wait for running executions before exiting worker process (seconds)',
 				format: Number,
 				default: 30,
 				env: 'QUEUE_WORKER_TIMEOUT',
@@ -490,83 +490,83 @@ export const schema = {
 		},
 
 		instanceType: {
-			doc: 'Type of n8n instance',
+			doc: 'Type of flowease instance',
 			format: ['main', 'webhook', 'worker'] as const,
 			default: 'main',
 		},
 
 		releaseChannel: {
-			doc: 'N8N release channel',
+			doc: 'FLOWEASE release channel',
 			format: ['stable', 'beta', 'nightly', 'dev'] as const,
 			default: 'dev',
-			env: 'N8N_RELEASE_TYPE',
+			env: 'FLOWEASE_RELEASE_TYPE',
 		},
 
 		gracefulShutdownTimeout: {
-			doc: 'How long should n8n process wait for components to shut down before exiting the process (seconds)',
+			doc: 'How long should flowease process wait for components to shut down before exiting the process (seconds)',
 			format: Number,
 			default: 30,
-			env: 'N8N_GRACEFUL_SHUTDOWN_TIMEOUT',
+			env: 'FLOWEASE_GRACEFUL_SHUTDOWN_TIMEOUT',
 		},
 	},
 
-	// How n8n can be reached (Editor & REST-API)
+	// How flowease can be reached (Editor & REST-API)
 	path: {
 		format: String,
 		default: '/',
 		arg: 'path',
-		env: 'N8N_PATH',
-		doc: 'Path n8n is deployed to',
+		env: 'FLOWEASE_PATH',
+		doc: 'Path flowease is deployed to',
 	},
 	host: {
 		format: String,
 		default: 'localhost',
 		arg: 'host',
-		env: 'N8N_HOST',
-		doc: 'Host name n8n can be reached',
+		env: 'FLOWEASE_HOST',
+		doc: 'Host name flowease can be reached',
 	},
 	port: {
 		format: Number,
 		default: 5678,
 		arg: 'port',
-		env: 'N8N_PORT',
-		doc: 'HTTP port n8n can be reached',
+		env: 'FLOWEASE_PORT',
+		doc: 'HTTP port flowease can be reached',
 	},
 	listen_address: {
 		format: String,
 		default: '0.0.0.0',
-		env: 'N8N_LISTEN_ADDRESS',
-		doc: 'IP address n8n should listen on',
+		env: 'FLOWEASE_LISTEN_ADDRESS',
+		doc: 'IP address flowease should listen on',
 	},
 	protocol: {
 		format: ['http', 'https'] as const,
 		default: 'http',
-		env: 'N8N_PROTOCOL',
-		doc: 'HTTP Protocol via which n8n can be reached',
+		env: 'FLOWEASE_PROTOCOL',
+		doc: 'HTTP Protocol via which flowease can be reached',
 	},
 	secure_cookie: {
-		doc: 'This sets the `Secure` flag on n8n auth cookie',
+		doc: 'This sets the `Secure` flag on flowease auth cookie',
 		format: Boolean,
 		default: true,
-		env: 'N8N_SECURE_COOKIE',
+		env: 'FLOWEASE_SECURE_COOKIE',
 	},
 	ssl_key: {
 		format: String,
 		default: '',
-		env: 'N8N_SSL_KEY',
+		env: 'FLOWEASE_SSL_KEY',
 		doc: 'SSL Key for HTTPS Protocol',
 	},
 	ssl_cert: {
 		format: String,
 		default: '',
-		env: 'N8N_SSL_CERT',
+		env: 'FLOWEASE_SSL_CERT',
 		doc: 'SSL Cert for HTTPS Protocol',
 	},
 	editorBaseUrl: {
 		format: String,
 		default: '',
-		env: 'N8N_EDITOR_BASE_URL',
-		doc: 'Public URL where the editor is accessible. Also used for emails sent from n8n.',
+		env: 'FLOWEASE_EDITOR_BASE_URL',
+		doc: 'Public URL where the editor is accessible. Also used for emails sent from flowease.',
 	},
 
 	security: {
@@ -574,20 +574,20 @@ export const schema = {
 			doc: 'If set only files in that directories can be accessed. Multiple directories can be separated by semicolon (";").',
 			format: String,
 			default: '',
-			env: 'N8N_RESTRICT_FILE_ACCESS_TO',
+			env: 'FLOWEASE_RESTRICT_FILE_ACCESS_TO',
 		},
-		blockFileAccessToN8nFiles: {
-			doc: 'If set to true it will block access to all files in the ".n8n" directory and user defined config files.',
+		blockFileAccessToFloweaseFiles: {
+			doc: 'If set to true it will block access to all files in the ".flowease" directory and user defined config files.',
 			format: Boolean,
 			default: true,
-			env: 'N8N_BLOCK_FILE_ACCESS_TO_N8N_FILES',
+			env: 'FLOWEASE_BLOCK_FILE_ACCESS_TO_FLOWEASE_FILES',
 		},
 		audit: {
 			daysAbandonedWorkflow: {
 				doc: 'Days for a workflow to be considered abandoned if not executed',
 				format: Number,
 				default: 90,
-				env: 'N8N_SECURITY_AUDIT_DAYS_ABANDONED_WORKFLOW',
+				env: 'FLOWEASE_SECURITY_AUDIT_DAYS_ABANDONED_WORKFLOW',
 			},
 		},
 	},
@@ -596,142 +596,142 @@ export const schema = {
 		payloadSizeMax: {
 			format: Number,
 			default: 16,
-			env: 'N8N_PAYLOAD_SIZE_MAX',
+			env: 'FLOWEASE_PAYLOAD_SIZE_MAX',
 			doc: 'Maximum payload size in MB.',
 		},
 		metrics: {
 			enable: {
 				format: Boolean,
 				default: false,
-				env: 'N8N_METRICS',
+				env: 'FLOWEASE_METRICS',
 				doc: 'Enable /metrics endpoint. Default: false',
 			},
 			prefix: {
 				format: String,
-				default: 'n8n_',
-				env: 'N8N_METRICS_PREFIX',
-				doc: 'An optional prefix for metric names. Default: n8n_',
+				default: 'flowease_',
+				env: 'FLOWEASE_METRICS_PREFIX',
+				doc: 'An optional prefix for metric names. Default: flowease_',
 			},
 			includeDefaultMetrics: {
 				format: Boolean,
 				default: true,
-				env: 'N8N_METRICS_INCLUDE_DEFAULT_METRICS',
+				env: 'FLOWEASE_METRICS_INCLUDE_DEFAULT_METRICS',
 				doc: 'Whether to expose default system and node.js metrics. Default: true',
 			},
 			includeWorkflowIdLabel: {
 				format: Boolean,
 				default: false,
-				env: 'N8N_METRICS_INCLUDE_WORKFLOW_ID_LABEL',
+				env: 'FLOWEASE_METRICS_INCLUDE_WORKFLOW_ID_LABEL',
 				doc: 'Whether to include a label for the workflow ID on workflow metrics. Default: false',
 			},
 			includeNodeTypeLabel: {
 				format: Boolean,
 				default: false,
-				env: 'N8N_METRICS_INCLUDE_NODE_TYPE_LABEL',
+				env: 'FLOWEASE_METRICS_INCLUDE_NODE_TYPE_LABEL',
 				doc: 'Whether to include a label for the node type on node metrics. Default: false',
 			},
 			includeCredentialTypeLabel: {
 				format: Boolean,
 				default: false,
-				env: 'N8N_METRICS_INCLUDE_CREDENTIAL_TYPE_LABEL',
+				env: 'FLOWEASE_METRICS_INCLUDE_CREDENTIAL_TYPE_LABEL',
 				doc: 'Whether to include a label for the credential type on credential metrics. Default: false',
 			},
 			includeApiEndpoints: {
 				format: Boolean,
 				default: false,
-				env: 'N8N_METRICS_INCLUDE_API_ENDPOINTS',
+				env: 'FLOWEASE_METRICS_INCLUDE_API_ENDPOINTS',
 				doc: 'Whether to expose metrics for API endpoints. Default: false',
 			},
 			includeApiPathLabel: {
 				format: Boolean,
 				default: false,
-				env: 'N8N_METRICS_INCLUDE_API_PATH_LABEL',
+				env: 'FLOWEASE_METRICS_INCLUDE_API_PATH_LABEL',
 				doc: 'Whether to include a label for the path of API invocations. Default: false',
 			},
 			includeApiMethodLabel: {
 				format: Boolean,
 				default: false,
-				env: 'N8N_METRICS_INCLUDE_API_METHOD_LABEL',
+				env: 'FLOWEASE_METRICS_INCLUDE_API_METHOD_LABEL',
 				doc: 'Whether to include a label for the HTTP method (GET, POST, ...) of API invocations. Default: false',
 			},
 			includeApiStatusCodeLabel: {
 				format: Boolean,
 				default: false,
-				env: 'N8N_METRICS_INCLUDE_API_STATUS_CODE_LABEL',
+				env: 'FLOWEASE_METRICS_INCLUDE_API_STATUS_CODE_LABEL',
 				doc: 'Whether to include a label for the HTTP status code (200, 404, ...) of API invocations. Default: false',
 			},
 			includeCacheMetrics: {
 				format: Boolean,
 				default: false,
-				env: 'N8N_METRICS_INCLUDE_CACHE_METRICS',
+				env: 'FLOWEASE_METRICS_INCLUDE_CACHE_METRICS',
 				doc: 'Whether to include metrics for cache hits and misses. Default: false',
 			},
 			includeMessageEventBusMetrics: {
 				format: Boolean,
 				default: true,
-				env: 'N8N_METRICS_INCLUDE_MESSAGE_EVENT_BUS_METRICS',
+				env: 'FLOWEASE_METRICS_INCLUDE_MESSAGE_EVENT_BUS_METRICS',
 				doc: 'Whether to include metrics for events. Default: false',
 			},
 		},
 		rest: {
 			format: String,
 			default: 'rest',
-			env: 'N8N_ENDPOINT_REST',
+			env: 'FLOWEASE_ENDPOINT_REST',
 			doc: 'Path for rest endpoint',
 		},
 		form: {
 			format: String,
 			default: 'form',
-			env: 'N8N_ENDPOINT_FORM',
+			env: 'FLOWEASE_ENDPOINT_FORM',
 			doc: 'Path for form endpoint',
 		},
 		formTest: {
 			format: String,
 			default: 'form-test',
-			env: 'N8N_ENDPOINT_FORM_TEST',
+			env: 'FLOWEASE_ENDPOINT_FORM_TEST',
 			doc: 'Path for test form endpoint',
 		},
 		formWaiting: {
 			format: String,
 			default: 'form-waiting',
-			env: 'N8N_ENDPOINT_FORM_WAIT',
+			env: 'FLOWEASE_ENDPOINT_FORM_WAIT',
 			doc: 'Path for waiting form endpoint',
 		},
 		webhook: {
 			format: String,
 			default: 'webhook',
-			env: 'N8N_ENDPOINT_WEBHOOK',
+			env: 'FLOWEASE_ENDPOINT_WEBHOOK',
 			doc: 'Path for webhook endpoint',
 		},
 		webhookWaiting: {
 			format: String,
 			default: 'webhook-waiting',
-			env: 'N8N_ENDPOINT_WEBHOOK_WAIT',
+			env: 'FLOWEASE_ENDPOINT_WEBHOOK_WAIT',
 			doc: 'Path for waiting-webhook endpoint',
 		},
 		webhookTest: {
 			format: String,
 			default: 'webhook-test',
-			env: 'N8N_ENDPOINT_WEBHOOK_TEST',
+			env: 'FLOWEASE_ENDPOINT_WEBHOOK_TEST',
 			doc: 'Path for test-webhook endpoint',
 		},
 		disableUi: {
 			format: Boolean,
 			default: false,
-			env: 'N8N_DISABLE_UI',
-			doc: 'Disable N8N UI (Frontend).',
+			env: 'FLOWEASE_DISABLE_UI',
+			doc: 'Disable FLOWEASE UI (Frontend).',
 		},
 		disableProductionWebhooksOnMainProcess: {
 			format: Boolean,
 			default: false,
-			env: 'N8N_DISABLE_PRODUCTION_MAIN_PROCESS',
+			env: 'FLOWEASE_DISABLE_PRODUCTION_MAIN_PROCESS',
 			doc: 'Disable production webhooks from main process. This helps ensures no http traffic load to main process when using webhook-specific processes.',
 		},
 		additionalNonUIRoutes: {
 			doc: 'Additional endpoints to not open the UI on. Multiple endpoints can be separated by colon (":")',
 			format: String,
 			default: '',
-			env: 'N8N_ADDITIONAL_NON_UI_ROUTES',
+			env: 'FLOWEASE_ADDITIONAL_NON_UI_ROUTES',
 		},
 	},
 
@@ -739,20 +739,20 @@ export const schema = {
 		disabled: {
 			format: Boolean,
 			default: false,
-			env: 'N8N_PUBLIC_API_DISABLED',
+			env: 'FLOWEASE_PUBLIC_API_DISABLED',
 			doc: 'Whether to disable the Public API',
 		},
 		path: {
 			format: String,
 			default: 'api',
-			env: 'N8N_PUBLIC_API_ENDPOINT',
+			env: 'FLOWEASE_PUBLIC_API_ENDPOINT',
 			doc: 'Path for the public api endpoints',
 		},
 		swaggerUi: {
 			disabled: {
 				format: Boolean,
 				default: false,
-				env: 'N8N_PUBLIC_API_SWAGGERUI_DISABLED',
+				env: 'FLOWEASE_PUBLIC_API_SWAGGERUI_DISABLED',
 				doc: 'Whether to disable the Swagger UI for the Public API',
 			},
 		},
@@ -761,31 +761,31 @@ export const schema = {
 	workflowTagsDisabled: {
 		format: Boolean,
 		default: false,
-		env: 'N8N_WORKFLOW_TAGS_DISABLED',
+		env: 'FLOWEASE_WORKFLOW_TAGS_DISABLED',
 		doc: 'Disable workflow tags.',
 	},
 
 	userManagement: {
 		jwtSecret: {
-			doc: 'Set a specific JWT secret (optional - n8n can generate one)', // Generated @ start.ts
+			doc: 'Set a specific JWT secret (optional - flowease can generate one)', // Generated @ start.ts
 			format: String,
 			default: '',
-			env: 'N8N_USER_MANAGEMENT_JWT_SECRET',
+			env: 'FLOWEASE_USER_MANAGEMENT_JWT_SECRET',
 		},
 		jwtSessionDurationHours: {
 			doc: 'Set a specific expiration date for the JWTs in hours.',
 			format: Number,
 			default: 168,
-			env: 'N8N_USER_MANAGEMENT_JWT_DURATION_HOURS',
+			env: 'FLOWEASE_USER_MANAGEMENT_JWT_DURATION_HOURS',
 		},
 		jwtRefreshTimeoutHours: {
-			doc: 'How long before the JWT expires to automatically refresh it. 0 means 25% of N8N_USER_MANAGEMENT_JWT_DURATION_HOURS. -1 means it will never refresh, which forces users to login again after the defined period in N8N_USER_MANAGEMENT_JWT_DURATION_HOURS.',
+			doc: 'How long before the JWT expires to automatically refresh it. 0 means 25% of FLOWEASE_USER_MANAGEMENT_JWT_DURATION_HOURS. -1 means it will never refresh, which forces users to login again after the defined period in FLOWEASE_USER_MANAGEMENT_JWT_DURATION_HOURS.',
 			format: Number,
 			default: 0,
-			env: 'N8N_USER_MANAGEMENT_JWT_REFRESH_TIMEOUT_HOURS',
+			env: 'FLOWEASE_USER_MANAGEMENT_JWT_REFRESH_TIMEOUT_HOURS',
 		},
 		isInstanceOwnerSetUp: {
-			// n8n loads this setting from DB on startup
+			// flowease loads this setting from DB on startup
 			doc: "Whether the instance owner's account has been set up",
 			format: Boolean,
 			default: false,
@@ -795,58 +795,58 @@ export const schema = {
 				doc: 'How to send emails',
 				format: ['', 'smtp'] as const,
 				default: 'smtp',
-				env: 'N8N_EMAIL_MODE',
+				env: 'FLOWEASE_EMAIL_MODE',
 			},
 			smtp: {
 				host: {
 					doc: 'SMTP server host',
 					format: String, // e.g. 'smtp.gmail.com'
 					default: '',
-					env: 'N8N_SMTP_HOST',
+					env: 'FLOWEASE_SMTP_HOST',
 				},
 				port: {
 					doc: 'SMTP server port',
 					format: Number,
 					default: 465,
-					env: 'N8N_SMTP_PORT',
+					env: 'FLOWEASE_SMTP_PORT',
 				},
 				secure: {
 					doc: 'Whether or not to use SSL for SMTP',
 					format: Boolean,
 					default: true,
-					env: 'N8N_SMTP_SSL',
+					env: 'FLOWEASE_SMTP_SSL',
 				},
 				auth: {
 					user: {
 						doc: 'SMTP login username',
 						format: String, // e.g.'you@gmail.com'
 						default: '',
-						env: 'N8N_SMTP_USER',
+						env: 'FLOWEASE_SMTP_USER',
 					},
 					pass: {
 						doc: 'SMTP login password',
 						format: String,
 						default: '',
-						env: 'N8N_SMTP_PASS',
+						env: 'FLOWEASE_SMTP_PASS',
 					},
 					serviceClient: {
 						doc: 'SMTP OAuth Service Client',
 						format: String,
 						default: '',
-						env: 'N8N_SMTP_OAUTH_SERVICE_CLIENT',
+						env: 'FLOWEASE_SMTP_OAUTH_SERVICE_CLIENT',
 					},
 					privateKey: {
 						doc: 'SMTP OAuth Private Key',
 						format: String,
 						default: '',
-						env: 'N8N_SMTP_OAUTH_PRIVATE_KEY',
+						env: 'FLOWEASE_SMTP_OAUTH_PRIVATE_KEY',
 					},
 				},
 				sender: {
 					doc: 'How to display sender name',
 					format: String,
 					default: '',
-					env: 'N8N_SMTP_SENDER',
+					env: 'FLOWEASE_SMTP_SENDER',
 				},
 			},
 			templates: {
@@ -854,25 +854,25 @@ export const schema = {
 					doc: 'Overrides default HTML template for inviting new people (use full path)',
 					format: String,
 					default: '',
-					env: 'N8N_UM_EMAIL_TEMPLATES_INVITE',
+					env: 'FLOWEASE_UM_EMAIL_TEMPLATES_INVITE',
 				},
 				passwordReset: {
 					doc: 'Overrides default HTML template for resetting password (use full path)',
 					format: String,
 					default: '',
-					env: 'N8N_UM_EMAIL_TEMPLATES_PWRESET',
+					env: 'FLOWEASE_UM_EMAIL_TEMPLATES_PWRESET',
 				},
 				workflowShared: {
 					doc: 'Overrides default HTML template for notifying that a workflow was shared (use full path)',
 					format: String,
 					default: '',
-					env: 'N8N_UM_EMAIL_TEMPLATES_WORKFLOW_SHARED',
+					env: 'FLOWEASE_UM_EMAIL_TEMPLATES_WORKFLOW_SHARED',
 				},
 				credentialsShared: {
 					doc: 'Overrides default HTML template for notifying that credentials were shared (use full path)',
 					format: String,
 					default: '',
-					env: 'N8N_UM_EMAIL_TEMPLATES_CREDENTIALS_SHARED',
+					env: 'FLOWEASE_UM_EMAIL_TEMPLATES_CREDENTIALS_SHARED',
 				},
 			},
 		},
@@ -921,7 +921,7 @@ export const schema = {
 				doc: 'Allows you to disable the usage of community packages for nodes',
 				format: Boolean,
 				default: true,
-				env: 'N8N_COMMUNITY_PACKAGES_ENABLED',
+				env: 'FLOWEASE_COMMUNITY_PACKAGES_ENABLED',
 			},
 		},
 	},
@@ -931,32 +931,32 @@ export const schema = {
 			doc: 'Log output level',
 			format: LOG_LEVELS,
 			default: 'info',
-			env: 'N8N_LOG_LEVEL',
+			env: 'FLOWEASE_LOG_LEVEL',
 		},
 		output: {
 			doc: 'Where to output logs. Options are: console, file. Multiple can be separated by comma (",")',
 			format: String,
 			default: 'console',
-			env: 'N8N_LOG_OUTPUT',
+			env: 'FLOWEASE_LOG_OUTPUT',
 		},
 		file: {
 			fileCountMax: {
 				doc: 'Maximum number of files to keep.',
 				format: Number,
 				default: 100,
-				env: 'N8N_LOG_FILE_COUNT_MAX',
+				env: 'FLOWEASE_LOG_FILE_COUNT_MAX',
 			},
 			fileSizeMax: {
 				doc: 'Maximum size for each log file in MB.',
 				format: Number,
 				default: 16,
-				env: 'N8N_LOG_FILE_SIZE_MAX',
+				env: 'FLOWEASE_LOG_FILE_SIZE_MAX',
 			},
 			location: {
 				doc: 'Log file location; only used if log output is set to file.',
 				format: String,
-				default: path.join(Container.get(InstanceSettings).n8nFolder, 'logs/n8n.log'),
-				env: 'N8N_LOG_FILE_LOCATION',
+				default: path.join(Container.get(InstanceSettings).floweaseFolder, 'logs/flowease.log'),
+				env: 'FLOWEASE_LOG_FILE_LOCATION',
 			},
 		},
 	},
@@ -966,19 +966,19 @@ export const schema = {
 			doc: 'Whether feature is enabled to request notifications about new versions and security updates.',
 			format: Boolean,
 			default: true,
-			env: 'N8N_VERSION_NOTIFICATIONS_ENABLED',
+			env: 'FLOWEASE_VERSION_NOTIFICATIONS_ENABLED',
 		},
 		endpoint: {
 			doc: 'Endpoint to retrieve version information from.',
 			format: String,
 			default: 'https://api.flowease.khulnasoft.com/api/versions/',
-			env: 'N8N_VERSION_NOTIFICATIONS_ENDPOINT',
+			env: 'FLOWEASE_VERSION_NOTIFICATIONS_ENDPOINT',
 		},
 		infoUrl: {
 			doc: "Url in New Versions Panel with more information on updating one's instance.",
 			format: String,
 			default: 'https://docs.flowease.khulnasoft.com/getting-started/installation/updating.html',
-			env: 'N8N_VERSION_NOTIFICATIONS_INFO_URL',
+			env: 'FLOWEASE_VERSION_NOTIFICATIONS_INFO_URL',
 		},
 	},
 
@@ -987,13 +987,13 @@ export const schema = {
 			doc: 'Whether templates feature is enabled to load workflow templates.',
 			format: Boolean,
 			default: true,
-			env: 'N8N_TEMPLATES_ENABLED',
+			env: 'FLOWEASE_TEMPLATES_ENABLED',
 		},
 		host: {
 			doc: 'Endpoint host to retrieve workflow templates from endpoints.',
 			format: String,
 			default: 'https://api.flowease.khulnasoft.com/api/',
-			env: 'N8N_TEMPLATES_HOST',
+			env: 'FLOWEASE_TEMPLATES_HOST',
 		},
 	},
 
@@ -1001,7 +1001,7 @@ export const schema = {
 		backend: {
 			format: ['sse', 'websocket'] as const,
 			default: 'websocket',
-			env: 'N8N_PUSH_BACKEND',
+			env: 'FLOWEASE_PUSH_BACKEND',
 			doc: 'Backend to use for push notifications',
 		},
 	},
@@ -1010,19 +1010,19 @@ export const schema = {
 		availableModes: {
 			format: 'comma-separated-list',
 			default: 'filesystem',
-			env: 'N8N_AVAILABLE_BINARY_DATA_MODES',
+			env: 'FLOWEASE_AVAILABLE_BINARY_DATA_MODES',
 			doc: 'Available modes of binary data storage, as comma separated strings',
 		},
 		mode: {
 			format: ['default', 'filesystem', 's3'] as const,
 			default: 'default',
-			env: 'N8N_DEFAULT_BINARY_DATA_MODE',
+			env: 'FLOWEASE_DEFAULT_BINARY_DATA_MODE',
 			doc: 'Storage mode for binary data',
 		},
 		localStoragePath: {
 			format: String,
-			default: path.join(Container.get(InstanceSettings).n8nFolder, 'binaryData'),
-			env: 'N8N_BINARY_DATA_STORAGE_PATH',
+			default: path.join(Container.get(InstanceSettings).floweaseFolder, 'binaryData'),
+			env: 'FLOWEASE_BINARY_DATA_STORAGE_PATH',
 			doc: 'Path for binary data storage in "filesystem" mode',
 		},
 	},
@@ -1032,34 +1032,34 @@ export const schema = {
 			host: {
 				format: String,
 				default: '',
-				env: 'N8N_EXTERNAL_STORAGE_S3_HOST',
-				doc: 'Host of the n8n bucket in S3-compatible external storage, e.g. `s3.us-east-1.amazonaws.com`',
+				env: 'FLOWEASE_EXTERNAL_STORAGE_S3_HOST',
+				doc: 'Host of the flowease bucket in S3-compatible external storage, e.g. `s3.us-east-1.amazonaws.com`',
 			},
 			bucket: {
 				name: {
 					format: String,
 					default: '',
-					env: 'N8N_EXTERNAL_STORAGE_S3_BUCKET_NAME',
-					doc: 'Name of the n8n bucket in S3-compatible external storage',
+					env: 'FLOWEASE_EXTERNAL_STORAGE_S3_BUCKET_NAME',
+					doc: 'Name of the flowease bucket in S3-compatible external storage',
 				},
 				region: {
 					format: String,
 					default: '',
-					env: 'N8N_EXTERNAL_STORAGE_S3_BUCKET_REGION',
-					doc: 'Region of the n8n bucket in S3-compatible external storage, e.g. `us-east-1`',
+					env: 'FLOWEASE_EXTERNAL_STORAGE_S3_BUCKET_REGION',
+					doc: 'Region of the flowease bucket in S3-compatible external storage, e.g. `us-east-1`',
 				},
 			},
 			credentials: {
 				accessKey: {
 					format: String,
 					default: '',
-					env: 'N8N_EXTERNAL_STORAGE_S3_ACCESS_KEY',
+					env: 'FLOWEASE_EXTERNAL_STORAGE_S3_ACCESS_KEY',
 					doc: 'Access key in S3-compatible external storage',
 				},
 				accessSecret: {
 					format: String,
 					default: '',
-					env: 'N8N_EXTERNAL_STORAGE_S3_ACCESS_SECRET',
+					env: 'FLOWEASE_EXTERNAL_STORAGE_S3_ACCESS_SECRET',
 					doc: 'Access secret in S3-compatible external storage',
 				},
 			},
@@ -1070,13 +1070,13 @@ export const schema = {
 		updateInterval: {
 			format: Number,
 			default: 300,
-			env: 'N8N_EXTERNAL_SECRETS_UPDATE_INTERVAL',
+			env: 'FLOWEASE_EXTERNAL_SECRETS_UPDATE_INTERVAL',
 			doc: 'How often (in seconds) to check for secret updates.',
 		},
 		preferGet: {
 			format: Boolean,
 			default: false,
-			env: 'N8N_EXTERNAL_SECRETS_PREFER_GET',
+			env: 'FLOWEASE_EXTERNAL_SECRETS_PREFER_GET',
 			doc: 'Whether to prefer GET over LIST when fetching secrets from Hashicorp Vault.',
 		},
 	},
@@ -1085,7 +1085,7 @@ export const schema = {
 		type: {
 			format: String,
 			default: 'default',
-			env: 'N8N_DEPLOYMENT_TYPE',
+			env: 'FLOWEASE_DEPLOYMENT_TYPE',
 		},
 	},
 
@@ -1094,7 +1094,7 @@ export const schema = {
 			format: Boolean,
 			default: true,
 			doc: 'Whether to enable MFA feature in instance.',
-			env: 'N8N_MFA_ENABLED',
+			env: 'FLOWEASE_MFA_ENABLED',
 		},
 	},
 
@@ -1137,7 +1137,7 @@ export const schema = {
 			doc: 'Whether hiring banner in browser console is enabled.',
 			format: Boolean,
 			default: true,
-			env: 'N8N_HIRING_BANNER_ENABLED',
+			env: 'FLOWEASE_HIRING_BANNER_ENABLED',
 		},
 	},
 
@@ -1146,7 +1146,7 @@ export const schema = {
 			doc: 'Whether personalization is enabled.',
 			format: Boolean,
 			default: true,
-			env: 'N8N_PERSONALIZATION_ENABLED',
+			env: 'FLOWEASE_PERSONALIZATION_ENABLED',
 		},
 	},
 
@@ -1155,7 +1155,7 @@ export const schema = {
 			doc: 'Whether diagnostic mode is enabled.',
 			format: Boolean,
 			default: true,
-			env: 'N8N_DIAGNOSTICS_ENABLED',
+			env: 'FLOWEASE_DIAGNOSTICS_ENABLED',
 		},
 		config: {
 			posthog: {
@@ -1163,13 +1163,13 @@ export const schema = {
 					doc: 'API key for PostHog',
 					format: String,
 					default: 'phc_4URIAm1uYfJO7j8kWSe0J8lc8IqnstRLS7Jx8NcakHo',
-					env: 'N8N_DIAGNOSTICS_POSTHOG_API_KEY',
+					env: 'FLOWEASE_DIAGNOSTICS_POSTHOG_API_KEY',
 				},
 				apiHost: {
 					doc: 'API host for PostHog',
 					format: String,
 					default: 'https://ph.flowease.khulnasoft.com',
-					env: 'N8N_DIAGNOSTICS_POSTHOG_API_HOST',
+					env: 'FLOWEASE_DIAGNOSTICS_POSTHOG_API_HOST',
 				},
 			},
 			sentry: {
@@ -1177,20 +1177,20 @@ export const schema = {
 					doc: 'Data source name for error tracking on Sentry',
 					format: String,
 					default: '',
-					env: 'N8N_SENTRY_DSN',
+					env: 'FLOWEASE_SENTRY_DSN',
 				},
 			},
 			frontend: {
 				doc: 'Diagnostics config for frontend.',
 				format: String,
 				default: '1zPn9bgWPzlQc0p8Gj1uiK6DOTn;https://telemetry.flowease.khulnasoft.com',
-				env: 'N8N_DIAGNOSTICS_CONFIG_FRONTEND',
+				env: 'FLOWEASE_DIAGNOSTICS_CONFIG_FRONTEND',
 			},
 			backend: {
 				doc: 'Diagnostics config for backend.',
 				format: String,
 				default: '1zPn7YoGC3ZXE9zLeTKLuQCB4F6;https://telemetry.flowease.khulnasoft.com',
-				env: 'N8N_DIAGNOSTICS_CONFIG_BACKEND',
+				env: 'FLOWEASE_DIAGNOSTICS_CONFIG_BACKEND',
 			},
 		},
 	},
@@ -1199,7 +1199,7 @@ export const schema = {
 		doc: 'Default locale for the UI',
 		format: String,
 		default: 'en',
-		env: 'N8N_DEFAULT_LOCALE',
+		env: 'FLOWEASE_DEFAULT_LOCALE',
 	},
 
 	onboardingCallPrompt: {
@@ -1207,7 +1207,7 @@ export const schema = {
 			doc: 'Whether onboarding call prompt feature is available',
 			format: Boolean,
 			default: true,
-			env: 'N8N_ONBOARDING_CALL_PROMPTS_ENABLED',
+			env: 'FLOWEASE_ONBOARDING_CALL_PROMPTS_ENABLED',
 		},
 	},
 
@@ -1215,37 +1215,37 @@ export const schema = {
 		serverUrl: {
 			format: String,
 			default: 'https://license.flowease.khulnasoft.com/v1',
-			env: 'N8N_LICENSE_SERVER_URL',
+			env: 'FLOWEASE_LICENSE_SERVER_URL',
 			doc: 'License server url to retrieve license.',
 		},
 		autoRenewEnabled: {
 			format: Boolean,
 			default: true,
-			env: 'N8N_LICENSE_AUTO_RENEW_ENABLED',
+			env: 'FLOWEASE_LICENSE_AUTO_RENEW_ENABLED',
 			doc: 'Whether auto renewal for licenses is enabled.',
 		},
 		autoRenewOffset: {
 			format: Number,
 			default: 60 * 60 * 72, // 72 hours
-			env: 'N8N_LICENSE_AUTO_RENEW_OFFSET',
+			env: 'FLOWEASE_LICENSE_AUTO_RENEW_OFFSET',
 			doc: 'How many seconds before expiry a license should get automatically renewed. ',
 		},
 		activationKey: {
 			format: String,
 			default: '',
-			env: 'N8N_LICENSE_ACTIVATION_KEY',
+			env: 'FLOWEASE_LICENSE_ACTIVATION_KEY',
 			doc: 'Activation key to initialize license',
 		},
 		tenantId: {
 			format: Number,
 			default: 1,
-			env: 'N8N_LICENSE_TENANT_ID',
+			env: 'FLOWEASE_LICENSE_TENANT_ID',
 			doc: 'Tenant id used by the license manager',
 		},
 		cert: {
 			format: String,
 			default: '',
-			env: 'N8N_LICENSE_CERT',
+			env: 'FLOWEASE_LICENSE_CERT',
 			doc: 'Ephemeral license certificate',
 		},
 	},
@@ -1253,7 +1253,7 @@ export const schema = {
 	hideUsagePage: {
 		format: Boolean,
 		default: false,
-		env: 'N8N_HIDE_USAGE_PAGE',
+		env: 'FLOWEASE_HIDE_USAGE_PAGE',
 		doc: 'Hide or show the usage page',
 	},
 
@@ -1262,45 +1262,45 @@ export const schema = {
 			doc: 'How often (in ms) to check for unsent event messages. Can in rare cases cause a message to be sent twice. 0=disabled',
 			format: Number,
 			default: 0,
-			env: 'N8N_EVENTBUS_CHECKUNSENTINTERVAL',
+			env: 'FLOWEASE_EVENTBUS_CHECKUNSENTINTERVAL',
 		},
 		logWriter: {
 			keepLogCount: {
 				doc: 'How many event log files to keep.',
 				format: Number,
 				default: 3,
-				env: 'N8N_EVENTBUS_LOGWRITER_KEEPLOGCOUNT',
+				env: 'FLOWEASE_EVENTBUS_LOGWRITER_KEEPLOGCOUNT',
 			},
 			maxFileSizeInKB: {
 				doc: 'Maximum size of an event log file before a new one is started.',
 				format: Number,
 				default: 10240, // 10MB
-				env: 'N8N_EVENTBUS_LOGWRITER_MAXFILESIZEINKB',
+				env: 'FLOWEASE_EVENTBUS_LOGWRITER_MAXFILESIZEINKB',
 			},
 			logBaseName: {
 				doc: 'Basename of the event log file.',
 				format: String,
-				default: 'n8nEventLog',
-				env: 'N8N_EVENTBUS_LOGWRITER_LOGBASENAME',
+				default: 'floweaseEventLog',
+				env: 'FLOWEASE_EVENTBUS_LOGWRITER_LOGBASENAME',
 			},
 		},
 		crashRecoveryMode: {
-			doc: 'Should n8n try to recover execution details after a crash, or just mark pending executions as crashed',
+			doc: 'Should flowease try to recover execution details after a crash, or just mark pending executions as crashed',
 			format: ['simple', 'extensive'] as const,
 			default: 'extensive',
-			env: 'N8N_EVENTBUS_RECOVERY_MODE',
+			env: 'FLOWEASE_EVENTBUS_RECOVERY_MODE',
 		},
 	},
 
 	redis: {
 		prefix: {
-			doc: 'Prefix for all n8n related keys',
+			doc: 'Prefix for all flowease related keys',
 			format: String,
-			default: 'n8n',
-			env: 'N8N_REDIS_KEY_PREFIX',
+			default: 'flowease',
+			env: 'FLOWEASE_REDIS_KEY_PREFIX',
 		},
 		queueModeId: {
-			doc: 'Unique ID for this n8n instance, is usually set automatically by n8n during startup',
+			doc: 'Unique ID for this flowease instance, is usually set automatically by flowease during startup',
 			format: String,
 			default: '',
 		},
@@ -1311,20 +1311,20 @@ export const schema = {
 			doc: 'Backend to use for caching',
 			format: ['memory', 'redis', 'auto'] as const,
 			default: 'auto',
-			env: 'N8N_CACHE_BACKEND',
+			env: 'FLOWEASE_CACHE_BACKEND',
 		},
 		memory: {
 			maxSize: {
 				doc: 'Maximum size of memory cache in bytes',
 				format: Number,
 				default: 3 * 1024 * 1024, // 3 MB
-				env: 'N8N_CACHE_MEMORY_MAX_SIZE',
+				env: 'FLOWEASE_CACHE_MEMORY_MAX_SIZE',
 			},
 			ttl: {
 				doc: 'Time to live for cached items in memory (in ms)',
 				format: Number,
 				default: 3600 * 1000, // 1 hour
-				env: 'N8N_CACHE_MEMORY_TTL',
+				env: 'FLOWEASE_CACHE_MEMORY_TTL',
 			},
 		},
 		redis: {
@@ -1332,13 +1332,13 @@ export const schema = {
 				doc: 'Prefix for all cache keys',
 				format: String,
 				default: 'cache',
-				env: 'N8N_CACHE_REDIS_KEY_PREFIX',
+				env: 'FLOWEASE_CACHE_REDIS_KEY_PREFIX',
 			},
 			ttl: {
 				doc: 'Time to live for cached items in redis (in ms), 0 for no TTL',
 				format: Number,
 				default: 3600 * 1000, // 1 hour
-				env: 'N8N_CACHE_REDIS_TTL',
+				env: 'FLOWEASE_CACHE_REDIS_TTL',
 			},
 		},
 	},
@@ -1348,26 +1348,26 @@ export const schema = {
 			doc: 'Whether AI features are enabled',
 			format: Boolean,
 			default: false,
-			env: 'N8N_AI_ENABLED',
+			env: 'FLOWEASE_AI_ENABLED',
 		},
 		provider: {
 			doc: 'AI provider to use. Currently only "openai" is supported.',
 			format: String,
 			default: 'openai',
-			env: 'N8N_AI_PROVIDER',
+			env: 'FLOWEASE_AI_PROVIDER',
 		},
 		openAI: {
 			apiKey: {
 				doc: 'Enable AI features using OpenAI API key',
 				format: String,
 				default: '',
-				env: 'N8N_AI_OPENAI_API_KEY',
+				env: 'FLOWEASE_AI_OPENAI_API_KEY',
 			},
 			model: {
 				doc: 'OpenAI model to use',
 				format: String,
 				default: 'gpt-4-turbo',
-				env: 'N8N_AI_OPENAI_MODEL',
+				env: 'FLOWEASE_AI_OPENAI_MODEL',
 			},
 		},
 		pinecone: {
@@ -1375,7 +1375,7 @@ export const schema = {
 				doc: 'Enable AI features using Pinecone API key',
 				format: String,
 				default: '',
-				env: 'N8N_AI_PINECONE_API_KEY',
+				env: 'FLOWEASE_AI_PINECONE_API_KEY',
 			},
 		},
 	},
@@ -1385,13 +1385,13 @@ export const schema = {
 			doc: 'Expression evaluator to use',
 			format: ['tmpl', 'tournament'] as const,
 			default: 'tournament',
-			env: 'N8N_EXPRESSION_EVALUATOR',
+			env: 'FLOWEASE_EXPRESSION_EVALUATOR',
 		},
 		reportDifference: {
 			doc: 'Whether to report differences in the evaluator outputs',
 			format: Boolean,
 			default: false,
-			env: 'N8N_EXPRESSION_REPORT_DIFFERENCE',
+			env: 'FLOWEASE_EXPRESSION_REPORT_DIFFERENCE',
 		},
 	},
 
@@ -1400,7 +1400,7 @@ export const schema = {
 			doc: 'Default SSH key type to use when generating SSH keys',
 			format: ['rsa', 'ed25519'] as const,
 			default: 'ed25519',
-			env: 'N8N_SOURCECONTROL_DEFAULT_SSH_KEY_TYPE',
+			env: 'FLOWEASE_SOURCECONTROL_DEFAULT_SSH_KEY_TYPE',
 		},
 	},
 
@@ -1409,14 +1409,14 @@ export const schema = {
 			doc: 'Whether to save workflow history versions',
 			format: Boolean,
 			default: true,
-			env: 'N8N_WORKFLOW_HISTORY_ENABLED',
+			env: 'FLOWEASE_WORKFLOW_HISTORY_ENABLED',
 		},
 
 		pruneTime: {
 			doc: 'Time (in hours) to keep workflow history versions for',
 			format: Number,
 			default: -1,
-			env: 'N8N_WORKFLOW_HISTORY_PRUNE_TIME',
+			env: 'FLOWEASE_WORKFLOW_HISTORY_PRUNE_TIME',
 		},
 	},
 
@@ -1430,26 +1430,26 @@ export const schema = {
 			doc: 'Whether to enable multi-main setup for queue mode (license required)',
 			format: Boolean,
 			default: false,
-			env: 'N8N_MULTI_MAIN_SETUP_ENABLED',
+			env: 'FLOWEASE_MULTI_MAIN_SETUP_ENABLED',
 		},
 		ttl: {
 			doc: 'Time to live (in seconds) for leader key in multi-main setup',
 			format: Number,
 			default: 10,
-			env: 'N8N_MULTI_MAIN_SETUP_KEY_TTL',
+			env: 'FLOWEASE_MULTI_MAIN_SETUP_KEY_TTL',
 		},
 		interval: {
 			doc: 'Interval (in seconds) for leader check in multi-main setup',
 			format: Number,
 			default: 3,
-			env: 'N8N_MULTI_MAIN_SETUP_CHECK_INTERVAL',
+			env: 'FLOWEASE_MULTI_MAIN_SETUP_CHECK_INTERVAL',
 		},
 	},
 
 	proxy_hops: {
 		format: Number,
 		default: 0,
-		env: 'N8N_PROXY_HOPS',
-		doc: 'Number of reverse-proxies n8n is running behind',
+		env: 'FLOWEASE_PROXY_HOPS',
+		doc: 'Number of reverse-proxies flowease is running behind',
 	},
 };

@@ -1,5 +1,5 @@
 import { isObjectLiteral } from '@/utils';
-import type { IDataObject, INodeExecutionData } from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData } from 'flowease-workflow';
 import type { MigrationContext, IrreversibleMigration } from '@db/types';
 
 type OldPinnedData = { [nodeName: string]: IDataObject[] };

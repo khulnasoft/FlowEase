@@ -1,8 +1,8 @@
-import { Column, Entity, ManyToOne, PrimaryColumn } from '@n8n/typeorm';
+import { Column, Entity, ManyToOne, PrimaryColumn } from '@flowease/typeorm';
 import { idStringifier } from '../utils/transformers';
 import { ExecutionEntity } from './ExecutionEntity';
 import { jsonColumnType } from './AbstractEntity';
-import { IWorkflowBase } from 'n8n-workflow';
+import { IWorkflowBase } from 'flowease-workflow';
 
 @Entity()
 export class ExecutionData {

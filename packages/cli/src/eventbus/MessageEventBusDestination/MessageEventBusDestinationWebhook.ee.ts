@@ -4,14 +4,14 @@
 import { MessageEventBusDestination } from './MessageEventBusDestination.ee';
 import axios from 'axios';
 import type { AxiosRequestConfig, Method } from 'axios';
-import { jsonParse, MessageEventBusDestinationTypeNames } from 'n8n-workflow';
+import { jsonParse, MessageEventBusDestinationTypeNames } from 'flowease-workflow';
 import type {
 	MessageEventBusDestinationOptions,
 	MessageEventBusDestinationWebhookParameterItem,
 	MessageEventBusDestinationWebhookParameterOptions,
 	IWorkflowExecuteAdditionalData,
 	MessageEventBusDestinationWebhookOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { CredentialsHelper } from '@/CredentialsHelper';
 import { Agent as HTTPSAgent } from 'https';
 import { isLogStreamingEnabled } from '../MessageEventBus/MessageEventBusHelper';

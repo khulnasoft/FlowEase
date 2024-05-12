@@ -20,14 +20,14 @@ describe('WorkflowExecuteAdditionalData', () => {
 	test('logAiEvent should call MessageEventBus', async () => {
 		const additionalData = await getBase('user-id');
 
-		const eventName = 'n8n.ai.memory.get.messages';
+		const eventName = 'flowease.ai.memory.get.messages';
 		const payload = {
 			msg: 'test message',
 			executionId: '123',
-			nodeName: 'n8n-memory',
+			nodeName: 'flowease-memory',
 			workflowId: 'workflow-id',
 			workflowName: 'workflow-name',
-			nodeType: 'n8n-memory',
+			nodeType: 'flowease-memory',
 		};
 
 		await additionalData.logAiEvent(eventName, payload);

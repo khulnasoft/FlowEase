@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, IDataObject } from 'n8n-workflow';
+import type { IExecuteFunctions, IDataObject } from 'flowease-workflow';
 
 import type { QueryScope } from '../helpers/interfaces';
 import { constructFilter } from '../helpers/utils';

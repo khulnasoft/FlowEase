@@ -1,5 +1,5 @@
-import { NodeApiError } from 'n8n-workflow';
-import type { JsonObject, IDataObject, INodeExecutionData, IPollFunctions } from 'n8n-workflow';
+import { NodeApiError } from 'flowease-workflow';
+import type { JsonObject, IDataObject, INodeExecutionData, IPollFunctions } from 'flowease-workflow';
 
 import {
 	downloadAttachments,

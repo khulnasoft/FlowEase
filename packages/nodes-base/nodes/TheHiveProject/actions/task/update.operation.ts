@@ -3,8 +3,8 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import set from 'lodash/set';
 import { theHiveApiRequest } from '../../transport';
 import { fixFieldType, prepareInputItem } from '../../helpers/utils';

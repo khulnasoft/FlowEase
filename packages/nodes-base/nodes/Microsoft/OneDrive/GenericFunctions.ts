@@ -6,8 +6,8 @@ import type {
 	IHttpRequestMethods,
 	IRequestOptions,
 	IPollFunctions,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 import { DateTime } from 'luxon';
 
 export async function microsoftApiRequest(

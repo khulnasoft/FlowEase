@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { promptTypeOptions, textInput } from '../../../../../utils/descriptions';
 import { SQL_PREFIX, SQL_SUFFIX } from './other/prompts';
 

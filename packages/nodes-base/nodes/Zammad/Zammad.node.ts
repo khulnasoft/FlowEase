@@ -9,8 +9,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import {
 	groupDescription,

@@ -1,4 +1,4 @@
-import { N8N_AUTH_COOKIE } from '../constants';
+import { FLOWEASE_AUTH_COOKIE } from '../constants';
 import { BasePage } from './base';
 import { WorkflowsPage } from './workflows';
 
@@ -32,7 +32,7 @@ export class SigninPage extends BasePage {
 				},
 				{
 					validate() {
-						cy.getCookie(N8N_AUTH_COOKIE).should('exist');
+						cy.getCookie(FLOWEASE_AUTH_COOKIE).should('exist');
 					},
 				},
 			);

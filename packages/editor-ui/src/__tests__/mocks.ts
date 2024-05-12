@@ -8,8 +8,8 @@ import type {
 	INode,
 	IPinData,
 	IWorkflowSettings,
-} from 'n8n-workflow';
-import { NodeHelpers, Workflow } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeHelpers, Workflow } from 'flowease-workflow';
 import { uuid } from '@jsplumb/util';
 import { defaultMockNodeTypes } from '@/__tests__/defaults';
 import type {

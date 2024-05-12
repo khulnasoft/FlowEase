@@ -2,8 +2,8 @@ import express from 'express';
 import type {
 	MessageEventBusDestinationWebhookOptions,
 	MessageEventBusDestinationOptions,
-} from 'n8n-workflow';
-import { MessageEventBusDestinationTypeNames } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { MessageEventBusDestinationTypeNames } from 'flowease-workflow';
 
 import { RestController, Get, Post, Delete, GlobalScope } from '@/decorators';
 import { AuthenticatedRequest } from '@/requests';

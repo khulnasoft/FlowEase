@@ -22,11 +22,11 @@ import {
 } from '@/hooks/utils/hooksNodesPanel';
 import { useSegment } from '@/stores/segment.store';
 import type { PartialDeep } from 'type-fest';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import type { INodeUi } from '@/Interface';
 import type { ExternalHooks } from '@/types';
 
-export const n8nCloudHooks: PartialDeep<ExternalHooks> = {
+export const floweaseCloudHooks: PartialDeep<ExternalHooks> = {
 	app: {
 		mount: [
 			() => {

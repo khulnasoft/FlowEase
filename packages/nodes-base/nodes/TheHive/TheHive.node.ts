@@ -9,7 +9,7 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import set from 'lodash/set';
 import { alertFields, alertOperations } from './descriptions/AlertDescription';
@@ -441,7 +441,7 @@ export class TheHive implements INodeType {
 
 					/*
 						Execute responder feature differs from Cortex execute responder
-						if it doesn't interfere with n8n standards then we should keep it
+						if it doesn't interfere with flowease standards then we should keep it
 					*/
 
 					if (operation === 'executeResponder') {

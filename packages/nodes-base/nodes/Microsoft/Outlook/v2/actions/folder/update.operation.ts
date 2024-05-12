@@ -1,4 +1,4 @@
-import type { IDataObject, IExecuteFunctions, INodeProperties } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INodeProperties } from 'flowease-workflow';
 import { microsoftApiRequest } from '../../transport';
 import { folderRLC } from '../../descriptions';
 import { decodeOutlookId } from '../../helpers/utils';

@@ -3,7 +3,7 @@ import config from '@/config';
 
 @Service()
 export class UrlService {
-	/** Returns the base URL n8n is reachable from */
+	/** Returns the base URL flowease is reachable from */
 	readonly baseUrl: string;
 
 	constructor() {
@@ -19,11 +19,11 @@ export class UrlService {
 		return urlBaseWebhook;
 	}
 
-	/** Return the n8n instance base URL without trailing slash */
+	/** Return the flowease instance base URL without trailing slash */
 	getInstanceBaseUrl(): string {
-		const n8nBaseUrl = config.getEnv('editorBaseUrl') || this.getWebhookBaseUrl();
+		const floweaseBaseUrl = config.getEnv('editorBaseUrl') || this.getWebhookBaseUrl();
 
-		return n8nBaseUrl.endsWith('/') ? n8nBaseUrl.slice(0, n8nBaseUrl.length - 1) : n8nBaseUrl;
+		return floweaseBaseUrl.endsWith('/') ? floweaseBaseUrl.slice(0, floweaseBaseUrl.length - 1) : floweaseBaseUrl;
 	}
 
 	private generateBaseUrl(): string {

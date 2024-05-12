@@ -2,18 +2,18 @@ import path from 'node:path';
 import { readFile, writeFile, rm } from 'node:fs/promises';
 import Container from 'typedi';
 import { Cipher, InstanceSettings } from 'flowease-core';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'flowease-workflow';
 import type { MigrationContext, ReversibleMigration } from '@db/types';
 
 /**
  * Move SSH key pair from file system to database, to enable SSH connections
- * when running n8n in multiple containers - mains, webhooks, workers, etc.
+ * when running flowease in multiple containers - mains, webhooks, workers, etc.
  */
 export class MoveSshKeysToDatabase1711390882123 implements ReversibleMigration {
 	private readonly settingsKey = 'features.sourceControl.sshKeys';
 
 	private readonly privateKeyPath = path.join(
-		Container.get(InstanceSettings).n8nFolder,
+		Container.get(InstanceSettings).floweaseFolder,
 		'ssh',
 		'key',
 	);

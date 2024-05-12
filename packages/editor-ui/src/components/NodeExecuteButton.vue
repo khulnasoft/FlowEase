@@ -1,11 +1,11 @@
 <template>
 	<div>
-		<n8n-tooltip placement="bottom" :disabled="!disabledHint">
+		<flowease-tooltip placement="bottom" :disabled="!disabledHint">
 			<template #content>
 				<div>{{ disabledHint }}</div>
 			</template>
 			<div>
-				<n8n-button
+				<flowease-button
 					v-bind="$attrs"
 					:loading="nodeRunning && !isListeningForEvents && !isListeningForWorkflowEvents"
 					:disabled="disabled || !!disabledHint"
@@ -18,7 +18,7 @@
 					@click="onClick"
 				/>
 			</div>
-		</n8n-tooltip>
+		</flowease-tooltip>
 	</div>
 </template>
 
@@ -33,7 +33,7 @@ import {
 	CHAT_TRIGGER_NODE_TYPE,
 } from '@/constants';
 import type { INodeUi } from '@/Interface';
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { useNDVStore } from '@/stores/ndv.store';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';

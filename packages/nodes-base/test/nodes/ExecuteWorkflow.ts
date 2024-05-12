@@ -1,7 +1,7 @@
 import nock from 'nock';
 import { WorkflowExecute } from 'flowease-core';
-import type { INodeTypes, IRun, IRunExecutionData } from 'n8n-workflow';
-import { createDeferredPromise, Workflow } from 'n8n-workflow';
+import type { INodeTypes, IRun, IRunExecutionData } from 'flowease-workflow';
+import { createDeferredPromise, Workflow } from 'flowease-workflow';
 import * as Helpers from './Helpers';
 import type { WorkflowTestData } from './types';
 

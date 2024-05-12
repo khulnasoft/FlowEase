@@ -4,7 +4,7 @@ import {
 	ApplicationError,
 	type ExecutionError,
 	type IExecuteResponsePromiseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { ActiveExecutions } from '@/ActiveExecutions';
 import { decodeWebhookResponse } from '@/helpers/decodeWebhookResponse';
 

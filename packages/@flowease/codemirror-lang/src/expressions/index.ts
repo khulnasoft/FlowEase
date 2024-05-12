@@ -16,13 +16,13 @@ export const parserWithMetaData = parser.configure({
 	],
 });
 
-export const n8nLanguage = LRLanguage.define({
+export const floweaseLanguage = LRLanguage.define({
 	parser: parserWithMetaData,
 	languageData: {
 		commentTokens: { line: ';' },
 	},
 });
 
-export function n8nExpression() {
-	return new LanguageSupport(n8nLanguage);
+export function floweaseExpression() {
+	return new LanguageSupport(floweaseLanguage);
 }

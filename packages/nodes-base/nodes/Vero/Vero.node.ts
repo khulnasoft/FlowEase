@@ -5,8 +5,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 import { validateJSON, veroApiRequest } from './GenericFunctions';
 import { userFields, userOperations } from './UserDescription';
 import { eventFields, eventOperations } from './EventDescripion';

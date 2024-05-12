@@ -19,7 +19,7 @@ const defaultUserProps = {
 export class Reset extends BaseCommand {
 	static description = 'Resets the database to the default user state';
 
-	static examples = ['$ n8n user-management:reset'];
+	static examples = ['$ flowease user-management:reset'];
 
 	async run(): Promise<void> {
 		const owner = await this.getInstanceOwner();

@@ -3,7 +3,7 @@ import { access as fsAccess, mkdir as fsMkdir } from 'fs/promises';
 import axios from 'axios';
 import { mocked } from 'jest-mock';
 import Container from 'typedi';
-import type { PublicInstalledPackage } from 'n8n-workflow';
+import type { PublicInstalledPackage } from 'flowease-workflow';
 
 import {
 	NODE_PACKAGE_PREFIX,
@@ -105,7 +105,7 @@ describe('CommunityPackagesService', () => {
 		});
 
 		test('should parse valid package name, scope and version', () => {
-			const scope = '@n8n';
+			const scope = '@flowease';
 			const name = mockPackageName();
 			const version = '0.1.1';
 			const fullPackageName = `${scope}/${name}@${version}`;

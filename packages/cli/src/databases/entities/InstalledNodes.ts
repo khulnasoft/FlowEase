@@ -1,4 +1,4 @@
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from '@n8n/typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from '@flowease/typeorm';
 import { InstalledPackages } from './InstalledPackages';
 
 @Entity()

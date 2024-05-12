@@ -6,7 +6,7 @@ import {
 	type INodeTypeDescription,
 	type SupplyData,
 	type INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { ClientOptions } from 'openai';
 import { OpenAIEmbeddings } from '@langchain/openai';
@@ -93,7 +93,7 @@ export class EmbeddingsOpenAi implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.embeddingsopenai/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.embeddingsopenai/',
 					},
 				],
 			},

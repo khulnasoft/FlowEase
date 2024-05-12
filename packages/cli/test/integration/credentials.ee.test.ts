@@ -1,7 +1,7 @@
 import { Container } from 'typedi';
 import type { SuperAgentTest } from 'supertest';
-import { In } from '@n8n/typeorm';
-import type { IUser } from 'n8n-workflow';
+import { In } from '@flowease/typeorm';
+import type { IUser } from 'flowease-workflow';
 
 import type { ListQuery } from '@/requests';
 import type { User } from '@db/entities/User';

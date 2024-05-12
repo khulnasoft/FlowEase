@@ -14,9 +14,9 @@
 		@update:filters="onFiltersUpdated"
 	>
 		<template #add-button="{ disabled }">
-			<n8n-tooltip :disabled="!readOnlyEnv">
+			<flowease-tooltip :disabled="!readOnlyEnv">
 				<div>
-					<n8n-button
+					<flowease-button
 						size="large"
 						block
 						:disabled="disabled"
@@ -24,7 +24,7 @@
 						@click="addWorkflow"
 					>
 						{{ $locale.baseText(`workflows.add`) }}
-					</n8n-button>
+					</flowease-button>
 				</div>
 				<template #content>
 					<i18n-t tag="span" keypath="mainSidebar.workflows.readOnlyEnv.tooltip">
@@ -35,7 +35,7 @@
 						</template>
 					</i18n-t>
 				</template>
-			</n8n-tooltip>
+			</flowease-tooltip>
 		</template>
 		<template #default="{ data, updateItemSize }">
 			<WorkflowCard
@@ -63,7 +63,7 @@
 			<SuggestedTemplatesPage v-if="suggestedTemplates" />
 			<div v-else>
 				<div class="text-center mt-s">
-					<n8n-heading tag="h2" size="xlarge" class="mb-2xs">
+					<flowease-heading tag="h2" size="xlarge" class="mb-2xs">
 						{{
 							$locale.baseText(
 								currentUser.firstName
@@ -72,8 +72,8 @@
 								{ interpolate: { name: currentUser.firstName } },
 							)
 						}}
-					</n8n-heading>
-					<n8n-text size="large" color="text-base">
+					</flowease-heading>
+					<flowease-text size="large" color="text-base">
 						{{
 							$locale.baseText(
 								readOnlyEnv
@@ -81,7 +81,7 @@
 									: 'workflows.empty.description',
 							)
 						}}
-					</n8n-text>
+					</flowease-text>
 				</div>
 				<div v-if="!readOnlyEnv" :class="['text-center', 'mt-2xl', $style.actionsContainer]">
 					<a
@@ -90,34 +90,34 @@
 						:class="$style.emptyStateCard"
 						target="_blank"
 					>
-						<n8n-card
+						<flowease-card
 							hoverable
 							data-test-id="browse-sales-templates-card"
 							@click="trackCategoryLinkClick('Sales')"
 						>
-							<n8n-icon :class="$style.emptyStateCardIcon" icon="box-open" />
-							<n8n-text size="large" class="mt-xs" color="text-base">
+							<flowease-icon :class="$style.emptyStateCardIcon" icon="box-open" />
+							<flowease-text size="large" class="mt-xs" color="text-base">
 								{{ $locale.baseText('workflows.empty.browseTemplates') }}
-							</n8n-text>
-						</n8n-card>
+							</flowease-text>
+						</flowease-card>
 					</a>
-					<n8n-card
+					<flowease-card
 						:class="$style.emptyStateCard"
 						hoverable
 						data-test-id="new-workflow-card"
 						@click="addWorkflow"
 					>
-						<n8n-icon :class="$style.emptyStateCardIcon" icon="file" />
-						<n8n-text size="large" class="mt-xs" color="text-base">
+						<flowease-icon :class="$style.emptyStateCardIcon" icon="file" />
+						<flowease-text size="large" class="mt-xs" color="text-base">
 							{{ $locale.baseText('workflows.empty.startFromScratch') }}
-						</n8n-text>
-					</n8n-card>
+						</flowease-text>
+					</flowease-card>
 				</div>
 			</div>
 		</template>
 		<template #filters="{ setKeyValue }">
 			<div v-if="settingsStore.areTagsEnabled" class="mb-s">
-				<n8n-input-label
+				<flowease-input-label
 					:label="$locale.baseText('workflows.filters.tags')"
 					:bold="false"
 					size="small"
@@ -132,27 +132,27 @@
 				/>
 			</div>
 			<div class="mb-s">
-				<n8n-input-label
+				<flowease-input-label
 					:label="$locale.baseText('workflows.filters.status')"
 					:bold="false"
 					size="small"
 					color="text-base"
 					class="mb-3xs"
 				/>
-				<n8n-select
+				<flowease-select
 					data-test-id="status-dropdown"
 					:model-value="filters.status"
 					@update:model-value="setKeyValue('status', $event)"
 				>
-					<n8n-option
+					<flowease-option
 						v-for="option in statusFilterOptions"
 						:key="option.label"
 						:label="option.label"
 						:value="option.value"
 						data-test-id="status"
 					>
-					</n8n-option>
-				</n8n-select>
+					</flowease-option>
+				</flowease-select>
 			</div>
 		</template>
 	</ResourcesListLayout>

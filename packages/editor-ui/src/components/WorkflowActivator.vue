@@ -1,19 +1,19 @@
 <template>
 	<div class="workflow-activator">
 		<div :class="$style.activeStatusText" data-test-id="workflow-activator-status">
-			<n8n-text
+			<flowease-text
 				v-if="workflowActive"
 				:color="couldNotBeStarted ? 'danger' : 'success'"
 				size="small"
 				bold
 			>
 				{{ $locale.baseText('workflowActivator.active') }}
-			</n8n-text>
-			<n8n-text v-else color="text-base" size="small" bold>
+			</flowease-text>
+			<flowease-text v-else color="text-base" size="small" bold>
 				{{ $locale.baseText('workflowActivator.inactive') }}
-			</n8n-text>
+			</flowease-text>
 		</div>
-		<n8n-tooltip :disabled="!disabled" placement="bottom">
+		<flowease-tooltip :disabled="!disabled" placement="bottom">
 			<template #content>
 				<div>
 					{{ $locale.baseText('workflowActivator.thisWorkflowHasNoTriggerNodes') }}
@@ -34,10 +34,10 @@
 				@update:model-value="activeChanged"
 			>
 			</el-switch>
-		</n8n-tooltip>
+		</flowease-tooltip>
 
 		<div v-if="couldNotBeStarted" class="could-not-be-started">
-			<n8n-tooltip placement="top">
+			<flowease-tooltip placement="top">
 				<template #content>
 					<div
 						@click="displayActivationError"
@@ -45,7 +45,7 @@
 					></div>
 				</template>
 				<font-awesome-icon icon="exclamation-triangle" @click="displayActivationError" />
-			</n8n-tooltip>
+			</flowease-tooltip>
 		</div>
 	</div>
 </template>

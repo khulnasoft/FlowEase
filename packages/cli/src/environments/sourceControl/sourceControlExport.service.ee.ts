@@ -6,7 +6,7 @@ import {
 	SOURCE_CONTROL_TAGS_EXPORT_FILE,
 	SOURCE_CONTROL_WORKFLOW_EXPORT_FOLDER,
 } from './constants';
-import { ApplicationError, type ICredentialDataDecryptedObject } from 'n8n-workflow';
+import { ApplicationError, type ICredentialDataDecryptedObject } from 'flowease-workflow';
 import { writeFile as fsWriteFile, rm as fsRm } from 'fs/promises';
 import { rmSync } from 'fs';
 import { Credentials, InstanceSettings } from 'flowease-core';
@@ -44,7 +44,7 @@ export class SourceControlExportService {
 		private readonly tagRepository: TagRepository,
 		instanceSettings: InstanceSettings,
 	) {
-		this.gitFolder = path.join(instanceSettings.n8nFolder, SOURCE_CONTROL_GIT_FOLDER);
+		this.gitFolder = path.join(instanceSettings.floweaseFolder, SOURCE_CONTROL_GIT_FOLDER);
 		this.workflowExportFolder = path.join(this.gitFolder, SOURCE_CONTROL_WORKFLOW_EXPORT_FOLDER);
 		this.credentialExportFolder = path.join(
 			this.gitFolder,

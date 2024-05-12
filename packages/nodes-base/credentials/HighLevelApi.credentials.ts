@@ -3,7 +3,7 @@ import type {
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export class HighLevelApi implements ICredentialType {
 	name = 'highLevelApi';

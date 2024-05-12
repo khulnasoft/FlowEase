@@ -6,7 +6,7 @@ import type {
 	INodeCredentialDescription,
 	INodeCredentials,
 	INodeCredentialsDetails,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export type IWorkflowTemplateNodeWithCredentials = IWorkflowTemplateNode &
 	Required<Pick<IWorkflowTemplateNode, 'credentials'>>;
@@ -36,7 +36,7 @@ export const keyFromCredentialTypeAndName = (
 
 /**
  * Normalizes the credentials of a template node. Templates created with
- * different versions of n8n may have different credential formats.
+ * different versions of flowease may have different credential formats.
  */
 export const normalizeTemplateNodeCredentials = (
 	credentials?: IWorkflowTemplateNodeCredentials,

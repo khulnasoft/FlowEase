@@ -7,7 +7,7 @@ import { join, dirname, resolve as resolvePath } from 'path';
 import { Container } from 'typedi';
 import { file as tmpFile } from 'tmp-promise';
 
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'flowease-workflow';
 import { InstanceSettings } from 'flowease-core';
 import type { IBuildOptions } from './Interfaces';
 
@@ -68,7 +68,7 @@ export async function buildFiles({
 		}),
 	);
 
-	// Supply a node base path so that it finds flowease-core and n8n-workflow
+	// Supply a node base path so that it finds flowease-core and flowease-workflow
 	const nodeModulesPath = join(__dirname, '../../node_modules/');
 	let buildCommand = `${tscPath} --p ${
 		tsconfigData.path

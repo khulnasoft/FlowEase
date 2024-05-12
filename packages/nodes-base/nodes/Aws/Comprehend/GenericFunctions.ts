@@ -7,7 +7,7 @@ import type {
 	IWebhookFunctions,
 	IHttpRequestOptions,
 	IHttpRequestMethods,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export async function awsApiRequest(
 	this: IHookFunctions | IExecuteFunctions | ILoadOptionsFunctions | IWebhookFunctions,

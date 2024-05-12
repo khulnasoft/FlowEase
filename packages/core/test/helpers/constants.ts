@@ -3,7 +3,7 @@ import type {
 	INodeExecutionData,
 	INodeTypeData,
 	WorkflowTestData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { If } from 'flowease-nodes-base/nodes/If/If.node';
 import { Merge } from 'flowease-nodes-base/dist/nodes/Merge/Merge.node';
 import { NoOp } from 'flowease-nodes-base/nodes/NoOp/NoOp.node';

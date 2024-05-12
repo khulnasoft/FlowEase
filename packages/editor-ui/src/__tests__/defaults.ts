@@ -1,7 +1,7 @@
-import type { INodeTypeData, INodeTypeDescription, IN8nUISettings } from 'n8n-workflow';
+import type { INodeTypeData, INodeTypeDescription, IFloweaseUISettings } from 'flowease-workflow';
 import { AGENT_NODE_TYPE, CHAT_TRIGGER_NODE_TYPE, MANUAL_TRIGGER_NODE_TYPE } from '@/constants';
 import nodeTypesJson from '../../../nodes-base/dist/types/nodes.json';
-import aiNodeTypesJson from '../../../@n8n/nodes-langchain/dist/types/nodes.json';
+import aiNodeTypesJson from '../../../@flowease/nodes-langchain/dist/types/nodes.json';
 
 const allNodeTypes = [...nodeTypesJson, ...aiNodeTypesJson];
 
@@ -43,7 +43,7 @@ export function mockNodeTypesToArray(nodeTypes: INodeTypeData): INodeTypeDescrip
 export const defaultMockNodeTypesArray: INodeTypeDescription[] =
 	mockNodeTypesToArray(defaultMockNodeTypes);
 
-export const defaultSettings: IN8nUISettings = {
+export const defaultSettings: IFloweaseUISettings = {
 	allowedModules: {},
 	communityNodesEnabled: false,
 	defaultLocale: '',

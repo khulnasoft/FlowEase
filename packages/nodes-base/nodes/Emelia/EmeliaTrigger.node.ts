@@ -7,7 +7,7 @@ import type {
 	INodeTypeDescription,
 	IWebhookFunctions,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { emeliaApiRequest, emeliaApiTest, emeliaGraphqlRequest } from './GenericFunctions';
 

@@ -140,17 +140,17 @@ const goToSourceControlSetup = async () => {
 			data-test-id="main-sidebar-source-control-connected"
 		>
 			<span :class="$style.branchName">
-				<n8n-icon icon="code-branch" />
+				<flowease-icon icon="code-branch" />
 				{{ currentBranch }}
 			</span>
 			<div :class="{ 'pt-xs': !isCollapsed }">
-				<n8n-tooltip :disabled="!isCollapsed" :show-after="tooltipOpenDelay" placement="right">
+				<flowease-tooltip :disabled="!isCollapsed" :show-after="tooltipOpenDelay" placement="right">
 					<template #content>
 						<div>
 							{{ i18n.baseText('settings.sourceControl.button.pull') }}
 						</div>
 					</template>
-					<n8n-button
+					<flowease-button
 						:class="{
 							'mr-2xs': !isCollapsed,
 							'mb-2xs': isCollapsed && !sourceControlStore.preferences.branchReadOnly,
@@ -162,8 +162,8 @@ const goToSourceControlSetup = async () => {
 						:label="isCollapsed ? '' : i18n.baseText('settings.sourceControl.button.pull')"
 						@click="pullWorkfolder"
 					/>
-				</n8n-tooltip>
-				<n8n-tooltip
+				</flowease-tooltip>
+				<flowease-tooltip
 					v-if="!sourceControlStore.preferences.branchReadOnly"
 					:disabled="!isCollapsed"
 					:show-after="tooltipOpenDelay"
@@ -174,7 +174,7 @@ const goToSourceControlSetup = async () => {
 							{{ i18n.baseText('settings.sourceControl.button.push') }}
 						</div>
 					</template>
-					<n8n-button
+					<flowease-button
 						:square="isCollapsed"
 						:label="isCollapsed ? '' : i18n.baseText('settings.sourceControl.button.push')"
 						icon="arrow-up"
@@ -182,7 +182,7 @@ const goToSourceControlSetup = async () => {
 						size="mini"
 						@click="pushWorkfolder"
 					/>
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</div>
 		</div>
 	</div>

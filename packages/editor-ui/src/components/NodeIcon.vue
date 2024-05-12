@@ -1,5 +1,5 @@
 <template>
-	<n8n-node-icon
+	<flowease-node-icon
 		:type="type"
 		:src="iconSource.path || iconSource.fileBuffer"
 		:name="iconSource.icon"
@@ -12,13 +12,13 @@
 		:tooltip-position="tooltipPosition"
 		:badge="badge"
 		@click="(e) => $emit('click')"
-	></n8n-node-icon>
+	></flowease-node-icon>
 </template>
 
 <script lang="ts">
 import type { IVersionNode } from '@/Interface';
-import { useRootStore } from '@/stores/n8nRoot.store';
-import type { INodeTypeDescription } from 'n8n-workflow';
+import { useRootStore } from '@/stores/floweaseRoot.store';
+import type { INodeTypeDescription } from 'flowease-workflow';
 import { mapStores } from 'pinia';
 import { defineComponent, type PropType } from 'vue';
 

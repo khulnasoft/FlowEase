@@ -27,21 +27,21 @@
 							{{ message.text }}
 
 							<div class="message-options no-select-on-click">
-								<n8n-info-tip
+								<flowease-info-tip
 									v-if="message.sender === 'bot'"
 									type="tooltip"
 									theme="info-light"
 									tooltip-placement="right"
 								>
 									<div v-if="message.executionId">
-										<n8n-text :bold="true" size="small">
+										<flowease-text :bold="true" size="small">
 											<span @click.stop="displayExecution(message.executionId)">
 												{{ $locale.baseText('chat.window.chat.chatMessageOptions.executionId') }}:
 												<a href="#" class="link">{{ message.executionId }}</a>
 											</span>
-										</n8n-text>
+										</flowease-text>
 									</div>
-								</n8n-info-tip>
+								</flowease-info-tip>
 
 								<div
 									v-if="message.sender === 'user'"
@@ -67,9 +67,9 @@
 					<MessageTyping v-if="isLoading" ref="messageContainer" />
 				</div>
 				<div v-if="node && messages.length" class="logs-wrapper" data-test-id="lm-chat-logs">
-					<n8n-text class="logs-title" tag="p" size="large">{{
+					<flowease-text class="logs-title" tag="p" size="large">{{
 						$locale.baseText('chat.window.logs')
-					}}</n8n-text>
+					}}</flowease-text>
 					<div class="logs">
 						<RunDataAi :key="messages.length" :node="node" hide-title slim />
 					</div>
@@ -78,7 +78,7 @@
 		</template>
 		<template #footer>
 			<div class="workflow-lm-chat-footer">
-				<n8n-input
+				<flowease-input
 					ref="inputField"
 					v-model="currentMessage"
 					class="message-input"
@@ -89,8 +89,8 @@
 					data-test-id="workflow-chat-input"
 					@keydown.stop="updated"
 				/>
-				<n8n-tooltip :disabled="currentMessage.length > 0">
-					<n8n-button
+				<flowease-tooltip :disabled="currentMessage.length > 0">
+					<flowease-button
 						class="send-button"
 						:disabled="currentMessage === ''"
 						:loading="isLoading"
@@ -104,14 +104,14 @@
 					<template #content>
 						{{ $locale.baseText('chat.window.chat.provideMessage') }}
 					</template>
-				</n8n-tooltip>
+				</flowease-tooltip>
 
-				<n8n-info-tip class="mt-s">
+				<flowease-info-tip class="mt-s">
 					{{ $locale.baseText('chatEmbed.infoTip.description') }}
 					<a @click="openChatEmbedModal">
 						{{ $locale.baseText('chatEmbed.infoTip.link') }}
 					</a>
-				</n8n-info-tip>
+				</flowease-info-tip>
 			</div>
 		</template>
 	</Modal>
@@ -144,8 +144,8 @@ import { useUIStore } from '@/stores/ui.store';
 import { useUsersStore } from '@/stores/users.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { createEventBus } from 'flowease-design-system/utils';
-import type { IDataObject, INodeType, INode, ITaskData } from 'n8n-workflow';
-import { NodeHelpers, NodeConnectionType } from 'n8n-workflow';
+import type { IDataObject, INodeType, INode, ITaskData } from 'flowease-workflow';
+import { NodeHelpers, NodeConnectionType } from 'flowease-workflow';
 import type { INodeUi, IUser } from '@/Interface';
 import { useExternalHooks } from '@/composables/useExternalHooks';
 

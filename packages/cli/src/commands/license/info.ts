@@ -5,7 +5,7 @@ import { BaseCommand } from '../BaseCommand';
 export class LicenseInfoCommand extends BaseCommand {
 	static description = 'Print license information';
 
-	static examples = ['$ n8n license:info'];
+	static examples = ['$ flowease license:info'];
 
 	async run() {
 		const license = Container.get(License);

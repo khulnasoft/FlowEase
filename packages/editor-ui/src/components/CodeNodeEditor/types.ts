@@ -1,6 +1,6 @@
 import type { EditorView } from '@codemirror/view';
 import type { I18nClass } from '@/plugins/i18n';
-import type { Workflow, CodeExecutionMode, CodeNodeEditorLanguage } from 'n8n-workflow';
+import type { Workflow, CodeExecutionMode, CodeNodeEditorLanguage } from 'flowease-workflow';
 import type { Node } from 'estree';
 import type { DefineComponent } from 'vue';
 

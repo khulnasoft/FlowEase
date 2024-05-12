@@ -1,5 +1,5 @@
-import { MessageEventBusDestinationOptions } from 'n8n-workflow';
-import { Column, Entity, PrimaryColumn } from '@n8n/typeorm';
+import { MessageEventBusDestinationOptions } from 'flowease-workflow';
+import { Column, Entity, PrimaryColumn } from '@flowease/typeorm';
 import { WithTimestamps, jsonColumnType } from './AbstractEntity';
 
 @Entity({ name: 'event_destinations' })

@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError, deepCopy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError, deepCopy } from 'flowease-workflow';
 
 export class Xml implements INodeType {
 	description: INodeTypeDescription = {

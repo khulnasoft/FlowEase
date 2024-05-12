@@ -1,4 +1,4 @@
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
+import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
 import type {
 	ConnectionTypes,
 	INodeInputConfiguration,
@@ -7,7 +7,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { getTemplateNoticeField } from '../../../utils/sharedFields';
 import { promptTypeOptions, textInput } from '../../../utils/descriptions';
 import { conversationalAgentProperties } from './agents/ConversationalAgent/description';
@@ -180,7 +180,7 @@ export class Agent implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.agent/',
 					},
 				],
 			},

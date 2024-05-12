@@ -9,7 +9,7 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 const SPEC_FILENAME = 'openapi.yml';
 const SPEC_THEME_FILENAME = 'swaggerTheme.css';
 
-const publicApiEnabled = process.env.N8N_PUBLIC_API_DISABLED !== 'true';
+const publicApiEnabled = process.env.FLOWEASE_PUBLIC_API_DISABLED !== 'true';
 
 copyUserManagementEmailTemplates();
 

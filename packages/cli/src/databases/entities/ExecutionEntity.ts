@@ -1,4 +1,4 @@
-import { ExecutionStatus, WorkflowExecuteMode } from 'n8n-workflow';
+import { ExecutionStatus, WorkflowExecuteMode } from 'flowease-workflow';
 import {
 	Column,
 	Entity,
@@ -10,7 +10,7 @@ import {
 	PrimaryColumn,
 	Relation,
 	DeleteDateColumn,
-} from '@n8n/typeorm';
+} from '@flowease/typeorm';
 import { datetimeColumnType } from './AbstractEntity';
 import { idStringifier } from '../utils/transformers';
 import type { ExecutionData } from './ExecutionData';

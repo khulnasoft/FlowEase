@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
-import type { INode, Workflow } from 'n8n-workflow';
-import { CredentialAccessError, NodeOperationError, WorkflowOperationError } from 'n8n-workflow';
+import type { INode, Workflow } from 'flowease-workflow';
+import { CredentialAccessError, NodeOperationError, WorkflowOperationError } from 'flowease-workflow';
 
 import config from '@/config';
 import { License } from '@/License';

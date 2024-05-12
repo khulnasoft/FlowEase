@@ -1,14 +1,14 @@
-import { LicenseManager } from '@n8n_io/license-sdk';
+import { LicenseManager } from '@flowease_io/license-sdk';
 import { InstanceSettings } from 'flowease-core';
 import { mock } from 'jest-mock-extended';
 import config from '@/config';
 import { License } from '@/License';
 import { Logger } from '@/Logger';
-import { N8N_VERSION } from '@/constants';
+import { FLOWEASE_VERSION } from '@/constants';
 import { mockInstance } from '../shared/mocking';
 import { OrchestrationService } from '@/services/orchestration.service';
 
-jest.mock('@n8n_io/license-sdk');
+jest.mock('@flowease_io/license-sdk');
 
 const MOCK_SERVER_URL = 'https://server.com/v1';
 const MOCK_RENEW_OFFSET = 259200;
@@ -42,7 +42,7 @@ describe('License', () => {
 			offlineMode: false,
 			renewOnInit: true,
 			deviceFingerprint: expect.any(Function),
-			productIdentifier: `n8n-${N8N_VERSION}`,
+			productIdentifier: `flowease-${FLOWEASE_VERSION}`,
 			logger,
 			loadCertStr: expect.any(Function),
 			saveCertStr: expect.any(Function),
@@ -62,7 +62,7 @@ describe('License', () => {
 			offlineMode: true,
 			renewOnInit: false,
 			deviceFingerprint: expect.any(Function),
-			productIdentifier: `n8n-${N8N_VERSION}`,
+			productIdentifier: `flowease-${FLOWEASE_VERSION}`,
 			logger,
 			loadCertStr: expect.any(Function),
 			saveCertStr: expect.any(Function),

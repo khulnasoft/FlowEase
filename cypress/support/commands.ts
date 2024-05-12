@@ -5,7 +5,7 @@ import {
 	INSTANCE_ADMIN,
 	INSTANCE_MEMBERS,
 	INSTANCE_OWNER,
-	N8N_AUTH_COOKIE,
+	FLOWEASE_AUTH_COOKIE,
 } from '../constants';
 
 Cypress.Commands.add('getByTestId', (selector, ...args) => {
@@ -65,9 +65,9 @@ Cypress.Commands.add('signout', () => {
 	cy.request({
 		method: 'POST',
 		url: `${BACKEND_BASE_URL}/rest/logout`,
-		headers: { 'browser-id': localStorage.getItem('n8n-browserId') }
+		headers: { 'browser-id': localStorage.getItem('flowease-browserId') }
 	});
-	cy.getCookie(N8N_AUTH_COOKIE).should('not.exist');
+	cy.getCookie(FLOWEASE_AUTH_COOKIE).should('not.exist');
 });
 
 Cypress.Commands.add('interceptREST', (method, url) => {

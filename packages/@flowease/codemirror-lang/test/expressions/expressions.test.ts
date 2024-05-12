@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileTests as runTestFile } from '@lezer/generator/dist/test';
-import { n8nLanguage } from '../../src/expressions/index';
+import { floweaseLanguage } from '../../src/expressions/index';
 
 describe('expressions language', () => {
 	const CASES_DIR = __dirname;
@@ -14,7 +14,7 @@ describe('expressions language', () => {
 				fs.readFileSync(path.join(CASES_DIR, testFile), 'utf8'),
 				testFile,
 			)) {
-				it(name, () => run(n8nLanguage.parser));
+				it(name, () => run(floweaseLanguage.parser));
 			}
 		});
 	}

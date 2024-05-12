@@ -6,7 +6,7 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { IncludeMods, SetField, SetNodeOptions } from './helpers/interfaces';
 import { INCLUDE } from './helpers/interfaces';

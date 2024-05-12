@@ -10,8 +10,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 
 import { capitalCase } from 'change-case';
 import {
@@ -257,7 +257,7 @@ export class Odoo implements INodeType {
 
 					const options: IRequestOptions = {
 						headers: {
-							'User-Agent': 'n8n',
+							'User-Agent': 'flowease',
 							Connection: 'keep-alive',
 							Accept: '*/*',
 							'Content-Type': 'application/json',

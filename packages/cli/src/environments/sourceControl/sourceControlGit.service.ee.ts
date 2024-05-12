@@ -21,7 +21,7 @@ import {
 import { sourceControlFoldersExistCheck } from './sourceControlHelper.ee';
 import type { User } from '@db/entities/User';
 import { Logger } from '@/Logger';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 import { OwnershipService } from '@/services/ownership.service';
 import { SourceControlPreferencesService } from './sourceControlPreferences.service.ee';
 

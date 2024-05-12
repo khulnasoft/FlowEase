@@ -5,7 +5,7 @@ import {
 	type INodeType,
 	type INodeTypeDescription,
 	type SupplyData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { OutputFixingParser } from 'langchain/output_parsers';
 import type { BaseOutputParser } from '@langchain/core/output_parsers';
 import type { BaseLanguageModel } from '@langchain/core/language_models/base';
@@ -32,7 +32,7 @@ export class OutputParserAutofixing implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/n8n-nodes-langchain.outputparserautofixing/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/sub-nodes/flowease-nodes-langchain.outputparserautofixing/',
 					},
 				],
 			},

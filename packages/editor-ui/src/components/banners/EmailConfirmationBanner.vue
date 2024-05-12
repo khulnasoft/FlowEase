@@ -40,7 +40,7 @@ async function onConfirmEmailClick() {
 			</span>
 		</template>
 		<template #trailingContent>
-			<n8n-button
+			<flowease-button
 				type="success"
 				icon="envelope"
 				size="small"
@@ -48,7 +48,7 @@ async function onConfirmEmailClick() {
 				@click="onConfirmEmailClick"
 			>
 				{{ locale.baseText('banners.confirmEmail.button') }}
-			</n8n-button>
+			</flowease-button>
 		</template>
 	</BaseBanner>
 </template>

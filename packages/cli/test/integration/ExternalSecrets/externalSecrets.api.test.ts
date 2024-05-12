@@ -8,7 +8,7 @@ import { ExternalSecretsProviders } from '@/ExternalSecrets/ExternalSecretsProvi
 import config from '@/config';
 import { ExternalSecretsManager } from '@/ExternalSecrets/ExternalSecretsManager.ee';
 import { CREDENTIAL_BLANKING_VALUE } from '@/constants';
-import { jsonParse, type IDataObject } from 'n8n-workflow';
+import { jsonParse, type IDataObject } from 'flowease-workflow';
 import { mock } from 'jest-mock-extended';
 
 import { mockInstance } from '../../shared/mocking';

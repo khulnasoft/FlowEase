@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeProperties,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 import { createTransport } from 'nodemailer';
 import type SMTPTransport from 'nodemailer/lib/smtp-transport';
@@ -135,12 +135,12 @@ const properties: INodeProperties[] = [
 		options: [
 			{
 				// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-				displayName: 'Append n8n Attribution',
+				displayName: 'Append flowease Attribution',
 				name: 'appendAttribution',
 				type: 'boolean',
 				default: true,
 				description:
-					'Whether to include the phrase “This email was sent automatically with n8n” to the end of the email',
+					'Whether to include the phrase “This email was sent automatically with flowease” to the end of the email',
 			},
 			{
 				displayName: 'Attachments',
@@ -276,7 +276,7 @@ export async function execute(this: IExecuteFunctions): Promise<INodeExecutionDa
 
 			if (appendAttribution) {
 				const attributionText = 'This email was sent automatically with ';
-				const link = `https://flowease.khulnasoft.com/?utm_source=n8n-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
+				const link = `https://flowease.khulnasoft.com/?utm_source=flowease-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
 					'flowease-nodes-base.emailSend',
 				)}${instanceId ? '_' + instanceId : ''}`;
 				if (emailFormat === 'html' || (emailFormat === 'both' && mailOptions.html)) {
@@ -286,10 +286,10 @@ export async function execute(this: IExecuteFunctions): Promise<INodeExecutionDa
 					<br>
 					---
 					<br>
-					<em>${attributionText}<a href="${link}" target="_blank">n8n</a></em>
+					<em>${attributionText}<a href="${link}" target="_blank">flowease</a></em>
 					`;
 				} else {
-					mailOptions.text = `${mailOptions.text}\n\n---\n${attributionText}n8n\n${'https://flowease.khulnasoft.com'}`;
+					mailOptions.text = `${mailOptions.text}\n\n---\n${attributionText}flowease\n${'https://flowease.khulnasoft.com'}`;
 				}
 			}
 

@@ -1,4 +1,4 @@
-import { MessageEventBusDestinationTypeNames } from 'n8n-workflow';
+import { MessageEventBusDestinationTypeNames } from 'flowease-workflow';
 import type { EventDestinations } from '@db/entities/EventDestinations';
 import type { MessageEventBus } from '../MessageEventBus/MessageEventBus';
 import type { MessageEventBusDestination } from './MessageEventBusDestination.ee';

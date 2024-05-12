@@ -9,7 +9,7 @@ import {
 	type INodeExecutionData,
 	type INodeType,
 	type INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { prepareFieldsArray } from '../utils/utils';
 
 export class SplitOut implements INodeType {

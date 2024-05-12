@@ -1,4 +1,4 @@
-import { ApplicationError, type IDataObject, type INodeExecutionData } from 'n8n-workflow';
+import { ApplicationError, type IDataObject, type INodeExecutionData } from 'flowease-workflow';
 
 import difference from 'lodash/difference';
 import get from 'lodash/get';

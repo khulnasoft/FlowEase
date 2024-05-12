@@ -3,8 +3,8 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	IDataObject,
-} from 'n8n-workflow';
-import { NodeOperationError, updateDisplayOptions } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError, updateDisplayOptions } from 'flowease-workflow';
 import { apiRequest } from '../../transport';
 import { assistantRLC, modelRLC } from '../descriptions';
 

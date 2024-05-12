@@ -3,7 +3,7 @@ import {
 	type IExecuteFunctions,
 	type INodeExecutionData,
 	type INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { generatePairedItemData, updateDisplayOptions } from '@utils/utilities';
 import type { JsonToSpreadsheetBinaryOptions, JsonToSpreadsheetBinaryFormat } from '@utils/binary';

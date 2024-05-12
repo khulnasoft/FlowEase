@@ -1,4 +1,4 @@
-import { ApplicationError, ErrorReporterProxy } from 'n8n-workflow';
+import { ApplicationError, ErrorReporterProxy } from 'flowease-workflow';
 import { mock } from 'jest-mock-extended';
 import type { ServiceClass } from '@/shutdown/Shutdown.service';
 import { ShutdownService } from '@/shutdown/Shutdown.service';

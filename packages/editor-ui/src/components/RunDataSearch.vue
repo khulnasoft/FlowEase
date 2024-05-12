@@ -69,7 +69,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-	<n8n-input
+	<flowease-input
 		ref="inputRef"
 		data-test-id="ndv-search"
 		:class="{
@@ -85,9 +85,9 @@ onUnmounted(() => {
 		@blur="onBlur"
 	>
 		<template #prefix>
-			<n8n-icon :class="$style.ioSearchIcon" icon="search" />
+			<flowease-icon :class="$style.ioSearchIcon" icon="search" />
 		</template>
-	</n8n-input>
+	</flowease-input>
 </template>
 
 <style lang="scss" module>

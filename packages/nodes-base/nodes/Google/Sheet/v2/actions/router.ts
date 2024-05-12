@@ -1,4 +1,4 @@
-import { type IExecuteFunctions, type IDataObject, type INodeExecutionData } from 'n8n-workflow';
+import { type IExecuteFunctions, type IDataObject, type INodeExecutionData } from 'flowease-workflow';
 import { GoogleSheet } from '../helpers/GoogleSheet';
 import { getSpreadsheetId } from '../helpers/GoogleSheets.utils';
 import type { GoogleSheets, ResourceLocator } from '../helpers/GoogleSheets.types';

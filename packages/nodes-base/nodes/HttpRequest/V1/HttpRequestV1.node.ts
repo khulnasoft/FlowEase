@@ -10,8 +10,8 @@ import type {
 	JsonObject,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError, sleep, removeCircularRefs } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError, NodeOperationError, sleep, removeCircularRefs } from 'flowease-workflow';
 
 import type { IAuthDataSanitizeKeys } from '../GenericFunctions';
 import { replaceNullValues, sanitizeUiMessage } from '../GenericFunctions';
@@ -741,7 +741,7 @@ export class HttpRequestV1 implements INodeType {
 							const contentTypesAllowed = ['raw', 'multipart-form-data'];
 
 							if (!contentTypesAllowed.includes(options.bodyContentType as string)) {
-								// As n8n-workflow.NodeHelpers.getParameterResolveOrder can not be changed
+								// As flowease-workflow.NodeHelpers.getParameterResolveOrder can not be changed
 								// easily to handle parameters in dot.notation simply error for now.
 								throw new NodeOperationError(
 									this.getNode(),

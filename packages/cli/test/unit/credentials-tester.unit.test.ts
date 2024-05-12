@@ -1,7 +1,7 @@
 import { CredentialsTester } from '@/services/credentials-tester.service';
 import mock from 'jest-mock-extended/lib/Mock';
 import type { CredentialTypes } from '@/CredentialTypes';
-import type { ICredentialType, INodeType } from 'n8n-workflow';
+import type { ICredentialType, INodeType } from 'flowease-workflow';
 import type { NodeTypes } from '@/NodeTypes';
 
 describe('CredentialsTester', () => {

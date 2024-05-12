@@ -3,7 +3,7 @@ import isEqual from 'lodash/isEqual';
 import isObject from 'lodash/isObject';
 import merge from 'lodash/merge';
 import reduce from 'lodash/reduce';
-import type { IDataObject, INode, INodeExecutionData } from 'n8n-workflow';
+import type { IDataObject, INode, INodeExecutionData } from 'flowease-workflow';
 
 export const compareItems = (
 	obj: INodeExecutionData,

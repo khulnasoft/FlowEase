@@ -9,8 +9,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { deepCopy, BINARY_ENCODING } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy, BINARY_ENCODING } from 'flowease-workflow';
 
 const unsupportedAlgorithms = [
 	'RSA-MD4',

@@ -7,8 +7,8 @@ import type {
 	IHttpRequestOptions,
 	ILoadOptionsFunctions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 /**
  * Make an authenticated API request to Wise.
@@ -34,7 +34,7 @@ export async function wiseApiRequest(
 
 	const options: IHttpRequestOptions = {
 		headers: {
-			'user-agent': 'n8n',
+			'user-agent': 'flowease',
 			Authorization: `Bearer ${apiToken}`,
 		},
 		method,
@@ -79,7 +79,7 @@ export async function wiseApiRequest(
 		if (!privateKey) {
 			throw new NodeApiError(this.getNode(), {
 				message:
-					'This request requires Strong Customer Authentication (SCA). Please add a key pair to your account and n8n credentials. See https://api-docs.transferwise.com/#strong-customer-authentication-personal-token',
+					'This request requires Strong Customer Authentication (SCA). Please add a key pair to your account and flowease credentials. See https://api-docs.transferwise.com/#strong-customer-authentication-personal-token',
 				headers: response.headers,
 				body: response.body,
 			});

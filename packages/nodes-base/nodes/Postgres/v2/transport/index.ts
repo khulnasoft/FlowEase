@@ -3,7 +3,7 @@ import { createServer } from 'net';
 import { Client } from 'ssh2';
 import type { ConnectConfig } from 'ssh2';
 
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 
 import pgPromise from 'pg-promise';
 import type {

@@ -8,7 +8,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IWebhookResponseData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { clickupApiRequest } from './GenericFunctions';
 

@@ -26,8 +26,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapStores } from 'pinia';
-import type { IBinaryData } from 'n8n-workflow';
-import { jsonParse } from 'n8n-workflow';
+import type { IBinaryData } from 'flowease-workflow';
+import { jsonParse } from 'flowease-workflow';
 import type { PropType } from 'vue';
 import VueJsonPretty from 'vue-json-pretty';
 import { useWorkflowsStore } from '@/stores/workflows.store';

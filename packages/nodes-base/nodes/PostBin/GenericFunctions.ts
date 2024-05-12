@@ -1,10 +1,10 @@
 import type {
 	IExecuteSingleFunctions,
 	IHttpRequestOptions,
-	IN8nHttpFullResponse,
+	IFloweaseHttpFullResponse,
 	INodeExecutionData,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 // Regular expressions used to extract binId from parameter value
 const BIN_ID_REGEX = /\b\d{13}-\d{13}\b/g;
@@ -97,7 +97,7 @@ export async function buildRequestURL(
 export async function transformBinResponse(
 	this: IExecuteSingleFunctions,
 	items: INodeExecutionData[],
-	_response: IN8nHttpFullResponse,
+	_response: IFloweaseHttpFullResponse,
 ): Promise<INodeExecutionData[]> {
 	items.forEach(
 		(item) =>

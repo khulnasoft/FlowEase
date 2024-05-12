@@ -2,10 +2,10 @@
 	<Card :loading="loading" :title="collection.name" :style="{ width }">
 		<template #footer>
 			<span>
-				<n8n-text v-show="showItemCount" size="small" color="text-light">
+				<flowease-text v-show="showItemCount" size="small" color="text-light">
 					{{ collection.workflows.length }}
 					{{ $locale.baseText('templates.workflows') }}
-				</n8n-text>
+				</flowease-text>
 			</span>
 			<NodeList :nodes="collection.nodes" :show-more="false" />
 		</template>

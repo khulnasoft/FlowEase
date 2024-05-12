@@ -10,14 +10,14 @@
 					<span :class="theme === 'success' ? $style.message : $style.dangerMessage">
 						{{ message }}&nbsp;
 					</span>
-					<n8n-link v-if="details && !expanded" :bold="true" size="small" @click="expand">
+					<flowease-link v-if="details && !expanded" :bold="true" size="small" @click="expand">
 						<span :class="$style.moreDetails">More details</span>
-					</n8n-link>
+					</flowease-link>
 				</div>
 			</div>
 
 			<slot v-if="$slots.button" name="button" />
-			<n8n-button
+			<flowease-button
 				v-else-if="buttonLabel"
 				:label="buttonLoading && buttonLoadingLabel ? buttonLoadingLabel : buttonLabel"
 				:title="buttonTitle"

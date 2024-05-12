@@ -11,8 +11,8 @@ import {
 } from 'vue';
 
 import { ensureSyntaxTree } from '@codemirror/language';
-import type { IDataObject } from 'n8n-workflow';
-import { Expression, ExpressionExtensions } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
+import { Expression, ExpressionExtensions } from 'flowease-workflow';
 
 import { EXPRESSION_EDITOR_PARSER_TIMEOUT } from '@/constants';
 import { useNDVStore } from '@/stores/ndv.store';

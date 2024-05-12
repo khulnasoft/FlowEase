@@ -1,8 +1,8 @@
 <template>
 	<div :class="$style.container">
 		<div :class="$style.headingContainer">
-			<n8n-heading size="2xlarge">{{ $locale.baseText('settings.communityNodes') }}</n8n-heading>
-			<n8n-button
+			<flowease-heading size="2xlarge">{{ $locale.baseText('settings.communityNodes') }}</flowease-heading>
+			<flowease-button
 				v-if="
 					!settingsStore.isQueueModeEnabled &&
 					communityNodesStore.getInstalledPackages.length > 0 &&
@@ -14,7 +14,7 @@
 			/>
 		</div>
 		<div v-if="settingsStore.isQueueModeEnabled" :class="$style.actionBoxContainer">
-			<n8n-action-box
+			<flowease-action-box
 				:heading="$locale.baseText('settings.communityNodes.empty.title')"
 				:description="getEmptyStateDescription"
 				:callout-text="actionBoxConfig.calloutText"
@@ -32,7 +32,7 @@
 			v-else-if="communityNodesStore.getInstalledPackages.length === 0"
 			:class="$style.actionBoxContainer"
 		>
-			<n8n-action-box
+			<flowease-action-box
 				:heading="$locale.baseText('settings.communityNodes.empty.title')"
 				:description="getEmptyStateDescription"
 				:button-text="getEmptyStateButtonText"
@@ -60,7 +60,7 @@ import {
 } from '@/constants';
 import CommunityPackageCard from '@/components/CommunityPackageCard.vue';
 import { useToast } from '@/composables/useToast';
-import type { PublicInstalledPackage } from 'n8n-workflow';
+import type { PublicInstalledPackage } from 'flowease-workflow';
 
 import { useCommunityNodesStore } from '@/stores/communityNodes.store';
 import { useUIStore } from '@/stores/ui.store';

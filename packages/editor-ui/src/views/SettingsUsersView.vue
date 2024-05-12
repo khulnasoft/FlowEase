@@ -1,14 +1,14 @@
 <template>
 	<div :class="$style.container">
 		<div>
-			<n8n-heading size="2xlarge">{{ $locale.baseText('settings.users') }}</n8n-heading>
+			<flowease-heading size="2xlarge">{{ $locale.baseText('settings.users') }}</flowease-heading>
 			<div v-if="!showUMSetupWarning" :class="$style.buttonContainer">
-				<n8n-tooltip :disabled="!ssoStore.isSamlLoginEnabled">
+				<flowease-tooltip :disabled="!ssoStore.isSamlLoginEnabled">
 					<template #content>
 						<span> {{ $locale.baseText('settings.users.invite.tooltip') }} </span>
 					</template>
 					<div>
-						<n8n-button
+						<flowease-button
 							:disabled="ssoStore.isSamlLoginEnabled || !settingsStore.isBelowUserQuota"
 							:label="$locale.baseText('settings.users.invite')"
 							size="large"
@@ -16,11 +16,11 @@
 							@click="onInvite"
 						/>
 					</div>
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</div>
 		</div>
 		<div v-if="!settingsStore.isBelowUserQuota" :class="$style.setupInfoContainer">
-			<n8n-action-box
+			<flowease-action-box
 				:heading="
 					$locale.baseText(uiStore.contextBasedTranslationKeys.users.settings.unavailable.title)
 				"
@@ -35,22 +35,22 @@
 				@click:button="goToUpgrade"
 			/>
 		</div>
-		<n8n-notice v-if="!isAdvancedPermissionsEnabled">
+		<flowease-notice v-if="!isAdvancedPermissionsEnabled">
 			<i18n-t keypath="settings.users.advancedPermissions.warning">
 				<template #link>
-					<n8n-link size="small" @click="goToUpgradeAdvancedPermissions">
+					<flowease-link size="small" @click="goToUpgradeAdvancedPermissions">
 						{{ $locale.baseText('settings.users.advancedPermissions.warning.link') }}
-					</n8n-link>
+					</flowease-link>
 				</template>
 			</i18n-t>
-		</n8n-notice>
+		</flowease-notice>
 		<!-- If there's more than 1 user it means the account quota was more than 1 in the past. So we need to allow instance owner to be able to delete users and transfer workflows.
 		-->
 		<div
 			v-if="settingsStore.isBelowUserQuota || usersStore.allUsers.length > 1"
 			:class="$style.usersContainer"
 		>
-			<n8n-users-list
+			<flowease-users-list
 				:actions="usersListActions"
 				:users="usersStore.allUsers"
 				:current-user-id="usersStore.currentUserId"
@@ -63,23 +63,23 @@
 				@disallow-s-s-o-manual-login="onDisallowSSOManualLogin"
 			>
 				<template #actions="{ user }">
-					<n8n-select
+					<flowease-select
 						v-if="user.id !== usersStore.currentUserId"
 						:model-value="user?.role || 'global:member'"
 						:disabled="!canUpdateRole"
 						data-test-id="user-role-select"
 						@update:model-value="onRoleChange(user, $event)"
 					>
-						<n8n-option
+						<flowease-option
 							v-for="role in userRoles"
 							:key="role.value"
 							:value="role.value"
 							:label="role.label"
 							:disabled="role.disabled"
 						/>
-					</n8n-select>
+					</flowease-select>
 				</template>
-			</n8n-users-list>
+			</flowease-users-list>
 		</div>
 	</div>
 </template>

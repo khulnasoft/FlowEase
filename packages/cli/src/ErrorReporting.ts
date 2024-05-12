@@ -1,6 +1,6 @@
 import { createHash } from 'crypto';
 import config from '@/config';
-import { ErrorReporterProxy, ApplicationError } from 'n8n-workflow';
+import { ErrorReporterProxy, ApplicationError } from 'flowease-workflow';
 
 let initialized = false;
 
@@ -21,7 +21,7 @@ export const initErrorHandling = async () => {
 	Error.stackTraceLimit = 50;
 
 	const {
-		N8N_VERSION: release,
+		FLOWEASE_VERSION: release,
 		ENVIRONMENT: environment,
 		DEPLOYMENT_NAME: serverName,
 	} = process.env;

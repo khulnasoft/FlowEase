@@ -5,8 +5,8 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { BINARY_ENCODING, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { BINARY_ENCODING, NodeOperationError } from 'flowease-workflow';
 
 import type {
 	JSON2SheetOpts,

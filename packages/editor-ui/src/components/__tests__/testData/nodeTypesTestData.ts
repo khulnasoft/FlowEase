@@ -1,4 +1,4 @@
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
 
 export const twitterV2: INodeTypeDescription = {
 	displayName: 'X (Formerly Twitter)',
@@ -62,7 +62,7 @@ export const twitterV2: INodeTypeDescription = {
 					name: 'username',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. n8n',
+					placeholder: 'e.g. flowease',
 					url: '',
 				},
 				{
@@ -162,7 +162,7 @@ export const twitterV2: INodeTypeDescription = {
 					name: 'username',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. n8n',
+					placeholder: 'e.g. flowease',
 					url: '',
 				},
 				{
@@ -261,7 +261,7 @@ export const twitterV2: INodeTypeDescription = {
 							name: 'url',
 							type: 'string',
 							validation: [],
-							placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+							placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 							url: '',
 						},
 					],
@@ -286,7 +286,7 @@ export const twitterV2: INodeTypeDescription = {
 							name: 'url',
 							type: 'string',
 							validation: [],
-							placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+							placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 							url: '',
 						},
 					],
@@ -329,7 +329,7 @@ export const twitterV2: INodeTypeDescription = {
 					name: 'url',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+					placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 					url: '',
 				},
 			],
@@ -356,7 +356,7 @@ export const twitterV2: INodeTypeDescription = {
 					name: 'url',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+					placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 					url: '',
 				},
 			],
@@ -479,7 +479,7 @@ export const twitterV2: INodeTypeDescription = {
 					name: 'url',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. https://twitter.com/n8n_io/status/1187836157394112513',
+					placeholder: 'e.g. https://twitter.com/flowease_io/status/1187836157394112513',
 					url: '',
 				},
 			],
@@ -518,7 +518,7 @@ export const twitterV2: INodeTypeDescription = {
 					name: 'username',
 					type: 'string',
 					validation: [],
-					placeholder: 'e.g. n8n',
+					placeholder: 'e.g. flowease',
 					url: '',
 				},
 				{

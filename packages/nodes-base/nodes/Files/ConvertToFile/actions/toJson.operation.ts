@@ -1,5 +1,5 @@
-import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData, INodeProperties } from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { generatePairedItemData, updateDisplayOptions } from '@utils/utilities';
 import { createBinaryFromJson } from '@utils/binary';

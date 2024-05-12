@@ -27,7 +27,7 @@ const visible = computed(() =>
 </script>
 
 <template>
-	<n8n-tooltip placement="bottom-end" :visible="visible">
+	<flowease-tooltip placement="bottom-end" :visible="visible">
 		<template #content>
 			<div v-if="props.tooltipContentsVisibility.binaryDataTooltipContent">
 				{{ locale.baseText('ndv.pinData.pin.binary') }}
@@ -37,16 +37,16 @@ const visible = computed(() =>
 			</div>
 			<div v-else>
 				<strong>{{ locale.baseText('ndv.pinData.pin.title') }}</strong>
-				<n8n-text size="small" tag="p">
+				<flowease-text size="small" tag="p">
 					{{ locale.baseText('ndv.pinData.pin.description') }}
 
-					<n8n-link :to="props.dataPinningDocsUrl" size="small">
+					<flowease-link :to="props.dataPinningDocsUrl" size="small">
 						{{ locale.baseText('ndv.pinData.pin.link') }}
-					</n8n-link>
-				</n8n-text>
+					</flowease-link>
+				</flowease-text>
 			</div>
 		</template>
-		<n8n-icon-button
+		<flowease-icon-button
 			:class="$style.pinDataButton"
 			type="tertiary"
 			:active="props.pinnedData.hasData.value"
@@ -55,7 +55,7 @@ const visible = computed(() =>
 			data-test-id="ndv-pin-data"
 			@click="emit('togglePinData')"
 		/>
-	</n8n-tooltip>
+	</flowease-tooltip>
 </template>
 
 <style lang="scss" module>

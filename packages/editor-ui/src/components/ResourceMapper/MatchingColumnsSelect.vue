@@ -4,7 +4,7 @@ import type {
 	INodePropertyTypeOptions,
 	ResourceMapperField,
 	ResourceMapperFields,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { computed, reactive, watch } from 'vue';
 import { i18n as locale } from '@/plugins/i18n';
 import { useNodeSpecificationValues } from '@/composables/useNodeSpecificationValues';
@@ -167,7 +167,7 @@ defineExpose({
 
 <template>
 	<div class="mt-2xs" data-test-id="matching-column-select">
-		<n8n-input-label
+		<flowease-input-label
 			v-if="availableMatchingFields.length > 0"
 			:label="fieldLabel"
 			:tooltip-text="fieldTooltip"
@@ -185,7 +185,7 @@ defineExpose({
 					@update:model-value="onParameterActionSelected"
 				/>
 			</template>
-			<n8n-select
+			<flowease-select
 				:multiple="resourceMapperTypeOptions?.multiKeyMatch === true"
 				:model-value="state.selected"
 				:size="props.inputSize"
@@ -193,25 +193,25 @@ defineExpose({
 				:teleported="teleported"
 				@update:model-value="onSelectionChange"
 			>
-				<n8n-option
+				<flowease-option
 					v-for="field in availableMatchingFields"
 					:key="field.id"
 					:value="field.id"
 					:data-test-id="`matching-column-option-${field.id}`"
 				>
 					{{ field.displayName }}
-				</n8n-option>
-			</n8n-select>
-			<n8n-text size="small">
+				</flowease-option>
+			</flowease-select>
+			<flowease-text size="small">
 				{{ fieldDescription }}
-			</n8n-text>
-		</n8n-input-label>
-		<n8n-notice v-else>
+			</flowease-text>
+		</flowease-input-label>
+		<flowease-notice v-else>
 			{{
 				locale.baseText('resourceMapper.columnsToMatchOn.noFieldsFound', {
 					interpolate: { fieldWord: singularFieldWord, serviceName: props.serviceName },
 				})
 			}}
-		</n8n-notice>
+		</flowease-notice>
 	</div>
 </template>

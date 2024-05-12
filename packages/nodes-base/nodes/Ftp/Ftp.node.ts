@@ -5,7 +5,7 @@ import { pipeline } from 'stream/promises';
 import { file as tmpFile } from 'tmp-promise';
 import ftpClient from 'promise-ftp';
 import sftpClient from 'ssh2-sftp-client';
-import { BINARY_ENCODING, NodeApiError } from 'n8n-workflow';
+import { BINARY_ENCODING, NodeApiError } from 'flowease-workflow';
 import type {
 	ICredentialDataDecryptedObject,
 	ICredentialsDecrypted,
@@ -17,7 +17,7 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { formatPrivateKey, generatePairedItemData } from '@utils/utilities';
 
 interface ReturnFtpItem {
@@ -630,7 +630,7 @@ export class Ftp implements INodeType {
 
 						if (operation === 'download') {
 							const path = this.getNodeParameter('path', i) as string;
-							const binaryFile = await tmpFile({ prefix: 'n8n-sftp-' });
+							const binaryFile = await tmpFile({ prefix: 'flowease-sftp-' });
 							try {
 								await sftp!.get(path, createWriteStream(binaryFile.path));
 
@@ -726,7 +726,7 @@ export class Ftp implements INodeType {
 
 						if (operation === 'download') {
 							const path = this.getNodeParameter('path', i) as string;
-							const binaryFile = await tmpFile({ prefix: 'n8n-sftp-' });
+							const binaryFile = await tmpFile({ prefix: 'flowease-sftp-' });
 							try {
 								const stream = await ftp!.get(path);
 								await pipeline(stream, createWriteStream(binaryFile.path));

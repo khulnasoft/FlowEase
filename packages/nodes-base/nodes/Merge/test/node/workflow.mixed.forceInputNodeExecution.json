@@ -71,8 +71,8 @@
 				"operation": "getAllPeople"
 			},
 			"id": "e8e83cef-c782-490c-9a0e-206435e3b71c",
-			"name": "Customer Datastore (n8n training)",
-			"type": "flowease-nodes-base.n8nTrainingCustomerDatastore",
+			"name": "Customer Datastore (flowease training)",
+			"type": "flowease-nodes-base.floweaseTrainingCustomerDatastore",
 			"typeVersion": 1,
 			"position": [-100, 1640]
 		},
@@ -2118,7 +2118,7 @@
 			"main": [
 				[
 					{
-						"node": "Customer Datastore (n8n training)",
+						"node": "Customer Datastore (flowease training)",
 						"type": "main",
 						"index": 0
 					}
@@ -2143,7 +2143,7 @@
 				]
 			]
 		},
-		"Customer Datastore (n8n training)": {
+		"Customer Datastore (flowease training)": {
 			"main": [
 				[
 					{

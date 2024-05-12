@@ -1,4 +1,4 @@
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 export const prepareFieldsArray = (fields: string | string[], fieldName = 'Fields') => {
 	if (typeof fields === 'string') {

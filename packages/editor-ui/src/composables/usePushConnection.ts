@@ -20,8 +20,8 @@ import type {
 	IExecuteContextData,
 	NodeOperationError,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { TelemetryHelpers } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { TelemetryHelpers } from 'flowease-workflow';
 
 import { WORKFLOW_SETTINGS_MODAL_KEY } from '@/constants';
 import { getTriggerNodeServiceName } from '@/utils/nodeTypesUtils';

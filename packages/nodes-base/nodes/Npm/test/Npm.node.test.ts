@@ -9,12 +9,12 @@ describe('Test npm Node', () => {
 		const { registryUrl } = FAKE_CREDENTIALS_DATA.npmApi;
 		const mock = nock(registryUrl); //.matchHeader('Authorization', `Bearer ${accessToken}`);
 
-		mock.get('/-/package/n8n/dist-tags').reply(200, {
+		mock.get('/-/package/flowease/dist-tags').reply(200, {
 			latest: '0.225.2',
 			next: '0.226.2',
 		});
 
-		mock.get('/n8n').reply(200, {
+		mock.get('/flowease').reply(200, {
 			time: {
 				'0.225.2': '2023-04-25T09:45:36.407Z',
 				'0.226.2': '2023-05-03T09:41:30.844Z',
@@ -22,8 +22,8 @@ describe('Test npm Node', () => {
 			},
 		});
 
-		mock.get('/n8n/latest').reply(200, {
-			name: 'n8n',
+		mock.get('/flowease/latest').reply(200, {
+			name: 'flowease',
 			version: '0.225.2',
 			rest: 'of the properties',
 		});

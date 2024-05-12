@@ -5,8 +5,8 @@ import type {
 	ILoadOptionsFunctions,
 	INode,
 	IPollFunctions,
-} from 'n8n-workflow';
-import { ApplicationError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ApplicationError, NodeOperationError } from 'flowease-workflow';
 import { utils as xlsxUtils } from 'xlsx';
 import { apiRequest } from '../transport';
 import type {

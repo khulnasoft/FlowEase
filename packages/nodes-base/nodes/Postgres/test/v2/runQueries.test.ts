@@ -1,4 +1,4 @@
-import type { IDataObject, IExecuteFunctions, INode } from 'n8n-workflow';
+import type { IDataObject, IExecuteFunctions, INode } from 'flowease-workflow';
 
 import pgPromise from 'pg-promise';
 import { mock } from 'jest-mock-extended';

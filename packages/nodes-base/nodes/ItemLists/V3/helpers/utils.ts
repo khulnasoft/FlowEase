@@ -1,4 +1,4 @@
-import { NodeVM } from '@n8n/vm2';
+import { NodeVM } from '@flowease/vm2';
 import type {
 	IDataObject,
 	IExecuteFunctions,
@@ -6,8 +6,8 @@ import type {
 	INode,
 	INodeExecutionData,
 	GenericValue,
-} from 'n8n-workflow';
-import { ApplicationError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ApplicationError, NodeOperationError } from 'flowease-workflow';
 
 import get from 'lodash/get';
 import isEqual from 'lodash/isEqual';

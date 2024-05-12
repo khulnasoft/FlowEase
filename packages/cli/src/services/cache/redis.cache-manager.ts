@@ -5,7 +5,7 @@
 import Redis from 'ioredis';
 import type { Cluster, ClusterNode, ClusterOptions, RedisOptions } from 'ioredis';
 import type { Cache, Store, Config } from 'cache-manager';
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 
 export class NoCacheableError implements Error {
 	name = 'NoCacheableError';

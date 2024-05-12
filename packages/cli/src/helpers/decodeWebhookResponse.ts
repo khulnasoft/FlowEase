@@ -1,4 +1,4 @@
-import { BINARY_ENCODING, type IDataObject, type IExecuteResponsePromiseData } from 'n8n-workflow';
+import { BINARY_ENCODING, type IDataObject, type IExecuteResponsePromiseData } from 'flowease-workflow';
 
 export function decodeWebhookResponse(
 	response: IExecuteResponsePromiseData,
@@ -6,10 +6,10 @@ export function decodeWebhookResponse(
 	if (
 		typeof response === 'object' &&
 		typeof response.body === 'object' &&
-		(response.body as IDataObject)['__@N8nEncodedBuffer@__']
+		(response.body as IDataObject)['__@FloweaseEncodedBuffer@__']
 	) {
 		response.body = Buffer.from(
-			(response.body as IDataObject)['__@N8nEncodedBuffer@__'] as string,
+			(response.body as IDataObject)['__@FloweaseEncodedBuffer@__'] as string,
 			BINARY_ENCODING,
 		);
 	}

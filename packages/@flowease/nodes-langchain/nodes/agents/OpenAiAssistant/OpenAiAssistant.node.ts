@@ -1,13 +1,13 @@
 import { AgentExecutor } from 'langchain/agents';
 import { OpenAI as OpenAIClient } from 'openai';
 import { OpenAIAssistantRunnable } from 'langchain/experimental/openai_assistant';
-import { NodeConnectionType, NodeOperationError } from 'n8n-workflow';
+import { NodeConnectionType, NodeOperationError } from 'flowease-workflow';
 import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { OpenAIToolType } from 'langchain/dist/experimental/openai_assistant/schema';
 import { getConnectedTools } from '../../../utils/helpers';
 import { getTracingConfig } from '../../../utils/tracing';
@@ -36,7 +36,7 @@ export class OpenAiAssistant implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.openaiassistant/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.openaiassistant/',
 					},
 				],
 			},
@@ -196,7 +196,7 @@ export class OpenAiAssistant implements INodeType {
 										properties: {
 											name: '={{$responseItem.name}}',
 											value: '={{$responseItem.id}}',
-											// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+											// eslint-disable-next-line flowease-local-rules/no-interpolation-in-regular-string
 											description: '={{$responseItem.model}}',
 										},
 									},

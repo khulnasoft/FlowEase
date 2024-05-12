@@ -10,7 +10,7 @@ import type {
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
 	IPairedItemData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type {
 	ClashResolveOptions,

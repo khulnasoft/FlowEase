@@ -247,9 +247,9 @@ onBeforeUnmount(() => {
 		@click:add="addTemporaryVariable"
 	>
 		<template #add-button>
-			<n8n-tooltip placement="top" :disabled="canCreateVariables">
+			<flowease-tooltip placement="top" :disabled="canCreateVariables">
 				<div>
-					<n8n-button
+					<flowease-button
 						size="large"
 						block
 						:disabled="!canCreateVariables"
@@ -257,7 +257,7 @@ onBeforeUnmount(() => {
 						@click="addTemporaryVariable"
 					>
 						{{ $locale.baseText(`variables.add`) }}
-					</n8n-button>
+					</flowease-button>
 				</div>
 				<template #content>
 					<span v-if="!isFeatureEnabled">{{
@@ -265,10 +265,10 @@ onBeforeUnmount(() => {
 					}}</span>
 					<span v-else>{{ i18n.baseText('variables.add.onlyOwnerCanCreate') }}</span>
 				</template>
-			</n8n-tooltip>
+			</flowease-tooltip>
 		</template>
 		<template v-if="!isFeatureEnabled" #preamble>
-			<n8n-action-box
+			<flowease-action-box
 				class="mb-m"
 				data-test-id="unavailable-resources-list"
 				emoji="👋"
@@ -282,7 +282,7 @@ onBeforeUnmount(() => {
 			/>
 		</template>
 		<template v-if="!isFeatureEnabled || (isFeatureEnabled && !canCreateVariables)" #empty>
-			<n8n-action-box
+			<flowease-action-box
 				v-if="!isFeatureEnabled"
 				data-test-id="unavailable-resources-list"
 				emoji="👋"
@@ -294,7 +294,7 @@ onBeforeUnmount(() => {
 				button-type="secondary"
 				@click:button="goToUpgrade"
 			/>
-			<n8n-action-box
+			<flowease-action-box
 				v-else-if="!canCreateVariables"
 				data-test-id="cannot-create-variables"
 				emoji="👋"

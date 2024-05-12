@@ -1,5 +1,5 @@
-import { ApplicationError } from 'n8n-workflow';
-import type { IExecuteFunctions, IDataObject, INodeExecutionData, JsonObject } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
+import type { IExecuteFunctions, IDataObject, INodeExecutionData, JsonObject } from 'flowease-workflow';
 import type pgPromise from 'pg-promise';
 import type pg from 'pg-promise/typescript/pg-subset';
 import { getResolvables } from '@utils/utilities';
@@ -536,7 +536,7 @@ export async function pgUpdate(
 	} else {
 		const where =
 			' WHERE ' +
-			// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+			// eslint-disable-next-line flowease-local-rules/no-interpolation-in-regular-string
 			updateKeys.map((entry) => pgp.as.name(entry.name) + ' = ${' + entry.prop + '}').join(' AND ');
 		if (mode === 'transaction') {
 			return await db.tx(async (t) => {
@@ -664,7 +664,7 @@ export async function pgUpdateV2(
 	} else {
 		const where =
 			' WHERE ' +
-			// eslint-disable-next-line n8n-local-rules/no-interpolation-in-regular-string
+			// eslint-disable-next-line flowease-local-rules/no-interpolation-in-regular-string
 			updateKeys.map((entry) => pgp.as.name(entry.name) + ' = ${' + entry.prop + '}').join(' AND ');
 		if (mode === 'transaction') {
 			return await db.tx(async (t) => {

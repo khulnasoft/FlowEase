@@ -15,14 +15,14 @@
 		</template>
 		<template #filters="{ setKeyValue }">
 			<div class="mb-s">
-				<n8n-input-label
+				<flowease-input-label
 					:label="$locale.baseText('credentials.filters.type')"
 					:bold="false"
 					size="small"
 					color="text-base"
 					class="mb-3xs"
 				/>
-				<n8n-select
+				<flowease-select
 					ref="typeInput"
 					:model-value="filters.type"
 					size="medium"
@@ -31,13 +31,13 @@
 					:class="$style['type-input']"
 					@update:model-value="setKeyValue('type', $event)"
 				>
-					<n8n-option
+					<flowease-option
 						v-for="credentialType in allCredentialTypes"
 						:key="credentialType.name"
 						:value="credentialType.name"
 						:label="credentialType.displayName"
 					/>
-				</n8n-select>
+				</flowease-select>
 			</div>
 		</template>
 	</ResourcesListLayout>
@@ -49,7 +49,7 @@ import { defineComponent } from 'vue';
 
 import ResourcesListLayout from '@/components/layouts/ResourcesListLayout.vue';
 import CredentialCard from '@/components/CredentialCard.vue';
-import type { ICredentialType } from 'n8n-workflow';
+import type { ICredentialType } from 'flowease-workflow';
 import { CREDENTIAL_SELECT_MODAL_KEY, EnterpriseEditionFeature } from '@/constants';
 import { mapStores } from 'pinia';
 import { useUIStore } from '@/stores/ui.store';

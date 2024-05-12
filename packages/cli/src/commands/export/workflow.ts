@@ -4,16 +4,16 @@ import path from 'path';
 import { BaseCommand } from '../BaseCommand';
 import { WorkflowRepository } from '@db/repositories/workflow.repository';
 import Container from 'typedi';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 export class ExportWorkflowsCommand extends BaseCommand {
 	static description = 'Export workflows';
 
 	static examples = [
-		'$ n8n export:workflow --all',
-		'$ n8n export:workflow --id=5 --output=file.json',
-		'$ n8n export:workflow --all --output=backups/latest/',
-		'$ n8n export:workflow --backup --output=backups/latest/',
+		'$ flowease export:workflow --all',
+		'$ flowease export:workflow --id=5 --output=file.json',
+		'$ flowease export:workflow --all --output=backups/latest/',
+		'$ flowease export:workflow --backup --output=backups/latest/',
 	];
 
 	static flags = {

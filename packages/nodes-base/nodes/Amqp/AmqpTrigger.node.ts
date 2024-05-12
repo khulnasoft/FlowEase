@@ -9,8 +9,8 @@ import type {
 	ITriggerResponse,
 	IDeferredPromise,
 	IRun,
-} from 'n8n-workflow';
-import { deepCopy, jsonParse, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy, jsonParse, NodeOperationError } from 'flowease-workflow';
 
 export class AmqpTrigger implements INodeType {
 	description: INodeTypeDescription = {
@@ -48,7 +48,7 @@ export class AmqpTrigger implements INodeType {
 				name: 'clientname',
 				type: 'string',
 				default: '',
-				placeholder: 'e.g. n8n',
+				placeholder: 'e.g. flowease',
 				description: 'Leave empty for non-durable topic subscriptions or queues',
 				hint: 'for durable/persistent topic subscriptions',
 			},
@@ -256,7 +256,7 @@ export class AmqpTrigger implements INodeType {
 		};
 		connection.open_receiver(clientOptions);
 
-		// The "closeFunction" function gets called by n8n whenever
+		// The "closeFunction" function gets called by flowease whenever
 		// the workflow gets deactivated and can so clean up.
 		async function closeFunction() {
 			container.removeAllListeners('receiver_open');
@@ -264,7 +264,7 @@ export class AmqpTrigger implements INodeType {
 			connection.close();
 		}
 
-		// The "manualTriggerFunction" function gets called by n8n
+		// The "manualTriggerFunction" function gets called by flowease
 		// when a user is in the workflow editor and starts the
 		// workflow manually.
 		// for AMQP it doesn't make much sense to wait here but

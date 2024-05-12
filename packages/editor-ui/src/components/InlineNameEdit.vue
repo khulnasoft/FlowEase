@@ -15,7 +15,7 @@
 				<i><font-awesome-icon icon="pen" /></i>
 			</div>
 			<div v-else :class="$style.nameInput">
-				<n8n-input
+				<flowease-input
 					ref="nameInput"
 					:model-value="modelValue"
 					size="xlarge"

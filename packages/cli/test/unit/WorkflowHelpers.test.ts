@@ -1,4 +1,4 @@
-import { type Workflow } from 'n8n-workflow';
+import { type Workflow } from 'flowease-workflow';
 import { getExecutionStartNode } from '@/WorkflowHelpers';
 import type { IWorkflowExecutionDataProcess } from '@/Interfaces';
 

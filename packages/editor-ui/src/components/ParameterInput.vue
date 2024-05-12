@@ -140,7 +140,7 @@
 					@update:model-value="valueChangedDebounced"
 				>
 					<template #suffix>
-						<n8n-icon
+						<flowease-icon
 							data-test-id="code-editor-fullscreen-button"
 							icon="external-link-alt"
 							size="xsmall"
@@ -162,7 +162,7 @@
 					@update:model-value="valueChangedDebounced"
 				>
 					<template #suffix>
-						<n8n-icon
+						<flowease-icon
 							data-test-id="code-editor-fullscreen-button"
 							icon="external-link-alt"
 							size="xsmall"
@@ -183,7 +183,7 @@
 					@update:model-value="valueChangedDebounced"
 				>
 					<template #suffix>
-						<n8n-icon
+						<flowease-icon
 							data-test-id="code-editor-fullscreen-button"
 							icon="external-link-alt"
 							size="xsmall"
@@ -203,7 +203,7 @@
 					@update:model-value="valueChangedDebounced"
 				>
 					<template #suffix>
-						<n8n-icon
+						<flowease-icon
 							data-test-id="code-editor-fullscreen-button"
 							icon="external-link-alt"
 							size="xsmall"
@@ -223,7 +223,7 @@
 					@update:model-value="valueChangedDebounced"
 				>
 					<template #suffix>
-						<n8n-icon
+						<flowease-icon
 							data-test-id="code-editor-fullscreen-button"
 							icon="external-link-alt"
 							size="xsmall"
@@ -245,7 +245,7 @@
 					/>
 				</div>
 
-				<N8nInput
+				<FloweaseInput
 					v-else
 					ref="inputField"
 					v-model="tempValue"
@@ -262,7 +262,7 @@
 					@blur="onBlur"
 				>
 					<template #suffix>
-						<n8n-icon
+						<flowease-icon
 							v-if="!isReadOnly && !isSecretParameter"
 							icon="external-link-alt"
 							size="xsmall"
@@ -276,7 +276,7 @@
 							@focus="setFocus"
 						/>
 					</template>
-				</N8nInput>
+				</FloweaseInput>
 			</div>
 
 			<div v-else-if="parameter.type === 'color'" ref="inputField" class="color-input">
@@ -291,7 +291,7 @@
 					@blur="onBlur"
 					@update:model-value="valueChanged"
 				/>
-				<N8nInput
+				<FloweaseInput
 					v-model="tempValue"
 					:size="inputSize"
 					type="text"
@@ -326,7 +326,7 @@
 				@keydown.stop
 			/>
 
-			<N8nInputNumber
+			<FloweaseInputNumber
 				v-else-if="parameter.type === 'number'"
 				ref="inputField"
 				:size="inputSize"
@@ -365,7 +365,7 @@
 				</template>
 			</CredentialsSelect>
 
-			<N8nSelect
+			<FloweaseSelect
 				v-else-if="parameter.type === 'options'"
 				ref="inputField"
 				:size="inputSize"
@@ -382,7 +382,7 @@
 				@focus="setFocus"
 				@blur="onBlur"
 			>
-				<n8n-option
+				<flowease-option
 					v-for="option in parameterOptions"
 					:key="option.value"
 					:value="option.value"
@@ -401,10 +401,10 @@
 							v-html="getOptionsOptionDescription(option)"
 						></div>
 					</div>
-				</n8n-option>
-			</N8nSelect>
+				</flowease-option>
+			</FloweaseSelect>
 
-			<N8nSelect
+			<FloweaseSelect
 				v-else-if="parameter.type === 'multiOptions'"
 				ref="inputField"
 				:size="inputSize"
@@ -420,7 +420,7 @@
 				@focus="setFocus"
 				@blur="onBlur"
 			>
-				<n8n-option
+				<flowease-option
 					v-for="option in parameterOptions"
 					:key="option.value"
 					:value="option.value"
@@ -434,11 +434,11 @@
 							v-html="getOptionsOptionDescription(option)"
 						></div>
 					</div>
-				</n8n-option>
-			</N8nSelect>
+				</flowease-option>
+			</FloweaseSelect>
 
 			<!-- temporary state of booleans while data is mapped -->
-			<N8nInput
+			<FloweaseInput
 				v-else-if="parameter.type === 'boolean' && droppable"
 				:size="inputSize"
 				:model-value="JSON.stringify(displayValue)"
@@ -486,8 +486,8 @@ import type {
 	INodePropertyOptions,
 	IParameterLabel,
 	NodeParameterValueType,
-} from 'n8n-workflow';
-import { CREDENTIAL_EMPTY_VALUE, NodeHelpers } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { CREDENTIAL_EMPTY_VALUE, NodeHelpers } from 'flowease-workflow';
 
 import CodeNodeEditor from '@/components/CodeNodeEditor/CodeNodeEditor.vue';
 import CredentialsSelect from '@/components/CredentialsSelect.vue';
@@ -519,7 +519,7 @@ import { useNodeTypesStore } from '@/stores/nodeTypes.store';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
 import { isCredentialOnlyNodeType } from '@/utils/credentialOnlyNodes';
-import { N8nInput, N8nSelect } from 'flowease-design-system';
+import { FloweaseInput, FloweaseSelect } from 'flowease-design-system';
 import type { EventBus } from 'flowease-design-system/utils';
 import { createEventBus } from 'flowease-design-system/utils';
 import { useRouter } from 'vue-router';
@@ -588,7 +588,7 @@ const nodeTypesStore = useNodeTypesStore();
 
 // ESLint: false positive
 // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents, @typescript-eslint/no-duplicate-type-constituents
-const inputField = ref<InstanceType<typeof N8nInput | typeof N8nSelect> | HTMLElement>();
+const inputField = ref<InstanceType<typeof FloweaseInput | typeof FloweaseSelect> | HTMLElement>();
 const wrapper = ref<HTMLDivElement>();
 
 const nodeName = ref('');
@@ -1340,7 +1340,7 @@ onMounted(() => {
 
 	void externalHooks.run('parameterInput.mount', {
 		parameter: props.parameter,
-		inputFieldRef: inputField.value as InstanceType<typeof N8nInput>,
+		inputFieldRef: inputField.value as InstanceType<typeof FloweaseInput>,
 	});
 });
 

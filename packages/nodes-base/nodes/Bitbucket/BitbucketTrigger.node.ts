@@ -11,7 +11,7 @@ import type {
 	INodeTypeDescription,
 	IWebhookResponseData,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { bitbucketApiRequest, bitbucketApiRequestAllItems } from './GenericFunctions';
 
@@ -287,7 +287,7 @@ export class BitbucketTrigger implements INodeType {
 					endpoint = `/repositories/${workspace}/${repository}/hooks`;
 				}
 				const body: IDataObject = {
-					description: 'n8n webhook',
+					description: 'flowease webhook',
 					url: webhookUrl,
 					active: true,
 					events,

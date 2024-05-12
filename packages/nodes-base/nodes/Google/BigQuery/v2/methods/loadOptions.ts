@@ -1,4 +1,4 @@
-import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'n8n-workflow';
+import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'flowease-workflow';
 import { googleApiRequest } from '../transport';
 
 export async function getDatasets(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {

@@ -1,4 +1,4 @@
-import type { INodeTypeData } from 'n8n-workflow';
+import type { INodeTypeData } from 'flowease-workflow';
 
 /**
  * Ensure all pending promises settle. The promise's `resolve` is placed in

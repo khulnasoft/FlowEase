@@ -5,7 +5,7 @@ import type {
 	IWorkflowDb,
 	NewWorkflowResponse,
 } from '@/Interface';
-import type { ExecutionFilters, ExecutionOptions, IDataObject } from 'n8n-workflow';
+import type { ExecutionFilters, ExecutionOptions, IDataObject } from 'flowease-workflow';
 import { makeRestApiRequest } from '@/utils/apiUtils';
 
 export async function getNewWorkflow(context: IRestApiContext, name?: string) {

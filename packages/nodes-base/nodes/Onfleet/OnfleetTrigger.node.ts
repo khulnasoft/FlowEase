@@ -6,8 +6,8 @@ import type {
 	INodeTypeDescription,
 	IWebhookResponseData,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError, NodeOperationError } from 'flowease-workflow';
 
 import { eventDisplay, eventNameField } from './descriptions/OnfleetWebhookDescription';
 
@@ -81,14 +81,14 @@ export class OnfleetTrigger implements INodeType {
 				if (webhookUrl.includes('//localhost')) {
 					throw new NodeOperationError(
 						this.getNode(),
-						'The Webhook can not work on "localhost". Please, either setup n8n on a custom domain or start with "--tunnel"!',
+						'The Webhook can not work on "localhost". Please, either setup flowease on a custom domain or start with "--tunnel"!',
 					);
 				}
 				// Webhook name according to the field
-				let newWebhookName = `n8n-webhook:${webhookUrl}`;
+				let newWebhookName = `flowease-webhook:${webhookUrl}`;
 
 				if (name) {
-					newWebhookName = `n8n-webhook:${name}`;
+					newWebhookName = `flowease-webhook:${name}`;
 				}
 
 				const path = '/webhooks';

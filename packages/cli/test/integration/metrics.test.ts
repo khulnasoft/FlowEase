@@ -3,7 +3,7 @@ import { parse as semverParse } from 'semver';
 import request from 'supertest';
 
 import config from '@/config';
-import { N8N_VERSION } from '@/constants';
+import { FLOWEASE_VERSION } from '@/constants';
 import { MetricsService } from '@/services/metrics.service';
 import { ExecutionDataRecoveryService } from '@/eventbus/executionDataRecovery.service';
 
@@ -14,7 +14,7 @@ mockInstance(ExecutionDataRecoveryService);
 jest.unmock('@/eventbus/MessageEventBus/MessageEventBus');
 config.set('endpoints.metrics.enable', true);
 config.set('endpoints.metrics.includeDefaultMetrics', false);
-config.set('endpoints.metrics.prefix', 'n8n_test_');
+config.set('endpoints.metrics.prefix', 'flowease_test_');
 const testServer = setupTestServer({ endpointGroups: ['metrics'] });
 
 let testAgent = request.agent(testServer.app);
@@ -29,14 +29,14 @@ async function getMetricsResponseAsLines() {
 }
 
 describe('Metrics', () => {
-	it('should return n8n version', async () => {
-		const n8nVersion = semverParse(N8N_VERSION || '0.0.0');
-		expect(n8nVersion).toBeTruthy();
+	it('should return flowease version', async () => {
+		const floweaseVersion = semverParse(FLOWEASE_VERSION || '0.0.0');
+		expect(floweaseVersion).toBeTruthy();
 		const lines = await getMetricsResponseAsLines();
 		expect(lines).toContain(
-			`n8n_test_version_info{version="v${n8nVersion!.version}",major="${
-				n8nVersion!.major
-			}",minor="${n8nVersion!.minor}",patch="${n8nVersion!.patch}"} 1`,
+			`flowease_test_version_info{version="v${floweaseVersion!.version}",major="${
+				floweaseVersion!.major
+			}",minor="${floweaseVersion!.minor}",patch="${floweaseVersion!.patch}"} 1`,
 		);
 	});
 
@@ -44,9 +44,9 @@ describe('Metrics', () => {
 		config.set('endpoints.metrics.includeCacheMetrics', true);
 		await Container.get(MetricsService).configureMetrics(testServer.app);
 		const lines = await getMetricsResponseAsLines();
-		expect(lines).toContain('n8n_test_cache_hits_total 0');
-		expect(lines).toContain('n8n_test_cache_misses_total 0');
-		expect(lines).toContain('n8n_test_cache_updates_total 0');
+		expect(lines).toContain('flowease_test_cache_hits_total 0');
+		expect(lines).toContain('flowease_test_cache_misses_total 0');
+		expect(lines).toContain('flowease_test_cache_updates_total 0');
 	});
 
 	// TODO: Commented out due to flakiness in CI
@@ -56,11 +56,11 @@ describe('Metrics', () => {
 	// 	await eventBus.initialize();
 	// 	await eventBus.send(
 	// 		new EventMessageGeneric({
-	// 			eventName: 'n8n.destination.test',
+	// 			eventName: 'flowease.destination.test',
 	// 		}),
 	// 	);
 	// 	const lines = await getMetricsResponseAsLines();
-	// 	expect(lines).toContain('n8n_test_destination_test_total 1');
+	// 	expect(lines).toContain('flowease_test_destination_test_total 1');
 	// 	await eventBus.close();
 	// 	jest.mock('@/eventbus/MessageEventBus/MessageEventBus');
 	// });

@@ -5,8 +5,8 @@ import type {
 	IHttpRequestMethods,
 	IRequestOptions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 
 /**
  * Make an API request to seven
@@ -23,7 +23,7 @@ export async function sms77ApiRequest(
 ): Promise<any> {
 	const options: IRequestOptions = {
 		headers: {
-			SentWith: 'n8n',
+			SentWith: 'flowease',
 		},
 		qs,
 		uri: `https://gateway.seven.io/api${endpoint}`,

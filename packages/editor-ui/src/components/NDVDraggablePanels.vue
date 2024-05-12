@@ -12,7 +12,7 @@
 			<slot name="output"></slot>
 		</div>
 		<div :class="$style.mainPanel" :style="mainPanelStyles">
-			<n8n-resize-wrapper
+			<flowease-resize-wrapper
 				:is-resizing-enabled="currentNodePaneType !== 'unknown'"
 				:width="relativeWidthToPx(mainPanelDimensions.relativeWidth)"
 				:min-width="MIN_PANEL_WIDTH"
@@ -36,7 +36,7 @@
 				<div :class="{ [$style.mainPanelInner]: true, [$style.dragging]: isDragging }">
 					<slot name="main" />
 				</div>
-			</n8n-resize-wrapper>
+			</flowease-resize-wrapper>
 		</div>
 	</div>
 </template>
@@ -48,7 +48,7 @@ import { mapStores } from 'pinia';
 import { get } from 'lodash-es';
 import { useStorage } from '@/composables/useStorage';
 
-import type { INodeTypeDescription } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
 import PanelDragButton from './PanelDragButton.vue';
 
 import { LOCAL_STORAGE_MAIN_PANEL_RELATIVE_WIDTH, MAIN_NODE_PANEL_WIDTH } from '@/constants';

@@ -1,5 +1,5 @@
-import type { IDataObject, IWorkflowExecuteAdditionalData } from 'n8n-workflow';
-import { ExpressionError } from 'n8n-workflow';
+import type { IDataObject, IWorkflowExecuteAdditionalData } from 'flowease-workflow';
+import { ExpressionError } from 'flowease-workflow';
 
 function buildSecretsValueProxy(value: IDataObject): unknown {
 	return new Proxy(value, {

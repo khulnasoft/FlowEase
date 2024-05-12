@@ -3,7 +3,7 @@ import type {
 	ILoadOptionsFunctions,
 	ResourceMapperField,
 	ResourceMapperFields,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { GoogleSheet } from '../helpers/GoogleSheet';
 import { ROW_NUMBER, type ResourceLocator } from '../helpers/GoogleSheets.types';
 import { getSpreadsheetId } from '../helpers/GoogleSheets.utils';

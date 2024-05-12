@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 
 export const messageOperations: INodeProperties[] = [
 	{
@@ -201,12 +201,12 @@ export const messageFields: INodeProperties[] = [
 		options: [
 			{
 				// eslint-disable-next-line flowease-nodes-base/node-param-display-name-miscased
-				displayName: 'Append n8n Attribution',
+				displayName: 'Append flowease Attribution',
 				name: 'appendAttribution',
 				type: 'boolean',
 				default: true,
 				description:
-					'Whether to include the phrase “This email was sent automatically with n8n” to the end of the email',
+					'Whether to include the phrase “This email was sent automatically with flowease” to the end of the email',
 			},
 			{
 				displayName: 'Attachments',

@@ -1,4 +1,4 @@
-import { N8N_AUTH_COOKIE } from '../constants';
+import { FLOWEASE_AUTH_COOKIE } from '../constants';
 import { BasePage } from './base';
 import { SigninPage } from './signin';
 import { WorkflowsPage } from './workflows';
@@ -37,7 +37,7 @@ export class MfaLoginPage extends BasePage {
 				},
 				{
 					validate() {
-						cy.getCookie(N8N_AUTH_COOKIE).should('exist');
+						cy.getCookie(FLOWEASE_AUTH_COOKIE).should('exist');
 					},
 				},
 			);
@@ -68,7 +68,7 @@ export class MfaLoginPage extends BasePage {
 				},
 				{
 					validate() {
-						cy.getCookie(N8N_AUTH_COOKIE).should('exist');
+						cy.getCookie(FLOWEASE_AUTH_COOKIE).should('exist');
 					},
 				},
 			);

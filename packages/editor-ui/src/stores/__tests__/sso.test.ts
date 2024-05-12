@@ -3,12 +3,12 @@ import { useSettingsStore } from '@/stores/settings.store';
 import { useSSOStore } from '@/stores/sso.store';
 import { merge } from 'lodash-es';
 import { SETTINGS_STORE_DEFAULT_STATE } from '@/__tests__/utils';
-import type { IN8nUISettings } from 'n8n-workflow';
+import type { IFloweaseUISettings } from 'flowease-workflow';
 
 let ssoStore: ReturnType<typeof useSSOStore>;
 let settingsStore: ReturnType<typeof useSettingsStore>;
 
-const DEFAULT_SETTINGS: IN8nUISettings = SETTINGS_STORE_DEFAULT_STATE.settings;
+const DEFAULT_SETTINGS: IFloweaseUISettings = SETTINGS_STORE_DEFAULT_STATE.settings;
 
 describe('SSO store', () => {
 	beforeEach(() => {

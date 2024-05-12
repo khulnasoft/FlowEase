@@ -24,10 +24,10 @@
 		>
 			<template #error>
 				<div :class="$style.error" data-test-id="rlc-error-container">
-					<n8n-text color="text-dark" align="center" tag="div">
+					<flowease-text color="text-dark" align="center" tag="div">
 						{{ $locale.baseText('resourceLocator.mode.list.error.title') }}
-					</n8n-text>
-					<n8n-text v-if="hasCredential || credentialsNotSet" size="small" color="text-base">
+					</flowease-text>
+					<flowease-text v-if="hasCredential || credentialsNotSet" size="small" color="text-base">
 						{{ $locale.baseText('resourceLocator.mode.list.error.description.part1') }}
 						<a v-if="credentialsNotSet" @click="createNewCredential">{{
 							$locale.baseText('resourceLocator.mode.list.error.description.part2.noCredentials')
@@ -35,7 +35,7 @@
 						<a v-else-if="hasCredential" @click="openCredential">{{
 							$locale.baseText('resourceLocator.mode.list.error.description.part2.hasCredentials')
 						}}</a>
-					</n8n-text>
+					</flowease-text>
 				</div>
 			</template>
 			<div
@@ -46,7 +46,7 @@
 			>
 				<div :class="$style.background"></div>
 				<div v-if="hasMultipleModes" :class="$style.modeSelector">
-					<n8n-select
+					<flowease-select
 						:model-value="selectedMode"
 						:size="inputSize"
 						:disabled="isReadOnly"
@@ -54,7 +54,7 @@
 						data-test-id="rlc-mode-selector"
 						@update:model-value="onModeSelected"
 					>
-						<n8n-option
+						<flowease-option
 							v-for="mode in parameter.modes"
 							:key="mode.name"
 							:value="mode.name"
@@ -67,8 +67,8 @@
 							"
 						>
 							{{ getModeLabel(mode) }}
-						</n8n-option>
-					</n8n-select>
+						</flowease-option>
+					</flowease-select>
 				</div>
 
 				<div :class="$style.inputContainer" data-test-id="rlc-input-container">
@@ -97,7 +97,7 @@
 									@update:model-value="onInputChange"
 									@modal-opener-click="$emit('modalOpenerClick')"
 								/>
-								<n8n-input
+								<flowease-input
 									v-else
 									ref="input"
 									:class="{ [$style.selectInput]: isListMode }"
@@ -123,7 +123,7 @@
 											}"
 										/>
 									</template>
-								</n8n-input>
+								</flowease-input>
 							</div>
 						</template>
 					</DraggableTarget>
@@ -133,9 +133,9 @@
 						:class="$style['parameter-issues']"
 					/>
 					<div v-else-if="urlValue" :class="$style.openResourceLink">
-						<n8n-link theme="text" @click.stop="openResource(urlValue)">
+						<flowease-link theme="text" @click.stop="openResource(urlValue)">
 							<font-awesome-icon icon="external-link-alt" :title="getLinkAlt(valueToDisplay)" />
-						</n8n-link>
+						</flowease-link>
 					</div>
 				</div>
 			</div>
@@ -148,7 +148,7 @@ import type { IResourceLocatorReqParams, IResourceLocatorResultExpanded } from '
 import DraggableTarget from '@/components/DraggableTarget.vue';
 import ExpressionParameterInput from '@/components/ExpressionParameterInput.vue';
 import ParameterIssues from '@/components/ParameterIssues.vue';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useNDVStore } from '@/stores/ndv.store';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
 import { useUIStore } from '@/stores/ui.store';
@@ -167,7 +167,7 @@ import type {
 	INodeProperties,
 	INodePropertyMode,
 	NodeParameterValue,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { mapStores } from 'pinia';
 import type { PropType } from 'vue';
 import { defineComponent } from 'vue';

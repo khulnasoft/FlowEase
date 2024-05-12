@@ -1,6 +1,6 @@
 import { Service } from 'typedi';
 import type { PostHog } from 'posthog-node';
-import type { FeatureFlags, ITelemetryTrackProperties } from 'n8n-workflow';
+import type { FeatureFlags, ITelemetryTrackProperties } from 'flowease-workflow';
 import { InstanceSettings } from 'flowease-core';
 import config from '@/config';
 import type { PublicUser } from '@/Interfaces';

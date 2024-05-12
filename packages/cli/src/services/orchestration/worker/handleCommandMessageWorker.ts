@@ -1,4 +1,4 @@
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'flowease-workflow';
 import Container from 'typedi';
 import type { RedisServiceCommandObject } from '@/services/redis/RedisServiceCommands';
 import { COMMAND_REDIS_CHANNEL } from '@/services/redis/RedisServiceHelper';
@@ -9,7 +9,7 @@ import { ExternalSecretsManager } from '@/ExternalSecrets/ExternalSecretsManager
 import { debounceMessageReceiver, getOsCpuString } from '../helpers';
 import type { WorkerCommandReceivedHandlerOptions } from './types';
 import { Logger } from '@/Logger';
-import { N8N_VERSION } from '@/constants';
+import { FLOWEASE_VERSION } from '@/constants';
 
 export function getWorkerCommandReceivedHandler(options: WorkerCommandReceivedHandlerOptions) {
 	// eslint-disable-next-line complexity
@@ -57,7 +57,7 @@ export function getWorkerCommandReceivedHandler(options: WorkerCommandReceivedHa
 										internal: net.internal,
 									})),
 								),
-								version: N8N_VERSION,
+								version: FLOWEASE_VERSION,
 							},
 						});
 						break;

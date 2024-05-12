@@ -1,7 +1,7 @@
 import { EXTERNAL_SECRETS_DB_KEY } from '@/ExternalSecrets/constants';
 import { Service } from 'typedi';
-import { DataSource, Repository } from '@n8n/typeorm';
-import { ErrorReporterProxy as ErrorReporter } from 'n8n-workflow';
+import { DataSource, Repository } from '@flowease/typeorm';
+import { ErrorReporterProxy as ErrorReporter } from 'flowease-workflow';
 import { Settings } from '../entities/Settings';
 import config from '@/config';
 

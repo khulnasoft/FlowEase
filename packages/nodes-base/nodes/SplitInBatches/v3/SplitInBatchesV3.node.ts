@@ -5,8 +5,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IPairedItemData,
-} from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 
 export class SplitInBatchesV3 implements INodeType {
 	description: INodeTypeDescription = {
@@ -27,7 +27,7 @@ export class SplitInBatchesV3 implements INodeType {
 		properties: [
 			{
 				displayName:
-					'You may not need this node — n8n nodes automatically run once for each input item. <a href="https://docs.flowease.khulnasoft.com/getting-started/key-concepts/looping.html#using-loops-in-n8n" target="_blank">More info</a>',
+					'You may not need this node — flowease nodes automatically run once for each input item. <a href="https://docs.flowease.khulnasoft.com/getting-started/key-concepts/looping.html#using-loops-in-flowease" target="_blank">More info</a>',
 				name: 'splitInBatchesNotice',
 				type: 'notice',
 				default: '',

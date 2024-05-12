@@ -1,15 +1,15 @@
-# i18n in n8n
+# i18n in flowease
 
 ## Scope
 
-n8n allows for internalization of the majority of UI text:
+flowease allows for internalization of the majority of UI text:
 
 - base text, e.g. menu display items in the left-hand sidebar menu,
 - node text, e.g. parameter display names and placeholders in the node view,
 - credential text, e.g. parameter display names and placeholders in the credential modal,
 - header text, e.g. node display names and descriptions at various spots.
 
-Currently, n8n does _not_ allow for internalization of:
+Currently, flowease does _not_ allow for internalization of:
 
 - messages from outside the `editor-ui` package, e.g. `No active database connection`,
 - strings in certain Vue components, e.g. date time picker
@@ -27,18 +27,18 @@ Pending functionality:
 
 A **locale identifier** is a language code compatible with the [`Accept-Language` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language), e.g. `de` (German), `es` (Spanish), `ja` (Japanese). Regional variants of locale identifiers, such as `-AT` in `de-AT`, are _not_ supported. For a list of all locale identifiers, see [column 639-1 in this table](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
 
-By default, n8n runs in the `en` (English) locale. To have run it in a different locale, set the `N8N_DEFAULT_LOCALE` environment variable to a locale identifier. When running in a non-`en` locale, n8n will display UI strings for the selected locale and fall back to `en` for any untranslated strings.
+By default, flowease runs in the `en` (English) locale. To have run it in a different locale, set the `FLOWEASE_DEFAULT_LOCALE` environment variable to a locale identifier. When running in a non-`en` locale, flowease will display UI strings for the selected locale and fall back to `en` for any untranslated strings.
 
 ```
-export N8N_DEFAULT_LOCALE=de
+export FLOWEASE_DEFAULT_LOCALE=de
 pnpm start
 ```
 
 Output:
 
 ```
-Initializing n8n process
-n8n ready on 0.0.0.0, port 5678
+Initializing flowease process
+flowease ready on 0.0.0.0, port 5678
 Version: 0.156.0
 Locale: de
 
@@ -275,7 +275,7 @@ Allowed keys: `displayName`, `description`, `placeholder`
 	name: 'owner', // key to use in translation
 	type: 'string',
 	required: true,
-	placeholder: 'n8n-io',
+	placeholder: 'khulnasoft',
 	description: 'Owner of the repository.',
 },
 ```
@@ -283,7 +283,7 @@ Allowed keys: `displayName`, `description`, `placeholder`
 ```json
 {
 	"nodeView.owner.displayName": "🇩🇪 Repository Owner",
-	"nodeView.owner.placeholder": "🇩🇪 n8n-io",
+	"nodeView.owner.placeholder": "🇩🇪 khulnasoft",
 	"nodeView.owner.description": "🇩🇪 Owner of the repository"
 }
 ```
@@ -467,14 +467,14 @@ When translating a base text file at `/packages/editor-ui/src/plugins/i18n/local
 1. Open a terminal:
 
 ```sh
-export N8N_DEFAULT_LOCALE=de
+export FLOWEASE_DEFAULT_LOCALE=de
 pnpm start
 ```
 
 2. Open another terminal:
 
 ```sh
-export N8N_DEFAULT_LOCALE=de
+export FLOWEASE_DEFAULT_LOCALE=de
 cd packages/editor-ui
 pnpm dev
 ```
@@ -488,16 +488,16 @@ When translating a dynamic text file at `/packages/nodes-base/nodes/{node}/trans
 1. Open a terminal:
 
 ```sh
-export N8N_DEFAULT_LOCALE=de
+export FLOWEASE_DEFAULT_LOCALE=de
 pnpm start
 ```
 
 2. Open another terminal:
 
 ```sh
-export N8N_DEFAULT_LOCALE=de
+export FLOWEASE_DEFAULT_LOCALE=de
 cd packages/nodes-base
-pnpm n8n-generate-translations
+pnpm flowease-generate-translations
 pnpm watch
 ```
 
@@ -506,6 +506,6 @@ After changing the dynamic text file:
 1. Stop and restart the first terminal.
 2. Refresh the browser at `http://localhost:5678`
 
-If a `headerText` section was changed, re-run `pnpm n8n-generate-translations` in `/nodes-base`.
+If a `headerText` section was changed, re-run `pnpm flowease-generate-translations` in `/nodes-base`.
 
 > **Note**: To translate base and dynamic text simultaneously, run three terminals following the steps from both sections (first terminal running only once) and browse `http://localhost:8080`.

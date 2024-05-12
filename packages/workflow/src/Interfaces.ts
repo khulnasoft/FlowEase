@@ -277,7 +277,7 @@ export namespace DeclarativeRestApiSettings {
 			};
 			actions: PostReceiveAction[];
 		}>;
-		requestOperations?: IN8nRequestOperations;
+		requestOperations?: IFloweaseRequestOperations;
 	};
 }
 
@@ -364,7 +364,7 @@ export interface IDataObject {
 	[key: string]: GenericValue | IDataObject | GenericValue[] | IDataObject[];
 }
 
-export type IExecuteResponsePromiseData = IDataObject | IN8nHttpFullResponse;
+export type IExecuteResponsePromiseData = IDataObject | IFloweaseHttpFullResponse;
 
 export interface INodeTypeNameVersion {
 	name: string;
@@ -560,34 +560,34 @@ export interface PaginationOptions {
 	maxRequests?: number;
 }
 
-export type IN8nHttpResponse = IDataObject | Buffer | GenericValue | GenericValue[] | null;
+export type IFloweaseHttpResponse = IDataObject | Buffer | GenericValue | GenericValue[] | null;
 
-export interface IN8nHttpFullResponse {
-	body: IN8nHttpResponse | Readable;
+export interface IFloweaseHttpFullResponse {
+	body: IFloweaseHttpResponse | Readable;
 	__bodyResolved?: boolean;
 	headers: IDataObject;
 	statusCode: number;
 	statusMessage?: string;
 }
 
-export interface IN8nRequestOperations {
+export interface IFloweaseRequestOperations {
 	pagination?:
-		| IN8nRequestOperationPaginationGeneric
-		| IN8nRequestOperationPaginationOffset
+		| IFloweaseRequestOperationPaginationGeneric
+		| IFloweaseRequestOperationPaginationOffset
 		| ((
 				this: IExecutePaginationFunctions,
 				requestOptions: DeclarativeRestApiSettings.ResultOptions,
 		  ) => Promise<INodeExecutionData[]>);
 }
 
-export interface IN8nRequestOperationPaginationBase {
+export interface IFloweaseRequestOperationPaginationBase {
 	type: string;
 	properties: {
 		[key: string]: unknown;
 	};
 }
 
-export interface IN8nRequestOperationPaginationGeneric extends IN8nRequestOperationPaginationBase {
+export interface IFloweaseRequestOperationPaginationGeneric extends IFloweaseRequestOperationPaginationBase {
 	type: 'generic';
 	properties: {
 		continue: boolean | string;
@@ -595,7 +595,7 @@ export interface IN8nRequestOperationPaginationGeneric extends IN8nRequestOperat
 	};
 }
 
-export interface IN8nRequestOperationPaginationOffset extends IN8nRequestOperationPaginationBase {
+export interface IFloweaseRequestOperationPaginationOffset extends IFloweaseRequestOperationPaginationBase {
 	type: 'offset';
 	properties: {
 		limitParameter: string;
@@ -647,7 +647,7 @@ namespace ExecuteFunctions {
 	}
 
 	export type GetNodeParameterFn = {
-		// @TECH_DEBT: Refactor to remove this barely used overload - N8N-5632
+		// @TECH_DEBT: Refactor to remove this barely used overload - FLOWEASE-5632
 		getNodeParameter<T extends { resource: string }>(
 			parameterName: 'resource',
 			itemIndex?: number,
@@ -1158,7 +1158,7 @@ export type SQLDialect =
 
 export interface ILoadOptions {
 	routing?: {
-		operations?: IN8nRequestOperations;
+		operations?: IFloweaseRequestOperations;
 		output?: INodeRequestOutput;
 		request?: DeclarativeRestApiSettings.HttpRequestOptions;
 	};
@@ -1540,7 +1540,7 @@ export interface INodeTypeBaseDescription {
 }
 
 export interface INodePropertyRouting {
-	operations?: IN8nRequestOperations; // Should be changed, does not sound right
+	operations?: IFloweaseRequestOperations; // Should be changed, does not sound right
 	output?: INodeRequestOutput;
 	request?: DeclarativeRestApiSettings.HttpRequestOptions;
 	send?: INodeRequestSend;
@@ -1550,7 +1550,7 @@ export type PostReceiveAction =
 	| ((
 			this: IExecuteSingleFunctions,
 			items: INodeExecutionData[],
-			response: IN8nHttpFullResponse,
+			response: IFloweaseHttpFullResponse,
 	  ) => Promise<INodeExecutionData[]>)
 	| IPostReceiveBinaryData
 	| IPostReceiveFilter
@@ -1717,7 +1717,7 @@ export interface INodeTypeDescription extends INodeTypeBaseDescription {
 	polling?: true | undefined;
 	supportsCORS?: true | undefined;
 	requestDefaults?: DeclarativeRestApiSettings.HttpRequestOptions;
-	requestOperations?: IN8nRequestOperations;
+	requestOperations?: IFloweaseRequestOperations;
 	hooks?: {
 		[key: string]: INodeHookDescription[] | undefined;
 		activate?: INodeHookDescription[];
@@ -2008,19 +2008,19 @@ export interface IWorkflowExecuteHooks {
 }
 
 export const eventNamesAiNodes = [
-	'n8n.ai.memory.get.messages',
-	'n8n.ai.memory.added.message',
-	'n8n.ai.output.parser.get.instructions',
-	'n8n.ai.output.parser.parsed',
-	'n8n.ai.retriever.get.relevant.documents',
-	'n8n.ai.embeddings.embedded.document',
-	'n8n.ai.embeddings.embedded.query',
-	'n8n.ai.document.processed',
-	'n8n.ai.text.splitter.split',
-	'n8n.ai.tool.called',
-	'n8n.ai.vector.store.searched',
-	'n8n.ai.llm.generated',
-	'n8n.ai.vector.store.populated',
+	'flowease.ai.memory.get.messages',
+	'flowease.ai.memory.added.message',
+	'flowease.ai.output.parser.get.instructions',
+	'flowease.ai.output.parser.parsed',
+	'flowease.ai.retriever.get.relevant.documents',
+	'flowease.ai.embeddings.embedded.document',
+	'flowease.ai.embeddings.embedded.query',
+	'flowease.ai.document.processed',
+	'flowease.ai.text.splitter.split',
+	'flowease.ai.tool.called',
+	'flowease.ai.vector.store.searched',
+	'flowease.ai.llm.generated',
+	'flowease.ai.vector.store.populated',
 ] as const;
 
 export type EventNamesAiNodesType = (typeof eventNamesAiNodes)[number];
@@ -2454,9 +2454,9 @@ export interface IPublicApiSettings {
 
 export type ExpressionEvaluatorType = 'tmpl' | 'tournament';
 
-export type N8nAIProviderType = 'openai' | 'unknown';
+export type FloweaseAIProviderType = 'openai' | 'unknown';
 
-export interface IN8nUISettings {
+export interface IFloweaseUISettings {
 	endpointForm: string;
 	endpointFormTest: string;
 	endpointFormWaiting: string;
@@ -2481,7 +2481,7 @@ export interface IN8nUISettings {
 	};
 	binaryDataMode: string;
 	releaseChannel: 'stable' | 'beta' | 'nightly' | 'dev';
-	n8nMetadata?: {
+	floweaseMetadata?: {
 		userId?: string;
 		[key: string]: string | number | undefined;
 	};
@@ -2524,7 +2524,7 @@ export interface IN8nUISettings {
 	pushBackend: 'sse' | 'websocket';
 	communityNodesEnabled: boolean;
 	deployment: {
-		type: string | 'default' | 'n8n-internal' | 'cloud' | 'desktop_mac' | 'desktop_win';
+		type: string | 'default' | 'flowease-internal' | 'cloud' | 'desktop_mac' | 'desktop_win';
 	};
 	isNpmAvailable: boolean;
 	allowedModules: {

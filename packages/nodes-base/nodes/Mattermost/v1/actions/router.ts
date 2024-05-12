@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, IDataObject, INodeExecutionData } from 'n8n-workflow';
+import type { IExecuteFunctions, IDataObject, INodeExecutionData } from 'flowease-workflow';
 
 import * as channel from './channel';
 import * as message from './message';

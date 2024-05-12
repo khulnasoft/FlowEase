@@ -1,6 +1,6 @@
 import { mock } from 'jest-mock-extended';
 import type { RedisClientType } from '@redis/client';
-import type { IExecuteFunctions } from 'n8n-workflow';
+import type { IExecuteFunctions } from 'flowease-workflow';
 
 const mockClient = mock<RedisClientType>();
 const createClient = jest.fn().mockReturnValue(mockClient);

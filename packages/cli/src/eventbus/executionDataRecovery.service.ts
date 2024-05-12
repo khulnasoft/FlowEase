@@ -2,8 +2,8 @@ import { Container, Service } from 'typedi';
 import type { DateTime } from 'luxon';
 import { Push } from '@/push';
 import { InternalHooks } from '@/InternalHooks';
-import type { IRun, IRunExecutionData, ITaskData } from 'n8n-workflow';
-import { NodeOperationError, WorkflowOperationError, sleep } from 'n8n-workflow';
+import type { IRun, IRunExecutionData, ITaskData } from 'flowease-workflow';
+import { NodeOperationError, WorkflowOperationError, sleep } from 'flowease-workflow';
 
 import { ExecutionRepository } from '@db/repositories/execution.repository';
 import { getWorkflowHooksMain } from '@/WorkflowExecuteAdditionalData';
@@ -60,11 +60,11 @@ export class ExecutionDataRecoveryService {
 
 				const nodeStartedMessage = messages.find(
 					(message) =>
-						message.eventName === 'n8n.node.started' && message.payload.nodeName === nodeName,
+						message.eventName === 'flowease.node.started' && message.payload.nodeName === nodeName,
 				);
 				const nodeFinishedMessage = messages.find(
 					(message) =>
-						message.eventName === 'n8n.node.finished' && message.payload.nodeName === nodeName,
+						message.eventName === 'flowease.node.finished' && message.payload.nodeName === nodeName,
 				);
 
 				const executionTime =
@@ -91,7 +91,7 @@ export class ExecutionDataRecoveryService {
 						{
 							message: 'Execution stopped at this node',
 							description:
-								"n8n may have run out of memory while executing it. More context and tips on how to avoid this <a href='https://docs.flowease.khulnasoft.com/flow-logic/error-handling/memory-errors' target='_blank'>in the docs</a>",
+								"flowease may have run out of memory while executing it. More context and tips on how to avoid this <a href='https://docs.flowease.khulnasoft.com/flow-logic/error-handling/memory-errors' target='_blank'>in the docs</a>",
 						},
 					);
 					workflowError = new WorkflowOperationError(
@@ -128,9 +128,9 @@ export class ExecutionDataRecoveryService {
 				const workflowEndedMessage = messages.find((message) =>
 					(
 						[
-							'n8n.workflow.success',
-							'n8n.workflow.crashed',
-							'n8n.workflow.failed',
+							'flowease.workflow.success',
+							'flowease.workflow.crashed',
+							'flowease.workflow.failed',
 						] as EventNamesTypes[]
 					).includes(message.eventName),
 				);
@@ -143,7 +143,7 @@ export class ExecutionDataRecoveryService {
 						);
 					}
 					const workflowStartedMessage = messages.find(
-						(message) => message.eventName === 'n8n.workflow.started',
+						(message) => message.eventName === 'flowease.workflow.started',
 					);
 					if (workflowStartedMessage) {
 						lastNodeRunTimestamp = workflowStartedMessage.ts;

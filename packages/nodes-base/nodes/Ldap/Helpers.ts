@@ -1,7 +1,7 @@
 import { Client } from 'ldapts';
 import type { ClientOptions, Entry } from 'ldapts';
-import type { ICredentialDataDecryptedObject, IDataObject } from 'n8n-workflow';
-import { LoggerProxy as Logger } from 'n8n-workflow';
+import type { ICredentialDataDecryptedObject, IDataObject } from 'flowease-workflow';
+import { LoggerProxy as Logger } from 'flowease-workflow';
 export const BINARY_AD_ATTRIBUTES = ['objectGUID', 'objectSid'];
 
 const resolveEntryBinaryAttributes = (entry: Entry): Entry => {

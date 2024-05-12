@@ -1,4 +1,4 @@
-import type { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
+import type { IExecuteFunctions, INodeExecutionData } from 'flowease-workflow';
 import type { SpreadSheetProperties } from '../../helpers/GoogleSheets.types';
 import { apiRequest } from '../../transport';
 import { GOOGLE_DRIVE_FILE_URL_REGEX } from '../../../../constants';

@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { SIGNL4ApiRequest } from './GenericFunctions';
 
@@ -273,7 +273,7 @@ export class Signl4 implements INodeType {
 
 						data['X-S4-Status'] = 'new';
 
-						data['X-S4-SourceSystem'] = 'n8n';
+						data['X-S4-SourceSystem'] = 'flowease';
 
 						// Attachments
 						const attachments = additionalFields.attachmentsUi as IDataObject;
@@ -323,7 +323,7 @@ export class Signl4 implements INodeType {
 
 						data['X-S4-Status'] = 'resolved';
 
-						data['X-S4-SourceSystem'] = 'n8n';
+						data['X-S4-SourceSystem'] = 'flowease';
 
 						responseData = await SIGNL4ApiRequest.call(
 							this,

@@ -2,20 +2,20 @@
 	<div :class="['workflow-executions-container', $style.container]">
 		<div v-if="executionCount === 0" :class="[$style.messageContainer, $style.noExecutionsMessage]">
 			<div v-if="!containsTrigger">
-				<n8n-heading tag="h2" size="xlarge" color="text-dark" class="mb-2xs">
+				<flowease-heading tag="h2" size="xlarge" color="text-dark" class="mb-2xs">
 					{{ $locale.baseText('executionsLandingPage.emptyState.noTrigger.heading') }}
-				</n8n-heading>
-				<n8n-text size="medium">
+				</flowease-heading>
+				<flowease-text size="medium">
 					{{ $locale.baseText('executionsLandingPage.emptyState.message') }}
-				</n8n-text>
-				<n8n-button class="mt-l" type="tertiary" size="large" @click="onSetupFirstStep">
+				</flowease-text>
+				<flowease-button class="mt-l" type="tertiary" size="large" @click="onSetupFirstStep">
 					{{ $locale.baseText('executionsLandingPage.emptyState.noTrigger.buttonText') }}
-				</n8n-button>
+				</flowease-button>
 			</div>
 			<div v-else>
-				<n8n-heading tag="h2" size="xlarge" color="text-dark" class="mb-2xs">
+				<flowease-heading tag="h2" size="xlarge" color="text-dark" class="mb-2xs">
 					{{ $locale.baseText('executionsLandingPage.emptyState.heading') }}
-				</n8n-heading>
+				</flowease-heading>
 				<WorkflowExecutionsInfoAccordion />
 			</div>
 		</div>

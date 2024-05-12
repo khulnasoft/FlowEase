@@ -1,5 +1,5 @@
-import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, ILoadOptionsFunctions, INodePropertyOptions } from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import { apiRequest } from '../transport';
 
 export async function getColumns(this: ILoadOptionsFunctions): Promise<INodePropertyOptions[]> {

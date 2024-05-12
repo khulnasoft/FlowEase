@@ -6,7 +6,7 @@ import { useClipboard } from '@/composables/useClipboard';
 import { useToast } from '@/composables/useToast';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
 import { useNDVStore } from '@/stores/ndv.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import type {
 	IDataObject,
 	INodeProperties,
@@ -15,7 +15,7 @@ import type {
 	NodeApiError,
 	NodeError,
 	NodeOperationError,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { sanitizeHtml } from '@/utils/htmlUtils';
 import { MAX_DISPLAY_DATA_SIZE } from '@/constants';
 import type { BaseTextKey } from '@/plugins/i18n';
@@ -53,11 +53,11 @@ const parameters = computed<INodeProperties[]>(() => {
 	return nodeType.properties;
 });
 
-const n8nVersion = computed(() => {
+const floweaseVersion = computed(() => {
 	const baseUrl = rootStore.urlBaseEditor;
 	let instanceType = 'Self Hosted';
 
-	if (baseUrl.includes('n8n.cloud')) {
+	if (baseUrl.includes('flowease.cloud')) {
 		instanceType = 'Cloud';
 	}
 
@@ -299,55 +299,55 @@ function copyErrorDetails() {
 
 	errorInfo.errorDetails = errorDetails;
 
-	//add n8n details
-	const n8nDetails: IDataObject = {};
+	//add flowease details
+	const floweaseDetails: IDataObject = {};
 
 	if (error.node) {
-		n8nDetails.nodeName = error.node.name;
-		n8nDetails.nodeType = error.node.type;
-		n8nDetails.nodeVersion = error.node.typeVersion;
+		floweaseDetails.nodeName = error.node.name;
+		floweaseDetails.nodeType = error.node.type;
+		floweaseDetails.nodeVersion = error.node.typeVersion;
 
 		if (error.node?.parameters?.resource) {
-			n8nDetails.resource = error.node.parameters.resource;
+			floweaseDetails.resource = error.node.parameters.resource;
 		}
 		if (error?.node?.parameters?.operation) {
-			n8nDetails.operation = error.node.parameters.operation;
+			floweaseDetails.operation = error.node.parameters.operation;
 		}
 	}
 
 	if (error.context) {
 		if (error.context.itemIndex !== undefined) {
-			n8nDetails.itemIndex = error.context.itemIndex;
+			floweaseDetails.itemIndex = error.context.itemIndex;
 		}
 
 		if (error.context.runIndex !== undefined) {
-			n8nDetails.runIndex = error.context.runIndex;
+			floweaseDetails.runIndex = error.context.runIndex;
 		}
 
 		if (error.context.parameter !== undefined) {
-			n8nDetails.parameter = error.context.parameter;
+			floweaseDetails.parameter = error.context.parameter;
 		}
 
 		if (error.context.causeDetailed) {
-			n8nDetails.causeDetailed = error.context.causeDetailed;
+			floweaseDetails.causeDetailed = error.context.causeDetailed;
 		}
 	}
 
 	if (error.timestamp) {
-		n8nDetails.time = new Date(error.timestamp).toLocaleString();
+		floweaseDetails.time = new Date(error.timestamp).toLocaleString();
 	}
 
-	n8nDetails.n8nVersion = n8nVersion.value;
+	floweaseDetails.floweaseVersion = floweaseVersion.value;
 
-	n8nDetails.binaryDataMode = rootStore.binaryDataMode;
+	floweaseDetails.binaryDataMode = rootStore.binaryDataMode;
 
 	if (error.cause) {
-		n8nDetails.cause = error.cause;
+		floweaseDetails.cause = error.cause;
 	}
 
-	n8nDetails.stackTrace = error.stack?.split('\n');
+	floweaseDetails.stackTrace = error.stack?.split('\n');
 
-	errorInfo.n8nDetails = n8nDetails;
+	errorInfo.floweaseDetails = floweaseDetails;
 
 	void clipboard.copy(JSON.stringify(errorInfo, null, 2));
 	copySuccess();
@@ -381,13 +381,13 @@ function copySuccess() {
 				<p class="node-error-view__info-title">
 					{{ i18n.baseText('nodeErrorView.details.title') }}
 				</p>
-				<n8n-tooltip
+				<flowease-tooltip
 					class="item"
 					:content="i18n.baseText('nodeErrorView.copyToClipboard.tooltip')"
 					placement="left"
 				>
 					<div class="copy-button">
-						<n8n-icon-button
+						<flowease-icon-button
 							icon="copy"
 							type="secondary"
 							size="mini"
@@ -396,7 +396,7 @@ function copySuccess() {
 							@click="copyErrorDetails"
 						/>
 					</div>
-				</n8n-tooltip>
+				</flowease-tooltip>
 			</div>
 
 			<div class="node-error-view__info-content">
@@ -528,10 +528,10 @@ function copySuccess() {
 
 						<div class="node-error-view__details-row">
 							<p class="node-error-view__details-label">
-								{{ i18n.baseText('nodeErrorView.details.n8nVersion') }}
+								{{ i18n.baseText('nodeErrorView.details.floweaseVersion') }}
 							</p>
 							<p class="node-error-view__details-value">
-								<code>{{ n8nVersion }}</code>
+								<code>{{ floweaseVersion }}</code>
 							</p>
 						</div>
 

@@ -1,10 +1,10 @@
 <template>
 	<div :class="$style.container">
 		<div v-if="loaderType === 'image' && !showPreview" :class="$style.imageLoader">
-			<n8n-loading :loading="!showPreview" :rows="1" variant="image" />
+			<flowease-loading :loading="!showPreview" :rows="1" variant="image" />
 		</div>
 		<div v-else-if="loaderType === 'spinner' && !showPreview" :class="$style.spinner">
-			<n8n-spinner type="dots" />
+			<flowease-spinner type="dots" />
 		</div>
 		<iframe
 			ref="iframeRef"
@@ -26,7 +26,7 @@ import { onMounted, onBeforeUnmount, ref, computed, watch } from 'vue';
 import { useI18n } from '@/composables/useI18n';
 import { useToast } from '@/composables/useToast';
 import type { IWorkflowDb } from '@/Interface';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useExecutionsStore } from '@/stores/executions.store';
 
 const props = withDefaults(
@@ -148,7 +148,7 @@ const receiveMessage = ({ data }: MessageEvent) => {
 	}
 	try {
 		const json = JSON.parse(data);
-		if (json.command === 'n8nReady') {
+		if (json.command === 'floweaseReady') {
 			ready.value = true;
 		} else if (json.command === 'openNDV') {
 			nodeViewDetailsOpened.value = true;

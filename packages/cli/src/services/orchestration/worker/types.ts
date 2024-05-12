@@ -1,4 +1,4 @@
-import type { ExecutionStatus, WorkflowExecuteMode } from 'n8n-workflow';
+import type { ExecutionStatus, WorkflowExecuteMode } from 'flowease-workflow';
 import type { RedisServicePubSubPublisher } from '../../redis/RedisServicePubSubPublisher';
 
 export interface WorkerCommandReceivedHandlerOptions {

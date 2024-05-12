@@ -1,4 +1,4 @@
-import type { IDataObject, INode } from 'n8n-workflow';
+import type { IDataObject, INode } from 'flowease-workflow';
 import mysql2 from 'mysql2/promise';
 import { configureQueryRunner } from '../../v2/helpers/utils';
 import type { Mysql2Pool, QueryRunner } from '../../v2/helpers/interfaces';

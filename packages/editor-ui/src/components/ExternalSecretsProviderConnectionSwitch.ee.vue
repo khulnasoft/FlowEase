@@ -73,19 +73,19 @@ async function onUpdateConnected(value: boolean) {
 
 <template>
 	<div v-loading="saving" class="connection-switch">
-		<n8n-icon
+		<flowease-icon
 			v-if="provider.state === 'error'"
 			color="danger"
 			icon="exclamation-triangle"
 			class="mr-2xs"
 		/>
-		<n8n-text :color="connectedTextColor" bold class="mr-2xs">
+		<flowease-text :color="connectedTextColor" bold class="mr-2xs">
 			{{
 				i18n.baseText(
 					`settings.externalSecrets.card.${provider.connected ? 'connected' : 'disconnected'}`,
 				)
 			}}
-		</n8n-text>
+		</flowease-text>
 		<el-switch
 			:model-value="provider.connected"
 			:title="

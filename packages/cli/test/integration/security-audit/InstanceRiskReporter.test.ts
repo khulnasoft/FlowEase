@@ -4,7 +4,7 @@ import { INSTANCE_REPORT, WEBHOOK_VALIDATOR_NODE_TYPES } from '@/security-audit/
 import {
 	getRiskSection,
 	saveManualTriggerWorkflow,
-	MOCK_09990_N8N_VERSION,
+	MOCK_09990_FLOWEASE_VERSION,
 	simulateOutdatedInstanceOnce,
 	simulateUpToDateInstance,
 } from './utils';
@@ -217,7 +217,7 @@ test('should report outdated instance when outdated', async () => {
 
 	expect(section.nextVersions).toHaveLength(1);
 
-	expect(section.nextVersions[0].name).toBe(MOCK_09990_N8N_VERSION.name);
+	expect(section.nextVersions[0].name).toBe(MOCK_09990_FLOWEASE_VERSION.name);
 });
 
 test('should not report outdated instance when up to date', async () => {

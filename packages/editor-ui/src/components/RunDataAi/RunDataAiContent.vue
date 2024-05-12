@@ -14,7 +14,7 @@
 				<ul :class="$style.meta">
 					<li v-if="runMeta?.startTimeMs">{{ runMeta?.executionTimeMs }}ms</li>
 					<li v-if="runMeta?.startTimeMs">
-						<n8n-tooltip>
+						<flowease-tooltip>
 							<template #content>
 								{{ new Date(runMeta?.startTimeMs).toLocaleString() }}
 							</template>
@@ -25,7 +25,7 @@
 									},
 								})
 							}}
-						</n8n-tooltip>
+						</flowease-tooltip>
 					</li>
 					<li v-if="(consumedTokensSum?.totalTokens ?? 0) > 0" :class="$style.tokensUsage">
 						{{
@@ -35,9 +35,9 @@
 								},
 							})
 						}}
-						<n8n-info-tip type="tooltip" theme="info-light" tooltip-placement="right">
+						<flowease-info-tip type="tooltip" theme="info-light" tooltip-placement="right">
 							<div>
-								<n8n-text :bold="true" size="small">
+								<flowease-text :bold="true" size="small">
 									{{ $locale.baseText('runData.aiContentBlock.tokens.prompt') }}
 									{{
 										$locale.baseText('runData.aiContentBlock.tokens', {
@@ -46,9 +46,9 @@
 											},
 										})
 									}}
-								</n8n-text>
+								</flowease-text>
 								<br />
-								<n8n-text :bold="true" size="small">
+								<flowease-text :bold="true" size="small">
 									{{ $locale.baseText('runData.aiContentBlock.tokens.completion') }}
 									{{
 										$locale.baseText('runData.aiContentBlock.tokens', {
@@ -57,9 +57,9 @@
 											},
 										})
 									}}
-								</n8n-text>
+								</flowease-text>
 							</div>
-						</n8n-info-tip>
+						</flowease-info-tip>
 					</li>
 				</ul>
 			</div>
@@ -80,7 +80,7 @@ import type {
 	INodeExecutionData,
 	INodeTypeDescription,
 	NodeConnectionType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { computed } from 'vue';
 import NodeIcon from '@/components/NodeIcon.vue';
 import AiRunContentBlock from './AiRunContentBlock.vue';

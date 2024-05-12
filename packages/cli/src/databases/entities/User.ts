@@ -8,9 +8,9 @@ import {
 	OneToMany,
 	PrimaryGeneratedColumn,
 	BeforeInsert,
-} from '@n8n/typeorm';
+} from '@flowease/typeorm';
 import { IsEmail, IsString, Length } from 'class-validator';
-import type { IUser, IUserSettings } from 'n8n-workflow';
+import type { IUser, IUserSettings } from 'flowease-workflow';
 import type { SharedWorkflow } from './SharedWorkflow';
 import type { SharedCredentials } from './SharedCredentials';
 import { NoXss } from '../utils/customValidators';

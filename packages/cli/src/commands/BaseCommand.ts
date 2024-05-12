@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { Container } from 'typedi';
 import { Command } from '@oclif/core';
 import { ExitError } from '@oclif/core/lib/errors';
-import { ApplicationError, ErrorReporterProxy as ErrorReporter, sleep } from 'n8n-workflow';
+import { ApplicationError, ErrorReporterProxy as ErrorReporter, sleep } from 'flowease-workflow';
 import { BinaryDataService, InstanceSettings, ObjectStoreService } from 'flowease-core';
 import type { AbstractServer } from '@/AbstractServer';
 import { Logger } from '@/Logger';
@@ -14,7 +14,7 @@ import { initErrorHandling } from '@/ErrorReporting';
 import { ExternalHooks } from '@/ExternalHooks';
 import { NodeTypes } from '@/NodeTypes';
 import { LoadNodesAndCredentials } from '@/LoadNodesAndCredentials';
-import type { N8nInstanceType } from '@/Interfaces';
+import type { FloweaseInstanceType } from '@/Interfaces';
 import { InternalHooks } from '@/InternalHooks';
 import { PostHogClient } from '@/posthog';
 import { License } from '@/License';
@@ -33,7 +33,7 @@ export abstract class BaseCommand extends Command {
 
 	protected instanceSettings: InstanceSettings;
 
-	private instanceType: N8nInstanceType = 'main';
+	private instanceType: FloweaseInstanceType = 'main';
 
 	queueModeId: string;
 
@@ -82,13 +82,13 @@ export abstract class BaseCommand extends Command {
 
 		if (['mysqldb', 'mariadb'].includes(dbType)) {
 			this.logger.warn(
-				'Support for MySQL/MariaDB has been deprecated and will be removed with an upcoming version of n8n. Please migrate to PostgreSQL.',
+				'Support for MySQL/MariaDB has been deprecated and will be removed with an upcoming version of flowease. Please migrate to PostgreSQL.',
 			);
 		}
 
-		if (process.env.N8N_SKIP_WEBHOOK_DEREGISTRATION_SHUTDOWN) {
+		if (process.env.FLOWEASE_SKIP_WEBHOOK_DEREGISTRATION_SHUTDOWN) {
 			this.logger.warn(
-				'The flag to skip webhook deregistration N8N_SKIP_WEBHOOK_DEREGISTRATION_SHUTDOWN has been removed. n8n no longer deregisters webhooks at startup and shutdown, in main and queue mode.',
+				'The flag to skip webhook deregistration FLOWEASE_SKIP_WEBHOOK_DEREGISTRATION_SHUTDOWN has been removed. flowease no longer deregisters webhooks at startup and shutdown, in main and queue mode.',
 			);
 		}
 
@@ -99,12 +99,12 @@ export abstract class BaseCommand extends Command {
 		}
 
 		if (
-			process.env.N8N_BINARY_DATA_TTL ??
-			process.env.N8N_PERSISTED_BINARY_DATA_TTL ??
+			process.env.FLOWEASE_BINARY_DATA_TTL ??
+			process.env.FLOWEASE_PERSISTED_BINARY_DATA_TTL ??
 			process.env.EXECUTIONS_DATA_PRUNE_TIMEOUT
 		) {
 			this.logger.warn(
-				'The env vars N8N_BINARY_DATA_TTL and N8N_PERSISTED_BINARY_DATA_TTL and EXECUTIONS_DATA_PRUNE_TIMEOUT no longer have any effect and can be safely removed. Instead of relying on a TTL system for binary data, n8n currently cleans up binary data together with executions during pruning.',
+				'The env vars FLOWEASE_BINARY_DATA_TTL and FLOWEASE_PERSISTED_BINARY_DATA_TTL and EXECUTIONS_DATA_PRUNE_TIMEOUT no longer have any effect and can be safely removed. Instead of relying on a TTL system for binary data, flowease currently cleans up binary data together with executions during pruning.',
 			);
 		}
 
@@ -112,7 +112,7 @@ export abstract class BaseCommand extends Command {
 		await Container.get(InternalHooks).init();
 	}
 
-	protected setInstanceType(instanceType: N8nInstanceType) {
+	protected setInstanceType(instanceType: FloweaseInstanceType) {
 		this.instanceType = instanceType;
 		config.set('generic.instanceType', instanceType);
 	}
@@ -156,7 +156,7 @@ export abstract class BaseCommand extends Command {
 
 		if (isSelected && !isAvailable) {
 			throw new ApplicationError(
-				'External storage selected but unavailable. Please make external storage available by adding "s3" to `N8N_AVAILABLE_BINARY_DATA_MODES`.',
+				'External storage selected but unavailable. Please make external storage available by adding "s3" to `FLOWEASE_AVAILABLE_BINARY_DATA_MODES`.',
 			);
 		}
 
@@ -200,7 +200,7 @@ export abstract class BaseCommand extends Command {
 
 		if (host === '') {
 			throw new ApplicationError(
-				'External storage host not configured. Please set `N8N_EXTERNAL_STORAGE_S3_HOST`.',
+				'External storage host not configured. Please set `FLOWEASE_EXTERNAL_STORAGE_S3_HOST`.',
 			);
 		}
 
@@ -211,13 +211,13 @@ export abstract class BaseCommand extends Command {
 
 		if (bucket.name === '') {
 			throw new ApplicationError(
-				'External storage bucket name not configured. Please set `N8N_EXTERNAL_STORAGE_S3_BUCKET_NAME`.',
+				'External storage bucket name not configured. Please set `FLOWEASE_EXTERNAL_STORAGE_S3_BUCKET_NAME`.',
 			);
 		}
 
 		if (bucket.region === '') {
 			throw new ApplicationError(
-				'External storage bucket region not configured. Please set `N8N_EXTERNAL_STORAGE_S3_BUCKET_REGION`.',
+				'External storage bucket region not configured. Please set `FLOWEASE_EXTERNAL_STORAGE_S3_BUCKET_REGION`.',
 			);
 		}
 
@@ -228,13 +228,13 @@ export abstract class BaseCommand extends Command {
 
 		if (credentials.accessKey === '') {
 			throw new ApplicationError(
-				'External storage access key not configured. Please set `N8N_EXTERNAL_STORAGE_S3_ACCESS_KEY`.',
+				'External storage access key not configured. Please set `FLOWEASE_EXTERNAL_STORAGE_S3_ACCESS_KEY`.',
 			);
 		}
 
 		if (credentials.accessSecret === '') {
 			throw new ApplicationError(
-				'External storage access secret not configured. Please set `N8N_EXTERNAL_STORAGE_S3_ACCESS_SECRET`.',
+				'External storage access secret not configured. Please set `FLOWEASE_EXTERNAL_STORAGE_S3_ACCESS_SECRET`.',
 			);
 		}
 

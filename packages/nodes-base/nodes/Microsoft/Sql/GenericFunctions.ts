@@ -1,5 +1,5 @@
-import type { IDataObject, INodeExecutionData } from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+import type { IDataObject, INodeExecutionData } from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 import mssql from 'mssql';
 import type { ITables, OperationInputData } from './interfaces';
 import { chunk, flatten } from '@utils/utilities';

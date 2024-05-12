@@ -54,7 +54,7 @@ describe.skip('In-app templates repository', () => {
 
 	it('should save template id with the workflow', () => {
 		cy.visit(templatesPage.url);
-		cy.get('.el-skeleton.n8n-loading').should('not.exist');
+		cy.get('.el-skeleton.flowease-loading').should('not.exist');
 		templatesPage.getters.firstTemplateCard().should('exist');
 		templatesPage.getters.templatesLoadingContainer().should('not.exist');
 		templatesPage.getters.firstTemplateCard().click();

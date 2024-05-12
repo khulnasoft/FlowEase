@@ -4,7 +4,7 @@ import {
 	type IDataObject,
 	type INodeExecutionData,
 	NodeConnectionType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { merge } from 'lodash-es';
 import { generatePath } from '@/utils/mappingUtils';
 import { isObj } from '@/utils/typeGuards';

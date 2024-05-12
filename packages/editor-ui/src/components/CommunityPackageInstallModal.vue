@@ -11,15 +11,15 @@
 		<template #content>
 			<div :class="[$style.descriptionContainer, 'p-s']">
 				<div>
-					<n8n-text>
+					<flowease-text>
 						{{ $locale.baseText('settings.communityNodes.installModal.description') }}
-					</n8n-text>
+					</flowease-text>
 					{{ ' ' }}
-					<n8n-link :to="COMMUNITY_NODES_INSTALLATION_DOCS_URL" @click="onMoreInfoTopClick">
+					<flowease-link :to="COMMUNITY_NODES_INSTALLATION_DOCS_URL" @click="onMoreInfoTopClick">
 						{{ $locale.baseText('_reusableDynamicText.moreInfo') }}
-					</n8n-link>
+					</flowease-link>
 				</div>
-				<n8n-button
+				<flowease-button
 					:label="$locale.baseText('settings.communityNodes.browseButton.label')"
 					icon="external-link-alt"
 					:class="$style.browseButton"
@@ -27,7 +27,7 @@
 				/>
 			</div>
 			<div :class="[$style.formContainer, 'mt-m']">
-				<n8n-input-label
+				<flowease-input-label
 					:class="$style.labelTooltip"
 					:label="$locale.baseText('settings.communityNodes.installModal.packageName.label')"
 					:tooltip-text="
@@ -36,7 +36,7 @@
 						})
 					"
 				>
-					<n8n-input
+					<flowease-input
 						v-model="packageName"
 						name="packageNameInput"
 						type="text"
@@ -48,7 +48,7 @@
 						:disabled="loading"
 						@blur="onInputBlur"
 					/>
-				</n8n-input-label>
+				</flowease-input-label>
 				<div :class="[$style.infoText, 'mt-4xs']">
 					<span
 						size="small"
@@ -63,17 +63,17 @@
 					data-test-id="user-agreement-checkbox"
 					@update:model-value="onCheckboxChecked"
 				>
-					<n8n-text>
-						{{ $locale.baseText('settings.communityNodes.installModal.checkbox.label') }} </n8n-text
+					<flowease-text>
+						{{ $locale.baseText('settings.communityNodes.installModal.checkbox.label') }} </flowease-text
 					><br />
-					<n8n-link :to="COMMUNITY_NODES_RISKS_DOCS_URL" @click="onLearnMoreLinkClick">{{
+					<flowease-link :to="COMMUNITY_NODES_RISKS_DOCS_URL" @click="onLearnMoreLinkClick">{{
 						$locale.baseText('_reusableDynamicText.moreInfo')
-					}}</n8n-link>
+					}}</flowease-link>
 				</el-checkbox>
 			</div>
 		</template>
 		<template #footer>
-			<n8n-button
+			<flowease-button
 				:loading="loading"
 				:disabled="!userAgreed || packageName === '' || loading"
 				:label="

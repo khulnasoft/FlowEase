@@ -8,7 +8,7 @@ import { createReadStream, createWriteStream, existsSync } from 'fs';
 import { pipeline } from 'stream/promises';
 import replaceStream from 'replacestream';
 import glob from 'fast-glob';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'flowease-workflow';
 
 import config from '@/config';
 import { ActiveExecutions } from '@/ActiveExecutions';
@@ -32,13 +32,13 @@ import { BaseCommand } from './BaseCommand';
 const open = require('open');
 
 export class Start extends BaseCommand {
-	static description = 'Starts n8n. Makes Web-UI available and starts active workflows';
+	static description = 'Starts flowease. Makes Web-UI available and starts active workflows';
 
 	static examples = [
-		'$ n8n start',
-		'$ n8n start --tunnel',
-		'$ n8n start -o',
-		'$ n8n start --tunnel -o',
+		'$ flowease start',
+		'$ flowease start --tunnel',
+		'$ flowease start -o',
+		'$ flowease start --tunnel -o',
 	];
 
 	static flags = {
@@ -49,11 +49,11 @@ export class Start extends BaseCommand {
 		}),
 		tunnel: Flags.boolean({
 			description:
-				'runs the webhooks via a hooks.n8n.cloud tunnel server. Use only for testing and development!',
+				'runs the webhooks via a hooks.flowease.cloud tunnel server. Use only for testing and development!',
 		}),
 		reinstallMissingPackages: Flags.boolean({
 			description:
-				'Attempts to self heal n8n if packages with nodes are missing. Might drastically increase startup times.',
+				'Attempts to self heal flowease if packages with nodes are missing. Might drastically increase startup times.',
 		}),
 	};
 
@@ -83,12 +83,12 @@ export class Start extends BaseCommand {
 	}
 
 	/**
-	 * Stop n8n in a graceful way.
+	 * Stop flowease in a graceful way.
 	 * Make for example sure that all the webhooks from third party services
 	 * get removed.
 	 */
 	async stopProcess() {
-		this.logger.info('\nStopping n8n...');
+		this.logger.info('\nStopping flowease...');
 
 		try {
 			// Stop with trying to activate workflows that could not be activated
@@ -96,7 +96,7 @@ export class Start extends BaseCommand {
 
 			Container.get(WaitTracker).stopTracking();
 
-			await this.externalHooks?.run('n8n.stop', []);
+			await this.externalHooks?.run('flowease.stop', []);
 
 			if (Container.get(OrchestrationService).isMultiMainSetupEnabled) {
 				await this.activeWorkflowManager.removeAllTriggerAndPollerBasedWorkflows();
@@ -104,14 +104,14 @@ export class Start extends BaseCommand {
 				await Container.get(OrchestrationService).shutdown();
 			}
 
-			await Container.get(InternalHooks).onN8nStop();
+			await Container.get(InternalHooks).onFloweaseStop();
 
 			await Container.get(ActiveExecutions).shutdown();
 
 			// Finally shut down Event Bus
 			await Container.get(MessageEventBus).close();
 		} catch (error) {
-			await this.exitWithCrash('There was an error shutting down n8n.', error);
+			await this.exitWithCrash('There was an error shutting down flowease.', error);
 		}
 
 		await this.exitSuccessFully();
@@ -119,7 +119,7 @@ export class Start extends BaseCommand {
 
 	private async generateStaticAssets() {
 		// Read the index file and replace the path placeholder
-		const n8nPath = config.getEnv('path');
+		const floweasePath = config.getEnv('path');
 		const restEndpoint = config.getEnv('endpoints.rest');
 		const hooksUrls = config.getEnv('externalFrontendHooksUrls');
 
@@ -139,9 +139,9 @@ export class Start extends BaseCommand {
 				await mkdir(path.dirname(destFile), { recursive: true });
 				const streams = [
 					createReadStream(filePath, 'utf-8'),
-					replaceStream('/{{BASE_PATH}}/', n8nPath, { ignoreCase: false }),
-					replaceStream('/%7B%7BBASE_PATH%7D%7D/', n8nPath, { ignoreCase: false }),
-					replaceStream('/static/', n8nPath + 'static/', { ignoreCase: false }),
+					replaceStream('/{{BASE_PATH}}/', floweasePath, { ignoreCase: false }),
+					replaceStream('/%7B%7BBASE_PATH%7D%7D/', floweasePath, { ignoreCase: false }),
+					replaceStream('/static/', floweasePath + 'static/', { ignoreCase: false }),
 				];
 				if (filePath.endsWith('index.html')) {
 					streams.push(
@@ -164,7 +164,7 @@ export class Start extends BaseCommand {
 	async init() {
 		await this.initCrashJournal();
 
-		this.logger.info('Initializing n8n process');
+		this.logger.info('Initializing flowease process');
 		if (config.getEnv('executions.mode') === 'queue') {
 			this.logger.debug('Main Instance running in queue mode');
 			this.logger.debug(`Queue mode id: ${this.queueModeId}`);
@@ -252,7 +252,7 @@ export class Start extends BaseCommand {
 			this.log('\nWaiting for tunnel ...');
 
 			let tunnelSubdomain =
-				process.env.N8N_TUNNEL_SUBDOMAIN ?? this.instanceSettings.tunnelSubdomain ?? '';
+				process.env.FLOWEASE_TUNNEL_SUBDOMAIN ?? this.instanceSettings.tunnelSubdomain ?? '';
 
 			if (tunnelSubdomain === '') {
 				// When no tunnel subdomain did exist yet create a new random one
@@ -266,18 +266,18 @@ export class Start extends BaseCommand {
 				this.instanceSettings.update({ tunnelSubdomain });
 			}
 
-			const { default: localtunnel } = await import('@n8n/localtunnel');
+			const { default: localtunnel } = await import('@flowease/localtunnel');
 			const port = config.getEnv('port');
 
 			const webhookTunnel = await localtunnel(port, {
-				host: 'https://hooks.n8n.cloud',
+				host: 'https://hooks.flowease.cloud',
 				subdomain: tunnelSubdomain,
 			});
 
 			process.env.WEBHOOK_URL = `${webhookTunnel.url}/`;
 			this.log(`Tunnel URL: ${process.env.WEBHOOK_URL}\n`);
 			this.log(
-				'IMPORTANT! Do not share with anybody as it would give people access to your n8n instance!',
+				'IMPORTANT! Do not share with anybody as it would give people access to your flowease instance!',
 			);
 		}
 
@@ -291,7 +291,7 @@ export class Start extends BaseCommand {
 		const editorUrl = Container.get(UrlService).baseUrl;
 		this.log(`\nEditor is now accessible via:\n${editorUrl}`);
 
-		// Allow to open n8n editor by pressing "o"
+		// Allow to open flowease editor by pressing "o"
 		if (Boolean(process.stdout.isTTY) && process.stdin.setRawMode) {
 			process.stdin.setRawMode(true);
 			process.stdin.resume();

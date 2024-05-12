@@ -1,5 +1,5 @@
 import config from '@/config';
-import type { IWorkflowSettings } from 'n8n-workflow';
+import type { IWorkflowSettings } from 'flowease-workflow';
 
 /**
  * Return whether a workflow execution is configured to be saved or not:

@@ -7,8 +7,8 @@ import type {
 	ILoadOptionsFunctions,
 	IWebhookFunctions,
 	JsonObject,
-} from 'n8n-workflow';
-import { NodeApiError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeApiError } from 'flowease-workflow';
 import type {
 	WhatsAppAppWebhookSubscriptionsResponse,
 	WhatsAppAppWebhookSubscription,

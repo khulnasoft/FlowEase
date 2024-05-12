@@ -1,5 +1,5 @@
-import { NodeOperationError, NodeConnectionType } from 'n8n-workflow';
-import type { ConnectionTypes, IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
+import { NodeOperationError, NodeConnectionType } from 'flowease-workflow';
+import type { ConnectionTypes, IExecuteFunctions, INodeExecutionData } from 'flowease-workflow';
 
 import { Tool } from '@langchain/core/tools';
 import type { BaseMessage } from '@langchain/core/messages';
@@ -24,8 +24,8 @@ import type { FormatInstructionsOptions } from '@langchain/core/output_parsers';
 import { BaseOutputParser, OutputParserException } from '@langchain/core/output_parsers';
 import { isObject } from 'lodash';
 import type { BaseDocumentLoader } from 'langchain/dist/document_loaders/base';
-import { N8nJsonLoader } from './N8nJsonLoader';
-import { N8nBinaryLoader } from './N8nBinaryLoader';
+import { FloweaseJsonLoader } from './FloweaseJsonLoader';
+import { FloweaseBinaryLoader } from './FloweaseBinaryLoader';
 import { isChatInstance, logAiEvent } from './helpers';
 
 const errorsMap: { [key: string]: { message: string; description: string } } = {
@@ -127,8 +127,8 @@ export function logWrapper(
 		| BaseDocumentLoader
 		| TextSplitter
 		| VectorStore
-		| N8nBinaryLoader
-		| N8nJsonLoader,
+		| FloweaseBinaryLoader
+		| FloweaseJsonLoader,
 	executeFunctions: IExecuteFunctions,
 ) {
 	return new Proxy(originalInstance, {
@@ -206,7 +206,7 @@ export function logWrapper(
 						const payload = { action: 'getMessages', response };
 						executeFunctions.addOutputData(connectionType, index, [[{ json: payload }]]);
 
-						void logAiEvent(executeFunctions, 'n8n.ai.memory.get.messages', { response });
+						void logAiEvent(executeFunctions, 'flowease.ai.memory.get.messages', { response });
 						return response;
 					};
 				} else if (prop === 'addMessage' && 'addMessage' in target) {
@@ -223,7 +223,7 @@ export function logWrapper(
 							arguments: [message],
 						});
 
-						void logAiEvent(executeFunctions, 'n8n.ai.memory.added.message', { message });
+						void logAiEvent(executeFunctions, 'flowease.ai.memory.added.message', { message });
 						executeFunctions.addOutputData(connectionType, index, [[{ json: payload }]]);
 					};
 				}
@@ -263,7 +263,7 @@ export function logWrapper(
 											return message;
 									  });
 
-							void logAiEvent(executeFunctions, 'n8n.ai.llm.generated', {
+							void logAiEvent(executeFunctions, 'flowease.ai.llm.generated', {
 								messages: parsedMessages,
 								options,
 								response,
@@ -300,7 +300,7 @@ export function logWrapper(
 						executeFunctions.addOutputData(connectionType, index, [
 							[{ json: { action: 'getFormatInstructions', response } }],
 						]);
-						void logAiEvent(executeFunctions, 'n8n.ai.output.parser.get.instructions', {
+						void logAiEvent(executeFunctions, 'flowease.ai.output.parser.get.instructions', {
 							response,
 						});
 						return response;
@@ -321,7 +321,7 @@ export function logWrapper(
 							arguments: [stringifiedText],
 						})) as object;
 
-						void logAiEvent(executeFunctions, 'n8n.ai.output.parser.parsed', { text, response });
+						void logAiEvent(executeFunctions, 'flowease.ai.output.parser.parsed', { text, response });
 						executeFunctions.addOutputData(connectionType, index, [
 							[{ json: { action: 'parse', response } }],
 						]);
@@ -350,7 +350,7 @@ export function logWrapper(
 							arguments: [query, config],
 						})) as Array<Document<Record<string, any>>>;
 
-						void logAiEvent(executeFunctions, 'n8n.ai.retriever.get.relevant.documents', { query });
+						void logAiEvent(executeFunctions, 'flowease.ai.retriever.get.relevant.documents', { query });
 						executeFunctions.addOutputData(connectionType, index, [[{ json: { response } }]]);
 						return response;
 					};
@@ -375,7 +375,7 @@ export function logWrapper(
 							arguments: [documents],
 						})) as number[][];
 
-						void logAiEvent(executeFunctions, 'n8n.ai.embeddings.embedded.document');
+						void logAiEvent(executeFunctions, 'flowease.ai.embeddings.embedded.document');
 						executeFunctions.addOutputData(connectionType, index, [[{ json: { response } }]]);
 						return response;
 					};
@@ -395,17 +395,17 @@ export function logWrapper(
 							method: target[prop],
 							arguments: [query],
 						})) as number[];
-						void logAiEvent(executeFunctions, 'n8n.ai.embeddings.embedded.query');
+						void logAiEvent(executeFunctions, 'flowease.ai.embeddings.embedded.query');
 						executeFunctions.addOutputData(connectionType, index, [[{ json: { response } }]]);
 						return response;
 					};
 				}
 			}
 
-			// ========== N8n Loaders Process All ==========
+			// ========== Flowease Loaders Process All ==========
 			if (
-				originalInstance instanceof N8nJsonLoader ||
-				originalInstance instanceof N8nBinaryLoader
+				originalInstance instanceof FloweaseJsonLoader ||
+				originalInstance instanceof FloweaseBinaryLoader
 			) {
 				// Process All
 				if (prop === 'processAll' && 'processAll' in target) {
@@ -440,7 +440,7 @@ export function logWrapper(
 							arguments: [item, itemIndex],
 						})) as number[];
 
-						void logAiEvent(executeFunctions, 'n8n.ai.document.processed');
+						void logAiEvent(executeFunctions, 'flowease.ai.document.processed');
 						executeFunctions.addOutputData(connectionType, index, [
 							[{ json: { response }, pairedItem: { item: itemIndex } }],
 						]);
@@ -466,7 +466,7 @@ export function logWrapper(
 							arguments: [text],
 						})) as string[];
 
-						void logAiEvent(executeFunctions, 'n8n.ai.text.splitter.split');
+						void logAiEvent(executeFunctions, 'flowease.ai.text.splitter.split');
 						executeFunctions.addOutputData(connectionType, index, [[{ json: { response } }]]);
 						return response;
 					};
@@ -490,7 +490,7 @@ export function logWrapper(
 							arguments: [query],
 						})) as string;
 
-						void logAiEvent(executeFunctions, 'n8n.ai.tool.called', { query, response });
+						void logAiEvent(executeFunctions, 'flowease.ai.tool.called', { query, response });
 						executeFunctions.addOutputData(connectionType, index, [[{ json: { response } }]]);
 						return response;
 					};
@@ -520,7 +520,7 @@ export function logWrapper(
 							arguments: [query, k, filter, _callbacks],
 						})) as Array<Document<Record<string, any>>>;
 
-						void logAiEvent(executeFunctions, 'n8n.ai.vector.store.searched', { query });
+						void logAiEvent(executeFunctions, 'flowease.ai.vector.store.searched', { query });
 						executeFunctions.addOutputData(connectionType, index, [[{ json: { response } }]]);
 
 						return response;

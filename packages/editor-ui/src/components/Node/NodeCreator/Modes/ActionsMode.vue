@@ -26,7 +26,7 @@ import { useViewStacks } from '../composables/useViewStacks';
 
 import ItemsRenderer from '../Renderers/ItemsRenderer.vue';
 import CategorizedItemsRenderer from '../Renderers/CategorizedItemsRenderer.vue';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 
 const emit = defineEmits({
 	nodeTypeSelected: (nodeTypes: string[]) => true,
@@ -245,7 +245,7 @@ onMounted(() => {
 				>
 					<!-- Empty state -->
 					<template v-if="hasNoTriggerActions" #empty>
-						<n8n-callout
+						<flowease-callout
 							v-if="hasNoTriggerActions"
 							theme="info"
 							iconless
@@ -259,7 +259,7 @@ onMounted(() => {
 									})
 								"
 							/>
-						</n8n-callout>
+						</flowease-callout>
 						<ItemsRenderer :elements="placeholderTriggerActions" @selected="onSelected" />
 					</template>
 					<template v-else #empty>
@@ -280,7 +280,7 @@ onMounted(() => {
 					:expanded="!isTriggerRootView || parsedTriggerActions.length === 0"
 					@selected="onSelected"
 				>
-					<n8n-callout
+					<flowease-callout
 						v-if="!userActivated && isTriggerRootView"
 						theme="info"
 						iconless
@@ -288,10 +288,10 @@ onMounted(() => {
 						data-test-id="actions-panel-activation-callout"
 					>
 						<span v-html="$locale.baseText('nodeCreator.actionsCallout.triggersStartWorkflow')" />
-					</n8n-callout>
+					</flowease-callout>
 					<!-- Empty state -->
 					<template #empty>
-						<n8n-info-tip v-if="!search" theme="info" type="note" :class="$style.actionsEmpty">
+						<flowease-info-tip v-if="!search" theme="info" type="note" :class="$style.actionsEmpty">
 							<span
 								v-html="
 									$locale.baseText('nodeCreator.actionsCallout.noActionItems', {
@@ -299,7 +299,7 @@ onMounted(() => {
 									})
 								"
 							/>
-						</n8n-info-tip>
+						</flowease-info-tip>
 						<p
 							v-else
 							:class="$style.resetSearch"

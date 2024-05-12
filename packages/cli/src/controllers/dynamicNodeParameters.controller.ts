@@ -4,8 +4,8 @@ import type {
 	INodeListSearchResult,
 	INodePropertyOptions,
 	ResourceMapperFields,
-} from 'n8n-workflow';
-import { jsonParse } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse } from 'flowease-workflow';
 
 import { Get, Middleware, RestController } from '@/decorators';
 import { getBase } from '@/WorkflowExecuteAdditionalData';

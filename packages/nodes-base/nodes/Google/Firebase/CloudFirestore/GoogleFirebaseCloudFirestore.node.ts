@@ -6,8 +6,8 @@ import type {
 	INodePropertyOptions,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { jsonParse } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse } from 'flowease-workflow';
 
 import { generatePairedItemData } from '../../../../utils/utilities';
 import {

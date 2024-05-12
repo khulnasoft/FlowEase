@@ -4,7 +4,7 @@ import type {
 	IDataObject,
 	INodeProperties,
 	INodePropertyOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import * as Db from '@/Db';
 import type { ICredentialsDb } from '@/Interfaces';
 import { CredentialsEntity } from '@db/entities/CredentialsEntity';

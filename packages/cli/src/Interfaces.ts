@@ -24,7 +24,7 @@ import type {
 	IUserSettings,
 	IHttpRequestMethods,
 	StartNodeData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import type { ActiveWorkflowManager } from '@/ActiveWorkflowManager';
 
@@ -634,7 +634,7 @@ export interface PublicUser {
 	featureFlags?: FeatureFlags;
 }
 
-export interface N8nApp {
+export interface FloweaseApp {
 	app: Application;
 	restEndpoint: string;
 	externalHooks: ExternalHooks;
@@ -674,4 +674,4 @@ export abstract class SecretsProvider {
 	abstract getSecretNames(): string[];
 }
 
-export type N8nInstanceType = 'main' | 'webhook' | 'worker';
+export type FloweaseInstanceType = 'main' | 'webhook' | 'worker';

@@ -1,4 +1,4 @@
-import type { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import type { INodeType, INodeTypeDescription } from 'flowease-workflow';
 import { oldVersionNotice } from '../../utils/descriptions';
 import { imageFields, imageOperations } from './ImageDescription';
 import { textFields, textOperations } from './TextDescription';

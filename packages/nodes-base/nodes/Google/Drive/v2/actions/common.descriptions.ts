@@ -1,4 +1,4 @@
-import type { INodeProperties } from 'n8n-workflow';
+import type { INodeProperties } from 'flowease-workflow';
 import { DRIVE, RLC_DRIVE_DEFAULT } from '../helpers/interfaces';
 import { GOOGLE_DRIVE_FILE_URL_REGEX, GOOGLE_DRIVE_FOLDER_URL_REGEX } from '../../../constants';
 

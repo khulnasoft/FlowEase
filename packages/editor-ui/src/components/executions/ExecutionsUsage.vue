@@ -1,32 +1,32 @@
 <template>
 	<div :class="$style.container">
 		<div v-if="isTrialExpired" :class="$style.usageText">
-			<n8n-text size="small" color="danger">
+			<flowease-text size="small" color="danger">
 				{{ locale.baseText('executionUsage.expired.text') }}
-			</n8n-text>
+			</flowease-text>
 		</div>
 		<div v-else-if="!isTrialExpired && trialHasExecutionsLeft" :class="$style.usageText">
 			<i18n-t tag="span" keypath="executionUsage.currentUsage">
 				<template #text>
-					<n8n-text size="small" color="text-dark">
+					<flowease-text size="small" color="text-dark">
 						{{ locale.baseText('executionUsage.currentUsage.text') }}
-					</n8n-text>
+					</flowease-text>
 				</template>
 				<template #count>
-					<n8n-text size="small" :bold="true" color="warning">
+					<flowease-text size="small" :bold="true" color="warning">
 						{{
 							locale.baseText('executionUsage.currentUsage.count', {
 								adjustToNumber: daysLeftOnTrial || 0,
 							})
 						}}
-					</n8n-text>
+					</flowease-text>
 				</template>
 			</i18n-t>
 		</div>
 		<div v-else-if="!trialHasExecutionsLeft" :class="$style.usageText">
-			<n8n-text size="small">
+			<flowease-text size="small">
 				{{ locale.baseText('executionUsage.ranOutOfExecutions.text') }}
-			</n8n-text>
+			</flowease-text>
 		</div>
 		<div v-if="!isTrialExpired" :class="$style.usageCounter">
 			<div :class="$style.progressBarDiv">
@@ -40,17 +40,17 @@
 				></progress>
 			</div>
 			<div :class="$style.executionsCountSection">
-				<n8n-text size="xsmall" :color="trialHasExecutionsLeft ? 'text-dark' : 'danger'">
+				<flowease-text size="xsmall" :color="trialHasExecutionsLeft ? 'text-dark' : 'danger'">
 					{{ currentExecutions }}/{{ maxExecutions }}
-				</n8n-text>
-				<n8n-text size="xsmall" :color="trialHasExecutionsLeft ? 'text-dark' : 'danger'">{{
+				</flowease-text>
+				<flowease-text size="xsmall" :color="trialHasExecutionsLeft ? 'text-dark' : 'danger'">{{
 					locale.baseText('executionUsage.label.executions')
-				}}</n8n-text>
+				}}</flowease-text>
 			</div>
 		</div>
 
 		<div :class="$style.upgradeButtonSection">
-			<n8n-button
+			<flowease-button
 				:label="locale.baseText('executionUsage.button.upgrade')"
 				size="xmini"
 				icon="gem"

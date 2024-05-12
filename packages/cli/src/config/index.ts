@@ -1,21 +1,21 @@
 import convict from 'convict';
 import dotenv from 'dotenv';
 import { readFileSync } from 'fs';
-import { ApplicationError, setGlobalState } from 'n8n-workflow';
+import { ApplicationError, setGlobalState } from 'flowease-workflow';
 import { inTest, inE2ETests } from '@/constants';
 
 if (inE2ETests) {
 	// Skip loading config from env variables in end-to-end tests
-	process.env.N8N_DIAGNOSTICS_ENABLED = 'false';
-	process.env.N8N_PUBLIC_API_DISABLED = 'true';
+	process.env.FLOWEASE_DIAGNOSTICS_ENABLED = 'false';
+	process.env.FLOWEASE_PUBLIC_API_DISABLED = 'true';
 	process.env.EXTERNAL_FRONTEND_HOOKS_URLS = '';
-	process.env.N8N_PERSONALIZATION_ENABLED = 'false';
-	process.env.N8N_AI_ENABLED = 'true';
+	process.env.FLOWEASE_PERSONALIZATION_ENABLED = 'false';
+	process.env.FLOWEASE_AI_ENABLED = 'true';
 } else if (inTest) {
-	process.env.N8N_LOG_LEVEL = 'silent';
-	process.env.N8N_PUBLIC_API_DISABLED = 'true';
+	process.env.FLOWEASE_LOG_LEVEL = 'silent';
+	process.env.FLOWEASE_PUBLIC_API_DISABLED = 'true';
 	process.env.SKIP_STATISTICS_EVENTS = 'true';
-	process.env.N8N_SECURE_COOKIE = 'false';
+	process.env.FLOWEASE_SECURE_COOKIE = 'false';
 } else {
 	dotenv.config();
 }
@@ -31,9 +31,9 @@ config.getEnv = config.get;
 if (!inE2ETests && !inTest) {
 	// Overwrite default configuration with settings which got defined in
 	// optional configuration files
-	const { N8N_CONFIG_FILES } = process.env;
-	if (N8N_CONFIG_FILES !== undefined) {
-		const configFiles = N8N_CONFIG_FILES.split(',');
+	const { FLOWEASE_CONFIG_FILES } = process.env;
+	if (FLOWEASE_CONFIG_FILES !== undefined) {
+		const configFiles = FLOWEASE_CONFIG_FILES.split(',');
 		console.debug('Loading config overwrites', configFiles);
 		config.loadFile(configFiles);
 	}
@@ -69,7 +69,7 @@ config.validate({
 const userManagement = config.get('userManagement');
 if (userManagement.jwtRefreshTimeoutHours >= userManagement.jwtSessionDurationHours) {
 	console.warn(
-		'N8N_USER_MANAGEMENT_JWT_REFRESH_TIMEOUT_HOURS needs to smaller than N8N_USER_MANAGEMENT_JWT_DURATION_HOURS. Setting N8N_USER_MANAGEMENT_JWT_REFRESH_TIMEOUT_HOURS to 0 for now.',
+		'FLOWEASE_USER_MANAGEMENT_JWT_REFRESH_TIMEOUT_HOURS needs to smaller than FLOWEASE_USER_MANAGEMENT_JWT_DURATION_HOURS. Setting FLOWEASE_USER_MANAGEMENT_JWT_REFRESH_TIMEOUT_HOURS to 0 for now.',
 	);
 
 	config.set('userManagement.jwtRefreshTimeoutHours', 0);

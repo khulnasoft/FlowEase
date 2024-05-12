@@ -1,5 +1,5 @@
 import { Container } from 'typedi';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 import { type ServiceClass, ShutdownService } from '@/shutdown/Shutdown.service';
 
 /**

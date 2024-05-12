@@ -6,7 +6,7 @@ withDefaults(defineProps<Props>(), { middleWidth: '160px' });
 </script>
 
 <template>
-	<n8n-resize-observer
+	<flowease-resize-observer
 		:class="{ [$style.observer]: true }"
 		:breakpoints="[
 			{ bp: 'stacked', width: 400 },
@@ -40,7 +40,7 @@ withDefaults(defineProps<Props>(), { middleWidth: '160px' });
 				</div>
 			</div>
 		</template>
-	</n8n-resize-observer>
+	</flowease-resize-observer>
 </template>
 
 <style lang="scss" module>

@@ -1,5 +1,5 @@
-import type { IDataObject, INode } from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+import type { IDataObject, INode } from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 import {
 	addSortRules,
 	addReturning,
@@ -111,7 +111,7 @@ describe('Test PostgresV2, parsePostgresError', () => {
 	});
 
 	it('should update message with syntax error', () => {
-		// eslint-disable-next-line n8n-local-rules/no-unneeded-backticks
+		// eslint-disable-next-line flowease-local-rules/no-unneeded-backticks
 		const errorMessage = String.raw`syntax error at or near "seelect"`;
 		const error = new Error();
 		error.message = errorMessage;

@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 import { Container } from 'typedi';
-import type { INode, WorkflowSettings } from 'n8n-workflow';
-import { SubworkflowOperationError, Workflow } from 'n8n-workflow';
+import type { INode, WorkflowSettings } from 'flowease-workflow';
+import { SubworkflowOperationError, Workflow } from 'flowease-workflow';
 
 import config from '@/config';
 import { User } from '@db/entities/User';
@@ -378,7 +378,7 @@ describe('checkSubworkflowExecutePolicy()', () => {
 	const ownershipService = mockInstance(OwnershipService);
 
 	describe('no caller policy', () => {
-		test('should fall back to N8N_WORKFLOW_CALLER_POLICY_DEFAULT_OPTION', async () => {
+		test('should fall back to FLOWEASE_WORKFLOW_CALLER_POLICY_DEFAULT_OPTION', async () => {
 			config.set('workflows.callerPolicyDefaultOption', 'none');
 
 			const parentWorkflow = createParentWorkflow();

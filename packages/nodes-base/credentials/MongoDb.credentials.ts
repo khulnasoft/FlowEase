@@ -1,4 +1,4 @@
-import type { ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, INodeProperties } from 'flowease-workflow';
 
 export class MongoDb implements ICredentialType {
 	name = 'mongoDb';
@@ -37,7 +37,7 @@ export class MongoDb implements ICredentialType {
 			},
 			default: '',
 			placeholder:
-				'mongodb://<USERNAME>:<PASSWORD>@localhost:27017/?authSource=admin&readPreference=primary&appname=n8n&ssl=false',
+				'mongodb://<USERNAME>:<PASSWORD>@localhost:27017/?authSource=admin&readPreference=primary&appname=flowease&ssl=false',
 			description:
 				'If provided, the value here will be used as a MongoDB connection string, and the MongoDB credentials will be ignored',
 		},

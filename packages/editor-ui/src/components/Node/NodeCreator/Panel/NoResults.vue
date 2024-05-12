@@ -11,13 +11,13 @@
 			<p v-text="$locale.baseText('nodeCreator.noResults.weDidntMakeThatYet')" />
 			<div :class="$style.action">
 				{{ $locale.baseText('nodeCreator.noResults.dontWorryYouCanProbablyDoItWithThe') }}
-				<n8n-link v-if="rootView === REGULAR_NODE_CREATOR_VIEW" @click="$emit('addHttpNode')">
+				<flowease-link v-if="rootView === REGULAR_NODE_CREATOR_VIEW" @click="$emit('addHttpNode')">
 					{{ $locale.baseText('nodeCreator.noResults.httpRequest') }}
-				</n8n-link>
+				</flowease-link>
 
-				<n8n-link v-if="rootView === TRIGGER_NODE_CREATOR_VIEW" @click="$emit('addWebhookNode')">
+				<flowease-link v-if="rootView === TRIGGER_NODE_CREATOR_VIEW" @click="$emit('addWebhookNode')">
 					{{ $locale.baseText('nodeCreator.noResults.webhook') }}
-				</n8n-link>
+				</flowease-link>
 				{{ $locale.baseText('nodeCreator.noResults.node') }}
 			</div>
 		</div>
@@ -25,7 +25,7 @@
 		<div v-if="showRequest" :class="$style.request">
 			<p v-text="$locale.baseText('nodeCreator.noResults.wantUsToMakeItFaster')" />
 			<div>
-				<n8n-link :to="REQUEST_NODE_FORM_URL">
+				<flowease-link :to="REQUEST_NODE_FORM_URL">
 					<span>{{ $locale.baseText('nodeCreator.noResults.requestTheNode') }}</span
 					>&nbsp;
 					<span>
@@ -35,7 +35,7 @@
 							:title="$locale.baseText('nodeCreator.noResults.requestTheNode')"
 						/>
 					</span>
-				</n8n-link>
+				</flowease-link>
 			</div>
 		</div>
 	</div>

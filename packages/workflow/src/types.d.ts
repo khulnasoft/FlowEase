@@ -1,4 +1,4 @@
-declare module '@n8n_io/riot-tmpl' {
+declare module '@flowease_io/riot-tmpl' {
 	interface Brackets {
 		set(token: string): void;
 	}

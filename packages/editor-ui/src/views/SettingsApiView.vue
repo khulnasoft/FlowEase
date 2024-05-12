@@ -1,17 +1,17 @@
 <template>
 	<div :class="$style.container">
 		<div :class="$style.header">
-			<n8n-heading size="2xlarge">
+			<flowease-heading size="2xlarge">
 				{{ $locale.baseText('settings.api') }}
 				<span :style="{ fontSize: 'var(--font-size-s)', color: 'var(--color-text-light)' }">
 					({{ $locale.baseText('beta') }})
 				</span>
-			</n8n-heading>
+			</flowease-heading>
 		</div>
 
 		<div v-if="apiKey">
 			<p class="mb-s">
-				<n8n-info-tip :bold="false">
+				<flowease-info-tip :bold="false">
 					<i18n-t keypath="settings.api.view.info" tag="span">
 						<template #apiAction>
 							<a
@@ -28,13 +28,13 @@
 							/>
 						</template>
 					</i18n-t>
-				</n8n-info-tip>
+				</flowease-info-tip>
 			</p>
-			<n8n-card class="mb-4xs" :class="$style.card">
+			<flowease-card class="mb-4xs" :class="$style.card">
 				<span :class="$style.delete">
-					<n8n-link :bold="true" @click="showDeleteModal">
+					<flowease-link :bold="true" @click="showDeleteModal">
 						{{ $locale.baseText('generic.delete') }}
-					</n8n-link>
+					</flowease-link>
 				</span>
 				<div>
 					<CopyInput
@@ -46,24 +46,24 @@
 						@copy="onCopy"
 					/>
 				</div>
-			</n8n-card>
+			</flowease-card>
 			<div :class="$style.hint">
-				<n8n-text size="small">
+				<flowease-text size="small">
 					{{
 						$locale.baseText(`settings.api.view.${swaggerUIEnabled ? 'tryapi' : 'more-details'}`)
 					}}
-				</n8n-text>
+				</flowease-text>
 				{{ ' ' }}
-				<n8n-link :to="apiDocsURL" :new-window="true" size="small">
+				<flowease-link :to="apiDocsURL" :new-window="true" size="small">
 					{{
 						$locale.baseText(
 							`settings.api.view.${swaggerUIEnabled ? 'apiPlayground' : 'external-docs'}`,
 						)
 					}}
-				</n8n-link>
+				</flowease-link>
 			</div>
 		</div>
-		<n8n-action-box
+		<flowease-action-box
 			v-else-if="!isPublicApiEnabled && isTrialing"
 			data-test-id="public-api-upgrade-cta"
 			:heading="$locale.baseText('settings.api.trial.upgradePlan.title')"
@@ -71,7 +71,7 @@
 			:button-text="$locale.baseText('settings.api.trial.upgradePlan.cta')"
 			@click:button="onUpgrade"
 		/>
-		<n8n-action-box
+		<flowease-action-box
 			v-else-if="mounted && !isLoadingCloudPlans"
 			:button-text="
 				$locale.baseText(
@@ -93,7 +93,7 @@ import { useMessage } from '@/composables/useMessage';
 import CopyInput from '@/components/CopyInput.vue';
 import { mapStores } from 'pinia';
 import { useSettingsStore } from '@/stores/settings.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useUIStore } from '@/stores/ui.store';
 import { useUsersStore } from '@/stores/users.store';
 import { useCloudPlanStore } from '@/stores/cloudPlan.store';
@@ -149,7 +149,7 @@ export default defineComponent({
 	},
 	methods: {
 		onUpgrade() {
-			void this.uiStore.goToUpgrade('settings-n8n-api', 'upgrade-api', 'redirect');
+			void this.uiStore.goToUpgrade('settings-flowease-api', 'upgrade-api', 'redirect');
 		},
 		async showDeleteModal() {
 			const confirmed = await this.confirm(

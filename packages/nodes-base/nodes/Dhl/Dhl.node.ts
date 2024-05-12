@@ -8,7 +8,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { dhlApiRequest, validateCredentials } from './GenericFunctions';
 

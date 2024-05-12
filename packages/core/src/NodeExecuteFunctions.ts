@@ -62,8 +62,8 @@ import type {
 	IHookFunctions,
 	IHttpRequestOptions,
 	ILoadOptionsFunctions,
-	IN8nHttpFullResponse,
-	IN8nHttpResponse,
+	IFloweaseHttpFullResponse,
+	IFloweaseHttpResponse,
 	INode,
 	INodeCredentialDescription,
 	INodeCredentialsDetails,
@@ -99,7 +99,7 @@ import type {
 	WorkflowActivateMode,
 	WorkflowExecuteMode,
 	CallbackManager,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import {
 	ExpressionError,
 	LoggerProxy as Logger,
@@ -119,7 +119,7 @@ import {
 	jsonParse,
 	ApplicationError,
 	sleep,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type { Token } from 'oauth-1.0a';
 import clientOAuth1 from 'oauth-1.0a';
 import path from 'path';
@@ -130,7 +130,7 @@ import url, { URL, URLSearchParams } from 'url';
 import { BinaryDataService } from './BinaryData/BinaryData.service';
 import {
 	BINARY_DATA_STORAGE_PATH,
-	BLOCK_FILE_ACCESS_TO_N8N_FILES,
+	BLOCK_FILE_ACCESS_TO_FLOWEASE_FILES,
 	CONFIG_FILES,
 	CUSTOM_EXTENSION_ENV,
 	HTTP_REQUEST_NODE_TYPE,
@@ -279,7 +279,7 @@ export async function parseRequestObject(requestObject: IRequestOptions) {
 	// This function is a temporary implementation
 	// That translates all http requests done via
 	// the request library to axios directly
-	// We are not using n8n's interface as it would
+	// We are not using flowease's interface as it would
 	// an unnecessary step, considering the `request`
 	// helper can be deprecated and removed.
 	const axiosConfig: AxiosRequestConfig = {};
@@ -871,9 +871,9 @@ export async function proxyRequestToAxios(
 }
 
 // eslint-disable-next-line complexity
-function convertN8nRequestToAxios(n8nRequest: IHttpRequestOptions): AxiosRequestConfig {
+function convertFloweaseRequestToAxios(floweaseRequest: IHttpRequestOptions): AxiosRequestConfig {
 	// Destructure properties with the same name first.
-	const { headers, method, timeout, auth, proxy, url } = n8nRequest;
+	const { headers, method, timeout, auth, proxy, url } = floweaseRequest;
 
 	const axiosRequest: AxiosRequestConfig = {
 		headers: headers ?? {},
@@ -886,39 +886,39 @@ function convertN8nRequestToAxios(n8nRequest: IHttpRequestOptions): AxiosRequest
 		maxContentLength: Infinity,
 	} as AxiosRequestConfig;
 
-	axiosRequest.params = n8nRequest.qs;
+	axiosRequest.params = floweaseRequest.qs;
 
-	if (n8nRequest.baseURL !== undefined) {
-		axiosRequest.baseURL = n8nRequest.baseURL;
+	if (floweaseRequest.baseURL !== undefined) {
+		axiosRequest.baseURL = floweaseRequest.baseURL;
 	}
 
-	if (n8nRequest.disableFollowRedirect === true) {
+	if (floweaseRequest.disableFollowRedirect === true) {
 		axiosRequest.maxRedirects = 0;
 	}
 
-	if (n8nRequest.encoding !== undefined) {
-		axiosRequest.responseType = n8nRequest.encoding;
+	if (floweaseRequest.encoding !== undefined) {
+		axiosRequest.responseType = floweaseRequest.encoding;
 	}
 
-	const host = getHostFromRequestObject(n8nRequest);
+	const host = getHostFromRequestObject(floweaseRequest);
 	const agentOptions: AgentOptions = {};
 	if (host) {
 		agentOptions.servername = host;
 	}
-	if (n8nRequest.skipSslCertificateValidation === true) {
+	if (floweaseRequest.skipSslCertificateValidation === true) {
 		agentOptions.rejectUnauthorized = false;
 	}
 	axiosRequest.httpsAgent = new Agent(agentOptions);
 
 	axiosRequest.beforeRedirect = getBeforeRedirectFn(agentOptions, axiosRequest);
 
-	if (n8nRequest.arrayFormat !== undefined) {
+	if (floweaseRequest.arrayFormat !== undefined) {
 		axiosRequest.paramsSerializer = (params) => {
-			return stringify(params, { arrayFormat: n8nRequest.arrayFormat });
+			return stringify(params, { arrayFormat: floweaseRequest.arrayFormat });
 		};
 	}
 
-	const { body } = n8nRequest;
+	const { body } = floweaseRequest;
 	if (body) {
 		// Let's add some useful header standards here.
 		const existingContentTypeHeaderKey = searchForHeader(axiosRequest, 'content-type');
@@ -937,7 +937,7 @@ function convertN8nRequestToAxios(n8nRequest: IHttpRequestOptions): AxiosRequest
 		} else if (
 			axiosRequest.headers?.[existingContentTypeHeaderKey] === 'application/x-www-form-urlencoded'
 		) {
-			axiosRequest.data = new URLSearchParams(n8nRequest.body as Record<string, string>);
+			axiosRequest.data = new URLSearchParams(floweaseRequest.body as Record<string, string>);
 		}
 		// if there is a body and it's empty (does not have properties),
 		// make sure not to send anything in it as some services fail when
@@ -947,7 +947,7 @@ function convertN8nRequestToAxios(n8nRequest: IHttpRequestOptions): AxiosRequest
 		}
 	}
 
-	if (n8nRequest.json) {
+	if (floweaseRequest.json) {
 		const key = searchForHeader(axiosRequest, 'accept');
 		// If key exists, then the user has set both accept
 		// header and the json flag. Header should take precedence.
@@ -965,11 +965,11 @@ function convertN8nRequestToAxios(n8nRequest: IHttpRequestOptions): AxiosRequest
 	if (!userAgentHeader) {
 		axiosRequest.headers = {
 			...axiosRequest.headers,
-			'User-Agent': 'n8n',
+			'User-Agent': 'flowease',
 		};
 	}
 
-	if (n8nRequest.ignoreHttpStatusErrors) {
+	if (floweaseRequest.ignoreHttpStatusErrors) {
 		axiosRequest.validateStatus = () => true;
 	}
 
@@ -988,10 +988,10 @@ export const removeEmptyBody = (requestOptions: IHttpRequestOptions | IRequestOp
 
 async function httpRequest(
 	requestOptions: IHttpRequestOptions,
-): Promise<IN8nHttpFullResponse | IN8nHttpResponse> {
+): Promise<IFloweaseHttpFullResponse | IFloweaseHttpResponse> {
 	removeEmptyBody(requestOptions);
 
-	let axiosRequest = convertN8nRequestToAxios(requestOptions);
+	let axiosRequest = convertFloweaseRequestToAxios(requestOptions);
 	if (
 		axiosRequest.data === undefined ||
 		(axiosRequest.method !== undefined && axiosRequest.method.toUpperCase() === 'GET')
@@ -1177,7 +1177,7 @@ export async function copyBinaryFile(
 }
 
 /**
- * Takes a buffer and converts it into the format n8n uses. It encodes the binary data as
+ * Takes a buffer and converts it into the format flowease uses. It encodes the binary data as
  * base64 and adds metadata.
  */
 // eslint-disable-next-line complexity
@@ -1302,7 +1302,7 @@ export async function requestOAuth2(
 	node: INode,
 	additionalData: IWorkflowExecuteAdditionalData,
 	oAuth2Options?: IOAuth2Options,
-	isN8nRequest = false,
+	isFloweaseRequest = false,
 ) {
 	removeEmptyBody(requestOptions);
 
@@ -1379,7 +1379,7 @@ export async function requestOAuth2(
 			[oAuth2Options.keyToIncludeInAccessTokenHeader]: token.accessToken,
 		});
 	}
-	if (isN8nRequest) {
+	if (isFloweaseRequest) {
 		return await this.helpers.httpRequest(newRequestOptions).catch(async (error: AxiosError) => {
 			if (error.response?.status === 401) {
 				Logger.debug(
@@ -1539,7 +1539,7 @@ export async function requestOAuth1(
 	this: IAllExecuteFunctions,
 	credentialsType: string,
 	requestOptions: IHttpRequestOptions | IRequestOptions,
-	isN8nRequest = false,
+	isFloweaseRequest = false,
 ) {
 	removeEmptyBody(requestOptions);
 
@@ -1595,7 +1595,7 @@ export async function requestOAuth1(
 	requestOptions.headers = oauth.toHeader(
 		oauth.authorize(requestOptions as unknown as clientOAuth1.RequestOptions, token),
 	) as unknown as Record<string, string>;
-	if (isN8nRequest) {
+	if (isFloweaseRequest) {
 		return await this.helpers.httpRequest(requestOptions as IHttpRequestOptions);
 	}
 
@@ -1717,7 +1717,7 @@ export async function httpRequestWithAuthentication(
 }
 
 /**
- * Takes generic input data and brings it into the json format n8n uses.
+ * Takes generic input data and brings it into the json format flowease uses.
  *
  * @param {(IDataObject | IDataObject[])} jsonData
  */
@@ -1741,7 +1741,7 @@ export function returnJsonArray(jsonData: IDataObject | IDataObject[]): INodeExe
 }
 
 /**
- * Takes generic input data and brings it into the new json, pairedItem format n8n uses.
+ * Takes generic input data and brings it into the new json, pairedItem format flowease uses.
  * @param {(IPairedItemData)} itemData
  * @param {(INodeExecutionData[])} inputData
  */
@@ -2385,7 +2385,7 @@ export function getNodeParameter(
 		cleanupParameterData(returnData);
 	} catch (e) {
 		if (e instanceof ExpressionError && node.continueOnFail && node.type === 'flowease-nodes-base.set') {
-			// https://linear.app/n8n/issue/PAY-684
+			// https://linear.app/flowease/issue/PAY-684
 			returnData = [{ name: undefined, value: undefined }];
 		} else {
 			if (e.context) e.context.parameter = parameterName;
@@ -2917,7 +2917,7 @@ const getRequestHelperFunctions = (
 			requestOptions.resolveWithFullResponse = true;
 			requestOptions.simple = false;
 
-			let tempResponseData: IN8nHttpFullResponse;
+			let tempResponseData: IFloweaseHttpFullResponse;
 			let makeAdditionalRequest: boolean;
 			let paginateRequestData: PaginationOptions['request'];
 
@@ -2925,7 +2925,7 @@ const getRequestHelperFunctions = (
 
 			const additionalKeys = {
 				$request: requestOptions,
-				$response: {} as IN8nHttpFullResponse,
+				$response: {} as IFloweaseHttpFullResponse,
 				$version: node.typeVersion,
 				$pageCount: 0,
 			};
@@ -2972,7 +2972,7 @@ const getRequestHelperFunctions = (
 					tempResponseData = await this.helpers.request(tempRequestOptions);
 				}
 
-				const newResponse: IN8nHttpFullResponse = Object.assign(
+				const newResponse: IFloweaseHttpFullResponse = Object.assign(
 					{
 						body: {},
 						headers: {},
@@ -2981,7 +2981,7 @@ const getRequestHelperFunctions = (
 					pick(tempResponseData, ['body', 'headers', 'statusCode']),
 				);
 
-				let contentBody: Exclude<IN8nHttpResponse, Buffer>;
+				let contentBody: Exclude<IFloweaseHttpResponse, Buffer>;
 
 				if (newResponse.body instanceof Readable && paginationOptions.binaryResult !== true) {
 					const data = await this.helpers
@@ -3186,7 +3186,7 @@ const getAllowedPaths = () => {
 function isFilePathBlocked(filePath: string): boolean {
 	const allowedPaths = getAllowedPaths();
 	const resolvedFilePath = path.resolve(filePath);
-	const blockFileAccessToN8nFiles = process.env[BLOCK_FILE_ACCESS_TO_N8N_FILES] !== 'false';
+	const blockFileAccessToFloweaseFiles = process.env[BLOCK_FILE_ACCESS_TO_FLOWEASE_FILES] !== 'false';
 
 	//if allowed paths are defined, allow access only to those paths
 	if (allowedPaths.length) {
@@ -3199,10 +3199,10 @@ function isFilePathBlocked(filePath: string): boolean {
 		return true;
 	}
 
-	//restrict access to .n8n folder and other .env config related paths
-	if (blockFileAccessToN8nFiles) {
-		const { n8nFolder } = Container.get(InstanceSettings);
-		const restrictedPaths = [n8nFolder];
+	//restrict access to .flowease folder and other .env config related paths
+	if (blockFileAccessToFloweaseFiles) {
+		const { floweaseFolder } = Container.get(InstanceSettings);
+		const restrictedPaths = [floweaseFolder];
 
 		if (process.env[CONFIG_FILES]) {
 			restrictedPaths.push(...process.env[CONFIG_FILES].split(','));
@@ -3260,7 +3260,7 @@ const getFileSystemHelperFunctions = (node: INode): FileSystemHelperFunctions =>
 	},
 
 	getStoragePath() {
-		return path.join(Container.get(InstanceSettings).n8nFolder, `storage/${node.type}`);
+		return path.join(Container.get(InstanceSettings).floweaseFolder, `storage/${node.type}`);
 	},
 
 	async writeContentToFile(filePath, content, flag) {
@@ -3572,7 +3572,7 @@ export function getExecuteFunctions(
 			},
 			getInputSourceData: (inputIndex = 0, inputName = 'main') => {
 				if (executeData?.source === null) {
-					// Should never happen as n8n sets it automatically
+					// Should never happen as flowease sets it automatically
 					throw new ApplicationError('Source data is missing');
 				}
 				return executeData.source[inputName][inputIndex];
@@ -3818,7 +3818,7 @@ export function getExecuteSingleFunctions(
 			},
 			getInputSourceData: (inputIndex = 0, inputName = 'main') => {
 				if (executeData?.source === null) {
-					// Should never happen as n8n sets it automatically
+					// Should never happen as flowease sets it automatically
 					throw new ApplicationError('Source data is missing');
 				}
 				return executeData.source[inputName][inputIndex] as ISourceData;

@@ -8,9 +8,9 @@ import type {
 	INodeType,
 	INodeTypeBaseDescription,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
-import { deepCopy, NodeOperationError } from 'n8n-workflow';
+import { deepCopy, NodeOperationError } from 'flowease-workflow';
 
 import set from 'lodash/set';
 

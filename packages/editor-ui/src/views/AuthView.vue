@@ -4,10 +4,10 @@
 			<Logo />
 		</div>
 		<div v-if="subtitle" :class="$style.textContainer">
-			<n8n-text size="large">{{ subtitle }}</n8n-text>
+			<flowease-text size="large">{{ subtitle }}</flowease-text>
 		</div>
 		<div :class="$style.formContainer">
-			<n8n-form-box
+			<flowease-form-box
 				v-bind="form"
 				data-test-id="auth-form"
 				:button-loading="formLoading"
@@ -16,7 +16,7 @@
 				@update="onUpdate"
 			>
 				<SSOLogin v-if="withSso" />
-			</n8n-form-box>
+			</flowease-form-box>
 		</div>
 	</div>
 </template>

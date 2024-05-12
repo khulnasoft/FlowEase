@@ -1,4 +1,4 @@
-import type { INodeParameterResourceLocator } from 'n8n-workflow';
+import type { INodeParameterResourceLocator } from 'flowease-workflow';
 import type { ICredentialsResponse, NewCredentialsModal } from '@/Interface';
 
 /*

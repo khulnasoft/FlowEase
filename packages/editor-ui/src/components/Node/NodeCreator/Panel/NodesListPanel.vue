@@ -141,7 +141,7 @@ function onBackButton() {
 					>
 						<font-awesome-icon :class="$style.backButtonIcon" icon="arrow-left" size="2x" />
 					</button>
-					<n8n-node-icon
+					<flowease-node-icon
 						v-if="activeViewStack.nodeIcon"
 						:class="$style.nodeIcon"
 						:type="activeViewStack.nodeIcon.iconType || 'unknown'"
@@ -172,7 +172,7 @@ function onBackButton() {
 				@update:model-value="onSearch"
 			/>
 			<div :class="$style.renderedItems">
-				<n8n-notice
+				<flowease-notice
 					v-if="activeViewStack.info && !activeViewStack.search"
 					:class="$style.info"
 					:content="activeViewStack.info"
@@ -314,7 +314,7 @@ function onBackButton() {
 <style lang="scss">
 @each $node-type in $supplemental-node-types {
 	.nodes-list-panel-#{$node-type} .nodes-list-panel-header {
-		.n8n-node-icon svg {
+		.flowease-node-icon svg {
 			color: var(--node-type-#{$node-type}-color);
 		}
 	}

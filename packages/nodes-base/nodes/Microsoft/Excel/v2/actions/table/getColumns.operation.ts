@@ -3,7 +3,7 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { microsoftApiRequest, microsoftApiRequestAllItemsSkip } from '../../transport';
 import { tableRLC, workbookRLC, worksheetRLC } from '../common.descriptions';
 import { updateDisplayOptions } from '@utils/utilities';

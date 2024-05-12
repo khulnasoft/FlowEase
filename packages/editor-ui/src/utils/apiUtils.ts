@@ -1,10 +1,10 @@
 import type { AxiosRequestConfig, Method, RawAxiosRequestHeaders } from 'axios';
 import axios from 'axios';
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import type { IExecutionFlattedResponse, IExecutionResponse, IRestApiContext } from '@/Interface';
 import { parse } from 'flatted';
 
-const BROWSER_ID_STORAGE_KEY = 'n8n-browserId';
+const BROWSER_ID_STORAGE_KEY = 'flowease-browserId';
 let browserId = localStorage.getItem(BROWSER_ID_STORAGE_KEY);
 if (!browserId && 'randomUUID' in crypto) {
 	browserId = crypto.randomUUID();
@@ -86,7 +86,7 @@ export async function request(config: {
 	if (
 		import.meta.env.NODE_ENV !== 'production' &&
 		!baseURL.includes('api.flowease.khulnasoft.com') &&
-		!baseURL.includes('n8n.cloud')
+		!baseURL.includes('flowease.cloud')
 	) {
 		options.withCredentials = options.withCredentials ?? true;
 	}
@@ -102,7 +102,7 @@ export async function request(config: {
 		return response.data;
 	} catch (error) {
 		if (error.message === 'Network Error') {
-			throw new ResponseError("Can't connect to n8n.", {
+			throw new ResponseError("Can't connect to flowease.", {
 				errorCode: NO_NETWORK_ERROR_CODE,
 			});
 		}

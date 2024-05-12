@@ -7,13 +7,13 @@ export const CODE_LANGUAGES = ['javaScript', 'python'] as const;
 export const CODE_EXECUTION_MODES = ['runOnceForAllItems', 'runOnceForEachItem'] as const;
 
 // Arbitrary value to represent an empty credential value
-export const CREDENTIAL_EMPTY_VALUE = '__n8n_EMPTY_VALUE_7b1af746-3729-4c60-9b9b-e08eb29e58da';
+export const CREDENTIAL_EMPTY_VALUE = '__flowease_EMPTY_VALUE_7b1af746-3729-4c60-9b9b-e08eb29e58da';
 
-export const FORM_TRIGGER_PATH_IDENTIFIER = 'n8n-form';
+export const FORM_TRIGGER_PATH_IDENTIFIER = 'flowease-form';
 
 export const UNKNOWN_ERROR_MESSAGE = 'There was an unknown issue while executing the node';
 export const UNKNOWN_ERROR_DESCRIPTION =
-	'Double-check the node configuration and the service it connects to. Check the error details below and refer to the <a href="https://docs.flowease.khulnasoft.com" target="_blank">n8n documentation</a> to troubleshoot the issue.';
+	'Double-check the node configuration and the service it connects to. Check the error details below and refer to the <a href="https://docs.flowease.khulnasoft.com" target="_blank">flowease documentation</a> to troubleshoot the issue.';
 export const UNKNOWN_ERROR_MESSAGE_CRED = 'UNKNOWN ERROR';
 
 //flowease-nodes-base

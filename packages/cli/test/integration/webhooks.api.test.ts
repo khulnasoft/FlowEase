@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import type { SuperAgentTest } from 'supertest';
 import { agent as testAgent } from 'supertest';
-import type { INodeType, INodeTypeDescription, IWebhookFunctions } from 'n8n-workflow';
+import type { INodeType, INodeTypeDescription, IWebhookFunctions } from 'flowease-workflow';
 
 import { AbstractServer } from '@/AbstractServer';
 import { ExternalHooks } from '@/ExternalHooks';

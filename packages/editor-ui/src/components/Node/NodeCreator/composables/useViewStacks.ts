@@ -26,7 +26,7 @@ import { useI18n } from '@/composables/useI18n';
 import { useKeyboardNavigation } from './useKeyboardNavigation';
 
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
-import type { INodeInputFilter, NodeConnectionType } from 'n8n-workflow';
+import type { INodeInputFilter, NodeConnectionType } from 'flowease-workflow';
 
 interface ViewStack {
 	uuid?: string;

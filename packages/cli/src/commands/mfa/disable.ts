@@ -6,7 +6,7 @@ import { BaseCommand } from '../BaseCommand';
 export class DisableMFACommand extends BaseCommand {
 	static description = 'Disable MFA authentication for a user';
 
-	static examples = ['$ n8n mfa:disable --email=johndoe@example.com'];
+	static examples = ['$ flowease mfa:disable --email=johndoe@example.com'];
 
 	static flags = {
 		help: Flags.help({ char: 'h' }),

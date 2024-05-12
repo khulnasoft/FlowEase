@@ -1,5 +1,5 @@
 <template>
-	<n8n-tabs
+	<flowease-tabs
 		:options="options"
 		:model-value="modelValue"
 		@update:model-value="onTabSelect"
@@ -18,8 +18,8 @@ import {
 import type { INodeUi, ITab } from '@/Interface';
 import { useNDVStore } from '@/stores/ndv.store';
 import { useWorkflowsStore } from '@/stores/workflows.store';
-import type { INodeTypeDescription } from 'n8n-workflow';
-import { NodeConnectionType } from 'n8n-workflow';
+import type { INodeTypeDescription } from 'flowease-workflow';
+import { NodeConnectionType } from 'flowease-workflow';
 
 import { isCommunityPackageName } from '@/utils/nodeTypesUtils';
 import { useExternalHooks } from '@/composables/useExternalHooks';
@@ -59,7 +59,7 @@ export default defineComponent({
 			}
 
 			const utmTags =
-				'?utm_source=n8n_app&utm_medium=node_settings_modal-credential_link' +
+				'?utm_source=flowease_app&utm_medium=node_settings_modal-credential_link' +
 				'&utm_campaign=' +
 				nodeType.name;
 

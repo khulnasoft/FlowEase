@@ -3,8 +3,8 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	IDataObject,
-} from 'n8n-workflow';
-import { jsonParse, updateDisplayOptions } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse, updateDisplayOptions } from 'flowease-workflow';
 import type { Tool } from '@langchain/core/tools';
 import { apiRequest } from '../../transport';
 import type { ChatCompletion } from '../../helpers/interfaces';
@@ -98,7 +98,7 @@ const properties: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Connect your own custom n8n tools to this node on the canvas',
+		displayName: 'Connect your own custom flowease tools to this node on the canvas',
 		name: 'noticeTools',
 		type: 'notice',
 		default: '',

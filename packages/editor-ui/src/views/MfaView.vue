@@ -3,16 +3,16 @@
 		<div :class="$style.logoContainer">
 			<Logo />
 		</div>
-		<n8n-card>
+		<flowease-card>
 			<div :class="$style.headerContainer">
-				<n8n-heading size="xlarge" color="text-dark">{{
+				<flowease-heading size="xlarge" color="text-dark">{{
 					showRecoveryCodeForm
 						? $locale.baseText('mfa.recovery.modal.title')
 						: $locale.baseText('mfa.code.modal.title')
-				}}</n8n-heading>
+				}}</flowease-heading>
 			</div>
 			<div :class="[$style.formContainer, reportError ? $style.formError : '']">
-				<n8n-form-inputs
+				<flowease-form-inputs
 					v-if="formInputs"
 					data-test-id="mfa-login-form"
 					:inputs="formInputs"
@@ -21,7 +21,7 @@
 					@submit="onSubmit"
 				/>
 				<div :class="$style.infoBox">
-					<n8n-text
+					<flowease-text
 						v-if="!showRecoveryCodeForm && !reportError"
 						size="small"
 						color="text-base"
@@ -29,9 +29,9 @@
 						>{{ $locale.baseText('mfa.code.input.info') }}
 						<a data-test-id="mfa-enter-recovery-code-button" @click="onRecoveryCodeClick">{{
 							$locale.baseText('mfa.code.input.info.action')
-						}}</a></n8n-text
+						}}</a></flowease-text
 					>
-					<n8n-text v-if="reportError" color="danger" size="small"
+					<flowease-text v-if="reportError" color="danger" size="small"
 						>{{ formError }}
 						<a
 							v-if="!showRecoveryCodeForm"
@@ -40,11 +40,11 @@
 						>
 							{{ $locale.baseText('mfa.recovery.input.info.action') }}</a
 						>
-					</n8n-text>
+					</flowease-text>
 				</div>
 			</div>
 			<div>
-				<n8n-button
+				<flowease-button
 					float="right"
 					:loading="verifyingMfaToken"
 					:label="
@@ -56,7 +56,7 @@
 					:disabled="!hasAnyChanges"
 					@click="onSaveClick"
 				/>
-				<n8n-button
+				<flowease-button
 					float="left"
 					:label="$locale.baseText('mfa.button.back')"
 					size="large"
@@ -64,7 +64,7 @@
 					@click="onBackClick"
 				/>
 			</div>
-		</n8n-card>
+		</flowease-card>
 	</div>
 </template>
 

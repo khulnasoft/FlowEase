@@ -7,7 +7,7 @@ import type {
 	INodeExecutionData,
 	INodePropertyOptions,
 	IWebhookFunctions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import set from 'lodash/set';
 import concat from 'lodash/concat';

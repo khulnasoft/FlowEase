@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
 import { computed } from 'vue';
-import N8nHeading from 'flowease-design-system/components/N8nHeading';
+import FloweaseHeading from 'flowease-design-system/components/FloweaseHeading';
 import NodeIcon from '@/components/NodeIcon.vue';
 import CredentialPicker from '@/components/CredentialPicker/CredentialPicker.vue';
 import IconSuccess from './IconSuccess.vue';
@@ -89,13 +89,13 @@ const onCredentialModalOpened = () => {
 
 <template>
 	<li :class="$style.container" data-test-id="setup-credentials-form-step">
-		<N8nHeading tag="h2" size="large">
+		<FloweaseHeading tag="h2" size="large">
 			<div v-if="nodeType" :class="$style.heading" data-test-id="credential-step-heading">
 				<span :class="$style.headingOrder">{{ order }}.</span>
 				<span :class="$style.headingIcon"><NodeIcon :node-type="nodeType" /></span>
 				{{ appName }}
 			</div>
-		</N8nHeading>
+		</FloweaseHeading>
 
 		<p :class="$style.description" data-test-id="credential-step-description">
 			<i18n-t

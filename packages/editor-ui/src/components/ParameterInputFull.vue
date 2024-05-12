@@ -1,5 +1,5 @@
 <template>
-	<n8n-input-label
+	<flowease-input-label
 		:class="[$style.wrapper, { [$style.tipVisible]: showDragnDropTip }]"
 		:label="hideLabel ? '' : i18n.nodeText().inputLabelDisplayName(parameter, path)"
 		:tooltip-text="hideLabel ? '' : i18n.nodeText().inputLabelDescription(parameter, path)"
@@ -74,7 +74,7 @@
 				@menu-expanded="onMenuExpanded"
 			/>
 		</div>
-	</n8n-input-label>
+	</flowease-input-label>
 </template>
 
 <script lang="ts">
@@ -96,7 +96,7 @@ import type {
 	INodePropertyMode,
 	IParameterLabel,
 	NodeParameterValueType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { useNDVStore } from '@/stores/ndv.store';
 import { useSegment } from '@/stores/segment.store';
 import { getMappedResult } from '@/utils/mappingUtils';

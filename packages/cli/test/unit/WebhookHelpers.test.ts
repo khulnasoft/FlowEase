@@ -1,6 +1,6 @@
 import { type Response } from 'express';
 import { mock } from 'jest-mock-extended';
-import type { IHttpRequestMethods } from 'n8n-workflow';
+import type { IHttpRequestMethods } from 'flowease-workflow';
 import type { IWebhookManager, WebhookCORSRequest, WebhookRequest } from '@/Interfaces';
 import { webhookRequestHandler } from '@/WebhookHelpers';
 

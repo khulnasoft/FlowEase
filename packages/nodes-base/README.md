@@ -2,7 +2,7 @@
 
 # flowease-nodes-base
 
-The nodes which are included by default in n8n
+The nodes which are included by default in flowease
 
 ```
 npm install flowease-nodes-base -g
@@ -10,7 +10,7 @@ npm install flowease-nodes-base -g
 
 ## License
 
-n8n is [fair-code](https://faircode.io) distributed under the [**Sustainable Use License**](https://github.com/khulnasoft/flowease/blob/master/packages/cli/LICENSE.md).
+flowease is [fair-code](https://faircode.io) distributed under the [**Sustainable Use License**](https://github.com/khulnasoft/flowease/blob/master/packages/cli/LICENSE.md).
 
 Proprietary licenses are available for enterprise customers. [Get in touch](mailto:license@flowease.khulnasoft.com)
 

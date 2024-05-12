@@ -1,4 +1,4 @@
-import { ApplicationError, jsonParse } from 'n8n-workflow';
+import { ApplicationError, jsonParse } from 'flowease-workflow';
 import { AIService } from '@/services/ai.service';
 import config from '@/config';
 import {

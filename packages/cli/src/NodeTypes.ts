@@ -5,8 +5,8 @@ import type {
 	INodeTypes,
 	IVersionedNodeType,
 	LoadedClass,
-} from 'n8n-workflow';
-import { ApplicationError, NodeHelpers } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { ApplicationError, NodeHelpers } from 'flowease-workflow';
 import { Service } from 'typedi';
 import { LoadNodesAndCredentials } from './LoadNodesAndCredentials';
 import { join, dirname } from 'path';

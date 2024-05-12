@@ -64,8 +64,8 @@ import type {
 	IParameterLabel,
 	NodeParameterValueType,
 	Result,
-} from 'n8n-workflow';
-import { isResourceLocatorValue } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { isResourceLocatorValue } from 'flowease-workflow';
 
 import type { EventBus } from 'flowease-design-system/utils';
 import { createEventBus } from 'flowease-design-system/utils';

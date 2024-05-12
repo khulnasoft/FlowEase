@@ -26,7 +26,7 @@
 		<template #header>
 			<div :class="$style.titleSection">
 				<template v-if="hasAiMetadata">
-					<n8n-radio-buttons
+					<flowease-radio-buttons
 						v-model="outputMode"
 						:options="outputTypes"
 						@update:model-value="onUpdateOutputMode"
@@ -46,10 +46,10 @@
 		</template>
 
 		<template #node-not-run>
-			<n8n-text v-if="workflowRunning && !isTriggerNode" data-test-id="ndv-output-waiting">{{
+			<flowease-text v-if="workflowRunning && !isTriggerNode" data-test-id="ndv-output-waiting">{{
 				$locale.baseText('ndv.output.waitingToRun')
-			}}</n8n-text>
-			<n8n-text v-if="!workflowRunning" data-test-id="ndv-output-run-node-hint">
+			}}</flowease-text>
+			<flowease-text v-if="!workflowRunning" data-test-id="ndv-output-run-node-hint">
 				<template v-if="isSubNodeType.value">
 					{{ $locale.baseText('ndv.output.runNodeHintSubNode') }}
 				</template>
@@ -58,25 +58,25 @@
 					<span v-if="canPinData" @click="insertTestData">
 						<br />
 						{{ $locale.baseText('generic.or') }}
-						<n8n-text tag="a" size="medium" color="primary">
+						<flowease-text tag="a" size="medium" color="primary">
 							{{ $locale.baseText('ndv.output.insertTestData') }}
-						</n8n-text>
+						</flowease-text>
 					</span>
 				</template>
-			</n8n-text>
+			</flowease-text>
 		</template>
 
 		<template #no-output-data>
-			<n8n-text :bold="true" color="text-dark" size="large">{{
+			<flowease-text :bold="true" color="text-dark" size="large">{{
 				$locale.baseText('ndv.output.noOutputData.title')
-			}}</n8n-text>
-			<n8n-text>
+			}}</flowease-text>
+			<flowease-text>
 				{{ $locale.baseText('ndv.output.noOutputData.message') }}
 				<a @click="openSettings">{{
 					$locale.baseText('ndv.output.noOutputData.message.settings')
 				}}</a>
 				{{ $locale.baseText('ndv.output.noOutputData.message.settingsOption') }}
-			</n8n-text>
+			</flowease-text>
 		</template>
 
 		<template v-if="outputMode === 'logs'" #content>
@@ -84,12 +84,12 @@
 		</template>
 		<template #recovered-artificial-output-data>
 			<div :class="$style.recoveredOutputData">
-				<n8n-text tag="div" :bold="true" color="text-dark" size="large">{{
+				<flowease-text tag="div" :bold="true" color="text-dark" size="large">{{
 					$locale.baseText('executionDetails.executionFailed.recoveredNodeTitle')
-				}}</n8n-text>
-				<n8n-text>
+				}}</flowease-text>
+				<flowease-text>
 					{{ $locale.baseText('executionDetails.executionFailed.recoveredNodeMessage') }}
-				</n8n-text>
+				</flowease-text>
 			</div>
 		</template>
 
@@ -102,7 +102,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import type { IExecutionResponse, INodeUi } from '@/Interface';
-import type { INodeTypeDescription, IRunData, IRunExecutionData, ITaskData } from 'n8n-workflow';
+import type { INodeTypeDescription, IRunData, IRunExecutionData, ITaskData } from 'flowease-workflow';
 import RunData from './RunData.vue';
 import RunInfo from './RunInfo.vue';
 import { mapStores, storeToRefs } from 'pinia';

@@ -4,8 +4,8 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
-import { jsonParse, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse, NodeOperationError } from 'flowease-workflow';
 
 import { contactFields, contactOperations } from './ContactDescription';
 

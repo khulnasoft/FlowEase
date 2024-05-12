@@ -5,8 +5,8 @@ import type {
 	IRunExecutionData,
 	IExecuteData,
 	INodeTypeData,
-} from 'n8n-workflow';
-import { WorkflowDataProxy } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { WorkflowDataProxy } from 'flowease-workflow';
 import { createTestWorkflowObject } from '@/__tests__/mocks';
 
 const nodeTypes: INodeTypeData = {

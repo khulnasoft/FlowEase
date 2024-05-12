@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { CliWorkflowOperationError, SubworkflowOperationError } from 'n8n-workflow';
-import type { INode } from 'n8n-workflow';
+import { CliWorkflowOperationError, SubworkflowOperationError } from 'flowease-workflow';
+import type { INode } from 'flowease-workflow';
 import { STARTING_NODES } from './constants';
 
 /**

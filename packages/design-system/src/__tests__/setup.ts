@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
 import { config } from '@vue/test-utils';
-import { N8nPlugin } from '@/plugin';
+import { FloweasePlugin } from '@/plugin';
 
-config.global.plugins = [N8nPlugin];
+config.global.plugins = [FloweasePlugin];

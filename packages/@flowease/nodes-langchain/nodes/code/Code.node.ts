@@ -8,7 +8,7 @@ import {
 	type INodeOutputConfiguration,
 	type SupplyData,
 	NodeConnectionType,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 // TODO: Add support for execute function. Got already started but got commented out
 
@@ -16,7 +16,7 @@ import { getSandboxContext } from 'flowease-nodes-base/dist/nodes/Code/Sandbox';
 import { JavaScriptSandbox } from 'flowease-nodes-base/dist/nodes/Code/JavaScriptSandbox';
 import { standardizeOutput } from 'flowease-nodes-base/dist/nodes/Code/utils';
 import type { Tool } from '@langchain/core/tools';
-import { makeResolverFromLegacyOptions } from '@n8n/vm2';
+import { makeResolverFromLegacyOptions } from '@flowease/vm2';
 import { logWrapper } from '../../utils/logWrapper';
 
 const { NODE_FUNCTION_ALLOW_BUILTIN: builtIn, NODE_FUNCTION_ALLOW_EXTERNAL: external } =
@@ -132,7 +132,7 @@ export class Code implements INodeType {
 			resources: {
 				primaryDocumentation: [
 					{
-						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.code/',
+						url: 'https://docs.flowease.khulnasoft.com/integrations/builtin/cluster-nodes/root-nodes/flowease-nodes-langchain.code/',
 					},
 				],
 			},

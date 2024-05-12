@@ -10,8 +10,8 @@ import type {
 	IRun,
 	ITriggerFunctions,
 	ITriggerResponse,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { rabbitDefaultOptions } from './DefaultOptions';
 
@@ -340,7 +340,7 @@ export class RabbitMQTrigger implements INodeType {
 		};
 		await startConsumer();
 
-		// The "closeFunction" function gets called by n8n whenever
+		// The "closeFunction" function gets called by flowease whenever
 		// the workflow gets deactivated and can so clean up.
 		const closeFunction = async () => {
 			closeGotCalled = true;

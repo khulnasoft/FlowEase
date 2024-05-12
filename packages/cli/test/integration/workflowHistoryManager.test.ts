@@ -1,5 +1,5 @@
 import Container from 'typedi';
-import { In } from '@n8n/typeorm';
+import { In } from '@flowease/typeorm';
 import { DateTime } from 'luxon';
 
 import config from '@/config';

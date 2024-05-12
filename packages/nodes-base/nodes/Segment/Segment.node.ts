@@ -4,7 +4,7 @@ import type {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { v4 as uuid } from 'uuid';
 import { segmentApiRequest } from './GenericFunctions';

@@ -1,15 +1,15 @@
 <template>
-	<n8n-card :class="$style.cardLink" @click="onClick">
+	<flowease-card :class="$style.cardLink" @click="onClick">
 		<template #prepend>
 			<CredentialIcon :credential-type-name="credentialType ? credentialType.name : ''" />
 		</template>
 		<template #header>
-			<n8n-heading tag="h2" bold :class="$style.cardHeading">
+			<flowease-heading tag="h2" bold :class="$style.cardHeading">
 				{{ data.name }}
-			</n8n-heading>
+			</flowease-heading>
 		</template>
 		<div :class="$style.cardDescription">
-			<n8n-text color="text-light" size="small">
+			<flowease-text color="text-light" size="small">
 				<span v-if="credentialType">{{ credentialType.displayName }} | </span>
 				<span v-show="data"
 					>{{ $locale.baseText('credentials.item.updated') }} <TimeAgo :date="data.updatedAt" /> |
@@ -17,25 +17,25 @@
 				<span v-show="data"
 					>{{ $locale.baseText('credentials.item.created') }} {{ formattedCreatedAtDate }}
 				</span>
-			</n8n-text>
+			</flowease-text>
 		</div>
 		<template #append>
 			<div ref="cardActions" :class="$style.cardActions">
 				<enterprise-edition :features="[EnterpriseEditionFeature.Sharing]">
-					<n8n-badge v-if="credentialPermissions.isOwner" class="mr-xs" theme="tertiary" bold>
+					<flowease-badge v-if="credentialPermissions.isOwner" class="mr-xs" theme="tertiary" bold>
 						{{ $locale.baseText('credentials.item.owner') }}
-					</n8n-badge>
+					</flowease-badge>
 				</enterprise-edition>
-				<n8n-action-toggle :actions="actions" theme="dark" @action="onAction" @click.stop />
+				<flowease-action-toggle :actions="actions" theme="dark" @action="onAction" @click.stop />
 			</div>
 		</template>
-	</n8n-card>
+	</flowease-card>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import type { ICredentialsResponse, IUser } from '@/Interface';
-import type { ICredentialType } from 'n8n-workflow';
+import type { ICredentialType } from 'flowease-workflow';
 import { EnterpriseEditionFeature, MODAL_CONFIRM } from '@/constants';
 import { useMessage } from '@/composables/useMessage';
 import CredentialIcon from '@/components/CredentialIcon.vue';

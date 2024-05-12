@@ -1,4 +1,4 @@
-import type { IDataObject } from 'n8n-workflow';
+import type { IDataObject } from 'flowease-workflow';
 import moment from 'moment-timezone';
 import type { IRecurencyRule } from './SchedulerInterface';
 

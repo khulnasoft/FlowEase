@@ -7,7 +7,7 @@ import type {
 	INodeListSearchResult,
 	INodeType,
 	INodeTypeDescription,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 import { awsApiRequestSOAP } from './GenericFunctions';
 

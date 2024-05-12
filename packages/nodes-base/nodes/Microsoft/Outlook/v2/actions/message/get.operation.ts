@@ -4,7 +4,7 @@ import type {
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeProperties,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { messageFields, simplifyOutputMessages } from '../../helpers/utils';
 import { downloadAttachments, getMimeContent, microsoftApiRequest } from '../../transport';
 import { messageRLC } from '../../descriptions';

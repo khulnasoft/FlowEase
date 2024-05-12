@@ -33,8 +33,8 @@ describe('ChatEmbedModal', () => {
 			expect(wrapper.container.querySelector('.modal-content')).toBeInTheDocument(),
 		);
 
-		const tabs = wrapper.container.querySelectorAll('.n8n-tabs .tab');
-		const activeTab = wrapper.container.querySelector('.n8n-tabs .tab.activeTab');
+		const tabs = wrapper.container.querySelectorAll('.flowease-tabs .tab');
+		const activeTab = wrapper.container.querySelector('.flowease-tabs .tab.activeTab');
 		const editor = wrapper.container.querySelector('.cm-editor');
 
 		expect(tabs).toHaveLength(4);

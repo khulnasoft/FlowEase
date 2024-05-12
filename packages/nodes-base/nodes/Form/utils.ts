@@ -1,4 +1,4 @@
-import { jsonParse, type IDataObject, type IWebhookFunctions } from 'n8n-workflow';
+import { jsonParse, type IDataObject, type IWebhookFunctions } from 'flowease-workflow';
 import type { FormField, FormTriggerData, FormTriggerInput } from './interfaces';
 
 export const prepareFormData = (
@@ -14,7 +14,7 @@ export const prepareFormData = (
 ) => {
 	const validForm = formFields.length > 0;
 	const utm_campaign = instanceId ? `&utm_campaign=${instanceId}` : '';
-	const n8nWebsiteLink = `https://flowease.khulnasoft.com/?utm_source=n8n-internal&utm_medium=form-trigger${utm_campaign}`;
+	const floweaseWebsiteLink = `https://flowease.khulnasoft.com/?utm_source=flowease-internal&utm_medium=form-trigger${utm_campaign}`;
 
 	if (formSubmittedText === undefined) {
 		formSubmittedText = 'Your response has been recorded';
@@ -26,7 +26,7 @@ export const prepareFormData = (
 		formTitle,
 		formDescription,
 		formSubmittedText,
-		n8nWebsiteLink,
+		floweaseWebsiteLink,
 		formFields: [],
 		useResponseData,
 		appendAttribution,

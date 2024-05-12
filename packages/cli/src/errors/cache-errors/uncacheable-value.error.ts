@@ -1,4 +1,4 @@
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 export class UncacheableValueError extends ApplicationError {
 	constructor(key: string) {

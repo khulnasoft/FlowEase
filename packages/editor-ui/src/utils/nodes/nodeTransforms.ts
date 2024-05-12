@@ -1,7 +1,7 @@
 import type { INodeUi } from '@/Interface';
 import type { NodeTypeProvider } from '@/utils/nodeTypes/nodeTypeTransforms';
-import type { INodeCredentialDescription } from 'n8n-workflow';
-import { NodeHelpers } from 'n8n-workflow';
+import type { INodeCredentialDescription } from 'flowease-workflow';
+import { NodeHelpers } from 'flowease-workflow';
 
 /**
  * Returns the credentials that are displayable for the given node.

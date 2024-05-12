@@ -4,8 +4,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	JsonObject,
-} from 'n8n-workflow';
-import { jsonParse, NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { jsonParse, NodeOperationError } from 'flowease-workflow';
 
 const errorObjectPlaceholder = `{
 	"code": "404",

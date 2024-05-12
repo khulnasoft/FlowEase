@@ -134,7 +134,7 @@ export const defaultMessageEventBusDestinationOptions: MessageEventBusDestinatio
 	id: '',
 	label: 'New Event Destination',
 	enabled: true,
-	subscribedEvents: ['n8n.audit', 'n8n.workflow'],
+	subscribedEvents: ['flowease.audit', 'flowease.workflow'],
 	credentials: {},
 	anonymizeAuditMessages: false,
 };
@@ -149,7 +149,7 @@ export const defaultMessageEventBusDestinationSyslogOptions: MessageEventBusDest
 		port: 514,
 		protocol: 'tcp',
 		facility: 16,
-		app_name: 'n8n',
+		app_name: 'flowease',
 		eol: '\n',
 	};
 

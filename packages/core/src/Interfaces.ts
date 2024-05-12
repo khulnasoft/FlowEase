@@ -3,7 +3,7 @@ import type {
 	ITriggerResponse,
 	IWorkflowSettings as IWorkflowSettingsWorkflow,
 	ValidationResult,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
 export type Class<T = object, A extends unknown[] = unknown[]> = new (...args: A) => T;
 
@@ -22,11 +22,11 @@ export interface IWorkflowData {
 	triggerResponses?: ITriggerResponse[];
 }
 
-export namespace n8n {
+export namespace flowease {
 	export interface PackageJson {
 		name: string;
 		version: string;
-		n8n?: {
+		flowease?: {
 			credentials?: string[];
 			nodes?: string[];
 		};

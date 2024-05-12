@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from '@/composables/useI18n';
-import Button from 'flowease-design-system/components/N8nButton/Button.vue';
+import Button from 'flowease-design-system/components/FloweaseButton/Button.vue';
 
 type QuickReply = {
 	label: string;

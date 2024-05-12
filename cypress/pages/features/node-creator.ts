@@ -1,5 +1,5 @@
 import { BasePage } from '../base';
-import { INodeTypeDescription } from 'n8n-workflow';
+import { INodeTypeDescription } from 'flowease-workflow';
 
 export class NodeCreator extends BasePage {
 	url = '/workflow/new';

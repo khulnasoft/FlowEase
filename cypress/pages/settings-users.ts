@@ -29,7 +29,7 @@ export class SettingsUsersPage extends BasePage {
 			this.getters.confirmDeleteModal().find('.el-radio .el-radio__input').first(),
 		deleteDataRadioButton: () =>
 			this.getters.confirmDeleteModal().find('.el-radio .el-radio__input').last(),
-		userSelectDropDown: () => this.getters.confirmDeleteModal().find('.n8n-select'),
+		userSelectDropDown: () => this.getters.confirmDeleteModal().find('.flowease-select'),
 		userSelectOptions: () => cy.get('.el-select-dropdown:visible .el-select-dropdown__item'),
 		deleteUserButton: () => this.getters.confirmDeleteModal().find('button:contains("Delete")'),
 		deleteDataInput: () => cy.getByTestId('delete-data-input').find('input').first(),

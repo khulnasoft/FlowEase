@@ -1,5 +1,5 @@
-import type { QueryRunner } from '@n8n/typeorm';
-import { TableIndex } from '@n8n/typeorm';
+import type { QueryRunner } from '@flowease/typeorm';
+import { TableIndex } from '@flowease/typeorm';
 import LazyPromise from 'p-lazy';
 
 abstract class IndexOperation extends LazyPromise<void> {

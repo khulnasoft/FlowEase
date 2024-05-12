@@ -5,9 +5,9 @@ import type {
 	IOAuth2Options,
 	IHttpRequestMethods,
 	IRequestOptions,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 
-import { NodeOperationError, jsonParse } from 'n8n-workflow';
+import { NodeOperationError, jsonParse } from 'flowease-workflow';
 
 import get from 'lodash/get';
 
@@ -146,9 +146,9 @@ export function getMessageContent(
 	) as IDataObject;
 
 	const { id } = this.getWorkflow();
-	const automatedMessage = `_Automated with this <${this.getInstanceBaseUrl()}workflow/${id}?utm_source=n8n-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
+	const automatedMessage = `_Automated with this <${this.getInstanceBaseUrl()}workflow/${id}?utm_source=flowease-internal&utm_medium=powered_by&utm_campaign=${encodeURIComponent(
 		'flowease-nodes-base.slack',
-	)}${instanceId ? '_' + instanceId : ''}|n8n workflow>_`;
+	)}${instanceId ? '_' + instanceId : ''}|flowease workflow>_`;
 	const messageType = this.getNodeParameter('messageType', i) as string;
 
 	let content: IDataObject = {};

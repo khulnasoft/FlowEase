@@ -1,7 +1,7 @@
 {
   "name": "flowease-core",
   "version": "1.41.0",
-  "description": "Core functionality of n8n",
+  "description": "Core functionality of flowease",
   "license": "SEE LICENSE IN LICENSE.md",
   "homepage": "https://flowease.khulnasoft.com",
   "author": {
@@ -15,10 +15,10 @@
   "main": "dist/index",
   "types": "dist/index.d.ts",
   "bin": {
-    "n8n-copy-icons": "./bin/copy-icons",
-    "n8n-generate-known": "./bin/generate-known",
-    "n8n-generate-translations": "./bin/generate-translations",
-    "n8n-generate-ui-types": "./bin/generate-ui-types"
+    "flowease-copy-icons": "./bin/copy-icons",
+    "flowease-generate-known": "./bin/generate-known",
+    "flowease-generate-translations": "./bin/generate-translations",
+    "flowease-generate-ui-types": "./bin/generate-ui-types"
   },
   "scripts": {
     "clean": "rimraf dist .turbo",
@@ -60,7 +60,7 @@
     "lodash": "4.17.21",
     "luxon": "^3.4.4",
     "mime-types": "2.1.35",
-    "n8n-workflow": "workspace:*",
+    "flowease-workflow": "workspace:*",
     "oauth-1.0a": "2.2.6",
     "p-cancelable": "2.1.1",
     "pretty-bytes": "5.6.0",

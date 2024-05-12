@@ -241,28 +241,28 @@ async function commitAndPush() {
 			<div :class="$style.container">
 				<div v-if="files.length > 0">
 					<div v-if="workflowFiles.length > 0">
-						<n8n-text>
+						<flowease-text>
 							{{ i18n.baseText('settings.sourceControl.modals.push.description') }}
-							<n8n-link :to="i18n.baseText('settings.sourceControl.docs.using.pushPull.url')">
+							<flowease-link :to="i18n.baseText('settings.sourceControl.docs.using.pushPull.url')">
 								{{ i18n.baseText('settings.sourceControl.modals.push.description.learnMore') }}
-							</n8n-link>
-						</n8n-text>
+							</flowease-link>
+						</flowease-text>
 
 						<div class="mt-l mb-2xs">
-							<n8n-checkbox
+							<flowease-checkbox
 								:indeterminate="selectAllIndeterminate"
 								:model-value="selectAll"
 								@update:model-value="onToggleSelectAll"
 							>
-								<n8n-text bold tag="strong">
+								<flowease-text bold tag="strong">
 									{{ i18n.baseText('settings.sourceControl.modals.push.workflowsToCommit') }}
-								</n8n-text>
-								<n8n-text v-show="workflowFiles.length > 0" tag="strong">
+								</flowease-text>
+								<flowease-text v-show="workflowFiles.length > 0" tag="strong">
 									({{ stagedWorkflowFiles.length }}/{{ workflowFiles.length }})
-								</n8n-text>
-							</n8n-checkbox>
+								</flowease-text>
+							</flowease-checkbox>
 						</div>
-						<n8n-card
+						<flowease-card
 							v-for="file in sortedFiles"
 							v-show="!defaultStagedFileTypes.includes(file.type)"
 							:key="file.file"
@@ -270,54 +270,54 @@ async function commitAndPush() {
 							@click="setStagedStatus(file, !staged[file.file])"
 						>
 							<div :class="$style.listItemBody">
-								<n8n-checkbox
+								<flowease-checkbox
 									:model-value="staged[file.file]"
 									:class="$style.listItemCheckbox"
 									@update:model-value="setStagedStatus(file, !staged[file.file])"
 								/>
 								<div>
-									<n8n-text v-if="file.status === 'deleted'" color="text-light">
+									<flowease-text v-if="file.status === 'deleted'" color="text-light">
 										<span v-if="file.type === 'workflow'"> Deleted Workflow: </span>
 										<span v-if="file.type === 'credential'"> Deleted Credential: </span>
 										<strong>{{ file.name || file.id }}</strong>
-									</n8n-text>
-									<n8n-text v-else bold> {{ file.name }} </n8n-text>
+									</flowease-text>
+									<flowease-text v-else bold> {{ file.name }} </flowease-text>
 									<div v-if="file.updatedAt">
-										<n8n-text color="text-light" size="small">
+										<flowease-text color="text-light" size="small">
 											{{ renderUpdatedAt(file) }}
-										</n8n-text>
+										</flowease-text>
 									</div>
 								</div>
 								<div :class="$style.listItemStatus">
-									<n8n-badge
+									<flowease-badge
 										v-if="workflowId === file.id && file.type === 'workflow'"
 										class="mr-2xs"
 									>
 										Current workflow
-									</n8n-badge>
-									<n8n-badge :theme="statusToBadgeThemeMap[file.status] || 'default'">
+									</flowease-badge>
+									<flowease-badge :theme="statusToBadgeThemeMap[file.status] || 'default'">
 										{{ i18n.baseText(`settings.sourceControl.status.${file.status}`) }}
-									</n8n-badge>
+									</flowease-badge>
 								</div>
 							</div>
-						</n8n-card>
+						</flowease-card>
 					</div>
-					<n8n-notice v-else class="mt-0">
+					<flowease-notice v-else class="mt-0">
 						<i18n-t keypath="settings.sourceControl.modals.push.noWorkflowChanges">
 							<template #link>
-								<n8n-link size="small" :to="i18n.baseText('settings.sourceControl.docs.using.url')">
+								<flowease-link size="small" :to="i18n.baseText('settings.sourceControl.docs.using.url')">
 									{{
 										i18n.baseText('settings.sourceControl.modals.push.noWorkflowChanges.moreInfo')
 									}}
-								</n8n-link>
+								</flowease-link>
 							</template>
 						</i18n-t>
-					</n8n-notice>
+					</flowease-notice>
 
-					<n8n-text bold tag="p" class="mt-l mb-2xs">
+					<flowease-text bold tag="p" class="mt-l mb-2xs">
 						{{ i18n.baseText('settings.sourceControl.modals.push.commitMessage') }}
-					</n8n-text>
-					<n8n-input
+					</flowease-text>
+					<flowease-input
 						v-model="commitMessage"
 						type="text"
 						:placeholder="
@@ -327,21 +327,21 @@ async function commitAndPush() {
 					/>
 				</div>
 				<div v-else-if="!loading">
-					<n8n-notice class="mt-0 mb-0">
+					<flowease-notice class="mt-0 mb-0">
 						{{ i18n.baseText('settings.sourceControl.modals.push.everythingIsUpToDate') }}
-					</n8n-notice>
+					</flowease-notice>
 				</div>
 			</div>
 		</template>
 
 		<template #footer>
 			<div :class="$style.footer">
-				<n8n-button type="tertiary" class="mr-2xs" @click="close">
+				<flowease-button type="tertiary" class="mr-2xs" @click="close">
 					{{ i18n.baseText('settings.sourceControl.modals.push.buttons.cancel') }}
-				</n8n-button>
-				<n8n-button type="primary" :disabled="isSubmitDisabled" @click="commitAndPush">
+				</flowease-button>
+				<flowease-button type="primary" :disabled="isSubmitDisabled" @click="commitAndPush">
 					{{ i18n.baseText('settings.sourceControl.modals.push.buttons.save') }}
-				</n8n-button>
+				</flowease-button>
 			</div>
 		</template>
 	</Modal>

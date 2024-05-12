@@ -1,7 +1,7 @@
 import { computed, reactive } from 'vue';
 import { defineStore } from 'pinia';
 import type { CloudPlanState } from '@/Interface';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useUIStore } from '@/stores/ui.store';
 import { useUsersStore } from '@/stores/users.store';
@@ -60,7 +60,7 @@ export const useCloudPlanStore = defineStore(STORES.CLOUD_PLAN, () => {
 	});
 
 	const hasCloudPlan = computed(() => {
-		const cloudUserId = settingsStore.settings.n8nMetadata?.userId;
+		const cloudUserId = settingsStore.settings.floweaseMetadata?.userId;
 		return hasPermission(['instanceOwner']) && settingsStore.isCloudDeployment && cloudUserId;
 	});
 

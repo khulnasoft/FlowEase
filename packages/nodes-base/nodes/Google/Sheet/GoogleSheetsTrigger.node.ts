@@ -4,8 +4,8 @@ import type {
 	INodeType,
 	INodeTypeDescription,
 	IPollFunctions,
-} from 'n8n-workflow';
-import { NodeOperationError } from 'n8n-workflow';
+} from 'flowease-workflow';
+import { NodeOperationError } from 'flowease-workflow';
 
 import { GOOGLE_DRIVE_FILE_URL_REGEX } from '../constants';
 import { apiRequest } from './v2/transport';

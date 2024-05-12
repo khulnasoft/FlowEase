@@ -1,4 +1,4 @@
-import { deepCopy } from 'n8n-workflow';
+import { deepCopy } from 'flowease-workflow';
 import type {
 	ExecutionError,
 	GenericValue,
@@ -7,12 +7,12 @@ import type {
 	ITelemetryTrackProperties,
 	NodeParameterValue,
 	INode,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import { useNDVStore } from '@/stores/ndv.store';
 import type { TelemetryEventData } from '@/hooks/types';
 import type { INodeUi } from '@/Interface';
 import { useWorkflowsStore } from '@/stores/workflows.store';
-import { useRootStore } from '@/stores/n8nRoot.store';
+import { useRootStore } from '@/stores/floweaseRoot.store';
 
 export interface UserSavedCredentialsEventData {
 	credential_type: string;

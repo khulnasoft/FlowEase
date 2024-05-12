@@ -8,7 +8,7 @@
 		@enter="onSubmit"
 	>
 		<template #content>
-			<n8n-form-inputs
+			<flowease-form-inputs
 				:inputs="config"
 				:event-bus="formBus"
 				:column-view="true"
@@ -17,7 +17,7 @@
 			/>
 		</template>
 		<template #footer>
-			<n8n-button
+			<flowease-button
 				:loading="loading"
 				:label="$locale.baseText('auth.changePassword')"
 				float="right"

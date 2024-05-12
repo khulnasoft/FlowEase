@@ -1,7 +1,7 @@
 import Container from 'typedi';
 
-import type { SelectQueryBuilder } from '@n8n/typeorm';
-import { Not, LessThanOrEqual } from '@n8n/typeorm';
+import type { SelectQueryBuilder } from '@flowease/typeorm';
+import { Not, LessThanOrEqual } from '@flowease/typeorm';
 
 import config from '@/config';
 import { ExecutionEntity } from '@db/entities/ExecutionEntity';

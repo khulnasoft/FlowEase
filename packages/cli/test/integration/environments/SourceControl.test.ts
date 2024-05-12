@@ -45,7 +45,7 @@ describe('GET /sourceControl/preferences', () => {
 					status: 'modified',
 					location: 'local',
 					conflict: true,
-					file: '/Users/michael/.n8n/git/workflows/haQetoXq9GxHSkft.json',
+					file: '/Users/michael/.flowease/git/workflows/haQetoXq9GxHSkft.json',
 					updatedAt: '2023-07-14T11:24:41.000Z',
 				},
 			] as SourceControlledFile[];

@@ -5,7 +5,7 @@ import { waitFor } from '@testing-library/vue';
 import { setActivePinia } from 'pinia';
 import { beforeEach, describe, vi } from 'vitest';
 import { ref, toValue } from 'vue';
-import { n8nLang } from '../../plugins/codemirror/n8nLang';
+import { floweaseLang } from '../../plugins/codemirror/floweaseLang';
 import { useExpressionEditor } from '../useExpressionEditor';
 import { useRouter } from 'vue-router';
 import { EditorSelection } from '@codemirror/state';
@@ -56,7 +56,7 @@ describe('useExpressionEditor', () => {
 		const { segments } = useExpressionEditor({
 			editorRef: root,
 			editorValue: 'before {{ $json.test.length }} after',
-			extensions: [n8nLang()],
+			extensions: [floweaseLang()],
 		});
 
 		root.value = document.createElement('div');
@@ -122,7 +122,7 @@ describe('useExpressionEditor', () => {
 			const { readEditorValue } = useExpressionEditor({
 				editorRef: root,
 				editorValue: 'before {{ $json.test.length }} after',
-				extensions: [n8nLang()],
+				extensions: [floweaseLang()],
 			});
 
 			root.value = document.createElement('div');
@@ -178,7 +178,7 @@ describe('useExpressionEditor', () => {
 			const { editor, setCursorPosition } = useExpressionEditor({
 				editorRef: root,
 				editorValue,
-				extensions: [n8nLang()],
+				extensions: [floweaseLang()],
 			});
 
 			root.value = document.createElement('div');

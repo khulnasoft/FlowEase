@@ -3,7 +3,7 @@ import { VIEWS } from '@/constants';
 import { createComponentRenderer } from '@/__tests__/render';
 import { waitFor } from '@testing-library/vue';
 import { uuid } from '@jsplumb/util';
-import type { INode } from 'n8n-workflow';
+import type { INode } from 'flowease-workflow';
 import { createTestNode, createTestWorkflow } from '@/__tests__/mocks';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useUsersStore } from '@/stores/users.store';

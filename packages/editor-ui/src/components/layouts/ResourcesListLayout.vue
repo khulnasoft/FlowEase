@@ -2,14 +2,14 @@
 	<PageViewLayout>
 		<template v-if="showAside" #aside>
 			<div :class="[$style['heading-wrapper'], 'mb-xs']">
-				<n8n-heading size="2xlarge">
+				<flowease-heading size="2xlarge">
 					{{ i18n.baseText(`${resourceKey}.heading`) }}
-				</n8n-heading>
+				</flowease-heading>
 			</div>
 
 			<div class="mt-xs mb-l">
 				<slot name="add-button" :disabled="disabled">
-					<n8n-button
+					<flowease-button
 						size="large"
 						block
 						:disabled="disabled"
@@ -17,7 +17,7 @@
 						@click="$emit('click:add', $event)"
 					>
 						{{ i18n.baseText(`${resourceKey}.add`) }}
-					</n8n-button>
+					</flowease-button>
 				</slot>
 			</div>
 
@@ -31,14 +31,14 @@
 		</template>
 
 		<div v-if="loading">
-			<n8n-loading :class="[$style['header-loading'], 'mb-l']" variant="custom" />
-			<n8n-loading :class="[$style['card-loading'], 'mb-2xs']" variant="custom" />
-			<n8n-loading :class="$style['card-loading']" variant="custom" />
+			<flowease-loading :class="[$style['header-loading'], 'mb-l']" variant="custom" />
+			<flowease-loading :class="[$style['card-loading'], 'mb-2xs']" variant="custom" />
+			<flowease-loading :class="$style['card-loading']" variant="custom" />
 		</div>
 		<template v-else>
 			<div v-if="resources.length === 0">
 				<slot name="empty">
-					<n8n-action-box
+					<flowease-action-box
 						data-test-id="empty-resources-list"
 						emoji="👋"
 						:heading="
@@ -62,7 +62,7 @@
 				<template #header>
 					<div class="mb-xs">
 						<div :class="$style['filters-row']">
-							<n8n-input
+							<flowease-input
 								ref="search"
 								:model-value="filtersModel.search"
 								:class="[$style['search'], 'mr-2xs']"
@@ -72,19 +72,19 @@
 								@update:model-value="onSearch"
 							>
 								<template #prefix>
-									<n8n-icon icon="search" />
+									<flowease-icon icon="search" />
 								</template>
-							</n8n-input>
+							</flowease-input>
 							<div :class="$style['sort-and-filter']">
-								<n8n-select v-model="sortBy" data-test-id="resources-list-sort">
-									<n8n-option
+								<flowease-select v-model="sortBy" data-test-id="resources-list-sort">
+									<flowease-option
 										v-for="sortOption in sortOptions"
 										:key="sortOption"
 										data-test-id="resources-list-sort-item"
 										:value="sortOption"
 										:label="i18n.baseText(`${resourceKey}.sort.${sortOption}`)"
 									/>
-								</n8n-select>
+								</flowease-select>
 								<ResourceFiltersDropdown
 									v-if="showFiltersDropdown"
 									:keys="filterKeys"
@@ -105,12 +105,12 @@
 					<slot name="callout"></slot>
 
 					<div v-if="showFiltersDropdown" v-show="hasFilters" class="mt-xs">
-						<n8n-info-tip :bold="false">
+						<flowease-info-tip :bold="false">
 							{{ i18n.baseText(`${resourceKey}.filters.active`) }}
-							<n8n-link data-test-id="workflows-filter-reset" size="small" @click="resetFilters">
+							<flowease-link data-test-id="workflows-filter-reset" size="small" @click="resetFilters">
 								{{ i18n.baseText(`${resourceKey}.filters.active.reset`) }}
-							</n8n-link>
-						</n8n-info-tip>
+							</flowease-link>
+						</flowease-info-tip>
 					</div>
 
 					<div class="pb-xs" />
@@ -123,7 +123,7 @@
 					ref="listWrapperRef"
 					:class="$style.listWrapper"
 				>
-					<n8n-recycle-scroller
+					<flowease-recycle-scroller
 						v-if="type === 'list'"
 						data-test-id="resources-list"
 						:class="[$style.list, 'list-style-none']"
@@ -137,8 +137,8 @@
 						<template #postListContent>
 							<slot name="postListContent" />
 						</template>
-					</n8n-recycle-scroller>
-					<n8n-datatable
+					</flowease-recycle-scroller>
+					<flowease-datatable
 						v-if="typeProps.columns"
 						data-test-id="resources-table"
 						:class="$style.datatable"
@@ -152,29 +152,29 @@
 						<template #row="{ columns, row }">
 							<slot :data="row" :columns="columns" />
 						</template>
-					</n8n-datatable>
+					</flowease-datatable>
 				</div>
 
-				<n8n-text v-else color="text-base" size="medium" data-test-id="resources-list-empty">
+				<flowease-text v-else color="text-base" size="medium" data-test-id="resources-list-empty">
 					{{ i18n.baseText(`${resourceKey}.noResults`) }}
 					<template v-if="shouldSwitchToAllSubview">
 						<span v-if="!filtersModel.search">
 							({{ i18n.baseText(`${resourceKey}.noResults.switchToShared.preamble`) }}
-							<n8n-link @click="setOwnerSubview(false)">
-								{{ i18n.baseText(`${resourceKey}.noResults.switchToShared.link`) }} </n8n-link
+							<flowease-link @click="setOwnerSubview(false)">
+								{{ i18n.baseText(`${resourceKey}.noResults.switchToShared.link`) }} </flowease-link
 							>)
 						</span>
 
 						<span v-else>
 							({{ i18n.baseText(`${resourceKey}.noResults.withSearch.switchToShared.preamble`) }}
-							<n8n-link @click="setOwnerSubview(false)">
+							<flowease-link @click="setOwnerSubview(false)">
 								{{
 									i18n.baseText(`${resourceKey}.noResults.withSearch.switchToShared.link`)
-								}} </n8n-link
+								}} </flowease-link
 							>)
 						</span>
 					</template>
-				</n8n-text>
+				</flowease-text>
 
 				<slot name="postamble" />
 			</PageViewLayoutList>
@@ -195,7 +195,7 @@ import ResourceOwnershipSelect from '@/components/forms/ResourceOwnershipSelect.
 import ResourceFiltersDropdown from '@/components/forms/ResourceFiltersDropdown.vue';
 import { useSettingsStore } from '@/stores/settings.store';
 import { useUsersStore } from '@/stores/users.store';
-import type { N8nInput, DatatableColumn } from 'flowease-design-system';
+import type { FloweaseInput, DatatableColumn } from 'flowease-design-system';
 import { useI18n } from '@/composables/useI18n';
 import { useDebounce } from '@/composables/useDebounce';
 
@@ -217,7 +217,7 @@ interface IFilters {
 }
 
 type IResourceKeyType = 'credentials' | 'workflows';
-type SearchRef = InstanceType<typeof N8nInput>;
+type SearchRef = InstanceType<typeof FloweaseInput>;
 
 export default defineComponent({
 	name: 'ResourcesListLayout',

@@ -3,7 +3,7 @@ import * as ResponseHelper from '@/ResponseHelper';
 import { Pagination } from './dtos/pagination.dto';
 import type { ListQuery } from '@/requests';
 import type { RequestHandler } from 'express';
-import { ApplicationError } from 'n8n-workflow';
+import { ApplicationError } from 'flowease-workflow';
 
 export const paginationListQueryMiddleware: RequestHandler = (
 	req: ListQuery.Request,

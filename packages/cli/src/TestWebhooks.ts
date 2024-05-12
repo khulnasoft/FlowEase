@@ -1,12 +1,12 @@
 import type express from 'express';
 import { Service } from 'typedi';
-import { WebhookPathTakenError, Workflow } from 'n8n-workflow';
+import { WebhookPathTakenError, Workflow } from 'flowease-workflow';
 import type {
 	IWebhookData,
 	IWorkflowExecuteAdditionalData,
 	IHttpRequestMethods,
 	IRunData,
-} from 'n8n-workflow';
+} from 'flowease-workflow';
 import type {
 	IResponseCallbackData,
 	IWebhookManager,
@@ -404,7 +404,7 @@ export class TestWebhooks implements IWebhookManager {
 	}
 
 	/**
-	 * Convert a `WorkflowEntity` from `typeorm` to a temporary `Workflow` from `n8n-workflow`.
+	 * Convert a `WorkflowEntity` from `typeorm` to a temporary `Workflow` from `flowease-workflow`.
 	 */
 	toWorkflow(workflowEntity: IWorkflowDb) {
 		return new Workflow({

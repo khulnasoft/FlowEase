@@ -2,7 +2,7 @@ import { createReadStream } from 'node:fs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { v4 as uuid } from 'uuid';
-import { jsonParse } from 'n8n-workflow';
+import { jsonParse } from 'flowease-workflow';
 import { assertDir, doesNotExist } from './utils';
 import { DisallowedFilepathError } from '../errors/disallowed-filepath.error';
 

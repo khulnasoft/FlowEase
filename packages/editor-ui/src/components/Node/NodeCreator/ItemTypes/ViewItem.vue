@@ -1,5 +1,5 @@
 <template>
-	<n8n-node-creator-node
+	<flowease-node-creator-node
 		:class="$style.view"
 		:title="view.title"
 		:tag="view.tag"
@@ -8,9 +8,9 @@
 		:show-action-arrow="true"
 	>
 		<template #icon>
-			<n8n-node-icon type="icon" :name="view.icon" :circle="false" :show-tooltip="false" />
+			<flowease-node-icon type="icon" :name="view.icon" :circle="false" :show-tooltip="false" />
 		</template>
-	</n8n-node-creator-node>
+	</flowease-node-creator-node>
 </template>
 
 <script setup lang="ts">

@@ -1,6 +1,6 @@
 <template>
 	<div class="duplicate-parameter" @keydown.stop>
-		<n8n-input-label
+		<flowease-input-label
 			:label="$locale.nodeText().inputLabelDisplayName(parameter, path)"
 			:tooltip-text="$locale.nodeText().inputLabelDescription(parameter, path)"
 			:underline="true"
@@ -68,11 +68,11 @@
 				v-if="(mutableValues && mutableValues.length === 0) || isReadOnly"
 				class="no-items-exist"
 			>
-				<n8n-text size="small">{{
+				<flowease-text size="small">{{
 					$locale.baseText('multipleParameter.currentlyNoItemsExist')
-				}}</n8n-text>
+				}}</flowease-text>
 			</div>
-			<n8n-button
+			<flowease-button
 				v-if="!isReadOnly"
 				type="tertiary"
 				block
@@ -87,8 +87,8 @@
 import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
 import type { IUpdateInformation } from '@/Interface';
-import type { INodeParameters, INodeProperties } from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+import type { INodeParameters, INodeProperties } from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 import CollectionParameter from '@/components/CollectionParameter.vue';
 import ParameterInputFull from '@/components/ParameterInputFull.vue';
 

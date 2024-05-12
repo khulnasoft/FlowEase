@@ -1,23 +1,23 @@
-# n8n Chat
-This is an embeddable Chat widget for n8n. It allows the execution of AI-Powered Workflows through a Chat window.
+# flowease Chat
+This is an embeddable Chat widget for flowease. It allows the execution of AI-Powered Workflows through a Chat window.
 
 **Windowed Example**
-![n8n Chat Windowed](https://raw.githubusercontent.com/khulnasoft/flowease/master/packages/%40n8n/chat/resources/images/windowed.png)
+![flowease Chat Windowed](https://raw.githubusercontent.com/khulnasoft/flowease/master/packages/%40flowease/chat/resources/images/windowed.png)
 
 **Fullscreen Example**
-![n8n Chat Fullscreen](https://raw.githubusercontent.com/khulnasoft/flowease/master/packages/%40n8n/chat/resources/images/fullscreen.png)
+![flowease Chat Fullscreen](https://raw.githubusercontent.com/khulnasoft/flowease/master/packages/%40flowease/chat/resources/images/fullscreen.png)
 
 ## Prerequisites
-Create a n8n workflow which you want to execute via chat. The workflow has to be triggered using a **Chat Trigger** node.
+Create a flowease workflow which you want to execute via chat. The workflow has to be triggered using a **Chat Trigger** node.
 
 Open the **Chat Trigger** node and add your domain to the **Allowed Origins (CORS)** field. This makes sure that only requests from your domain are accepted.
 
-[See example workflow](https://github.com/khulnasoft/flowease/blob/master/packages/%40n8n/chat/resources/workflow.json)
+[See example workflow](https://github.com/khulnasoft/flowease/blob/master/packages/%40flowease/chat/resources/workflow.json)
 
 > Make sure the workflow is **Active.**
 
 ### How it works
-Each Chat request is sent to the n8n Webhook endpoint, which then sends back a response.
+Each Chat request is sent to the flowease Webhook endpoint, which then sends back a response.
 
 Each request is accompanied by an `action` query parameter, where `action` can be one of:
 - `loadPreviousSession` - When the user opens the Chatbot again and the previous chat session should be loaded
@@ -42,7 +42,7 @@ Add the following code to your HTML page.
 ```
 
 ### b. Import Embed
-Install and save n8n Chat as a production dependency.
+Install and save flowease Chat as a production dependency.
 
 ```sh
 npm install @flowease/chat
@@ -108,7 +108,7 @@ createChat({
 		method: 'POST',
 		headers: {}
 	},
-	target: '#n8n-chat',
+	target: '#flowease-chat',
 	mode: 'window',
 	chatInputKey: 'chatInput',
 	chatSessionKey: 'sessionId',
@@ -135,9 +135,9 @@ createChat({
 - **Type**: `string`
 - **Required**: `true`
 - **Examples**:
-	- `https://yourname.app.n8n.cloud/webhook/513107b3-6f3a-4a1e-af21-659f0ed14183`
+	- `https://yourname.app.flowease.cloud/webhook/513107b3-6f3a-4a1e-af21-659f0ed14183`
 	- `http://localhost:5678/webhook/513107b3-6f3a-4a1e-af21-659f0ed14183`
-- **Description**: The URL of the n8n Webhook endpoint. Should be the production URL.
+- **Description**: The URL of the flowease Webhook endpoint. Should be the production URL.
 
 ### `webhookConfig`
 - **Type**: `{ method: string, headers: Record<string, string> }`
@@ -146,7 +146,7 @@ createChat({
 
 ### `target`
 - **Type**: `string`
-- **Default**: `'#n8n-chat'`
+- **Default**: `'#flowease-chat'`
 - **Description**: The CSS selector of the element where the Chat window should be embedded.
 
 ### `mode`
@@ -253,14 +253,14 @@ In fullscreen mode, the Chat window will take up the entire width and height of 
 ```css
 html,
 body,
-#n8n-chat {
+#flowease-chat {
 	width: 100%;
 	height: 100%;
 }
 ```
 
 ## License
-n8n Chat is [fair-code](https://faircode.io) distributed under the
+flowease Chat is [fair-code](https://faircode.io) distributed under the
 [**Sustainable Use License**](https://github.com/khulnasoft/flowease/blob/master/packages/cli/LICENSE.md).
 
 Proprietary licenses are available for enterprise customers. [Get in touch](mailto:license@flowease.khulnasoft.com)

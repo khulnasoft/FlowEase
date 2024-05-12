@@ -1,5 +1,5 @@
-import type { IDataObject, INodeProperties } from 'n8n-workflow';
-import { deepCopy } from 'n8n-workflow';
+import type { IDataObject, INodeProperties } from 'flowease-workflow';
+import { deepCopy } from 'flowease-workflow';
 
 import { groups } from './Json/Groups';
 
@@ -110,7 +110,7 @@ for (const tool of (tools as IDataObject).processors as IDataObject[]) {
 					newParameters.push(currentParam);
 				}
 			}
-			// eslint-disable-next-line n8n-local-rules/no-json-parse-json-stringify
+			// eslint-disable-next-line flowease-local-rules/no-json-parse-json-stringify
 			parameters = JSON.parse(JSON.stringify(newParameters));
 		} else {
 			parameters.push(parameter);

@@ -11,7 +11,7 @@
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/n8n-nodes-langchain.openai/"
+				"url": "https://docs.flowease.khulnasoft.com/integrations/builtin/app-nodes/flowease-nodes-langchain.openai/"
 			}
 		]
 	},
