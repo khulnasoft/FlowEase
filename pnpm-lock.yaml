@@ -510,10 +510,10 @@ importers:
         version: link:../@flowease/permissions
       '@flowease/typeorm':
         specifier: 0.3.20-9
-        version: 0.3.20-9(@sentry/node@7.87.0)(ioredis@5.3.2)(mysql2@3.9.7)(pg@8.11.3)(sqlite3@5.1.7)
+        version: 0.3.20-9(@sentry/node@7.87.0)(ioredis@5.3.2)(mysql2@3.9.8)(pg@8.11.3)(sqlite3@5.1.7)
       '@langchain/community':
         specifier: 0.0.53
-        version: 0.0.53(@pinecone-database/pinecone@2.1.0)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(lodash@4.17.21)(mysql2@3.9.7)(pg@8.11.3)(ws@8.14.2)
+        version: 0.0.53(@pinecone-database/pinecone@2.1.0)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(lodash@4.17.21)(mysql2@3.9.8)(pg@8.11.3)(ws@8.14.2)
       '@langchain/core':
         specifier: 0.1.61
         version: 0.1.61(openai@4.38.5)
@@ -669,7 +669,7 @@ importers:
         version: 9.0.2
       langchain:
         specifier: 0.1.36
-        version: 0.1.36(@pinecone-database/pinecone@2.1.0)(axios@1.6.7)(handlebars@4.7.8)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(lodash@4.17.21)(mysql2@3.9.7)(pg@8.11.3)(ws@8.14.2)
+        version: 0.1.36(@pinecone-database/pinecone@2.1.0)(axios@1.6.7)(handlebars@4.7.8)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(lodash@4.17.21)(mysql2@3.9.8)(pg@8.11.3)(ws@8.14.2)
       ldapts:
         specifier: 4.2.6
         version: 4.2.6
@@ -680,8 +680,8 @@ importers:
         specifier: 3.3.0
         version: 3.3.0
       mysql2:
-        specifier: 3.9.7
-        version: 3.9.7
+        specifier: 3.9.8
+        version: 3.9.8
       nanoid:
         specifier: 3.3.6
         version: 3.3.6
@@ -1429,8 +1429,8 @@ importers:
         specifier: 10.0.2
         version: 10.0.2
       mysql2:
-        specifier: 3.9.7
-        version: 3.9.7
+        specifier: 3.9.8
+        version: 3.9.8
       nanoid:
         specifier: 3.3.6
         version: 3.3.6
@@ -1447,8 +1447,8 @@ importers:
         specifier: 9.1.1
         version: 9.1.1
       pdfjs-dist:
-        specifier: 2.16.105
-        version: 2.16.105
+        specifier: 4.2.67
+        version: 4.2.67
       pg:
         specifier: 8.11.3
         version: 8.11.3
@@ -5031,7 +5031,7 @@ packages:
       recast: 0.22.0
     dev: false
 
-  /@flowease/typeorm@0.3.20-9(@sentry/node@7.87.0)(ioredis@5.3.2)(mysql2@3.9.7)(pg@8.11.3)(sqlite3@5.1.7):
+  /@flowease/typeorm@0.3.20-9(@sentry/node@7.87.0)(ioredis@5.3.2)(mysql2@3.9.8)(pg@8.11.3)(sqlite3@5.1.7):
     resolution: {integrity: sha512-m2N58jfwzvP9QB2GuStR0Qijr0qDiRswb44rTDqsmcw0Ih+M999tjaqrE9IVwgicR1shHtqHdW3lkfkBHmyxWQ==}
     engines: {node: '>=16.13.0'}
     hasBin: true
@@ -5108,7 +5108,7 @@ packages:
       glob: 10.3.15
       ioredis: 5.3.2
       mkdirp: 2.1.6
-      mysql2: 3.9.7
+      mysql2: 3.9.8
       pg: 8.11.3
       reflect-metadata: 0.2.1
       sha.js: 2.4.11
@@ -6120,7 +6120,7 @@ packages:
       - openai
     dev: false
 
-  /@langchain/community@0.0.53(@pinecone-database/pinecone@2.1.0)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(lodash@4.17.21)(mysql2@3.9.7)(pg@8.11.3)(ws@8.14.2):
+  /@langchain/community@0.0.53(@pinecone-database/pinecone@2.1.0)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(lodash@4.17.21)(mysql2@3.9.8)(pg@8.11.3)(ws@8.14.2):
     resolution: {integrity: sha512-iFqZPt4MRssGYsQoKSXWJQaYTZCC7WNuilp2JCCs3wKmJK3l6mR0eV+PDrnT+TaDHUVxt/b0rwgM0sOiy0j2jA==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -6411,7 +6411,7 @@ packages:
       jsonwebtoken: 9.0.2
       langsmith: 0.1.23(openai@4.38.5)
       lodash: 4.17.21
-      mysql2: 3.9.7
+      mysql2: 3.9.8
       pg: 8.11.3
       uuid: 9.0.1
       ws: 8.14.2
@@ -6598,6 +6598,25 @@ packages:
       '@lezer/highlight': 1.2.0
       '@lezer/lr': 1.4.0
     dev: false
+
+  /@mapbox/node-pre-gyp@1.0.11:
+    resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
+    hasBin: true
+    dependencies:
+      detect-libc: 2.0.3
+      https-proxy-agent: 5.0.1
+      make-dir: 3.1.0
+      node-fetch: 2.7.0(encoding@0.1.13)
+      nopt: 5.0.0
+      npmlog: 5.0.1
+      rimraf: 3.0.2
+      semver: 7.6.2
+      tar: 6.2.1
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: false
+    optional: true
 
   /@mdx-js/react@3.0.1(@types/react@18.3.2)(react@18.3.1):
     resolution: {integrity: sha512-9ZrPIU4MGf6et1m1ov3zKf+q9+deetI51zprKB1D/z3NOb+rUxxtEl3mCjW5wTGh6VhRdwPueh1oRzi6ezkA8A==}
@@ -8827,7 +8846,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.27(typescript@5.4.5)
-      vue-component-type-helpers: 2.0.17
+      vue-component-type-helpers: 2.0.19
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -10737,9 +10756,20 @@ packages:
     resolution: {integrity: sha512-Of/R0wqp83cgHozfIYLbBMnej79U/SVGOOyuB3VVFv1NRM/PSFMK12x9KVtiYzJqmnU5WR2qp0Z5rHb7sWGnFQ==}
     dev: true
 
+  /are-we-there-yet@2.0.0:
+    resolution: {integrity: sha512-Ci/qENmwHnsYo9xKIcUJN5LeDKdJ6R1Z1j9V/J5wyq8nh/mYPEpIKJbBZXtZjG04HiK7zV/p6Vs9952MrMeUIw==}
+    engines: {node: '>=10'}
+    deprecated: This package is no longer supported.
+    dependencies:
+      delegates: 1.0.0
+      readable-stream: 3.6.2
+    dev: false
+    optional: true
+
   /are-we-there-yet@3.0.1:
     resolution: {integrity: sha512-QZW4EDmGwlYur0Yyf/b2uGucHQMa8aFUP7eu9ddR73vvhFyt4V0Vl3QHPcTNJ8l6qYOBdxgXdnBXQrHilfRQBg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
     dependencies:
       delegates: 1.0.0
       readable-stream: 3.6.2
@@ -11543,6 +11573,19 @@ packages:
 
   /caniuse-lite@1.0.30001617:
     resolution: {integrity: sha512-mLyjzNI9I+Pix8zwcrpxEbGlfqOkF9kM3ptzmKNw5tizSyYwMe+nGLTqMK9cO+0E+Bh6TsBxNAaHWEM8xwSsmA==}
+
+  /canvas@2.11.2:
+    resolution: {integrity: sha512-ItanGBMrmRV7Py2Z+Xhs7cT+FNt5K0vPL4p9EZ/UX/Mu7hFbkxSjKF2KVtPwX7UYWp7dRKnrTvReflgrItJbdw==}
+    engines: {node: '>=6'}
+    dependencies:
+      '@mapbox/node-pre-gyp': 1.0.11
+      nan: 2.19.0
+      simple-get: 3.1.1
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: false
+    optional: true
 
   /capital-case@1.0.4:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
@@ -12704,6 +12747,14 @@ packages:
     engines: {node: '>=0.10'}
     dev: false
 
+  /decompress-response@4.2.1:
+    resolution: {integrity: sha512-jOSne2qbyE+/r8G1VU+G/82LBs2Fs4LAsTiLSHOCOMZQl2OKZ6i8i4IyHemTe+/yIXOtTcRQMzPcgyhoFlqPkw==}
+    engines: {node: '>=8'}
+    dependencies:
+      mimic-response: 2.1.0
+    dev: false
+    optional: true
+
   /decompress-response@6.0.0:
     resolution: {integrity: sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==}
     engines: {node: '>=10'}
@@ -12975,11 +13026,6 @@ packages:
     engines: {node: '>= 4'}
     dependencies:
       domelementtype: 2.3.0
-
-  /dommatrix@1.0.3:
-    resolution: {integrity: sha512-l32Xp/TLgWb8ReqbVJAFIvXmY7go4nTxxlWiAFyhoQw9RKEOHBZNnyGvJWqDVSPmq3Y9HlM4npqF/T6VMOXhww==}
-    deprecated: dommatrix is no longer maintained. Please use @thednp/dommatrix.
-    dev: false
 
   /dompurify@3.1.3:
     resolution: {integrity: sha512-5sOWYSNPaxz6o2MUPvtyxTTqR4D3L77pr5rUQoWgD5ROQtVIZQgJkXbo1DLlK3vj11YGw5+LnF4SYti4gZmwng==}
@@ -14543,9 +14589,27 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  /gauge@3.0.2:
+    resolution: {integrity: sha512-+5J6MS/5XksCuXq++uFRsnUd7Ovu1XenbeuIuNRJxYWjgQbPuFhT14lAvsWfqfAmnwluf1OwMjz39HjfLPci0Q==}
+    engines: {node: '>=10'}
+    deprecated: This package is no longer supported.
+    dependencies:
+      aproba: 2.0.0
+      color-support: 1.1.3
+      console-control-strings: 1.1.0
+      has-unicode: 2.0.1
+      object-assign: 4.1.1
+      signal-exit: 3.0.7
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+      wide-align: 1.1.5
+    dev: false
+    optional: true
+
   /gauge@4.0.4:
     resolution: {integrity: sha512-f9m+BEN5jkg6a0fZjleidjN51VE1X+mPFQ2DJ0uv1V39oCLCbsGe6yjbBnp7eK7z/+GAon99a3nHuqbuuthyPg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
     dependencies:
       aproba: 2.0.0
       color-support: 1.1.3
@@ -14741,6 +14805,7 @@ packages:
   /glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
     engines: {node: '>=12'}
+    deprecated: Glob versions prior to v9 are no longer supported
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
@@ -15320,6 +15385,7 @@ packages:
 
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
@@ -16985,7 +17051,7 @@ packages:
       - voy-search
     dev: false
 
-  /langchain@0.1.36(@pinecone-database/pinecone@2.1.0)(axios@1.6.7)(handlebars@4.7.8)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(lodash@4.17.21)(mysql2@3.9.7)(pg@8.11.3)(ws@8.14.2):
+  /langchain@0.1.36(@pinecone-database/pinecone@2.1.0)(axios@1.6.7)(handlebars@4.7.8)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(lodash@4.17.21)(mysql2@3.9.8)(pg@8.11.3)(ws@8.14.2):
     resolution: {integrity: sha512-NTbnCL/jKWIeEI//Nm1oG8nhW3vkYWvEMr1MPotmTThTfeKfO87eV/OAzAyh6Ruy6GFs/qofRgQZGIe6XvXTNQ==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -17148,7 +17214,7 @@ packages:
         optional: true
     dependencies:
       '@anthropic-ai/sdk': 0.9.1
-      '@langchain/community': 0.0.53(@pinecone-database/pinecone@2.1.0)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(lodash@4.17.21)(mysql2@3.9.7)(pg@8.11.3)(ws@8.14.2)
+      '@langchain/community': 0.0.53(@pinecone-database/pinecone@2.1.0)(ioredis@5.3.2)(jsonwebtoken@9.0.2)(lodash@4.17.21)(mysql2@3.9.8)(pg@8.11.3)(ws@8.14.2)
       '@langchain/core': 0.1.61(openai@4.38.5)
       '@langchain/openai': 0.0.28
       '@langchain/textsplitters': 0.0.0(openai@4.38.5)
@@ -17967,6 +18033,12 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
+  /mimic-response@2.1.0:
+    resolution: {integrity: sha512-wXqjST+SLt7R009ySCglWBCFpjUygmCIfD790/kVbiGmUgfYGuB14PiTd5DwVxSV4NcYHjzMkoj5LjQZwTQLEA==}
+    engines: {node: '>=8'}
+    dev: false
+    optional: true
+
   /mimic-response@3.1.0:
     resolution: {integrity: sha512-z0yWI+4FDrrweS8Zmt4Ej5HdJmky15+L2e6Wgn3+iK5fWzb6T3fhNFq2+MeTRb064c6Wr4N/wv0DzQTjNzHNGQ==}
     engines: {node: '>=10'}
@@ -18418,8 +18490,8 @@ packages:
     engines: {node: '>=12.0.0'}
     dev: true
 
-  /mysql2@3.9.7:
-    resolution: {integrity: sha512-KnJT8vYRcNAZv73uf9zpXqNbvBG7DJrs+1nACsjZP1HMJ1TgXEy8wnNilXAn/5i57JizXKtrUtwDB7HxT9DDpw==}
+  /mysql2@3.9.8:
+    resolution: {integrity: sha512-+5JKNjPuks1FNMoy9TYpl77f+5frbTklz7eb3XDwbpsERRLEeXiW2PDEkakYF50UuKU2qwfGnyXpKYvukv8mGA==}
     engines: {node: '>= 8.0'}
     dependencies:
       denque: 2.1.0
@@ -18726,9 +18798,21 @@ packages:
       path-key: 4.0.0
     dev: true
 
+  /npmlog@5.0.1:
+    resolution: {integrity: sha512-AqZtDUWOMKs1G/8lwylVjrdYgqA4d9nu8hc+0gzRxlDb1I10+FHBGMXs6aiQHFdCUUlqH99MUMuLfzWDNDtfxw==}
+    deprecated: This package is no longer supported.
+    dependencies:
+      are-we-there-yet: 2.0.0
+      console-control-strings: 1.1.0
+      gauge: 3.0.2
+      set-blocking: 2.0.0
+    dev: false
+    optional: true
+
   /npmlog@6.0.2:
     resolution: {integrity: sha512-/vBvz5Jfr9dT/aFWd0FIRf+T/Q2WBsLENygUaFUqstqsycmZAP/t5BvFJTK0viFmSUxiUKTUplWy5vt+rvKIxg==}
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
+    deprecated: This package is no longer supported.
     dependencies:
       are-we-there-yet: 3.0.1
       console-control-strings: 1.1.0
@@ -19301,6 +19385,12 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
+  /path2d@0.2.0:
+    resolution: {integrity: sha512-KdPAykQX6kmLSOO6Jpu2KNcCED7CKjmaBNGGNuctOsG0hgYO1OdYQaan6cYXJiG0WmXOwZZPILPBimu5QAIw3A==}
+    engines: {node: '>=6'}
+    dev: false
+    optional: true
+
   /pathe@1.1.2:
     resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
     dev: true
@@ -19325,16 +19415,15 @@ packages:
       - supports-color
     dev: false
 
-  /pdfjs-dist@2.16.105:
-    resolution: {integrity: sha512-J4dn41spsAwUxCpEoVf6GVoz908IAA3mYiLmNxg8J9kfRXc2jxpbUepcP0ocp0alVNLFthTAM8DZ1RaHh8sU0A==}
-    peerDependencies:
-      worker-loader: ^3.0.8
-    peerDependenciesMeta:
-      worker-loader:
-        optional: true
-    dependencies:
-      dommatrix: 1.0.3
-      web-streams-polyfill: 3.3.3
+  /pdfjs-dist@4.2.67:
+    resolution: {integrity: sha512-rJmuBDFpD7cqC8WIkQUEClyB4UAH05K4AsyewToMTp2gSy3Rrx8c1ydAVqlJlGv3yZSOrhEERQU/4ScQQFlLHA==}
+    engines: {node: '>=18'}
+    optionalDependencies:
+      canvas: 2.11.2
+      path2d: 0.2.0
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
     dev: false
 
   /peberminta@0.9.0:
@@ -20965,6 +21054,7 @@ packages:
 
   /rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
     dependencies:
       glob: 7.2.3
@@ -21426,6 +21516,15 @@ packages:
   /simple-concat@1.0.1:
     resolution: {integrity: sha512-cSFtAPtRhljv69IK0hTVZQ+OfE9nePi/rtJmw5UjHeVyVroEqJXP1sFztKUy1qU+xvz3u/sfYJLa947b7nAN2Q==}
     dev: false
+
+  /simple-get@3.1.1:
+    resolution: {integrity: sha512-CQ5LTKGfCpvE1K0n2us+kuMPbk/q0EKl82s4aheV9oXjFEz6W/Y7oQFVJuU6QG77hRT4Ghb5RURteF5vnWjupA==}
+    dependencies:
+      decompress-response: 4.2.1
+      once: 1.4.0
+      simple-concat: 1.0.1
+    dev: false
+    optional: true
 
   /simple-get@4.0.1:
     resolution: {integrity: sha512-brv7p5WgH0jmQJr1ZDDfKDOSeWWg+OVypG99A/5vYGPqJ6pxiaHLy8nxtFjBA7oMa01ebA9gfh1uMCFqOuXxvA==}
@@ -23540,6 +23639,10 @@ packages:
 
   /vue-component-type-helpers@2.0.17:
     resolution: {integrity: sha512-2car49m8ciqg/JjgMBkx7o/Fd2A7fHESxNqL/2vJYFLXm4VwYO4yH0rexOi4a35vwNgDyvt17B07Vj126l9rAQ==}
+    dev: true
+
+  /vue-component-type-helpers@2.0.19:
+    resolution: {integrity: sha512-cN3f1aTxxKo4lzNeQAkVopswuImUrb5Iurll9Gaw5cqpnbTAxtEMM1mgi6ou4X79OCyqYv1U1mzBHJkzmiK82w==}
     dev: true
 
   /vue-demi@0.14.7(vue@3.4.27):
